@@ -1,0 +1,1897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Speed/Price ROI Calculator — Occom</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f0f2f5;color:#1a1a2e}
+
+.top-bar{
+    background:linear-gradient(135deg,#0D8065 0%,#065A46 100%);
+    color:white;padding:28px 40px;
+}
+.top-bar h1{font-size:1.8em;font-weight:700}
+.top-bar .sub{opacity:.85;margin-top:4px;font-size:.95em}
+.top-bar-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;max-width:1400px;margin:0 auto}
+.back-link{color:white;text-decoration:none;font-size:.9em;opacity:.8;transition:opacity .2s}
+.back-link:hover{opacity:1}
+
+.container{max-width:1400px;margin:0 auto;padding:30px 20px}
+
+/* Summary */
+.summary-strip{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:16px;margin-bottom:28px;
+}
+.summary-card{
+    background:white;border-radius:12px;padding:22px;text-align:center;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+}
+.summary-card .val{font-size:2.2em;font-weight:700;color:#0D8065}
+.summary-card .lbl{font-size:.85em;color:#666;margin-top:4px}
+
+/* Best per provider */
+.cards-grid{
+    display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+    gap:14px;margin-bottom:28px;
+}
+.card{
+    background:white;border-radius:10px;padding:18px;
+    box-shadow:0 2px 6px rgba(0,0,0,.06);
+}
+.card-provider{font-weight:700;font-size:.9em;margin-bottom:6px}
+.big-number{font-size:1.8em;font-weight:700;color:#333}
+.big-number small{font-size:.4em;color:#888}
+.card-plan{font-size:.85em;color:#555;margin-top:4px}
+.card-detail{font-size:.8em;color:#888;margin-top:2px}
+
+/* Filters */
+.filters-panel{
+    background:white;border-radius:12px;padding:22px;margin-bottom:24px;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+}
+.filters-panel h3{font-size:1em;color:#0D8065;margin-bottom:14px}
+.filter-row{display:flex;flex-wrap:wrap;gap:20px;align-items:flex-end}
+.filter-group{display:flex;flex-direction:column;gap:6px}
+.filter-group label.group-label{font-size:.8em;font-weight:600;color:#555}
+.filter-checks{display:flex;flex-wrap:wrap;gap:8px}
+.filter-check{display:inline-flex;align-items:center;gap:4px;cursor:pointer;font-size:.85em}
+.filter-check input{cursor:pointer}
+.filter-input{
+    padding:8px 12px;border:2px solid #ddd;border-radius:8px;font-size:.9em;width:120px;
+}
+.filter-input:focus{border-color:#0D8065;outline:none}
+
+/* Table */
+.section{
+    background:white;border-radius:14px;padding:28px;margin-bottom:28px;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+}
+.section h2{
+    font-size:1.3em;color:#333;margin-bottom:16px;
+    border-bottom:3px solid #0D8065;padding-bottom:8px;display:inline-block;
+}
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.88em}
+th{background:#f8f9fa;padding:12px 10px;text-align:left;font-weight:600;color:#555;position:sticky;top:0;cursor:pointer;user-select:none}
+th:hover{background:#eee}
+td{padding:10px;border-bottom:1px solid #eee}
+tr:hover{background:#fafafa}
+.highlight-occom{background:#f3edff !important}
+.highlight-occom:hover{background:#ece3ff !important}
+
+.provider-tag{
+    display:inline-block;padding:3px 10px;border-radius:20px;
+    color:white;font-size:.78em;font-weight:600;
+}
+.tier-tag{
+    display:inline-block;padding:3px 10px;border-radius:20px;
+    background:#e9e9e9;font-size:.78em;font-weight:600;color:#555;
+}
+
+.roi-cell{display:flex;align-items:center;gap:8px}
+.roi-bar-wrap{width:80px;height:8px;background:#eee;border-radius:4px;overflow:hidden}
+.roi-bar{height:100%;border-radius:4px;transition:width .3s}
+
+.no-results{text-align:center;padding:40px;color:#888;font-size:1.1em}
+.plan-count{font-size:.85em;color:#888;margin-bottom:10px}
+.timestamp{text-align:center;color:#999;font-size:.85em;margin-top:30px}
+
+@media(max-width:768px){
+    .summary-strip{grid-template-columns:repeat(2,1fr)}
+    .cards-grid{grid-template-columns:1fr 1fr}
+    table{font-size:.78em}
+    .roi-bar-wrap{width:50px}
+}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+    <div class="top-bar-inner">
+        <div>
+            <h1>💰 Speed/Price ROI Calculator</h1>
+            <div class="sub">Megabits per dollar — find the best value internet plan across all providers</div>
+        </div>
+        <a href="/" class="back-link">← Back to Dashboard</a>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- Summary -->
+    <div class="summary-strip">
+        <div class="summary-card">
+            <div class="val">74</div>
+            <div class="lbl">Plans Ranked</div>
+        </div>
+        <div class="summary-card">
+            <div class="val">4</div>
+            <div class="lbl">Providers</div>
+        </div>
+        <div class="summary-card">
+            <div class="val">4.32</div>
+            <div class="lbl">Avg Mbps/$</div>
+        </div>
+        <div class="summary-card">
+            <div class="val" style="color:#2E7D32">13.79</div>
+            <div class="lbl">Best ROI (Superloop)</div>
+        </div>
+        <div class="summary-card">
+            <div class="val" style="color:#6C3CE1">12.12</div>
+            <div class="lbl">Best Occom ROI</div>
+        </div>
+    </div>
+
+    <!-- Best per provider -->
+    <div class="section">
+        <h2>Best Value per Provider</h2>
+        <div class="cards-grid">
+            <div class="card" style="border-top:4px solid #6C3CE1">
+                <div class="card-provider" style="color:#6C3CE1">Occom</div>
+                <div class="big-number">12.12<small> Mbps/$</small></div>
+                <p class="card-plan">Hyper (nbn2000)</p>
+                <p class="card-detail">2000 Mbps &middot; $165/mo</p>
+            </div>
+            <div class="card" style="border-top:4px solid #E65100">
+                <div class="card-provider" style="color:#E65100">Superloop</div>
+                <div class="big-number">13.79<small> Mbps/$</small></div>
+                <p class="card-plan">Hyperspeed - nbn 2000/100</p>
+                <p class="card-detail">2000 Mbps &middot; $145/mo</p>
+            </div>
+            <div class="card" style="border-top:4px solid #0D47A1">
+                <div class="card-provider" style="color:#0D47A1">Telstra</div>
+                <div class="big-number">7.21<small> Mbps/$</small></div>
+                <p class="card-plan">Ultimate nbn® Internet Only</p>
+                <p class="card-detail">750 Mbps &middot; $104/mo</p>
+            </div>
+            <div class="card" style="border-top:4px solid #2E7D32">
+                <div class="card-provider" style="color:#2E7D32">Tpg</div>
+                <div class="big-number">10.57<small> Mbps/$</small></div>
+                <p class="card-plan">NBN Home Superfast</p>
+                <p class="card-detail">740.0 Mbps &middot; $70/mo</p>
+            </div></div>
+    </div>
+
+    <!-- Filters -->
+    <div class="filters-panel">
+        <h3>🔍 Filter & Search</h3>
+        <div class="filter-row">
+            <div class="filter-group">
+                <label class="group-label">Providers</label>
+                <div class="filter-checks" id="providerFilters">
+        <label class="filter-check">
+            <input type="checkbox" value="occom" checked onchange="applyFilters()">
+            <span class="provider-tag" style="background:#6C3CE1">Occom</span>
+        </label>
+        <label class="filter-check">
+            <input type="checkbox" value="superloop" checked onchange="applyFilters()">
+            <span class="provider-tag" style="background:#E65100">Superloop</span>
+        </label>
+        <label class="filter-check">
+            <input type="checkbox" value="telstra" checked onchange="applyFilters()">
+            <span class="provider-tag" style="background:#0D47A1">Telstra</span>
+        </label>
+        <label class="filter-check">
+            <input type="checkbox" value="tpg" checked onchange="applyFilters()">
+            <span class="provider-tag" style="background:#2E7D32">Tpg</span>
+        </label></div>
+            </div>
+            <div class="filter-group">
+                <label class="group-label">Speed Tiers</label>
+                <div class="filter-checks" id="tierFilters">
+        <label class="filter-check">
+            <input type="checkbox" value="basic" checked onchange="applyFilters()">
+            <span class="tier-tag">Basic</span>
+        </label>
+        <label class="filter-check">
+            <input type="checkbox" value="standard" checked onchange="applyFilters()">
+            <span class="tier-tag">Standard</span>
+        </label>
+        <label class="filter-check">
+            <input type="checkbox" value="boost" checked onchange="applyFilters()">
+            <span class="tier-tag">Boost</span>
+        </label>
+        <label class="filter-check">
+            <input type="checkbox" value="fast" checked onchange="applyFilters()">
+            <span class="tier-tag">Fast</span>
+        </label>
+        <label class="filter-check">
+            <input type="checkbox" value="superfast" checked onchange="applyFilters()">
+            <span class="tier-tag">Superfast</span>
+        </label>
+        <label class="filter-check">
+            <input type="checkbox" value="ultrafast" checked onchange="applyFilters()">
+            <span class="tier-tag">Ultrafast</span>
+        </label>
+        <label class="filter-check">
+            <input type="checkbox" value="hyper" checked onchange="applyFilters()">
+            <span class="tier-tag">Hyper</span>
+        </label>
+        <label class="filter-check">
+            <input type="checkbox" value="mega" checked onchange="applyFilters()">
+            <span class="tier-tag">Mega</span>
+        </label></div>
+            </div>
+            <div class="filter-group">
+                <label class="group-label">Max Budget ($/mo)</label>
+                <input type="number" class="filter-input" id="maxBudget" placeholder="e.g. 80" oninput="applyFilters()">
+            </div>
+            <div class="filter-group">
+                <label class="group-label">Min Speed (Mbps)</label>
+                <input type="number" class="filter-input" id="minSpeed" placeholder="e.g. 100" oninput="applyFilters()">
+            </div>
+        </div>
+    </div>
+
+    <!-- Full table -->
+    <div class="section">
+        <h2>All Plans Ranked by ROI</h2>
+        <div class="plan-count" id="planCount">Showing 74 plans</div>
+        <div class="table-wrap">
+        <table id="roiTable">
+            <thead>
+                <tr>
+                    <th onclick="sortTable(0,'num')">#</th>
+                    <th onclick="sortTable(1,'text')">Provider</th>
+                    <th onclick="sortTable(2,'text')">Plan</th>
+                    <th onclick="sortTable(3,'num')">Speed ↕</th>
+                    <th onclick="sortTable(4,'num')">Price ↕</th>
+                    <th onclick="sortTable(5,'num')">Regular</th>
+                    <th>Promo</th>
+                    <th onclick="sortTable(7,'num')">ROI (Mbps/$) ↕</th>
+                    <th onclick="sortTable(8,'num')">Annual Cost ↕</th>
+                </tr>
+            </thead>
+            <tbody id="roiBody">
+        <tr class="plan-row "
+            data-provider="superloop"
+            data-speed="2000"
+            data-price="145.0"
+            data-roi="13.79"
+            data-tier="mega">
+            <td>1</td>
+            <td><span class="provider-tag" style="background:#E65100">Superloop</span></td>
+            <td>Hyperspeed - nbn 2000/100</td>
+            <td>2000 <small>Mbps</small></td>
+            <td>$145<small>/mo</small></td>
+            <td>$145<small>/mo</small></td>
+            <td></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>13.79</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:100.0%;background:#E65100"></div></div>
+                </div>
+            </td>
+            <td>$1,740</td>
+        </tr>
+        <tr class="plan-row "
+            data-provider="superloop"
+            data-speed="2000"
+            data-price="145.0"
+            data-roi="13.79"
+            data-tier="mega">
+            <td>2</td>
+            <td><span class="provider-tag" style="background:#E65100">Superloop</span></td>
+            <td>Hyperspeed - nbn 2000/200</td>
+            <td>2000 <small>Mbps</small></td>
+            <td>$145<small>/mo</small></td>
+            <td>$145<small>/mo</small></td>
+            <td></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>13.79</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:100.0%;background:#E65100"></div></div>
+                </div>
+            </td>
+            <td>$1,740</td>
+        </tr>
+        <tr class="plan-row highlight-occom"
+            data-provider="occom"
+            data-speed="2000"
+            data-price="165.0"
+            data-roi="12.12"
+            data-tier="mega">
+            <td>3</td>
+            <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+            <td>Hyper (nbn2000)</td>
+            <td>2000 <small>Mbps</small></td>
+            <td>$165<small>/mo</small></td>
+            <td>$185<small>/mo</small></td>
+            <td>$165 <small>(12 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>12.12</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:87.9%;background:#6C3CE1"></div></div>
+                </div>
+            </td>
+            <td>$1,980</td>
+        </tr>
+        <tr class="plan-row highlight-occom"
+            data-provider="occom"
+            data-speed="2000"
+            data-price="165.0"
+            data-roi="12.12"
+            data-tier="mega">
+            <td>4</td>
+            <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+            <td>Hyper (nbn2000)</td>
+            <td>2000 <small>Mbps</small></td>
+            <td>$165<small>/mo</small></td>
+            <td>$185<small>/mo</small></td>
+            <td>$165 <small>(12 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>12.12</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:87.9%;background:#6C3CE1"></div></div>
+                </div>
+            </td>
+            <td>$1,980</td>
+        </tr>
+        <tr class="plan-row "
+            data-provider="superloop"
+            data-speed="1000"
+            data-price="85.0"
+            data-roi="11.76"
+            data-tier="hyper">
+            <td>5</td>
+            <td><span class="provider-tag" style="background:#E65100">Superloop</span></td>
+            <td>Lightspeed - nbn 1000/100</td>
+            <td>1000 <small>Mbps</small></td>
+            <td>$85<small>/mo</small></td>
+            <td>$85<small>/mo</small></td>
+            <td></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>11.76</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:85.3%;background:#E65100"></div></div>
+                </div>
+            </td>
+            <td>$1,020</td>
+        </tr>
+        <tr class="plan-row highlight-occom"
+            data-provider="occom"
+            data-speed="2000"
+            data-price="180.0"
+            data-roi="11.11"
+            data-tier="mega">
+            <td>6</td>
+            <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+            <td>Hyper (Fibre2000)</td>
+            <td>2000 <small>Mbps</small></td>
+            <td>$180<small>/mo</small></td>
+            <td>$200<small>/mo</small></td>
+            <td>$180 <small>(12 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>11.11</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:80.6%;background:#6C3CE1"></div></div>
+                </div>
+            </td>
+            <td>$2,160</td>
+        </tr>
+        <tr class="plan-row highlight-occom"
+            data-provider="occom"
+            data-speed="1000"
+            data-price="90.0"
+            data-roi="11.11"
+            data-tier="hyper">
+            <td>7</td>
+            <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+            <td>Lightning (Fibre1000)</td>
+            <td>1000 <small>Mbps</small></td>
+            <td>$90<small>/mo</small></td>
+            <td>$100<small>/mo</small></td>
+            <td>$90 <small>(6 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>11.11</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:80.6%;background:#6C3CE1"></div></div>
+                </div>
+            </td>
+            <td>$1,140</td>
+        </tr>
+        <tr class="plan-row "
+            data-provider="tpg"
+            data-speed="740.0"
+            data-price="69.99"
+            data-roi="10.57"
+            data-tier="hyper">
+            <td>8</td>
+            <td><span class="provider-tag" style="background:#2E7D32">Tpg</span></td>
+            <td>NBN Home Superfast</td>
+            <td>740.0 <small>Mbps</small></td>
+            <td>$70<small>/mo</small></td>
+            <td>$100<small>/mo</small></td>
+            <td>$70 <small>(6 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>10.57</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:76.6%;background:#2E7D32"></div></div>
+                </div>
+            </td>
+            <td>$1,020</td>
+        </tr>
+        <tr class="plan-row "
+            data-provider="tpg"
+            data-speed="820.0"
+            data-price="79.99"
+            data-roi="10.25"
+            data-tier="hyper">
+            <td>9</td>
+            <td><span class="provider-tag" style="background:#2E7D32">Tpg</span></td>
+            <td>NBN Home Ultrafast</td>
+            <td>820.0 <small>Mbps</small></td>
+            <td>$80<small>/mo</small></td>
+            <td>$110<small>/mo</small></td>
+            <td>$80 <small>(6 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>10.25</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:74.3%;background:#2E7D32"></div></div>
+                </div>
+            </td>
+            <td>$1,140</td>
+        </tr>
+        <tr class="plan-row highlight-occom"
+            data-provider="occom"
+            data-speed="1000"
+            data-price="105.0"
+            data-roi="9.52"
+            data-tier="hyper">
+            <td>10</td>
+            <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+            <td>Lightning (nbn1000)</td>
+            <td>1000 <small>Mbps</small></td>
+            <td>$105<small>/mo</small></td>
+            <td>$115<small>/mo</small></td>
+            <td>$105 <small>(12 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>9.52</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:69.0%;background:#6C3CE1"></div></div>
+                </div>
+            </td>
+            <td>$1,260</td>
+        </tr>
+        <tr class="plan-row highlight-occom"
+            data-provider="occom"
+            data-speed="1000"
+            data-price="105.0"
+            data-roi="9.52"
+            data-tier="hyper">
+            <td>11</td>
+            <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+            <td>Lightning (nbn1000)</td>
+            <td>1000 <small>Mbps</small></td>
+            <td>$105<small>/mo</small></td>
+            <td>$115<small>/mo</small></td>
+            <td>$105 <small>(12 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>9.52</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:69.0%;background:#6C3CE1"></div></div>
+                </div>
+            </td>
+            <td>$1,260</td>
+        </tr>
+        <tr class="plan-row highlight-occom"
+            data-provider="occom"
+            data-speed="1000"
+            data-price="110.0"
+            data-roi="9.09"
+            data-tier="hyper">
+            <td>12</td>
+            <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+            <td>Lightning (Fibre1000)</td>
+            <td>1000 <small>Mbps</small></td>
+            <td>$110<small>/mo</small></td>
+            <td>$120<small>/mo</small></td>
+            <td>$110 <small>(6 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>9.09</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:65.9%;background:#6C3CE1"></div></div>
+                </div>
+            </td>
+            <td>$1,380</td>
+        </tr>
+        <tr class="plan-row "
+            data-provider="tpg"
+            data-speed="700.0"
+            data-price="79.99"
+            data-roi="8.75"
+            data-tier="hyper">
+            <td>13</td>
+            <td><span class="provider-tag" style="background:#2E7D32">Tpg</span></td>
+            <td>FTTB Max</td>
+            <td>700.0 <small>Mbps</small></td>
+            <td>$80<small>/mo</small></td>
+            <td>$80<small>/mo</small></td>
+            <td></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>8.75</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:63.5%;background:#2E7D32"></div></div>
+                </div>
+            </td>
+            <td>$960</td>
+        </tr>
+        <tr class="plan-row highlight-occom"
+            data-provider="occom"
+            data-speed="1000"
+            data-price="115.0"
+            data-roi="8.7"
+            data-tier="hyper">
+            <td>14</td>
+            <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+            <td>Lightning (Fibre1000)</td>
+            <td>1000 <small>Mbps</small></td>
+            <td>$115<small>/mo</small></td>
+            <td>$130<small>/mo</small></td>
+            <td>$115 <small>(12 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>8.7</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:63.1%;background:#6C3CE1"></div></div>
+                </div>
+            </td>
+            <td>$1,380</td>
+        </tr>
+        <tr class="plan-row highlight-occom"
+            data-provider="occom"
+            data-speed="900"
+            data-price="105.0"
+            data-roi="8.57"
+            data-tier="hyper">
+            <td>15</td>
+            <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+            <td>Lightning (Fibre1000)</td>
+            <td>900 <small>Mbps</small></td>
+            <td>$105<small>/mo</small></td>
+            <td>$115<small>/mo</small></td>
+            <td>$105 <small>(12 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>8.57</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:62.1%;background:#6C3CE1"></div></div>
+                </div>
+            </td>
+            <td>$1,260</td>
+        </tr>
+        <tr class="plan-row "
+            data-provider="superloop"
+            data-speed="750"
+            data-price="89.0"
+            data-roi="8.43"
+            data-tier="hyper">
+            <td>16</td>
+            <td><span class="provider-tag" style="background:#E65100">Superloop</span></td>
+            <td>Megaspeed - nbn 750/50</td>
+            <td>750 <small>Mbps</small></td>
+            <td>$89<small>/mo</small></td>
+            <td>$89<small>/mo</small></td>
+            <td></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>8.43</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:61.1%;background:#E65100"></div></div>
+                </div>
+            </td>
+            <td>$1,068</td>
+        </tr>
+        <tr class="plan-row highlight-occom"
+            data-provider="occom"
+            data-speed="750"
+            data-price="93.0"
+            data-roi="8.06"
+            data-tier="hyper">
+            <td>17</td>
+            <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+            <td>Ultra (nbn750)</td>
+            <td>750 <small>Mbps</small></td>
+            <td>$93<small>/mo</small></td>
+            <td>$98<small>/mo</small></td>
+            <td>$93 <small>(12 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>8.06</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:58.4%;background:#6C3CE1"></div></div>
+                </div>
+            </td>
+            <td>$1,116</td>
+        </tr>
+        <tr class="plan-row highlight-occom"
+            data-provider="occom"
+            data-speed="750"
+            data-price="93.0"
+            data-roi="8.06"
+            data-tier="hyper">
+            <td>18</td>
+            <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+            <td>Ultra (Fibre750)</td>
+            <td>750 <small>Mbps</small></td>
+            <td>$93<small>/mo</small></td>
+            <td>$98<small>/mo</small></td>
+            <td>$93 <small>(12 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>8.06</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:58.4%;background:#6C3CE1"></div></div>
+                </div>
+            </td>
+            <td>$1,116</td>
+        </tr>
+        <tr class="plan-row highlight-occom"
+            data-provider="occom"
+            data-speed="750"
+            data-price="93.0"
+            data-roi="8.06"
+            data-tier="hyper">
+            <td>19</td>
+            <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+            <td>Ultra (nbn750)</td>
+            <td>750 <small>Mbps</small></td>
+            <td>$93<small>/mo</small></td>
+            <td>$98<small>/mo</small></td>
+            <td>$93 <small>(12 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>8.06</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:58.4%;background:#6C3CE1"></div></div>
+                </div>
+            </td>
+            <td>$1,116</td>
+        </tr>
+        <tr class="plan-row highlight-occom"
+            data-provider="occom"
+            data-speed="750"
+            data-price="95.0"
+            data-roi="7.89"
+            data-tier="hyper">
+            <td>20</td>
+            <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+            <td>Ultra (Fibre750)</td>
+            <td>750 <small>Mbps</small></td>
+            <td>$95<small>/mo</small></td>
+            <td>$110<small>/mo</small></td>
+            <td>$95 <small>(6 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>7.89</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:57.2%;background:#6C3CE1"></div></div>
+                </div>
+            </td>
+            <td>$1,230</td>
+        </tr>
+        <tr class="plan-row "
+            data-provider="tpg"
+            data-speed="500.0"
+            data-price="64.99"
+            data-roi="7.69"
+            data-tier="ultrafast">
+            <td>21</td>
+            <td><span class="provider-tag" style="background:#2E7D32">Tpg</span></td>
+            <td>NBN500</td>
+            <td>500.0 <small>Mbps</small></td>
+            <td>$65<small>/mo</small></td>
+            <td>$95<small>/mo</small></td>
+            <td>$65 <small>(6 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>7.69</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:55.8%;background:#2E7D32"></div></div>
+                </div>
+            </td>
+            <td>$960</td>
+        </tr>
+        <tr class="plan-row "
+            data-provider="superloop"
+            data-speed="500"
+            data-price="69.0"
+            data-roi="7.25"
+            data-tier="ultrafast">
+            <td>22</td>
+            <td><span class="provider-tag" style="background:#E65100">Superloop</span></td>
+            <td>Family Max - nbn 500/50</td>
+            <td>500 <small>Mbps</small></td>
+            <td>$69<small>/mo</small></td>
+            <td>$69<small>/mo</small></td>
+            <td></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>7.25</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:52.6%;background:#E65100"></div></div>
+                </div>
+            </td>
+            <td>$828</td>
+        </tr>
+        <tr class="plan-row "
+            data-provider="telstra"
+            data-speed="750"
+            data-price="104.0"
+            data-roi="7.21"
+            data-tier="hyper">
+            <td>23</td>
+            <td><span class="provider-tag" style="background:#0D47A1">Telstra</span></td>
+            <td>Ultimate nbn® Internet Only</td>
+            <td>750 <small>Mbps</small></td>
+            <td>$104<small>/mo</small></td>
+            <td>$104<small>/mo</small></td>
+            <td></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>7.21</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:52.3%;background:#0D47A1"></div></div>
+                </div>
+            </td>
+            <td>$1,248</td>
+        </tr>
+        <tr class="plan-row "
+            data-provider="telstra"
+            data-speed="815"
+            data-price="114.0"
+            data-roi="7.15"
+            data-tier="hyper">
+            <td>24</td>
+            <td><span class="provider-tag" style="background:#0D47A1">Telstra</span></td>
+            <td>Ultrafast nbn® Internet Only</td>
+            <td>815 <small>Mbps</small></td>
+            <td>$114<small>/mo</small></td>
+            <td>$114<small>/mo</small></td>
+            <td></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>7.15</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:51.8%;background:#0D47A1"></div></div>
+                </div>
+            </td>
+            <td>$1,368</td>
+        </tr>
+        <tr class="plan-row highlight-occom"
+            data-provider="occom"
+            data-speed="500"
+            data-price="70.0"
+            data-roi="7.14"
+            data-tier="ultrafast">
+            <td>25</td>
+            <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+            <td>Turbo (Fibre500)</td>
+            <td>500 <small>Mbps</small></td>
+            <td>$70<small>/mo</small></td>
+            <td>$80<small>/mo</small></td>
+            <td>$70 <small>(6 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>7.14</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:51.8%;background:#6C3CE1"></div></div>
+                </div>
+            </td>
+            <td>$900</td>
+        </tr>
+        <tr class="plan-row "
+            data-provider="telstra"
+            data-speed="750"
+            data-price="109.0"
+            data-roi="6.88"
+            data-tier="hyper">
+            <td>26</td>
+            <td><span class="provider-tag" style="background:#0D47A1">Telstra</span></td>
+            <td>Ultimate nbn®</td>
+            <td>750 <small>Mbps</small></td>
+            <td>$109<small>/mo</small></td>
+            <td>$109<small>/mo</small></td>
+            <td></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>6.88</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:49.9%;background:#0D47A1"></div></div>
+                </div>
+            </td>
+            <td>$1,308</td>
+        </tr>
+        <tr class="plan-row "
+            data-provider="telstra"
+            data-speed="815"
+            data-price="119.0"
+            data-roi="6.85"
+            data-tier="hyper">
+            <td>27</td>
+            <td><span class="provider-tag" style="background:#0D47A1">Telstra</span></td>
+            <td>Ultrafast nbn®</td>
+            <td>815 <small>Mbps</small></td>
+            <td>$119<small>/mo</small></td>
+            <td>$119<small>/mo</small></td>
+            <td></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>6.85</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:49.7%;background:#0D47A1"></div></div>
+                </div>
+            </td>
+            <td>$1,428</td>
+        </tr>
+        <tr class="plan-row highlight-occom"
+            data-provider="occom"
+            data-speed="500"
+            data-price="85.0"
+            data-roi="5.88"
+            data-tier="ultrafast">
+            <td>28</td>
+            <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+            <td>Turbo (nbn500)</td>
+            <td>500 <small>Mbps</small></td>
+            <td>$85<small>/mo</small></td>
+            <td>$90<small>/mo</small></td>
+            <td>$85 <small>(12 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>5.88</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:42.6%;background:#6C3CE1"></div></div>
+                </div>
+            </td>
+            <td>$1,020</td>
+        </tr>
+        <tr class="plan-row highlight-occom"
+            data-provider="occom"
+            data-speed="500"
+            data-price="85.0"
+            data-roi="5.88"
+            data-tier="ultrafast">
+            <td>29</td>
+            <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+            <td>Turbo (Fibre500)</td>
+            <td>500 <small>Mbps</small></td>
+            <td>$85<small>/mo</small></td>
+            <td>$90<small>/mo</small></td>
+            <td>$85 <small>(None)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>5.88</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:42.6%;background:#6C3CE1"></div></div>
+                </div>
+            </td>
+            <td>$1,080</td>
+        </tr>
+        <tr class="plan-row highlight-occom"
+            data-provider="occom"
+            data-speed="500"
+            data-price="85.0"
+            data-roi="5.88"
+            data-tier="ultrafast">
+            <td>30</td>
+            <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+            <td>Turbo (nbn500)</td>
+            <td>500 <small>Mbps</small></td>
+            <td>$85<small>/mo</small></td>
+            <td>$90<small>/mo</small></td>
+            <td>$85 <small>(12 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>5.88</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:42.6%;background:#6C3CE1"></div></div>
+                </div>
+            </td>
+            <td>$1,020</td>
+        </tr>
+        <tr class="plan-row highlight-occom"
+            data-provider="occom"
+            data-speed="500"
+            data-price="85.0"
+            data-roi="5.88"
+            data-tier="ultrafast">
+            <td>31</td>
+            <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+            <td>Turbo (Fibre500)</td>
+            <td>500 <small>Mbps</small></td>
+            <td>$85<small>/mo</small></td>
+            <td>$90<small>/mo</small></td>
+            <td>$85 <small>(6 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>5.88</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:42.6%;background:#6C3CE1"></div></div>
+                </div>
+            </td>
+            <td>$1,050</td>
+        </tr>
+        <tr class="plan-row highlight-occom"
+            data-provider="occom"
+            data-speed="500"
+            data-price="110.0"
+            data-roi="4.55"
+            data-tier="ultrafast">
+            <td>32</td>
+            <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+            <td>Turbo (Fibre500)</td>
+            <td>500 <small>Mbps</small></td>
+            <td>$110<small>/mo</small></td>
+            <td>$120<small>/mo</small></td>
+            <td>$110 <small>(12 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>4.55</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:33.0%;background:#6C3CE1"></div></div>
+                </div>
+            </td>
+            <td>$1,320</td>
+        </tr>
+        <tr class="plan-row "
+            data-provider="telstra"
+            data-speed="300"
+            data-price="85.0"
+            data-roi="3.53"
+            data-tier="superfast">
+            <td>33</td>
+            <td><span class="provider-tag" style="background:#0D47A1">Telstra</span></td>
+            <td>5G Internet</td>
+            <td>300 <small>Mbps</small></td>
+            <td>$85<small>/mo</small></td>
+            <td>$85<small>/mo</small></td>
+            <td></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>3.53</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:25.6%;background:#0D47A1"></div></div>
+                </div>
+            </td>
+            <td>$1,020</td>
+        </tr>
+        <tr class="plan-row "
+            data-provider="superloop"
+            data-speed="250"
+            data-price="85.0"
+            data-roi="2.94"
+            data-tier="superfast">
+            <td>34</td>
+            <td><span class="provider-tag" style="background:#E65100">Superloop</span></td>
+            <td>Creator - nbn 250/100</td>
+            <td>250 <small>Mbps</small></td>
+            <td>$85<small>/mo</small></td>
+            <td>$85<small>/mo</small></td>
+            <td></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>2.94</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:21.3%;background:#E65100"></div></div>
+                </div>
+            </td>
+            <td>$1,020</td>
+        </tr>
+        <tr class="plan-row "
+            data-provider="tpg"
+            data-speed="100.0"
+            data-price="34.99"
+            data-roi="2.86"
+            data-tier="fast">
+            <td>35</td>
+            <td><span class="provider-tag" style="background:#2E7D32">Tpg</span></td>
+            <td>5G Home Broadband Premium</td>
+            <td>100.0 <small>Mbps</small></td>
+            <td>$35<small>/mo</small></td>
+            <td>$65<small>/mo</small></td>
+            <td>$35 <small>(6 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>2.86</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:20.7%;background:#2E7D32"></div></div>
+                </div>
+            </td>
+            <td>$600</td>
+        </tr>
+        <tr class="plan-row highlight-occom"
+            data-provider="occom"
+            data-speed="250"
+            data-price="110.0"
+            data-roi="2.27"
+            data-tier="superfast">
+            <td>36</td>
+            <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+            <td>Rocket (Fibre250)</td>
+            <td>250 <small>Mbps</small></td>
+            <td>$110<small>/mo</small></td>
+            <td>$120<small>/mo</small></td>
+            <td>$110 <small>(12 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>2.27</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:16.5%;background:#6C3CE1"></div></div>
+                </div>
+            </td>
+            <td>$1,320</td>
+        </tr>
+        <tr class="plan-row highlight-occom"
+            data-provider="occom"
+            data-speed="100"
+            data-price="55.0"
+            data-roi="1.82"
+            data-tier="fast">
+            <td>37</td>
+            <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+            <td>Superfast (Fibre100)</td>
+            <td>100 <small>Mbps</small></td>
+            <td>$55<small>/mo</small></td>
+            <td>$65<small>/mo</small></td>
+            <td>$55 <small>(6 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>1.82</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:13.2%;background:#6C3CE1"></div></div>
+                </div>
+            </td>
+            <td>$720</td>
+        </tr>
+        <tr class="plan-row "
+            data-provider="tpg"
+            data-speed="50.0"
+            data-price="29.99"
+            data-roi="1.67"
+            data-tier="boost">
+            <td>38</td>
+            <td><span class="provider-tag" style="background:#2E7D32">Tpg</span></td>
+            <td>5G Home Broadband Plus</td>
+            <td>50.0 <small>Mbps</small></td>
+            <td>$30<small>/mo</small></td>
+            <td>$60<small>/mo</small></td>
+            <td>$30 <small>(6 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>1.67</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:12.1%;background:#2E7D32"></div></div>
+                </div>
+            </td>
+            <td>$540</td>
+        </tr>
+        <tr class="plan-row "
+            data-provider="tpg"
+            data-speed="99.0"
+            data-price="64.99"
+            data-roi="1.52"
+            data-tier="fast">
+            <td>39</td>
+            <td><span class="provider-tag" style="background:#2E7D32">Tpg</span></td>
+            <td>NBN100</td>
+            <td>99.0 <small>Mbps</small></td>
+            <td>$65<small>/mo</small></td>
+            <td>$95<small>/mo</small></td>
+            <td>$65 <small>(6 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>1.52</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:11.0%;background:#2E7D32"></div></div>
+                </div>
+            </td>
+            <td>$960</td>
+        </tr>
+        <tr class="plan-row "
+            data-provider="superloop"
+            data-speed="100"
+            data-price="69.0"
+            data-roi="1.45"
+            data-tier="fast">
+            <td>40</td>
+            <td><span class="provider-tag" style="background:#E65100">Superloop</span></td>
+            <td>Family Max - nbn 100/20</td>
+            <td>100 <small>Mbps</small></td>
+            <td>$69<small>/mo</small></td>
+            <td>$69<small>/mo</small></td>
+            <td></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>1.45</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:10.5%;background:#E65100"></div></div>
+                </div>
+            </td>
+            <td>$828</td>
+        </tr>
+        <tr class="plan-row "
+            data-provider="tpg"
+            data-speed="100.0"
+            data-price="74.99"
+            data-roi="1.33"
+            data-tier="fast">
+            <td>41</td>
+            <td><span class="provider-tag" style="background:#2E7D32">Tpg</span></td>
+            <td>FTTB100</td>
+            <td>100.0 <small>Mbps</small></td>
+            <td>$75<small>/mo</small></td>
+            <td>$75<small>/mo</small></td>
+            <td></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>1.33</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:9.6%;background:#2E7D32"></div></div>
+                </div>
+            </td>
+            <td>$900</td>
+        </tr>
+        <tr class="plan-row highlight-occom"
+            data-provider="occom"
+            data-speed="100"
+            data-price="80.0"
+            data-roi="1.25"
+            data-tier="fast">
+            <td>42</td>
+            <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+            <td>Superfast (nbn100)</td>
+            <td>100 <small>Mbps</small></td>
+            <td>$80<small>/mo</small></td>
+            <td>$90<small>/mo</small></td>
+            <td>$80 <small>(6 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>1.25</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:9.1%;background:#6C3CE1"></div></div>
+                </div>
+            </td>
+            <td>$1,020</td>
+        </tr>
+        <tr class="plan-row highlight-occom"
+            data-provider="occom"
+            data-speed="100"
+            data-price="80.0"
+            data-roi="1.25"
+            data-tier="fast">
+            <td>43</td>
+            <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+            <td>Superfast (Fibre100)</td>
+            <td>100 <small>Mbps</small></td>
+            <td>$80<small>/mo</small></td>
+            <td>$90<small>/mo</small></td>
+            <td>$80 <small>(6 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>1.25</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:9.1%;background:#6C3CE1"></div></div>
+                </div>
+            </td>
+            <td>$1,020</td>
+        </tr>
+        <tr class="plan-row highlight-occom"
+            data-provider="occom"
+            data-speed="100"
+            data-price="80.0"
+            data-roi="1.25"
+            data-tier="fast">
+            <td>44</td>
+            <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+            <td>Superfast (nbn100)</td>
+            <td>100 <small>Mbps</small></td>
+            <td>$80<small>/mo</small></td>
+            <td>$90<small>/mo</small></td>
+            <td>$80 <small>(6 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>1.25</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:9.1%;background:#6C3CE1"></div></div>
+                </div>
+            </td>
+            <td>$1,020</td>
+        </tr>
+        <tr class="plan-row "
+            data-provider="superloop"
+            data-speed="100"
+            data-price="85.0"
+            data-roi="1.18"
+            data-tier="fast">
+            <td>45</td>
+            <td><span class="provider-tag" style="background:#E65100">Superloop</span></td>
+            <td>Power Home - nbn 100/40</td>
+            <td>100 <small>Mbps</small></td>
+            <td>$85<small>/mo</small></td>
+            <td>$85<small>/mo</small></td>
+            <td></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>1.18</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:8.6%;background:#E65100"></div></div>
+                </div>
+            </td>
+            <td>$1,020</td>
+        </tr>
+        <tr class="plan-row highlight-occom"
+            data-provider="occom"
+            data-speed="100"
+            data-price="85.0"
+            data-roi="1.18"
+            data-tier="fast">
+            <td>46</td>
+            <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+            <td>Superfast (Fibre100)</td>
+            <td>100 <small>Mbps</small></td>
+            <td>$85<small>/mo</small></td>
+            <td>$90<small>/mo</small></td>
+            <td>$85 <small>(6 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>1.18</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:8.6%;background:#6C3CE1"></div></div>
+                </div>
+            </td>
+            <td>$1,050</td>
+        </tr>
+        <tr class="plan-row "
+            data-provider="telstra"
+            data-speed="100"
+            data-price="89.0"
+            data-roi="1.12"
+            data-tier="fast">
+            <td>47</td>
+            <td><span class="provider-tag" style="background:#0D47A1">Telstra</span></td>
+            <td>Premium nbn® Internet Only</td>
+            <td>100 <small>Mbps</small></td>
+            <td>$89<small>/mo</small></td>
+            <td>$89<small>/mo</small></td>
+            <td></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>1.12</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:8.1%;background:#0D47A1"></div></div>
+                </div>
+            </td>
+            <td>$1,068</td>
+        </tr>
+        <tr class="plan-row "
+            data-provider="telstra"
+            data-speed="100"
+            data-price="95.0"
+            data-roi="1.05"
+            data-tier="fast">
+            <td>48</td>
+            <td><span class="provider-tag" style="background:#0D47A1">Telstra</span></td>
+            <td>Premium nbn®</td>
+            <td>100 <small>Mbps</small></td>
+            <td>$95<small>/mo</small></td>
+            <td>$95<small>/mo</small></td>
+            <td></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>1.05</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:7.6%;background:#0D47A1"></div></div>
+                </div>
+            </td>
+            <td>$1,140</td>
+        </tr>
+        <tr class="plan-row highlight-occom"
+            data-provider="occom"
+            data-speed="50"
+            data-price="50.0"
+            data-roi="1.0"
+            data-tier="boost">
+            <td>49</td>
+            <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+            <td>Boost Plus (Fibre50)</td>
+            <td>50 <small>Mbps</small></td>
+            <td>$50<small>/mo</small></td>
+            <td>$60<small>/mo</small></td>
+            <td>$50 <small>(6 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>1.0</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:7.3%;background:#6C3CE1"></div></div>
+                </div>
+            </td>
+            <td>$660</td>
+        </tr>
+        <tr class="plan-row "
+            data-provider="superloop"
+            data-speed="50"
+            data-price="65.0"
+            data-roi="0.77"
+            data-tier="boost">
+            <td>50</td>
+            <td><span class="provider-tag" style="background:#E65100">Superloop</span></td>
+            <td>Extra Value - nbn 50/20</td>
+            <td>50 <small>Mbps</small></td>
+            <td>$65<small>/mo</small></td>
+            <td>$65<small>/mo</small></td>
+            <td></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>0.77</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:5.6%;background:#E65100"></div></div>
+                </div>
+            </td>
+            <td>$780</td>
+        </tr>
+        <tr class="plan-row "
+            data-provider="tpg"
+            data-speed="50.0"
+            data-price="64.99"
+            data-roi="0.77"
+            data-tier="boost">
+            <td>51</td>
+            <td><span class="provider-tag" style="background:#2E7D32">Tpg</span></td>
+            <td>NBN50</td>
+            <td>50.0 <small>Mbps</small></td>
+            <td>$65<small>/mo</small></td>
+            <td>$85<small>/mo</small></td>
+            <td>$65 <small>(6 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>0.77</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:5.6%;background:#2E7D32"></div></div>
+                </div>
+            </td>
+            <td>$900</td>
+        </tr>
+        <tr class="plan-row highlight-occom"
+            data-provider="occom"
+            data-speed="50"
+            data-price="75.0"
+            data-roi="0.67"
+            data-tier="boost">
+            <td>52</td>
+            <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+            <td>Boost Plus (nbn50)</td>
+            <td>50 <small>Mbps</small></td>
+            <td>$75<small>/mo</small></td>
+            <td>$85<small>/mo</small></td>
+            <td>$75 <small>(6 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>0.67</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:4.9%;background:#6C3CE1"></div></div>
+                </div>
+            </td>
+            <td>$960</td>
+        </tr>
+        <tr class="plan-row highlight-occom"
+            data-provider="occom"
+            data-speed="50"
+            data-price="75.0"
+            data-roi="0.67"
+            data-tier="boost">
+            <td>53</td>
+            <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+            <td>Boost Plus (Fibre50)</td>
+            <td>50 <small>Mbps</small></td>
+            <td>$75<small>/mo</small></td>
+            <td>$85<small>/mo</small></td>
+            <td>$75 <small>(6 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>0.67</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:4.9%;background:#6C3CE1"></div></div>
+                </div>
+            </td>
+            <td>$960</td>
+        </tr>
+        <tr class="plan-row highlight-occom"
+            data-provider="occom"
+            data-speed="50"
+            data-price="75.0"
+            data-roi="0.67"
+            data-tier="boost">
+            <td>54</td>
+            <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+            <td>Boost Plus (nbn50)</td>
+            <td>50 <small>Mbps</small></td>
+            <td>$75<small>/mo</small></td>
+            <td>$85<small>/mo</small></td>
+            <td>$75 <small>(6 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>0.67</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:4.9%;background:#6C3CE1"></div></div>
+                </div>
+            </td>
+            <td>$960</td>
+        </tr>
+        <tr class="plan-row highlight-occom"
+            data-provider="occom"
+            data-speed="50"
+            data-price="75.0"
+            data-roi="0.67"
+            data-tier="boost">
+            <td>55</td>
+            <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+            <td>Boost Plus (Fibre50)</td>
+            <td>50 <small>Mbps</small></td>
+            <td>$75<small>/mo</small></td>
+            <td>$85<small>/mo</small></td>
+            <td>$75 <small>(6 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>0.67</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:4.9%;background:#6C3CE1"></div></div>
+                </div>
+            </td>
+            <td>$960</td>
+        </tr>
+        <tr class="plan-row highlight-occom"
+            data-provider="occom"
+            data-speed="50"
+            data-price="75.0"
+            data-roi="0.67"
+            data-tier="boost">
+            <td>56</td>
+            <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+            <td>Boost Plus (Fibre50)</td>
+            <td>50 <small>Mbps</small></td>
+            <td>$75<small>/mo</small></td>
+            <td>$85<small>/mo</small></td>
+            <td>$75 <small>(6 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>0.67</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:4.9%;background:#6C3CE1"></div></div>
+                </div>
+            </td>
+            <td>$960</td>
+        </tr>
+        <tr class="plan-row "
+            data-provider="tpg"
+            data-speed="25.0"
+            data-price="39.99"
+            data-roi="0.63"
+            data-tier="standard">
+            <td>57</td>
+            <td><span class="provider-tag" style="background:#2E7D32">Tpg</span></td>
+            <td>FTTB25</td>
+            <td>25.0 <small>Mbps</small></td>
+            <td>$40<small>/mo</small></td>
+            <td>$40<small>/mo</small></td>
+            <td></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>0.63</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:4.6%;background:#2E7D32"></div></div>
+                </div>
+            </td>
+            <td>$480</td>
+        </tr>
+        <tr class="plan-row "
+            data-provider="telstra"
+            data-speed="50"
+            data-price="89.0"
+            data-roi="0.56"
+            data-tier="boost">
+            <td>58</td>
+            <td><span class="provider-tag" style="background:#0D47A1">Telstra</span></td>
+            <td>Essential nbn® Internet Only</td>
+            <td>50 <small>Mbps</small></td>
+            <td>$89<small>/mo</small></td>
+            <td>$89<small>/mo</small></td>
+            <td></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>0.56</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:4.1%;background:#0D47A1"></div></div>
+                </div>
+            </td>
+            <td>$1,068</td>
+        </tr>
+        <tr class="plan-row highlight-occom"
+            data-provider="occom"
+            data-speed="25"
+            data-price="45.0"
+            data-roi="0.56"
+            data-tier="standard">
+            <td>59</td>
+            <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+            <td>Boost (Fibre25)</td>
+            <td>25 <small>Mbps</small></td>
+            <td>$45<small>/mo</small></td>
+            <td>$55<small>/mo</small></td>
+            <td>$45 <small>(6 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>0.56</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:4.1%;background:#6C3CE1"></div></div>
+                </div>
+            </td>
+            <td>$600</td>
+        </tr>
+        <tr class="plan-row "
+            data-provider="telstra"
+            data-speed="50"
+            data-price="95.0"
+            data-roi="0.53"
+            data-tier="boost">
+            <td>60</td>
+            <td><span class="provider-tag" style="background:#0D47A1">Telstra</span></td>
+            <td>Essential nbn®</td>
+            <td>50 <small>Mbps</small></td>
+            <td>$95<small>/mo</small></td>
+            <td>$95<small>/mo</small></td>
+            <td></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>0.53</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:3.8%;background:#0D47A1"></div></div>
+                </div>
+            </td>
+            <td>$1,140</td>
+        </tr>
+        <tr class="plan-row "
+            data-provider="tpg"
+            data-speed="25.0"
+            data-price="56.99"
+            data-roi="0.44"
+            data-tier="standard">
+            <td>61</td>
+            <td><span class="provider-tag" style="background:#2E7D32">Tpg</span></td>
+            <td>NBN25</td>
+            <td>25.0 <small>Mbps</small></td>
+            <td>$57<small>/mo</small></td>
+            <td>$77<small>/mo</small></td>
+            <td>$57 <small>(6 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>0.44</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:3.2%;background:#2E7D32"></div></div>
+                </div>
+            </td>
+            <td>$804</td>
+        </tr>
+        <tr class="plan-row highlight-occom"
+            data-provider="occom"
+            data-speed="25"
+            data-price="60.0"
+            data-roi="0.42"
+            data-tier="standard">
+            <td>62</td>
+            <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+            <td>Boost (nbn25)</td>
+            <td>25 <small>Mbps</small></td>
+            <td>$60<small>/mo</small></td>
+            <td>$70<small>/mo</small></td>
+            <td>$60 <small>(6 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>0.42</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:3.0%;background:#6C3CE1"></div></div>
+                </div>
+            </td>
+            <td>$780</td>
+        </tr>
+        <tr class="plan-row highlight-occom"
+            data-provider="occom"
+            data-speed="25"
+            data-price="60.0"
+            data-roi="0.42"
+            data-tier="standard">
+            <td>63</td>
+            <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+            <td>Boost (Fibre25)</td>
+            <td>25 <small>Mbps</small></td>
+            <td>$60<small>/mo</small></td>
+            <td>$70<small>/mo</small></td>
+            <td>$60 <small>(6 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>0.42</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:3.0%;background:#6C3CE1"></div></div>
+                </div>
+            </td>
+            <td>$780</td>
+        </tr>
+        <tr class="plan-row highlight-occom"
+            data-provider="occom"
+            data-speed="25"
+            data-price="60.0"
+            data-roi="0.42"
+            data-tier="standard">
+            <td>64</td>
+            <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+            <td>Boost (nbn25)</td>
+            <td>25 <small>Mbps</small></td>
+            <td>$60<small>/mo</small></td>
+            <td>$70<small>/mo</small></td>
+            <td>$60 <small>(6 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>0.42</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:3.0%;background:#6C3CE1"></div></div>
+                </div>
+            </td>
+            <td>$780</td>
+        </tr>
+        <tr class="plan-row highlight-occom"
+            data-provider="occom"
+            data-speed="25"
+            data-price="60.0"
+            data-roi="0.42"
+            data-tier="standard">
+            <td>65</td>
+            <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+            <td>Boost (Fibre25)</td>
+            <td>25 <small>Mbps</small></td>
+            <td>$60<small>/mo</small></td>
+            <td>$70<small>/mo</small></td>
+            <td>$60 <small>(6 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>0.42</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:3.0%;background:#6C3CE1"></div></div>
+                </div>
+            </td>
+            <td>$780</td>
+        </tr>
+        <tr class="plan-row highlight-occom"
+            data-provider="occom"
+            data-speed="25"
+            data-price="65.0"
+            data-roi="0.38"
+            data-tier="standard">
+            <td>66</td>
+            <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+            <td>Boost (Fibre25)</td>
+            <td>25 <small>Mbps</small></td>
+            <td>$65<small>/mo</small></td>
+            <td>$70<small>/mo</small></td>
+            <td>$65 <small>(6 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>0.38</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:2.8%;background:#6C3CE1"></div></div>
+                </div>
+            </td>
+            <td>$810</td>
+        </tr>
+        <tr class="plan-row "
+            data-provider="tpg"
+            data-speed="15.0"
+            data-price="44.99"
+            data-roi="0.33"
+            data-tier="basic">
+            <td>67</td>
+            <td><span class="provider-tag" style="background:#2E7D32">Tpg</span></td>
+            <td>Home Wireless Broadband</td>
+            <td>15.0 <small>Mbps</small></td>
+            <td>$45<small>/mo</small></td>
+            <td>$55<small>/mo</small></td>
+            <td>$45 <small>(6 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>0.33</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:2.4%;background:#2E7D32"></div></div>
+                </div>
+            </td>
+            <td>$600</td>
+        </tr>
+        <tr class="plan-row "
+            data-provider="telstra"
+            data-speed="25"
+            data-price="85.0"
+            data-roi="0.29"
+            data-tier="standard">
+            <td>68</td>
+            <td><span class="provider-tag" style="background:#0D47A1">Telstra</span></td>
+            <td>Basic nbn® Internet Only</td>
+            <td>25 <small>Mbps</small></td>
+            <td>$85<small>/mo</small></td>
+            <td>$85<small>/mo</small></td>
+            <td></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>0.29</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:2.1%;background:#0D47A1"></div></div>
+                </div>
+            </td>
+            <td>$1,020</td>
+        </tr>
+        <tr class="plan-row "
+            data-provider="telstra"
+            data-speed="25"
+            data-price="93.0"
+            data-roi="0.27"
+            data-tier="standard">
+            <td>69</td>
+            <td><span class="provider-tag" style="background:#0D47A1">Telstra</span></td>
+            <td>Basic nbn®</td>
+            <td>25 <small>Mbps</small></td>
+            <td>$93<small>/mo</small></td>
+            <td>$93<small>/mo</small></td>
+            <td></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>0.27</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:2.0%;background:#0D47A1"></div></div>
+                </div>
+            </td>
+            <td>$1,116</td>
+        </tr>
+        <tr class="plan-row highlight-occom"
+            data-provider="occom"
+            data-speed="12"
+            data-price="48.0"
+            data-roi="0.25"
+            data-tier="basic">
+            <td>70</td>
+            <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+            <td>Basic (nbn12)</td>
+            <td>12 <small>Mbps</small></td>
+            <td>$48<small>/mo</small></td>
+            <td>$58<small>/mo</small></td>
+            <td>$48 <small>(6 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>0.25</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:1.8%;background:#6C3CE1"></div></div>
+                </div>
+            </td>
+            <td>$636</td>
+        </tr>
+        <tr class="plan-row highlight-occom"
+            data-provider="occom"
+            data-speed="12"
+            data-price="48.0"
+            data-roi="0.25"
+            data-tier="basic">
+            <td>71</td>
+            <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+            <td>Basic (Fibre12)</td>
+            <td>12 <small>Mbps</small></td>
+            <td>$48<small>/mo</small></td>
+            <td>$58<small>/mo</small></td>
+            <td>$48 <small>(6 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>0.25</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:1.8%;background:#6C3CE1"></div></div>
+                </div>
+            </td>
+            <td>$636</td>
+        </tr>
+        <tr class="plan-row highlight-occom"
+            data-provider="occom"
+            data-speed="12"
+            data-price="48.0"
+            data-roi="0.25"
+            data-tier="basic">
+            <td>72</td>
+            <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+            <td>Basic (nbn12)</td>
+            <td>12 <small>Mbps</small></td>
+            <td>$48<small>/mo</small></td>
+            <td>$58<small>/mo</small></td>
+            <td>$48 <small>(6 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>0.25</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:1.8%;background:#6C3CE1"></div></div>
+                </div>
+            </td>
+            <td>$636</td>
+        </tr>
+        <tr class="plan-row highlight-occom"
+            data-provider="occom"
+            data-speed="12"
+            data-price="48.0"
+            data-roi="0.25"
+            data-tier="basic">
+            <td>73</td>
+            <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+            <td>Basic (Fibre12)</td>
+            <td>12 <small>Mbps</small></td>
+            <td>$48<small>/mo</small></td>
+            <td>$58<small>/mo</small></td>
+            <td>$48 <small>(6 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>0.25</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:1.8%;background:#6C3CE1"></div></div>
+                </div>
+            </td>
+            <td>$636</td>
+        </tr>
+        <tr class="plan-row "
+            data-provider="tpg"
+            data-speed="12.0"
+            data-price="54.99"
+            data-roi="0.22"
+            data-tier="basic">
+            <td>74</td>
+            <td><span class="provider-tag" style="background:#2E7D32">Tpg</span></td>
+            <td>NBN12</td>
+            <td>12.0 <small>Mbps</small></td>
+            <td>$55<small>/mo</small></td>
+            <td>$75<small>/mo</small></td>
+            <td>$55 <small>(6 months)</small></td>
+            <td>
+                <div class="roi-cell">
+                    <strong>0.22</strong>
+                    <div class="roi-bar-wrap"><div class="roi-bar" style="width:1.6%;background:#2E7D32"></div></div>
+                </div>
+            </td>
+            <td>$780</td>
+        </tr></tbody>
+        </table>
+        </div>
+        <div class="no-results" id="noResults" style="display:none">No plans match your filters.</div>
+    </div>
+
+    <div class="timestamp">Generated: 2026-05-02T15:27:38.230346</div>
+</div>
+
+<script>
+function applyFilters() {
+    const checkedProviders = new Set(
+        [...document.querySelectorAll('#providerFilters input:checked')].map(c => c.value)
+    );
+    const checkedTiers = new Set(
+        [...document.querySelectorAll('#tierFilters input:checked')].map(c => c.value)
+    );
+    const maxBudget = parseFloat(document.getElementById('maxBudget').value) || Infinity;
+    const minSpeed = parseFloat(document.getElementById('minSpeed').value) || 0;
+
+    const rows = document.querySelectorAll('.plan-row');
+    let visible = 0;
+    let rank = 0;
+
+    rows.forEach(row => {
+        const prov = row.dataset.provider;
+        const speed = parseFloat(row.dataset.speed);
+        const price = parseFloat(row.dataset.price);
+        const tier = row.dataset.tier;
+
+        const show = checkedProviders.has(prov) && checkedTiers.has(tier) && price <= maxBudget && speed >= minSpeed;
+        row.style.display = show ? '' : 'none';
+        if (show) {
+            visible++;
+            rank++;
+            row.cells[0].textContent = rank;
+        }
+    });
+
+    document.getElementById('planCount').textContent = 'Showing ' + visible + ' of 74 plans';
+    document.getElementById('noResults').style.display = visible === 0 ? '' : 'none';
+}
+
+function sortTable(colIdx, type) {
+    const tbody = document.getElementById('roiBody');
+    const rows = Array.from(tbody.querySelectorAll('tr'));
+
+    // Toggle direction
+    const key = 'sortDir' + colIdx;
+    window[key] = window[key] === 'asc' ? 'desc' : 'asc';
+    const dir = window[key] === 'asc' ? 1 : -1;
+
+    rows.sort((a, b) => {
+        let va = a.cells[colIdx].textContent.trim();
+        let vb = b.cells[colIdx].textContent.trim();
+        if (type === 'num') {
+            va = parseFloat(va.replace(/[^\d.\-]/g, '')) || 0;
+            vb = parseFloat(vb.replace(/[^\d.\-]/g, '')) || 0;
+            return (va - vb) * dir;
+        }
+        return va.localeCompare(vb) * dir;
+    });
+
+    rows.forEach(r => tbody.appendChild(r));
+    // Re-number visible rows
+    let rank = 0;
+    rows.forEach(r => {
+        if (r.style.display !== 'none') {
+            rank++;
+            r.cells[0].textContent = rank;
+        }
+    });
+}
+</script>
+</body>
+</html>

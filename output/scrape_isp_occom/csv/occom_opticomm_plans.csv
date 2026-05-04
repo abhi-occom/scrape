@@ -1,0 +1,8 @@
+provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
+occom,Opticomm,Lightning (Fibre1000),900,85,115.0,105.0,12 months,No Contract,,,https://occom.com.au/opticomm-plans/
+occom,Opticomm,Ultra (Fibre750),750,48,98.0,93.0,12 months,No Contract,,,https://occom.com.au/opticomm-plans/
+occom,Opticomm,Turbo (Fibre500),500,48,90.0,85.0,,No Contract,,,https://occom.com.au/opticomm-plans/
+occom,Opticomm,Superfast (Fibre100),100,17,90.0,80.0,6 months,No Contract,,,https://occom.com.au/opticomm-plans/
+occom,Opticomm,Boost Plus (Fibre50),50,17,85.0,75.0,6 months,No Contract,,,https://occom.com.au/opticomm-plans/
+occom,Opticomm,Boost (Fibre25),25,8,70.0,60.0,6 months,No Contract,,,https://occom.com.au/opticomm-plans/
+occom,Opticomm,Basic (Fibre12),12,1,58.0,48.0,6 months,No Contract,,,https://occom.com.au/opticomm-plans/

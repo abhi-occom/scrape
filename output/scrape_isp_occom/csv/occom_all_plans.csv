@@ -1,0 +1,42 @@
+provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
+occom,NBN,Hyper (nbn2000),2000,100,185.0,165.0,12 months,No Contract,,,https://occom.com.au/nbn-plans/
+occom,NBN,Lightning (nbn1000),1000,100,115.0,105.0,12 months,No Contract,,,https://occom.com.au/nbn-plans/
+occom,NBN,Ultra (nbn750),750,50,98.0,93.0,12 months,No Contract,,,https://occom.com.au/nbn-plans/
+occom,NBN,Turbo (nbn500),500,48,90.0,85.0,12 months,No Contract,,,https://occom.com.au/nbn-plans/
+occom,NBN,Superfast (nbn100),100,17,90.0,80.0,6 months,No Contract,,,https://occom.com.au/nbn-plans/
+occom,NBN,Boost Plus (nbn50),50,17,85.0,75.0,6 months,No Contract,,,https://occom.com.au/nbn-plans/
+occom,NBN,Boost (nbn25),25,8,70.0,60.0,6 months,No Contract,,,https://occom.com.au/nbn-plans/
+occom,NBN,Basic (nbn12),12,0,58.0,48.0,6 months,No Contract,,,https://occom.com.au/nbn-plans/
+occom,Opticomm,Lightning (Fibre1000),900,85,115.0,105.0,12 months,No Contract,,,https://occom.com.au/opticomm-plans/
+occom,Opticomm,Ultra (Fibre750),750,48,98.0,93.0,12 months,No Contract,,,https://occom.com.au/opticomm-plans/
+occom,Opticomm,Turbo (Fibre500),500,48,90.0,85.0,,No Contract,,,https://occom.com.au/opticomm-plans/
+occom,Opticomm,Superfast (Fibre100),100,17,90.0,80.0,6 months,No Contract,,,https://occom.com.au/opticomm-plans/
+occom,Opticomm,Boost Plus (Fibre50),50,17,85.0,75.0,6 months,No Contract,,,https://occom.com.au/opticomm-plans/
+occom,Opticomm,Boost (Fibre25),25,8,70.0,60.0,6 months,No Contract,,,https://occom.com.au/opticomm-plans/
+occom,Opticomm,Basic (Fibre12),12,1,58.0,48.0,6 months,No Contract,,,https://occom.com.au/opticomm-plans/
+occom,NBN FTTP,Hyper (nbn2000),2000,100,185.0,165.0,12 months,No Contract,,,https://occom.com.au/nbn-fttp-upgrade/
+occom,NBN FTTP,Lightning (nbn1000),1000,100,115.0,105.0,12 months,No Contract,,,https://occom.com.au/nbn-fttp-upgrade/
+occom,NBN FTTP,Ultra (nbn750),750,50,98.0,93.0,12 months,No Contract,,,https://occom.com.au/nbn-fttp-upgrade/
+occom,NBN FTTP,Turbo (nbn500),500,48,90.0,85.0,12 months,No Contract,,,https://occom.com.au/nbn-fttp-upgrade/
+occom,NBN FTTP,Superfast (nbn100),100,17,90.0,80.0,6 months,No Contract,,,https://occom.com.au/nbn-fttp-upgrade/
+occom,NBN FTTP,Boost Plus (nbn50),50,17,85.0,75.0,6 months,No Contract,,,https://occom.com.au/nbn-fttp-upgrade/
+occom,NBN FTTP,Boost (nbn25),25,8,70.0,60.0,6 months,No Contract,,,https://occom.com.au/nbn-fttp-upgrade/
+occom,NBN FTTP,Basic (nbn12),12,0,58.0,48.0,6 months,No Contract,,,https://occom.com.au/nbn-fttp-upgrade/
+occom,Supa,Lightning (Fibre1000),1000,1000,120.0,110.0,6 months,No Contract,,,https://occom.com.au/supa-network-plans/
+occom,Supa,Ultra (Fibre750),750,750,110.0,95.0,6 months,No Contract,,,https://occom.com.au/supa-network-plans/
+occom,Supa,Turbo (Fibre500),500,500,90.0,85.0,6 months,No Contract,,,https://occom.com.au/supa-network-plans/
+occom,Supa,Boost Plus (Fibre50),50,17,85.0,75.0,6 months,No Contract,,,https://occom.com.au/supa-network-plans/
+occom,Supa,Boost (Fibre25),25,8,70.0,65.0,6 months,No Contract,,,https://occom.com.au/supa-network-plans/
+occom,Redtrain,Lightning (Fibre1000),1000,50,130.0,115.0,12 months,No Contract,,,https://occom.com.au/redtrain-plans/
+occom,Redtrain,Turbo (Fibre500),500,50,120.0,110.0,12 months,No Contract,,,https://occom.com.au/redtrain-plans/
+occom,Redtrain,Rocket (Fibre250),250,22,120.0,110.0,12 months,No Contract,,,https://occom.com.au/redtrain-plans/
+occom,Redtrain,Superfast (Fibre100),100,17,90.0,85.0,6 months,No Contract,,,https://occom.com.au/redtrain-plans/
+occom,Redtrain,Boost Plus (Fibre50),50,17,85.0,75.0,6 months,No Contract,,,https://occom.com.au/redtrain-plans/
+occom,Redtrain,Boost (Fibre25),25,4,70.0,60.0,6 months,No Contract,,,https://occom.com.au/redtrain-plans/
+occom,Redtrain,Basic (Fibre12),12,0,58.0,48.0,6 months,No Contract,,,https://occom.com.au/redtrain-plans/
+occom,Community Fibre,Hyper (Fibre2000),2000,200,200.0,180.0,12 months,No Contract,,,https://occom.com.au/community-fibre-plans/
+occom,Community Fibre,Lightning (Fibre1000),1000,100,100.0,90.0,6 months,No Contract,,,https://occom.com.au/community-fibre-plans/
+occom,Community Fibre,Turbo (Fibre500),500,100,80.0,70.0,6 months,No Contract,,,https://occom.com.au/community-fibre-plans/
+occom,Community Fibre,Superfast (Fibre100),100,100,65.0,55.0,6 months,No Contract,,,https://occom.com.au/community-fibre-plans/
+occom,Community Fibre,Boost Plus (Fibre50),50,50,60.0,50.0,6 months,No Contract,,,https://occom.com.au/community-fibre-plans/
+occom,Community Fibre,Boost (Fibre25),25,25,55.0,45.0,6 months,No Contract,,,https://occom.com.au/community-fibre-plans/

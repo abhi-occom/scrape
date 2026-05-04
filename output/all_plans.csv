@@ -1,0 +1,75 @@
+provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
+telstra,NBN,Basic nbn® Internet Only,25,4,85.0,,,No Contract,,,https://www.telstra.com.au/internet/nbn
+telstra,NBN,Basic nbn®,25,4,93.0,,,No Contract,,,https://www.telstra.com.au/internet/nbn
+telstra,NBN,Essential nbn®,50,17,95.0,,,No Contract,,,https://www.telstra.com.au/internet/nbn
+telstra,5G,5G Internet,300,30,85.0,,,No Contract,,,https://www.telstra.com.au/internet/nbn
+telstra,NBN,Essential nbn® Internet Only,50,17,89.0,,,No Contract,,,https://www.telstra.com.au/internet/nbn
+telstra,NBN,Premium nbn®,100,17,95.0,,,No Contract,,,https://www.telstra.com.au/internet/nbn
+telstra,NBN,Premium nbn® Internet Only,100,17,89.0,,,No Contract,,,https://www.telstra.com.au/internet/nbn
+telstra,NBN,Ultimate nbn®,750,40,109.0,,,No Contract,,,https://www.telstra.com.au/internet/nbn
+telstra,NBN,Ultimate nbn® Internet Only,750,40,104.0,,,No Contract,,,https://www.telstra.com.au/internet/nbn
+telstra,NBN,Ultrafast nbn®,815,80,119.0,,,No Contract,,,https://www.telstra.com.au/internet/nbn
+telstra,NBN,Ultrafast nbn® Internet Only,815,80,114.0,,,No Contract,,,https://www.telstra.com.au/internet/nbn
+superloop,NBN,Extra Value - nbn 50/20,50,20,65.0,,,No Contract,50,17,https://www.superloop.com/internet/nbn/
+superloop,NBN,Family Max - nbn 100/20,100,20,69.0,,,No Contract,95,17,https://www.superloop.com/internet/nbn/
+superloop,NBN,Family Max - nbn 500/50,500,50,69.0,,,No Contract,500,40,https://www.superloop.com/internet/nbn/
+superloop,NBN,Power Home - nbn 100/40,100,40,85.0,,,No Contract,95,34,https://www.superloop.com/internet/nbn/
+superloop,NBN,Creator - nbn 250/100,250,100,85.0,,,No Contract,250,85,https://www.superloop.com/internet/nbn/
+superloop,NBN,Megaspeed - nbn 750/50,750,50,89.0,,,No Contract,750,40,https://www.superloop.com/internet/nbn/
+superloop,NBN,Lightspeed - nbn 1000/100,1000,100,85.0,,,No Contract,860,85,https://www.superloop.com/internet/nbn/
+superloop,NBN,Hyperspeed - nbn 2000/100,2000,100,145.0,,,No Contract,1700,85,https://www.superloop.com/internet/nbn/
+superloop,NBN,Hyperspeed - nbn 2000/200,2000,200,145.0,,,No Contract,1700,170,https://www.superloop.com/internet/nbn/
+occom,NBN,Hyper (nbn2000),2000,100,185.0,165.0,12 months,No Contract,,,https://occom.com.au/nbn-plans/
+occom,NBN,Lightning (nbn1000),1000,100,115.0,105.0,12 months,No Contract,,,https://occom.com.au/nbn-plans/
+occom,NBN,Ultra (nbn750),750,50,98.0,93.0,12 months,No Contract,,,https://occom.com.au/nbn-plans/
+occom,NBN,Turbo (nbn500),500,48,90.0,85.0,12 months,No Contract,,,https://occom.com.au/nbn-plans/
+occom,NBN,Superfast (nbn100),100,17,90.0,80.0,6 months,No Contract,,,https://occom.com.au/nbn-plans/
+occom,NBN,Boost Plus (nbn50),50,17,85.0,75.0,6 months,No Contract,,,https://occom.com.au/nbn-plans/
+occom,NBN,Boost (nbn25),25,8,70.0,60.0,6 months,No Contract,,,https://occom.com.au/nbn-plans/
+occom,NBN,Basic (nbn12),12,0,58.0,48.0,6 months,No Contract,,,https://occom.com.au/nbn-plans/
+occom,Opticomm,Lightning (Fibre1000),900,85,115.0,105.0,12 months,No Contract,,,https://occom.com.au/opticomm-plans/
+occom,Opticomm,Ultra (Fibre750),750,48,98.0,93.0,12 months,No Contract,,,https://occom.com.au/opticomm-plans/
+occom,Opticomm,Turbo (Fibre500),500,48,90.0,85.0,,No Contract,,,https://occom.com.au/opticomm-plans/
+occom,Opticomm,Superfast (Fibre100),100,17,90.0,80.0,6 months,No Contract,,,https://occom.com.au/opticomm-plans/
+occom,Opticomm,Boost Plus (Fibre50),50,17,85.0,75.0,6 months,No Contract,,,https://occom.com.au/opticomm-plans/
+occom,Opticomm,Boost (Fibre25),25,8,70.0,60.0,6 months,No Contract,,,https://occom.com.au/opticomm-plans/
+occom,Opticomm,Basic (Fibre12),12,1,58.0,48.0,6 months,No Contract,,,https://occom.com.au/opticomm-plans/
+occom,NBN FTTP,Hyper (nbn2000),2000,100,185.0,165.0,12 months,No Contract,,,https://occom.com.au/nbn-fttp-upgrade/
+occom,NBN FTTP,Lightning (nbn1000),1000,100,115.0,105.0,12 months,No Contract,,,https://occom.com.au/nbn-fttp-upgrade/
+occom,NBN FTTP,Ultra (nbn750),750,50,98.0,93.0,12 months,No Contract,,,https://occom.com.au/nbn-fttp-upgrade/
+occom,NBN FTTP,Turbo (nbn500),500,48,90.0,85.0,12 months,No Contract,,,https://occom.com.au/nbn-fttp-upgrade/
+occom,NBN FTTP,Superfast (nbn100),100,17,90.0,80.0,6 months,No Contract,,,https://occom.com.au/nbn-fttp-upgrade/
+occom,NBN FTTP,Boost Plus (nbn50),50,17,85.0,75.0,6 months,No Contract,,,https://occom.com.au/nbn-fttp-upgrade/
+occom,NBN FTTP,Boost (nbn25),25,8,70.0,60.0,6 months,No Contract,,,https://occom.com.au/nbn-fttp-upgrade/
+occom,NBN FTTP,Basic (nbn12),12,0,58.0,48.0,6 months,No Contract,,,https://occom.com.au/nbn-fttp-upgrade/
+occom,Supa,Lightning (Fibre1000),1000,1000,120.0,110.0,6 months,No Contract,,,https://occom.com.au/supa-network-plans/
+occom,Supa,Ultra (Fibre750),750,750,110.0,95.0,6 months,No Contract,,,https://occom.com.au/supa-network-plans/
+occom,Supa,Turbo (Fibre500),500,500,90.0,85.0,6 months,No Contract,,,https://occom.com.au/supa-network-plans/
+occom,Supa,Boost Plus (Fibre50),50,17,85.0,75.0,6 months,No Contract,,,https://occom.com.au/supa-network-plans/
+occom,Supa,Boost (Fibre25),25,8,70.0,65.0,6 months,No Contract,,,https://occom.com.au/supa-network-plans/
+occom,Redtrain,Lightning (Fibre1000),1000,50,130.0,115.0,12 months,No Contract,,,https://occom.com.au/redtrain-plans/
+occom,Redtrain,Turbo (Fibre500),500,50,120.0,110.0,12 months,No Contract,,,https://occom.com.au/redtrain-plans/
+occom,Redtrain,Rocket (Fibre250),250,22,120.0,110.0,12 months,No Contract,,,https://occom.com.au/redtrain-plans/
+occom,Redtrain,Superfast (Fibre100),100,17,90.0,85.0,6 months,No Contract,,,https://occom.com.au/redtrain-plans/
+occom,Redtrain,Boost Plus (Fibre50),50,17,85.0,75.0,6 months,No Contract,,,https://occom.com.au/redtrain-plans/
+occom,Redtrain,Boost (Fibre25),25,4,70.0,60.0,6 months,No Contract,,,https://occom.com.au/redtrain-plans/
+occom,Redtrain,Basic (Fibre12),12,0,58.0,48.0,6 months,No Contract,,,https://occom.com.au/redtrain-plans/
+occom,Community Fibre,Hyper (Fibre2000),2000,200,200.0,180.0,12 months,No Contract,,,https://occom.com.au/community-fibre-plans/
+occom,Community Fibre,Lightning (Fibre1000),1000,100,100.0,90.0,6 months,No Contract,,,https://occom.com.au/community-fibre-plans/
+occom,Community Fibre,Turbo (Fibre500),500,100,80.0,70.0,6 months,No Contract,,,https://occom.com.au/community-fibre-plans/
+occom,Community Fibre,Superfast (Fibre100),100,100,65.0,55.0,6 months,No Contract,,,https://occom.com.au/community-fibre-plans/
+occom,Community Fibre,Boost Plus (Fibre50),50,50,60.0,50.0,6 months,No Contract,,,https://occom.com.au/community-fibre-plans/
+occom,Community Fibre,Boost (Fibre25),25,25,55.0,45.0,6 months,No Contract,,,https://occom.com.au/community-fibre-plans/
+tpg,NBN,NBN50,50.0,17.0,84.99,64.99,6 months,No Lock-in,50.0,17.0,https://www.tpg.com.au/nbn
+tpg,NBN,NBN100,99.0,17.0,94.99,64.99,6 months,No Lock-in,99.0,17.0,https://www.tpg.com.au/nbn
+tpg,NBN,NBN500,500.0,42.0,94.99,64.99,6 months,No Lock-in,500.0,42.0,https://www.tpg.com.au/nbn
+tpg,NBN,NBN12,12.0,0.8,74.99,54.99,6 months,No Lock-in,12.0,0.8,https://www.tpg.com.au/nbn
+tpg,NBN,NBN25,25.0,4.0,76.99,56.99,6 months,No Lock-in,25.0,4.0,https://www.tpg.com.au/nbn
+tpg,NBN,NBN Home Superfast,740.0,42.0,99.99,69.99,6 months,No Lock-in,740.0,42.0,https://www.tpg.com.au/nbn
+tpg,NBN,NBN Home Ultrafast,820.0,85.0,109.99,79.99,6 months,No Lock-in,820.0,85.0,https://www.tpg.com.au/nbn
+tpg,4G Home Wireless,Home Wireless Broadband,15.0,1.9,54.99,44.99,6 months,No Lock-in,15.0,1.9,https://www.tpg.com.au/home-wireless-broadband
+tpg,5G,5G Home Broadband Plus,50.0,16.0,59.99,29.99,6 months,No Lock-in,50.0,16.0,https://www.tpg.com.au/5g-home-broadband
+tpg,5G,5G Home Broadband Premium,100.0,17.0,64.99,34.99,6 months,No Lock-in,100.0,17.0,https://www.tpg.com.au/5g-home-broadband
+tpg,FTTB,FTTB25,25.0,4.0,39.99,0.0,3 months,No Lock-in,25.0,4.0,https://www.tpg.com.au/fttb
+tpg,FTTB,FTTB100,100.0,25.0,74.99,0.0,3 months,No Lock-in,100.0,25.0,https://www.tpg.com.au/fttb
+tpg,FTTB,FTTB Max,700.0,25.0,79.99,0.0,3 months,No Lock-in,700.0,25.0,https://www.tpg.com.au/fttb

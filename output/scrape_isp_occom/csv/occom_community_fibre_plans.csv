@@ -1,0 +1,7 @@
+provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
+occom,Community Fibre,Hyper (Fibre2000),2000,200,200.0,180.0,12 months,No Contract,,,https://occom.com.au/community-fibre-plans/
+occom,Community Fibre,Lightning (Fibre1000),1000,100,100.0,90.0,6 months,No Contract,,,https://occom.com.au/community-fibre-plans/
+occom,Community Fibre,Turbo (Fibre500),500,100,80.0,70.0,6 months,No Contract,,,https://occom.com.au/community-fibre-plans/
+occom,Community Fibre,Superfast (Fibre100),100,100,65.0,55.0,6 months,No Contract,,,https://occom.com.au/community-fibre-plans/
+occom,Community Fibre,Boost Plus (Fibre50),50,50,60.0,50.0,6 months,No Contract,,,https://occom.com.au/community-fibre-plans/
+occom,Community Fibre,Boost (Fibre25),25,25,55.0,45.0,6 months,No Contract,,,https://occom.com.au/community-fibre-plans/

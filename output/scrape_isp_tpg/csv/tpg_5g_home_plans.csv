@@ -1,0 +1,3 @@
+provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
+tpg,5G,5G Home Broadband Plus,50.0,16.0,59.99,29.99,6 months,No Lock-in,50.0,16.0,https://www.tpg.com.au/5g-home-broadband
+tpg,5G,5G Home Broadband Premium,100.0,17.0,64.99,34.99,6 months,No Lock-in,100.0,17.0,https://www.tpg.com.au/5g-home-broadband

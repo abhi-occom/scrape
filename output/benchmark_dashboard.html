@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Occom Competitive Benchmark Dashboard</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #f0f2f5; color: #1a1a2e; }
+
+.top-bar {
+    background: linear-gradient(135deg, #6C3CE1 0%, #4A1DB2 100%);
+    color: white; padding: 28px 40px;
+}
+.top-bar h1 { font-size: 1.8em; font-weight: 700; }
+.top-bar .sub { opacity: .85; margin-top: 4px; font-size: .95em; }
+
+.container { max-width: 1400px; margin: 0 auto; padding: 30px 20px; }
+
+/* Summary strip */
+.summary-strip {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px; margin-bottom: 30px;
+}
+.summary-card {
+    background: white; border-radius: 12px; padding: 22px; text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,.06);
+}
+.summary-card .val { font-size: 2.2em; font-weight: 700; color: #6C3CE1; }
+.summary-card .lbl { font-size: .85em; color: #666; margin-top: 4px; }
+
+/* Sections */
+.section { background: white; border-radius: 14px; padding: 28px; margin-bottom: 28px; box-shadow: 0 2px 8px rgba(0,0,0,.06); }
+.section h2 { font-size: 1.35em; color: #333; margin-bottom: 18px; border-bottom: 3px solid #6C3CE1; padding-bottom: 8px; display: inline-block; }
+
+/* Cards grid */
+.cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+.card { border-radius: 10px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,.08); }
+.card-header { padding: 12px 16px; color: white; font-size: .95em; }
+.card-body { padding: 16px; }
+.advantage-card .card-header { background: #2E7D32; }
+.gap-card .card-header { background: #C62828; }
+.big-number { font-size: 2em; font-weight: 700; color: #333; }
+.big-number small { font-size: .45em; color: #888; }
+.savings { margin-top: 10px; color: #2E7D32; font-size: .9em; }
+.gap-info { margin-top: 10px; color: #C62828; font-size: .9em; }
+
+/* Table */
+table { width: 100%; border-collapse: collapse; font-size: .9em; }
+th { background: #f8f9fa; padding: 12px 10px; text-align: left; font-weight: 600; color: #555; position: sticky; top: 0; }
+td { padding: 10px; border-bottom: 1px solid #eee; }
+tr:hover { background: #fafafa; }
+.highlight-occom { background: #f3edff !important; }
+.highlight-occom:hover { background: #ece3ff !important; }
+
+.provider-tag {
+    display: inline-block; padding: 3px 10px; border-radius: 20px;
+    color: white; font-size: .8em; font-weight: 600;
+}
+.badge {
+    display: inline-block; padding: 2px 8px; border-radius: 4px;
+    font-size: .75em; font-weight: 600; color: white;
+}
+.badge-green { background: #2E7D32; }
+.badge-blue { background: #1565C0; }
+
+.timestamp { text-align: center; color: #999; font-size: .85em; margin-top: 30px; }
+
+/* Tabs */
+.tabs { display: flex; gap: 4px; margin-bottom: 20px; }
+.tab-btn {
+    padding: 10px 22px; border: none; background: #e9e9e9; border-radius: 8px 8px 0 0;
+    cursor: pointer; font-size: .95em; font-weight: 600; color: #555;
+}
+.tab-btn.active { background: white; color: #6C3CE1; box-shadow: 0 -2px 6px rgba(0,0,0,.06); }
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+@media(max-width: 768px) {
+    .summary-strip { grid-template-columns: repeat(2, 1fr); }
+    .cards-grid { grid-template-columns: 1fr; }
+    table { font-size: .8em; }
+}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+    <h1>Occom Competitive Benchmark</h1>
+    <div class="sub">Real-time price &amp; value comparison against Australian ISP competitors</div>
+</div>
+
+<div class="container">
+
+    <!-- Summary Strip -->
+    <div class="summary-strip">
+        <div class="summary-card">
+            <div class="val">74</div>
+            <div class="lbl">Plans Analysed</div>
+        </div>
+        <div class="summary-card">
+            <div class="val">4</div>
+            <div class="lbl">Providers Compared</div>
+        </div>
+        <div class="summary-card">
+            <div class="val">8</div>
+            <div class="lbl">Speed Tiers</div>
+        </div>
+        <div class="summary-card">
+            <div class="val" style="color:#2E7D32">0</div>
+            <div class="lbl">Tiers Occom Wins</div>
+        </div>
+        <div class="summary-card">
+            <div class="val" style="color:#C62828">8</div>
+            <div class="lbl">Tiers with Gaps</div>
+        </div>
+        <div class="summary-card">
+            <div class="val">0.0%</div>
+            <div class="lbl">Occom Win Rate</div>
+        </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('overview')">Overview</button>
+        <button class="tab-btn" onclick="switchTab('comparison')">Full Comparison</button>
+        <button class="tab-btn" onclick="switchTab('value')">Value Rankings</button>
+    </div>
+
+    <!-- Tab: Overview -->
+    <div id="tab-overview" class="tab-content active">
+        <div class="section">
+            <h2>Occom Wins &mdash; Cheapest in Tier</h2>
+            <div class="cards-grid">
+                <p style="color:#888">No advantages found in current data.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Pricing Gaps &mdash; Competitors Cheaper</h2>
+            <div class="cards-grid">
+                
+        <div class="card gap-card">
+            <div class="card-header"><strong>Basic</strong> tier</div>
+            <div class="card-body">
+                <div class="big-number">$48<small>/mo</small></div>
+                <p>Basic (nbn12) &middot; 12 Mbps</p>
+                <div class="gap-info">
+                    Gap: <strong>$3/mo</strong>
+                    (7%) vs Tpg
+                    @ $45/mo
+                </div>
+            </div>
+        </div>
+        <div class="card gap-card">
+            <div class="card-header"><strong>Standard</strong> tier</div>
+            <div class="card-body">
+                <div class="big-number">$45<small>/mo</small></div>
+                <p>Boost (Fibre25) &middot; 25 Mbps</p>
+                <div class="gap-info">
+                    Gap: <strong>$5/mo</strong>
+                    (12%) vs Tpg
+                    @ $40/mo
+                </div>
+            </div>
+        </div>
+        <div class="card gap-card">
+            <div class="card-header"><strong>Boost</strong> tier</div>
+            <div class="card-body">
+                <div class="big-number">$50<small>/mo</small></div>
+                <p>Boost Plus (Fibre50) &middot; 50 Mbps</p>
+                <div class="gap-info">
+                    Gap: <strong>$20/mo</strong>
+                    (67%) vs Tpg
+                    @ $30/mo
+                </div>
+            </div>
+        </div>
+        <div class="card gap-card">
+            <div class="card-header"><strong>Fast</strong> tier</div>
+            <div class="card-body">
+                <div class="big-number">$55<small>/mo</small></div>
+                <p>Superfast (Fibre100) &middot; 100 Mbps</p>
+                <div class="gap-info">
+                    Gap: <strong>$20/mo</strong>
+                    (57%) vs Tpg
+                    @ $35/mo
+                </div>
+            </div>
+        </div>
+        <div class="card gap-card">
+            <div class="card-header"><strong>Superfast</strong> tier</div>
+            <div class="card-body">
+                <div class="big-number">$110<small>/mo</small></div>
+                <p>Rocket (Fibre250) &middot; 250 Mbps</p>
+                <div class="gap-info">
+                    Gap: <strong>$25/mo</strong>
+                    (29%) vs Telstra
+                    @ $85/mo
+                </div>
+            </div>
+        </div>
+        <div class="card gap-card">
+            <div class="card-header"><strong>Ultrafast</strong> tier</div>
+            <div class="card-body">
+                <div class="big-number">$70<small>/mo</small></div>
+                <p>Turbo (Fibre500) &middot; 500 Mbps</p>
+                <div class="gap-info">
+                    Gap: <strong>$5/mo</strong>
+                    (8%) vs Tpg
+                    @ $65/mo
+                </div>
+            </div>
+        </div>
+        <div class="card gap-card">
+            <div class="card-header"><strong>Hyper</strong> tier</div>
+            <div class="card-body">
+                <div class="big-number">$90<small>/mo</small></div>
+                <p>Lightning (Fibre1000) &middot; 1000 Mbps</p>
+                <div class="gap-info">
+                    Gap: <strong>$20/mo</strong>
+                    (29%) vs Tpg
+                    @ $70/mo
+                </div>
+            </div>
+        </div>
+        <div class="card gap-card">
+            <div class="card-header"><strong>Mega</strong> tier</div>
+            <div class="card-body">
+                <div class="big-number">$165<small>/mo</small></div>
+                <p>Hyper (nbn2000) &middot; 2000 Mbps</p>
+                <div class="gap-info">
+                    Gap: <strong>$20/mo</strong>
+                    (14%) vs Superloop
+                    @ $145/mo
+                </div>
+            </div>
+        </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tab: Full Comparison -->
+    <div id="tab-comparison" class="tab-content">
+        <div class="section">
+            <h2>Tier-by-Tier Price Comparison</h2>
+            <div style="overflow-x:auto">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tier</th><th>Provider</th><th>Plan</th><th>Speed</th>
+                        <th>Price</th><th>Regular</th><th>Promo</th>
+                        <th>Annual Cost</th><th>Value (Mbps/$)</th><th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+            <tr class="highlight-occom">
+                <td>Basic</td>
+                <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+                <td>Basic (nbn12)</td>
+                <td>12 Mbps</td>
+                <td><strong>$48</strong>/mo</td>
+                <td>$58/mo</td>
+                <td>$48 <small>(6 months)</small></td>
+                <td>$636</td>
+                <td>0.25</td>
+                <td></td>
+            </tr>
+            <tr class="">
+                <td>Basic</td>
+                <td><span class="provider-tag" style="background:#2E7D32">Tpg</span></td>
+                <td>Home Wireless Broadband</td>
+                <td>15.0 Mbps</td>
+                <td><strong>$45</strong>/mo</td>
+                <td>$55/mo</td>
+                <td>$45 <small>(6 months)</small></td>
+                <td>$600</td>
+                <td>0.33</td>
+                <td><span class="badge badge-green">Cheapest</span> <span class="badge badge-blue">Best Value</span> </td>
+            </tr>
+            <tr class="highlight-occom">
+                <td>Standard</td>
+                <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+                <td>Boost (Fibre25)</td>
+                <td>25 Mbps</td>
+                <td><strong>$45</strong>/mo</td>
+                <td>$55/mo</td>
+                <td>$45 <small>(6 months)</small></td>
+                <td>$600</td>
+                <td>0.56</td>
+                <td></td>
+            </tr>
+            <tr class="">
+                <td>Standard</td>
+                <td><span class="provider-tag" style="background:#0D47A1">Telstra</span></td>
+                <td>Basic nbn® Internet Only</td>
+                <td>25 Mbps</td>
+                <td><strong>$85</strong>/mo</td>
+                <td>$85/mo</td>
+                <td></td>
+                <td>$1,020</td>
+                <td>0.29</td>
+                <td></td>
+            </tr>
+            <tr class="">
+                <td>Standard</td>
+                <td><span class="provider-tag" style="background:#2E7D32">Tpg</span></td>
+                <td>FTTB25</td>
+                <td>25.0 Mbps</td>
+                <td><strong>$40</strong>/mo</td>
+                <td>$40/mo</td>
+                <td></td>
+                <td>$480</td>
+                <td>0.63</td>
+                <td><span class="badge badge-green">Cheapest</span> <span class="badge badge-blue">Best Value</span> </td>
+            </tr>
+            <tr class="highlight-occom">
+                <td>Boost</td>
+                <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+                <td>Boost Plus (Fibre50)</td>
+                <td>50 Mbps</td>
+                <td><strong>$50</strong>/mo</td>
+                <td>$60/mo</td>
+                <td>$50 <small>(6 months)</small></td>
+                <td>$660</td>
+                <td>1.0</td>
+                <td></td>
+            </tr>
+            <tr class="">
+                <td>Boost</td>
+                <td><span class="provider-tag" style="background:#E65100">Superloop</span></td>
+                <td>Extra Value - nbn 50/20</td>
+                <td>50 Mbps</td>
+                <td><strong>$65</strong>/mo</td>
+                <td>$65/mo</td>
+                <td></td>
+                <td>$780</td>
+                <td>0.77</td>
+                <td></td>
+            </tr>
+            <tr class="">
+                <td>Boost</td>
+                <td><span class="provider-tag" style="background:#0D47A1">Telstra</span></td>
+                <td>Essential nbn® Internet Only</td>
+                <td>50 Mbps</td>
+                <td><strong>$89</strong>/mo</td>
+                <td>$89/mo</td>
+                <td></td>
+                <td>$1,068</td>
+                <td>0.56</td>
+                <td></td>
+            </tr>
+            <tr class="">
+                <td>Boost</td>
+                <td><span class="provider-tag" style="background:#2E7D32">Tpg</span></td>
+                <td>5G Home Broadband Plus</td>
+                <td>50.0 Mbps</td>
+                <td><strong>$30</strong>/mo</td>
+                <td>$60/mo</td>
+                <td>$30 <small>(6 months)</small></td>
+                <td>$540</td>
+                <td>1.67</td>
+                <td><span class="badge badge-green">Cheapest</span> <span class="badge badge-blue">Best Value</span> </td>
+            </tr>
+            <tr class="highlight-occom">
+                <td>Fast</td>
+                <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+                <td>Superfast (Fibre100)</td>
+                <td>100 Mbps</td>
+                <td><strong>$55</strong>/mo</td>
+                <td>$65/mo</td>
+                <td>$55 <small>(6 months)</small></td>
+                <td>$720</td>
+                <td>1.82</td>
+                <td></td>
+            </tr>
+            <tr class="">
+                <td>Fast</td>
+                <td><span class="provider-tag" style="background:#E65100">Superloop</span></td>
+                <td>Family Max - nbn 100/20</td>
+                <td>100 Mbps</td>
+                <td><strong>$69</strong>/mo</td>
+                <td>$69/mo</td>
+                <td></td>
+                <td>$828</td>
+                <td>1.45</td>
+                <td></td>
+            </tr>
+            <tr class="">
+                <td>Fast</td>
+                <td><span class="provider-tag" style="background:#0D47A1">Telstra</span></td>
+                <td>Premium nbn® Internet Only</td>
+                <td>100 Mbps</td>
+                <td><strong>$89</strong>/mo</td>
+                <td>$89/mo</td>
+                <td></td>
+                <td>$1,068</td>
+                <td>1.12</td>
+                <td></td>
+            </tr>
+            <tr class="">
+                <td>Fast</td>
+                <td><span class="provider-tag" style="background:#2E7D32">Tpg</span></td>
+                <td>5G Home Broadband Premium</td>
+                <td>100.0 Mbps</td>
+                <td><strong>$35</strong>/mo</td>
+                <td>$65/mo</td>
+                <td>$35 <small>(6 months)</small></td>
+                <td>$600</td>
+                <td>2.86</td>
+                <td><span class="badge badge-green">Cheapest</span> <span class="badge badge-blue">Best Value</span> </td>
+            </tr>
+            <tr class="highlight-occom">
+                <td>Superfast</td>
+                <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+                <td>Rocket (Fibre250)</td>
+                <td>250 Mbps</td>
+                <td><strong>$110</strong>/mo</td>
+                <td>$120/mo</td>
+                <td>$110 <small>(12 months)</small></td>
+                <td>$1,320</td>
+                <td>2.27</td>
+                <td></td>
+            </tr>
+            <tr class="">
+                <td>Superfast</td>
+                <td><span class="provider-tag" style="background:#E65100">Superloop</span></td>
+                <td>Creator - nbn 250/100</td>
+                <td>250 Mbps</td>
+                <td><strong>$85</strong>/mo</td>
+                <td>$85/mo</td>
+                <td></td>
+                <td>$1,020</td>
+                <td>2.94</td>
+                <td></td>
+            </tr>
+            <tr class="">
+                <td>Superfast</td>
+                <td><span class="provider-tag" style="background:#0D47A1">Telstra</span></td>
+                <td>5G Internet</td>
+                <td>300 Mbps</td>
+                <td><strong>$85</strong>/mo</td>
+                <td>$85/mo</td>
+                <td></td>
+                <td>$1,020</td>
+                <td>3.53</td>
+                <td><span class="badge badge-green">Cheapest</span> <span class="badge badge-blue">Best Value</span> </td>
+            </tr>
+            <tr class="highlight-occom">
+                <td>Ultrafast</td>
+                <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+                <td>Turbo (Fibre500)</td>
+                <td>500 Mbps</td>
+                <td><strong>$70</strong>/mo</td>
+                <td>$80/mo</td>
+                <td>$70 <small>(6 months)</small></td>
+                <td>$900</td>
+                <td>7.14</td>
+                <td></td>
+            </tr>
+            <tr class="">
+                <td>Ultrafast</td>
+                <td><span class="provider-tag" style="background:#E65100">Superloop</span></td>
+                <td>Family Max - nbn 500/50</td>
+                <td>500 Mbps</td>
+                <td><strong>$69</strong>/mo</td>
+                <td>$69/mo</td>
+                <td></td>
+                <td>$828</td>
+                <td>7.25</td>
+                <td></td>
+            </tr>
+            <tr class="">
+                <td>Ultrafast</td>
+                <td><span class="provider-tag" style="background:#2E7D32">Tpg</span></td>
+                <td>NBN500</td>
+                <td>500.0 Mbps</td>
+                <td><strong>$65</strong>/mo</td>
+                <td>$95/mo</td>
+                <td>$65 <small>(6 months)</small></td>
+                <td>$960</td>
+                <td>7.69</td>
+                <td><span class="badge badge-green">Cheapest</span> <span class="badge badge-blue">Best Value</span> </td>
+            </tr>
+            <tr class="highlight-occom">
+                <td>Hyper</td>
+                <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+                <td>Lightning (Fibre1000)</td>
+                <td>1000 Mbps</td>
+                <td><strong>$90</strong>/mo</td>
+                <td>$100/mo</td>
+                <td>$90 <small>(6 months)</small></td>
+                <td>$1,140</td>
+                <td>11.11</td>
+                <td></td>
+            </tr>
+            <tr class="">
+                <td>Hyper</td>
+                <td><span class="provider-tag" style="background:#E65100">Superloop</span></td>
+                <td>Lightspeed - nbn 1000/100</td>
+                <td>1000 Mbps</td>
+                <td><strong>$85</strong>/mo</td>
+                <td>$85/mo</td>
+                <td></td>
+                <td>$1,020</td>
+                <td>11.76</td>
+                <td><span class="badge badge-blue">Best Value</span> </td>
+            </tr>
+            <tr class="">
+                <td>Hyper</td>
+                <td><span class="provider-tag" style="background:#0D47A1">Telstra</span></td>
+                <td>Ultimate nbn® Internet Only</td>
+                <td>750 Mbps</td>
+                <td><strong>$104</strong>/mo</td>
+                <td>$104/mo</td>
+                <td></td>
+                <td>$1,248</td>
+                <td>7.21</td>
+                <td></td>
+            </tr>
+            <tr class="">
+                <td>Hyper</td>
+                <td><span class="provider-tag" style="background:#2E7D32">Tpg</span></td>
+                <td>NBN Home Superfast</td>
+                <td>740.0 Mbps</td>
+                <td><strong>$70</strong>/mo</td>
+                <td>$100/mo</td>
+                <td>$70 <small>(6 months)</small></td>
+                <td>$1,020</td>
+                <td>10.57</td>
+                <td><span class="badge badge-green">Cheapest</span> </td>
+            </tr>
+            <tr class="highlight-occom">
+                <td>Mega</td>
+                <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+                <td>Hyper (nbn2000)</td>
+                <td>2000 Mbps</td>
+                <td><strong>$165</strong>/mo</td>
+                <td>$185/mo</td>
+                <td>$165 <small>(12 months)</small></td>
+                <td>$1,980</td>
+                <td>12.12</td>
+                <td></td>
+            </tr>
+            <tr class="">
+                <td>Mega</td>
+                <td><span class="provider-tag" style="background:#E65100">Superloop</span></td>
+                <td>Hyperspeed - nbn 2000/100</td>
+                <td>2000 Mbps</td>
+                <td><strong>$145</strong>/mo</td>
+                <td>$145/mo</td>
+                <td></td>
+                <td>$1,740</td>
+                <td>13.79</td>
+                <td><span class="badge badge-green">Cheapest</span> <span class="badge badge-blue">Best Value</span> </td>
+            </tr></tbody>
+            </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tab: Value Rankings -->
+    <div id="tab-value" class="tab-content">
+        <div class="section">
+            <h2>Value Score Rankings (Mbps per Dollar)</h2>
+            <div style="overflow-x:auto">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tier</th><th>Rank</th><th>Provider</th>
+                        <th>Value Score</th><th>Speed</th><th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+            <tr class="">
+                <td>Basic</td>
+                <td>🥇 #1</td>
+                <td><span class="provider-tag" style="background:#2E7D32">Tpg</span></td>
+                <td><strong>0.33</strong> Mbps/$</td>
+                <td>15.0 Mbps</td>
+                <td>$45/mo</td>
+            </tr>
+            <tr class="highlight-occom">
+                <td>Basic</td>
+                <td>🥈 #2</td>
+                <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+                <td><strong>0.25</strong> Mbps/$</td>
+                <td>12 Mbps</td>
+                <td>$48/mo</td>
+            </tr>
+            <tr class="">
+                <td>Standard</td>
+                <td>🥇 #1</td>
+                <td><span class="provider-tag" style="background:#2E7D32">Tpg</span></td>
+                <td><strong>0.63</strong> Mbps/$</td>
+                <td>25.0 Mbps</td>
+                <td>$40/mo</td>
+            </tr>
+            <tr class="highlight-occom">
+                <td>Standard</td>
+                <td>🥈 #2</td>
+                <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+                <td><strong>0.56</strong> Mbps/$</td>
+                <td>25 Mbps</td>
+                <td>$45/mo</td>
+            </tr>
+            <tr class="">
+                <td>Standard</td>
+                <td>🥉 #3</td>
+                <td><span class="provider-tag" style="background:#0D47A1">Telstra</span></td>
+                <td><strong>0.29</strong> Mbps/$</td>
+                <td>25 Mbps</td>
+                <td>$85/mo</td>
+            </tr>
+            <tr class="">
+                <td>Boost</td>
+                <td>🥇 #1</td>
+                <td><span class="provider-tag" style="background:#2E7D32">Tpg</span></td>
+                <td><strong>1.67</strong> Mbps/$</td>
+                <td>50.0 Mbps</td>
+                <td>$30/mo</td>
+            </tr>
+            <tr class="highlight-occom">
+                <td>Boost</td>
+                <td>🥈 #2</td>
+                <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+                <td><strong>1.0</strong> Mbps/$</td>
+                <td>50 Mbps</td>
+                <td>$50/mo</td>
+            </tr>
+            <tr class="">
+                <td>Boost</td>
+                <td>🥉 #3</td>
+                <td><span class="provider-tag" style="background:#E65100">Superloop</span></td>
+                <td><strong>0.77</strong> Mbps/$</td>
+                <td>50 Mbps</td>
+                <td>$65/mo</td>
+            </tr>
+            <tr class="">
+                <td>Boost</td>
+                <td> #4</td>
+                <td><span class="provider-tag" style="background:#0D47A1">Telstra</span></td>
+                <td><strong>0.56</strong> Mbps/$</td>
+                <td>50 Mbps</td>
+                <td>$89/mo</td>
+            </tr>
+            <tr class="">
+                <td>Fast</td>
+                <td>🥇 #1</td>
+                <td><span class="provider-tag" style="background:#2E7D32">Tpg</span></td>
+                <td><strong>2.86</strong> Mbps/$</td>
+                <td>100.0 Mbps</td>
+                <td>$35/mo</td>
+            </tr>
+            <tr class="highlight-occom">
+                <td>Fast</td>
+                <td>🥈 #2</td>
+                <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+                <td><strong>1.82</strong> Mbps/$</td>
+                <td>100 Mbps</td>
+                <td>$55/mo</td>
+            </tr>
+            <tr class="">
+                <td>Fast</td>
+                <td>🥉 #3</td>
+                <td><span class="provider-tag" style="background:#E65100">Superloop</span></td>
+                <td><strong>1.45</strong> Mbps/$</td>
+                <td>100 Mbps</td>
+                <td>$69/mo</td>
+            </tr>
+            <tr class="">
+                <td>Fast</td>
+                <td> #4</td>
+                <td><span class="provider-tag" style="background:#0D47A1">Telstra</span></td>
+                <td><strong>1.12</strong> Mbps/$</td>
+                <td>100 Mbps</td>
+                <td>$89/mo</td>
+            </tr>
+            <tr class="">
+                <td>Superfast</td>
+                <td>🥇 #1</td>
+                <td><span class="provider-tag" style="background:#0D47A1">Telstra</span></td>
+                <td><strong>3.53</strong> Mbps/$</td>
+                <td>300 Mbps</td>
+                <td>$85/mo</td>
+            </tr>
+            <tr class="">
+                <td>Superfast</td>
+                <td>🥈 #2</td>
+                <td><span class="provider-tag" style="background:#E65100">Superloop</span></td>
+                <td><strong>2.94</strong> Mbps/$</td>
+                <td>250 Mbps</td>
+                <td>$85/mo</td>
+            </tr>
+            <tr class="highlight-occom">
+                <td>Superfast</td>
+                <td>🥉 #3</td>
+                <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+                <td><strong>2.27</strong> Mbps/$</td>
+                <td>250 Mbps</td>
+                <td>$110/mo</td>
+            </tr>
+            <tr class="">
+                <td>Ultrafast</td>
+                <td>🥇 #1</td>
+                <td><span class="provider-tag" style="background:#2E7D32">Tpg</span></td>
+                <td><strong>7.69</strong> Mbps/$</td>
+                <td>500.0 Mbps</td>
+                <td>$65/mo</td>
+            </tr>
+            <tr class="">
+                <td>Ultrafast</td>
+                <td>🥈 #2</td>
+                <td><span class="provider-tag" style="background:#E65100">Superloop</span></td>
+                <td><strong>7.25</strong> Mbps/$</td>
+                <td>500 Mbps</td>
+                <td>$69/mo</td>
+            </tr>
+            <tr class="highlight-occom">
+                <td>Ultrafast</td>
+                <td>🥉 #3</td>
+                <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+                <td><strong>7.14</strong> Mbps/$</td>
+                <td>500 Mbps</td>
+                <td>$70/mo</td>
+            </tr>
+            <tr class="">
+                <td>Hyper</td>
+                <td>🥇 #1</td>
+                <td><span class="provider-tag" style="background:#E65100">Superloop</span></td>
+                <td><strong>11.76</strong> Mbps/$</td>
+                <td>1000 Mbps</td>
+                <td>$85/mo</td>
+            </tr>
+            <tr class="highlight-occom">
+                <td>Hyper</td>
+                <td>🥈 #2</td>
+                <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+                <td><strong>11.11</strong> Mbps/$</td>
+                <td>1000 Mbps</td>
+                <td>$90/mo</td>
+            </tr>
+            <tr class="">
+                <td>Hyper</td>
+                <td>🥉 #3</td>
+                <td><span class="provider-tag" style="background:#2E7D32">Tpg</span></td>
+                <td><strong>10.57</strong> Mbps/$</td>
+                <td>740.0 Mbps</td>
+                <td>$70/mo</td>
+            </tr>
+            <tr class="">
+                <td>Hyper</td>
+                <td> #4</td>
+                <td><span class="provider-tag" style="background:#0D47A1">Telstra</span></td>
+                <td><strong>7.21</strong> Mbps/$</td>
+                <td>750 Mbps</td>
+                <td>$104/mo</td>
+            </tr>
+            <tr class="">
+                <td>Mega</td>
+                <td>🥇 #1</td>
+                <td><span class="provider-tag" style="background:#E65100">Superloop</span></td>
+                <td><strong>13.79</strong> Mbps/$</td>
+                <td>2000 Mbps</td>
+                <td>$145/mo</td>
+            </tr>
+            <tr class="highlight-occom">
+                <td>Mega</td>
+                <td>🥈 #2</td>
+                <td><span class="provider-tag" style="background:#6C3CE1">Occom</span></td>
+                <td><strong>12.12</strong> Mbps/$</td>
+                <td>2000 Mbps</td>
+                <td>$165/mo</td>
+            </tr></tbody>
+            </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="timestamp">Report generated: 2026-05-01T12:42:30.350886</div>
+</div>
+
+<script>
+function switchTab(name) {
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+    document.getElementById('tab-' + name).classList.add('active');
+    event.target.classList.add('active');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+[
+  {
+    "provider_id": 6,
+    "plan_name": "Home Wireless Broadband",
+    "network_type": "4G Home Wireless",
+    "download_speed": 15.0,
+    "upload_speed": 1.9,
+    "typical_evening_dl": 15.0,
+    "typical_evening_ul": 1.9,
+    "price": 54.99,
+    "promo_price": 44.99,
+    "promo_period": "6 months",
+    "contract": "No Lock-in",
+    "source_url": "https://www.tpg.com.au/home-wireless-broadband"
+  }
+]

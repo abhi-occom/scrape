@@ -1,0 +1,93 @@
+[
+  {
+    "provider_id": 5,
+    "plan_name": "Lightning (Fibre1000)",
+    "network_type": "Opticomm",
+    "speed": 900,
+    "download_speed": 900,
+    "upload_speed": 85,
+    "price": 115.0,
+    "promo_price": 105.0,
+    "promo_period": "12 months",
+    "contract": "No Contract",
+    "source_url": "https://occom.com.au/opticomm-plans/"
+  },
+  {
+    "provider_id": 5,
+    "plan_name": "Ultra (Fibre750)",
+    "network_type": "Opticomm",
+    "speed": 750,
+    "download_speed": 750,
+    "upload_speed": 48,
+    "price": 98.0,
+    "promo_price": 93.0,
+    "promo_period": "12 months",
+    "contract": "No Contract",
+    "source_url": "https://occom.com.au/opticomm-plans/"
+  },
+  {
+    "provider_id": 5,
+    "plan_name": "Turbo (Fibre500)",
+    "network_type": "Opticomm",
+    "speed": 500,
+    "download_speed": 500,
+    "upload_speed": 48,
+    "price": 90.0,
+    "promo_price": 85.0,
+    "promo_period": null,
+    "contract": "No Contract",
+    "source_url": "https://occom.com.au/opticomm-plans/"
+  },
+  {
+    "provider_id": 5,
+    "plan_name": "Superfast (Fibre100)",
+    "network_type": "Opticomm",
+    "speed": 100,
+    "download_speed": 100,
+    "upload_speed": 17,
+    "price": 90.0,
+    "promo_price": 80.0,
+    "promo_period": "6 months",
+    "contract": "No Contract",
+    "source_url": "https://occom.com.au/opticomm-plans/"
+  },
+  {
+    "provider_id": 5,
+    "plan_name": "Boost Plus (Fibre50)",
+    "network_type": "Opticomm",
+    "speed": 50,
+    "download_speed": 50,
+    "upload_speed": 17,
+    "price": 85.0,
+    "promo_price": 75.0,
+    "promo_period": "6 months",
+    "contract": "No Contract",
+    "source_url": "https://occom.com.au/opticomm-plans/"
+  },
+  {
+    "provider_id": 5,
+    "plan_name": "Boost (Fibre25)",
+    "network_type": "Opticomm",
+    "speed": 25,
+    "download_speed": 25,
+    "upload_speed": 8,
+    "price": 70.0,
+    "promo_price": 60.0,
+    "promo_period": "6 months",
+    "contract": "No Contract",
+    "source_url": "https://occom.com.au/opticomm-plans/"
+  },
+  {
+    "provider_id": 5,
+    "plan_name": "Basic (Fibre12)",
+    "network_type": "Opticomm",
+    "speed": 12,
+    "download_speed": 12,
+    "upload_speed": 1,
+    "price": 58.0,
+    "promo_price": 48.0,
+    "promo_period": "6 months",
+    "contract": "No Contract",
+    "source_url": "https://occom.com.au/opticomm-plans/"
+  }
+]

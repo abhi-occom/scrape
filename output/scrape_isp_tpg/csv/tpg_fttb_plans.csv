@@ -1,0 +1,4 @@
+provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
+tpg,FTTB,FTTB25,25.0,4.0,39.99,0.0,3 months,No Lock-in,25.0,4.0,https://www.tpg.com.au/fttb
+tpg,FTTB,FTTB100,100.0,25.0,74.99,0.0,3 months,No Lock-in,100.0,25.0,https://www.tpg.com.au/fttb
+tpg,FTTB,FTTB Max,700.0,25.0,79.99,0.0,3 months,No Lock-in,700.0,25.0,https://www.tpg.com.au/fttb

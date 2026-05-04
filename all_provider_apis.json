@@ -1,0 +1,45 @@
+{
+  "telstra": {
+    "all_endpoints": [],
+    "working_endpoints": []
+  },
+  "optus": {
+    "all_endpoints": [],
+    "working_endpoints": []
+  },
+  "aussie": {
+    "all_endpoints": [],
+    "working_endpoints": []
+  },
+  "superloop": {
+    "all_endpoints": [
+      "https://experience-apigw.superloop.com/api/v2/address",
+      "https://experience-apigw.superloop.com/api/v2/service-qualification",
+      "https://experience-apigw.superloop.com/api/v1/event-management/events",
+      "https://experience-apigw.superloop.com/api/v2/address/",
+      "https://experience-apigw.superloop.com/api/v1/product-catalog/broadband-offers"
+    ],
+    "working_endpoints": [
+      {
+        "url": "https://experience-apigw.superloop.com/api/v2/address",
+        "status": 422,
+        "has_json": true
+      },
+      {
+        "url": "https://experience-apigw.superloop.com/api/v2/service-qualification",
+        "status": 422,
+        "has_json": true
+      },
+      {
+        "url": "https://experience-apigw.superloop.com/api/v2/address/",
+        "status": 422,
+        "has_json": true
+      },
+      {
+        "url": "https://experience-apigw.superloop.com/api/v1/product-catalog/broadband-offers",
+        "status": 200,
+        "has_json": true
+      }
+    ]
+  }
+}

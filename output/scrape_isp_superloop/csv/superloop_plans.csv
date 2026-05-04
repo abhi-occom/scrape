@@ -1,0 +1,10 @@
+provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
+superloop,NBN,Extra Value - nbn 50/20,50,20,65.0,,,No Contract,50,17,https://www.superloop.com/internet/nbn/
+superloop,NBN,Family Max - nbn 100/20,100,20,69.0,,,No Contract,95,17,https://www.superloop.com/internet/nbn/
+superloop,NBN,Family Max - nbn 500/50,500,50,69.0,,,No Contract,500,40,https://www.superloop.com/internet/nbn/
+superloop,NBN,Power Home - nbn 100/40,100,40,85.0,,,No Contract,95,34,https://www.superloop.com/internet/nbn/
+superloop,NBN,Creator - nbn 250/100,250,100,85.0,,,No Contract,250,85,https://www.superloop.com/internet/nbn/
+superloop,NBN,Megaspeed - nbn 750/50,750,50,89.0,,,No Contract,750,40,https://www.superloop.com/internet/nbn/
+superloop,NBN,Lightspeed - nbn 1000/100,1000,100,85.0,,,No Contract,860,85,https://www.superloop.com/internet/nbn/
+superloop,NBN,Hyperspeed - nbn 2000/100,2000,100,145.0,,,No Contract,1700,85,https://www.superloop.com/internet/nbn/
+superloop,NBN,Hyperspeed - nbn 2000/200,2000,200,145.0,,,No Contract,1700,170,https://www.superloop.com/internet/nbn/

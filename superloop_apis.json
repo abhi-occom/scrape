@@ -1,0 +1,10 @@
+{
+  "base_url": "https://www.superloop.com/au/home-broadband/nbn",
+  "endpoints": [
+    "https://experience-apigw.superloop.com/api/v2/address",
+    "https://experience-apigw.superloop.com/api/v2/service-qualification",
+    "https://experience-apigw.superloop.com/api/v1/event-management/events",
+    "https://experience-apigw.superloop.com/api/v2/address/",
+    "https://experience-apigw.superloop.com/api/v1/product-catalog/broadband-offers"
+  ]
+}

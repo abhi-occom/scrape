@@ -1,0 +1,44 @@
+[
+  {
+    "provider_id": 6,
+    "plan_name": "FTTB25",
+    "network_type": "FTTB",
+    "download_speed": 25.0,
+    "upload_speed": 4.0,
+    "typical_evening_dl": 25.0,
+    "typical_evening_ul": 4.0,
+    "price": 39.99,
+    "promo_price": 0.0,
+    "promo_period": "3 months",
+    "contract": "No Lock-in",
+    "source_url": "https://www.tpg.com.au/fttb"
+  },
+  {
+    "provider_id": 6,
+    "plan_name": "FTTB100",
+    "network_type": "FTTB",
+    "download_speed": 100.0,
+    "upload_speed": 25.0,
+    "typical_evening_dl": 100.0,
+    "typical_evening_ul": 25.0,
+    "price": 74.99,
+    "promo_price": 0.0,
+    "promo_period": "3 months",
+    "contract": "No Lock-in",
+    "source_url": "https://www.tpg.com.au/fttb"
+  },
+  {
+    "provider_id": 6,
+    "plan_name": "FTTB Max",
+    "network_type": "FTTB",
+    "download_speed": 700.0,
+    "upload_speed": 25.0,
+    "typical_evening_dl": 700.0,
+    "typical_evening_ul": 25.0,
+    "price": 79.99,
+    "promo_price": 0.0,
+    "promo_period": "3 months",
+    "contract": "No Lock-in",
+    "source_url": "https://www.tpg.com.au/fttb"
+  }
+]

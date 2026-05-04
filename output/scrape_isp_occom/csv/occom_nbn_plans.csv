@@ -1,0 +1,9 @@
+provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
+occom,NBN,Hyper (nbn2000),2000,100,185.0,165.0,12 months,No Contract,,,https://occom.com.au/nbn-plans/
+occom,NBN,Lightning (nbn1000),1000,100,115.0,105.0,12 months,No Contract,,,https://occom.com.au/nbn-plans/
+occom,NBN,Ultra (nbn750),750,50,98.0,93.0,12 months,No Contract,,,https://occom.com.au/nbn-plans/
+occom,NBN,Turbo (nbn500),500,48,90.0,85.0,12 months,No Contract,,,https://occom.com.au/nbn-plans/
+occom,NBN,Superfast (nbn100),100,17,90.0,80.0,6 months,No Contract,,,https://occom.com.au/nbn-plans/
+occom,NBN,Boost Plus (nbn50),50,17,85.0,75.0,6 months,No Contract,,,https://occom.com.au/nbn-plans/
+occom,NBN,Boost (nbn25),25,8,70.0,60.0,6 months,No Contract,,,https://occom.com.au/nbn-plans/
+occom,NBN,Basic (nbn12),12,0,58.0,48.0,6 months,No Contract,,,https://occom.com.au/nbn-plans/

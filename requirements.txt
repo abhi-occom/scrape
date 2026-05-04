@@ -1,0 +1,23 @@
+# ISP Plan Scraping System - Requirements
+
+# HTTP requests library
+requests>=2.31.0
+
+# MySQL database connector
+mysql-connector-python>=8.2.0
+
+# Playwright for dynamic web scraping
+playwright>=1.40.0
+
+# Stealth mode for anti-bot detection bypass
+playwright-stealth>=2.0.0
+
+# HTML parsing
+beautifulsoup4>=4.12.0
+lxml>=4.9.0
+
+# Python dotenv for environment variables (optional)
+python-dotenv>=1.0.0
+
+# Flask web framework for API backend
+flask>=3.0.0

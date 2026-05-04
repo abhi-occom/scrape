@@ -1,0 +1,6 @@
+provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
+occom,Supa,Lightning (Fibre1000),1000,1000,120.0,110.0,6 months,No Contract,,,https://occom.com.au/supa-network-plans/
+occom,Supa,Ultra (Fibre750),750,750,110.0,95.0,6 months,No Contract,,,https://occom.com.au/supa-network-plans/
+occom,Supa,Turbo (Fibre500),500,500,90.0,85.0,6 months,No Contract,,,https://occom.com.au/supa-network-plans/
+occom,Supa,Boost Plus (Fibre50),50,17,85.0,75.0,6 months,No Contract,,,https://occom.com.au/supa-network-plans/
+occom,Supa,Boost (Fibre25),25,8,70.0,65.0,6 months,No Contract,,,https://occom.com.au/supa-network-plans/

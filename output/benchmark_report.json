@@ -1,0 +1,772 @@
+{
+  "generated_at": "2026-05-01T12:42:30.350886",
+  "summary": {
+    "total_plans_analyzed": 74,
+    "total_providers": 4,
+    "providers": [
+      "occom",
+      "superloop",
+      "telstra",
+      "tpg"
+    ],
+    "total_speed_tiers": 8,
+    "occom_cheapest_tiers": 0,
+    "occom_gap_tiers": 8,
+    "occom_win_rate": 0.0
+  },
+  "tier_comparisons": [
+    {
+      "tier": "basic",
+      "tier_label": "Basic",
+      "speed_range": "0-15 Mbps",
+      "providers": {
+        "occom": {
+          "provider": "occom",
+          "plan_name": "Basic (nbn12)",
+          "speed": 12,
+          "effective_price": 48.0,
+          "regular_price": 58.0,
+          "promo_price": 48.0,
+          "promo_period": "6 months",
+          "annual_cost": 636.0,
+          "value_score": 0.25,
+          "network_type": "NBN",
+          "contract": "No Contract"
+        },
+        "tpg": {
+          "provider": "tpg",
+          "plan_name": "Home Wireless Broadband",
+          "speed": 15.0,
+          "effective_price": 44.99,
+          "regular_price": 54.99,
+          "promo_price": 44.99,
+          "promo_period": "6 months",
+          "annual_cost": 599.88,
+          "value_score": 0.33,
+          "network_type": "4G Home Wireless",
+          "contract": "No Lock-in"
+        }
+      },
+      "cheapest": "tpg",
+      "cheapest_price": 44.99,
+      "most_expensive": "occom",
+      "most_expensive_price": 48.0,
+      "best_value": "tpg",
+      "best_value_score": 0.33
+    },
+    {
+      "tier": "standard",
+      "tier_label": "Standard",
+      "speed_range": "16-30 Mbps",
+      "providers": {
+        "telstra": {
+          "provider": "telstra",
+          "plan_name": "Basic nbn® Internet Only",
+          "speed": 25,
+          "effective_price": 85.0,
+          "regular_price": 85.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 1020.0,
+          "value_score": 0.29,
+          "network_type": "NBN",
+          "contract": "No Contract"
+        },
+        "occom": {
+          "provider": "occom",
+          "plan_name": "Boost (Fibre25)",
+          "speed": 25,
+          "effective_price": 45.0,
+          "regular_price": 55.0,
+          "promo_price": 45.0,
+          "promo_period": "6 months",
+          "annual_cost": 600.0,
+          "value_score": 0.56,
+          "network_type": "Community Fibre",
+          "contract": "No Contract"
+        },
+        "tpg": {
+          "provider": "tpg",
+          "plan_name": "FTTB25",
+          "speed": 25.0,
+          "effective_price": 39.99,
+          "regular_price": 39.99,
+          "promo_price": 0.0,
+          "promo_period": "3 months",
+          "annual_cost": 479.88,
+          "value_score": 0.63,
+          "network_type": "FTTB",
+          "contract": "No Lock-in"
+        }
+      },
+      "cheapest": "tpg",
+      "cheapest_price": 39.99,
+      "most_expensive": "telstra",
+      "most_expensive_price": 85.0,
+      "best_value": "tpg",
+      "best_value_score": 0.63
+    },
+    {
+      "tier": "boost",
+      "tier_label": "Boost",
+      "speed_range": "31-60 Mbps",
+      "providers": {
+        "telstra": {
+          "provider": "telstra",
+          "plan_name": "Essential nbn® Internet Only",
+          "speed": 50,
+          "effective_price": 89.0,
+          "regular_price": 89.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 1068.0,
+          "value_score": 0.56,
+          "network_type": "NBN",
+          "contract": "No Contract"
+        },
+        "superloop": {
+          "provider": "superloop",
+          "plan_name": "Extra Value - nbn 50/20",
+          "speed": 50,
+          "effective_price": 65.0,
+          "regular_price": 65.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 780.0,
+          "value_score": 0.77,
+          "network_type": "NBN",
+          "contract": "No Contract"
+        },
+        "occom": {
+          "provider": "occom",
+          "plan_name": "Boost Plus (Fibre50)",
+          "speed": 50,
+          "effective_price": 50.0,
+          "regular_price": 60.0,
+          "promo_price": 50.0,
+          "promo_period": "6 months",
+          "annual_cost": 660.0,
+          "value_score": 1.0,
+          "network_type": "Community Fibre",
+          "contract": "No Contract"
+        },
+        "tpg": {
+          "provider": "tpg",
+          "plan_name": "5G Home Broadband Plus",
+          "speed": 50.0,
+          "effective_price": 29.99,
+          "regular_price": 59.99,
+          "promo_price": 29.99,
+          "promo_period": "6 months",
+          "annual_cost": 539.88,
+          "value_score": 1.67,
+          "network_type": "5G",
+          "contract": "No Lock-in"
+        }
+      },
+      "cheapest": "tpg",
+      "cheapest_price": 29.99,
+      "most_expensive": "telstra",
+      "most_expensive_price": 89.0,
+      "best_value": "tpg",
+      "best_value_score": 1.67
+    },
+    {
+      "tier": "fast",
+      "tier_label": "Fast",
+      "speed_range": "61-150 Mbps",
+      "providers": {
+        "telstra": {
+          "provider": "telstra",
+          "plan_name": "Premium nbn® Internet Only",
+          "speed": 100,
+          "effective_price": 89.0,
+          "regular_price": 89.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 1068.0,
+          "value_score": 1.12,
+          "network_type": "NBN",
+          "contract": "No Contract"
+        },
+        "superloop": {
+          "provider": "superloop",
+          "plan_name": "Family Max - nbn 100/20",
+          "speed": 100,
+          "effective_price": 69.0,
+          "regular_price": 69.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 828.0,
+          "value_score": 1.45,
+          "network_type": "NBN",
+          "contract": "No Contract"
+        },
+        "occom": {
+          "provider": "occom",
+          "plan_name": "Superfast (Fibre100)",
+          "speed": 100,
+          "effective_price": 55.0,
+          "regular_price": 65.0,
+          "promo_price": 55.0,
+          "promo_period": "6 months",
+          "annual_cost": 720.0,
+          "value_score": 1.82,
+          "network_type": "Community Fibre",
+          "contract": "No Contract"
+        },
+        "tpg": {
+          "provider": "tpg",
+          "plan_name": "5G Home Broadband Premium",
+          "speed": 100.0,
+          "effective_price": 34.99,
+          "regular_price": 64.99,
+          "promo_price": 34.99,
+          "promo_period": "6 months",
+          "annual_cost": 599.88,
+          "value_score": 2.86,
+          "network_type": "5G",
+          "contract": "No Lock-in"
+        }
+      },
+      "cheapest": "tpg",
+      "cheapest_price": 34.99,
+      "most_expensive": "telstra",
+      "most_expensive_price": 89.0,
+      "best_value": "tpg",
+      "best_value_score": 2.86
+    },
+    {
+      "tier": "superfast",
+      "tier_label": "Superfast",
+      "speed_range": "151-300 Mbps",
+      "providers": {
+        "telstra": {
+          "provider": "telstra",
+          "plan_name": "5G Internet",
+          "speed": 300,
+          "effective_price": 85.0,
+          "regular_price": 85.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 1020.0,
+          "value_score": 3.53,
+          "network_type": "5G",
+          "contract": "No Contract"
+        },
+        "superloop": {
+          "provider": "superloop",
+          "plan_name": "Creator - nbn 250/100",
+          "speed": 250,
+          "effective_price": 85.0,
+          "regular_price": 85.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 1020.0,
+          "value_score": 2.94,
+          "network_type": "NBN",
+          "contract": "No Contract"
+        },
+        "occom": {
+          "provider": "occom",
+          "plan_name": "Rocket (Fibre250)",
+          "speed": 250,
+          "effective_price": 110.0,
+          "regular_price": 120.0,
+          "promo_price": 110.0,
+          "promo_period": "12 months",
+          "annual_cost": 1320.0,
+          "value_score": 2.27,
+          "network_type": "Redtrain",
+          "contract": "No Contract"
+        }
+      },
+      "cheapest": "telstra",
+      "cheapest_price": 85.0,
+      "most_expensive": "occom",
+      "most_expensive_price": 110.0,
+      "best_value": "telstra",
+      "best_value_score": 3.53
+    },
+    {
+      "tier": "ultrafast",
+      "tier_label": "Ultrafast",
+      "speed_range": "301-600 Mbps",
+      "providers": {
+        "superloop": {
+          "provider": "superloop",
+          "plan_name": "Family Max - nbn 500/50",
+          "speed": 500,
+          "effective_price": 69.0,
+          "regular_price": 69.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 828.0,
+          "value_score": 7.25,
+          "network_type": "NBN",
+          "contract": "No Contract"
+        },
+        "occom": {
+          "provider": "occom",
+          "plan_name": "Turbo (Fibre500)",
+          "speed": 500,
+          "effective_price": 70.0,
+          "regular_price": 80.0,
+          "promo_price": 70.0,
+          "promo_period": "6 months",
+          "annual_cost": 900.0,
+          "value_score": 7.14,
+          "network_type": "Community Fibre",
+          "contract": "No Contract"
+        },
+        "tpg": {
+          "provider": "tpg",
+          "plan_name": "NBN500",
+          "speed": 500.0,
+          "effective_price": 64.99,
+          "regular_price": 94.99,
+          "promo_price": 64.99,
+          "promo_period": "6 months",
+          "annual_cost": 959.88,
+          "value_score": 7.69,
+          "network_type": "NBN",
+          "contract": "No Lock-in"
+        }
+      },
+      "cheapest": "tpg",
+      "cheapest_price": 64.99,
+      "most_expensive": "occom",
+      "most_expensive_price": 70.0,
+      "best_value": "tpg",
+      "best_value_score": 7.69
+    },
+    {
+      "tier": "hyper",
+      "tier_label": "Hyper",
+      "speed_range": "601-1000 Mbps",
+      "providers": {
+        "telstra": {
+          "provider": "telstra",
+          "plan_name": "Ultimate nbn® Internet Only",
+          "speed": 750,
+          "effective_price": 104.0,
+          "regular_price": 104.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 1248.0,
+          "value_score": 7.21,
+          "network_type": "NBN",
+          "contract": "No Contract"
+        },
+        "superloop": {
+          "provider": "superloop",
+          "plan_name": "Lightspeed - nbn 1000/100",
+          "speed": 1000,
+          "effective_price": 85.0,
+          "regular_price": 85.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 1020.0,
+          "value_score": 11.76,
+          "network_type": "NBN",
+          "contract": "No Contract"
+        },
+        "occom": {
+          "provider": "occom",
+          "plan_name": "Lightning (Fibre1000)",
+          "speed": 1000,
+          "effective_price": 90.0,
+          "regular_price": 100.0,
+          "promo_price": 90.0,
+          "promo_period": "6 months",
+          "annual_cost": 1140.0,
+          "value_score": 11.11,
+          "network_type": "Community Fibre",
+          "contract": "No Contract"
+        },
+        "tpg": {
+          "provider": "tpg",
+          "plan_name": "NBN Home Superfast",
+          "speed": 740.0,
+          "effective_price": 69.99,
+          "regular_price": 99.99,
+          "promo_price": 69.99,
+          "promo_period": "6 months",
+          "annual_cost": 1019.88,
+          "value_score": 10.57,
+          "network_type": "NBN",
+          "contract": "No Lock-in"
+        }
+      },
+      "cheapest": "tpg",
+      "cheapest_price": 69.99,
+      "most_expensive": "telstra",
+      "most_expensive_price": 104.0,
+      "best_value": "superloop",
+      "best_value_score": 11.76
+    },
+    {
+      "tier": "mega",
+      "tier_label": "Mega",
+      "speed_range": "1001-99999 Mbps",
+      "providers": {
+        "superloop": {
+          "provider": "superloop",
+          "plan_name": "Hyperspeed - nbn 2000/100",
+          "speed": 2000,
+          "effective_price": 145.0,
+          "regular_price": 145.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 1740.0,
+          "value_score": 13.79,
+          "network_type": "NBN",
+          "contract": "No Contract"
+        },
+        "occom": {
+          "provider": "occom",
+          "plan_name": "Hyper (nbn2000)",
+          "speed": 2000,
+          "effective_price": 165.0,
+          "regular_price": 185.0,
+          "promo_price": 165.0,
+          "promo_period": "12 months",
+          "annual_cost": 1980.0,
+          "value_score": 12.12,
+          "network_type": "NBN",
+          "contract": "No Contract"
+        }
+      },
+      "cheapest": "superloop",
+      "cheapest_price": 145.0,
+      "most_expensive": "occom",
+      "most_expensive_price": 165.0,
+      "best_value": "superloop",
+      "best_value_score": 13.79
+    }
+  ],
+  "occom_advantages": [],
+  "occom_gaps": [
+    {
+      "tier": "basic",
+      "tier_label": "Basic",
+      "occom_price": 48.0,
+      "occom_plan": "Basic (nbn12)",
+      "occom_speed": 12,
+      "occom_value_score": 0.25,
+      "cheapest_competitor": "tpg",
+      "cheapest_competitor_price": 44.99,
+      "gap_amount": 3.01,
+      "gap_pct": 6.7
+    },
+    {
+      "tier": "standard",
+      "tier_label": "Standard",
+      "occom_price": 45.0,
+      "occom_plan": "Boost (Fibre25)",
+      "occom_speed": 25,
+      "occom_value_score": 0.56,
+      "cheapest_competitor": "tpg",
+      "cheapest_competitor_price": 39.99,
+      "gap_amount": 5.01,
+      "gap_pct": 12.5
+    },
+    {
+      "tier": "boost",
+      "tier_label": "Boost",
+      "occom_price": 50.0,
+      "occom_plan": "Boost Plus (Fibre50)",
+      "occom_speed": 50,
+      "occom_value_score": 1.0,
+      "cheapest_competitor": "tpg",
+      "cheapest_competitor_price": 29.99,
+      "gap_amount": 20.01,
+      "gap_pct": 66.7
+    },
+    {
+      "tier": "fast",
+      "tier_label": "Fast",
+      "occom_price": 55.0,
+      "occom_plan": "Superfast (Fibre100)",
+      "occom_speed": 100,
+      "occom_value_score": 1.82,
+      "cheapest_competitor": "tpg",
+      "cheapest_competitor_price": 34.99,
+      "gap_amount": 20.01,
+      "gap_pct": 57.2
+    },
+    {
+      "tier": "superfast",
+      "tier_label": "Superfast",
+      "occom_price": 110.0,
+      "occom_plan": "Rocket (Fibre250)",
+      "occom_speed": 250,
+      "occom_value_score": 2.27,
+      "cheapest_competitor": "telstra",
+      "cheapest_competitor_price": 85.0,
+      "gap_amount": 25.0,
+      "gap_pct": 29.4
+    },
+    {
+      "tier": "ultrafast",
+      "tier_label": "Ultrafast",
+      "occom_price": 70.0,
+      "occom_plan": "Turbo (Fibre500)",
+      "occom_speed": 500,
+      "occom_value_score": 7.14,
+      "cheapest_competitor": "tpg",
+      "cheapest_competitor_price": 64.99,
+      "gap_amount": 5.01,
+      "gap_pct": 7.7
+    },
+    {
+      "tier": "hyper",
+      "tier_label": "Hyper",
+      "occom_price": 90.0,
+      "occom_plan": "Lightning (Fibre1000)",
+      "occom_speed": 1000,
+      "occom_value_score": 11.11,
+      "cheapest_competitor": "tpg",
+      "cheapest_competitor_price": 69.99,
+      "gap_amount": 20.01,
+      "gap_pct": 28.6
+    },
+    {
+      "tier": "mega",
+      "tier_label": "Mega",
+      "occom_price": 165.0,
+      "occom_plan": "Hyper (nbn2000)",
+      "occom_speed": 2000,
+      "occom_value_score": 12.12,
+      "cheapest_competitor": "superloop",
+      "cheapest_competitor_price": 145.0,
+      "gap_amount": 20.0,
+      "gap_pct": 13.8
+    }
+  ],
+  "value_rankings": [
+    {
+      "tier": "basic",
+      "tier_label": "Basic",
+      "rankings": [
+        {
+          "rank": 1,
+          "provider": "tpg",
+          "value_score": 0.33,
+          "speed": 15.0,
+          "price": 44.99
+        },
+        {
+          "rank": 2,
+          "provider": "occom",
+          "value_score": 0.25,
+          "speed": 12,
+          "price": 48.0
+        }
+      ]
+    },
+    {
+      "tier": "standard",
+      "tier_label": "Standard",
+      "rankings": [
+        {
+          "rank": 1,
+          "provider": "tpg",
+          "value_score": 0.63,
+          "speed": 25.0,
+          "price": 39.99
+        },
+        {
+          "rank": 2,
+          "provider": "occom",
+          "value_score": 0.56,
+          "speed": 25,
+          "price": 45.0
+        },
+        {
+          "rank": 3,
+          "provider": "telstra",
+          "value_score": 0.29,
+          "speed": 25,
+          "price": 85.0
+        }
+      ]
+    },
+    {
+      "tier": "boost",
+      "tier_label": "Boost",
+      "rankings": [
+        {
+          "rank": 1,
+          "provider": "tpg",
+          "value_score": 1.67,
+          "speed": 50.0,
+          "price": 29.99
+        },
+        {
+          "rank": 2,
+          "provider": "occom",
+          "value_score": 1.0,
+          "speed": 50,
+          "price": 50.0
+        },
+        {
+          "rank": 3,
+          "provider": "superloop",
+          "value_score": 0.77,
+          "speed": 50,
+          "price": 65.0
+        },
+        {
+          "rank": 4,
+          "provider": "telstra",
+          "value_score": 0.56,
+          "speed": 50,
+          "price": 89.0
+        }
+      ]
+    },
+    {
+      "tier": "fast",
+      "tier_label": "Fast",
+      "rankings": [
+        {
+          "rank": 1,
+          "provider": "tpg",
+          "value_score": 2.86,
+          "speed": 100.0,
+          "price": 34.99
+        },
+        {
+          "rank": 2,
+          "provider": "occom",
+          "value_score": 1.82,
+          "speed": 100,
+          "price": 55.0
+        },
+        {
+          "rank": 3,
+          "provider": "superloop",
+          "value_score": 1.45,
+          "speed": 100,
+          "price": 69.0
+        },
+        {
+          "rank": 4,
+          "provider": "telstra",
+          "value_score": 1.12,
+          "speed": 100,
+          "price": 89.0
+        }
+      ]
+    },
+    {
+      "tier": "superfast",
+      "tier_label": "Superfast",
+      "rankings": [
+        {
+          "rank": 1,
+          "provider": "telstra",
+          "value_score": 3.53,
+          "speed": 300,
+          "price": 85.0
+        },
+        {
+          "rank": 2,
+          "provider": "superloop",
+          "value_score": 2.94,
+          "speed": 250,
+          "price": 85.0
+        },
+        {
+          "rank": 3,
+          "provider": "occom",
+          "value_score": 2.27,
+          "speed": 250,
+          "price": 110.0
+        }
+      ]
+    },
+    {
+      "tier": "ultrafast",
+      "tier_label": "Ultrafast",
+      "rankings": [
+        {
+          "rank": 1,
+          "provider": "tpg",
+          "value_score": 7.69,
+          "speed": 500.0,
+          "price": 64.99
+        },
+        {
+          "rank": 2,
+          "provider": "superloop",
+          "value_score": 7.25,
+          "speed": 500,
+          "price": 69.0
+        },
+        {
+          "rank": 3,
+          "provider": "occom",
+          "value_score": 7.14,
+          "speed": 500,
+          "price": 70.0
+        }
+      ]
+    },
+    {
+      "tier": "hyper",
+      "tier_label": "Hyper",
+      "rankings": [
+        {
+          "rank": 1,
+          "provider": "superloop",
+          "value_score": 11.76,
+          "speed": 1000,
+          "price": 85.0
+        },
+        {
+          "rank": 2,
+          "provider": "occom",
+          "value_score": 11.11,
+          "speed": 1000,
+          "price": 90.0
+        },
+        {
+          "rank": 3,
+          "provider": "tpg",
+          "value_score": 10.57,
+          "speed": 740.0,
+          "price": 69.99
+        },
+        {
+          "rank": 4,
+          "provider": "telstra",
+          "value_score": 7.21,
+          "speed": 750,
+          "price": 104.0
+        }
+      ]
+    },
+    {
+      "tier": "mega",
+      "tier_label": "Mega",
+      "rankings": [
+        {
+          "rank": 1,
+          "provider": "superloop",
+          "value_score": 13.79,
+          "speed": 2000,
+          "price": 145.0
+        },
+        {
+          "rank": 2,
+          "provider": "occom",
+          "value_score": 12.12,
+          "speed": 2000,
+          "price": 165.0
+        }
+      ]
+    }
+  ]
+}

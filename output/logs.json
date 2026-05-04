@@ -1,0 +1,2095 @@
+[
+  {
+    "timestamp": "2026-04-20T12:10:01.609233",
+    "status": "info",
+    "message": "==================================================",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:10:01.609233",
+    "status": "info",
+    "message": "Starting ISP Plan Scraping Pipeline",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:10:01.609233",
+    "status": "info",
+    "message": "==================================================",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:10:01.609233",
+    "status": "info",
+    "message": "Running telstra scraper",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:10:01.609233",
+    "status": "info",
+    "message": "Starting Telstra scraper",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:10:02.661502",
+    "status": "error",
+    "message": "API request failed: 404 Client Error: Not Found for url: https://www.telstra.com.au/content/api/plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:10:25.491492",
+    "status": "error",
+    "message": "Playwright scraping error: Page.wait_for_selector: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator(\".plan-card, [data-testid=\\\"plan-card\\\"], .product-card\") to be visible\n",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:10:26.784077",
+    "status": "error",
+    "message": "All scraping methods failed for Telstra",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:10:26.784077",
+    "status": "warning",
+    "message": "No plans retrieved from telstra",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:10:26.784077",
+    "status": "info",
+    "message": "Running optus scraper",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:10:26.784077",
+    "status": "info",
+    "message": "Starting Optus scraper",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:10:57.110809",
+    "status": "error",
+    "message": "API request failed: HTTPSConnectionPool(host='www.optus.com.au', port=443): Read timed out. (read timeout=30)",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:10:58.073918",
+    "status": "error",
+    "message": "Playwright scraping error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.optus.com.au/broadband/nbn\nCall log:\n  - navigating to \"https://www.optus.com.au/broadband/nbn\", waiting until \"load\"\n",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:10:59.090312",
+    "status": "error",
+    "message": "All scraping methods failed for Optus",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:10:59.090312",
+    "status": "warning",
+    "message": "No plans retrieved from optus",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:10:59.093916",
+    "status": "info",
+    "message": "Running aussie scraper",
+    "provider": "aussie",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:10:59.093916",
+    "status": "info",
+    "message": "Starting Aussie Broadband scraper",
+    "provider": "aussie",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:10:59.356820",
+    "status": "error",
+    "message": "API request failed: 403 Client Error: Forbidden for url: https://www.aussiebroadband.com.au/api/plans",
+    "provider": "aussie",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:11:12.438872",
+    "status": "error",
+    "message": "Playwright scraping error: Page.wait_for_selector: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator(\".plan-card, .nbn-plan, [data-plan]\") to be visible\n",
+    "provider": "aussie",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:11:14.673887",
+    "status": "error",
+    "message": "All scraping methods failed for Aussie Broadband",
+    "provider": "aussie",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:11:14.674897",
+    "status": "warning",
+    "message": "No plans retrieved from aussie",
+    "provider": "aussie",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:11:14.676026",
+    "status": "info",
+    "message": "Running superloop scraper",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:11:14.677028",
+    "status": "info",
+    "message": "Starting Superloop scraper",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:11:15.733620",
+    "status": "error",
+    "message": "API request failed: 404 Client Error: Not Found for url: https://www.superloop.com/api/plans",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:11:32.030217",
+    "status": "error",
+    "message": "Playwright scraping error: Page.wait_for_selector: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator(\".plan-card, .broadband-plan, .product-tile\") to be visible\n",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:11:33.352599",
+    "status": "error",
+    "message": "All scraping methods failed for Superloop",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:11:33.352599",
+    "status": "warning",
+    "message": "No plans retrieved from superloop",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:11:33.352599",
+    "status": "error",
+    "message": "No plans scraped from any provider",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:12:47.879761",
+    "status": "info",
+    "message": "==================================================",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:12:47.879761",
+    "status": "info",
+    "message": "Starting ISP Plan Scraping Pipeline",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:12:47.879761",
+    "status": "info",
+    "message": "==================================================",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:12:47.882836",
+    "status": "info",
+    "message": "Running telstra scraper",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:12:47.883670",
+    "status": "info",
+    "message": "Starting Telstra scraper",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:12:48.506511",
+    "status": "error",
+    "message": "API request failed: 404 Client Error: Not Found for url: https://www.telstra.com.au/content/api/plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:13:05.539045",
+    "status": "error",
+    "message": "Playwright scraping error: Page.wait_for_selector: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator(\".plan-card, [data-testid=\\\"plan-card\\\"], .product-card\") to be visible\n",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:13:06.836775",
+    "status": "error",
+    "message": "All scraping methods failed for Telstra",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:13:06.836775",
+    "status": "warning",
+    "message": "No plans retrieved from telstra",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:13:06.836775",
+    "status": "info",
+    "message": "Running optus scraper",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:13:06.836775",
+    "status": "info",
+    "message": "Starting Optus scraper",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:13:28.757042",
+    "status": "error",
+    "message": "API request failed: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:13:29.731467",
+    "status": "error",
+    "message": "Playwright scraping error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.optus.com.au/broadband/nbn\nCall log:\n  - navigating to \"https://www.optus.com.au/broadband/nbn\", waiting until \"load\"\n",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:13:30.730336",
+    "status": "error",
+    "message": "All scraping methods failed for Optus",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:13:30.730336",
+    "status": "warning",
+    "message": "No plans retrieved from optus",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:13:30.730336",
+    "status": "info",
+    "message": "Running aussie scraper",
+    "provider": "aussie",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:13:30.730336",
+    "status": "info",
+    "message": "Starting Aussie Broadband scraper",
+    "provider": "aussie",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:13:30.995965",
+    "status": "error",
+    "message": "API request failed: 403 Client Error: Forbidden for url: https://www.aussiebroadband.com.au/api/plans",
+    "provider": "aussie",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:13:44.145537",
+    "status": "error",
+    "message": "Playwright scraping error: Page.wait_for_selector: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator(\".plan-card, .nbn-plan, [data-plan]\") to be visible\n",
+    "provider": "aussie",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:13:45.424383",
+    "status": "error",
+    "message": "All scraping methods failed for Aussie Broadband",
+    "provider": "aussie",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:13:45.424383",
+    "status": "warning",
+    "message": "No plans retrieved from aussie",
+    "provider": "aussie",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:13:45.424383",
+    "status": "info",
+    "message": "Running superloop scraper",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:13:45.430336",
+    "status": "info",
+    "message": "Starting Superloop scraper",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:13:46.423746",
+    "status": "error",
+    "message": "API request failed: 404 Client Error: Not Found for url: https://www.superloop.com/api/plans",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:14:06.732116",
+    "status": "error",
+    "message": "Playwright scraping error: Page.wait_for_selector: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator(\".plan-card, .broadband-plan, .product-tile\") to be visible\n",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:14:08.021200",
+    "status": "error",
+    "message": "All scraping methods failed for Superloop",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:14:08.021200",
+    "status": "warning",
+    "message": "No plans retrieved from superloop",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:14:08.021200",
+    "status": "error",
+    "message": "No plans scraped from any provider",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:14:32.753069",
+    "status": "info",
+    "message": "==================================================",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:14:32.753069",
+    "status": "info",
+    "message": "Starting ISP Plan Scraping Pipeline",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:14:32.753069",
+    "status": "info",
+    "message": "==================================================",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:14:32.753069",
+    "status": "info",
+    "message": "Running telstra scraper",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:14:32.753069",
+    "status": "info",
+    "message": "Starting Telstra scraper",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:14:33.514667",
+    "status": "error",
+    "message": "API request failed: 404 Client Error: Not Found for url: https://www.telstra.com.au/content/api/plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:14:51.938200",
+    "status": "error",
+    "message": "Playwright scraping error: Page.wait_for_selector: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator(\".plan-card, [data-testid=\\\"plan-card\\\"], .product-card\") to be visible\n",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:14:53.204158",
+    "status": "error",
+    "message": "All scraping methods failed for Telstra",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:14:53.204158",
+    "status": "warning",
+    "message": "No plans retrieved from telstra",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:14:53.214561",
+    "status": "info",
+    "message": "Running optus scraper",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:14:53.215915",
+    "status": "info",
+    "message": "Starting Optus scraper",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:15:23.557456",
+    "status": "error",
+    "message": "API request failed: HTTPSConnectionPool(host='www.optus.com.au', port=443): Read timed out. (read timeout=30)",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:15:24.558633",
+    "status": "error",
+    "message": "Playwright scraping error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.optus.com.au/broadband/nbn\nCall log:\n  - navigating to \"https://www.optus.com.au/broadband/nbn\", waiting until \"load\"\n",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:15:25.526339",
+    "status": "error",
+    "message": "All scraping methods failed for Optus",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:15:25.526659",
+    "status": "warning",
+    "message": "No plans retrieved from optus",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:15:25.528850",
+    "status": "info",
+    "message": "Running aussie scraper",
+    "provider": "aussie",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:15:25.529849",
+    "status": "info",
+    "message": "Starting Aussie Broadband scraper",
+    "provider": "aussie",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:15:25.773615",
+    "status": "error",
+    "message": "API request failed: 403 Client Error: Forbidden for url: https://www.aussiebroadband.com.au/api/plans",
+    "provider": "aussie",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:15:38.921834",
+    "status": "error",
+    "message": "Playwright scraping error: Page.wait_for_selector: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator(\".plan-card, .nbn-plan, [data-plan]\") to be visible\n",
+    "provider": "aussie",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:15:40.210033",
+    "status": "error",
+    "message": "All scraping methods failed for Aussie Broadband",
+    "provider": "aussie",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:15:40.213510",
+    "status": "warning",
+    "message": "No plans retrieved from aussie",
+    "provider": "aussie",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:15:40.214742",
+    "status": "info",
+    "message": "Running superloop scraper",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:15:40.215726",
+    "status": "info",
+    "message": "Starting Superloop scraper",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:15:41.145096",
+    "status": "error",
+    "message": "API request failed: 404 Client Error: Not Found for url: https://www.superloop.com/api/plans",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:15:57.445848",
+    "status": "error",
+    "message": "Playwright scraping error: Page.wait_for_selector: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator(\".plan-card, .broadband-plan, .product-tile\") to be visible\n",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:15:58.738549",
+    "status": "error",
+    "message": "All scraping methods failed for Superloop",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:15:58.739569",
+    "status": "warning",
+    "message": "No plans retrieved from superloop",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-20T12:15:58.741928",
+    "status": "error",
+    "message": "No plans scraped from any provider",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T16:29:14.209701",
+    "status": "info",
+    "message": "Starting Telstra scraper",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T16:29:15.413886",
+    "status": "error",
+    "message": "API request failed: 404 Client Error: Not Found for url: https://www.telstra.com.au/content/api/plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T16:29:28.436463",
+    "status": "success",
+    "message": "Successfully scraped 11 plans via Playwright",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T16:29:28.452130",
+    "status": "info",
+    "message": "Starting Superloop scraper",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T16:29:29.523520",
+    "status": "error",
+    "message": "API request failed: 404 Client Error: Not Found for url: https://www.superloop.com/api/plans",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T16:29:36.891811",
+    "status": "info",
+    "message": "Extracted 9 plans from JSON-LD",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T16:29:37.679311",
+    "status": "success",
+    "message": "Successfully scraped 9 plans via Playwright",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T16:29:37.712671",
+    "status": "info",
+    "message": "Starting Occom scraper",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T16:29:49.566054",
+    "status": "info",
+    "message": "Found 8 plan cards",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T16:29:51.012806",
+    "status": "success",
+    "message": "Successfully scraped 8 plans",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T18:54:48.086481",
+    "status": "info",
+    "message": "Starting Telstra scraper",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T18:54:50.266316",
+    "status": "error",
+    "message": "API request failed: 404 Client Error: Not Found for url: https://www.telstra.com.au/content/api/plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T18:55:11.052558",
+    "status": "success",
+    "message": "Successfully scraped 11 plans via Playwright",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T18:55:11.059411",
+    "status": "info",
+    "message": "Starting Superloop scraper",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T18:55:12.382847",
+    "status": "error",
+    "message": "API request failed: 404 Client Error: Not Found for url: https://www.superloop.com/api/plans",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T18:55:20.745697",
+    "status": "info",
+    "message": "Extracted 9 plans from JSON-LD",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T18:55:21.724675",
+    "status": "success",
+    "message": "Successfully scraped 9 plans via Playwright",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T18:55:21.732885",
+    "status": "info",
+    "message": "Starting Occom scraper",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T18:55:33.200487",
+    "status": "info",
+    "message": "Found 8 plan cards",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T18:55:35.789615",
+    "status": "success",
+    "message": "Successfully scraped 8 plans",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:04:40.597078",
+    "status": "info",
+    "message": "Starting Telstra scraper",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:04:42.291885",
+    "status": "error",
+    "message": "API request failed: 404 Client Error: Not Found for url: https://www.telstra.com.au/content/api/plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:05:02.298332",
+    "status": "success",
+    "message": "Successfully scraped 11 plans via Playwright",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:05:02.307744",
+    "status": "info",
+    "message": "Starting Superloop scraper",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:05:03.644307",
+    "status": "error",
+    "message": "API request failed: 404 Client Error: Not Found for url: https://www.superloop.com/api/plans",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:05:13.117619",
+    "status": "info",
+    "message": "Extracted 9 plans from JSON-LD",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:05:14.014648",
+    "status": "success",
+    "message": "Successfully scraped 9 plans via Playwright",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:05:14.043142",
+    "status": "info",
+    "message": "Starting Occom multi-page scraper",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:05:15.534029",
+    "status": "info",
+    "message": "Scraping NBN plans from https://occom.com.au/nbn-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:05:24.719040",
+    "status": "info",
+    "message": "Found 8 cards on https://occom.com.au/nbn-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:05:27.025239",
+    "status": "success",
+    "message": "Scraped 8 NBN plans",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:05:27.033247",
+    "status": "info",
+    "message": "Scraping Opticomm plans from https://occom.com.au/opticomm-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:05:35.727890",
+    "status": "info",
+    "message": "Found 7 cards on https://occom.com.au/opticomm-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:05:37.056576",
+    "status": "success",
+    "message": "Scraped 7 Opticomm plans",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:05:37.060614",
+    "status": "info",
+    "message": "Scraping NBN FTTP plans from https://occom.com.au/nbn-fttp-upgrade/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:05:45.659027",
+    "status": "info",
+    "message": "Found 8 cards on https://occom.com.au/nbn-fttp-upgrade/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:05:48.618485",
+    "status": "success",
+    "message": "Scraped 8 NBN FTTP plans",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:05:48.621946",
+    "status": "info",
+    "message": "Scraping Supa plans from https://occom.com.au/supa-network-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:05:58.390855",
+    "status": "info",
+    "message": "Found 5 cards on https://occom.com.au/supa-network-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:06:01.482791",
+    "status": "success",
+    "message": "Scraped 5 Supa plans",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:06:01.487791",
+    "status": "info",
+    "message": "Scraping Redtrain plans from https://occom.com.au/redtrain-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:06:10.617831",
+    "status": "info",
+    "message": "Found 7 cards on https://occom.com.au/redtrain-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:06:12.886762",
+    "status": "success",
+    "message": "Scraped 7 Redtrain plans",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:06:12.894768",
+    "status": "info",
+    "message": "Scraping Community Fibre plans from https://occom.com.au/community-fibre-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:06:21.372076",
+    "status": "info",
+    "message": "Found 6 cards on https://occom.com.au/community-fibre-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:06:22.688440",
+    "status": "success",
+    "message": "Scraped 6 Community Fibre plans",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:06:24.596533",
+    "status": "success",
+    "message": "Total Occom plans scraped: 41 across 6 pages",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:17:01.451261",
+    "status": "info",
+    "message": "Starting Telstra scraper",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:17:03.084992",
+    "status": "error",
+    "message": "API request failed: 404 Client Error: Not Found for url: https://www.telstra.com.au/content/api/plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:17:24.753088",
+    "status": "success",
+    "message": "Successfully scraped 11 plans via Playwright",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:17:24.762088",
+    "status": "info",
+    "message": "Starting Superloop scraper",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:17:26.076075",
+    "status": "error",
+    "message": "API request failed: 404 Client Error: Not Found for url: https://www.superloop.com/api/plans",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:17:33.441344",
+    "status": "info",
+    "message": "Extracted 9 plans from JSON-LD",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:17:34.510575",
+    "status": "success",
+    "message": "Successfully scraped 9 plans via Playwright",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:17:34.538573",
+    "status": "info",
+    "message": "Starting Occom multi-page scraper",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:17:37.148709",
+    "status": "info",
+    "message": "Scraping NBN plans from https://occom.com.au/nbn-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:17:46.961440",
+    "status": "info",
+    "message": "Found 8 cards on https://occom.com.au/nbn-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:17:51.066169",
+    "status": "success",
+    "message": "Scraped 8 NBN plans",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:17:51.070701",
+    "status": "info",
+    "message": "Scraping Opticomm plans from https://occom.com.au/opticomm-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:18:00.334012",
+    "status": "info",
+    "message": "Found 7 cards on https://occom.com.au/opticomm-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:18:03.517652",
+    "status": "success",
+    "message": "Scraped 7 Opticomm plans",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:18:03.524652",
+    "status": "info",
+    "message": "Scraping NBN FTTP plans from https://occom.com.au/nbn-fttp-upgrade/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:18:13.074924",
+    "status": "info",
+    "message": "Found 8 cards on https://occom.com.au/nbn-fttp-upgrade/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:18:15.600614",
+    "status": "success",
+    "message": "Scraped 8 NBN FTTP plans",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:18:15.610634",
+    "status": "info",
+    "message": "Scraping Supa plans from https://occom.com.au/supa-network-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:18:24.395660",
+    "status": "info",
+    "message": "Found 5 cards on https://occom.com.au/supa-network-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:18:26.678223",
+    "status": "success",
+    "message": "Scraped 5 Supa plans",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:18:26.682224",
+    "status": "info",
+    "message": "Scraping Redtrain plans from https://occom.com.au/redtrain-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:18:35.578911",
+    "status": "info",
+    "message": "Found 7 cards on https://occom.com.au/redtrain-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:18:37.241646",
+    "status": "success",
+    "message": "Scraped 7 Redtrain plans",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:18:37.252659",
+    "status": "info",
+    "message": "Scraping Community Fibre plans from https://occom.com.au/community-fibre-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:18:47.327888",
+    "status": "info",
+    "message": "Found 6 cards on https://occom.com.au/community-fibre-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:18:48.355465",
+    "status": "success",
+    "message": "Scraped 6 Community Fibre plans",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-22T19:18:50.152599",
+    "status": "success",
+    "message": "Total Occom plans scraped: 41 across 6 pages",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-23T10:10:55.273847",
+    "status": "error",
+    "message": "Playwright scraping error: Page.wait_for_selector: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator(\".plan-card, .nbn-plan, [data-plan]\") to be visible\n",
+    "provider": "aussie",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-23T10:11:33.027949",
+    "status": "info",
+    "message": "Starting Occom multi-page scraper",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-23T10:11:34.093287",
+    "status": "info",
+    "message": "Scraping NBN plans from https://occom.com.au/nbn-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-23T10:11:43.245590",
+    "status": "info",
+    "message": "Found 8 cards on https://occom.com.au/nbn-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-23T10:11:44.077894",
+    "status": "success",
+    "message": "Scraped 8 NBN plans",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-23T10:11:44.079428",
+    "status": "info",
+    "message": "Scraping Opticomm plans from https://occom.com.au/opticomm-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-23T10:11:52.647721",
+    "status": "info",
+    "message": "Found 7 cards on https://occom.com.au/opticomm-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-23T10:11:53.188612",
+    "status": "success",
+    "message": "Scraped 7 Opticomm plans",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-23T10:11:53.191087",
+    "status": "info",
+    "message": "Scraping NBN FTTP plans from https://occom.com.au/nbn-fttp-upgrade/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-23T10:12:01.578573",
+    "status": "info",
+    "message": "Found 8 cards on https://occom.com.au/nbn-fttp-upgrade/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-23T10:12:02.381071",
+    "status": "success",
+    "message": "Scraped 8 NBN FTTP plans",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-23T10:12:02.384232",
+    "status": "info",
+    "message": "Scraping Supa plans from https://occom.com.au/supa-network-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-23T10:12:11.554519",
+    "status": "info",
+    "message": "Found 5 cards on https://occom.com.au/supa-network-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-23T10:12:11.973801",
+    "status": "success",
+    "message": "Scraped 5 Supa plans",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-23T10:12:11.978621",
+    "status": "info",
+    "message": "Scraping Redtrain plans from https://occom.com.au/redtrain-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-23T10:12:20.704167",
+    "status": "info",
+    "message": "Found 7 cards on https://occom.com.au/redtrain-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-23T10:12:21.356486",
+    "status": "success",
+    "message": "Scraped 7 Redtrain plans",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-23T10:12:21.359486",
+    "status": "info",
+    "message": "Scraping Community Fibre plans from https://occom.com.au/community-fibre-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-23T10:12:29.779829",
+    "status": "info",
+    "message": "Found 6 cards on https://occom.com.au/community-fibre-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-23T10:12:30.446308",
+    "status": "success",
+    "message": "Scraped 6 Community Fibre plans",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-23T10:12:31.806324",
+    "status": "success",
+    "message": "Total Occom plans scraped: 41 across 6 pages",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T09:44:54.457914",
+    "status": "info",
+    "message": "Navigating to https://www.optus.com.au/internet/nbn",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T09:44:56.379025",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T09:45:01.650498",
+    "status": "info",
+    "message": "Found 7 plan cards",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T09:45:02.216421",
+    "status": "success",
+    "message": "Extracted 7 plans from Optus",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T09:52:00.890841",
+    "status": "info",
+    "message": "Scraping nbn: https://www.superloop.com/internet/nbn/",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T09:52:01.725256",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T09:52:08.635953",
+    "status": "success",
+    "message": "nbn: 9 plans",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T09:52:09.199270",
+    "status": "info",
+    "message": "Scraping fibre: https://www.superloop.com/internet/fibre/",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T09:52:10.067210",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T09:52:15.766053",
+    "status": "success",
+    "message": "fibre: 7 plans",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T09:52:16.069499",
+    "status": "info",
+    "message": "Scraping flip_to_fibre: https://www.superloop.com/flip-to-fibre/",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T09:52:16.925503",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T09:52:22.391169",
+    "status": "info",
+    "message": "Rounded cards found: 5",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T09:52:25.177468",
+    "status": "success",
+    "message": "flip_to_fibre: 5 plans",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T09:52:25.554149",
+    "status": "info",
+    "message": "Scraping fixed_wireless: https://www.superloop.com/internet/fixed-wireless/",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T09:52:26.405946",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T09:52:32.061883",
+    "status": "info",
+    "message": "Fixed wireless cards found: 3",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T09:52:32.178753",
+    "status": "success",
+    "message": "fixed_wireless: 1 plans",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T09:52:34.590711",
+    "status": "success",
+    "message": "Total Superloop plans: 22",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T09:53:54.568926",
+    "status": "info",
+    "message": "Scraping nbn: https://www.superloop.com/internet/nbn/",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T09:53:56.381266",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T09:54:02.561035",
+    "status": "success",
+    "message": "nbn: 9 plans",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T09:54:02.939767",
+    "status": "info",
+    "message": "Scraping fibre: https://www.superloop.com/internet/fibre/",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T09:54:03.874961",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T09:54:11.234808",
+    "status": "success",
+    "message": "fibre: 7 plans",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T09:54:11.695588",
+    "status": "info",
+    "message": "Scraping flip_to_fibre: https://www.superloop.com/flip-to-fibre/",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T09:54:12.614385",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T09:54:19.649401",
+    "status": "info",
+    "message": "Rounded cards found: 5",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T09:54:21.125825",
+    "status": "success",
+    "message": "flip_to_fibre: 5 plans",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T09:54:21.701131",
+    "status": "info",
+    "message": "Scraping fixed_wireless: https://www.superloop.com/internet/fixed-wireless/",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T09:54:22.631238",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T09:54:28.098243",
+    "status": "info",
+    "message": "Fixed wireless cards found: 6",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T09:54:28.301796",
+    "status": "success",
+    "message": "fixed_wireless: 3 plans",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T09:54:30.460396",
+    "status": "success",
+    "message": "Total Superloop plans: 24",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T10:19:56.580428",
+    "status": "info",
+    "message": "Scraping plans: https://www.telstra.com.au/internet/plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T10:19:59.136868",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T10:20:07.582609",
+    "status": "success",
+    "message": "plans: 17 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T10:20:07.785447",
+    "status": "info",
+    "message": "Scraping 5g_home: https://www.telstra.com.au/internet/5g-home-internet",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T10:20:09.807666",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T10:20:16.000834",
+    "status": "success",
+    "message": "5g_home: 1 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T10:20:16.119322",
+    "status": "info",
+    "message": "Scraping starlink: https://www.telstra.com.au/internet/starlink",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T10:20:17.508008",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T10:20:23.901307",
+    "status": "success",
+    "message": "starlink: 1 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T10:20:24.066123",
+    "status": "info",
+    "message": "Scraping small_business: https://www.telstra.com.au/small-business/internet",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T10:20:26.315959",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T10:20:33.206281",
+    "status": "success",
+    "message": "small_business: 11 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T10:20:34.759266",
+    "status": "success",
+    "message": "Total Telstra plans: 30",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:29:02.581410",
+    "status": "info",
+    "message": "Scraping nbn: https://www.tpg.com.au/nbn",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:29:05.049906",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:29:11.199178",
+    "status": "info",
+    "message": "Found 50 nbnLabels cards",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:29:14.157999",
+    "status": "success",
+    "message": "nbn: 9 plans",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:29:14.207744",
+    "status": "info",
+    "message": "Skipping fibre_upgrade (informational)",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:29:14.306766",
+    "status": "info",
+    "message": "Scraping home_wireless: https://www.tpg.com.au/home-wireless-broadband",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:29:18.335035",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:29:24.443861",
+    "status": "success",
+    "message": "home_wireless: 1 plans",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:29:24.576439",
+    "status": "info",
+    "message": "Scraping 5g_home: https://www.tpg.com.au/5g-home-broadband",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:29:29.811444",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:29:36.138163",
+    "status": "success",
+    "message": "5g_home: 2 plans",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:29:36.344469",
+    "status": "info",
+    "message": "Scraping fttb: https://www.tpg.com.au/fttb",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:29:39.289535",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:29:45.415679",
+    "status": "info",
+    "message": "Found 3 FTTB plan-cards",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:29:45.577641",
+    "status": "success",
+    "message": "fttb: 3 plans",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:29:46.359077",
+    "status": "success",
+    "message": "Total TPG plans: 15",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:30:22.889515",
+    "status": "info",
+    "message": "Scraping nbn: https://www.tpg.com.au/nbn",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:30:25.557364",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:30:31.706575",
+    "status": "info",
+    "message": "Found 50 nbnLabels cards",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:30:34.516162",
+    "status": "success",
+    "message": "nbn: 7 plans",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:30:34.569391",
+    "status": "info",
+    "message": "Skipping fibre_upgrade (informational)",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:30:34.718038",
+    "status": "info",
+    "message": "Scraping home_wireless: https://www.tpg.com.au/home-wireless-broadband",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:30:38.570256",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:30:44.676236",
+    "status": "success",
+    "message": "home_wireless: 1 plans",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:30:44.813590",
+    "status": "info",
+    "message": "Scraping 5g_home: https://www.tpg.com.au/5g-home-broadband",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:30:48.559193",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:30:54.706205",
+    "status": "success",
+    "message": "5g_home: 2 plans",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:30:54.921039",
+    "status": "info",
+    "message": "Scraping fttb: https://www.tpg.com.au/fttb",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:30:58.612618",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:31:04.801996",
+    "status": "info",
+    "message": "Found 3 FTTB plan-cards",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:31:04.970913",
+    "status": "success",
+    "message": "fttb: 3 plans",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:31:06.569118",
+    "status": "success",
+    "message": "Total TPG plans: 13",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:33:08.227224",
+    "status": "info",
+    "message": "Scraping nbn: https://www.tpg.com.au/nbn",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:33:15.789529",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:33:21.850136",
+    "status": "info",
+    "message": "Found 50 nbnLabels cards",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:33:22.634515",
+    "status": "success",
+    "message": "nbn: 7 plans",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:33:22.653466",
+    "status": "info",
+    "message": "Skipping fibre_upgrade (informational)",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:33:22.745157",
+    "status": "info",
+    "message": "Scraping home_wireless: https://www.tpg.com.au/home-wireless-broadband",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:33:28.660679",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:33:34.722547",
+    "status": "success",
+    "message": "home_wireless: 1 plans",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:33:34.803526",
+    "status": "info",
+    "message": "Scraping 5g_home: https://www.tpg.com.au/5g-home-broadband",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:33:39.429645",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:33:45.500268",
+    "status": "success",
+    "message": "5g_home: 2 plans",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:33:45.603161",
+    "status": "info",
+    "message": "Scraping fttb: https://www.tpg.com.au/fttb",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:33:48.969432",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:33:55.015944",
+    "status": "info",
+    "message": "Found 3 FTTB plan-cards",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:33:55.076937",
+    "status": "success",
+    "message": "fttb: 3 plans",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:33:56.397625",
+    "status": "success",
+    "message": "Total TPG plans: 13",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:35:34.043842",
+    "status": "info",
+    "message": "Scraping nbn: https://www.tpg.com.au/nbn",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:35:36.524194",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:35:42.586127",
+    "status": "info",
+    "message": "Found 50 nbnLabels cards",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:35:43.401396",
+    "status": "success",
+    "message": "nbn: 7 plans",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:35:43.417652",
+    "status": "info",
+    "message": "Skipping fibre_upgrade (informational)",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:35:43.483013",
+    "status": "info",
+    "message": "Scraping home_wireless: https://www.tpg.com.au/home-wireless-broadband",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:35:46.870291",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:35:52.918466",
+    "status": "success",
+    "message": "home_wireless: 1 plans",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:35:53.029839",
+    "status": "info",
+    "message": "Scraping 5g_home: https://www.tpg.com.au/5g-home-broadband",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:35:58.805400",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:36:04.855544",
+    "status": "success",
+    "message": "5g_home: 2 plans",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:36:04.920623",
+    "status": "info",
+    "message": "Scraping fttb: https://www.tpg.com.au/fttb",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:36:08.382225",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:36:14.466015",
+    "status": "info",
+    "message": "Found 3 FTTB plan-cards",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:36:14.553681",
+    "status": "success",
+    "message": "fttb: 3 plans",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-24T13:36:15.978231",
+    "status": "success",
+    "message": "Total TPG plans: 13",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-25T22:08:45.885090",
+    "status": "info",
+    "message": "Starting Occom multi-page scraper",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-01T12:42:30.286945",
+    "status": "info",
+    "message": "Starting competitive benchmark analysis",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-01T12:42:30.383643",
+    "status": "success",
+    "message": "Benchmark complete: 0 wins, 8 gaps across 8 tiers",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-02T15:27:38.144768",
+    "status": "info",
+    "message": "Generating Speed/Price ROI Calculator",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-02T15:27:38.251472",
+    "status": "success",
+    "message": "ROI Calculator: 74 plans ranked, best ROI = 13.79 Mbps/$ (Superloop)",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-04T08:29:57.224801",
+    "status": "info",
+    "message": "==================================================",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-04T08:29:57.226522",
+    "status": "info",
+    "message": "Starting ISP Plan Scraping Pipeline",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-04T08:29:57.226522",
+    "status": "info",
+    "message": "==================================================",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-04T08:29:57.226522",
+    "status": "error",
+    "message": "Pipeline failed with critical error: module 'providers.optus' has no attribute 'scrape_optus_plans'",
+    "provider": null,
+    "data": {}
+  }
+]

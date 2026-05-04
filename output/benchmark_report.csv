@@ -1,0 +1,26 @@
+tier,speed_range,provider,plan_name,speed_mbps,effective_price,regular_price,promo_price,promo_period,annual_cost,value_score,is_cheapest,is_best_value
+Basic,0-15 Mbps,occom,Basic (nbn12),12,48.0,58.0,48.0,6 months,636.0,0.25,,
+Basic,0-15 Mbps,tpg,Home Wireless Broadband,15.0,44.99,54.99,44.99,6 months,599.88,0.33,Yes,Yes
+Standard,16-30 Mbps,telstra,Basic nbn® Internet Only,25,85.0,85.0,,,1020.0,0.29,,
+Standard,16-30 Mbps,occom,Boost (Fibre25),25,45.0,55.0,45.0,6 months,600.0,0.56,,
+Standard,16-30 Mbps,tpg,FTTB25,25.0,39.99,39.99,,3 months,479.88,0.63,Yes,Yes
+Boost,31-60 Mbps,telstra,Essential nbn® Internet Only,50,89.0,89.0,,,1068.0,0.56,,
+Boost,31-60 Mbps,superloop,Extra Value - nbn 50/20,50,65.0,65.0,,,780.0,0.77,,
+Boost,31-60 Mbps,occom,Boost Plus (Fibre50),50,50.0,60.0,50.0,6 months,660.0,1.0,,
+Boost,31-60 Mbps,tpg,5G Home Broadband Plus,50.0,29.99,59.99,29.99,6 months,539.88,1.67,Yes,Yes
+Fast,61-150 Mbps,telstra,Premium nbn® Internet Only,100,89.0,89.0,,,1068.0,1.12,,
+Fast,61-150 Mbps,superloop,Family Max - nbn 100/20,100,69.0,69.0,,,828.0,1.45,,
+Fast,61-150 Mbps,occom,Superfast (Fibre100),100,55.0,65.0,55.0,6 months,720.0,1.82,,
+Fast,61-150 Mbps,tpg,5G Home Broadband Premium,100.0,34.99,64.99,34.99,6 months,599.88,2.86,Yes,Yes
+Superfast,151-300 Mbps,telstra,5G Internet,300,85.0,85.0,,,1020.0,3.53,Yes,Yes
+Superfast,151-300 Mbps,superloop,Creator - nbn 250/100,250,85.0,85.0,,,1020.0,2.94,,
+Superfast,151-300 Mbps,occom,Rocket (Fibre250),250,110.0,120.0,110.0,12 months,1320.0,2.27,,
+Ultrafast,301-600 Mbps,superloop,Family Max - nbn 500/50,500,69.0,69.0,,,828.0,7.25,,
+Ultrafast,301-600 Mbps,occom,Turbo (Fibre500),500,70.0,80.0,70.0,6 months,900.0,7.14,,
+Ultrafast,301-600 Mbps,tpg,NBN500,500.0,64.99,94.99,64.99,6 months,959.88,7.69,Yes,Yes
+Hyper,601-1000 Mbps,telstra,Ultimate nbn® Internet Only,750,104.0,104.0,,,1248.0,7.21,,
+Hyper,601-1000 Mbps,superloop,Lightspeed - nbn 1000/100,1000,85.0,85.0,,,1020.0,11.76,,Yes
+Hyper,601-1000 Mbps,occom,Lightning (Fibre1000),1000,90.0,100.0,90.0,6 months,1140.0,11.11,,
+Hyper,601-1000 Mbps,tpg,NBN Home Superfast,740.0,69.99,99.99,69.99,6 months,1019.88,10.57,Yes,
+Mega,1001-99999 Mbps,superloop,Hyperspeed - nbn 2000/100,2000,145.0,145.0,,,1740.0,13.79,Yes,Yes
+Mega,1001-99999 Mbps,occom,Hyper (nbn2000),2000,165.0,185.0,165.0,12 months,1980.0,12.12,,
