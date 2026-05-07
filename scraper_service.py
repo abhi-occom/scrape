@@ -113,9 +113,14 @@ def save_output(provider_name: str, plans: Any) -> Dict[str, str]:
     files = {'json': [], 'csv': []}
 
     if isinstance(plans, list):
-        # Simple provider (Telstra, Superloop)
+        # Simple provider (e.g. Optus, Aussie)
         json_path = save_provider_json(provider_name, f"{provider_name}_plans", plans)
         csv_path = save_provider_csv(provider_name, f"{provider_name}_plans", plans, provider_name)
+        files['json'].append(json_path)
+        files['csv'].append(csv_path)
+        # Always write *_all_plans.json so benchmark load_all_plans() picks it up
+        json_path = save_provider_json(provider_name, f"{provider_name}_all_plans", plans)
+        csv_path = save_provider_csv(provider_name, f"{provider_name}_all_plans", plans, provider_name)
         files['json'].append(json_path)
         files['csv'].append(csv_path)
 

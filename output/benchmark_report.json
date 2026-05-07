@@ -1,10 +1,12 @@
 {
-  "generated_at": "2026-05-01T12:42:30.350886",
+  "generated_at": "2026-05-08T01:05:56.975235",
   "summary": {
-    "total_plans_analyzed": 74,
-    "total_providers": 4,
+    "total_plans_analyzed": 105,
+    "total_providers": 6,
     "providers": [
+      "exetel",
       "occom",
+      "optus",
       "superloop",
       "telstra",
       "tpg"
@@ -33,6 +35,19 @@
           "network_type": "NBN",
           "contract": "No Contract"
         },
+        "telstra": {
+          "provider": "telstra",
+          "plan_name": "Satellite Home Internet",
+          "speed": 0,
+          "effective_price": 125.0,
+          "regular_price": 125.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 1500.0,
+          "value_score": 0.0,
+          "network_type": "Satellite (Starlink)",
+          "contract": "No Lock-in"
+        },
         "tpg": {
           "provider": "tpg",
           "plan_name": "Home Wireless Broadband",
@@ -49,8 +64,8 @@
       },
       "cheapest": "tpg",
       "cheapest_price": 44.99,
-      "most_expensive": "occom",
-      "most_expensive_price": 48.0,
+      "most_expensive": "telstra",
+      "most_expensive_price": 125.0,
       "best_value": "tpg",
       "best_value_score": 0.33
     },
@@ -59,19 +74,6 @@
       "tier_label": "Standard",
       "speed_range": "16-30 Mbps",
       "providers": {
-        "telstra": {
-          "provider": "telstra",
-          "plan_name": "Basic nbn® Internet Only",
-          "speed": 25,
-          "effective_price": 85.0,
-          "regular_price": 85.0,
-          "promo_price": null,
-          "promo_period": null,
-          "annual_cost": 1020.0,
-          "value_score": 0.29,
-          "network_type": "NBN",
-          "contract": "No Contract"
-        },
         "occom": {
           "provider": "occom",
           "plan_name": "Boost (Fibre25)",
@@ -84,6 +86,32 @@
           "value_score": 0.56,
           "network_type": "Community Fibre",
           "contract": "No Contract"
+        },
+        "optus": {
+          "provider": "optus",
+          "plan_name": "Optus Basic 25Mbps",
+          "speed": 25,
+          "effective_price": 79.0,
+          "regular_price": 79.0,
+          "promo_price": null,
+          "promo_period": "",
+          "annual_cost": 948.0,
+          "value_score": 0.32,
+          "network_type": "NBN (all connections)",
+          "contract": "No Lock-in"
+        },
+        "telstra": {
+          "provider": "telstra",
+          "plan_name": "Basic 5G Internet",
+          "speed": 25,
+          "effective_price": 70.0,
+          "regular_price": 70.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 840.0,
+          "value_score": 0.36,
+          "network_type": "5G",
+          "contract": "No Lock-in"
         },
         "tpg": {
           "provider": "tpg",
@@ -101,8 +129,8 @@
       },
       "cheapest": "tpg",
       "cheapest_price": 39.99,
-      "most_expensive": "telstra",
-      "most_expensive_price": 85.0,
+      "most_expensive": "optus",
+      "most_expensive_price": 79.0,
       "best_value": "tpg",
       "best_value_score": 0.63
     },
@@ -111,18 +139,31 @@
       "tier_label": "Boost",
       "speed_range": "31-60 Mbps",
       "providers": {
-        "telstra": {
-          "provider": "telstra",
-          "plan_name": "Essential nbn® Internet Only",
+        "occom": {
+          "provider": "occom",
+          "plan_name": "Boost Plus (Fibre50)",
           "speed": 50,
-          "effective_price": 89.0,
-          "regular_price": 89.0,
-          "promo_price": null,
-          "promo_period": null,
-          "annual_cost": 1068.0,
-          "value_score": 0.56,
-          "network_type": "NBN",
+          "effective_price": 50.0,
+          "regular_price": 60.0,
+          "promo_price": 50.0,
+          "promo_period": "6 months",
+          "annual_cost": 660.0,
+          "value_score": 1.0,
+          "network_type": "Community Fibre",
           "contract": "No Contract"
+        },
+        "optus": {
+          "provider": "optus",
+          "plan_name": "Optus Everyday 50Mbps",
+          "speed": 50,
+          "effective_price": 95.0,
+          "regular_price": 95.0,
+          "promo_price": null,
+          "promo_period": "",
+          "annual_cost": 1140.0,
+          "value_score": 0.53,
+          "network_type": "NBN (all connections)",
+          "contract": "No Lock-in"
         },
         "superloop": {
           "provider": "superloop",
@@ -137,18 +178,18 @@
           "network_type": "NBN",
           "contract": "No Contract"
         },
-        "occom": {
-          "provider": "occom",
-          "plan_name": "Boost Plus (Fibre50)",
+        "telstra": {
+          "provider": "telstra",
+          "plan_name": "Essential 5G Internet",
           "speed": 50,
-          "effective_price": 50.0,
-          "regular_price": 60.0,
-          "promo_price": 50.0,
-          "promo_period": "6 months",
-          "annual_cost": 660.0,
-          "value_score": 1.0,
-          "network_type": "Community Fibre",
-          "contract": "No Contract"
+          "effective_price": 80.0,
+          "regular_price": 80.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 960.0,
+          "value_score": 0.62,
+          "network_type": "5G",
+          "contract": "No Lock-in"
         },
         "tpg": {
           "provider": "tpg",
@@ -166,8 +207,8 @@
       },
       "cheapest": "tpg",
       "cheapest_price": 29.99,
-      "most_expensive": "telstra",
-      "most_expensive_price": 89.0,
+      "most_expensive": "optus",
+      "most_expensive_price": 95.0,
       "best_value": "tpg",
       "best_value_score": 1.67
     },
@@ -176,18 +217,44 @@
       "tier_label": "Fast",
       "speed_range": "61-150 Mbps",
       "providers": {
-        "telstra": {
-          "provider": "telstra",
-          "plan_name": "Premium nbn® Internet Only",
-          "speed": 100,
-          "effective_price": 89.0,
-          "regular_price": 89.0,
+        "exetel": {
+          "provider": "exetel",
+          "plan_name": "PLUS ONE 130GB",
+          "speed": 150,
+          "effective_price": 40.0,
+          "regular_price": 40.0,
           "promo_price": null,
-          "promo_period": null,
-          "annual_cost": 1068.0,
-          "value_score": 1.12,
-          "network_type": "NBN",
+          "promo_period": "",
+          "annual_cost": 480.0,
+          "value_score": 3.75,
+          "network_type": "5G Mobile",
+          "contract": "No Lock-in"
+        },
+        "occom": {
+          "provider": "occom",
+          "plan_name": "Superfast (Fibre100)",
+          "speed": 100,
+          "effective_price": 55.0,
+          "regular_price": 65.0,
+          "promo_price": 55.0,
+          "promo_period": "6 months",
+          "annual_cost": 720.0,
+          "value_score": 1.82,
+          "network_type": "Community Fibre",
           "contract": "No Contract"
+        },
+        "optus": {
+          "provider": "optus",
+          "plan_name": "Optus Fast 100Mbps",
+          "speed": 100,
+          "effective_price": 99.0,
+          "regular_price": 99.0,
+          "promo_price": null,
+          "promo_period": "",
+          "annual_cost": 1188.0,
+          "value_score": 1.01,
+          "network_type": "FTTN, FTTC, FTTB",
+          "contract": "No Lock-in"
         },
         "superloop": {
           "provider": "superloop",
@@ -202,18 +269,18 @@
           "network_type": "NBN",
           "contract": "No Contract"
         },
-        "occom": {
-          "provider": "occom",
-          "plan_name": "Superfast (Fibre100)",
-          "speed": 100,
-          "effective_price": 55.0,
-          "regular_price": 65.0,
-          "promo_price": 55.0,
-          "promo_period": "6 months",
-          "annual_cost": 720.0,
-          "value_score": 1.82,
-          "network_type": "Community Fibre",
-          "contract": "No Contract"
+        "telstra": {
+          "provider": "telstra",
+          "plan_name": "Essential nbn® Internet Only",
+          "speed": 68,
+          "effective_price": 89.0,
+          "regular_price": 89.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 1068.0,
+          "value_score": 0.76,
+          "network_type": "NBN",
+          "contract": "No Lock-in"
         },
         "tpg": {
           "provider": "tpg",
@@ -231,27 +298,27 @@
       },
       "cheapest": "tpg",
       "cheapest_price": 34.99,
-      "most_expensive": "telstra",
-      "most_expensive_price": 89.0,
-      "best_value": "tpg",
-      "best_value_score": 2.86
+      "most_expensive": "optus",
+      "most_expensive_price": 99.0,
+      "best_value": "exetel",
+      "best_value_score": 3.75
     },
     {
       "tier": "superfast",
       "tier_label": "Superfast",
       "speed_range": "151-300 Mbps",
       "providers": {
-        "telstra": {
-          "provider": "telstra",
-          "plan_name": "5G Internet",
-          "speed": 300,
-          "effective_price": 85.0,
-          "regular_price": 85.0,
-          "promo_price": null,
-          "promo_period": null,
-          "annual_cost": 1020.0,
-          "value_score": 3.53,
-          "network_type": "5G",
+        "occom": {
+          "provider": "occom",
+          "plan_name": "Rocket (Fibre250)",
+          "speed": 250,
+          "effective_price": 110.0,
+          "regular_price": 120.0,
+          "promo_price": 110.0,
+          "promo_period": "12 months",
+          "annual_cost": 1320.0,
+          "value_score": 2.27,
+          "network_type": "Redtrain",
           "contract": "No Contract"
         },
         "superloop": {
@@ -267,21 +334,21 @@
           "network_type": "NBN",
           "contract": "No Contract"
         },
-        "occom": {
-          "provider": "occom",
-          "plan_name": "Rocket (Fibre250)",
-          "speed": 250,
-          "effective_price": 110.0,
-          "regular_price": 120.0,
-          "promo_price": 110.0,
-          "promo_period": "12 months",
-          "annual_cost": 1320.0,
-          "value_score": 2.27,
-          "network_type": "Redtrain",
-          "contract": "No Contract"
+        "telstra": {
+          "provider": "telstra",
+          "plan_name": "Premium 5G Internet",
+          "speed": 300,
+          "effective_price": 85.0,
+          "regular_price": 85.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 1020.0,
+          "value_score": 3.53,
+          "network_type": "5G",
+          "contract": "No Lock-in"
         }
       },
-      "cheapest": "telstra",
+      "cheapest": "superloop",
       "cheapest_price": 85.0,
       "most_expensive": "occom",
       "most_expensive_price": 110.0,
@@ -293,18 +360,18 @@
       "tier_label": "Ultrafast",
       "speed_range": "301-600 Mbps",
       "providers": {
-        "superloop": {
-          "provider": "superloop",
-          "plan_name": "Family Max - nbn 500/50",
+        "exetel": {
+          "provider": "exetel",
+          "plan_name": "One Plan 500/50",
           "speed": 500,
-          "effective_price": 69.0,
-          "regular_price": 69.0,
+          "effective_price": 80.0,
+          "regular_price": 80.0,
           "promo_price": null,
-          "promo_period": null,
-          "annual_cost": 828.0,
-          "value_score": 7.25,
+          "promo_period": "",
+          "annual_cost": 960.0,
+          "value_score": 6.25,
           "network_type": "NBN",
-          "contract": "No Contract"
+          "contract": "No Lock-in"
         },
         "occom": {
           "provider": "occom",
@@ -318,6 +385,45 @@
           "value_score": 7.14,
           "network_type": "Community Fibre",
           "contract": "No Contract"
+        },
+        "optus": {
+          "provider": "optus",
+          "plan_name": "Most Popular Optus Superfast 500Mbps",
+          "speed": 500,
+          "effective_price": 99.0,
+          "regular_price": 99.0,
+          "promo_price": null,
+          "promo_period": "",
+          "annual_cost": 1188.0,
+          "value_score": 5.05,
+          "network_type": "FTTP, HFC",
+          "contract": "No Lock-in"
+        },
+        "superloop": {
+          "provider": "superloop",
+          "plan_name": "Family Max - nbn 500/50",
+          "speed": 500,
+          "effective_price": 69.0,
+          "regular_price": 69.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 828.0,
+          "value_score": 7.25,
+          "network_type": "NBN",
+          "contract": "No Contract"
+        },
+        "telstra": {
+          "provider": "telstra",
+          "plan_name": "Premium nbn® Internet Only",
+          "speed": 500,
+          "effective_price": 89.0,
+          "regular_price": 89.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 1068.0,
+          "value_score": 5.62,
+          "network_type": "NBN",
+          "contract": "No Lock-in"
         },
         "tpg": {
           "provider": "tpg",
@@ -335,8 +441,8 @@
       },
       "cheapest": "tpg",
       "cheapest_price": 64.99,
-      "most_expensive": "occom",
-      "most_expensive_price": 70.0,
+      "most_expensive": "optus",
+      "most_expensive_price": 99.0,
       "best_value": "tpg",
       "best_value_score": 7.69
     },
@@ -345,18 +451,31 @@
       "tier_label": "Hyper",
       "speed_range": "601-1000 Mbps",
       "providers": {
-        "telstra": {
-          "provider": "telstra",
-          "plan_name": "Ultimate nbn® Internet Only",
-          "speed": 750,
-          "effective_price": 104.0,
-          "regular_price": 104.0,
-          "promo_price": null,
-          "promo_period": null,
-          "annual_cost": 1248.0,
-          "value_score": 7.21,
-          "network_type": "NBN",
+        "occom": {
+          "provider": "occom",
+          "plan_name": "Lightning (Fibre1000)",
+          "speed": 1000,
+          "effective_price": 90.0,
+          "regular_price": 100.0,
+          "promo_price": 90.0,
+          "promo_period": "6 months",
+          "annual_cost": 1140.0,
+          "value_score": 11.11,
+          "network_type": "Community Fibre",
           "contract": "No Contract"
+        },
+        "optus": {
+          "provider": "optus",
+          "plan_name": "Optus Ultrafast 820Mbps",
+          "speed": 820,
+          "effective_price": 129.0,
+          "regular_price": 129.0,
+          "promo_price": null,
+          "promo_period": "",
+          "annual_cost": 1548.0,
+          "value_score": 6.36,
+          "network_type": "FTTP, HFC",
+          "contract": "No Lock-in"
         },
         "superloop": {
           "provider": "superloop",
@@ -371,18 +490,18 @@
           "network_type": "NBN",
           "contract": "No Contract"
         },
-        "occom": {
-          "provider": "occom",
-          "plan_name": "Lightning (Fibre1000)",
-          "speed": 1000,
-          "effective_price": 90.0,
-          "regular_price": 100.0,
-          "promo_price": 90.0,
-          "promo_period": "6 months",
-          "annual_cost": 1140.0,
-          "value_score": 11.11,
-          "network_type": "Community Fibre",
-          "contract": "No Contract"
+        "telstra": {
+          "provider": "telstra",
+          "plan_name": "Ultimate nbn® Internet Only",
+          "speed": 750,
+          "effective_price": 104.0,
+          "regular_price": 104.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 1248.0,
+          "value_score": 7.21,
+          "network_type": "NBN",
+          "contract": "No Lock-in"
         },
         "tpg": {
           "provider": "tpg",
@@ -400,8 +519,8 @@
       },
       "cheapest": "tpg",
       "cheapest_price": 69.99,
-      "most_expensive": "telstra",
-      "most_expensive_price": 104.0,
+      "most_expensive": "optus",
+      "most_expensive_price": 129.0,
       "best_value": "superloop",
       "best_value_score": 11.76
     },
@@ -410,19 +529,6 @@
       "tier_label": "Mega",
       "speed_range": "1001-99999 Mbps",
       "providers": {
-        "superloop": {
-          "provider": "superloop",
-          "plan_name": "Hyperspeed - nbn 2000/100",
-          "speed": 2000,
-          "effective_price": 145.0,
-          "regular_price": 145.0,
-          "promo_price": null,
-          "promo_period": null,
-          "annual_cost": 1740.0,
-          "value_score": 13.79,
-          "network_type": "NBN",
-          "contract": "No Contract"
-        },
         "occom": {
           "provider": "occom",
           "plan_name": "Hyper (nbn2000)",
@@ -433,6 +539,19 @@
           "promo_period": "12 months",
           "annual_cost": 1980.0,
           "value_score": 12.12,
+          "network_type": "NBN",
+          "contract": "No Contract"
+        },
+        "superloop": {
+          "provider": "superloop",
+          "plan_name": "Hyperspeed - nbn 2000/100",
+          "speed": 2000,
+          "effective_price": 145.0,
+          "regular_price": 145.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 1740.0,
+          "value_score": 13.79,
           "network_type": "NBN",
           "contract": "No Contract"
         }
@@ -502,7 +621,7 @@
       "occom_plan": "Rocket (Fibre250)",
       "occom_speed": 250,
       "occom_value_score": 2.27,
-      "cheapest_competitor": "telstra",
+      "cheapest_competitor": "superloop",
       "cheapest_competitor_price": 85.0,
       "gap_amount": 25.0,
       "gap_pct": 29.4
@@ -562,6 +681,13 @@
           "value_score": 0.25,
           "speed": 12,
           "price": 48.0
+        },
+        {
+          "rank": 3,
+          "provider": "telstra",
+          "value_score": 0.0,
+          "speed": 0,
+          "price": 125.0
         }
       ]
     },
@@ -586,9 +712,16 @@
         {
           "rank": 3,
           "provider": "telstra",
-          "value_score": 0.29,
+          "value_score": 0.36,
           "speed": 25,
-          "price": 85.0
+          "price": 70.0
+        },
+        {
+          "rank": 4,
+          "provider": "optus",
+          "value_score": 0.32,
+          "speed": 25,
+          "price": 79.0
         }
       ]
     },
@@ -620,9 +753,16 @@
         {
           "rank": 4,
           "provider": "telstra",
-          "value_score": 0.56,
+          "value_score": 0.62,
           "speed": 50,
-          "price": 89.0
+          "price": 80.0
+        },
+        {
+          "rank": 5,
+          "provider": "optus",
+          "value_score": 0.53,
+          "speed": 50,
+          "price": 95.0
         }
       ]
     },
@@ -632,30 +772,44 @@
       "rankings": [
         {
           "rank": 1,
+          "provider": "exetel",
+          "value_score": 3.75,
+          "speed": 150,
+          "price": 40.0
+        },
+        {
+          "rank": 2,
           "provider": "tpg",
           "value_score": 2.86,
           "speed": 100.0,
           "price": 34.99
         },
         {
-          "rank": 2,
+          "rank": 3,
           "provider": "occom",
           "value_score": 1.82,
           "speed": 100,
           "price": 55.0
         },
         {
-          "rank": 3,
+          "rank": 4,
           "provider": "superloop",
           "value_score": 1.45,
           "speed": 100,
           "price": 69.0
         },
         {
-          "rank": 4,
-          "provider": "telstra",
-          "value_score": 1.12,
+          "rank": 5,
+          "provider": "optus",
+          "value_score": 1.01,
           "speed": 100,
+          "price": 99.0
+        },
+        {
+          "rank": 6,
+          "provider": "telstra",
+          "value_score": 0.76,
+          "speed": 68,
           "price": 89.0
         }
       ]
@@ -711,6 +865,27 @@
           "value_score": 7.14,
           "speed": 500,
           "price": 70.0
+        },
+        {
+          "rank": 4,
+          "provider": "exetel",
+          "value_score": 6.25,
+          "speed": 500,
+          "price": 80.0
+        },
+        {
+          "rank": 5,
+          "provider": "telstra",
+          "value_score": 5.62,
+          "speed": 500,
+          "price": 89.0
+        },
+        {
+          "rank": 6,
+          "provider": "optus",
+          "value_score": 5.05,
+          "speed": 500,
+          "price": 99.0
         }
       ]
     },
@@ -745,6 +920,13 @@
           "value_score": 7.21,
           "speed": 750,
           "price": 104.0
+        },
+        {
+          "rank": 5,
+          "provider": "optus",
+          "value_score": 6.36,
+          "speed": 820,
+          "price": 129.0
         }
       ]
     },

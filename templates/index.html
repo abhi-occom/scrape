@@ -140,6 +140,20 @@
             background: #5a6268;
         }
 
+        .btn-benchmark {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        .btn-benchmark:hover {
+            background: linear-gradient(135deg, #e07de8 0%, #e04460 100%);
+        }
+
+        .btn-benchmark:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
         .btn-small {
             padding: 8px 16px;
             font-size: 0.85em;
@@ -492,6 +506,9 @@
                     <button class="btn btn-secondary" onclick="loadAllResults()">
                         Load Saved Data
                     </button>
+                    <button class="btn btn-benchmark" onclick="runBenchmark()">
+                        &#9881; Run Benchmark
+                    </button>
                 </div>
             </div>
 
@@ -646,6 +663,28 @@
         }
 
         // ── Scrape all ──────────────────────────────────────────
+        // ── Run Benchmark ─────────────────────────────────────
+        async function runBenchmark() {
+            const btn = event.currentTarget;
+            btn.disabled = true;
+            btn.textContent = '⏳ Running…';
+            try {
+                const res = await fetch('/api/benchmark/run', { method: 'POST' });
+                const data = await res.json();
+                if (data.success) {
+                    showAlert('Benchmark complete! Opening dashboard…', 'success');
+                    setTimeout(() => window.open('/benchmark', '_blank'), 800);
+                } else {
+                    showAlert(`Benchmark failed: ${data.error || 'Unknown error'}`, 'error');
+                }
+            } catch (e) {
+                showAlert(`Benchmark error: ${e.message}`, 'error');
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = '&#9881; Run Benchmark';
+            }
+        }
+
         async function scrapeAll() {
             showLoading();
             startTimer('All Providers');

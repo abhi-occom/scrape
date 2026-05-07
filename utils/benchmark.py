@@ -76,23 +76,71 @@ def calc_annual_cost(plan: Dict[str, Any]) -> float:
     return round(regular * 12, 2)
 
 
-def load_all_plans(file_path: str = None) -> List[Dict[str, Any]]:
-    """Load plans from the all_plans.json output file."""
-    if file_path is None:
-        file_path = os.path.join(OUTPUT_DIR, 'all_plans.json')
-
-    if not os.path.exists(file_path):
-        return []
-
-    with open(file_path, 'r', encoding='utf-8') as f:
-        data = json.load(f)
-
-    # Handle both formats: list of plans or { plans: [...] }
-    if isinstance(data, list):
-        return data
-    if isinstance(data, dict):
-        return data.get('plans', [])
+def _parse_plans_file(path: str) -> List[Dict[str, Any]]:
+    """Parse a JSON file into a list of plans. Handles both list and wrapped dict formats."""
+    try:
+        with open(path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        if isinstance(data, list):
+            return data
+        if isinstance(data, dict):
+            return data.get('plans', [])
+    except Exception:
+        pass
     return []
+
+
+def load_all_plans(file_path: str = None) -> List[Dict[str, Any]]:
+    """
+    Load plans from all per-provider *_all_plans.json files under output/scrape_isp_*/json/.
+    This ensures every scraped provider (including newly added ones like Exetel) is
+    automatically included without any manual rebuild step.
+
+    Falls back to output/all_plans.json if no per-provider files exist.
+    If a specific file_path is passed, reads only that file (backward-compatible).
+    """
+    # If a specific file was requested, use it directly (backward-compatible)
+    if file_path is not None:
+        return _parse_plans_file(file_path)
+
+    # Scan all per-provider combined files
+    import glob
+    import re as _re
+    pattern = os.path.join(OUTPUT_DIR, 'scrape_isp_*', 'json', '*_all_plans.json')
+    provider_files = sorted(glob.glob(pattern))
+
+    if provider_files:
+        all_plans = []
+        seen = set()
+        for path in provider_files:
+            # Extract provider name from directory: scrape_isp_telstra → telstra
+            dir_name = os.path.basename(os.path.dirname(os.path.dirname(path)))
+            m = _re.match(r'scrape_isp_(.+)', dir_name)
+            provider_name = m.group(1) if m else ''
+
+            plans = _parse_plans_file(path)
+            for plan in plans:
+                # Inject provider name if missing (older scrapes only stored provider_id)
+                if not plan.get('provider') and provider_name:
+                    plan = dict(plan)
+                    plan['provider'] = provider_name
+
+                # Deduplicate by (provider, plan_name, download_speed, network_type)
+                # network_type prevents e.g. NBN and 5G plans with same name being dropped
+                key = (
+                    plan.get('provider', str(plan.get('provider_id', ''))),
+                    plan.get('plan_name', ''),
+                    plan.get('download_speed') or plan.get('speed') or 0,
+                    plan.get('network_type', ''),
+                )
+                if key not in seen:
+                    seen.add(key)
+                    all_plans.append(plan)
+        return all_plans
+
+    # Fallback: legacy combined file
+    fallback = os.path.join(OUTPUT_DIR, 'all_plans.json')
+    return _parse_plans_file(fallback)
 
 
 def group_plans_by_tier(plans: List[Dict[str, Any]]) -> Dict[str, Dict[str, List[Dict]]]:

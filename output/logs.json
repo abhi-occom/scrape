@@ -2693,5 +2693,138 @@
     "message": "Total Exetel plans: 3",
     "provider": "exetel",
     "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:53:36.088629",
+    "status": "info",
+    "message": "Scraping nbn: https://www.exetel.com.au/broadband/nbn",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:53:45.954667",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:53:52.000927",
+    "status": "info",
+    "message": "Found 1 CMSPlanCardBroadband cards",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:53:52.046247",
+    "status": "success",
+    "message": "nbn: 1 plans",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:53:52.189732",
+    "status": "info",
+    "message": "Scraping nbn_fibre_upgrade: https://www.exetel.com.au/broadband/nbn-fibre-upgrade",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:53:53.905046",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:53:59.934771",
+    "status": "info",
+    "message": "Found 1 CMSPlanCardBroadband cards",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:53:59.969543",
+    "status": "success",
+    "message": "nbn_fibre_upgrade: 1 plans",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:54:00.129566",
+    "status": "info",
+    "message": "Scraping mobile: https://www.exetel.com.au/mobilephone",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:54:01.817967",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:54:07.936983",
+    "status": "info",
+    "message": "Found 1 CMSPlanMobile cards",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:54:07.983159",
+    "status": "success",
+    "message": "mobile: 1 plans",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:54:09.397797",
+    "status": "success",
+    "message": "Total Exetel plans: 3",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:56:31.084056",
+    "status": "info",
+    "message": "Starting competitive benchmark analysis",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:56:31.098061",
+    "status": "success",
+    "message": "Benchmark complete: 0 wins, 8 gaps across 8 tiers",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T01:00:00.865932",
+    "status": "info",
+    "message": "Starting competitive benchmark analysis",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T01:00:00.929250",
+    "status": "success",
+    "message": "Benchmark complete: 0 wins, 8 gaps across 8 tiers",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T01:05:56.931817",
+    "status": "info",
+    "message": "Starting competitive benchmark analysis",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T01:05:56.987383",
+    "status": "success",
+    "message": "Benchmark complete: 0 wins, 8 gaps across 8 tiers",
+    "provider": null,
+    "data": {}
   }
 ]
