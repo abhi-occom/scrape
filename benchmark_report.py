@@ -148,9 +148,12 @@ body {{ font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; backgroun
 .top-bar {{
     background: linear-gradient(135deg, #6C3CE1 0%, #4A1DB2 100%);
     color: white; padding: 28px 40px;
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
 }}
 .top-bar h1 {{ font-size: 1.8em; font-weight: 700; }}
 .top-bar .sub {{ opacity: .85; margin-top: 4px; font-size: .95em; }}
+.back-btn {{ text-decoration: none; background: rgba(255,255,255,0.2); color: #fff; padding: 10px 20px; border-radius: 8px; font-size: .95em; font-weight: 600; border: 2px solid rgba(255,255,255,0.6); display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }}
+.back-btn:hover {{ background: rgba(255,255,255,0.35); }}
 
 .container {{ max-width: 1400px; margin: 0 auto; padding: 30px 20px; }}
 
@@ -223,8 +226,11 @@ tr:hover {{ background: #fafafa; }}
 <body>
 
 <div class="top-bar">
-    <h1>Occom Competitive Benchmark</h1>
-    <div class="sub">Real-time price &amp; value comparison against Australian ISP competitors</div>
+    <div>
+        <h1>Occom Competitive Benchmark</h1>
+        <div class="sub">Real-time price &amp; value comparison against Australian ISP competitors</div>
+    </div>
+    <a href="/" class="back-btn">&larr; Back to Dashboard</a>
 </div>
 
 <div class="container">
