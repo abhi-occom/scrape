@@ -1,0 +1,17 @@
+[
+  {
+    "provider_id": 7,
+    "provider": "exetel",
+    "plan_name": "PLUS ONE 130GB",
+    "network_type": "5G Mobile",
+    "download_speed": 150,
+    "upload_speed": 0,
+    "typical_evening_dl": 150,
+    "typical_evening_ul": 0,
+    "price": 40.0,
+    "promo_price": null,
+    "promo_period": "",
+    "contract": "No Lock-in",
+    "source_url": "https://www.exetel.com.au/mobilephone"
+  }
+]

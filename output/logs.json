@@ -2329,5 +2329,369 @@
     "message": "Total TPG plans: 13",
     "provider": "tpg",
     "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:06:34.293570",
+    "status": "info",
+    "message": "Scraping nbn: https://www.exetel.com.au/broadband/nbn",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:06:36.968587",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:06:43.012502",
+    "status": "info",
+    "message": "Found 1 CMSPlanCardBroadband cards",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:06:43.056020",
+    "status": "success",
+    "message": "nbn: 1 plans",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:06:43.128560",
+    "status": "info",
+    "message": "Scraping nbn_fibre_upgrade: https://www.exetel.com.au/broadband/nbn-fibre-upgrade",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:06:45.592536",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:06:51.627845",
+    "status": "info",
+    "message": "Found 1 CMSPlanCardBroadband cards",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:06:51.729246",
+    "status": "success",
+    "message": "nbn_fibre_upgrade: 1 plans",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:06:51.815591",
+    "status": "info",
+    "message": "Scraping mobile: https://www.exetel.com.au/mobilephone",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:06:53.434362",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:06:59.502712",
+    "status": "info",
+    "message": "Found 1 CMSPlanMobile cards",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:06:59.552644",
+    "status": "success",
+    "message": "mobile: 1 plans",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:07:01.300330",
+    "status": "success",
+    "message": "Total Exetel plans: 3",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:11:28.976579",
+    "status": "info",
+    "message": "Scraping nbn: https://www.exetel.com.au/broadband/nbn",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:11:31.281181",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:11:37.323434",
+    "status": "info",
+    "message": "Found 1 CMSPlanCardBroadband cards",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:11:37.361614",
+    "status": "success",
+    "message": "nbn: 1 plans",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:11:37.456254",
+    "status": "info",
+    "message": "Scraping nbn_fibre_upgrade: https://www.exetel.com.au/broadband/nbn-fibre-upgrade",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:11:38.753753",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:11:44.801297",
+    "status": "info",
+    "message": "Found 1 CMSPlanCardBroadband cards",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:11:44.834281",
+    "status": "success",
+    "message": "nbn_fibre_upgrade: 1 plans",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:11:44.934836",
+    "status": "info",
+    "message": "Scraping mobile: https://www.exetel.com.au/mobilephone",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:11:46.371315",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:11:52.406638",
+    "status": "info",
+    "message": "Found 1 CMSPlanMobile cards",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:11:52.442667",
+    "status": "success",
+    "message": "mobile: 1 plans",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:11:53.817833",
+    "status": "success",
+    "message": "Total Exetel plans: 3",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:26:25.743589",
+    "status": "info",
+    "message": "Scraping plans: https://www.telstra.com.au/internet/plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:26:35.862907",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:26:42.239919",
+    "status": "success",
+    "message": "plans: 19 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:26:42.634395",
+    "status": "info",
+    "message": "Scraping 5g_home: https://www.telstra.com.au/internet/5g-home-internet",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:26:44.193527",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:26:50.294318",
+    "status": "success",
+    "message": "5g_home: 3 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:26:50.368841",
+    "status": "info",
+    "message": "Scraping starlink: https://www.telstra.com.au/internet/starlink",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:26:51.826931",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:26:57.908439",
+    "status": "success",
+    "message": "starlink: 1 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:26:58.036589",
+    "status": "info",
+    "message": "Scraping small_business: https://www.telstra.com.au/small-business/internet",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:27:00.545537",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:27:06.869102",
+    "status": "success",
+    "message": "small_business: 13 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:27:08.360648",
+    "status": "success",
+    "message": "Total Telstra plans: 36",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:27:24.411701",
+    "status": "info",
+    "message": "Scraping nbn: https://www.exetel.com.au/broadband/nbn",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:27:28.077210",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:27:34.113826",
+    "status": "info",
+    "message": "Found 1 CMSPlanCardBroadband cards",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:27:34.154969",
+    "status": "success",
+    "message": "nbn: 1 plans",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:27:34.216700",
+    "status": "info",
+    "message": "Scraping nbn_fibre_upgrade: https://www.exetel.com.au/broadband/nbn-fibre-upgrade",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:27:35.415876",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:27:41.464481",
+    "status": "info",
+    "message": "Found 1 CMSPlanCardBroadband cards",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:27:41.506335",
+    "status": "success",
+    "message": "nbn_fibre_upgrade: 1 plans",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:27:41.576248",
+    "status": "info",
+    "message": "Scraping mobile: https://www.exetel.com.au/mobilephone",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:27:44.614241",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:27:50.690441",
+    "status": "info",
+    "message": "Found 1 CMSPlanMobile cards",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:27:50.748144",
+    "status": "success",
+    "message": "mobile: 1 plans",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-08T00:27:52.361286",
+    "status": "success",
+    "message": "Total Exetel plans: 3",
+    "provider": "exetel",
+    "data": {}
   }
 ]

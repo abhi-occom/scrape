@@ -155,6 +155,69 @@
             margin-top: 30px;
         }
 
+        /* ── Timer Bar ── */
+        .timer-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #f0f4ff;
+            border: 2px solid #667eea;
+            border-radius: 10px;
+            padding: 12px 20px;
+            margin-bottom: 20px;
+            transition: all 0.4s ease;
+        }
+        .timer-bar.running {
+            border-color: #667eea;
+            background: #f0f4ff;
+            animation: pulse-border 1.5s ease-in-out infinite;
+        }
+        .timer-bar.done-success {
+            border-color: #28a745;
+            background: #f0fff4;
+            animation: none;
+        }
+        .timer-bar.done-error {
+            border-color: #dc3545;
+            background: #fff0f0;
+            animation: none;
+        }
+        @keyframes pulse-border {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(102,126,234,0.4); }
+            50%       { box-shadow: 0 0 0 6px rgba(102,126,234,0); }
+        }
+        .timer-status {
+            font-weight: 600;
+            font-size: 0.95em;
+            color: #444;
+        }
+        .timer-bar.done-success .timer-status { color: #28a745; }
+        .timer-bar.done-error   .timer-status { color: #dc3545; }
+        .timer-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .timer-label {
+            font-size: 0.82em;
+            color: #888;
+            max-width: 200px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .timer-display {
+            font-family: 'Courier New', monospace;
+            font-size: 1.6em;
+            font-weight: 700;
+            color: #667eea;
+            letter-spacing: 2px;
+            min-width: 70px;
+            text-align: right;
+        }
+        .timer-bar.done-success .timer-display { color: #28a745; }
+        .timer-bar.done-error   .timer-display { color: #dc3545; }
+
         .stats-bar {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -435,7 +498,16 @@
             <!-- Right Panel: Results -->
             <div class="panel">
                 <h2>Results</h2>
-                
+
+                <!-- Timer Bar -->
+                <div id="timer-bar" class="timer-bar hidden">
+                    <div class="timer-status" id="timer-status">⏱ Scraping in progress…</div>
+                    <div class="timer-right">
+                        <span class="timer-label" id="timer-label"></span>
+                        <span class="timer-display" id="timer-display">00:00</span>
+                    </div>
+                </div>
+
                 <div id="stats-bar" class="stats-bar hidden">
                     <div class="stat-card">
                         <div class="stat-value" id="total-providers">0</div>
@@ -556,31 +628,38 @@
         async function scrapeProvider(providerName) {
             currentProvider = providerName;
             showLoading();
+            startTimer(providerName);
             try {
                 const res = await fetch(`/api/scrape/${providerName}`, { method: 'POST' });
                 const data = await res.json();
                 if (data.success) {
+                    stopTimer(true);
                     setMasterPlans(flattenPlans(data.plans, providerName));
                     showAlert(`Scraped ${data.total_plans} plans from ${providerName}`, 'success');
                     loadProviders();
                     document.getElementById('download-section').classList.remove('hidden');
                 } else {
+                    stopTimer(false);
                     showAlert(`Error: ${data.error}`, 'error');
                 }
-            } catch (e) { showAlert(`Error: ${e.message}`, 'error'); }
+            } catch (e) { stopTimer(false); showAlert(`Error: ${e.message}`, 'error'); }
         }
 
         // ── Scrape all ──────────────────────────────────────────
         async function scrapeAll() {
             showLoading();
+            startTimer('All Providers');
             try {
                 const res = await fetch('/api/scrape/all', { method: 'POST' });
                 const data = await res.json();
                 if (data.success) {
+                    stopTimer(true);
                     showAlert(`Scraped ${data.total_plans} plans from ${data.providers_scraped} providers`, 'success');
                     loadAllResults();
+                } else {
+                    stopTimer(false);
                 }
-            } catch (e) { showAlert(`Error: ${e.message}`, 'error'); }
+            } catch (e) { stopTimer(false); showAlert(`Error: ${e.message}`, 'error'); }
         }
 
         // ── Load saved results ──────────────────────────────────
@@ -835,6 +914,51 @@
                 document.getElementById('speed-range').textContent =
                     `${Math.min(...speeds)}-${Math.max(...speeds)} Mbps`;
             }
+        }
+
+        // ── Timer ────────────────────────────────────────────
+        let _timerInterval = null;
+        let _timerStart = null;
+
+        function startTimer(label) {
+            clearInterval(_timerInterval);
+            _timerStart = Date.now();
+            const bar = document.getElementById('timer-bar');
+            const display = document.getElementById('timer-display');
+            const status = document.getElementById('timer-status');
+            const lbl = document.getElementById('timer-label');
+            bar.className = 'timer-bar running';
+            bar.classList.remove('hidden');
+            status.textContent = '⏱ Scraping in progress…';
+            lbl.textContent = label || '';
+            display.textContent = '00:00';
+            _timerInterval = setInterval(() => {
+                const elapsed = Math.floor((Date.now() - _timerStart) / 1000);
+                const m = String(Math.floor(elapsed / 60)).padStart(2, '0');
+                const s = String(elapsed % 60).padStart(2, '0');
+                display.textContent = `${m}:${s}`;
+            }, 500);
+        }
+
+        function stopTimer(success = true) {
+            clearInterval(_timerInterval);
+            const elapsed = Math.floor((Date.now() - _timerStart) / 1000);
+            const m = Math.floor(elapsed / 60);
+            const s = elapsed % 60;
+            const timeStr = m > 0 ? `${m}m ${s}s` : `${s}s`;
+            const bar = document.getElementById('timer-bar');
+            const display = document.getElementById('timer-display');
+            const status = document.getElementById('timer-status');
+            bar.className = success ? 'timer-bar done-success' : 'timer-bar done-error';
+            status.textContent = success ? `✅ Completed in ${timeStr}` : `❌ Failed after ${timeStr}`;
+            const mm = String(Math.floor(elapsed / 60)).padStart(2, '0');
+            const ss = String(elapsed % 60).padStart(2, '0');
+            display.textContent = `${mm}:${ss}`;
+        }
+
+        function hideTimer() {
+            clearInterval(_timerInterval);
+            document.getElementById('timer-bar').classList.add('hidden');
         }
 
         function showLoading() {

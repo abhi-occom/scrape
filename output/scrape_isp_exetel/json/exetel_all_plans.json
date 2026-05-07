@@ -1,0 +1,47 @@
+[
+  {
+    "provider_id": 7,
+    "provider": "exetel",
+    "plan_name": "One Plan 500/50",
+    "network_type": "NBN",
+    "download_speed": 500,
+    "upload_speed": 50,
+    "typical_evening_dl": 500,
+    "typical_evening_ul": 40,
+    "price": 80.0,
+    "promo_price": null,
+    "promo_period": "",
+    "contract": "No Lock-in",
+    "source_url": "https://www.exetel.com.au/broadband/nbn"
+  },
+  {
+    "provider_id": 7,
+    "provider": "exetel",
+    "plan_name": "One Plan 500/50",
+    "network_type": "NBN FTTP Upgrade",
+    "download_speed": 500,
+    "upload_speed": 50,
+    "typical_evening_dl": 500,
+    "typical_evening_ul": 40,
+    "price": 80.0,
+    "promo_price": null,
+    "promo_period": "",
+    "contract": "No Lock-in",
+    "source_url": "https://www.exetel.com.au/broadband/nbn-fibre-upgrade"
+  },
+  {
+    "provider_id": 7,
+    "provider": "exetel",
+    "plan_name": "PLUS ONE 130GB",
+    "network_type": "5G Mobile",
+    "download_speed": 150,
+    "upload_speed": 0,
+    "typical_evening_dl": 150,
+    "typical_evening_ul": 0,
+    "price": 40.0,
+    "promo_price": null,
+    "promo_period": "",
+    "contract": "No Lock-in",
+    "source_url": "https://www.exetel.com.au/mobilephone"
+  }
+]

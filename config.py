@@ -43,6 +43,11 @@ PROVIDERS = {
         'id': 6,
         'name': 'TPG',
         'enabled': True
+    },
+    'exetel': {
+        'id': 7,
+        'name': 'Exetel',
+        'enabled': True
     }
 }
 
