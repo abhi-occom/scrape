@@ -261,7 +261,7 @@ tr:hover {{ background: #fafafa; }}
     <div class="tabs">
         <button class="tab-btn active" onclick="switchTab('overview')">Overview</button>
         <button class="tab-btn" onclick="switchTab('comparison')">Full Comparison</button>
-        <button class="tab-btn" onclick="switchTab('value')">Value Rankings</button>
+        <button class="tab-btn" onclick="switchTab('value')" style="display:none">Value Rankings</button>
     </div>
 
     <!-- Tab: Overview -->

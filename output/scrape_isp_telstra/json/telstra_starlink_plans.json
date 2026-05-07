@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "provider_id": 1,
+    "plan_name": "Satellite Home Internet",
+    "network_type": "Satellite (Starlink)",
+    "download_speed": 0,
+    "upload_speed": 0,
+    "typical_evening_dl": 0,
+    "typical_evening_ul": 0,
+    "price": 125.0,
+    "promo_price": null,
+    "promo_period": null,
+    "contract": "No Lock-in",
+    "source_url": "https://www.telstra.com.au/internet/starlink"
+  }
+]

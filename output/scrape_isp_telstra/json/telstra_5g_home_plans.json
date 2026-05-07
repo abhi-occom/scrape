@@ -1,1 +1,44 @@
-[]
+[
+  {
+    "provider_id": 1,
+    "plan_name": "Basic 5G Internet",
+    "network_type": "5G",
+    "download_speed": 25,
+    "upload_speed": 5,
+    "typical_evening_dl": 25,
+    "typical_evening_ul": 5,
+    "price": 70.0,
+    "promo_price": null,
+    "promo_period": null,
+    "contract": "No Lock-in",
+    "source_url": "https://www.telstra.com.au/internet/5g-home-internet"
+  },
+  {
+    "provider_id": 1,
+    "plan_name": "Essential 5G Internet",
+    "network_type": "5G",
+    "download_speed": 50,
+    "upload_speed": 20,
+    "typical_evening_dl": 50,
+    "typical_evening_ul": 20,
+    "price": 80.0,
+    "promo_price": null,
+    "promo_period": null,
+    "contract": "No Lock-in",
+    "source_url": "https://www.telstra.com.au/internet/5g-home-internet"
+  },
+  {
+    "provider_id": 1,
+    "plan_name": "Premium 5G Internet",
+    "network_type": "5G",
+    "download_speed": 300,
+    "upload_speed": 30,
+    "typical_evening_dl": 300,
+    "typical_evening_ul": 30,
+    "price": 85.0,
+    "promo_price": null,
+    "promo_period": null,
+    "contract": "No Lock-in",
+    "source_url": "https://www.telstra.com.au/internet/5g-home-internet"
+  }
+]

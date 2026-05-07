@@ -2091,5 +2091,243 @@
     "message": "Pipeline failed with critical error: module 'providers.optus' has no attribute 'scrape_optus_plans'",
     "provider": null,
     "data": {}
+  },
+  {
+    "timestamp": "2026-05-07T23:29:36.679822",
+    "status": "info",
+    "message": "Scraping plans: https://www.telstra.com.au/internet/plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-07T23:29:54.114092",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-07T23:30:02.264661",
+    "status": "success",
+    "message": "plans: 19 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-07T23:30:02.605280",
+    "status": "info",
+    "message": "Scraping 5g_home: https://www.telstra.com.au/internet/5g-home-internet",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-07T23:30:05.903714",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-07T23:30:12.458812",
+    "status": "success",
+    "message": "5g_home: 3 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-07T23:30:12.662301",
+    "status": "info",
+    "message": "Scraping starlink: https://www.telstra.com.au/internet/starlink",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-07T23:30:14.974977",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-07T23:30:21.324420",
+    "status": "success",
+    "message": "starlink: 1 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-07T23:30:21.667500",
+    "status": "info",
+    "message": "Scraping small_business: https://www.telstra.com.au/small-business/internet",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-07T23:30:25.790283",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-07T23:30:33.736707",
+    "status": "success",
+    "message": "small_business: 13 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-07T23:30:35.644623",
+    "status": "success",
+    "message": "Total Telstra plans: 36",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-07T23:30:54.713725",
+    "status": "info",
+    "message": "Navigating to https://www.optus.com.au/internet/nbn",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-07T23:30:59.757881",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-07T23:31:05.123034",
+    "status": "info",
+    "message": "Found 7 plan cards",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-07T23:31:06.312193",
+    "status": "success",
+    "message": "Extracted 7 plans from Optus",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-07T23:31:37.025175",
+    "status": "error",
+    "message": "Playwright scraping error: Page.wait_for_selector: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator(\".plan-card, .nbn-plan, [data-plan]\") to be visible\n",
+    "provider": "aussie",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-07T23:31:55.843870",
+    "status": "info",
+    "message": "Scraping nbn: https://www.tpg.com.au/nbn",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-07T23:32:02.357786",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-07T23:32:08.576820",
+    "status": "info",
+    "message": "Found 50 nbnLabels cards",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-07T23:32:12.352668",
+    "status": "success",
+    "message": "nbn: 7 plans",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-07T23:32:12.385204",
+    "status": "info",
+    "message": "Skipping fibre_upgrade (informational)",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-07T23:32:12.504995",
+    "status": "info",
+    "message": "Scraping home_wireless: https://www.tpg.com.au/home-wireless-broadband",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-07T23:32:17.105367",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-07T23:32:23.257178",
+    "status": "success",
+    "message": "home_wireless: 1 plans",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-07T23:32:23.520267",
+    "status": "info",
+    "message": "Scraping 5g_home: https://www.tpg.com.au/5g-home-broadband",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-07T23:32:27.995064",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-07T23:32:34.090100",
+    "status": "success",
+    "message": "5g_home: 2 plans",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-07T23:32:34.402632",
+    "status": "info",
+    "message": "Scraping fttb: https://www.tpg.com.au/fttb",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-07T23:32:38.184841",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-07T23:32:44.298610",
+    "status": "info",
+    "message": "Found 3 FTTB plan-cards",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-07T23:32:44.492395",
+    "status": "success",
+    "message": "fttb: 3 plans",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-07T23:32:45.990156",
+    "status": "success",
+    "message": "Total TPG plans: 13",
+    "provider": "tpg",
+    "data": {}
   }
 ]

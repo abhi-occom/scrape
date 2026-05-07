@@ -1,1 +1,4 @@
 provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
+telstra,5G,Basic 5G Internet,25,5,70.0,,,No Lock-in,25,5,https://www.telstra.com.au/internet/5g-home-internet
+telstra,5G,Essential 5G Internet,50,20,80.0,,,No Lock-in,50,20,https://www.telstra.com.au/internet/5g-home-internet
+telstra,5G,Premium 5G Internet,300,30,85.0,,,No Lock-in,300,30,https://www.telstra.com.au/internet/5g-home-internet
