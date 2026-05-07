@@ -1,0 +1,8 @@
+venv/
+.venv/
+__pycache__/
+*.pyc
+node_modules/
+playwright/.cache/
+.env
+output/logs.json
