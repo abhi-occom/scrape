@@ -191,7 +191,9 @@ def get_provider_list() -> List[Dict[str, Any]]:
             'name': config['name'],
             'key': name,
             'enabled': config['enabled'],
-            'has_saved_data': has_data
+            'has_saved_data': has_data,
+            'blocked': config.get('blocked', False),
+            'blocked_reason': config.get('blocked_reason', ''),
         })
 
     return providers

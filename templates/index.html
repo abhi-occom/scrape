@@ -140,6 +140,25 @@
             background: #5a6268;
         }
 
+        .provider-item.blocked {
+            border-left-color: #dc3545;
+            opacity: 0.75;
+        }
+
+        .badge-blocked {
+            color: #dc3545;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+
+        .btn-blocked {
+            background: #dc3545;
+            color: white;
+            opacity: 0.7;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
         .btn-benchmark {
             background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             color: white;
@@ -627,15 +646,20 @@
                 list.innerHTML = '';
                 data.providers.forEach(p => {
                     const item = document.createElement('div');
-                    item.className = `provider-item ${p.has_saved_data ? 'has-data' : ''}`;
+                    const isBlocked = p.blocked;
+                    item.className = `provider-item ${p.has_saved_data ? 'has-data' : ''} ${isBlocked ? 'blocked' : ''}`;
                     item.innerHTML = `
                         <div class="provider-info">
                             <h3>${p.name}</h3>
                             <div class="provider-status">
-                                ${p.has_saved_data ? '✓ Data available' : 'No data yet'}
+                                ${isBlocked
+                                    ? `<span class="badge-blocked">🚫 Blocked — ${p.blocked_reason}</span>`
+                                    : p.has_saved_data ? '✓ Data available' : 'No data yet'}
                             </div>
                         </div>
-                        <button class="btn btn-primary btn-small" onclick="scrapeProvider('${p.key}')">Scrape</button>`;
+                        ${isBlocked
+                            ? `<span class="btn btn-blocked btn-small" title="${p.blocked_reason}">Blocked</span>`
+                            : `<button class="btn btn-primary btn-small" onclick="scrapeProvider('${p.key}')">Scrape</button>`}`;
                     list.appendChild(item);
                 });
             } catch (e) { console.error('Error loading providers:', e); }

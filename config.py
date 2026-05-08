@@ -27,7 +27,9 @@ PROVIDERS = {
     'aussie': {
         'id': 3,
         'name': 'Aussie Broadband',
-        'enabled': True
+        'enabled': True,
+        'blocked': True,
+        'blocked_reason': 'Cloudflare Turnstile'
     },
     'superloop': {
         'id': 4,
