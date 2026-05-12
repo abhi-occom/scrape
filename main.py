@@ -18,7 +18,7 @@ from utils.benchmark import run_benchmark, save_benchmark_report, save_benchmark
 from utils.alerts import run_alerts
 from benchmark_report import generate_html_report
 from roi_calculator import run_and_save_roi
-from providers import telstra, optus, aussie, superloop
+from providers import telstra, optus, aussie, superloop, leaptel, iinet
 from scrapers.renderer import create_renderer_scraper, SiteConfig
 import config
 
@@ -101,12 +101,14 @@ def run_all_scrapers() -> List[Dict[str, Any]]:
     """
     all_plans = []
     
-    # Define scrapers to run
+        # Define scrapers to run
     scrapers = [
         ('telstra', telstra.scrape_telstra_plans),
         ('optus', optus.scrape_optus_plans),
         ('aussie', aussie.scrape_aussie_plans),
-        ('superloop', superloop.scrape_superloop_plans)
+        ('superloop', superloop.scrape_superloop_plans),
+        ('leaptel', leaptel.scrape_leaptel_plans),
+        ('iinet', iinet.scrape_iinet_plans),
     ]
     
     for provider_name, scraper_func in scrapers:

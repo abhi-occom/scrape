@@ -50,6 +50,16 @@ PROVIDERS = {
         'id': 7,
         'name': 'Exetel',
         'enabled': True
+    },
+        'leaptel': {
+        'id': 8,
+        'name': 'Leaptel',
+        'enabled': True
+    },
+    'iinet': {
+        'id': 9,
+        'name': 'iiNet',
+        'enabled': True
     }
 }
 

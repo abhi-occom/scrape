@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,30 +12,47 @@
             box-sizing: border-box;
         }
 
-        body {
+                body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
 
         .container {
             max-width: 1400px;
+            width: 100%;
             margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            overflow: hidden;
         }
 
         header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
             background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            margin-bottom: 30px;
+            padding: 12px 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Pushes content below the fixed header */
+        .header-spacer {
+            flex-shrink: 0;
+            height: 80px;
         }
 
         h1 {
             color: #333;
-            font-size: 2.5em;
-            margin-bottom: 10px;
+            font-size: 1.8em;
+            margin-bottom: 2px;
         }
 
         .subtitle {
@@ -42,10 +60,13 @@
             font-size: 1.1em;
         }
 
-        .dashboard {
+                .dashboard {
             display: grid;
             grid-template-columns: 1fr 2fr;
-            gap: 30px;
+            gap: 20px;
+            flex: 1;
+            overflow: hidden;
+            padding-bottom: 20px;
         }
 
         .panel {
@@ -53,15 +74,12 @@
             padding: 25px;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
         }
 
-        .panel h2 {
-            color: #667eea;
-            margin-bottom: 20px;
-            font-size: 1.5em;
-            border-bottom: 3px solid #667eea;
-            padding-bottom: 10px;
-        }
+                /* panel h2 is now handled by .panel-left-header and .panel-right-header */
 
         .provider-list {
             display: flex;
@@ -178,10 +196,74 @@
             font-size: 0.85em;
         }
 
+                /* ── Left Panel inner layout ── */
+        .panel-left {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            padding: 0 !important;
+        }
+
+        .panel-left-header {
+            flex-shrink: 0;
+            padding: 20px 25px 15px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .panel-left-header h2 {
+            color: #667eea;
+            font-size: 1.5em;
+            margin: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .panel-left-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px 25px;
+        }
+
+        .panel-left-footer {
+            flex-shrink: 0;
+            padding: 15px 25px;
+            border-top: 1px solid #e9ecef;
+            background: #f8f9fa;
+            border-radius: 0 0 15px 15px;
+        }
+
         .scrape-controls {
             display: flex;
-            gap: 15px;
-            margin-top: 20px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+                /* ── Right Panel inner layout ── */
+        .panel-right {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            padding: 0 !important;
+        }
+
+        .panel-right-header {
+            flex-shrink: 0;
+            padding: 20px 25px 15px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .panel-right-header h2 {
+            color: #667eea;
+            font-size: 1.5em;
+            margin: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .panel-right-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px 25px;
         }
 
         .results-section {
@@ -489,7 +571,6 @@
     </style>
 </head>
 <body>
-    <div class="container">
         <header>
             <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:15px">
                 <div>
@@ -505,122 +586,132 @@
                     </a>
                 </div>
             </div>
-        </header>
+                </header>
 
+    <div class="container">
+        <div class="header-spacer"></div>
         <div class="dashboard">
-            <!-- Left Panel: Provider Selection -->
-            <div class="panel">
-                <h2>Providers</h2>
-                <div id="provider-list" class="provider-list">
-                    <div class="loading">
-                        <div class="spinner"></div>
-                        <p>Loading providers...</p>
+                        <!-- Left Panel: Provider Selection -->
+            <div class="panel panel-left">
+                <div class="panel-left-header">
+                    <h2>Providers</h2>
+                </div>
+                <div class="panel-left-body">
+                    <div id="provider-list" class="provider-list">
+                        <div class="loading">
+                            <div class="spinner"></div>
+                            <p>Loading providers...</p>
+                        </div>
                     </div>
                 </div>
-
-                <div class="scrape-controls">
-                    <button class="btn btn-primary" onclick="scrapeAll()">
-                        Scrape All
-                    </button>
-                    <button class="btn btn-secondary" onclick="loadAllResults()">
-                        Load Saved Data
-                    </button>
-                    <button class="btn btn-benchmark" onclick="runBenchmark()">
-                        &#9881; Run Benchmark
-                    </button>
+                <div class="panel-left-footer">
+                    <div class="scrape-controls">
+                        <button class="btn btn-primary" onclick="scrapeAll()">
+                            Scrape All
+                        </button>
+                        <button class="btn btn-secondary" onclick="loadAllResults()">
+                            Load Saved Data
+                        </button>
+                        <button class="btn btn-benchmark" onclick="runBenchmark()">
+                            &#9881; Run Benchmark
+                        </button>
+                    </div>
                 </div>
             </div>
 
-            <!-- Right Panel: Results -->
-            <div class="panel">
-                <h2>Results</h2>
-
-                <!-- Timer Bar -->
-                <div id="timer-bar" class="timer-bar hidden">
-                    <div class="timer-status" id="timer-status">⏱ Scraping in progress…</div>
-                    <div class="timer-right">
-                        <span class="timer-label" id="timer-label"></span>
-                        <span class="timer-display" id="timer-display">00:00</span>
-                    </div>
+                        <!-- Right Panel: Results -->
+            <div class="panel panel-right">
+                <div class="panel-right-header">
+                    <h2>Results</h2>
                 </div>
+                <div class="panel-right-body">
+                    <!-- Timer Bar -->
+                    <div id="timer-bar" class="timer-bar hidden">
+                        <div class="timer-status" id="timer-status">⏱ Scraping in progress…</div>
+                        <div class="timer-right">
+                            <span class="timer-label" id="timer-label"></span>
+                            <span class="timer-display" id="timer-display">00:00</span>
+                        </div>
+                    </div>
 
-                <div id="stats-bar" class="stats-bar hidden">
-                    <div class="stat-card">
-                        <div class="stat-value" id="total-providers">0</div>
-                        <div class="stat-label">Providers</div>
+                    <div id="stats-bar" class="stats-bar hidden">
+                        <div class="stat-card">
+                            <div class="stat-value" id="total-providers">0</div>
+                            <div class="stat-label">Providers</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="total-plans">0</div>
+                            <div class="stat-label">Total Plans</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="price-range">$0</div>
+                            <div class="stat-label">Price Range</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="speed-range">0</div>
+                            <div class="stat-label">Speed Range</div>
+                        </div>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-value" id="total-plans">0</div>
-                        <div class="stat-label">Total Plans</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value" id="price-range">$0</div>
-                        <div class="stat-label">Price Range</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value" id="speed-range">0</div>
-                        <div class="stat-label">Speed Range</div>
-                    </div>
-                </div>
 
-                <!-- Filter & Sort Bar -->
-                <div id="filter-bar" class="filter-sort-bar hidden">
-                    <h3>🔍 Filter & Sort</h3>
-                    <div class="filter-row">
-                        <div class="filter-group">
-                            <label>Network Type</label>
-                            <select id="filter-network" onchange="applyFilters()">
-                                <option value="">All Networks</option>
-                            </select>
+                    <!-- Filter & Sort Bar -->
+                    <div id="filter-bar" class="filter-sort-bar hidden">
+                        <h3>🔍 Filter & Sort</h3>
+                        <div class="filter-row">
+                            <div class="filter-group">
+                                <label>Network Type</label>
+                                <select id="filter-network" onchange="applyFilters()">
+                                    <option value="">All Networks</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label>Min Price ($)</label>
+                                <input type="number" id="filter-price-min" placeholder="0" min="0" onchange="applyFilters()">
+                            </div>
+                            <div class="filter-group">
+                                <label>Max Price ($)</label>
+                                <input type="number" id="filter-price-max" placeholder="Any" min="0" onchange="applyFilters()">
+                            </div>
+                            <div class="filter-group">
+                                <label>Min Speed (Mbps)</label>
+                                <input type="number" id="filter-speed-min" placeholder="0" min="0" onchange="applyFilters()">
+                            </div>
+                            <div class="filter-group">
+                                <label>Max Speed (Mbps)</label>
+                                <input type="number" id="filter-speed-max" placeholder="Any" min="0" onchange="applyFilters()">
+                            </div>
+                            <div class="filter-group">
+                                <label>Sort By</label>
+                                <select id="sort-by" onchange="applyFilters()">
+                                    <option value="">Default</option>
+                                    <option value="price-asc">Price: Low → High</option>
+                                    <option value="price-desc">Price: High → Low</option>
+                                    <option value="speed-asc">Speed: Low → High</option>
+                                    <option value="speed-desc">Speed: High → Low</option>
+                                </select>
+                            </div>
+                            <div class="filter-actions">
+                                <button class="btn btn-reset btn-filter" onclick="resetFilters()">Reset</button>
+                            </div>
                         </div>
-                        <div class="filter-group">
-                            <label>Min Price ($)</label>
-                            <input type="number" id="filter-price-min" placeholder="0" min="0" onchange="applyFilters()">
-                        </div>
-                        <div class="filter-group">
-                            <label>Max Price ($)</label>
-                            <input type="number" id="filter-price-max" placeholder="Any" min="0" onchange="applyFilters()">
-                        </div>
-                        <div class="filter-group">
-                            <label>Min Speed (Mbps)</label>
-                            <input type="number" id="filter-speed-min" placeholder="0" min="0" onchange="applyFilters()">
-                        </div>
-                        <div class="filter-group">
-                            <label>Max Speed (Mbps)</label>
-                            <input type="number" id="filter-speed-max" placeholder="Any" min="0" onchange="applyFilters()">
-                        </div>
-                        <div class="filter-group">
-                            <label>Sort By</label>
-                            <select id="sort-by" onchange="applyFilters()">
-                                <option value="">Default</option>
-                                <option value="price-asc">Price: Low → High</option>
-                                <option value="price-desc">Price: High → Low</option>
-                                <option value="speed-asc">Speed: Low → High</option>
-                                <option value="speed-desc">Speed: High → Low</option>
-                            </select>
-                        </div>
-                        <div class="filter-actions">
-                            <button class="btn btn-reset btn-filter" onclick="resetFilters()">Reset</button>
+                        <div id="active-filters" class="active-filters"></div>
+                    </div>
+
+                    <div id="results-count" class="results-count hidden"></div>
+
+                    <div id="results-content">
+                        <div class="loading">
+                            <p>Select a provider and click "Scrape" or "Load Saved Data"</p>
                         </div>
                     </div>
-                    <div id="active-filters" class="active-filters"></div>
-                </div>
 
-                <div id="results-count" class="results-count hidden"></div>
-
-                <div id="results-content">
-                    <div class="loading">
-                        <p>Select a provider and click "Scrape" or "Load Saved Data"</p>
+                    <div id="download-section" class="download-buttons hidden">
+                        <button class="btn btn-success btn-small" onclick="downloadJSON()">
+                            📥 Download JSON
+                        </button>
+                        <button class="btn btn-success btn-small" onclick="downloadCSV()">
+                            📥 Download CSV
+                        </button>
                     </div>
-                </div>
-
-                <div id="download-section" class="download-buttons hidden">
-                    <button class="btn btn-success btn-small" onclick="downloadJSON()">
-                        📥 Download JSON
-                    </button>
-                    <button class="btn btn-success btn-small" onclick="downloadCSV()">
-                        📥 Download CSV
-                    </button>
                 </div>
             </div>
         </div>
@@ -1032,11 +1123,12 @@
             document.getElementById('results-count').classList.add('hidden');
         }
 
-        function showAlert(message, type) {
+                function showAlert(message, type) {
             const el = document.createElement('div');
             el.className = `alert alert-${type}`;
             el.textContent = message;
-            document.querySelector('.container').insertBefore(el, document.querySelector('.dashboard'));
+            el.style.cssText = 'position:fixed;top:88px;left:50%;transform:translateX(-50%);z-index:2000;min-width:320px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,0.15);';
+            document.body.appendChild(el);
             setTimeout(() => el.remove(), 5000);
         }
 

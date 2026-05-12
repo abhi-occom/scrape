@@ -2952,5 +2952,1601 @@
     "message": "Benchmark complete: 0 wins, 8 gaps across 8 tiers",
     "provider": null,
     "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:29:09.947117",
+    "status": "info",
+    "message": "Scraping nbn plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:29:17.834729",
+    "status": "info",
+    "message": "Found 226 card elements on NBN page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:29:20.002321",
+    "status": "success",
+    "message": "Extracted 9 unique plans from NBN page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:29:20.033612",
+    "status": "info",
+    "message": "Scraping optus_wholesale plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:29:27.851277",
+    "status": "info",
+    "message": "Found 174 card elements on Optus Wholesale page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:29:29.586094",
+    "status": "success",
+    "message": "Extracted 7 unique plans from Optus Wholesale page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:29:29.618646",
+    "status": "info",
+    "message": "Scraping redline_wholesale plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:29:37.213363",
+    "status": "info",
+    "message": "Found 124 card elements on Redline Wholesale page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:29:38.366479",
+    "status": "success",
+    "message": "Extracted 5 unique plans from Redline Wholesale page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:29:38.394079",
+    "status": "info",
+    "message": "Scraping fixed_wireless plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:29:45.745735",
+    "status": "info",
+    "message": "Found 128 card elements on Fixed Wireless page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:29:46.911115",
+    "status": "success",
+    "message": "Extracted 5 unique plans from Fixed Wireless page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:29:47.061985",
+    "status": "success",
+    "message": "Scraping complete. Total plans: 26",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:30:05.038950",
+    "status": "info",
+    "message": "Scraping nbn plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:30:13.051491",
+    "status": "info",
+    "message": "Found 226 card elements on NBN page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:30:15.259030",
+    "status": "success",
+    "message": "Extracted 9 unique plans from NBN page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:30:15.297024",
+    "status": "info",
+    "message": "Scraping optus_wholesale plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:30:22.653129",
+    "status": "info",
+    "message": "Found 174 card elements on Optus Wholesale page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:30:24.478593",
+    "status": "success",
+    "message": "Extracted 7 unique plans from Optus Wholesale page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:30:24.520446",
+    "status": "info",
+    "message": "Scraping redline_wholesale plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:30:31.964767",
+    "status": "info",
+    "message": "Found 124 card elements on Redline Wholesale page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:30:33.139256",
+    "status": "success",
+    "message": "Extracted 5 unique plans from Redline Wholesale page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:30:33.193103",
+    "status": "info",
+    "message": "Scraping fixed_wireless plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:30:40.568013",
+    "status": "info",
+    "message": "Found 128 card elements on Fixed Wireless page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:30:41.844968",
+    "status": "success",
+    "message": "Extracted 5 unique plans from Fixed Wireless page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:30:42.055546",
+    "status": "success",
+    "message": "Scraping complete. Total plans: 26",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:31:17.293616",
+    "status": "info",
+    "message": "Scraping nbn plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:31:24.737662",
+    "status": "info",
+    "message": "Found 226 card elements on NBN page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:31:27.186127",
+    "status": "success",
+    "message": "Extracted 9 unique plans from NBN page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:31:27.220354",
+    "status": "info",
+    "message": "Scraping optus_wholesale plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:31:34.771519",
+    "status": "info",
+    "message": "Found 174 card elements on Optus Wholesale page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:31:36.437797",
+    "status": "success",
+    "message": "Extracted 7 unique plans from Optus Wholesale page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:31:36.472888",
+    "status": "info",
+    "message": "Scraping redline_wholesale plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:31:43.518537",
+    "status": "info",
+    "message": "Found 124 card elements on Redline Wholesale page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:31:44.553081",
+    "status": "success",
+    "message": "Extracted 5 unique plans from Redline Wholesale page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:31:44.584891",
+    "status": "info",
+    "message": "Scraping fixed_wireless plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:31:51.851591",
+    "status": "info",
+    "message": "Found 128 card elements on Fixed Wireless page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:31:52.914097",
+    "status": "success",
+    "message": "Extracted 5 unique plans from Fixed Wireless page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:31:53.073690",
+    "status": "success",
+    "message": "Scraping complete. Total plans: 26",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:31:58.261039",
+    "status": "info",
+    "message": "Scraping nbn plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:32:05.337509",
+    "status": "info",
+    "message": "Found 226 card elements on NBN page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:32:07.365131",
+    "status": "success",
+    "message": "Extracted 9 unique plans from NBN page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:32:07.402490",
+    "status": "info",
+    "message": "Scraping optus_wholesale plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:32:14.824570",
+    "status": "info",
+    "message": "Found 174 card elements on Optus Wholesale page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:32:16.493447",
+    "status": "success",
+    "message": "Extracted 7 unique plans from Optus Wholesale page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:32:16.524101",
+    "status": "info",
+    "message": "Scraping redline_wholesale plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:32:23.934946",
+    "status": "info",
+    "message": "Found 124 card elements on Redline Wholesale page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:32:25.086183",
+    "status": "success",
+    "message": "Extracted 5 unique plans from Redline Wholesale page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:32:25.116680",
+    "status": "info",
+    "message": "Scraping fixed_wireless plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:32:32.405529",
+    "status": "info",
+    "message": "Found 128 card elements on Fixed Wireless page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:32:33.761877",
+    "status": "success",
+    "message": "Extracted 5 unique plans from Fixed Wireless page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:32:35.707025",
+    "status": "success",
+    "message": "Scraping complete. Total plans: 26",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:32:42.671753",
+    "status": "info",
+    "message": "==================================================",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:32:42.677436",
+    "status": "info",
+    "message": "Starting ISP Plan Scraping Pipeline",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:32:42.683891",
+    "status": "info",
+    "message": "==================================================",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:32:42.689974",
+    "status": "error",
+    "message": "Pipeline failed with critical error: module 'providers.optus' has no attribute 'scrape_optus_plans'",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:32:47.427156",
+    "status": "info",
+    "message": "==================================================",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:32:47.432874",
+    "status": "info",
+    "message": "Starting ISP Plan Scraping Pipeline",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:32:47.437920",
+    "status": "info",
+    "message": "==================================================",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:32:47.442750",
+    "status": "error",
+    "message": "Pipeline failed with critical error: module 'providers.optus' has no attribute 'scrape_optus_plans'",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:32:51.413213",
+    "status": "info",
+    "message": "==================================================",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:32:51.413213",
+    "status": "info",
+    "message": "Starting ISP Plan Scraping Pipeline",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:32:51.421077",
+    "status": "info",
+    "message": "==================================================",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:32:51.421077",
+    "status": "error",
+    "message": "Pipeline failed with critical error: module 'providers.optus' has no attribute 'scrape_optus_plans'",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:32:57.038803",
+    "status": "info",
+    "message": "Scraping nbn plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:33:04.086401",
+    "status": "info",
+    "message": "Found 226 card elements on NBN page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:33:05.989388",
+    "status": "success",
+    "message": "Extracted 9 unique plans from NBN page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:33:06.022750",
+    "status": "info",
+    "message": "Scraping optus_wholesale plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:33:13.230951",
+    "status": "info",
+    "message": "Found 174 card elements on Optus Wholesale page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:33:14.899504",
+    "status": "success",
+    "message": "Extracted 7 unique plans from Optus Wholesale page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:33:14.935317",
+    "status": "info",
+    "message": "Scraping redline_wholesale plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:33:22.148268",
+    "status": "info",
+    "message": "Found 124 card elements on Redline Wholesale page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:33:23.203764",
+    "status": "success",
+    "message": "Extracted 5 unique plans from Redline Wholesale page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:33:23.234645",
+    "status": "info",
+    "message": "Scraping fixed_wireless plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:33:30.223535",
+    "status": "info",
+    "message": "Found 128 card elements on Fixed Wireless page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:33:31.293733",
+    "status": "success",
+    "message": "Extracted 5 unique plans from Fixed Wireless page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:33:31.489792",
+    "status": "success",
+    "message": "Scraping complete. Total plans: 26",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:34:02.267512",
+    "status": "info",
+    "message": "Scraping nbn plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:34:09.362523",
+    "status": "info",
+    "message": "Found 226 card elements on NBN page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:34:11.390042",
+    "status": "success",
+    "message": "Extracted 9 unique plans from NBN page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:34:11.419847",
+    "status": "info",
+    "message": "Scraping optus_wholesale plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:34:19.014945",
+    "status": "info",
+    "message": "Found 174 card elements on Optus Wholesale page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:34:20.528619",
+    "status": "success",
+    "message": "Extracted 7 unique plans from Optus Wholesale page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:34:20.560696",
+    "status": "info",
+    "message": "Scraping redline_wholesale plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:34:27.934424",
+    "status": "info",
+    "message": "Found 124 card elements on Redline Wholesale page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:34:32.531629",
+    "status": "success",
+    "message": "Extracted 5 unique plans from Redline Wholesale page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:34:32.670581",
+    "status": "info",
+    "message": "Scraping fixed_wireless plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:34:40.323741",
+    "status": "info",
+    "message": "Found 128 card elements on Fixed Wireless page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:34:41.430811",
+    "status": "success",
+    "message": "Extracted 5 unique plans from Fixed Wireless page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:34:41.569910",
+    "status": "success",
+    "message": "Scraping complete. Total plans: 26",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:34:46.618523",
+    "status": "info",
+    "message": "Scraping nbn plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:34:53.687600",
+    "status": "info",
+    "message": "Found 226 card elements on NBN page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:34:55.444400",
+    "status": "success",
+    "message": "Extracted 9 unique plans from NBN page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:34:55.474614",
+    "status": "info",
+    "message": "Scraping optus_wholesale plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:35:02.431171",
+    "status": "info",
+    "message": "Found 174 card elements on Optus Wholesale page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:35:03.764354",
+    "status": "success",
+    "message": "Extracted 7 unique plans from Optus Wholesale page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:35:03.794753",
+    "status": "info",
+    "message": "Scraping redline_wholesale plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:35:11.055604",
+    "status": "info",
+    "message": "Found 124 card elements on Redline Wholesale page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:35:12.076066",
+    "status": "success",
+    "message": "Extracted 5 unique plans from Redline Wholesale page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:35:12.106815",
+    "status": "info",
+    "message": "Scraping fixed_wireless plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:35:19.124064",
+    "status": "info",
+    "message": "Found 128 card elements on Fixed Wireless page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:35:20.188234",
+    "status": "success",
+    "message": "Extracted 5 unique plans from Fixed Wireless page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T13:35:20.346087",
+    "status": "success",
+    "message": "Scraping complete. Total plans: 26",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:12:02.306512",
+    "status": "info",
+    "message": "Scraping nbn plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:12:12.284868",
+    "status": "info",
+    "message": "Found 226 card elements on NBN page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:12:13.863048",
+    "status": "success",
+    "message": "Extracted 9 unique plans from NBN page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:12:13.894909",
+    "status": "info",
+    "message": "Scraping optus_wholesale plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:12:21.740337",
+    "status": "info",
+    "message": "Found 174 card elements on Optus Wholesale page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:12:23.105851",
+    "status": "success",
+    "message": "Extracted 7 unique plans from Optus Wholesale page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:12:23.138831",
+    "status": "info",
+    "message": "Scraping redline_wholesale plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:12:30.772427",
+    "status": "info",
+    "message": "Found 124 card elements on Redline Wholesale page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:12:31.664088",
+    "status": "success",
+    "message": "Extracted 5 unique plans from Redline Wholesale page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:12:31.688944",
+    "status": "info",
+    "message": "Scraping fixed_wireless plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:12:39.127183",
+    "status": "info",
+    "message": "Found 128 card elements on Fixed Wireless page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:12:40.140695",
+    "status": "success",
+    "message": "Extracted 5 unique plans from Fixed Wireless page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:12:40.279685",
+    "status": "success",
+    "message": "Scraping complete. Total plans: 26",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:12:58.088528",
+    "status": "info",
+    "message": "Scraping nbn plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:13:05.657638",
+    "status": "info",
+    "message": "Found 226 card elements on NBN page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:13:10.554393",
+    "status": "success",
+    "message": "Extracted 9 unique plans from NBN page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:13:10.629604",
+    "status": "info",
+    "message": "Scraping optus_wholesale plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:13:17.981486",
+    "status": "info",
+    "message": "Found 174 card elements on Optus Wholesale page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:13:21.611824",
+    "status": "success",
+    "message": "Extracted 7 unique plans from Optus Wholesale page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:13:21.678087",
+    "status": "info",
+    "message": "Scraping redline_wholesale plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:13:28.898488",
+    "status": "info",
+    "message": "Found 124 card elements on Redline Wholesale page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:13:31.015661",
+    "status": "success",
+    "message": "Extracted 5 unique plans from Redline Wholesale page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:13:31.078974",
+    "status": "info",
+    "message": "Scraping fixed_wireless plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:13:38.481430",
+    "status": "info",
+    "message": "Found 128 card elements on Fixed Wireless page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:13:40.674792",
+    "status": "success",
+    "message": "Extracted 5 unique plans from Fixed Wireless page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:13:40.929700",
+    "status": "success",
+    "message": "Scraping complete. Total plans: 26",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:16:35.929103",
+    "status": "info",
+    "message": "Starting competitive benchmark analysis",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:16:35.987126",
+    "status": "success",
+    "message": "Benchmark complete: 0 wins, 8 gaps across 8 tiers",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:18:05.859093",
+    "status": "info",
+    "message": "Scraping nbn plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:18:12.911005",
+    "status": "info",
+    "message": "Found 226 card elements on NBN page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:18:14.458745",
+    "status": "success",
+    "message": "Extracted 9 unique plans from NBN page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:18:14.482760",
+    "status": "info",
+    "message": "Scraping opticomm plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:18:21.575150",
+    "status": "info",
+    "message": "Found 174 card elements on Opticomm page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:18:22.854938",
+    "status": "success",
+    "message": "Extracted 7 unique plans from Opticomm page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:18:22.881021",
+    "status": "info",
+    "message": "Scraping redline_wholesale plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:18:29.837247",
+    "status": "info",
+    "message": "Found 124 card elements on Redline Wholesale page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:18:30.708889",
+    "status": "success",
+    "message": "Extracted 5 unique plans from Redline Wholesale page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:18:30.736741",
+    "status": "info",
+    "message": "Scraping fixed_wireless plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:18:37.690602",
+    "status": "info",
+    "message": "Found 128 card elements on Fixed Wireless page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:18:38.510145",
+    "status": "success",
+    "message": "Extracted 5 unique plans from Fixed Wireless page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:18:38.624989",
+    "status": "success",
+    "message": "Scraping complete. Total plans: 26",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:27:08.343717",
+    "status": "info",
+    "message": "Scraping nbn plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:27:18.474936",
+    "status": "info",
+    "message": "Found 226 card elements on NBN page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:27:22.102969",
+    "status": "success",
+    "message": "Extracted 9 unique plans from NBN page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:27:22.172632",
+    "status": "info",
+    "message": "Scraping opticomm plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:27:29.341899",
+    "status": "info",
+    "message": "Found 174 card elements on Opticomm page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:27:32.398167",
+    "status": "success",
+    "message": "Extracted 7 unique plans from Opticomm page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:27:32.466080",
+    "status": "info",
+    "message": "Scraping redline_wholesale plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:27:40.008738",
+    "status": "info",
+    "message": "Found 124 card elements on Redline Wholesale page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:27:42.045615",
+    "status": "success",
+    "message": "Extracted 5 unique plans from Redline Wholesale page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:27:42.109665",
+    "status": "info",
+    "message": "Scraping fixed_wireless plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:27:49.253455",
+    "status": "info",
+    "message": "Found 128 card elements on Fixed Wireless page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:27:51.386997",
+    "status": "success",
+    "message": "Extracted 5 unique plans from Fixed Wireless page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:27:51.634383",
+    "status": "success",
+    "message": "Scraping complete. Total plans: 26",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:28:51.989920",
+    "status": "info",
+    "message": "Scraping nbn plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:28:59.091472",
+    "status": "info",
+    "message": "Found 226 card elements on NBN page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:29:00.833510",
+    "status": "success",
+    "message": "Extracted 9 unique plans from NBN page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:29:00.864506",
+    "status": "info",
+    "message": "Scraping opticomm plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:29:07.856514",
+    "status": "info",
+    "message": "Found 174 card elements on Opticomm page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:29:09.006834",
+    "status": "success",
+    "message": "Extracted 7 unique plans from Opticomm page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:29:09.036718",
+    "status": "info",
+    "message": "Scraping redtrain plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:29:15.978936",
+    "status": "info",
+    "message": "Found 124 card elements on Redtrain page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:29:16.895439",
+    "status": "success",
+    "message": "Extracted 5 unique plans from Redtrain page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:29:16.925706",
+    "status": "info",
+    "message": "Scraping fixed_wireless plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:29:23.908409",
+    "status": "info",
+    "message": "Found 128 card elements on Fixed Wireless page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:29:24.868029",
+    "status": "success",
+    "message": "Extracted 5 unique plans from Fixed Wireless page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:29:24.994750",
+    "status": "success",
+    "message": "Scraping complete. Total plans: 26",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:29:45.545692",
+    "status": "info",
+    "message": "Scraping nbn plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:29:52.715821",
+    "status": "info",
+    "message": "Found 226 card elements on NBN page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:29:56.566852",
+    "status": "success",
+    "message": "Extracted 9 unique plans from NBN page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:29:56.635293",
+    "status": "info",
+    "message": "Scraping opticomm plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:30:03.851724",
+    "status": "info",
+    "message": "Found 174 card elements on Opticomm page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:30:07.428935",
+    "status": "success",
+    "message": "Extracted 7 unique plans from Opticomm page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:30:07.511997",
+    "status": "info",
+    "message": "Scraping redtrain plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:30:14.712501",
+    "status": "info",
+    "message": "Found 124 card elements on Redtrain page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:30:16.816189",
+    "status": "success",
+    "message": "Extracted 5 unique plans from Redtrain page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:30:16.879556",
+    "status": "info",
+    "message": "Scraping fixed_wireless plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:30:24.002021",
+    "status": "info",
+    "message": "Found 128 card elements on Fixed Wireless page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:30:26.213745",
+    "status": "success",
+    "message": "Extracted 5 unique plans from Fixed Wireless page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T14:30:26.487221",
+    "status": "success",
+    "message": "Scraping complete. Total plans: 26",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T18:41:41.715300",
+    "status": "info",
+    "message": "Scraping fibre: https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T18:42:16.740218",
+    "status": "error",
+    "message": "Error scraping fibre: Page.goto: Timeout 35000ms exceeded.\nCall log:\n  - navigating to \"https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre\", waiting until \"domcontentloaded\"\n",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T18:42:16.951914",
+    "status": "info",
+    "message": "Scraping wireless: https://www.iinet.net.au/internet-product/broadband/nbn/plans/wireless",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T18:42:32.055058",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T18:42:39.082075",
+    "status": "info",
+    "message": "Wireless plan section: 'Select a plan\\nNBN25\\n$ 76 .99 /mth\\n\\nMin Cost $86.99\\n\\nif you return the modem\\n\\nUses NBN25\\n\\n20Mbps\\nDownload\\n3.8Mbps\\nUpload\\nTypical Evening Speed*\\n$79.99/mth from\\n27/05/2026\\nLiimitless Data\\n\\nTypical Evening Speeds are subject to change and are measured 7pm-11pm. Speeds are not guaranteed and may vary. A'",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T18:42:39.090025",
+    "status": "success",
+    "message": "wireless: 1 plans",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T18:42:39.121034",
+    "status": "info",
+    "message": "Skipping fibre_upgrade (informational only)",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T18:42:39.312657",
+    "status": "success",
+    "message": "Total iiNet plans: 1",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T18:43:39.277008",
+    "status": "info",
+    "message": "Found 8 .card elements on fibre page",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T18:56:07.223287",
+    "status": "info",
+    "message": "Scraping fibre: https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T18:56:20.256843",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T18:56:27.318681",
+    "status": "info",
+    "message": "Found 8 .card elements on fibre page",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T18:56:28.232877",
+    "status": "success",
+    "message": "fibre: 8 plans",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T18:56:28.348396",
+    "status": "info",
+    "message": "Scraping wireless: https://www.iinet.net.au/internet-product/broadband/nbn/plans/wireless",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T18:56:30.900575",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T18:56:37.927432",
+    "status": "info",
+    "message": "Wireless plan section: 'Select a plan\\nNBN25\\n$ 76 .99 /mth\\n\\nMin Cost $86.99\\n\\nif you return the modem\\n\\nUses NBN25\\n\\n20Mbps\\nDownload\\n3.8Mbps\\nUpload\\nTypical Evening Speed*\\n$79.99/mth from\\n27/05/2026\\nLiimitless Data\\n\\nTypical Evening Speeds are subject to change and are measured 7pm-11pm. Speeds are not guaranteed and may vary. A'",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T18:56:37.936427",
+    "status": "success",
+    "message": "wireless: 1 plans",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T18:56:37.986765",
+    "status": "info",
+    "message": "Skipping fibre_upgrade (informational only)",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T18:56:38.312603",
+    "status": "success",
+    "message": "Total iiNet plans: 9",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T18:59:24.694358",
+    "status": "info",
+    "message": "Scraping fibre: https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T18:59:30.180547",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T18:59:37.234124",
+    "status": "info",
+    "message": "Found 8 .card elements on fibre page",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T18:59:37.722656",
+    "status": "success",
+    "message": "fibre: 8 plans",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T18:59:38.000338",
+    "status": "info",
+    "message": "Scraping wireless: https://www.iinet.net.au/internet-product/broadband/nbn/plans/wireless",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T18:59:50.148935",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T18:59:57.166165",
+    "status": "info",
+    "message": "Wireless plan section: 'Select a plan\\nNBN25\\n$ 76 .99 /mth\\n\\nMin Cost $86.99\\n\\nif you return the modem\\n\\nUses NBN25\\n\\n20Mbps\\nDownload\\n3.8Mbps\\nUpload\\nTypical Evening Speed*\\n$79.99/mth from\\n27/05/2026\\nLiimitless Data\\n\\nTypical Evening Speeds are subject to change and are measured 7pm-11pm. Speeds are not guaranteed and may vary. A'",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T18:59:57.174927",
+    "status": "success",
+    "message": "wireless: 1 plans",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T18:59:57.204647",
+    "status": "info",
+    "message": "Skipping fibre_upgrade (informational only)",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T18:59:57.310030",
+    "status": "success",
+    "message": "Total iiNet plans: 9",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T19:01:07.997972",
+    "status": "info",
+    "message": "Scraping fibre: https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T19:01:16.185184",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T19:01:23.415803",
+    "status": "info",
+    "message": "Found 8 .card elements on fibre page",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T19:01:25.898331",
+    "status": "success",
+    "message": "fibre: 8 plans",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T19:01:26.324272",
+    "status": "info",
+    "message": "Scraping wireless: https://www.iinet.net.au/internet-product/broadband/nbn/plans/wireless",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T19:01:35.390470",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T19:01:42.496538",
+    "status": "info",
+    "message": "Wireless plan section: 'Select a plan\\nNBN25\\n$ 76 .99 /mth\\n\\nMin Cost $86.99\\n\\nif you return the modem\\n\\nUses NBN25\\n\\n20Mbps\\nDownload\\n3.8Mbps\\nUpload\\nTypical Evening Speed*\\n$79.99/mth from\\n27/05/2026\\nLiimitless Data\\n\\nTypical Evening Speeds are subject to change and are measured 7pm-11pm. Speeds are not guaranteed and may vary. A'",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T19:01:42.563197",
+    "status": "success",
+    "message": "wireless: 1 plans",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T19:01:42.723006",
+    "status": "info",
+    "message": "Skipping fibre_upgrade (informational only)",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T19:01:43.172581",
+    "status": "success",
+    "message": "Total iiNet plans: 9",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T19:02:18.669476",
+    "status": "info",
+    "message": "Starting competitive benchmark analysis",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T19:02:18.836050",
+    "status": "success",
+    "message": "Benchmark complete: 0 wins, 8 gaps across 8 tiers",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T20:59:00.834721",
+    "status": "info",
+    "message": "Starting competitive benchmark analysis",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T20:59:00.914901",
+    "status": "success",
+    "message": "Benchmark complete: 0 wins, 8 gaps across 8 tiers",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T21:00:36.358029",
+    "status": "info",
+    "message": "Starting competitive benchmark analysis",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-12T21:00:36.421541",
+    "status": "success",
+    "message": "Benchmark complete: 0 wins, 8 gaps across 8 tiers",
+    "provider": null,
+    "data": {}
   }
 ]

@@ -1,0 +1,27 @@
+provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
+leaptel,NBN,Pronto,25,10,49.95,29.950000000000003,6 months,No Contract,,,https://leaptel.com.au/plans/?provider=nbn
+leaptel,NBN,Accelerated,50,20,74.95,66.95,6 months,No Contract,,,https://leaptel.com.au/plans/?provider=nbn
+leaptel,NBN,Full Throttle,100,20,79.95,66.95,12 months,No Contract,,,https://leaptel.com.au/plans/?provider=nbn
+leaptel,NBN,Fast,500,50,79.95,66.95,12 months,No Contract,,,https://leaptel.com.au/plans/?provider=nbn
+leaptel,NBN,Ultrafast,1000,100,99.0,84.0,12 months,No Contract,,,https://leaptel.com.au/plans/?provider=nbn
+leaptel,NBN,Hyperfast HFC,2000,100,155.0,145.0,12 months,No Contract,,,https://leaptel.com.au/plans/?provider=nbn
+leaptel,NBN,Hyperfast FTTP,2000,200,155.0,145.0,12 months,No Contract,,,https://leaptel.com.au/plans/?provider=nbn
+leaptel,NBN,Home Phone Basic,0,0,9.95,,,No Contract,,,https://leaptel.com.au/plans/?provider=nbn
+leaptel,NBN,Home Phone Ultimate,0,0,19.95,,,No Contract,,,https://leaptel.com.au/plans/?provider=nbn
+leaptel,Opticomm,Pronto,25,10,69.95,,,No Contract,,,https://leaptel.com.au/plans/?provider=opt
+leaptel,Opticomm,Accelerated,50,20,74.95,66.95,6 months,No Contract,,,https://leaptel.com.au/plans/?provider=opt
+leaptel,Opticomm,Full Throttle,100,20,79.95,66.95,6 months,No Contract,,,https://leaptel.com.au/plans/?provider=opt
+leaptel,Opticomm,Fast,500,50,84.95,74.95,6 months,No Contract,,,https://leaptel.com.au/plans/?provider=opt
+leaptel,Opticomm,Ultrafast,1000,100,109.0,89.0,6 months,No Contract,,,https://leaptel.com.au/plans/?provider=opt
+leaptel,Opticomm,Home Phone Basic,0,0,9.95,,,No Contract,,,https://leaptel.com.au/plans/?provider=opt
+leaptel,Opticomm,Home Phone Ultimate,0,0,19.95,,,No Contract,,,https://leaptel.com.au/plans/?provider=opt
+leaptel,Redtrain,Pronto,25,5,59.95,,,No Contract,,,https://leaptel.com.au/plans/?provider=red
+leaptel,Redtrain,Accelerated,50,20,84.95,,,No Contract,,,https://leaptel.com.au/plans/?provider=red
+leaptel,Redtrain,Full Throttle,100,20,92.95,,,No Contract,,,https://leaptel.com.au/plans/?provider=red
+leaptel,Redtrain,Home Phone Basic,0,0,9.95,,,No Contract,,,https://leaptel.com.au/plans/?provider=red
+leaptel,Redtrain,Home Phone Ultimate,0,0,19.95,,,No Contract,,,https://leaptel.com.au/plans/?provider=red
+leaptel,Fixed Wireless,Fixed Wireless +,100,20,74.95,66.95,12 months,No Contract,,,https://leaptel.com.au/fixed-wireless/
+leaptel,Fixed Wireless,Fixed Wireless Fast,250,20,79.95,66.95,12 months,No Contract,,,https://leaptel.com.au/fixed-wireless/
+leaptel,Fixed Wireless,Fixed Wireless Superfast,400,40,89.95,74.95,12 months,No Contract,,,https://leaptel.com.au/fixed-wireless/
+leaptel,Fixed Wireless,Home Phone Basic,0,0,9.95,,,No Contract,,,https://leaptel.com.au/fixed-wireless/
+leaptel,Fixed Wireless,Home Phone Ultimate,0,0,19.95,,,No Contract,,,https://leaptel.com.au/fixed-wireless/
