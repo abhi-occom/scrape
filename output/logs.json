@@ -4548,5 +4548,1567 @@
     "message": "Benchmark complete: 0 wins, 8 gaps across 8 tiers",
     "provider": null,
     "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T08:17:05.730294",
+    "status": "info",
+    "message": "Starting Swoop provider scraper (all service types)",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T08:17:05.753598",
+    "status": "info",
+    "message": "Starting Swoop NBN plans scraper",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T08:17:05.769608",
+    "status": "info",
+    "message": "Added site config",
+    "provider": null,
+    "data": {
+      "name": "swoop_nbn",
+      "url": "https://www.swoop.com.au/nbn/"
+    }
+  },
+  {
+    "timestamp": "2026-05-13T08:17:07.359082",
+    "status": "success",
+    "message": "Render engine launched",
+    "provider": null,
+    "data": {
+      "headless": true,
+      "stealth": true
+    }
+  },
+  {
+    "timestamp": "2026-05-13T08:17:07.387231",
+    "status": "info",
+    "message": "Scraping page",
+    "provider": null,
+    "data": {
+      "site": "swoop_nbn",
+      "url": "https://www.swoop.com.au/nbn/",
+      "page": 1
+    }
+  },
+  {
+    "timestamp": "2026-05-13T08:17:07.546132",
+    "status": "info",
+    "message": "Rendering page",
+    "provider": null,
+    "data": {
+      "url": "https://www.swoop.com.au/nbn/",
+      "wait": "networkidle"
+    }
+  },
+  {
+    "timestamp": "2026-05-13T08:17:21.950049",
+    "status": "success",
+    "message": "Page rendered",
+    "provider": null,
+    "data": {
+      "url": "https://www.swoop.com.au/nbn/",
+      "length": 236557
+    }
+  },
+  {
+    "timestamp": "2026-05-13T08:17:22.258358",
+    "status": "success",
+    "message": "Completed scraping site",
+    "provider": null,
+    "data": {
+      "site": "swoop_nbn",
+      "pages": 1
+    }
+  },
+  {
+    "timestamp": "2026-05-13T08:17:24.011947",
+    "status": "info",
+    "message": "Render engine closed",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T08:17:24.031727",
+    "status": "success",
+    "message": "Swoop NBN scraper found 0 plans",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T08:17:24.054701",
+    "status": "info",
+    "message": "Starting Swoop Fixed Wireless plans scraper",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T08:17:24.075682",
+    "status": "info",
+    "message": "Added site config",
+    "provider": null,
+    "data": {
+      "name": "swoop_fixed_wireless",
+      "url": "https://www.swoop.com.au/fixed-wireless/"
+    }
+  },
+  {
+    "timestamp": "2026-05-13T08:17:26.161613",
+    "status": "success",
+    "message": "Render engine launched",
+    "provider": null,
+    "data": {
+      "headless": true,
+      "stealth": true
+    }
+  },
+  {
+    "timestamp": "2026-05-13T08:17:26.183799",
+    "status": "info",
+    "message": "Scraping page",
+    "provider": null,
+    "data": {
+      "site": "swoop_fixed_wireless",
+      "url": "https://www.swoop.com.au/fixed-wireless/",
+      "page": 1
+    }
+  },
+  {
+    "timestamp": "2026-05-13T08:17:26.286535",
+    "status": "info",
+    "message": "Rendering page",
+    "provider": null,
+    "data": {
+      "url": "https://www.swoop.com.au/fixed-wireless/",
+      "wait": "networkidle"
+    }
+  },
+  {
+    "timestamp": "2026-05-13T08:17:35.785905",
+    "status": "success",
+    "message": "Page rendered",
+    "provider": null,
+    "data": {
+      "url": "https://www.swoop.com.au/fixed-wireless/",
+      "length": 215367
+    }
+  },
+  {
+    "timestamp": "2026-05-13T08:17:35.928906",
+    "status": "success",
+    "message": "Completed scraping site",
+    "provider": null,
+    "data": {
+      "site": "swoop_fixed_wireless",
+      "pages": 1
+    }
+  },
+  {
+    "timestamp": "2026-05-13T08:17:36.175801",
+    "status": "info",
+    "message": "Render engine closed",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T08:17:36.191906",
+    "status": "success",
+    "message": "Swoop Fixed Wireless scraper found 0 plans",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T08:17:36.210924",
+    "status": "info",
+    "message": "Starting Swoop Opticomm plans scraper",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T08:17:36.227025",
+    "status": "info",
+    "message": "Added site config",
+    "provider": null,
+    "data": {
+      "name": "swoop_opticomm",
+      "url": "https://www.swoop.com.au/opticomm/"
+    }
+  },
+  {
+    "timestamp": "2026-05-13T08:17:37.258373",
+    "status": "success",
+    "message": "Render engine launched",
+    "provider": null,
+    "data": {
+      "headless": true,
+      "stealth": true
+    }
+  },
+  {
+    "timestamp": "2026-05-13T08:17:37.276370",
+    "status": "info",
+    "message": "Scraping page",
+    "provider": null,
+    "data": {
+      "site": "swoop_opticomm",
+      "url": "https://www.swoop.com.au/opticomm/",
+      "page": 1
+    }
+  },
+  {
+    "timestamp": "2026-05-13T08:17:37.361119",
+    "status": "info",
+    "message": "Rendering page",
+    "provider": null,
+    "data": {
+      "url": "https://www.swoop.com.au/opticomm/",
+      "wait": "networkidle"
+    }
+  },
+  {
+    "timestamp": "2026-05-13T08:17:49.873904",
+    "status": "success",
+    "message": "Page rendered",
+    "provider": null,
+    "data": {
+      "url": "https://www.swoop.com.au/opticomm/",
+      "length": 258787
+    }
+  },
+  {
+    "timestamp": "2026-05-13T08:17:50.043288",
+    "status": "success",
+    "message": "Completed scraping site",
+    "provider": null,
+    "data": {
+      "site": "swoop_opticomm",
+      "pages": 1
+    }
+  },
+  {
+    "timestamp": "2026-05-13T08:17:50.274190",
+    "status": "info",
+    "message": "Render engine closed",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T08:17:50.289638",
+    "status": "success",
+    "message": "Swoop Opticomm scraper found 0 plans",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T08:17:50.304793",
+    "status": "success",
+    "message": "Swoop provider scraper completed: 0 total plans",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T08:20:29.424699",
+    "status": "info",
+    "message": "Starting Swoop scraper (all service types)",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T08:20:31.365651",
+    "status": "info",
+    "message": "Scraping nbn: https://www.swoop.com.au/nbn/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T08:20:37.889524",
+    "status": "info",
+    "message": "Found 0 candidate cards on https://www.swoop.com.au/nbn/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T08:20:37.907182",
+    "status": "warning",
+    "message": "Card selectors found nothing on https://www.swoop.com.au/nbn/, trying text parse",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T08:20:37.989331",
+    "status": "warning",
+    "message": "nbn: no plans found",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T08:20:38.027870",
+    "status": "info",
+    "message": "Scraping fixed_wireless: https://www.swoop.com.au/fixed-wireless/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T08:20:44.283375",
+    "status": "info",
+    "message": "Found 0 candidate cards on https://www.swoop.com.au/fixed-wireless/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T08:20:44.297392",
+    "status": "warning",
+    "message": "Card selectors found nothing on https://www.swoop.com.au/fixed-wireless/, trying text parse",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T08:20:44.361174",
+    "status": "warning",
+    "message": "fixed_wireless: no plans found",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T08:20:44.386587",
+    "status": "info",
+    "message": "Scraping opticomm: https://www.swoop.com.au/opticomm/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T08:20:50.467959",
+    "status": "info",
+    "message": "Found 0 candidate cards on https://www.swoop.com.au/opticomm/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T08:20:50.485963",
+    "status": "warning",
+    "message": "Card selectors found nothing on https://www.swoop.com.au/opticomm/, trying text parse",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T08:20:50.565489",
+    "status": "success",
+    "message": "opticomm: 1 plans",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T08:20:51.072093",
+    "status": "success",
+    "message": "Swoop total: 1 plans across all service types",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:19:37.885281",
+    "status": "info",
+    "message": "Starting Swoop scraper (all service types)",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:19:39.101058",
+    "status": "info",
+    "message": "Scraping nbn: https://www.swoop.com.au/nbn/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:19:49.618097",
+    "status": "info",
+    "message": "Found 0 candidate cards on https://www.swoop.com.au/nbn/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:19:49.641037",
+    "status": "warning",
+    "message": "Card selectors found nothing on https://www.swoop.com.au/nbn/, trying text parse",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:19:49.734621",
+    "status": "warning",
+    "message": "nbn: no plans found",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:19:49.776632",
+    "status": "info",
+    "message": "Scraping fixed_wireless: https://www.swoop.com.au/fixed-wireless/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:19:56.451677",
+    "status": "info",
+    "message": "Found 0 candidate cards on https://www.swoop.com.au/fixed-wireless/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:19:56.466666",
+    "status": "warning",
+    "message": "Card selectors found nothing on https://www.swoop.com.au/fixed-wireless/, trying text parse",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:19:56.553282",
+    "status": "warning",
+    "message": "fixed_wireless: no plans found",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:19:56.585632",
+    "status": "info",
+    "message": "Scraping opticomm: https://www.swoop.com.au/opticomm/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:20:03.039735",
+    "status": "info",
+    "message": "Found 0 candidate cards on https://www.swoop.com.au/opticomm/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:20:03.060625",
+    "status": "warning",
+    "message": "Card selectors found nothing on https://www.swoop.com.au/opticomm/, trying text parse",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:20:03.145275",
+    "status": "success",
+    "message": "opticomm: 1 plans",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:20:03.483509",
+    "status": "success",
+    "message": "Swoop total: 1 plans across all service types",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:22:35.196523",
+    "status": "info",
+    "message": "Starting Swoop scraper (all service types)",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:22:36.180256",
+    "status": "info",
+    "message": "Scraping nbn: https://www.swoop.com.au/nbn/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:22:36.200320",
+    "status": "info",
+    "message": "Scraping https://www.swoop.com.au/nbn/...",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:22:36.213505",
+    "status": "error",
+    "message": "Failed to scrape https://www.swoop.com.au/nbn/: It looks like you are using Playwright Sync API inside the asyncio loop.\nPlease use the Async API instead.",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:22:36.296392",
+    "status": "warning",
+    "message": "nbn: no plans found",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:22:36.313977",
+    "status": "info",
+    "message": "Scraping fixed_wireless: https://www.swoop.com.au/fixed-wireless/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:22:36.332979",
+    "status": "info",
+    "message": "Scraping https://www.swoop.com.au/fixed-wireless/...",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:22:36.350268",
+    "status": "error",
+    "message": "Failed to scrape https://www.swoop.com.au/fixed-wireless/: It looks like you are using Playwright Sync API inside the asyncio loop.\nPlease use the Async API instead.",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:22:36.375623",
+    "status": "warning",
+    "message": "fixed_wireless: no plans found",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:22:36.391383",
+    "status": "info",
+    "message": "Scraping opticomm: https://www.swoop.com.au/opticomm/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:22:36.408946",
+    "status": "info",
+    "message": "Scraping https://www.swoop.com.au/opticomm/...",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:22:36.424946",
+    "status": "error",
+    "message": "Failed to scrape https://www.swoop.com.au/opticomm/: It looks like you are using Playwright Sync API inside the asyncio loop.\nPlease use the Async API instead.",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:22:36.447829",
+    "status": "warning",
+    "message": "opticomm: no plans found",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:22:36.490570",
+    "status": "success",
+    "message": "Swoop total: 0 plans across all service types",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:23:48.528942",
+    "status": "info",
+    "message": "Starting Swoop scraper (all service types)",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:23:50.191359",
+    "status": "info",
+    "message": "Scraping nbn: https://www.swoop.com.au/nbn/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:23:57.731748",
+    "status": "info",
+    "message": "Found 0 candidate cards on https://www.swoop.com.au/nbn/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:23:57.736744",
+    "status": "warning",
+    "message": "Card selectors found nothing on https://www.swoop.com.au/nbn/, trying text parse",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:23:57.765536",
+    "status": "warning",
+    "message": "nbn: no plans found",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:23:57.766543",
+    "status": "info",
+    "message": "Scraping fixed_wireless: https://www.swoop.com.au/fixed-wireless/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:24:03.678825",
+    "status": "info",
+    "message": "Found 0 candidate cards on https://www.swoop.com.au/fixed-wireless/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:24:03.683826",
+    "status": "warning",
+    "message": "Card selectors found nothing on https://www.swoop.com.au/fixed-wireless/, trying text parse",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:24:03.705833",
+    "status": "warning",
+    "message": "fixed_wireless: no plans found",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:24:03.711811",
+    "status": "info",
+    "message": "Scraping opticomm: https://www.swoop.com.au/opticomm/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:24:09.765204",
+    "status": "info",
+    "message": "Found 0 candidate cards on https://www.swoop.com.au/opticomm/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:24:09.792585",
+    "status": "warning",
+    "message": "Card selectors found nothing on https://www.swoop.com.au/opticomm/, trying text parse",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:24:09.901674",
+    "status": "success",
+    "message": "opticomm: 1 plans",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:24:10.269675",
+    "status": "success",
+    "message": "Swoop total: 1 plans across all service types",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:51:19.244225",
+    "status": "info",
+    "message": "Starting Swoop scraper (all service types)",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:51:20.311864",
+    "status": "info",
+    "message": "Scraping nbn: https://www.swoop.com.au/nbn/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:51:33.148907",
+    "status": "info",
+    "message": "Found 0 candidate elements on https://www.swoop.com.au/nbn/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:51:33.163662",
+    "status": "warning",
+    "message": "Card selectors found nothing on https://www.swoop.com.au/nbn/, trying text parse",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:51:33.253198",
+    "status": "warning",
+    "message": "nbn: no plans found",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:51:33.286627",
+    "status": "info",
+    "message": "Scraping fixed_wireless: https://www.swoop.com.au/fixed-wireless/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:51:39.441083",
+    "status": "info",
+    "message": "Found 0 candidate elements on https://www.swoop.com.au/fixed-wireless/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:51:39.457869",
+    "status": "warning",
+    "message": "Card selectors found nothing on https://www.swoop.com.au/fixed-wireless/, trying text parse",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:51:39.531461",
+    "status": "success",
+    "message": "fixed_wireless: 3 plans",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:51:39.556634",
+    "status": "info",
+    "message": "Scraping opticomm: https://www.swoop.com.au/opticomm/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:51:45.991856",
+    "status": "info",
+    "message": "Found 0 candidate elements on https://www.swoop.com.au/opticomm/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:51:46.040120",
+    "status": "warning",
+    "message": "Card selectors found nothing on https://www.swoop.com.au/opticomm/, trying text parse",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:51:46.109769",
+    "status": "success",
+    "message": "opticomm: 2 plans",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T10:51:46.357806",
+    "status": "success",
+    "message": "Swoop total: 5 plans across all service types",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T11:29:21.181256",
+    "status": "info",
+    "message": "Starting Swoop scraper (all service types)",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T11:29:24.957806",
+    "status": "info",
+    "message": "Scraping nbn: https://www.swoop.com.au/nbn/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T11:29:45.807280",
+    "status": "info",
+    "message": "Found 4 plan elements on https://www.swoop.com.au/nbn/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T11:29:46.474927",
+    "status": "warning",
+    "message": "Plan cards not found on https://www.swoop.com.au/nbn/, trying text parse",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T11:29:46.670071",
+    "status": "warning",
+    "message": "nbn: no plans found",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T11:29:46.756096",
+    "status": "info",
+    "message": "Scraping fixed_wireless: https://www.swoop.com.au/fixed-wireless/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T11:30:02.219945",
+    "status": "info",
+    "message": "Found 4 plan elements on https://www.swoop.com.au/fixed-wireless/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T11:30:03.113720",
+    "status": "warning",
+    "message": "Plan cards not found on https://www.swoop.com.au/fixed-wireless/, trying text parse",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T11:30:03.283858",
+    "status": "success",
+    "message": "fixed_wireless: 3 plans",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T11:30:03.341353",
+    "status": "info",
+    "message": "Scraping opticomm: https://www.swoop.com.au/opticomm/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T11:30:11.563650",
+    "status": "info",
+    "message": "Found 4 plan elements on https://www.swoop.com.au/opticomm/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T11:30:12.874449",
+    "status": "warning",
+    "message": "Plan cards not found on https://www.swoop.com.au/opticomm/, trying text parse",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T11:30:13.039798",
+    "status": "success",
+    "message": "opticomm: 2 plans",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T11:30:41.895050",
+    "status": "success",
+    "message": "Swoop total: 5 plans across all service types",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T11:55:19.799818",
+    "status": "info",
+    "message": "Starting Swoop scraper (all service types)",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T11:55:32.727920",
+    "status": "info",
+    "message": "Scraping nbn: https://www.swoop.com.au/nbn/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T11:55:50.631154",
+    "status": "info",
+    "message": "Found 4 plan elements on https://www.swoop.com.au/nbn/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T11:55:51.334954",
+    "status": "warning",
+    "message": "Plan cards not found on https://www.swoop.com.au/nbn/, trying text parse",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T11:55:51.493306",
+    "status": "warning",
+    "message": "nbn: no plans found",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T11:55:51.568514",
+    "status": "info",
+    "message": "Scraping fixed_wireless: https://www.swoop.com.au/fixed-wireless/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T11:55:58.377563",
+    "status": "info",
+    "message": "Found 4 plan elements on https://www.swoop.com.au/fixed-wireless/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T11:55:58.769048",
+    "status": "warning",
+    "message": "Plan cards not found on https://www.swoop.com.au/fixed-wireless/, trying text parse",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T11:55:58.918772",
+    "status": "warning",
+    "message": "fixed_wireless: no plans found",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T11:55:58.960408",
+    "status": "info",
+    "message": "Scraping opticomm: https://www.swoop.com.au/opticomm/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T11:56:05.623772",
+    "status": "info",
+    "message": "Found 4 plan elements on https://www.swoop.com.au/opticomm/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T11:56:06.029534",
+    "status": "warning",
+    "message": "Plan cards not found on https://www.swoop.com.au/opticomm/, trying text parse",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T11:56:06.162729",
+    "status": "warning",
+    "message": "opticomm: no plans found",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T11:56:58.552930",
+    "status": "success",
+    "message": "Swoop total: 0 plans across all service types",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T11:58:09.945162",
+    "status": "info",
+    "message": "Starting Swoop scraper (all service types)",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T11:58:14.017484",
+    "status": "info",
+    "message": "Scraping nbn: https://www.swoop.com.au/nbn/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T11:58:26.127014",
+    "status": "info",
+    "message": "Found 4 plan elements on https://www.swoop.com.au/nbn/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T11:58:27.573142",
+    "status": "warning",
+    "message": "Plan cards not found on https://www.swoop.com.au/nbn/, trying text parse",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T11:58:27.789933",
+    "status": "warning",
+    "message": "nbn: no plans found",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T11:58:27.873371",
+    "status": "info",
+    "message": "Scraping fixed_wireless: https://www.swoop.com.au/fixed-wireless/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T11:58:34.879028",
+    "status": "info",
+    "message": "Found 4 plan elements on https://www.swoop.com.au/fixed-wireless/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T11:58:35.296725",
+    "status": "warning",
+    "message": "Plan cards not found on https://www.swoop.com.au/fixed-wireless/, trying text parse",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T11:58:35.438728",
+    "status": "success",
+    "message": "fixed_wireless: 3 plans",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T11:58:35.489458",
+    "status": "info",
+    "message": "Scraping opticomm: https://www.swoop.com.au/opticomm/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T11:58:43.002292",
+    "status": "info",
+    "message": "Found 4 plan elements on https://www.swoop.com.au/opticomm/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T11:58:43.404770",
+    "status": "warning",
+    "message": "Plan cards not found on https://www.swoop.com.au/opticomm/, trying text parse",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T11:58:43.538311",
+    "status": "success",
+    "message": "opticomm: 2 plans",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T11:59:15.179227",
+    "status": "success",
+    "message": "Swoop total: 5 plans across all service types",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T13:57:18.588192",
+    "status": "info",
+    "message": "Starting Swoop scraper (all service types)",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T13:57:19.648793",
+    "status": "info",
+    "message": "Scraping nbn: https://www.swoop.com.au/nbn/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T13:57:26.018238",
+    "status": "info",
+    "message": "Found 4 .card--plan elements on https://www.swoop.com.au/nbn/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T13:57:26.162261",
+    "status": "success",
+    "message": "nbn: 4 plans",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T13:57:26.164609",
+    "status": "info",
+    "message": "Scraping fixed_wireless: https://www.swoop.com.au/fixed-wireless/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T13:57:32.324121",
+    "status": "info",
+    "message": "Found 4 .card--plan elements on https://www.swoop.com.au/fixed-wireless/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T13:57:32.481638",
+    "status": "success",
+    "message": "fixed_wireless: 4 plans",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T13:57:32.490290",
+    "status": "info",
+    "message": "Scraping opticomm: https://www.swoop.com.au/opticomm/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T13:57:38.434014",
+    "status": "info",
+    "message": "Found 4 .card--plan elements on https://www.swoop.com.au/opticomm/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T13:57:38.596468",
+    "status": "success",
+    "message": "opticomm: 4 plans",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T13:57:38.914033",
+    "status": "success",
+    "message": "Swoop total: 12 plans across all service types",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T13:57:51.525115",
+    "status": "info",
+    "message": "Starting Swoop scraper (all service types)",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T13:57:52.633108",
+    "status": "info",
+    "message": "Scraping nbn: https://www.swoop.com.au/nbn/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T13:57:58.638588",
+    "status": "info",
+    "message": "Found 4 .card--plan elements on https://www.swoop.com.au/nbn/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T13:57:58.803774",
+    "status": "success",
+    "message": "nbn: 4 plans",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T13:57:58.809615",
+    "status": "info",
+    "message": "Scraping fixed_wireless: https://www.swoop.com.au/fixed-wireless/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T13:58:04.685771",
+    "status": "info",
+    "message": "Found 4 .card--plan elements on https://www.swoop.com.au/fixed-wireless/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T13:58:04.844916",
+    "status": "success",
+    "message": "fixed_wireless: 4 plans",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T13:58:04.851364",
+    "status": "info",
+    "message": "Scraping opticomm: https://www.swoop.com.au/opticomm/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T13:58:10.831419",
+    "status": "info",
+    "message": "Found 4 .card--plan elements on https://www.swoop.com.au/opticomm/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T13:58:10.997103",
+    "status": "success",
+    "message": "opticomm: 4 plans",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T13:58:11.141966",
+    "status": "success",
+    "message": "Swoop total: 12 plans across all service types",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T13:59:15.593213",
+    "status": "info",
+    "message": "Starting Swoop scraper (all service types)",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T13:59:16.709447",
+    "status": "info",
+    "message": "Scraping nbn: https://www.swoop.com.au/nbn/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T13:59:26.396887",
+    "status": "info",
+    "message": "Found 4 .card--plan elements on https://www.swoop.com.au/nbn/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T13:59:26.809422",
+    "status": "success",
+    "message": "nbn: 4 plans",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T13:59:26.844571",
+    "status": "info",
+    "message": "Scraping fixed_wireless: https://www.swoop.com.au/fixed-wireless/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T13:59:32.987913",
+    "status": "info",
+    "message": "Found 4 .card--plan elements on https://www.swoop.com.au/fixed-wireless/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T13:59:33.412957",
+    "status": "success",
+    "message": "fixed_wireless: 4 plans",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T13:59:33.433179",
+    "status": "info",
+    "message": "Scraping opticomm: https://www.swoop.com.au/opticomm/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T13:59:39.562638",
+    "status": "info",
+    "message": "Found 4 .card--plan elements on https://www.swoop.com.au/opticomm/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T13:59:39.955124",
+    "status": "success",
+    "message": "opticomm: 4 plans",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T13:59:40.190276",
+    "status": "success",
+    "message": "Swoop total: 12 plans across all service types",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T15:53:38.658888",
+    "status": "info",
+    "message": "Starting Swoop scraper (all service types)",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T15:53:40.312774",
+    "status": "info",
+    "message": "Scraping nbn: https://www.swoop.com.au/nbn/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T15:54:01.663551",
+    "status": "info",
+    "message": "Found 4 .card--plan elements on https://www.swoop.com.au/nbn/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T15:54:02.123079",
+    "status": "success",
+    "message": "nbn: 4 plans",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T15:54:02.153414",
+    "status": "info",
+    "message": "Scraping fixed_wireless: https://www.swoop.com.au/fixed-wireless/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T15:54:08.471957",
+    "status": "info",
+    "message": "Found 4 .card--plan elements on https://www.swoop.com.au/fixed-wireless/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T15:54:08.908447",
+    "status": "success",
+    "message": "fixed_wireless: 4 plans",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T15:54:08.939541",
+    "status": "info",
+    "message": "Scraping opticomm: https://www.swoop.com.au/opticomm/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T15:54:15.285096",
+    "status": "info",
+    "message": "Found 4 .card--plan elements on https://www.swoop.com.au/opticomm/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T15:54:15.446435",
+    "status": "success",
+    "message": "opticomm: 4 plans",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T15:54:16.306732",
+    "status": "success",
+    "message": "Swoop total: 12 plans across all service types",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T16:02:26.204978",
+    "status": "info",
+    "message": "Starting iPrimus scraper",
+    "provider": "iprimus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T16:02:34.804821",
+    "status": "info",
+    "message": "Found 5 primary plan_tile cards",
+    "provider": "iprimus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T16:02:35.003330",
+    "status": "info",
+    "message": "Found 13 modal plan_tile cards",
+    "provider": "iprimus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T16:02:36.475634",
+    "status": "success",
+    "message": "iPrimus scraper complete: 13 plans (6 NBN, 2 Fixed Wireless, 5 Fibre)",
+    "provider": "iprimus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T16:02:46.336717",
+    "status": "info",
+    "message": "Starting iPrimus scraper",
+    "provider": "iprimus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T16:02:54.864525",
+    "status": "info",
+    "message": "Found 5 primary plan_tile cards",
+    "provider": "iprimus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T16:02:55.078894",
+    "status": "info",
+    "message": "Found 13 modal plan_tile cards",
+    "provider": "iprimus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T16:02:56.120978",
+    "status": "success",
+    "message": "iPrimus scraper complete: 13 plans (6 NBN, 2 Fixed Wireless, 5 Fibre)",
+    "provider": "iprimus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T16:04:10.679020",
+    "status": "info",
+    "message": "Starting iPrimus scraper",
+    "provider": "iprimus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T16:04:20.761905",
+    "status": "info",
+    "message": "Found 5 primary plan_tile cards",
+    "provider": "iprimus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T16:04:21.442155",
+    "status": "info",
+    "message": "Found 13 modal plan_tile cards",
+    "provider": "iprimus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T16:04:23.206847",
+    "status": "success",
+    "message": "iPrimus scraper complete: 13 plans (6 NBN, 2 Fixed Wireless, 5 Fibre)",
+    "provider": "iprimus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T16:04:40.286918",
+    "status": "info",
+    "message": "Starting competitive benchmark analysis",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T16:04:40.396332",
+    "status": "success",
+    "message": "Benchmark complete: 0 wins, 8 gaps across 8 tiers",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T16:05:26.543853",
+    "status": "info",
+    "message": "Starting competitive benchmark analysis",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T16:05:26.638549",
+    "status": "success",
+    "message": "Benchmark complete: 0 wins, 8 gaps across 8 tiers",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T16:15:49.873067",
+    "status": "info",
+    "message": "Starting Dodo scraper",
+    "provider": "dodo",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T16:15:59.163267",
+    "status": "info",
+    "message": "Found 8 .plan-tile cards",
+    "provider": "dodo",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T16:16:00.362136",
+    "status": "success",
+    "message": "Dodo scraper complete: 8 plans (8 with active promo)",
+    "provider": "dodo",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T16:18:08.764863",
+    "status": "info",
+    "message": "Starting Dodo scraper",
+    "provider": "dodo",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T16:18:17.884462",
+    "status": "info",
+    "message": "Found 8 .plan-tile cards",
+    "provider": "dodo",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T16:18:18.980525",
+    "status": "success",
+    "message": "Dodo scraper complete: 8 plans (8 with active promo)",
+    "provider": "dodo",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T16:18:31.690889",
+    "status": "info",
+    "message": "Starting Dodo scraper",
+    "provider": "dodo",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T16:18:40.699961",
+    "status": "info",
+    "message": "Found 8 .plan-tile cards",
+    "provider": "dodo",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T16:18:41.775650",
+    "status": "success",
+    "message": "Dodo scraper complete: 8 plans (8 with active promo)",
+    "provider": "dodo",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T16:19:25.461707",
+    "status": "info",
+    "message": "Starting Dodo scraper",
+    "provider": "dodo",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T16:19:35.230820",
+    "status": "info",
+    "message": "Found 8 .plan-tile cards",
+    "provider": "dodo",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T16:19:37.299505",
+    "status": "success",
+    "message": "Dodo scraper complete: 8 plans (8 with active promo)",
+    "provider": "dodo",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T16:20:45.589378",
+    "status": "info",
+    "message": "Starting competitive benchmark analysis",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T16:20:45.850262",
+    "status": "success",
+    "message": "Benchmark complete: 0 wins, 8 gaps across 8 tiers",
+    "provider": null,
+    "data": {}
   }
 ]

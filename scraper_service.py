@@ -78,19 +78,11 @@ def scrape_provider(provider_name: str) -> Dict[str, Any]:
         # Import provider module dynamically
         provider_module = __import__(f'providers.{provider_name}', fromlist=[''])
         
-        # Call scrape function — prefer multi-page scrapers for dict output
-        if hasattr(provider_module, 'scrape_telstra_plans'):
-            plans = provider_module.scrape_telstra_plans()
-        elif hasattr(provider_module, 'scrape_superloop_plans'):
-            plans = provider_module.scrape_superloop_plans()
-        elif hasattr(provider_module, 'scrape_occom_plans'):
-            plans = provider_module.scrape_occom_plans()
-        elif hasattr(provider_module, 'scrape_tpg_plans'):
-            plans = provider_module.scrape_tpg_plans()
-        elif hasattr(provider_module, 'scrape_exetel_plans'):
-            plans = provider_module.scrape_exetel_plans()
-        elif hasattr(provider_module, 'scrape_leaptel_plans'):
-            plans = provider_module.scrape_leaptel_plans()
+                # Resolve scrape function by convention: scrape_<provider>_plans(),
+        # then legacy scrape_via_playwright() as a fallback.
+        canonical = f'scrape_{provider_name}_plans'
+        if hasattr(provider_module, canonical):
+            plans = getattr(provider_module, canonical)()
         elif hasattr(provider_module, 'scrape_via_playwright'):
             plans = provider_module.scrape_via_playwright()
         else:

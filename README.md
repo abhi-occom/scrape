@@ -133,89 +133,170 @@ python show_output.py
 
 ```
 scrape/
-├── providers/                    # Provider-specific scrapers
+│
+├── providers/                         # Provider-specific scraper modules
 │   ├── __init__.py
-│   ├── aussie.py                # Aussie Broadband scraper
-│   ├── occom.py                 # Occom scraper
-│   ├── optus.py                 # Optus scraper
-│   ├── superloop.py             # Superloop scraper
-│   ├── telstra.py               # Telstra scraper
-│   └── tpg.py                   # TPG scraper
-├── scrapers/                     # Generic scraping utilities
+│   ├── aussie.py                      # Aussie Broadband scraper
+│   ├── exetel.py                      # Exetel scraper
+│   ├── iinet.py                       # iiNet scraper
+│   ├── leaptel.py                     # Leaptel scraper
+│   ├── occom.py                       # Occom scraper
+│   ├── optus.py                       # Optus scraper
+│   ├── superloop.py                   # Superloop scraper
+│   ├── telstra.py                     # Telstra scraper
+│   └── tpg.py                         # TPG scraper
+│
+├── scrapers/                          # Generic scraping engine
 │   ├── __init__.py
-│   └── renderer.py              # Rendered HTML scraper orchestrator
-├── utils/                        # Utility modules
+│   └── renderer.py                    # Playwright-based rendered HTML scraper
+│
+├── utils/                             # Shared utility modules
 │   ├── __init__.py
-│   ├── alerts.py                # Automated price change & gap alert system
-│   ├── benchmark.py             # Competitive price benchmarking engine
-│   ├── db.py                    # Database operations (MySQL)
-│   ├── discover_apis.py         # API endpoint discovery
-│   ├── html_parser.py           # HTML parsing utilities
-│   ├── logger.py                # JSON-based logging
-│   ├── render_engine.py         # Playwright rendering engine
-│   ├── save_json.py             # JSON file operations
-│   ├── stealth.py               # Anti-detection utilities
-│   └── validator.py             # Data validation and cleaning
-├── templates/                    # Flask HTML templates
-│   └── index.html               # Main scraper dashboard UI
-├── output/                       # Output directory
+│   ├── alerts.py                      # Automated price change & gap alert system
+│   ├── benchmark.py                   # Competitive price benchmarking engine
+│   ├── db.py                          # MySQL database operations
+│   ├── discover_apis.py               # API endpoint discovery helper
+│   ├── html_parser.py                 # HTML parsing utilities
+│   ├── logger.py                      # JSON-based structured logging
+│   ├── render_engine.py               # Playwright rendering engine wrapper
+│   ├── save_json.py                   # JSON file read/write operations
+│   ├── stealth.py                     # Anti-bot-detection & stealth utilities
+│   └── validator.py                   # Plan data validation and cleaning
+│
+├── templates/                         # Flask HTML templates
+│   └── index.html                     # Main scraper dashboard UI
+│
+├── output/                            # All generated output files
 │   ├── .gitkeep
-│   ├── all_plans.json           # Combined plans from all providers
-│   ├── all_plans.csv            # Combined plans CSV export
-│   ├── benchmark_report.json    # Competitive benchmark report (JSON)
-│   ├── benchmark_report.csv     # Benchmark report (CSV for marketing)
-│   ├── benchmark_dashboard.html # Interactive benchmark dashboard
-│   ├── logs.json                # JSON log file
-│   ├── alerts.json              # Price change & gap alert history
-│   ├── plans_snapshot.json      # Snapshot for diff-based alerts
-│   ├── investigation/           # Investigation outputs
-│   ├── stealth_test/            # Stealth test outputs
-│   └── scrape_isp_<provider>/   # Per-provider scraped data (json/csv)
-├── config.py                     # Configuration settings
-├── database.sql                  # Database schema
-├── main.py                       # Main pipeline orchestrator
-├── app.py                        # Flask API server & dashboard backend
-├── scraper_service.py            # Shared scraper service (CLI + API)
-├── benchmark_report.py           # Benchmark report generator (JSON/CSV/HTML)
-├── requirements.txt              # Python dependencies
-├── README.md                     # This file
+│   ├── all_plans.json                 # Combined plans from all providers
+│   ├── all_plans.csv                  # Combined plans CSV export
+│   ├── benchmark_dashboard.html       # Interactive benchmark dashboard (HTML)
+│   ├── benchmark_report.json          # Competitive benchmark report (JSON)
+│   ├── benchmark_report.csv           # Benchmark report (CSV)
+│   ├── roi_calculator.html            # ROI calculator output (HTML)
+│   ├── logs.json                      # Aggregated JSON log file
+│   │
+│   ├── investigation/                 # Per-provider investigation HTML snapshots
+│   │   ├── aussie.html / aussie.png
+│   │   ├── aussie_5g_cffi.html
+│   │   ├── aussie_nbn_cffi.html
+│   │   ├── aussie_nbn_headed.html
+│   │   ├── aussie_wireless_cffi.html
+│   │   ├── exetel_fibre_upgrade.html / _selectors.json
+│   │   ├── exetel_mobile.html / _selectors.json
+│   │   ├── exetel_nbn.html / _selectors.json
+│   │   ├── occom.html / occom.png
+│   │   ├── superloop.html / superloop.png
+│   │   ├── superloop_nbn.html / superloop_nbn.png
+│   │   ├── telstra.html / telstra.png
+│   │   ├── tpg_5g_home.html
+│   │   ├── tpg_fibre_upgrade.html
+│   │   ├── tpg_fttb.html
+│   │   ├── tpg_home_wireless.html
+│   │   ├── tpg_nbn.html
+│   │   ├── vodafone_4g_5g.html
+│   │   ├── vodafone_nbn.html
+│   │   ├── vodafone_opticomm.html
+│   │   └── vodafone_super_wifi.html
+│   │
+│   ├── stealth_test/                  # Stealth mode test screenshots & HTML
+│   │   ├── aussie.html / aussie.png
+│   │   ├── superloop.html / superloop.png
+│   │   └── telstra.html / telstra.png
+│   │
+│   ├── scrape_isp_aussie/             # Aussie Broadband scraped data
+│   │   ├── json/
+│   │   └── csv/
+│   ├── scrape_isp_exetel/             # Exetel scraped data
+│   │   ├── json/
+│   │   └── csv/
+│   ├── scrape_isp_iinet/              # iiNet scraped data
+│   │   ├── json/
+│   │   └── csv/
+│   ├── scrape_isp_leaptel/            # Leaptel scraped data
+│   │   ├── json/
+│   │   └── csv/
+│   ├── scrape_isp_occom/              # Occom scraped data
+│   │   ├── json/
+│   │   └── csv/
+│   ├── scrape_isp_optus/              # Optus scraped data
+│   │   ├── json/
+│   │   └── csv/
+│   ├── scrape_isp_superloop/          # Superloop scraped data
+│   │   ├── json/
+│   │   └── csv/
+│   ├── scrape_isp_telstra/            # Telstra scraped data
+│   │   ├── json/
+│   │   └── csv/
+│   └── scrape_isp_tpg/               # TPG scraped data
+│       ├── json/
+│       └── csv/
 │
-├── *_apis.json                   # API endpoint configs per provider
-│   ├── all_provider_apis.json
-│   ├── aussie_apis.json
-│   ├── optus_apis.json
-│   ├── superloop_apis.json
-│   └── telstra_apis.json
+├── *_apis.json                        # Discovered API endpoint configs per provider
+│   ├── all_provider_apis.json         # Consolidated API endpoints (all providers)
+│   ├── aussie_apis.json               # Aussie Broadband API endpoints
+│   ├── optus_apis.json                # Optus API endpoints
+│   ├── superloop_apis.json            # Superloop API endpoints
+│   └── telstra_apis.json              # Telstra API endpoints
 │
-├── investigate_*.py              # Investigation scripts per provider
-│   ├── investigate_deep.py
-│   ├── investigate_occom.py
-│   ├── investigate_optus.py
-│   ├── investigate_optus2.py
-│   ├── investigate_sites.py
-│   ├── investigate_superloop.py
-│   ├── investigate_superloop_cards.py
-│   ├── investigate_superloop_pages.py
-│   ├── investigate_telstra_detail.py
-│   ├── investigate_telstra_pages.py
-│   ├── investigate_tpg.py
-│   ├── investigate_tpg_deep.py
-│   ├── investigate_vodafone.py
-│   └── investigate_vodafone_deep.py
+├── investigate_*.py                   # Provider website investigation scripts
+│   ├── investigate_deep.py            # Deep site structure analysis
+│   ├── investigate_exetel.py          # Exetel investigation (v1)
+│   ├── investigate_exetel2.py         # Exetel investigation (v2)
+│   ├── investigate_exetel3.py         # Exetel investigation (v3)
+│   ├── investigate_iinet.py           # iiNet investigation
+│   ├── investigate_leaptel.py         # Leaptel investigation
+│   ├── investigate_occom.py           # Occom investigation
+│   ├── investigate_optus.py           # Optus investigation (v1)
+│   ├── investigate_optus2.py          # Optus investigation (v2)
+│   ├── investigate_sites.py           # Multi-site structure analysis
+│   ├── investigate_superloop.py       # Superloop investigation
+│   ├── investigate_superloop_cards.py # Superloop plan cards investigation
+│   ├── investigate_superloop_pages.py # Superloop pagination investigation
+│   ├── investigate_telstra_detail.py  # Telstra plan detail investigation
+│   ├── investigate_telstra_pages.py   # Telstra pagination investigation
+│   ├── investigate_tpg.py             # TPG investigation (v1)
+│   ├── investigate_tpg_deep.py        # TPG deep investigation
+│   ├── investigate_vodafone.py        # Vodafone investigation
+│   └── investigate_vodafone_deep.py   # Vodafone deep investigation
 │
-├── test_*.py                     # Test scripts
-│   ├── test_optus.py
-│   ├── test_render.py
-│   ├── test_sample.py
-│   ├── test_stealth.py
-│   ├── test_superloop.py
-│   ├── test_telstra.py
-│   └── test_tpg.py
+├── probe_iinet*.py                    # iiNet connection/endpoint probe scripts
+│   ├── probe_iinet.py                 # iiNet probe (v1)
+│   ├── probe_iinet2.py                # iiNet probe (v2)
+│   ├── probe_iinet3.py                # iiNet probe (v3)
+│   ├── probe_iinet4.py                # iiNet probe (v4)
+│   ├── probe_iinet5.py                # iiNet probe (v5)
+│   ├── probe_iinet6.py                # iiNet probe (v6)
+│   ├── probe_iinet7.py                # iiNet probe (v7)
+│   └── probe_iinet8.py                # iiNet probe (v8)
 │
-├── analyze_optus.py              # Optus analysis script
-├── debug_telstra.py              # Telstra debug script
-├── show_output.py                # Output display utility
-└── update_output.py              # Output update utility
+├── test_*.py                          # Provider-specific test scripts
+│   ├── test_exetel.py                 # Exetel scraper test
+│   ├── test_iinet.py                  # iiNet scraper test
+│   ├── test_optus.py                  # Optus scraper test
+│   ├── test_render.py                 # Rendering engine test
+│   ├── test_sample.py                 # Sample/generic scraper test
+│   ├── test_stealth.py                # Stealth mode test
+│   ├── test_superloop.py              # Superloop scraper test
+│   ├── test_telstra.py                # Telstra scraper test
+│   └── test_tpg.py                    # TPG scraper test
+│
+├── app.py                             # Flask API server & dashboard backend
+├── main.py                            # Main pipeline orchestrator
+├── scraper_service.py                 # Shared scraper service (CLI + API)
+├── config.py                          # Global configuration settings
+├── database.sql                       # MySQL database schema
+├── requirements.txt                   # Python package dependencies
+├── benchmark_report.py                # Benchmark report generator (JSON/CSV/HTML)
+├── roi_calculator.py                  # ROI calculator script
+├── check_providers.py                 # Provider availability checker
+├── analyze_optus.py                   # Optus-specific analysis script
+├── debug_telstra.py                   # Telstra scraper debug script
+├── fix_iinet_indent.py                # iiNet data indentation fixer utility
+├── show_output.py                     # CLI output display utility
+├── update_output.py                   # Output files update utility
+├── problems_faced.md                  # Known issues & problems log
+└── README.md                          # This file
 ```
 
 ## Database Schema

@@ -18,7 +18,7 @@ from utils.benchmark import run_benchmark, save_benchmark_report, save_benchmark
 from utils.alerts import run_alerts
 from benchmark_report import generate_html_report
 from roi_calculator import run_and_save_roi
-from providers import telstra, optus, aussie, superloop, leaptel, iinet
+from providers import telstra, optus, aussie, superloop, occom, tpg, exetel, leaptel, iinet, swoop, iprimus, dodo
 from scrapers.renderer import create_renderer_scraper, SiteConfig
 import config
 
@@ -100,32 +100,64 @@ def run_all_scrapers() -> List[Dict[str, Any]]:
         Combined list of all scraped plans
     """
     all_plans = []
-    
-        # Define scrapers to run
-    scrapers = [
-        ('telstra', telstra.scrape_telstra_plans),
-        ('optus', optus.scrape_optus_plans),
-        ('aussie', aussie.scrape_aussie_plans),
+
+    # Define scrapers to run.
+    # List scrapers return a flat list; dict scrapers (occom, tpg, exetel) return
+    # {page_key: [plans]} and are flattened before extending all_plans.
+    list_scrapers = [
+        ('telstra',   telstra.scrape_telstra_plans),
+        ('optus',     optus.scrape_optus_plans),
+        ('aussie',    aussie.scrape_aussie_plans),
         ('superloop', superloop.scrape_superloop_plans),
-        ('leaptel', leaptel.scrape_leaptel_plans),
-        ('iinet', iinet.scrape_iinet_plans),
+        ('leaptel',   leaptel.scrape_leaptel_plans),
+        ('iinet',     iinet.scrape_iinet_plans),
+        ('swoop',     swoop.scrape_swoop_plans),
+        ('iprimus',   iprimus.scrape_iprimus_plans),
+        ('dodo',      dodo.scrape_dodo_plans),
     ]
-    
-    for provider_name, scraper_func in scrapers:
+
+    # Dict-returning scrapers: result is {page_key: [plans]}
+    dict_scrapers = [
+        ('occom',   occom.scrape_occom_plans),
+        ('tpg',     tpg.scrape_tpg_plans),
+        ('exetel',  exetel.scrape_exetel_plans),
+    ]
+
+    for provider_name, scraper_func in list_scrapers:
         try:
             log_info(f"Running {provider_name} scraper", provider=provider_name)
             plans = scraper_func()
-            
+
             if plans:
-                log_success(f"Retrieved {len(plans)} plans from {provider_name}", 
-                           provider=provider_name, data={'plan_count': len(plans)})
+                log_success(f"Retrieved {len(plans)} plans from {provider_name}",
+                            provider=provider_name, data={'plan_count': len(plans)})
                 all_plans.extend(plans)
             else:
                 log_warning(f"No plans retrieved from {provider_name}", provider=provider_name)
-                
+
         except Exception as e:
-            log_error(f"Scraper failed for {provider_name}: {str(e)}", 
-                     provider=provider_name, data={'error': str(e)})
+            log_error(f"Scraper failed for {provider_name}: {str(e)}",
+                      provider=provider_name, data={'error': str(e)})
+
+    for provider_name, scraper_func in dict_scrapers:
+        try:
+            log_info(f"Running {provider_name} scraper", provider=provider_name)
+            result = scraper_func()  # returns {page_key: [plans]}
+
+            plans = []
+            for page_plans in result.values():
+                plans.extend(page_plans)
+
+            if plans:
+                log_success(f"Retrieved {len(plans)} plans from {provider_name}",
+                            provider=provider_name, data={'plan_count': len(plans)})
+                all_plans.extend(plans)
+            else:
+                log_warning(f"No plans retrieved from {provider_name}", provider=provider_name)
+
+        except Exception as e:
+            log_error(f"Scraper failed for {provider_name}: {str(e)}",
+                      provider=provider_name, data={'error': str(e)})
     
     return all_plans
 

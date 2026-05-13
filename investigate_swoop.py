@@ -1,0 +1,96 @@
+"""
+Diagnostic script: dump HTML structure from Swoop pages to understand
+the actual selectors for plan cards.
+"""
+import sys
+import os
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+from utils.stealth import create_stealth_browser, create_stealth_page
+from playwright.sync_api import sync_playwright
+
+URLS = {
+    'nbn': 'https://www.swoop.com.au/nbn/',
+    'fixed_wireless': 'https://www.swoop.com.au/fixed-wireless/',
+    'opticomm': 'https://www.swoop.com.au/opticomm/',
+}
+
+SELECTORS_TO_TRY = [
+    '.plan',
+    '.pricing-item',
+    '[class*="plan"]',
+    '[class*="pricing"]',
+    '[class*="package"]',
+    '.vc_tta-panel',
+    'table',
+    'tr',
+    '.wp-block-column',
+    '.elementor-widget-container',
+    '[class*="speed"]',
+    '[class*="card"]',
+    '[class*="tier"]',
+    'article',
+    '.plan-card',
+    '.swoop-plan',
+    'section',
+]
+
+def investigate(url, label):
+    print(f"\n{'='*60}")
+    print(f"INVESTIGATING: {label} — {url}")
+    print('='*60)
+    with sync_playwright() as p:
+        browser = create_stealth_browser(p)
+        page = create_stealth_page(browser)
+        page.goto(url, timeout=30000, wait_until='domcontentloaded')
+        page.wait_for_timeout(5000)
+
+        # Dump body text snippet
+        body_text = page.inner_text('body')
+        # Find lines mentioning prices or speeds
+        lines = body_text.split('\n')
+        plan_lines = [l.strip() for l in lines if ('$' in l or 'Mbps' in l or 'mbps' in l or '/mth' in l) and l.strip()]
+        print(f"\n--- Lines containing $ / Mbps / mth ---")
+        for l in plan_lines[:60]:
+            print(f"  {repr(l)}")
+
+        # Try each selector
+        print(f"\n--- Selector counts ---")
+        for sel in SELECTORS_TO_TRY:
+            try:
+                els = page.query_selector_all(sel)
+                if els:
+                    print(f"  {sel}: {len(els)} elements")
+            except:
+                pass
+
+        # Dump inner HTML of promising selectors
+        print(f"\n--- Detailed HTML for matching selectors ---")
+        for sel in ['[class*="pricing"]', '[class*="plan"]', '[class*="package"]', 'table', '.vc_tta-panel']:
+            try:
+                els = page.query_selector_all(sel)
+                if els:
+                    print(f"\n  === {sel} ({len(els)} found) ===")
+                    for i, el in enumerate(els[:3]):
+                        txt = el.inner_text().strip()[:300]
+                        cls = el.get_attribute('class') or ''
+                        print(f"    [{i}] class='{cls}' text={repr(txt)}")
+            except Exception as e:
+                print(f"  {sel}: ERROR {e}")
+
+        # Dump full page HTML snippet around prices
+        print(f"\n--- Full page HTML (first 8000 chars) ---")
+        html = page.content()
+        # Find regions near dollar signs
+        import re
+        matches = list(re.finditer(r'.{200}\$\d+.{200}', html, re.DOTALL))
+        for i, m in enumerate(matches[:5]):
+            print(f"\n  [match {i}]")
+            snippet = m.group(0).replace('\n', ' ')
+            print(f"  {snippet[:500]}")
+
+        browser.close()
+
+if __name__ == '__main__':
+    for label, url in URLS.items():
+        investigate(url, label)

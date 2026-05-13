@@ -60,6 +60,24 @@ PROVIDERS = {
         'id': 9,
         'name': 'iiNet',
         'enabled': True
+    },
+        'swoop': {
+        'id': 10,
+        'name': 'Swoop',
+        'enabled': True,
+        'note': 'Scrapes 3 service types: NBN, Fixed Wireless, Opticomm'
+    },
+        'iprimus': {
+        'id': 11,
+        'name': 'iPrimus',
+        'enabled': True,
+        'note': 'Scrapes NBN, Fixed Wireless and Fibre plans from /nbn-plans'
+    },
+    'dodo': {
+        'id': 12,
+        'name': 'Dodo',
+        'enabled': True,
+        'note': 'Scrapes NBN plans (all tiers) from /nbn — Drupal-rendered, no JS wait needed'
     }
 }
 
