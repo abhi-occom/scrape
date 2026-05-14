@@ -1,0 +1,9 @@
+provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
+iinet,5G Home Broadband,5G Plus,50,20,59.99,39.99,6 months,No Lock-in,50.0,16.0,https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre
+iinet,5G Home Broadband,5G Premium,100,20,69.99,49.99,6 months,No Lock-in,100.0,17.0,https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre
+iinet,NBN,NBN500,500,42,94.99,64.99,6 months,No Lock-in,500.0,42.0,https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre
+iinet,NBN,NBN25,25,4,76.99,56.99,6 months,No Lock-in,25.0,4.0,https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre
+iinet,NBN,NBN50,50,17,84.99,64.99,6 months,No Lock-in,50.0,17.0,https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre
+iinet,NBN,NBN Superfast,740,42,99.99,69.99,6 months,No Lock-in,740.0,42.0,https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre
+iinet,NBN,NBN Ultrafast,820,85,109.99,79.99,6 months,No Lock-in,820.0,85.0,https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre
+iinet,4G Home Wireless,Home Wireless Broadband,20,2,59.99,49.99,6 months,No Lock-in,15.0,1.9,https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre

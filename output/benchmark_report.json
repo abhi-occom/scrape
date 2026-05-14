@@ -1,13 +1,14 @@
 {
-  "generated_at": "2026-05-13T16:20:45.784574",
+  "generated_at": "2026-05-14T10:44:14.129188",
   "summary": {
-    "total_plans_analyzed": 173,
-    "total_providers": 11,
+    "total_plans_analyzed": 178,
+    "total_providers": 12,
     "providers": [
       "dodo",
       "exetel",
       "iinet",
       "iprimus",
+      "kogan",
       "leaptel",
       "occom",
       "optus",
@@ -42,7 +43,7 @@
         },
         "occom": {
           "provider": "occom",
-          "plan_name": "Basic (nbn12)",
+          "plan_name": "Basic (Fibre12)",
           "speed": 12,
           "effective_price": 48.0,
           "regular_price": 58.0,
@@ -50,7 +51,7 @@
           "promo_period": "6 months",
           "annual_cost": 636.0,
           "value_score": 0.25,
-          "network_type": "NBN",
+          "network_type": "Opticomm",
           "contract": "No Contract"
         },
         "telstra": {
@@ -131,6 +132,19 @@
           "network_type": "NBN",
           "contract": "No Contract"
         },
+        "kogan": {
+          "provider": "kogan",
+          "plan_name": "Kogan 4G Internet",
+          "speed": 20,
+          "effective_price": 49.9,
+          "regular_price": 54.9,
+          "promo_price": 49.9,
+          "promo_period": "12 months",
+          "annual_cost": 598.8,
+          "value_score": 0.4,
+          "network_type": "4G",
+          "contract": "No Contract"
+        },
         "leaptel": {
           "provider": "leaptel",
           "plan_name": "Pronto",
@@ -169,6 +183,19 @@
           "value_score": 0.32,
           "network_type": "NBN (all connections)",
           "contract": "No Lock-in"
+        },
+        "superloop": {
+          "provider": "superloop",
+          "plan_name": "Everyday 25/5",
+          "speed": 25,
+          "effective_price": 45.0,
+          "regular_price": 45.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 540.0,
+          "value_score": 0.56,
+          "network_type": "Fibre",
+          "contract": "No Contract"
         },
         "swoop": {
           "provider": "swoop",
@@ -259,6 +286,19 @@
           "annual_cost": 888.0,
           "value_score": 0.68,
           "network_type": "Fibre",
+          "contract": "No Contract"
+        },
+        "kogan": {
+          "provider": "kogan",
+          "plan_name": "Kogan Silver",
+          "speed": 50,
+          "effective_price": 70.9,
+          "regular_price": 80.9,
+          "promo_price": 70.9,
+          "promo_period": "12 months",
+          "annual_cost": 850.8,
+          "value_score": 0.71,
+          "network_type": "NBN",
           "contract": "No Contract"
         },
         "leaptel": {
@@ -417,6 +457,19 @@
           "network_type": "NBN",
           "contract": "No Contract"
         },
+        "kogan": {
+          "provider": "kogan",
+          "plan_name": "Kogan Gold",
+          "speed": 100,
+          "effective_price": 71.9,
+          "regular_price": 85.9,
+          "promo_price": 71.9,
+          "promo_period": "12 months",
+          "annual_cost": 862.8,
+          "value_score": 1.39,
+          "network_type": "NBN",
+          "contract": "No Contract"
+        },
         "leaptel": {
           "provider": "leaptel",
           "plan_name": "Full Throttle",
@@ -549,15 +602,15 @@
         },
         "superloop": {
           "provider": "superloop",
-          "plan_name": "Creator - nbn 250/100",
+          "plan_name": "Fixed Wireless Home Fast 250/20",
           "speed": 250,
-          "effective_price": 85.0,
-          "regular_price": 85.0,
-          "promo_price": null,
-          "promo_period": null,
-          "annual_cost": 1020.0,
-          "value_score": 2.94,
-          "network_type": "NBN",
+          "effective_price": 79.0,
+          "regular_price": 95.0,
+          "promo_price": 79.0,
+          "promo_period": "6 months",
+          "annual_cost": 1044.0,
+          "value_score": 3.16,
+          "network_type": "Fixed Wireless",
           "contract": "No Contract"
         },
         "swoop": {
@@ -622,7 +675,7 @@
           "promo_period": "",
           "annual_cost": 960.0,
           "value_score": 6.25,
-          "network_type": "NBN",
+          "network_type": "NBN FTTP Upgrade",
           "contract": "No Lock-in"
         },
         "iinet": {
@@ -648,6 +701,19 @@
           "promo_period": "6 months",
           "annual_cost": 984.0,
           "value_score": 7.46,
+          "network_type": "NBN",
+          "contract": "No Contract"
+        },
+        "kogan": {
+          "provider": "kogan",
+          "plan_name": "Kogan Gold Plus",
+          "speed": 500,
+          "effective_price": 71.9,
+          "regular_price": 85.9,
+          "promo_price": 71.9,
+          "promo_period": "12 months",
+          "annual_cost": 862.8,
+          "value_score": 6.95,
           "network_type": "NBN",
           "contract": "No Contract"
         },
@@ -794,6 +860,19 @@
           "network_type": "NBN",
           "contract": "No Contract"
         },
+        "kogan": {
+          "provider": "kogan",
+          "plan_name": "Kogan Platinum",
+          "speed": 750,
+          "effective_price": 84.9,
+          "regular_price": 94.9,
+          "promo_price": 84.9,
+          "promo_period": "12 months",
+          "annual_cost": 1018.8,
+          "value_score": 8.83,
+          "network_type": "NBN",
+          "contract": "No Contract"
+        },
         "leaptel": {
           "provider": "leaptel",
           "plan_name": "Ultrafast",
@@ -835,15 +914,15 @@
         },
         "superloop": {
           "provider": "superloop",
-          "plan_name": "Lightspeed - nbn 1000/100",
-          "speed": 1000,
-          "effective_price": 85.0,
-          "regular_price": 85.0,
-          "promo_price": null,
-          "promo_period": null,
-          "annual_cost": 1020.0,
-          "value_score": 11.76,
-          "network_type": "NBN",
+          "plan_name": "Megaspeed 750/50",
+          "speed": 750,
+          "effective_price": 75.0,
+          "regular_price": 104.0,
+          "promo_price": 75.0,
+          "promo_period": "6 months",
+          "annual_cost": 1074.0,
+          "value_score": 10.0,
+          "network_type": "FTTP Upgrade",
           "contract": "No Contract"
         },
         "swoop": {
@@ -913,15 +992,15 @@
         },
         "occom": {
           "provider": "occom",
-          "plan_name": "Hyper (nbn2000)",
+          "plan_name": "Hyper (Fibre2000)",
           "speed": 2000,
-          "effective_price": 165.0,
-          "regular_price": 185.0,
-          "promo_price": 165.0,
+          "effective_price": 180.0,
+          "regular_price": 200.0,
+          "promo_price": 180.0,
           "promo_period": "12 months",
-          "annual_cost": 1980.0,
-          "value_score": 12.12,
-          "network_type": "NBN",
+          "annual_cost": 2160.0,
+          "value_score": 11.11,
+          "network_type": "Community Fibre",
           "contract": "No Contract"
         },
         "superloop": {
@@ -941,7 +1020,7 @@
       "cheapest": "leaptel",
       "cheapest_price": 145.0,
       "most_expensive": "occom",
-      "most_expensive_price": 165.0,
+      "most_expensive_price": 180.0,
       "best_value": "leaptel",
       "best_value_score": 13.79
     }
@@ -952,7 +1031,7 @@
       "tier": "basic",
       "tier_label": "Basic",
       "occom_price": 48.0,
-      "occom_plan": "Basic (nbn12)",
+      "occom_plan": "Basic (Fibre12)",
       "occom_speed": 12,
       "occom_value_score": 0.25,
       "cheapest_competitor": "leaptel",
@@ -1035,14 +1114,14 @@
     {
       "tier": "mega",
       "tier_label": "Mega",
-      "occom_price": 165.0,
-      "occom_plan": "Hyper (nbn2000)",
+      "occom_price": 180.0,
+      "occom_plan": "Hyper (Fibre2000)",
       "occom_speed": 2000,
-      "occom_value_score": 12.12,
+      "occom_value_score": 11.11,
       "cheapest_competitor": "leaptel",
       "cheapest_competitor_price": 145.0,
-      "gap_amount": 20.0,
-      "gap_pct": 13.8
+      "gap_amount": 35.0,
+      "gap_pct": 24.1
     }
   ],
   "value_rankings": [
@@ -1107,41 +1186,55 @@
         },
         {
           "rank": 4,
+          "provider": "superloop",
+          "value_score": 0.56,
+          "speed": 25,
+          "price": 45.0
+        },
+        {
+          "rank": 5,
           "provider": "dodo",
           "value_score": 0.55,
           "speed": 23,
           "price": 41.99
         },
         {
-          "rank": 5,
+          "rank": 6,
           "provider": "swoop",
           "value_score": 0.46,
           "speed": 25,
           "price": 54.0
         },
         {
-          "rank": 6,
+          "rank": 7,
           "provider": "iinet",
           "value_score": 0.4,
           "speed": 20,
           "price": 49.99
         },
         {
-          "rank": 7,
+          "rank": 8,
+          "provider": "kogan",
+          "value_score": 0.4,
+          "speed": 20,
+          "price": 49.9
+        },
+        {
+          "rank": 9,
           "provider": "telstra",
           "value_score": 0.36,
           "speed": 25,
           "price": 70.0
         },
         {
-          "rank": 8,
+          "rank": 10,
           "provider": "iprimus",
           "value_score": 0.34,
           "speed": 25,
           "price": 74.0
         },
         {
-          "rank": 9,
+          "rank": 11,
           "provider": "optus",
           "value_score": 0.32,
           "speed": 25,
@@ -1204,20 +1297,27 @@
         },
         {
           "rank": 8,
+          "provider": "kogan",
+          "value_score": 0.71,
+          "speed": 50,
+          "price": 70.9
+        },
+        {
+          "rank": 9,
           "provider": "iprimus",
           "value_score": 0.68,
           "speed": 50,
           "price": 74.0
         },
         {
-          "rank": 9,
+          "rank": 10,
           "provider": "telstra",
           "value_score": 0.62,
           "speed": 50,
           "price": 80.0
         },
         {
-          "rank": 10,
+          "rank": 11,
           "provider": "optus",
           "value_score": 0.53,
           "speed": 50,
@@ -1280,27 +1380,34 @@
         },
         {
           "rank": 8,
+          "provider": "kogan",
+          "value_score": 1.39,
+          "speed": 100,
+          "price": 71.9
+        },
+        {
+          "rank": 9,
           "provider": "dodo",
           "value_score": 1.13,
           "speed": 63,
           "price": 55.99
         },
         {
-          "rank": 9,
+          "rank": 10,
           "provider": "swoop",
           "value_score": 1.09,
           "speed": 70,
           "price": 64.0
         },
         {
-          "rank": 10,
+          "rank": 11,
           "provider": "optus",
           "value_score": 1.01,
           "speed": 100,
           "price": 99.0
         },
         {
-          "rank": 11,
+          "rank": 12,
           "provider": "telstra",
           "value_score": 0.76,
           "speed": 68,
@@ -1329,9 +1436,9 @@
         {
           "rank": 3,
           "provider": "superloop",
-          "value_score": 2.94,
+          "value_score": 3.16,
           "speed": 250,
-          "price": 85.0
+          "price": 79.0
         },
         {
           "rank": 4,
@@ -1404,27 +1511,34 @@
         },
         {
           "rank": 8,
+          "provider": "kogan",
+          "value_score": 6.95,
+          "speed": 500,
+          "price": 71.9
+        },
+        {
+          "rank": 9,
           "provider": "swoop",
           "value_score": 6.94,
           "speed": 500,
           "price": 72.0
         },
         {
-          "rank": 9,
+          "rank": 10,
           "provider": "exetel",
           "value_score": 6.25,
           "speed": 500,
           "price": 80.0
         },
         {
-          "rank": 10,
+          "rank": 11,
           "provider": "telstra",
           "value_score": 5.62,
           "speed": 500,
           "price": 89.0
         },
         {
-          "rank": 11,
+          "rank": 12,
           "provider": "optus",
           "value_score": 5.05,
           "speed": 500,
@@ -1445,62 +1559,69 @@
         },
         {
           "rank": 2,
-          "provider": "superloop",
-          "value_score": 11.76,
-          "speed": 1000,
-          "price": 85.0
-        },
-        {
-          "rank": 3,
           "provider": "swoop",
           "value_score": 11.76,
           "speed": 1000,
           "price": 85.0
         },
         {
-          "rank": 4,
+          "rank": 3,
           "provider": "occom",
           "value_score": 11.11,
           "speed": 1000,
           "price": 90.0
         },
         {
-          "rank": 5,
+          "rank": 4,
           "provider": "iinet",
           "value_score": 10.57,
           "speed": 740,
           "price": 69.99
         },
         {
-          "rank": 6,
+          "rank": 5,
           "provider": "tpg",
           "value_score": 10.57,
           "speed": 740.0,
           "price": 69.99
         },
         {
-          "rank": 7,
+          "rank": 6,
           "provider": "dodo",
           "value_score": 10.0,
           "speed": 700,
           "price": 69.99
         },
         {
+          "rank": 7,
+          "provider": "superloop",
+          "value_score": 10.0,
+          "speed": 750,
+          "price": 75.0
+        },
+        {
           "rank": 8,
+          "provider": "kogan",
+          "value_score": 8.83,
+          "speed": 750,
+          "price": 84.9
+        },
+        {
+          "rank": 9,
           "provider": "telstra",
           "value_score": 7.21,
           "speed": 750,
           "price": 104.0
         },
         {
-          "rank": 9,
+          "rank": 10,
           "provider": "iprimus",
           "value_score": 6.73,
           "speed": 700,
           "price": 104.0
         },
         {
-          "rank": 10,
+          "rank": 11,
           "provider": "optus",
           "value_score": 6.36,
           "speed": 820,
@@ -1529,9 +1650,9 @@
         {
           "rank": 3,
           "provider": "occom",
-          "value_score": 12.12,
+          "value_score": 11.11,
           "speed": 2000,
-          "price": 165.0
+          "price": 180.0
         }
       ]
     }

@@ -18,7 +18,7 @@ from utils.benchmark import run_benchmark, save_benchmark_report, save_benchmark
 from utils.alerts import run_alerts
 from benchmark_report import generate_html_report
 from roi_calculator import run_and_save_roi
-from providers import telstra, optus, aussie, superloop, occom, tpg, exetel, leaptel, iinet, swoop, iprimus, dodo
+from providers import telstra, optus, aussie, superloop, occom, tpg, exetel, leaptel, iinet, swoop, iprimus, dodo, kogan
 from scrapers.renderer import create_renderer_scraper, SiteConfig
 import config
 
@@ -114,6 +114,7 @@ def run_all_scrapers() -> List[Dict[str, Any]]:
         ('swoop',     swoop.scrape_swoop_plans),
         ('iprimus',   iprimus.scrape_iprimus_plans),
         ('dodo',      dodo.scrape_dodo_plans),
+        ('kogan',     kogan.scrape_kogan_plans),
     ]
 
     # Dict-returning scrapers: result is {page_key: [plans]}

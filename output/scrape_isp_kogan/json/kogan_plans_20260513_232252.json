@@ -1,0 +1,129 @@
+{
+  "scraped_at": "20260513_232252",
+  "provider": "kogan",
+  "provider_id": 13,
+  "total_plans": 7,
+  "plans": [
+    {
+      "index": null,
+      "name": "4G Internet",
+      "plan_duration": "90-Day",
+      "speed": "20 Mbps",
+      "price_monthly": 54.9,
+      "price_once_off": 49.9,
+      "features": [
+        "Typical Evening Speeds:~",
+        "Free modem included",
+        "Unlimited Data*"
+      ],
+      "total_cost": 149.7,
+      "url": "https://www.koganinternet.com.au/plans/",
+      "provider_id": 13,
+      "provider": "kogan",
+      "contract": "No Contract",
+      "network_type": "NBN"
+    },
+    {
+      "index": null,
+      "name": "Bronze",
+      "plan_duration": "12-month",
+      "speed": "25 Mbps",
+      "price_monthly": 70.9,
+      "price_once_off": 58.9,
+      "features": [
+        "Unlimited Data*"
+      ],
+      "total_cost": 58.9,
+      "url": "https://www.koganinternet.com.au/plans/",
+      "provider_id": 13,
+      "provider": "kogan",
+      "contract": "No Contract",
+      "network_type": "NBN"
+    },
+    {
+      "index": null,
+      "name": "Silver",
+      "plan_duration": "12-month",
+      "speed": "50 Mbps",
+      "price_monthly": 80.9,
+      "price_once_off": 70.9,
+      "features": [
+        "Unlimited Data*"
+      ],
+      "total_cost": 70.9,
+      "url": "https://www.koganinternet.com.au/plans/",
+      "provider_id": 13,
+      "provider": "kogan",
+      "contract": "No Contract",
+      "network_type": "NBN"
+    },
+    {
+      "index": null,
+      "name": "Gold",
+      "plan_duration": "12-month",
+      "speed": "99 Mbps",
+      "price_monthly": 85.9,
+      "price_once_off": 71.9,
+      "features": [
+        "Unlimited Data*"
+      ],
+      "total_cost": 71.9,
+      "url": "https://www.koganinternet.com.au/plans/",
+      "provider_id": 13,
+      "provider": "kogan",
+      "contract": "No Contract",
+      "network_type": "NBN"
+    },
+    {
+      "index": null,
+      "name": "Gold Plus",
+      "plan_duration": "12-month",
+      "speed": "500 Mbps",
+      "price_monthly": 85.9,
+      "price_once_off": 71.9,
+      "features": [
+        "Unlimited Data*"
+      ],
+      "total_cost": 71.9,
+      "url": "https://www.koganinternet.com.au/plans/",
+      "provider_id": 13,
+      "provider": "kogan",
+      "contract": "No Contract",
+      "network_type": "NBN"
+    },
+    {
+      "index": null,
+      "name": "Platinum",
+      "plan_duration": "12-month",
+      "speed": "740 Mbps",
+      "price_monthly": 94.9,
+      "price_once_off": 84.9,
+      "features": [
+        "Unlimited Data*"
+      ],
+      "total_cost": 84.9,
+      "url": "https://www.koganinternet.com.au/plans/",
+      "provider_id": 13,
+      "provider": "kogan",
+      "contract": "No Contract",
+      "network_type": "NBN"
+    },
+    {
+      "index": null,
+      "name": "Diamond",
+      "plan_duration": "12-month",
+      "speed": "850 Mbps",
+      "price_monthly": 108.9,
+      "price_once_off": 94.9,
+      "features": [
+        "Unlimited Data*"
+      ],
+      "total_cost": 94.9,
+      "url": "https://www.koganinternet.com.au/plans/",
+      "provider_id": 13,
+      "provider": "kogan",
+      "contract": "No Contract",
+      "network_type": "NBN"
+    }
+  ]
+}

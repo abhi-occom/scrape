@@ -1,0 +1,289 @@
+[
+  {
+    "timestamp": "2026-05-13T23:04:00.939360",
+    "status": "info",
+    "message": "Starting Kogan scraper",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T23:04:25.907293",
+    "status": "info",
+    "message": "Page title: Kogan Internet | Unbelievable Prices on nbn™ Internet - Kogan Internet",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T23:04:25.938831",
+    "status": "info",
+    "message": "Found 21 plan cards.",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T23:04:26.033363",
+    "status": "warning",
+    "message": "Total cost section not found for plan",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T23:04:26.076290",
+    "status": "warning",
+    "message": "Total cost section not found for plan",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T23:04:26.112111",
+    "status": "warning",
+    "message": "Total cost section not found for plan",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T23:04:26.159403",
+    "status": "warning",
+    "message": "Total cost section not found for plan",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T23:04:26.191342",
+    "status": "warning",
+    "message": "Total cost section not found for plan",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T23:04:26.238875",
+    "status": "warning",
+    "message": "Total cost section not found for plan",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T23:04:26.250642",
+    "status": "error",
+    "message": "Error extracting plan card: 'NoneType' object has no attribute 'query_selector'",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T23:04:26.250642",
+    "status": "error",
+    "message": "Error extracting plan card: 'NoneType' object has no attribute 'query_selector'",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T23:04:26.250642",
+    "status": "error",
+    "message": "Error extracting plan card: 'NoneType' object has no attribute 'query_selector'",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T23:04:26.266357",
+    "status": "error",
+    "message": "Error extracting plan card: 'NoneType' object has no attribute 'query_selector'",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T23:04:26.266357",
+    "status": "error",
+    "message": "Error extracting plan card: 'NoneType' object has no attribute 'query_selector'",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T23:04:26.266357",
+    "status": "error",
+    "message": "Error extracting plan card: 'NoneType' object has no attribute 'query_selector'",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T23:04:26.266357",
+    "status": "error",
+    "message": "Error extracting plan card: 'NoneType' object has no attribute 'query_selector'",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T23:04:26.276550",
+    "status": "error",
+    "message": "Error extracting plan card: 'NoneType' object has no attribute 'query_selector'",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T23:04:26.276550",
+    "status": "error",
+    "message": "Error extracting plan card: 'NoneType' object has no attribute 'query_selector'",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T23:04:26.282278",
+    "status": "error",
+    "message": "Error extracting plan card: 'NoneType' object has no attribute 'query_selector'",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T23:04:26.282278",
+    "status": "error",
+    "message": "Error extracting plan card: 'NoneType' object has no attribute 'query_selector'",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T23:04:26.282278",
+    "status": "error",
+    "message": "Error extracting plan card: 'NoneType' object has no attribute 'query_selector'",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T23:04:26.282278",
+    "status": "error",
+    "message": "Error extracting plan card: 'NoneType' object has no attribute 'query_selector'",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T23:04:26.282278",
+    "status": "error",
+    "message": "Error extracting plan card: 'NoneType' object has no attribute 'query_selector'",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T23:04:26.443019",
+    "status": "success",
+    "message": "Kogan scraper complete: 7 plans (7)",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T23:08:58.880129",
+    "status": "info",
+    "message": "Starting Kogan scraper",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T23:09:15.191808",
+    "status": "info",
+    "message": "Page title: Kogan Internet | Unbelievable Prices on nbn™ Internet - Kogan Internet",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T23:09:15.209866",
+    "status": "info",
+    "message": "Found 7 plan cards.",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T23:09:15.571677",
+    "status": "success",
+    "message": "Kogan scraper complete: 7 plans (7)",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T23:19:19.008330",
+    "status": "info",
+    "message": "Starting Kogan scraper",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T23:19:37.960185",
+    "status": "info",
+    "message": "Page title: Kogan Internet | Unbelievable Prices on nbn™ Internet - Kogan Internet",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T23:19:37.994766",
+    "status": "info",
+    "message": "Found 7 plan cards.",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T23:19:38.213534",
+    "status": "success",
+    "message": "Kogan scraper complete: 7 plans (7)",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T23:19:53.267037",
+    "status": "info",
+    "message": "Starting Kogan scraper",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T23:20:07.319716",
+    "status": "info",
+    "message": "Page title: Kogan Internet | Unbelievable Prices on nbn™ Internet - Kogan Internet",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T23:20:07.369018",
+    "status": "info",
+    "message": "Found 7 plan cards.",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T23:20:07.535992",
+    "status": "success",
+    "message": "Kogan scraper complete: 7 plans (7)",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T23:22:41.068384",
+    "status": "info",
+    "message": "Starting Kogan scraper",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T23:22:51.843678",
+    "status": "info",
+    "message": "Page title: Kogan Internet | Unbelievable Prices on nbn™ Internet - Kogan Internet",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T23:22:51.874714",
+    "status": "info",
+    "message": "Found 7 plan cards.",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T23:22:52.039139",
+    "status": "success",
+    "message": "Kogan scraper complete: 7 plans (7)",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-13T23:22:52.045713",
+    "status": "success",
+    "message": "Plans saved to ../output/scrape_isp_kogan/json\\kogan_plans_20260513_232252.json",
+    "provider": "kogan",
+    "data": {}
+  }
+]

@@ -78,7 +78,13 @@ PROVIDERS = {
         'name': 'Dodo',
         'enabled': True,
         'note': 'Scrapes NBN plans (all tiers) from /nbn — Drupal-rendered, no JS wait needed'
-    }
+    },
+    'kogan': {
+        'id': 13,
+        'name': 'Kogan',
+        'enabled': True,
+        'note': 'Scrapes NBN plans (all tiers) from /nbn — rendered, no JS wait needed'
+    },
 }
 
 # Output paths

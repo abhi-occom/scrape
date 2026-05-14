@@ -1,5 +1,5 @@
 """
-Investigate TPG website structure for plan scraping.
+Investigate TPG website structure for plan scraping. 
 Dumps HTML and inspects selectors across all 5 TPG plan pages.
 """
 import sys

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kogan Internet Plans Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 30px 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .main-header {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            border-left: 5px solid #667eea;
+        }
+        
+        .main-header h1 {
+            color: #667eea;
+            font-weight: 800;
+            margin-bottom: 8px;
+            font-size: 2rem;
+        }
+        
+        .main-header .provider-info {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            color: #999;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .plans-container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+        }
+        
+        .plans-table {
+            margin: 0;
+        }
+        
+        .plans-table thead {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: 600;
+        }
+        
+        .plans-table thead th {
+            border: none;
+            padding: 18px 15px;
+            vertical-align: middle;
+        }
+        
+        .plans-table tbody td {
+            padding: 18px 15px;
+            vertical-align: middle;
+            border-color: #f0f0f0;
+        }
+        
+        .plans-table tbody tr {
+            transition: background-color 0.2s ease;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .plans-table tbody tr:hover {
+            background-color: #f9f9ff;
+        }
+        
+        .plan-name {
+            font-weight: 600;
+            color: #333;
+            font-size: 1.05rem;
+        }
+        
+        .speed-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .duration-badge {
+            display: inline-block;
+            background: #e8f1ff;
+            color: #667eea;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .features-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        
+        .features-list li {
+            padding: 3px 0;
+            color: #666;
+        }
+        
+        .features-list li:before {
+            content: "✓ ";
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 60px 20px;
+            color: white;
+        }
+        
+        .spinner-border {
+            color: white;
+        }
+        
+        .error-box {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-left: 5px solid #f5c6cb;
+        }
+        
+        .success-box {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-left: 5px solid #c3e6cb;
+        }
+        
+        .no-data {
+            text-align: center;
+            padding: 40px;
+            color: #999;
+        }
+        
+        @media (max-width: 768px) {
+            .main-header h1 {
+                font-size: 1.5rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .plans-table {
+                font-size: 0.9rem;
+            }
+            
+            .plans-table thead th,
+            .plans-table tbody td {
+                padding: 12px 8px;
+            }
+            
+            .plan-name {
+                font-size: 0.95rem;
+            }
+            
+            .price {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container-lg">
+        <!-- Header -->
+        <div class="main-header">
+            <h1>🌐 Kogan Internet Plans</h1>
+            <div class="provider-info">
+                <strong>Provider:</strong> Kogan Internet | <strong>Updated:</strong> <span id="update-time">Loading...</span>
+            </div>
+        </div>
+        
+        <!-- Loading State -->
+        <div id="loading" class="loading">
+            <div class="spinner-border" role="status" style="width: 3rem; height: 3rem;">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <p style="margin-top: 20px; font-size: 1.1rem;">Loading plans data...</p>
+        </div>
+        
+        <!-- Error State -->
+        <div id="error" style="display: none;">
+            <div class="error-box" id="error-message"></div>
+        </div>
+        
+        <!-- Content -->
+        <div id="content" style="display: none;">
+            <!-- Statistics -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value" id="total-plans">0</div>
+                    <div class="stat-label">Total Plans</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">$<span id="avg-price">0</span></div>
+                    <div class="stat-label">Average Price</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">$<span id="min-price">0</span></div>
+                    <div class="stat-label">Minimum Price</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">$<span id="max-price">0</span></div>
+                    <div class="stat-label">Maximum Price</div>
+                </div>
+            </div>
+            
+            <!-- Success Message -->
+            <div class="success-box" id="success-message" style="display: none;">
+                ✓ Successfully loaded <span id="plan-count">0</span> plans from Kogan
+            </div>
+            
+            <!-- Plans Table -->
+            <div class="plans-container">
+                <div id="no-plans" class="no-data" style="display: none;">
+                    <p style="font-size: 1.1rem;">No plans found</p>
+                </div>
+                <table class="table plans-table" id="plans-table" style="display: table;">
+                    <thead>
+                        <tr>
+                            <th>Plan Name</th>
+                            <th>Speed</th>
+                            <th>Duration</th>
+                            <th>Monthly Price</th>
+                            <th>Total Cost</th>
+                            <th>Features</th>
+                        </tr>
+                    </thead>
+                    <tbody id="plans-tbody">
+                        <!-- Plans will be inserted here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Hardcoded latest file path - in production this would be dynamic
+        const JSON_FILE_PATH = '../scrape_isp_kogan/json/kogan_plans_20260513_232252.json';
+        
+        async function loadPlansData() {
+            try {
+                const response = await fetch(JSON_FILE_PATH);
+                
+                if (!response.ok) {
+                    throw new Error(`Failed to load file: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                console.log('Loaded data:', data);
+                displayPlans(data);
+                
+            } catch (error) {
+                console.error('Error loading plans:', error);
+                showError(`Error loading plans: ${error.message}`);
+            }
+        }
+        
+        function showError(message) {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('error').style.display = 'block';
+            document.getElementById('error-message').textContent = message;
+        }
+        
+        function displayPlans(data) {
+            const plans = data.plans || [];
+            
+            if (plans.length === 0) {
+                showError('No plans found in the data');
+                return;
+            }
+            
+            // Calculate statistics
+            const prices = plans.map(p => p.price_monthly).filter(p => p > 0);
+            
+            if (prices.length === 0) {
+                showError('No valid pricing data found');
+                return;
+            }
+            
+            const avgPrice = (prices.reduce((a, b) => a + b, 0) / prices.length).toFixed(2);
+            const minPrice = Math.min(...prices).toFixed(2);
+            const maxPrice = Math.max(...prices).toFixed(2);
+            
+            // Update statistics
+            document.getElementById('total-plans').textContent = plans.length;
+            document.getElementById('plan-count').textContent = plans.length;
+            document.getElementById('avg-price').textContent = avgPrice;
+            document.getElementById('min-price').textContent = minPrice;
+            document.getElementById('max-price').textContent = maxPrice;
+            
+            // Format and display update time
+            const now = new Date();
+            document.getElementById('update-time').textContent = now.toLocaleDateString() + ' ' + now.toLocaleTimeString();
+            
+            // Populate table
+            const tbody = document.getElementById('plans-tbody');
+            tbody.innerHTML = '';
+            
+            plans.forEach((plan, index) => {
+                const row = document.createElement('tr');
+                const featuresList = (plan.features || [])
+                    .map(f => `<li>${f}</li>`)
+                    .join('');
+                
+                row.innerHTML = `
+                    <td><span class="plan-name">${plan.name || 'N/A'}</span></td>
+                    <td><span class="speed-badge">${plan.speed || 'N/A'}</span></td>
+                    <td><span class="duration-badge">${plan.plan_duration || 'N/A'}</span></td>
+                    <td><span class="price">$${(plan.price_monthly || 0).toFixed(2)}</span></td>
+                    <td>$${(plan.total_cost || 0).toFixed(2)}</td>
+                    <td>
+                        <ul class="features-list">
+                            ${featuresList || '<li>No features listed</li>'}
+                        </ul>
+                    </td>
+                `;
+                tbody.appendChild(row);
+            });
+            
+            // Show content
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+            document.getElementById('success-message').style.display = 'block';
+        }
+        
+        // Load plans when page loads
+        window.addEventListener('DOMContentLoaded', () => {
+            // Simulate a small delay for better UX
+            setTimeout(loadPlansData, 500);
+        });
+    </script>
+</body>
+</html>

@@ -11,8 +11,7 @@
     "contract": "No Lock-in",
     "typical_evening_dl": 25,
     "typical_evening_ul": 5,
-    "source_url": "https://www.optus.com.au/internet/nbn",
-    "provider": "optus"
+    "source_url": "https://www.optus.com.au/internet/nbn"
   },
   {
     "provider_id": 2,
@@ -26,8 +25,7 @@
     "contract": "No Lock-in",
     "typical_evening_dl": 50,
     "typical_evening_ul": 10,
-    "source_url": "https://www.optus.com.au/internet/nbn",
-    "provider": "optus"
+    "source_url": "https://www.optus.com.au/internet/nbn"
   },
   {
     "provider_id": 2,
@@ -41,8 +39,7 @@
     "contract": "No Lock-in",
     "typical_evening_dl": 100,
     "typical_evening_ul": 20,
-    "source_url": "https://www.optus.com.au/internet/nbn",
-    "provider": "optus"
+    "source_url": "https://www.optus.com.au/internet/nbn"
   },
   {
     "provider_id": 2,
@@ -56,8 +53,7 @@
     "contract": "No Lock-in",
     "typical_evening_dl": 100,
     "typical_evening_ul": 20,
-    "source_url": "https://www.optus.com.au/internet/nbn",
-    "provider": "optus"
+    "source_url": "https://www.optus.com.au/internet/nbn"
   },
   {
     "provider_id": 2,
@@ -71,8 +67,7 @@
     "contract": "No Lock-in",
     "typical_evening_dl": 500,
     "typical_evening_ul": 43,
-    "source_url": "https://www.optus.com.au/internet/nbn",
-    "provider": "optus"
+    "source_url": "https://www.optus.com.au/internet/nbn"
   },
   {
     "provider_id": 2,
@@ -86,8 +81,7 @@
     "contract": "No Lock-in",
     "typical_evening_dl": 500,
     "typical_evening_ul": 43,
-    "source_url": "https://www.optus.com.au/internet/nbn",
-    "provider": "optus"
+    "source_url": "https://www.optus.com.au/internet/nbn"
   },
   {
     "provider_id": 2,
@@ -101,7 +95,6 @@
     "contract": "No Lock-in",
     "typical_evening_dl": 820,
     "typical_evening_ul": 80,
-    "source_url": "https://www.optus.com.au/internet/nbn",
-    "provider": "optus"
+    "source_url": "https://www.optus.com.au/internet/nbn"
   }
 ]
