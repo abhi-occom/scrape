@@ -85,6 +85,18 @@ PROVIDERS = {
         'enabled': True,
         'note': 'Scrapes NBN plans (all tiers) from /nbn — rendered, no JS wait needed'
     },
+    'more': {
+        'id': 14,
+        'name': 'More',
+        'enabled': True,
+        'note': 'Scrapes NBN plans (4 tiers) from /personal/nbn-plans — JavaScript rendered'
+    },
+    'tangerine': {
+        'id': 15,
+        'name': 'Tangerine',
+        'enabled': True,
+        'note': 'Scrapes NBN plans (4 tiers) from /nbn/nbn-broadband — static HTML'
+    },
 }
 
 # Output paths

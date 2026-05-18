@@ -285,5 +285,173 @@
     "message": "Plans saved to ../output/scrape_isp_kogan/json\\kogan_plans_20260513_232252.json",
     "provider": "kogan",
     "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T01:43:08.762642",
+    "status": "info",
+    "message": "Starting More scraper",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T01:43:11.409822",
+    "status": "error",
+    "message": "More scraper failed: Page.goto: net::ERR_INTERNET_DISCONNECTED at https://more.com.au/personal/nbn-plans\nCall log:\n  - navigating to \"https://more.com.au/personal/nbn-plans\", waiting until \"domcontentloaded\"\n",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T01:43:11.409822",
+    "status": "success",
+    "message": "More scraper complete: 0 plans",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T01:51:29.342939",
+    "status": "info",
+    "message": "Starting More scraper",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T01:51:47.588504",
+    "status": "info",
+    "message": "Found 23 owl-item elements",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T01:51:48.677796",
+    "status": "success",
+    "message": "More scraper complete: 0 plans",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T02:31:11.617270",
+    "status": "info",
+    "message": "Starting More scraper",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T02:31:30.682627",
+    "status": "info",
+    "message": "Found 23 owl-item elements",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T02:31:30.698870",
+    "status": "warning",
+    "message": "More: missing required data for Value",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T02:31:30.707221",
+    "status": "warning",
+    "message": "More: missing required data for Value Plus",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T02:31:30.715920",
+    "status": "warning",
+    "message": "More: missing required data for Fast Max",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T02:31:30.723388",
+    "status": "warning",
+    "message": "More: missing required data for Ultrafast",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T02:31:32.270997",
+    "status": "success",
+    "message": "More scraper complete: 0 plans",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T09:37:06.273081",
+    "status": "info",
+    "message": "Starting More scraper",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T09:37:23.338908",
+    "status": "error",
+    "message": "Could not find products container",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T09:38:19.912226",
+    "status": "info",
+    "message": "Starting Tangerine scraper",
+    "provider": "tangerine",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T09:38:21.224495",
+    "status": "info",
+    "message": "Navigating to https://www.tangerine.com.au/nbn/nbn-broadband",
+    "provider": "tangerine",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T09:38:29.789530",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "tangerine",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T09:38:31.807980",
+    "status": "success",
+    "message": "Tangerine page verified",
+    "provider": "tangerine",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T09:38:31.808981",
+    "status": "info",
+    "message": "Added: Tangerine Value",
+    "provider": "tangerine",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T09:38:31.809981",
+    "status": "info",
+    "message": "Added: Tangerine Value Plus",
+    "provider": "tangerine",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T09:38:31.810980",
+    "status": "info",
+    "message": "Added: Tangerine Speedy Max",
+    "provider": "tangerine",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T09:38:31.811987",
+    "status": "info",
+    "message": "Added: Tangerine UltraSpeedy",
+    "provider": "tangerine",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T09:38:32.607008",
+    "status": "success",
+    "message": "Tangerine scraper complete: 4 plans",
+    "provider": "tangerine",
+    "data": {}
   }
 ]

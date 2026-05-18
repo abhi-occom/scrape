@@ -299,7 +299,7 @@ scrape/
 └── README.md                          # This file
 ```
 
-## Database Schema
+## Database Schema 
 
 ### Table: `plans_current`
 

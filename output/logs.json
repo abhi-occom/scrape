@@ -9287,5 +9287,1527 @@
     "message": "Benchmark complete: 0 wins, 8 gaps across 8 tiers",
     "provider": null,
     "data": {}
+  },
+  {
+    "timestamp": "2026-05-15T20:28:15.060176",
+    "status": "info",
+    "message": "Starting Kogan scraper",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-15T20:28:16.852561",
+    "status": "info",
+    "message": "Navigating to https://www.koganinternet.com.au/plans/",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-15T20:28:37.310390",
+    "status": "info",
+    "message": "Page title: 'Kogan Internet | Unbelievable Prices on nbn™ Internet - Kogan Internet'",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-15T20:28:37.373825",
+    "status": "info",
+    "message": "Found 7 plan cards",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-15T20:28:37.614641",
+    "status": "info",
+    "message": "  [0] Kogan 4G Internet        20 Mbps  $54.90/mth  promo $49.90",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-15T20:28:37.941730",
+    "status": "info",
+    "message": "  [1] Kogan Bronze             25 Mbps  $70.90/mth  promo $58.90",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-15T20:28:38.324658",
+    "status": "info",
+    "message": "  [2] Kogan Silver             50 Mbps  $80.90/mth  promo $70.90",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-15T20:28:38.644481",
+    "status": "info",
+    "message": "  [3] Kogan Gold              100 Mbps  $85.90/mth  promo $71.90",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-15T20:28:38.941182",
+    "status": "info",
+    "message": "  [4] Kogan Gold Plus         500 Mbps  $85.90/mth  promo $71.90",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-15T20:28:39.205541",
+    "status": "info",
+    "message": "  [5] Kogan Platinum          750 Mbps  $94.90/mth  promo $84.90",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-15T20:28:39.540363",
+    "status": "info",
+    "message": "  [6] Kogan Diamond          1000 Mbps  $108.90/mth  promo $94.90",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-15T20:28:40.386579",
+    "status": "success",
+    "message": "Kogan scraper complete: 7 plans extracted",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T00:20:24.620359",
+    "status": "info",
+    "message": "Starting competitive benchmark analysis",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T00:20:24.690877",
+    "status": "success",
+    "message": "Benchmark complete: 0 wins, 8 gaps across 8 tiers",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T01:49:37.287220",
+    "status": "info",
+    "message": "Starting More scraper",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T01:49:39.857247",
+    "status": "error",
+    "message": "More scraper failed: Page.goto: net::ERR_INTERNET_DISCONNECTED at https://more.com.au/personal/nbn-plans\nCall log:\n  - navigating to \"https://more.com.au/personal/nbn-plans\", waiting until \"domcontentloaded\"\n",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T01:49:39.861856",
+    "status": "success",
+    "message": "More scraper complete: 0 plans",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T01:49:52.068187",
+    "status": "info",
+    "message": "Starting Kogan scraper",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T01:49:53.596450",
+    "status": "info",
+    "message": "Navigating to https://www.koganinternet.com.au/plans/",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T01:49:54.157625",
+    "status": "error",
+    "message": "Kogan scraper failed: Page.goto: net::ERR_INTERNET_DISCONNECTED at https://www.koganinternet.com.au/plans/\nCall log:\n  - navigating to \"https://www.koganinternet.com.au/plans/\", waiting until \"domcontentloaded\"\n",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T01:57:31.529517",
+    "status": "info",
+    "message": "Starting competitive benchmark analysis",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T01:57:31.734749",
+    "status": "success",
+    "message": "Benchmark complete: 0 wins, 8 gaps across 8 tiers",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T01:57:47.047753",
+    "status": "info",
+    "message": "Starting Kogan scraper",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T01:57:49.492540",
+    "status": "info",
+    "message": "Navigating to https://www.koganinternet.com.au/plans/",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T01:58:02.047345",
+    "status": "info",
+    "message": "Page title: 'Kogan Internet | Unbelievable Prices on nbn™ Internet - Kogan Internet'",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T01:58:02.201358",
+    "status": "info",
+    "message": "Found 7 plan cards",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T01:58:02.748462",
+    "status": "info",
+    "message": "  [0] Kogan 4G Internet        20 Mbps  $54.90/mth  promo $49.90",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T01:58:03.123333",
+    "status": "info",
+    "message": "  [1] Kogan Bronze             25 Mbps  $70.90/mth  promo $58.90",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T01:58:03.584626",
+    "status": "info",
+    "message": "  [2] Kogan Silver             50 Mbps  $80.90/mth  promo $70.90",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T01:58:03.882582",
+    "status": "info",
+    "message": "  [3] Kogan Gold              100 Mbps  $85.90/mth  promo $71.90",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T01:58:04.316038",
+    "status": "info",
+    "message": "  [4] Kogan Gold Plus         500 Mbps  $85.90/mth  promo $71.90",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T01:58:04.748713",
+    "status": "info",
+    "message": "  [5] Kogan Platinum          750 Mbps  $94.90/mth  promo $84.90",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T01:58:05.105914",
+    "status": "info",
+    "message": "  [6] Kogan Diamond          1000 Mbps  $108.90/mth  promo $94.90",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T01:58:06.100961",
+    "status": "success",
+    "message": "Kogan scraper complete: 7 plans extracted",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T01:58:16.269036",
+    "status": "info",
+    "message": "Starting competitive benchmark analysis",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T01:58:16.403535",
+    "status": "success",
+    "message": "Benchmark complete: 0 wins, 8 gaps across 8 tiers",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T02:02:33.280530",
+    "status": "info",
+    "message": "Starting More scraper",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T02:02:52.956666",
+    "status": "info",
+    "message": "Found 23 owl-item elements",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T02:02:54.603545",
+    "status": "success",
+    "message": "More scraper complete: 0 plans",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T02:33:08.231054",
+    "status": "info",
+    "message": "Starting More scraper",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T02:33:26.855033",
+    "status": "info",
+    "message": "Found 23 owl-item elements",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T02:33:28.635461",
+    "status": "success",
+    "message": "More scraper complete: 4 plans",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T02:34:25.482741",
+    "status": "info",
+    "message": "Starting competitive benchmark analysis",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T02:34:25.638460",
+    "status": "success",
+    "message": "Benchmark complete: 0 wins, 8 gaps across 8 tiers",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T09:44:38.957331",
+    "status": "info",
+    "message": "Starting Tangerine scraper",
+    "provider": "tangerine",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T09:44:40.220717",
+    "status": "info",
+    "message": "Navigating to https://www.tangerine.com.au/nbn/nbn-broadband",
+    "provider": "tangerine",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T09:44:48.933532",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "tangerine",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T09:44:50.993023",
+    "status": "success",
+    "message": "Tangerine page verified",
+    "provider": "tangerine",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T09:44:51.058440",
+    "status": "info",
+    "message": "Added: Tangerine Value",
+    "provider": "tangerine",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T09:44:51.093758",
+    "status": "info",
+    "message": "Added: Tangerine Value Plus",
+    "provider": "tangerine",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T09:44:51.120678",
+    "status": "info",
+    "message": "Added: Tangerine Speedy Max",
+    "provider": "tangerine",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T09:44:51.134170",
+    "status": "info",
+    "message": "Added: Tangerine UltraSpeedy",
+    "provider": "tangerine",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T09:44:51.976661",
+    "status": "success",
+    "message": "Tangerine scraper complete: 4 plans",
+    "provider": "tangerine",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T09:46:34.617979",
+    "status": "info",
+    "message": "Starting competitive benchmark analysis",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T09:46:34.667558",
+    "status": "success",
+    "message": "Benchmark complete: 0 wins, 8 gaps across 8 tiers",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T09:46:56.716600",
+    "status": "info",
+    "message": "Starting competitive benchmark analysis",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-16T09:46:56.773096",
+    "status": "success",
+    "message": "Benchmark complete: 0 wins, 8 gaps across 8 tiers",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:02:55.845018",
+    "status": "info",
+    "message": "Scraping plans: https://www.telstra.com.au/internet/plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:03:05.838767",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:03:14.319583",
+    "status": "success",
+    "message": "plans: 19 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:03:14.556974",
+    "status": "info",
+    "message": "Scraping 5g_home: https://www.telstra.com.au/internet/5g-home-internet",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:03:16.178221",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:03:23.064780",
+    "status": "success",
+    "message": "5g_home: 3 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:03:23.286346",
+    "status": "info",
+    "message": "Scraping starlink: https://www.telstra.com.au/internet/starlink",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:03:25.034781",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:03:31.502769",
+    "status": "success",
+    "message": "starlink: 1 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:03:31.726865",
+    "status": "info",
+    "message": "Scraping small_business: https://www.telstra.com.au/small-business/internet",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:03:34.007354",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:03:41.491509",
+    "status": "success",
+    "message": "small_business: 13 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:03:43.030356",
+    "status": "success",
+    "message": "Total Telstra plans: 36",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:03:47.362458",
+    "status": "info",
+    "message": "Navigating to https://www.optus.com.au/internet/nbn",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:03:54.065318",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:03:59.167703",
+    "status": "info",
+    "message": "Found 5 plan cards",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:03:59.796283",
+    "status": "success",
+    "message": "Extracted 5 plans from Optus",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:04:02.004016",
+    "status": "warning",
+    "message": "Aussie Broadband scraper skipped — Cloudflare Turnstile (managed challenge) — all automated methods blocked",
+    "provider": "aussie",
+    "data": {
+      "status": "blocked",
+      "reason": "Cloudflare Turnstile (managed challenge) — all automated methods blocked"
+    }
+  },
+  {
+    "timestamp": "2026-05-18T07:04:03.861629",
+    "status": "info",
+    "message": "Scraping nbn: https://www.superloop.com/internet/nbn/",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:04:06.996637",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:04:12.283549",
+    "status": "success",
+    "message": "nbn: 13 plans",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:04:12.401431",
+    "status": "info",
+    "message": "Scraping fibre: https://www.superloop.com/internet/fibre/",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:04:13.195346",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:04:18.324297",
+    "status": "success",
+    "message": "fibre: 7 plans",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:04:18.428745",
+    "status": "info",
+    "message": "Scraping flip_to_fibre: https://www.superloop.com/flip-to-fibre/",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:04:19.209459",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:04:24.323256",
+    "status": "info",
+    "message": "Rounded cards found: 5",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:04:24.595166",
+    "status": "success",
+    "message": "flip_to_fibre: 5 plans",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:04:25.102762",
+    "status": "info",
+    "message": "Scraping fixed_wireless: https://www.superloop.com/internet/fixed-wireless/",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:04:25.874511",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:04:30.964113",
+    "status": "info",
+    "message": "Fixed wireless cards found: 6",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:04:31.047093",
+    "status": "success",
+    "message": "fixed_wireless: 3 plans",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:04:32.743273",
+    "status": "success",
+    "message": "Total Superloop plans: 28",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:04:32.790946",
+    "status": "info",
+    "message": "Starting Occom multi-page scraper",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:04:34.850903",
+    "status": "info",
+    "message": "Scraping NBN plans from https://occom.com.au/nbn-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:04:46.910940",
+    "status": "info",
+    "message": "Found 19 cards on https://occom.com.au/nbn-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:04:53.842542",
+    "status": "success",
+    "message": "Scraped 11 NBN plans",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:04:53.881377",
+    "status": "info",
+    "message": "Scraping Opticomm plans from https://occom.com.au/opticomm-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:05:02.946051",
+    "status": "info",
+    "message": "Found 7 cards on https://occom.com.au/opticomm-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:05:05.415571",
+    "status": "success",
+    "message": "Scraped 7 Opticomm plans",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:05:05.415571",
+    "status": "info",
+    "message": "Scraping NBN FTTP plans from https://occom.com.au/nbn-fttp-upgrade/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:05:14.870252",
+    "status": "info",
+    "message": "Found 8 cards on https://occom.com.au/nbn-fttp-upgrade/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:05:21.207216",
+    "status": "success",
+    "message": "Scraped 8 NBN FTTP plans",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:05:21.229825",
+    "status": "info",
+    "message": "Scraping Supa plans from https://occom.com.au/supa-network-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:05:30.754175",
+    "status": "info",
+    "message": "Found 5 cards on https://occom.com.au/supa-network-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:05:31.814171",
+    "status": "success",
+    "message": "Scraped 5 Supa plans",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:05:31.829817",
+    "status": "info",
+    "message": "Scraping Redtrain plans from https://occom.com.au/redtrain-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:05:43.487105",
+    "status": "info",
+    "message": "Found 7 cards on https://occom.com.au/redtrain-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:05:46.441962",
+    "status": "success",
+    "message": "Scraped 7 Redtrain plans",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:05:46.473682",
+    "status": "info",
+    "message": "Scraping Community Fibre plans from https://occom.com.au/community-fibre-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:05:55.621987",
+    "status": "info",
+    "message": "Found 6 cards on https://occom.com.au/community-fibre-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:05:56.875951",
+    "status": "success",
+    "message": "Scraped 6 Community Fibre plans",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:06:18.593705",
+    "status": "success",
+    "message": "Total Occom plans scraped: 44 across 6 pages",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:06:20.673147",
+    "status": "info",
+    "message": "Scraping nbn: https://www.tpg.com.au/nbn",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:06:27.055871",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:06:33.227175",
+    "status": "info",
+    "message": "Found 50 nbnLabels cards",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:06:37.645320",
+    "status": "success",
+    "message": "nbn: 7 plans",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:06:37.739615",
+    "status": "info",
+    "message": "Skipping fibre_upgrade (informational)",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:06:37.978266",
+    "status": "info",
+    "message": "Scraping home_wireless: https://www.tpg.com.au/home-wireless-broadband",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:06:43.959632",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:06:50.133702",
+    "status": "success",
+    "message": "home_wireless: 1 plans",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:06:50.385654",
+    "status": "info",
+    "message": "Scraping 5g_home: https://www.tpg.com.au/5g-home-broadband",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:06:54.316002",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:07:00.479837",
+    "status": "success",
+    "message": "5g_home: 2 plans",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:07:00.689754",
+    "status": "info",
+    "message": "Scraping fttb: https://www.tpg.com.au/fttb",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:07:03.636776",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:07:09.982814",
+    "status": "info",
+    "message": "Found 3 FTTB plan-cards",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:07:10.220482",
+    "status": "success",
+    "message": "fttb: 3 plans",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:07:11.194859",
+    "status": "success",
+    "message": "Total TPG plans: 13",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:07:12.818490",
+    "status": "info",
+    "message": "Scraping nbn: https://www.exetel.com.au/broadband/nbn",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:07:14.269303",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:07:20.379338",
+    "status": "info",
+    "message": "Found 1 CMSPlanCardBroadband cards",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:07:20.523203",
+    "status": "success",
+    "message": "nbn: 1 plans",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:07:20.719317",
+    "status": "info",
+    "message": "Scraping nbn_fibre_upgrade: https://www.exetel.com.au/broadband/nbn-fibre-upgrade",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:07:22.321521",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:07:28.425377",
+    "status": "info",
+    "message": "Found 1 CMSPlanCardBroadband cards",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:07:28.595557",
+    "status": "success",
+    "message": "nbn_fibre_upgrade: 1 plans",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:07:28.848205",
+    "status": "info",
+    "message": "Scraping mobile: https://www.exetel.com.au/mobilephone",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:07:30.492664",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:07:36.648187",
+    "status": "info",
+    "message": "Found 1 CMSPlanMobile cards",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:07:36.790426",
+    "status": "success",
+    "message": "mobile: 1 plans",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:07:38.216172",
+    "status": "success",
+    "message": "Total Exetel plans: 3",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:07:40.138023",
+    "status": "info",
+    "message": "Scraping nbn plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:07:48.344616",
+    "status": "info",
+    "message": "Found 226 card elements on NBN page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:07:54.277928",
+    "status": "success",
+    "message": "Extracted 9 unique plans from NBN page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:07:54.513116",
+    "status": "info",
+    "message": "Scraping opticomm plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:08:02.789045",
+    "status": "info",
+    "message": "Found 174 card elements on Opticomm page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:08:07.694040",
+    "status": "success",
+    "message": "Extracted 7 unique plans from Opticomm page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:08:07.810057",
+    "status": "info",
+    "message": "Scraping redtrain plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:08:15.638671",
+    "status": "info",
+    "message": "Found 124 card elements on Redtrain page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:08:18.560752",
+    "status": "success",
+    "message": "Extracted 5 unique plans from Redtrain page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:08:18.667626",
+    "status": "info",
+    "message": "Scraping fixed_wireless plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:08:26.751107",
+    "status": "info",
+    "message": "Found 128 card elements on Fixed Wireless page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:08:30.100940",
+    "status": "success",
+    "message": "Extracted 5 unique plans from Fixed Wireless page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:08:31.974240",
+    "status": "success",
+    "message": "Scraping complete. Total plans: 26",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:08:34.677607",
+    "status": "info",
+    "message": "Scraping fibre: https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:08:39.828579",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:08:47.089685",
+    "status": "info",
+    "message": "Found 8 .card elements on fibre page",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:08:48.357514",
+    "status": "success",
+    "message": "fibre: 8 plans",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:08:48.589091",
+    "status": "info",
+    "message": "Scraping wireless: https://www.iinet.net.au/internet-product/broadband/nbn/plans/wireless",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:08:50.697436",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:08:58.630617",
+    "status": "info",
+    "message": "Wireless plan section: 'Select a plan\\nNBN25\\n$ 76 .99 /mth\\n\\nMin Cost $86.99\\n\\nif you return the modem\\n\\nUses NBN25\\n\\n20Mbps\\nDownload\\n3.8Mbps\\nUpload\\nTypical Evening Speed*\\n$79.99/mth from\\n27/05/2026\\nLiimitless Data\\n\\nTypical Evening Speeds are subject to change and are measured 7pm-11pm. Speeds are not guaranteed and may vary. A'",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:08:58.794872",
+    "status": "success",
+    "message": "wireless: 1 plans",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:08:58.881834",
+    "status": "info",
+    "message": "Skipping fibre_upgrade (informational only)",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:08:59.320976",
+    "status": "success",
+    "message": "Total iiNet plans: 9",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:08:59.400260",
+    "status": "info",
+    "message": "Starting Swoop scraper (all service types)",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:09:01.039685",
+    "status": "info",
+    "message": "Scraping nbn: https://www.swoop.com.au/nbn/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:09:10.957412",
+    "status": "info",
+    "message": "Found 4 .card--plan elements on https://www.swoop.com.au/nbn/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:09:11.452720",
+    "status": "success",
+    "message": "nbn: 4 plans",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:09:11.520806",
+    "status": "info",
+    "message": "Scraping fixed_wireless: https://www.swoop.com.au/fixed-wireless/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:09:18.299631",
+    "status": "info",
+    "message": "Found 4 .card--plan elements on https://www.swoop.com.au/fixed-wireless/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:09:19.176564",
+    "status": "success",
+    "message": "fixed_wireless: 4 plans",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:09:19.227032",
+    "status": "info",
+    "message": "Scraping opticomm: https://www.swoop.com.au/opticomm/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:09:25.709402",
+    "status": "info",
+    "message": "Found 4 .card--plan elements on https://www.swoop.com.au/opticomm/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:09:26.202921",
+    "status": "success",
+    "message": "opticomm: 4 plans",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:09:28.185214",
+    "status": "success",
+    "message": "Swoop total: 12 plans across all service types",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:09:28.258286",
+    "status": "info",
+    "message": "Starting iPrimus scraper",
+    "provider": "iprimus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:09:38.487073",
+    "status": "info",
+    "message": "Found 5 primary plan_tile cards",
+    "provider": "iprimus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:09:39.121997",
+    "status": "info",
+    "message": "Found 13 modal plan_tile cards",
+    "provider": "iprimus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:09:41.161540",
+    "status": "success",
+    "message": "iPrimus scraper complete: 13 plans (6 NBN, 2 Fixed Wireless, 5 Fibre)",
+    "provider": "iprimus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:09:41.222739",
+    "status": "info",
+    "message": "Starting Dodo scraper",
+    "provider": "dodo",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:09:50.788966",
+    "status": "info",
+    "message": "Found 8 .plan-tile cards",
+    "provider": "dodo",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:09:53.132555",
+    "status": "success",
+    "message": "Dodo scraper complete: 8 plans (8 with active promo)",
+    "provider": "dodo",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:09:53.235146",
+    "status": "info",
+    "message": "Starting Kogan scraper",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:09:55.334747",
+    "status": "info",
+    "message": "Navigating to https://www.koganinternet.com.au/plans/",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:10:05.524503",
+    "status": "info",
+    "message": "Page title: 'Kogan Internet | Unbelievable Prices on nbn™ Internet - Kogan Internet'",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:10:05.663642",
+    "status": "info",
+    "message": "Found 7 plan cards",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:10:05.994630",
+    "status": "info",
+    "message": "  [0] Kogan 4G Internet        20 Mbps  $54.90/mth  promo $49.90",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:10:06.293697",
+    "status": "info",
+    "message": "  [1] Kogan Bronze             25 Mbps  $70.90/mth  promo $58.90",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:10:06.590403",
+    "status": "info",
+    "message": "  [2] Kogan Silver             50 Mbps  $80.90/mth  promo $70.90",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:10:06.883705",
+    "status": "info",
+    "message": "  [3] Kogan Gold              100 Mbps  $85.90/mth  promo $71.90",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:10:07.183121",
+    "status": "info",
+    "message": "  [4] Kogan Gold Plus         500 Mbps  $85.90/mth  promo $71.90",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:10:07.501999",
+    "status": "info",
+    "message": "  [5] Kogan Platinum          750 Mbps  $94.90/mth  promo $84.90",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:10:07.816026",
+    "status": "info",
+    "message": "  [6] Kogan Diamond          1000 Mbps  $108.90/mth  promo $94.90",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:10:09.301034",
+    "status": "success",
+    "message": "Kogan scraper complete: 7 plans extracted",
+    "provider": "kogan",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:10:09.357992",
+    "status": "info",
+    "message": "Starting More scraper",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:10:26.746957",
+    "status": "info",
+    "message": "Found 23 owl-item elements",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:10:26.812959",
+    "status": "warning",
+    "message": "More: missing required data for Value",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:10:27.106435",
+    "status": "warning",
+    "message": "More: missing required data for Value Plus",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:10:27.222053",
+    "status": "warning",
+    "message": "More: missing required data for Fast Max",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:10:27.278027",
+    "status": "warning",
+    "message": "More: missing required data for Ultrafast",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:10:29.704996",
+    "status": "success",
+    "message": "More scraper complete: 0 plans",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:10:29.796686",
+    "status": "info",
+    "message": "Starting Tangerine scraper",
+    "provider": "tangerine",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:10:31.905205",
+    "status": "info",
+    "message": "Navigating to https://www.tangerine.com.au/nbn/nbn-broadband",
+    "provider": "tangerine",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:10:43.109663",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "tangerine",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:10:45.364600",
+    "status": "success",
+    "message": "Tangerine page verified",
+    "provider": "tangerine",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:10:45.568825",
+    "status": "info",
+    "message": "Added: Tangerine Value",
+    "provider": "tangerine",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:10:45.635334",
+    "status": "info",
+    "message": "Added: Tangerine Value Plus",
+    "provider": "tangerine",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:10:45.676409",
+    "status": "info",
+    "message": "Added: Tangerine Speedy Max",
+    "provider": "tangerine",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:10:45.900424",
+    "status": "info",
+    "message": "Added: Tangerine UltraSpeedy",
+    "provider": "tangerine",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:10:47.485525",
+    "status": "success",
+    "message": "Tangerine scraper complete: 4 plans",
+    "provider": "tangerine",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:11:01.541851",
+    "status": "info",
+    "message": "Starting competitive benchmark analysis",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:11:01.635769",
+    "status": "success",
+    "message": "Benchmark complete: 0 wins, 8 gaps across 8 tiers",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:13:59.400497",
+    "status": "info",
+    "message": "Starting More scraper",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:14:17.312375",
+    "status": "info",
+    "message": "Found 23 owl-item elements",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:14:17.369368",
+    "status": "warning",
+    "message": "More: missing required data for Value",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:14:17.422882",
+    "status": "warning",
+    "message": "More: missing required data for Value Plus",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:14:17.471882",
+    "status": "warning",
+    "message": "More: missing required data for Fast Max",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:14:17.525689",
+    "status": "warning",
+    "message": "More: missing required data for Ultrafast",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-18T07:14:17.941278",
+    "status": "success",
+    "message": "More scraper complete: 0 plans",
+    "provider": "more",
+    "data": {}
   }
 ]

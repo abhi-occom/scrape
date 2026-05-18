@@ -1,0 +1,1 @@
+Error scraping activ8me: could not convert string to float: 'SpecialOffer!'
