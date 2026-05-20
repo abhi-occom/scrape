@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-05-18T07:11:01.619374",
+  "generated_at": "2026-05-18T21:13:05.618866",
   "summary": {
-    "total_plans_analyzed": 205,
-    "total_providers": 13,
+    "total_plans_analyzed": 202,
+    "total_providers": 14,
     "providers": [
       "dodo",
       "exetel",
@@ -10,6 +10,7 @@
       "iprimus",
       "kogan",
       "leaptel",
+      "mate",
       "occom",
       "optus",
       "superloop",
@@ -96,14 +97,14 @@
       "providers": {
         "dodo": {
           "provider": "dodo",
-          "plan_name": "Dodo NBN 23",
-          "speed": 23,
-          "effective_price": 41.99,
+          "plan_name": "Dodo NBN 16",
+          "speed": 16,
+          "effective_price": 71.99,
           "regular_price": 71.99,
-          "promo_price": 41.99,
-          "promo_period": "6 months",
-          "annual_cost": 683.88,
-          "value_score": 0.55,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 863.88,
+          "value_score": 0.22,
           "network_type": "NBN",
           "contract": "No Contract"
         },
@@ -159,17 +160,30 @@
           "network_type": "NBN",
           "contract": "No Contract"
         },
+        "mate": {
+          "provider": "mate",
+          "plan_name": "MATE Crikey nbn 25/10",
+          "speed": 25,
+          "effective_price": 51.0,
+          "regular_price": 76.0,
+          "promo_price": 51.0,
+          "promo_period": "6 months",
+          "annual_cost": 762.0,
+          "value_score": 0.49,
+          "network_type": "NBN",
+          "contract": "No Contract"
+        },
         "occom": {
           "provider": "occom",
-          "plan_name": "Boost (Fibre25)",
+          "plan_name": "Boost (nbn25)",
           "speed": 25,
-          "effective_price": 45.0,
-          "regular_price": 55.0,
-          "promo_price": 45.0,
+          "effective_price": 60.0,
+          "regular_price": 70.0,
+          "promo_price": 60.0,
           "promo_period": "6 months",
-          "annual_cost": 600.0,
-          "value_score": 0.56,
-          "network_type": "Community Fibre",
+          "annual_cost": 780.0,
+          "value_score": 0.42,
+          "network_type": "NBN",
           "contract": "No Contract"
         },
         "optus": {
@@ -267,12 +281,12 @@
           "provider": "dodo",
           "plan_name": "Dodo NBN 50",
           "speed": 50,
-          "effective_price": 55.99,
+          "effective_price": 85.99,
           "regular_price": 85.99,
-          "promo_price": 55.99,
-          "promo_period": "6 months",
-          "annual_cost": 851.88,
-          "value_score": 0.89,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 1031.88,
+          "value_score": 0.58,
           "network_type": "NBN",
           "contract": "No Contract"
         },
@@ -328,17 +342,30 @@
           "network_type": "NBN",
           "contract": "No Contract"
         },
+        "mate": {
+          "provider": "mate",
+          "plan_name": "MATE Ripper nbn 50/20",
+          "speed": 49,
+          "effective_price": 66.0,
+          "regular_price": 86.0,
+          "promo_price": 66.0,
+          "promo_period": "6 months",
+          "annual_cost": 912.0,
+          "value_score": 0.74,
+          "network_type": "NBN",
+          "contract": "No Contract"
+        },
         "occom": {
           "provider": "occom",
-          "plan_name": "Boost Plus (Fibre50)",
+          "plan_name": "Boost Plus (nbn50)",
           "speed": 50,
-          "effective_price": 50.0,
-          "regular_price": 60.0,
-          "promo_price": 50.0,
+          "effective_price": 75.0,
+          "regular_price": 85.0,
+          "promo_price": 75.0,
           "promo_period": "6 months",
-          "annual_cost": 660.0,
-          "value_score": 1.0,
-          "network_type": "Community Fibre",
+          "annual_cost": 960.0,
+          "value_score": 0.67,
+          "network_type": "NBN",
           "contract": "No Contract"
         },
         "optus": {
@@ -434,14 +461,14 @@
       "providers": {
         "dodo": {
           "provider": "dodo",
-          "plan_name": "Dodo NBN 63",
-          "speed": 63,
-          "effective_price": 55.99,
-          "regular_price": 85.99,
-          "promo_price": 55.99,
-          "promo_period": "6 months",
-          "annual_cost": 851.88,
-          "value_score": 1.13,
+          "plan_name": "Dodo NBN 100",
+          "speed": 100,
+          "effective_price": 92.99,
+          "regular_price": 92.99,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 1115.88,
+          "value_score": 1.08,
           "network_type": "NBN",
           "contract": "No Contract"
         },
@@ -510,17 +537,30 @@
           "network_type": "NBN",
           "contract": "No Contract"
         },
+        "mate": {
+          "provider": "mate",
+          "plan_name": "MATE No Worries nbn 100/20",
+          "speed": 97,
+          "effective_price": 71.0,
+          "regular_price": 96.0,
+          "promo_price": 71.0,
+          "promo_period": "6 months",
+          "annual_cost": 1002.0,
+          "value_score": 1.37,
+          "network_type": "NBN",
+          "contract": "No Contract"
+        },
         "occom": {
           "provider": "occom",
-          "plan_name": "Superfast (Fibre100)",
+          "plan_name": "Superfast (nbn100)",
           "speed": 100,
-          "effective_price": 55.0,
-          "regular_price": 65.0,
-          "promo_price": 55.0,
+          "effective_price": 80.0,
+          "regular_price": 90.0,
+          "promo_price": 80.0,
           "promo_period": "6 months",
-          "annual_cost": 720.0,
-          "value_score": 1.82,
-          "network_type": "Community Fibre",
+          "annual_cost": 1020.0,
+          "value_score": 1.25,
+          "network_type": "NBN",
           "contract": "No Contract"
         },
         "optus": {
@@ -566,12 +606,12 @@
           "provider": "telstra",
           "plan_name": "Essential nbn® Internet Only",
           "speed": 68,
-          "effective_price": 89.0,
-          "regular_price": 89.0,
+          "effective_price": 95.0,
+          "regular_price": 95.0,
           "promo_price": null,
           "promo_period": null,
-          "annual_cost": 1068.0,
-          "value_score": 0.76,
+          "annual_cost": 1140.0,
+          "value_score": 0.72,
           "network_type": "NBN",
           "contract": "No Lock-in"
         },
@@ -592,7 +632,7 @@
       "cheapest": "tpg",
       "cheapest_price": 34.99,
       "most_expensive": "telstra",
-      "most_expensive_price": 89.0,
+      "most_expensive_price": 95.0,
       "best_value": "exetel",
       "best_value_score": 3.75
     },
@@ -683,12 +723,12 @@
           "provider": "dodo",
           "plan_name": "Dodo NBN 500",
           "speed": 500,
-          "effective_price": 62.99,
+          "effective_price": 92.99,
           "regular_price": 92.99,
-          "promo_price": 62.99,
-          "promo_period": "6 months",
-          "annual_cost": 935.88,
-          "value_score": 7.94,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 1115.88,
+          "value_score": 5.38,
           "network_type": "NBN",
           "contract": "No Contract"
         },
@@ -757,17 +797,30 @@
           "network_type": "NBN",
           "contract": "No Contract"
         },
+        "mate": {
+          "provider": "mate",
+          "plan_name": "MATE No Worries nbn 500/50",
+          "speed": 485,
+          "effective_price": 71.0,
+          "regular_price": 96.0,
+          "promo_price": 71.0,
+          "promo_period": "6 months",
+          "annual_cost": 1002.0,
+          "value_score": 6.83,
+          "network_type": "NBN",
+          "contract": "No Contract"
+        },
         "occom": {
           "provider": "occom",
-          "plan_name": "Turbo (Fibre500)",
+          "plan_name": "Turbo (nbn500)",
           "speed": 500,
-          "effective_price": 70.0,
-          "regular_price": 80.0,
-          "promo_price": 70.0,
-          "promo_period": "6 months",
-          "annual_cost": 900.0,
-          "value_score": 7.14,
-          "network_type": "Community Fibre",
+          "effective_price": 85.0,
+          "regular_price": 90.0,
+          "promo_price": 85.0,
+          "promo_period": "12 months",
+          "annual_cost": 1020.0,
+          "value_score": 5.88,
+          "network_type": "NBN",
           "contract": "No Contract"
         },
         "optus": {
@@ -826,12 +879,12 @@
           "provider": "telstra",
           "plan_name": "Premium nbn® Internet Only",
           "speed": 500,
-          "effective_price": 89.0,
-          "regular_price": 89.0,
+          "effective_price": 99.0,
+          "regular_price": 99.0,
           "promo_price": null,
           "promo_period": null,
-          "annual_cost": 1068.0,
-          "value_score": 5.62,
+          "annual_cost": 1188.0,
+          "value_score": 5.05,
           "network_type": "NBN",
           "contract": "No Lock-in"
         },
@@ -849,12 +902,12 @@
           "contract": "No Lock-in"
         }
       },
-      "cheapest": "dodo",
-      "cheapest_price": 62.99,
+      "cheapest": "tangerine",
+      "cheapest_price": 63.9,
       "most_expensive": "telstra",
-      "most_expensive_price": 89.0,
-      "best_value": "dodo",
-      "best_value_score": 7.94
+      "most_expensive_price": 99.0,
+      "best_value": "tangerine",
+      "best_value_score": 7.82
     },
     {
       "tier": "hyper",
@@ -863,14 +916,14 @@
       "providers": {
         "dodo": {
           "provider": "dodo",
-          "plan_name": "Dodo NBN 700",
-          "speed": 700,
-          "effective_price": 69.99,
+          "plan_name": "Dodo NBN 750",
+          "speed": 750,
+          "effective_price": 99.99,
           "regular_price": 99.99,
-          "promo_price": 69.99,
-          "promo_period": "6 months",
-          "annual_cost": 1019.88,
-          "value_score": 10.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 1199.88,
+          "value_score": 7.5,
           "network_type": "NBN",
           "contract": "No Contract"
         },
@@ -926,17 +979,30 @@
           "network_type": "NBN",
           "contract": "No Contract"
         },
+        "mate": {
+          "provider": "mate",
+          "plan_name": "MATE Fair Dinkum nbn 750/50",
+          "speed": 713,
+          "effective_price": 96.0,
+          "regular_price": 121.0,
+          "promo_price": 96.0,
+          "promo_period": "6 months",
+          "annual_cost": 1302.0,
+          "value_score": 7.43,
+          "network_type": "NBN",
+          "contract": "No Contract"
+        },
         "occom": {
           "provider": "occom",
-          "plan_name": "Lightning (Fibre1000)",
-          "speed": 1000,
-          "effective_price": 90.0,
-          "regular_price": 100.0,
-          "promo_price": 90.0,
-          "promo_period": "6 months",
-          "annual_cost": 1140.0,
-          "value_score": 11.11,
-          "network_type": "Community Fibre",
+          "plan_name": "Ultra (nbn750)",
+          "speed": 729,
+          "effective_price": 93.0,
+          "regular_price": 98.0,
+          "promo_price": 93.0,
+          "promo_period": "12 months",
+          "annual_cost": 1116.0,
+          "value_score": 7.84,
+          "network_type": "NBN",
           "contract": "No Contract"
         },
         "optus": {
@@ -995,12 +1061,12 @@
           "provider": "telstra",
           "plan_name": "Ultimate nbn® Internet Only",
           "speed": 750,
-          "effective_price": 104.0,
-          "regular_price": 104.0,
+          "effective_price": 119.0,
+          "regular_price": 119.0,
           "promo_price": null,
           "promo_period": null,
-          "annual_cost": 1248.0,
-          "value_score": 7.21,
+          "annual_cost": 1428.0,
+          "value_score": 6.3,
           "network_type": "NBN",
           "contract": "No Lock-in"
         },
@@ -1018,10 +1084,10 @@
           "contract": "No Lock-in"
         }
       },
-      "cheapest": "dodo",
+      "cheapest": "iinet",
       "cheapest_price": 69.99,
-      "most_expensive": "optus",
-      "most_expensive_price": 109.0,
+      "most_expensive": "telstra",
+      "most_expensive_price": 119.0,
       "best_value": "leaptel",
       "best_value_score": 11.9
     },
@@ -1095,38 +1161,38 @@
     {
       "tier": "standard",
       "tier_label": "Standard",
-      "occom_price": 45.0,
-      "occom_plan": "Boost (Fibre25)",
+      "occom_price": 60.0,
+      "occom_plan": "Boost (nbn25)",
       "occom_speed": 25,
-      "occom_value_score": 0.56,
+      "occom_value_score": 0.42,
       "cheapest_competitor": "leaptel",
       "cheapest_competitor_price": 29.950000000000003,
-      "gap_amount": 15.05,
-      "gap_pct": 50.3
+      "gap_amount": 30.05,
+      "gap_pct": 100.3
     },
     {
       "tier": "boost",
       "tier_label": "Boost",
-      "occom_price": 50.0,
-      "occom_plan": "Boost Plus (Fibre50)",
+      "occom_price": 75.0,
+      "occom_plan": "Boost Plus (nbn50)",
       "occom_speed": 50,
-      "occom_value_score": 1.0,
+      "occom_value_score": 0.67,
       "cheapest_competitor": "tpg",
       "cheapest_competitor_price": 29.99,
-      "gap_amount": 20.01,
-      "gap_pct": 66.7
+      "gap_amount": 45.01,
+      "gap_pct": 150.1
     },
     {
       "tier": "fast",
       "tier_label": "Fast",
-      "occom_price": 55.0,
-      "occom_plan": "Superfast (Fibre100)",
+      "occom_price": 80.0,
+      "occom_plan": "Superfast (nbn100)",
       "occom_speed": 100,
-      "occom_value_score": 1.82,
+      "occom_value_score": 1.25,
       "cheapest_competitor": "tpg",
       "cheapest_competitor_price": 34.99,
-      "gap_amount": 20.01,
-      "gap_pct": 57.2
+      "gap_amount": 45.01,
+      "gap_pct": 128.6
     },
     {
       "tier": "superfast",
@@ -1143,26 +1209,26 @@
     {
       "tier": "ultrafast",
       "tier_label": "Ultrafast",
-      "occom_price": 70.0,
-      "occom_plan": "Turbo (Fibre500)",
+      "occom_price": 85.0,
+      "occom_plan": "Turbo (nbn500)",
       "occom_speed": 500,
-      "occom_value_score": 7.14,
-      "cheapest_competitor": "dodo",
-      "cheapest_competitor_price": 62.99,
-      "gap_amount": 7.01,
-      "gap_pct": 11.1
+      "occom_value_score": 5.88,
+      "cheapest_competitor": "tangerine",
+      "cheapest_competitor_price": 63.9,
+      "gap_amount": 21.1,
+      "gap_pct": 33.0
     },
     {
       "tier": "hyper",
       "tier_label": "Hyper",
-      "occom_price": 90.0,
-      "occom_plan": "Lightning (Fibre1000)",
-      "occom_speed": 1000,
-      "occom_value_score": 11.11,
-      "cheapest_competitor": "dodo",
+      "occom_price": 93.0,
+      "occom_plan": "Ultra (nbn750)",
+      "occom_speed": 729,
+      "occom_value_score": 7.84,
+      "cheapest_competitor": "iinet",
       "cheapest_competitor_price": 69.99,
-      "gap_amount": 20.01,
-      "gap_pct": 28.6
+      "gap_amount": 23.01,
+      "gap_pct": 32.9
     },
     {
       "tier": "mega",
@@ -1232,38 +1298,38 @@
         },
         {
           "rank": 3,
-          "provider": "occom",
-          "value_score": 0.56,
-          "speed": 25,
-          "price": 45.0
-        },
-        {
-          "rank": 4,
           "provider": "superloop",
           "value_score": 0.56,
           "speed": 25,
           "price": 45.0
         },
         {
-          "rank": 5,
+          "rank": 4,
           "provider": "tangerine",
           "value_score": 0.56,
           "speed": 25,
           "price": 44.9
         },
         {
-          "rank": 6,
-          "provider": "dodo",
-          "value_score": 0.55,
-          "speed": 23,
-          "price": 41.99
+          "rank": 5,
+          "provider": "mate",
+          "value_score": 0.49,
+          "speed": 25,
+          "price": 51.0
         },
         {
-          "rank": 7,
+          "rank": 6,
           "provider": "swoop",
           "value_score": 0.46,
           "speed": 25,
           "price": 54.0
+        },
+        {
+          "rank": 7,
+          "provider": "occom",
+          "value_score": 0.42,
+          "speed": 25,
+          "price": 60.0
         },
         {
           "rank": 8,
@@ -1299,6 +1365,13 @@
           "value_score": 0.32,
           "speed": 25,
           "price": 79.0
+        },
+        {
+          "rank": 13,
+          "provider": "dodo",
+          "value_score": 0.22,
+          "speed": 16,
+          "price": 71.99
         }
       ]
     },
@@ -1322,59 +1395,59 @@
         },
         {
           "rank": 3,
-          "provider": "occom",
-          "value_score": 1.0,
-          "speed": 50,
-          "price": 50.0
-        },
-        {
-          "rank": 4,
-          "provider": "dodo",
-          "value_score": 0.89,
-          "speed": 50,
-          "price": 55.99
-        },
-        {
-          "rank": 5,
           "provider": "tangerine",
           "value_score": 0.83,
           "speed": 50,
           "price": 59.9
         },
         {
-          "rank": 6,
+          "rank": 4,
           "provider": "superloop",
           "value_score": 0.77,
           "speed": 50,
           "price": 65.0
         },
         {
-          "rank": 7,
+          "rank": 5,
           "provider": "leaptel",
           "value_score": 0.75,
           "speed": 50,
           "price": 66.95
         },
         {
-          "rank": 8,
+          "rank": 6,
+          "provider": "mate",
+          "value_score": 0.74,
+          "speed": 49,
+          "price": 66.0
+        },
+        {
+          "rank": 7,
           "provider": "swoop",
           "value_score": 0.72,
           "speed": 50,
           "price": 69.0
         },
         {
-          "rank": 9,
+          "rank": 8,
           "provider": "kogan",
           "value_score": 0.71,
           "speed": 50,
           "price": 70.9
         },
         {
-          "rank": 10,
+          "rank": 9,
           "provider": "iprimus",
           "value_score": 0.68,
           "speed": 50,
           "price": 74.0
+        },
+        {
+          "rank": 10,
+          "provider": "occom",
+          "value_score": 0.67,
+          "speed": 50,
+          "price": 75.0
         },
         {
           "rank": 11,
@@ -1385,6 +1458,13 @@
         },
         {
           "rank": 12,
+          "provider": "dodo",
+          "value_score": 0.58,
+          "speed": 50,
+          "price": 85.99
+        },
+        {
+          "rank": 13,
           "provider": "optus",
           "value_score": 0.53,
           "speed": 50,
@@ -1419,38 +1499,38 @@
         },
         {
           "rank": 4,
-          "provider": "occom",
-          "value_score": 1.82,
-          "speed": 100,
-          "price": 55.0
-        },
-        {
-          "rank": 5,
           "provider": "iprimus",
           "value_score": 1.49,
           "speed": 100,
           "price": 67.0
         },
         {
-          "rank": 6,
+          "rank": 5,
           "provider": "leaptel",
           "value_score": 1.49,
           "speed": 100,
           "price": 66.95
         },
         {
-          "rank": 7,
+          "rank": 6,
           "provider": "superloop",
           "value_score": 1.45,
           "speed": 100,
           "price": 69.0
         },
         {
-          "rank": 8,
+          "rank": 7,
           "provider": "kogan",
           "value_score": 1.39,
           "speed": 100,
           "price": 71.9
+        },
+        {
+          "rank": 8,
+          "provider": "mate",
+          "value_score": 1.37,
+          "speed": 97,
+          "price": 71.0
         },
         {
           "rank": 9,
@@ -1461,10 +1541,10 @@
         },
         {
           "rank": 10,
-          "provider": "dodo",
-          "value_score": 1.13,
-          "speed": 63,
-          "price": 55.99
+          "provider": "occom",
+          "value_score": 1.25,
+          "speed": 100,
+          "price": 80.0
         },
         {
           "rank": 11,
@@ -1475,10 +1555,17 @@
         },
         {
           "rank": 12,
+          "provider": "dodo",
+          "value_score": 1.08,
+          "speed": 100,
+          "price": 92.99
+        },
+        {
+          "rank": 13,
           "provider": "telstra",
-          "value_score": 0.76,
+          "value_score": 0.72,
           "speed": 68,
-          "price": 89.0
+          "price": 95.0
         }
       ]
     },
@@ -1529,94 +1616,101 @@
       "rankings": [
         {
           "rank": 1,
-          "provider": "dodo",
-          "value_score": 7.94,
-          "speed": 500,
-          "price": 62.99
-        },
-        {
-          "rank": 2,
           "provider": "tangerine",
           "value_score": 7.82,
           "speed": 500,
           "price": 63.9
         },
         {
-          "rank": 3,
+          "rank": 2,
           "provider": "iinet",
           "value_score": 7.69,
           "speed": 500,
           "price": 64.99
         },
         {
-          "rank": 4,
+          "rank": 3,
           "provider": "tpg",
           "value_score": 7.69,
           "speed": 500.0,
           "price": 64.99
         },
         {
-          "rank": 5,
+          "rank": 4,
           "provider": "leaptel",
           "value_score": 7.47,
           "speed": 500,
           "price": 66.95
         },
         {
-          "rank": 6,
+          "rank": 5,
           "provider": "iprimus",
           "value_score": 7.46,
           "speed": 500,
           "price": 67.0
         },
         {
-          "rank": 7,
+          "rank": 6,
           "provider": "superloop",
           "value_score": 7.25,
           "speed": 500,
           "price": 69.0
         },
         {
-          "rank": 8,
-          "provider": "occom",
-          "value_score": 7.14,
-          "speed": 500,
-          "price": 70.0
-        },
-        {
-          "rank": 9,
+          "rank": 7,
           "provider": "kogan",
           "value_score": 6.95,
           "speed": 500,
           "price": 71.9
         },
         {
-          "rank": 10,
+          "rank": 8,
           "provider": "swoop",
           "value_score": 6.94,
           "speed": 500,
           "price": 72.0
         },
         {
-          "rank": 11,
+          "rank": 9,
+          "provider": "mate",
+          "value_score": 6.83,
+          "speed": 485,
+          "price": 71.0
+        },
+        {
+          "rank": 10,
           "provider": "optus",
           "value_score": 6.33,
           "speed": 500,
           "price": 79.0
         },
         {
-          "rank": 12,
+          "rank": 11,
           "provider": "exetel",
           "value_score": 6.25,
           "speed": 500,
           "price": 80.0
         },
         {
-          "rank": 13,
-          "provider": "telstra",
-          "value_score": 5.62,
+          "rank": 12,
+          "provider": "occom",
+          "value_score": 5.88,
           "speed": 500,
-          "price": 89.0
+          "price": 85.0
+        },
+        {
+          "rank": 13,
+          "provider": "dodo",
+          "value_score": 5.38,
+          "speed": 500,
+          "price": 92.99
+        },
+        {
+          "rank": 14,
+          "provider": "telstra",
+          "value_score": 5.05,
+          "speed": 500,
+          "price": 99.0
         }
       ]
     },
@@ -1640,66 +1734,66 @@
         },
         {
           "rank": 3,
-          "provider": "occom",
-          "value_score": 11.11,
-          "speed": 1000,
-          "price": 90.0
-        },
-        {
-          "rank": 4,
           "provider": "iinet",
           "value_score": 10.57,
           "speed": 740,
           "price": 69.99
         },
         {
-          "rank": 5,
+          "rank": 4,
           "provider": "tpg",
           "value_score": 10.57,
           "speed": 740.0,
           "price": 69.99
         },
         {
-          "rank": 6,
-          "provider": "dodo",
-          "value_score": 10.0,
-          "speed": 700,
-          "price": 69.99
-        },
-        {
-          "rank": 7,
+          "rank": 5,
           "provider": "superloop",
           "value_score": 10.0,
           "speed": 750,
           "price": 75.0
         },
         {
-          "rank": 8,
+          "rank": 6,
           "provider": "kogan",
           "value_score": 8.83,
           "speed": 750,
           "price": 84.9
         },
         {
-          "rank": 9,
+          "rank": 7,
+          "provider": "occom",
+          "value_score": 7.84,
+          "speed": 729,
+          "price": 93.0
+        },
+        {
+          "rank": 8,
           "provider": "optus",
           "value_score": 7.52,
           "speed": 820,
           "price": 109.0
         },
         {
+          "rank": 9,
+          "provider": "dodo",
+          "value_score": 7.5,
+          "speed": 750,
+          "price": 99.99
+        },
+        {
           "rank": 10,
+          "provider": "mate",
+          "value_score": 7.43,
+          "speed": 713,
+          "price": 96.0
+        },
+        {
+          "rank": 11,
           "provider": "tangerine",
           "value_score": 7.38,
           "speed": 700,
           "price": 94.9
-        },
-        {
-          "rank": 11,
-          "provider": "telstra",
-          "value_score": 7.21,
-          "speed": 750,
-          "price": 104.0
         },
         {
           "rank": 12,
@@ -1707,6 +1801,13 @@
           "value_score": 6.73,
           "speed": 700,
           "price": 104.0
+        },
+        {
+          "rank": 13,
+          "provider": "telstra",
+          "value_score": 6.3,
+          "speed": 750,
+          "price": 119.0
         }
       ]
     },

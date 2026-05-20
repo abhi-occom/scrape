@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ISP Plans Dashboard</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:Arial,sans-serif;
+            background:#f3f4f6;
+            color:#111827;
+            padding:20px;
+            transition:0.3s;
+        }
+
+        h1{
+            text-align:center;
+            margin-bottom:20px;
+            color:#1e3a8a;
+        }
+
+        .top-actions{
+            display:flex;
+            justify-content:flex-end;
+            margin-bottom:20px;
+        }
+
+        button{
+            border:none;
+            cursor:pointer;
+            border-radius:8px;
+            padding:10px 15px;
+            background:#2563eb;
+            color:white;
+            font-weight:bold;
+            transition:0.2s;
+        }
+
+        button:hover{
+            opacity:0.9;
+        }
+
+        .toolbar{
+            background:white;
+            border-radius:14px;
+            padding:20px;
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+            gap:15px;
+            margin-bottom:20px;
+            box-shadow:0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .filter-group{
+            display:flex;
+            flex-direction:column;
+            gap:6px;
+        }
+
+        input,
+        select{
+            padding:10px;
+            border-radius:8px;
+            border:1px solid #d1d5db;
+            width:100%;
+        }
+
+        .analytics{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+            gap:15px;
+            margin-bottom:20px;
+        }
+
+        .analytics-card{
+            background:white;
+            padding:20px;
+            border-radius:14px;
+            text-align:center;
+            box-shadow:0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .analytics-card h2{
+            margin-top:10px;
+            color:#2563eb;
+            font-size:30px;
+        }
+
+        .chart-container{
+            background:white;
+            padding:20px;
+            border-radius:14px;
+            margin-bottom:20px;
+        }
+
+        .provider-filters{
+            display:flex;
+            gap:10px;
+            flex-wrap:wrap;
+            margin-bottom:20px;
+        }
+
+        .provider-filter{
+            background:white;
+            border:1px solid #d1d5db;
+            padding:8px 14px;
+            border-radius:30px;
+        }
+
+        #plans-container{
+            display:grid;
+            grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+            gap:20px;
+        }
+
+        .plan-card{
+            background:white;
+            border-radius:16px;
+            padding:20px;
+            box-shadow:0 4px 12px rgba(0,0,0,0.08);
+            transition:0.3s;
+            opacity:0;
+            transform:translateY(20px);
+        }
+
+        .plan-card.show{
+            opacity:1;
+            transform:translateY(0);
+        }
+
+        .plan-card:hover{
+            transform:translateY(-5px);
+        }
+
+        .plan-header{
+            display:flex;
+            justify-content:space-between;
+            align-items:flex-start;
+            margin-bottom:15px;
+        }
+
+        .plan-name{
+            font-size:20px;
+            font-weight:bold;
+            color:#1d4ed8;
+        }
+
+        .provider{
+            font-size:14px;
+            color:#6b7280;
+        }
+
+        .plan-price{
+            font-size:34px;
+            font-weight:bold;
+            color:#16a34a;
+            margin:15px 0;
+        }
+
+        .plan-speed{
+            display:inline-block;
+            padding:6px 12px;
+            border-radius:20px;
+            font-weight:bold;
+            margin-bottom:12px;
+        }
+
+        .speed-basic{
+            background:#dbeafe;
+            color:#1d4ed8;
+        }
+
+        .speed-standard{
+            background:#dcfce7;
+            color:#166534;
+        }
+
+        .speed-premium{
+            background:#ede9fe;
+            color:#6d28d9;
+        }
+
+        .speed-ultra{
+            background:#fee2e2;
+            color:#b91c1c;
+        }
+
+        .badge{
+            display:inline-block;
+            padding:5px 10px;
+            border-radius:20px;
+            font-size:12px;
+            font-weight:bold;
+            margin-right:8px;
+            margin-bottom:8px;
+        }
+
+        .best-value{
+            background:gold;
+            color:black;
+        }
+
+        .promo{
+            background:#ef4444;
+            color:white;
+        }
+
+        .feature{
+            margin-bottom:8px;
+            color:#4b5563;
+        }
+
+        .details{
+            display:none;
+            margin-top:15px;
+            padding-top:15px;
+            border-top:1px solid #e5e7eb;
+        }
+
+        .details.active{
+            display:block;
+        }
+
+        .comparison-wrapper{
+            overflow-x:auto;
+            margin-bottom:20px;
+        }
+
+        .comparison-table{
+            width:100%;
+            border-collapse:collapse;
+            background:white;
+            border-radius:14px;
+            overflow:hidden;
+        }
+
+        .comparison-table th,
+        .comparison-table td{
+            border:1px solid #e5e7eb;
+            padding:12px;
+            text-align:center;
+        }
+
+        .comparison-table th{
+            background:#2563eb;
+            color:white;
+        }
+
+        .pagination{
+            display:flex;
+            justify-content:center;
+            gap:10px;
+            margin-top:30px;
+            flex-wrap:wrap;
+        }
+
+        .pagination button.active{
+            background:#16a34a;
+        }
+
+        .empty{
+            grid-column:1/-1;
+            text-align:center;
+            padding:50px;
+        }
+
+        /* DARK MODE */
+
+        body.dark-mode{
+            background:#111827;
+            color:white;
+        }
+
+        body.dark-mode .toolbar,
+        body.dark-mode .analytics-card,
+        body.dark-mode .chart-container,
+        body.dark-mode .plan-card,
+        body.dark-mode .comparison-table,
+        body.dark-mode .provider-filter{
+            background:#1f2937;
+            color:white;
+        }
+
+        body.dark-mode .comparison-table th{
+            background:#374151;
+        }
+
+        body.dark-mode input,
+        body.dark-mode select{
+            background:#111827;
+            color:white;
+            border:1px solid #4b5563;
+        }
+
+        body.dark-mode .provider,
+        body.dark-mode .feature{
+            color:#d1d5db;
+        }
+
+        /* MOBILE */
+
+        @media(max-width:768px){
+
+            body{
+                padding:10px;
+            }
+
+            .toolbar{
+                grid-template-columns:1fr;
+            }
+
+            #plans-container{
+                grid-template-columns:1fr;
+            }
+
+            button,
+            input,
+            select{
+                min-height:44px;
+                font-size:16px;
+            }
+
+            .comparison-table{
+                min-width:700px;
+            }
+
+            .plan-price{
+                font-size:28px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<h1>ISP Plans Dashboard</h1>
+
+<div class="top-actions">
+    <button id="themeToggle">🌙 Dark Mode</button>
+</div>
+
+<div class="analytics" id="analytics"></div>
+
+<div class="chart-container">
+    <canvas id="priceChart"></canvas>
+</div>
+
+<div class="toolbar">
+
+    <div class="filter-group">
+        <label>Search</label>
+        <input type="text" id="searchInput" placeholder="Search plan/provider">
+    </div>
+
+    <div class="filter-group">
+        <label>Min Price</label>
+        <input type="range" id="minPrice" min="0" max="300" value="0">
+        <span id="minPriceValue">$0</span>
+    </div>
+
+    <div class="filter-group">
+        <label>Max Price</label>
+        <input type="range" id="maxPrice" min="0" max="300" value="300">
+        <span id="maxPriceValue">$300</span>
+    </div>
+
+    <div class="filter-group">
+        <label>Speed Tier</label>
+
+        <select id="speedFilter">
+            <option value="">All</option>
+            <option value="25">25 Mbps</option>
+            <option value="50">50 Mbps</option>
+            <option value="100">100 Mbps</option>
+            <option value="250">250 Mbps</option>
+            <option value="500">500 Mbps</option>
+            <option value="1000">1000+ Mbps</option>
+        </select>
+    </div>
+
+    <div class="filter-group">
+        <label>Sort</label>
+
+        <select id="sortFilter">
+            <option value="price-low">
+                Price Low → High
+            </option>
+
+            <option value="price-high">
+                Price High → Low
+            </option>
+
+            <option value="speed-high">
+                Fastest
+            </option>
+        </select>
+    </div>
+
+    <div style="display:flex;gap:10px;align-items:flex-end;">
+        <button onclick="exportCSV()">
+            Export CSV
+        </button>
+
+        <button onclick="exportPDF()">
+            Export PDF
+        </button>
+    </div>
+
+</div>
+
+<div class="provider-filters" id="providerFilters"></div>
+
+<div class="comparison-wrapper">
+    <div id="comparison-container"></div>
+</div>
+
+<div id="plans-container">
+    Loading plans...
+</div>
+
+<div class="pagination" id="pagination"></div>
+
+<script>
+
+let allPlans = [];
+let filteredPlans = [];
+let comparePlans = [];
+
+let currentPage = 1;
+
+const plansPerPage = 12;
+
+let observer;
+
+/* =========================
+   DARK MODE
+========================= */
+
+const themeToggle =
+    document.getElementById('themeToggle');
+
+const savedTheme =
+    localStorage.getItem('theme');
+
+if(savedTheme === 'dark'){
+
+    document.body.classList.add('dark-mode');
+
+    themeToggle.innerHTML = '☀️ Light Mode';
+}
+
+themeToggle.addEventListener('click',()=>{
+
+    document.body.classList.toggle('dark-mode');
+
+    const isDark =
+        document.body.classList.contains('dark-mode');
+
+    localStorage.setItem(
+        'theme',
+        isDark ? 'dark' : 'light'
+    );
+
+    themeToggle.innerHTML =
+        isDark
+        ?
+        '☀️ Light Mode'
+        :
+        '🌙 Dark Mode';
+});
+
+/* =========================
+   LOAD + CACHE
+========================= */
+
+async function loadPlans(){
+
+    const cached =
+        localStorage.getItem('cachedPlans');
+
+    if(cached){
+
+        try{
+
+            allPlans = JSON.parse(cached);
+
+            initializeDashboard();
+
+        }catch(err){
+            console.error(err);
+        }
+    }
+
+    try{
+
+        const response =
+            await fetch(
+                'http://localhost:5000/api/plans/all',
+                {
+                    headers:{
+                        'X-API-Key':
+                            'ispPlans2024SecureKey123'
+                    }
+                }
+            );
+
+        const data =
+            await response.json();
+
+        allPlans = data.plans || [];
+
+        localStorage.setItem(
+            'cachedPlans',
+            JSON.stringify(allPlans)
+        );
+
+        initializeDashboard();
+
+    }catch(err){
+
+        if(allPlans.length === 0){
+
+            document.getElementById(
+                'plans-container'
+            ).innerHTML = `
+                <div class="empty">
+                    Failed to load plans
+                </div>
+            `;
+        }
+    }
+}
+
+function initializeDashboard(){
+
+    renderProviderFilters();
+
+    renderAnalytics();
+
+    renderChart();
+
+    savePriceHistory(allPlans);
+
+    applyFilters();
+}
+
+/* =========================
+   PROVIDERS
+========================= */
+
+function renderProviderFilters(){
+
+    const providers =
+        [...new Set(
+            allPlans.map(p=>p.provider)
+        )];
+
+    const container =
+        document.getElementById(
+            'providerFilters'
+        );
+
+    container.innerHTML =
+        providers.map(provider => `
+            <label class="provider-filter">
+
+                <input
+                    type="checkbox"
+                    class="provider-checkbox"
+                    value="${provider}"
+                >
+
+                ${provider}
+
+            </label>
+        `).join('');
+
+    document
+        .querySelectorAll('.provider-checkbox')
+        .forEach(el => {
+            el.addEventListener(
+                'change',
+                applyFilters
+            );
+        });
+}
+
+/* =========================
+   FILTERS
+========================= */
+
+function applyFilters(){
+
+    const search =
+        document
+            .getElementById('searchInput')
+            .value
+            .toLowerCase();
+
+    const minPrice =
+        Number(
+            document
+                .getElementById('minPrice')
+                .value
+        );
+
+    const maxPrice =
+        Number(
+            document
+                .getElementById('maxPrice')
+                .value
+        );
+
+    const speed =
+        document
+            .getElementById('speedFilter')
+            .value;
+
+    const sort =
+        document
+            .getElementById('sortFilter')
+            .value;
+
+    const selectedProviders =
+        [...document.querySelectorAll(
+            '.provider-checkbox:checked'
+        )]
+        .map(el => el.value);
+
+    filteredPlans =
+        allPlans.filter(plan => {
+
+            const matchesSearch =
+                plan.plan_name
+                    ?.toLowerCase()
+                    .includes(search)
+                ||
+                plan.provider
+                    ?.toLowerCase()
+                    .includes(search);
+
+            const matchesPrice =
+                plan.price >= minPrice
+                &&
+                plan.price <= maxPrice;
+
+            const matchesSpeed =
+                !speed
+                ||
+                plan.speed >= Number(speed);
+
+            const matchesProvider =
+                selectedProviders.length === 0
+                ||
+                selectedProviders.includes(
+                    plan.provider
+                );
+
+            return (
+                matchesSearch
+                &&
+                matchesPrice
+                &&
+                matchesSpeed
+                &&
+                matchesProvider
+            );
+        });
+
+    applySorting(sort);
+
+    currentPage = 1;
+
+    renderPlans(filteredPlans);
+}
+
+function applySorting(sort){
+
+    switch(sort){
+
+        case 'price-low':
+            filteredPlans.sort(
+                (a,b)=>a.price-b.price
+            );
+            break;
+
+        case 'price-high':
+            filteredPlans.sort(
+                (a,b)=>b.price-a.price
+            );
+            break;
+
+        case 'speed-high':
+            filteredPlans.sort(
+                (a,b)=>b.speed-a.speed
+            );
+            break;
+    }
+}
+
+/* =========================
+   SPEED COLORS
+========================= */
+
+function getSpeedClass(speed){
+
+    if(speed <= 25)
+        return 'speed-basic';
+
+    if(speed <= 100)
+        return 'speed-standard';
+
+    if(speed <= 500)
+        return 'speed-premium';
+
+    return 'speed-ultra';
+}
+
+/* =========================
+   PAGINATION
+========================= */
+
+function paginatePlans(plans){
+
+    const start =
+        (currentPage - 1)
+        *
+        plansPerPage;
+
+    const end =
+        start + plansPerPage;
+
+    return plans.slice(start,end);
+}
+
+function renderPagination(totalPlans){
+
+    const totalPages =
+        Math.ceil(
+            totalPlans / plansPerPage
+        );
+
+    const container =
+        document.getElementById(
+            'pagination'
+        );
+
+    if(totalPages <= 1){
+
+        container.innerHTML = '';
+
+        return;
+    }
+
+    let html = '';
+
+    for(let i=1;i<=totalPages;i++){
+
+        html += `
+            <button
+                class="${
+                    i === currentPage
+                    ?
+                    'active'
+                    :
+                    ''
+                }"
+
+                onclick="goToPage(${i})"
+            >
+                ${i}
+            </button>
+        `;
+    }
+
+    container.innerHTML = html;
+}
+
+function goToPage(page){
+
+    currentPage = page;
+
+    renderPlans(filteredPlans);
+
+    window.scrollTo({
+        top:0,
+        behavior:'smooth'
+    });
+}
+
+/* =========================
+   RENDER PLANS
+========================= */
+
+function renderPlans(plans){
+
+    const container =
+        document.getElementById(
+            'plans-container'
+        );
+
+    const paginatedPlans =
+        paginatePlans(plans);
+
+    renderPagination(plans.length);
+
+    if(plans.length === 0){
+
+        container.innerHTML = `
+            <div class="empty">
+                No plans found
+            </div>
+        `;
+
+        return;
+    }
+
+    const bestValue =
+        Math.min(
+            ...plans.map(
+                p => p.price / p.speed
+            )
+        );
+
+    container.innerHTML =
+        paginatedPlans.map(plan => {
+
+            const isBestValue =
+                (plan.price / plan.speed)
+                === bestValue;
+
+            return `
+                <div class="plan-card">
+
+                    <div class="plan-header">
+
+                        <div>
+
+                            <div class="plan-name">
+                                ${plan.plan_name}
+                            </div>
+
+                            <div class="provider">
+                                ${plan.provider}
+                            </div>
+
+                        </div>
+
+                        <input
+                            type="checkbox"
+
+                            onchange='toggleCompare(
+                                ${JSON.stringify(plan)}
+                            )'
+                        >
+
+                    </div>
+
+                    ${
+                        isBestValue
+                        ?
+                        `
+                        <span class="
+                            badge
+                            best-value
+                        ">
+                            Best Value
+                        </span>
+                        `
+                        :
+                        ''
+                    }
+
+                    ${
+                        plan.promo_price
+                        ?
+                        `
+                        <span class="
+                            badge
+                            promo
+                        ">
+                            Limited Time Offer
+                        </span>
+                        `
+                        :
+                        ''
+                    }
+
+                    <div class="plan-price">
+
+                        $
+                        ${plan.promo_price || plan.price}
+
+                        <span style="
+                            font-size:16px;
+                        ">
+                            /mo
+                        </span>
+
+                    </div>
+
+                    ${
+                        plan.promo_price
+                        ?
+                        `
+                        <div style="
+                            text-decoration:line-through;
+                            color:#6b7280;
+                        ">
+                            $${plan.price}
+                        </div>
+                        `
+                        :
+                        ''
+                    }
+
+                    <div class="
+                        plan-speed
+                        ${getSpeedClass(plan.speed)}
+                    ">
+                        ${plan.speed} Mbps
+                    </div>
+
+                    <div class="feature">
+                        Download:
+                        ${plan.download_speed || plan.speed}
+                        Mbps
+                    </div>
+
+                    <div class="feature">
+                        Upload:
+                        ${plan.upload_speed || 'N/A'}
+                        Mbps
+                    </div>
+
+                    <div class="feature">
+                        Network:
+                        ${plan.network_type || 'N/A'}
+                    </div>
+
+                    <div class="feature">
+                        Contract:
+                        ${plan.contract || 'N/A'}
+                    </div>
+
+                    <button
+                        onclick="toggleDetails(this)"
+                        style="margin-top:15px;"
+                    >
+                        View Details
+                    </button>
+
+                    <div class="details">
+
+                        <div class="feature">
+                            Promo Period:
+                            ${plan.promo_period || 'None'}
+                        </div>
+
+                        <div class="feature">
+                            Source:
+                            <a
+                                href="${plan.source_url}"
+                                target="_blank"
+                            >
+                                View Source
+                            </a>
+                        </div>
+
+                    </div>
+
+                </div>
+            `;
+        }).join('');
+
+    setupLazyLoading();
+}
+
+/* =========================
+   LAZY LOADING
+========================= */
+
+function setupLazyLoading(){
+
+    if(observer){
+
+        observer.disconnect();
+    }
+
+    observer =
+        new IntersectionObserver(
+
+            entries => {
+
+                entries.forEach(entry => {
+
+                    if(entry.isIntersecting){
+
+                        entry.target.classList
+                            .add('show');
+
+                        observer.unobserve(
+                            entry.target
+                        );
+                    }
+                });
+            },
+
+            {
+                threshold:0.1
+            }
+        );
+
+    document
+        .querySelectorAll('.plan-card')
+        .forEach(card => {
+
+            observer.observe(card);
+        });
+}
+
+/* =========================
+   DETAILS
+========================= */
+
+function toggleDetails(btn){
+
+    btn.nextElementSibling
+        .classList.toggle('active');
+}
+
+/* =========================
+   COMPARISON
+========================= */
+
+function toggleCompare(plan){
+
+    const exists =
+        comparePlans.find(
+            p => p.plan_name
+            === plan.plan_name
+        );
+
+    if(exists){
+
+        comparePlans =
+            comparePlans.filter(
+                p => p.plan_name
+                !== plan.plan_name
+            );
+
+    }else{
+
+        if(comparePlans.length >= 3){
+
+            alert(
+                'Maximum 3 plans allowed'
+            );
+
+            return;
+        }
+
+        comparePlans.push(plan);
+    }
+
+    renderComparison();
+}
+
+function renderComparison(){
+
+    const container =
+        document.getElementById(
+            'comparison-container'
+        );
+
+    if(comparePlans.length === 0){
+
+        container.innerHTML = '';
+
+        return;
+    }
+
+    let html = `
+        <table class="
+            comparison-table
+        ">
+
+            <tr>
+                <th>Feature</th>
+    `;
+
+    comparePlans.forEach(plan => {
+
+        html += `
+            <th>
+                ${plan.plan_name}
+            </th>
+        `;
+    });
+
+    html += '</tr>';
+
+    const fields = [
+        'provider',
+        'price',
+        'promo_price',
+        'speed',
+        'upload_speed',
+        'network_type',
+        'contract'
+    ];
+
+    fields.forEach(field => {
+
+        html += `<tr><td>${field}</td>`;
+
+        comparePlans.forEach(plan => {
+
+            html += `
+                <td>
+                    ${plan[field] || '-'}
+                </td>
+            `;
+        });
+
+        html += `</tr>`;
+    });
+
+    html += `</table>`;
+
+    container.innerHTML = html;
+}
+
+/* =========================
+   ANALYTICS
+========================= */
+
+function renderAnalytics(){
+
+    const container =
+        document.getElementById(
+            'analytics'
+        );
+
+    const providers =
+        [...new Set(
+            allPlans.map(p=>p.provider)
+        )];
+
+    const avgPrice =
+        (
+            allPlans.reduce(
+                (sum,p)=>sum+p.price,
+                0
+            )
+            /
+            allPlans.length
+        ).toFixed(2);
+
+    const avgSpeed =
+        (
+            allPlans.reduce(
+                (sum,p)=>sum+p.speed,
+                0
+            )
+            /
+            allPlans.length
+        ).toFixed(0);
+
+    container.innerHTML = `
+
+        <div class="analytics-card">
+            <p>Total Plans</p>
+            <h2>${allPlans.length}</h2>
+        </div>
+
+        <div class="analytics-card">
+            <p>Providers</p>
+            <h2>${providers.length}</h2>
+        </div>
+
+        <div class="analytics-card">
+            <p>Average Price</p>
+            <h2>$${avgPrice}</h2>
+        </div>
+
+        <div class="analytics-card">
+            <p>Average Speed</p>
+            <h2>${avgSpeed} Mbps</h2>
+        </div>
+
+    `;
+}
+
+/* =========================
+   CHART
+========================= */
+
+function renderChart(){
+
+    const providerPrices = {};
+
+    allPlans.forEach(plan => {
+
+        if(!providerPrices[plan.provider]){
+
+            providerPrices[
+                plan.provider
+            ] = [];
+        }
+
+        providerPrices[
+            plan.provider
+        ].push(plan.price);
+    });
+
+    const labels =
+        Object.keys(providerPrices);
+
+    const averages =
+        labels.map(provider => {
+
+            const arr =
+                providerPrices[provider];
+
+            return (
+                arr.reduce((a,b)=>a+b,0)
+                /
+                arr.length
+            ).toFixed(2);
+        });
+
+    new Chart(
+        document.getElementById(
+            'priceChart'
+        ),
+        {
+            type:'bar',
+
+            data:{
+                labels,
+
+                datasets:[{
+                    label:'Average Price',
+                    data:averages
+                }]
+            },
+
+            options:{
+                responsive:true
+            }
+        }
+    );
+}
+
+/* =========================
+   EXPORT CSV
+========================= */
+
+function exportCSV(){
+
+    const rows =
+        filteredPlans.map(plan => ({
+            provider:plan.provider,
+            plan:plan.plan_name,
+            price:plan.price,
+            promo_price:plan.promo_price,
+            speed:plan.speed,
+            network:plan.network_type
+        }));
+
+    const csv = [
+
+        Object.keys(rows[0]).join(','),
+
+        ...rows.map(r =>
+            Object.values(r).join(',')
+        )
+
+    ].join('\n');
+
+    const blob =
+        new Blob(
+            [csv],
+            {type:'text/csv'}
+        );
+
+    const a =
+        document.createElement('a');
+
+    a.href =
+        URL.createObjectURL(blob);
+
+    a.download = 'plans.csv';
+
+    a.click();
+}
+
+/* =========================
+   EXPORT PDF
+========================= */
+
+function exportPDF(){
+
+    html2pdf()
+        .from(document.body)
+        .save(
+            'plans-dashboard.pdf'
+        );
+}
+
+/* =========================
+   PRICE HISTORY
+========================= */
+
+function savePriceHistory(plans){
+
+    const history =
+        JSON.parse(
+            localStorage.getItem(
+                'priceHistory'
+            )
+        ) || [];
+
+    history.push({
+        date:new Date().toISOString(),
+        plans
+    });
+
+    localStorage.setItem(
+        'priceHistory',
+        JSON.stringify(history)
+    );
+}
+
+/* =========================
+   EVENTS
+========================= */
+
+document
+    .getElementById('searchInput')
+    .addEventListener(
+        'input',
+        applyFilters
+    );
+
+document
+    .getElementById('minPrice')
+    .addEventListener(
+        'input',
+        e => {
+
+            document
+                .getElementById(
+                    'minPriceValue'
+                )
+                .innerText =
+                    `$${e.target.value}`;
+
+            applyFilters();
+        }
+    );
+
+document
+    .getElementById('maxPrice')
+    .addEventListener(
+        'input',
+        e => {
+
+            document
+                .getElementById(
+                    'maxPriceValue'
+                )
+                .innerText =
+                    `$${e.target.value}`;
+
+            applyFilters();
+        }
+    );
+
+document
+    .getElementById('speedFilter')
+    .addEventListener(
+        'change',
+        applyFilters
+    );
+
+document
+    .getElementById('sortFilter')
+    .addEventListener(
+        'change',
+        applyFilters
+    );
+
+/* =========================
+   START
+========================= */
+
+loadPlans();
+
+</script>
+
+</body>
+</html>

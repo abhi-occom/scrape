@@ -1,4 +1,1 @@
 provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
-superloop,Fixed Wireless,Fixed Wireless Plus 100/20,100,20,89.0,75.0,6 months,No Contract,50,8,https://www.superloop.com/internet/fixed-wireless/
-superloop,Fixed Wireless,Fixed Wireless Home Fast 250/20,250,20,95.0,79.0,6 months,No Contract,90,8,https://www.superloop.com/internet/fixed-wireless/
-superloop,Fixed Wireless,Fixed Wireless Super Fast 400/40,400,40,105.0,89.0,6 months,No Contract,120,8,https://www.superloop.com/internet/fixed-wireless/

@@ -1,0 +1,47 @@
+[
+  {
+    "provider_id": 17,
+    "provider": "spintel",
+    "plan_name": "Home Starter",
+    "network_type": "NBN",
+    "download_speed": 25,
+    "upload_speed": 8,
+    "speed": 25,
+    "price": 64.95,
+    "promo_price": 39.0,
+    "promo_period": "6 months",
+    "data_allowance": "Unlimited",
+    "contract": "No Contract",
+    "source_url": "https://www.spintel.net.au/home-internet/nbn"
+  },
+  {
+    "provider_id": 17,
+    "provider": "spintel",
+    "plan_name": "Home Turbo",
+    "network_type": "NBN",
+    "download_speed": 500,
+    "upload_speed": 42,
+    "speed": 500,
+    "price": 86.95,
+    "promo_price": 76.0,
+    "promo_period": "6 months",
+    "data_allowance": "Unlimited",
+    "contract": "No Contract",
+    "source_url": "https://www.spintel.net.au/home-internet/nbn"
+  },
+  {
+    "provider_id": 17,
+    "provider": "spintel",
+    "plan_name": "Home Ultrafast",
+    "network_type": "NBN",
+    "download_speed": 850,
+    "upload_speed": 82,
+    "speed": 850,
+    "price": 99.95,
+    "promo_price": 89.0,
+    "promo_period": "6 months",
+    "data_allowance": "Unlimited",
+    "contract": "No Contract",
+    "source_url": "https://www.spintel.net.au/home-internet/nbn"
+  }
+]

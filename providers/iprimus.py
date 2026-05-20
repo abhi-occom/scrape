@@ -124,18 +124,18 @@ def _parse_promo(promo_text: str, was_price: Optional[float], current_price: Opt
 
 def _extract_card(card, is_modal: bool) -> Optional[Dict[str, Any]]:
     """
-    Extract a single plan dict from a .plan_tile Playwright element.
+    Extract a single plan dict from a .plan-block Playwright element.
 
     Args:
         card: Playwright element handle
-        is_modal: True if this card carries class plan_tile--modal
+        is_modal: True if this card carries class plan-block.modal
 
     Returns:
         Plan dict or None if the card should be skipped.
     """
     try:
-        # --- Heading ---
-        heading_el = card.query_selector('.plan_tile__heading')
+        # --- Heading --- 
+        heading_el = card.query_selector('.plan-heading')
         if not heading_el:
             return None
         heading_raw = heading_el.inner_text().strip()
@@ -147,63 +147,68 @@ def _extract_card(card, is_modal: bool) -> Optional[Dict[str, Any]]:
         # --- Network type ---
         network_type = _network_type_from_name(heading_norm)
 
-        # --- Current price ---
-        price_el = card.query_selector('.plan_tile__price')
+        # --- Price ---
+        price_el = card.query_selector('.plan-price')
         price_raw = price_el.inner_text().strip() if price_el else ''
-        current_price = _parse_price(price_raw)
+        current_price = _parse_price(price_raw) if price_raw else None
         if current_price is None:
             return None
 
         # --- Was price (discount element) ---
-        disc_el = card.query_selector('.plan_tile__price--discount')
+        disc_el = card.query_selector('.plan-price--discount')
         disc_raw = disc_el.inner_text().strip() if disc_el else ''
-        # The element shows '0' as a hidden placeholder when there is no discount
         was_price = _parse_price(disc_raw) if disc_raw and disc_raw != '0' else None
 
-        # When there IS a was_price, iprimus shows:
-        #   was_price  = original full price
-        #   current_price = promotional price
-        # The plan's regular (non-promo) price is therefore was_price.
+        # Regular price (was price if exists, otherwise current)
         regular_price = was_price if was_price else current_price
 
-        # --- Promo banner ---
-        promo_el = card.query_selector('.plan_tile__upgrade__title')
-        promo_text = promo_el.inner_text().strip() if promo_el else ''
-        promo_price, promo_period = _parse_promo(promo_text, was_price, current_price)
-
-        # --- Speeds ---
-        # Primary cards have .plan_tile__content__speed__text; modal cards do not.
+        # --- Speed (from .plan-description) ---
+        speed_el = card.query_selector('.plan-description')
+        speed_raw = speed_el.inner_text().strip() if speed_el else ''
+        speed_match = re.search(r'(\d+)/(\d+)\s*Mbps', speed_raw)
         download_speed, upload_speed = 0, 0
-        speed_text_el = card.query_selector('.plan_tile__content__speed__text')
-        if speed_text_el:
-            speed_text = speed_text_el.inner_text().strip()
-            download_speed, upload_speed = _parse_speed_text(speed_text)
+        if speed_match:
+            download_speed = int(speed_match.group(1))
+            upload_speed = int(speed_match.group(2))
+        else:
+            # Fallback based on plan name (e.g., standard, premium, home)
+            if 'standard' in heading_norm:
+                download_speed, upload_speed = 25, 8
+            elif 'premium' in heading_norm or 'plus' in heading_norm:
+                download_speed, upload_speed = 500, 50
+            elif 'home' in heading_norm:
+                download_speed, upload_speed = 1000, 100
+            else:
+                download_speed, upload_speed = 0, 0  # Default fallback
 
-        # Fall back to KNOWN_SPEEDS lookup
-        if download_speed == 0:
-            speeds = KNOWN_SPEEDS.get(heading_norm)
-            if speeds:
-                download_speed, upload_speed = speeds
+        # --- Promo period (from .plan-description) ---
+        promo_text = ""
+        promo_period = None
+        # Look for promo text like "For 6 months, then $22 ongoing*"
+        promo_match = re.search(r'For\s+(?:the\s+)?(?:first\s+)?(\d+)\s*months?', speed_raw, re.IGNORECASE)
+        if promo_match:
+            promo_period = promo_match.group(1).strip()
+        else:
+            promo_period = '6 months'  # Default
 
         return {
             'provider_id': PROVIDER_ID,
-            'provider': 'iprimus',
+            'provider': 'spintel',
             'plan_name': heading_raw,
             'network_type': network_type,
             'download_speed': download_speed,
             'upload_speed': upload_speed,
             'speed': download_speed,
             'price': regular_price,
-            'promo_price': promo_price,
+            'promo_price': None,  # No explicit promo price in data
             'promo_period': promo_period,
             'contract': 'No Contract',
             'source_url': URL,
         }
 
     except Exception as e:
-        log_error(f'Error extracting iprimus card: {e}', provider='iprimus')
+        log_error(f'Error extracting spintel card: {e}', provider='spintel')
         return None
-
 
 def scrape_iprimus_plans() -> List[Dict[str, Any]]:
     """

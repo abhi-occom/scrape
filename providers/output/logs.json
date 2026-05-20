@@ -453,5 +453,355 @@
     "message": "Tangerine scraper complete: 4 plans",
     "provider": "tangerine",
     "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T15:43:56.578857",
+    "status": "info",
+    "message": "Starting Spintel scraper",
+    "provider": "spintel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T15:44:08.746519",
+    "status": "info",
+    "message": "Found 26 primary plan-block cards",
+    "provider": "spintel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T15:44:09.094267",
+    "status": "info",
+    "message": "Found 0 modal plan-block cards",
+    "provider": "spintel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T15:44:09.229671",
+    "status": "success",
+    "message": "Spintel scraper complete: 3 plans (3 NBN, 0 Fixed Wireless, 0 Fibre)",
+    "provider": "spintel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T15:46:48.340401",
+    "status": "info",
+    "message": "Starting Spintel scraper",
+    "provider": "spintel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T15:46:59.712133",
+    "status": "info",
+    "message": "Found 26 primary plan-block cards",
+    "provider": "spintel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T15:46:59.936592",
+    "status": "info",
+    "message": "Found 0 modal plan-block cards",
+    "provider": "spintel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T15:47:00.093022",
+    "status": "success",
+    "message": "Spintel scraper complete: 3 plans (3 NBN, 0 Fixed Wireless, 0 Fibre)",
+    "provider": "spintel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T16:10:14.614148",
+    "status": "info",
+    "message": "Starting Spintel scraper",
+    "provider": "spintel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T16:10:29.073104",
+    "status": "info",
+    "message": "Found 26 primary plan-block cards",
+    "provider": "spintel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T16:10:29.436345",
+    "status": "info",
+    "message": "Found 0 modal plan-block cards",
+    "provider": "spintel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T16:10:29.618903",
+    "status": "success",
+    "message": "Spintel scraper complete: 3 plans (3 NBN, 0 Fixed Wireless, 0 Fibre)",
+    "provider": "spintel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T16:43:10.447864",
+    "status": "info",
+    "message": "Starting Spintel scraper",
+    "provider": "spintel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T16:43:24.853923",
+    "status": "info",
+    "message": "Found 24 plan-block.product-option elements",
+    "provider": "spintel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T16:43:24.971822",
+    "status": "info",
+    "message": "  Found: Home Starter (NBN) $64.95",
+    "provider": "spintel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T16:43:25.032843",
+    "status": "info",
+    "message": "  Found: Home Turbo (NBN) $86.95",
+    "provider": "spintel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T16:43:25.096707",
+    "status": "info",
+    "message": "  Found: Home Ultrafast (NBN) $99.95",
+    "provider": "spintel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T16:43:25.503516",
+    "status": "success",
+    "message": "Spintel scraper complete: 3 plans (3 NBN, 0 Fixed Wireless, 0 Fibre)",
+    "provider": "spintel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T21:04:06.471848",
+    "status": "info",
+    "message": "Starting Origin Energy scraper",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T21:04:23.110537",
+    "status": "info",
+    "message": "Found 4 plan cards",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T21:04:24.920642",
+    "status": "success",
+    "message": "Origin Energy scraper complete: 0 plans",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T22:26:39.891347",
+    "status": "info",
+    "message": "Navigating to https://www.originenergy.com.au/internet/plans/",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T22:26:51.599040",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T22:27:01.738940",
+    "status": "info",
+    "message": "Found 4 plan cards",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T22:27:01.762680",
+    "status": "success",
+    "message": "Extracted plan: Everyday nbn™ 25/10",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T22:27:01.793303",
+    "status": "success",
+    "message": "Extracted plan: Experience nbn™ 50/20",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T22:27:01.809311",
+    "status": "success",
+    "message": "Extracted plan: Extra Fast nbn™ 500/50",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T22:27:01.841374",
+    "status": "success",
+    "message": "Extracted plan: Ultra Fast nbn™ 1000/100",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T22:27:01.848092",
+    "status": "success",
+    "message": "Total Origin plans extracted: 4",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T22:59:28.415936",
+    "status": "info",
+    "message": "Navigating to https://www.originenergy.com.au/internet/plans/",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T22:59:32.361552",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T22:59:42.467316",
+    "status": "info",
+    "message": "Found 4 tabs",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T22:59:42.487754",
+    "status": "info",
+    "message": "Clicking tab: nbn®",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T22:59:45.718754",
+    "status": "info",
+    "message": "Found 4 plan cards in nbn® tab",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T22:59:45.734658",
+    "status": "success",
+    "message": "Extracted plan: Everyday nbn™ 25/10",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T22:59:45.759730",
+    "status": "success",
+    "message": "Extracted plan: Experience nbn™ 50/20",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T22:59:45.766843",
+    "status": "success",
+    "message": "Extracted plan: Extra Fast nbn™ 500/50",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T22:59:45.782893",
+    "status": "success",
+    "message": "Extracted plan: Ultra Fast nbn™ 1000/100",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T22:59:45.809116",
+    "status": "info",
+    "message": "Clicking tab: Faster nbn®",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T22:59:49.222613",
+    "status": "info",
+    "message": "Found 4 plan cards in Faster nbn® tab",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T22:59:49.242396",
+    "status": "info",
+    "message": "Clicking tab: Opticomm",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T22:59:52.898161",
+    "status": "info",
+    "message": "Found 5 plan cards in Opticomm tab",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T22:59:52.913085",
+    "status": "success",
+    "message": "Extracted plan: Everyday Opticomm 25/10",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T22:59:52.953418",
+    "status": "success",
+    "message": "Extracted plan: Experience Opticomm 50/20",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T22:59:52.963587",
+    "status": "success",
+    "message": "Extracted plan: Enthusiast Opticomm 100/20",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T22:59:52.973852",
+    "status": "success",
+    "message": "Extracted plan: Extra Fast Opticomm 500/50",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T22:59:52.988698",
+    "status": "success",
+    "message": "Extracted plan: Ultra Fast Opticomm 1000/100",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T22:59:52.994126",
+    "status": "info",
+    "message": "Clicking tab: Faster Opticomm",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T22:59:56.101365",
+    "status": "info",
+    "message": "Found 5 plan cards in Faster Opticomm tab",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-19T22:59:56.181200",
+    "status": "success",
+    "message": "Total Origin plans extracted: 9 (NBN: 4, Opticomm: 5)",
+    "provider": "origin",
+    "data": {}
   }
 ]

@@ -3,6 +3,7 @@ Flask API backend for ISP scraper frontend dashboard.
 Provides REST endpoints for scraping, viewing results, and downloading files.
 """
 from flask import Flask, jsonify, request, send_file, render_template
+from flask_cors import CORS
 import json
 import os
 import sys
@@ -23,8 +24,29 @@ from benchmark_report import generate_html_report, run_and_save_benchmark
 from roi_calculator import compute_roi_data, generate_roi_page, run_and_save_roi
 
 app = Flask(__name__, template_folder='templates')
+CORS(app)
 
 # API Routes
+
+
+@app.route('/api/plans/all', methods=['GET'])
+def api_get_all_plans():
+    """Get all plans from all providers."""
+    results = get_saved_results()
+    
+    all_plans = []
+    for provider_name, provider_data in results.items():
+        for data_type, data in provider_data.items():
+            if isinstance(data, list):
+                for plan in data:
+                    plan['provider'] = provider_name
+                    all_plans.append(plan)
+    
+    return jsonify({
+        'success': True,
+        'plans': all_plans,
+        'total': len(all_plans)
+    })
 
 
 @app.route('/')

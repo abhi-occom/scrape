@@ -21,3 +21,9 @@ python-dotenv>=1.0.0
 
 # Flask web framework for API backend
 flask>=3.0.0
+
+# CORS support for frontend-backend communication
+flask-cors>=4.0.0
+
+# Rate limiting for API protection
+flask-limiter>=3.5.0

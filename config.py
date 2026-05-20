@@ -1,4 +1,4 @@
-"""
+﻿"""
 Configuration file for ISP scraper system.
 Contains database settings, provider configurations, and constants.
 """
@@ -51,7 +51,7 @@ PROVIDERS = {
         'name': 'Exetel',
         'enabled': True
     },
-        'leaptel': {
+    'leaptel': {
         'id': 8,
         'name': 'Leaptel',
         'enabled': True
@@ -61,13 +61,13 @@ PROVIDERS = {
         'name': 'iiNet',
         'enabled': True
     },
-        'swoop': {
+    'swoop': {
         'id': 10,
         'name': 'Swoop',
         'enabled': True,
         'note': 'Scrapes 3 service types: NBN, Fixed Wireless, Opticomm'
     },
-        'iprimus': {
+    'iprimus': {
         'id': 11,
         'name': 'iPrimus',
         'enabled': True,
@@ -77,25 +77,43 @@ PROVIDERS = {
         'id': 12,
         'name': 'Dodo',
         'enabled': True,
-        'note': 'Scrapes NBN plans (all tiers) from /nbn — Drupal-rendered, no JS wait needed'
+        'note': 'Scrapes NBN plans (all tiers) from /nbn -- Drupal-rendered, no JS wait needed'
     },
     'kogan': {
         'id': 13,
         'name': 'Kogan',
         'enabled': True,
-        'note': 'Scrapes NBN plans (all tiers) from /nbn — rendered, no JS wait needed'
+        'note': 'Scrapes NBN plans (all tiers) from /nbn -- rendered, no JS wait needed'
     },
     'more': {
         'id': 14,
         'name': 'More',
         'enabled': True,
-        'note': 'Scrapes NBN plans (4 tiers) from /personal/nbn-plans — JavaScript rendered'
+        'note': 'Scrapes NBN plans (4 tiers) from /personal/nbn-plans -- JavaScript rendered'
     },
     'tangerine': {
         'id': 15,
         'name': 'Tangerine',
         'enabled': True,
-        'note': 'Scrapes NBN plans (4 tiers) from /nbn/nbn-broadband — static HTML'
+        'note': 'Scrapes NBN plans (4 tiers) from /nbn/nbn-broadband -- static HTML'
+    },
+    'mate': {
+        'id': 16,
+        'name': 'MATE',
+        'enabled': True,
+        'note': 'Scrapes 7 NBN plans from individual sub-pages under /mate/ -- JS-rendered, uses networkidle'
+    },
+    'spintel': {
+        'id': 17,
+        'name': 'Spintel',
+        'enabled': True,
+        'note': 'Scrapes NBN, Fixed Wireless and Fibre plans from /home-internet/nbn -- JavaScript rendered'
+    },
+    'origin': {
+        'id': 18,
+        'name': 'Origin Energy',
+        'enabled': True,
+        'note': 'Scrapes NBN plans (4 tiers) from /internet/plans/ -- JavaScript rendered'
     },
 }
 

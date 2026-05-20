@@ -1,9 +1,8 @@
 provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
-dodo,NBN,Dodo NBN 23,23,4,71.99,41.99,6 months,No Contract,,,https://www.dodo.com/nbn
-dodo,NBN,Dodo NBN 25,25,9,71.99,41.99,6 months,No Contract,,,https://www.dodo.com/nbn
-dodo,NBN,Dodo NBN 50,50,17,85.99,55.99,6 months,No Contract,,,https://www.dodo.com/nbn
-dodo,NBN,Dodo NBN 63,63,10,85.99,55.99,6 months,No Contract,,,https://www.dodo.com/nbn
-dodo,NBN,Dodo NBN 100,100,17,92.99,62.99,6 months,No Contract,,,https://www.dodo.com/nbn
-dodo,NBN,Dodo NBN 500,500,48,92.99,62.99,6 months,No Contract,,,https://www.dodo.com/nbn
-dodo,NBN,Dodo NBN 700,700,49,99.99,69.99,6 months,No Contract,,,https://www.dodo.com/nbn
-dodo,NBN,Dodo NBN 840,840,94,109.99,79.99,6 months,No Contract,,,https://www.dodo.com/nbn
+dodo,NBN,Dodo NBN 16,16,0,71.99,,,No Contract,,,https://www.dodo.com/nbn
+dodo,NBN,Dodo NBN 25,25,0,71.99,,,No Contract,,,https://www.dodo.com/nbn
+dodo,NBN,Dodo NBN 50,50,0,85.99,,,No Contract,,,https://www.dodo.com/nbn
+dodo,NBN,Dodo NBN 100,100,0,92.99,,,No Contract,,,https://www.dodo.com/nbn
+dodo,NBN,Dodo NBN 500,500,0,92.99,,,No Contract,,,https://www.dodo.com/nbn
+dodo,NBN,Dodo NBN 750,750,0,99.99,,,No Contract,,,https://www.dodo.com/nbn
+dodo,NBN,Dodo NBN 1000,1000,0,109.99,,,No Contract,,,https://www.dodo.com/nbn
