@@ -13839,5 +13839,229 @@
     "message": "Total Origin plans extracted: 9 (NBN: 4, Opticomm: 5)",
     "provider": "origin",
     "data": {}
+  },
+  {
+    "timestamp": "2026-05-21T16:02:03.871994",
+    "status": "info",
+    "message": "Starting Leaptel scraper test...",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-21T16:02:06.153724",
+    "status": "info",
+    "message": "Scraping nbn plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-21T16:02:23.920123",
+    "status": "info",
+    "message": "Found 5 plan blocks on NBN page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-21T16:02:24.003928",
+    "status": "success",
+    "message": "Extracted 5 unique plans from NBN page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-21T16:02:24.116267",
+    "status": "info",
+    "message": "Scraping opticomm plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-21T16:02:34.155435",
+    "status": "info",
+    "message": "Found 5 plan blocks on Opticomm page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-21T16:02:34.191934",
+    "status": "success",
+    "message": "Extracted 5 unique plans from Opticomm page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-21T16:02:34.232940",
+    "status": "info",
+    "message": "Scraping redtrain plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-21T16:02:44.970860",
+    "status": "info",
+    "message": "Found 3 plan blocks on Redtrain page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-21T16:02:45.029831",
+    "status": "success",
+    "message": "Extracted 3 unique plans from Redtrain page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-21T16:02:45.203184",
+    "status": "info",
+    "message": "Scraping fixed_wireless plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-21T16:02:54.576005",
+    "status": "info",
+    "message": "Found 3 plan blocks on Fixed Wireless page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-21T16:02:54.633029",
+    "status": "success",
+    "message": "Extracted 3 unique plans from Fixed Wireless page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-21T16:02:56.345284",
+    "status": "success",
+    "message": "Scraping complete. Total plans: 16",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-21T16:02:56.389671",
+    "status": "success",
+    "message": "Scraping completed. Found 16 plans.",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-21T16:06:21.628557",
+    "status": "info",
+    "message": "Scraping nbn plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-21T16:06:31.396003",
+    "status": "info",
+    "message": "Found 5 plan blocks on NBN page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-21T16:06:31.478627",
+    "status": "success",
+    "message": "Extracted 5 unique plans from NBN page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-21T16:06:31.593285",
+    "status": "info",
+    "message": "Scraping opticomm plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-21T16:06:40.980903",
+    "status": "info",
+    "message": "Found 5 plan blocks on Opticomm page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-21T16:06:41.108428",
+    "status": "success",
+    "message": "Extracted 5 unique plans from Opticomm page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-21T16:06:41.177838",
+    "status": "info",
+    "message": "Scraping redtrain plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-21T16:06:49.990504",
+    "status": "info",
+    "message": "Found 3 plan blocks on Redtrain page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-21T16:06:50.105198",
+    "status": "success",
+    "message": "Extracted 3 unique plans from Redtrain page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-21T16:06:50.179872",
+    "status": "info",
+    "message": "Scraping fixed_wireless plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-21T16:06:59.015863",
+    "status": "info",
+    "message": "Found 3 plan blocks on Fixed Wireless page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-21T16:06:59.119388",
+    "status": "success",
+    "message": "Extracted 3 unique plans from Fixed Wireless page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-21T16:07:00.615599",
+    "status": "success",
+    "message": "Scraping complete. Total plans: 16",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-21T16:07:31.688473",
+    "status": "info",
+    "message": "Starting competitive benchmark analysis",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-21T16:07:31.857589",
+    "status": "success",
+    "message": "Benchmark complete: 0 wins, 8 gaps across 8 tiers",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-21T16:16:31.605865",
+    "status": "info",
+    "message": "Starting competitive benchmark analysis",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-21T16:16:31.713699",
+    "status": "success",
+    "message": "Benchmark complete: 0 wins, 8 gaps across 8 tiers",
+    "provider": null,
+    "data": {}
   }
 ]

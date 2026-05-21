@@ -192,6 +192,9 @@ td {{ padding: 10px; border-bottom: 1px solid #eee; }}
 tr:hover {{ background: #fafafa; }}
 .highlight-occom {{ background: #f3edff !important; }}
 .highlight-occom:hover {{ background: #ece3ff !important; }}
+/* Hide Status column in Full Comparison */
+#tab-comparison table thead tr th:last-child,
+#tab-comparison table tbody tr td:last-child {{ display: none; }}
 
 .provider-tag {{
     display: inline-block; padding: 3px 10px; border-radius: 20px;
@@ -257,7 +260,7 @@ tr:hover {{ background: #fafafa; }}
             <div class="val" style="color:#C62828">{summary.get('occom_gap_tiers', 0)}</div>
             <div class="lbl">Tiers with Gaps</div>
         </div>
-        <div class="summary-card">
+                <div class="summary-card" style="display:none;">
             <div class="val">{summary.get('occom_win_rate', 0)}%</div>
             <div class="lbl">Occom Win Rate</div>
         </div>
@@ -270,9 +273,9 @@ tr:hover {{ background: #fafafa; }}
         <button class="tab-btn" onclick="switchTab('value')" style="display:none">Value Rankings</button>
     </div>
 
-    <!-- Tab: Overview -->
+        <!-- Tab: Overview -->
     <div id="tab-overview" class="tab-content active">
-        <div class="section">
+        <div class="section" style="display:none;">
             <h2>Occom Wins &mdash; Cheapest in Tier</h2>
             <div class="cards-grid">
                 {advantage_cards if advantage_cards else '<p style="color:#888">No advantages found in current data.</p>'}

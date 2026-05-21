@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-05-18T21:13:05.618866",
+  "generated_at": "2026-05-21T16:16:31.695904",
   "summary": {
-    "total_plans_analyzed": 202,
-    "total_providers": 14,
+    "total_plans_analyzed": 204,
+    "total_providers": 16,
     "providers": [
       "dodo",
       "exetel",
@@ -13,6 +13,8 @@
       "mate",
       "occom",
       "optus",
+      "origin",
+      "spintel",
       "superloop",
       "swoop",
       "tangerine",
@@ -30,19 +32,6 @@
       "tier_label": "Basic",
       "speed_range": "0-15 Mbps",
       "providers": {
-        "leaptel": {
-          "provider": "leaptel",
-          "plan_name": "Home Phone Basic",
-          "speed": 0,
-          "effective_price": 9.95,
-          "regular_price": 9.95,
-          "promo_price": null,
-          "promo_period": null,
-          "annual_cost": 119.4,
-          "value_score": 0.0,
-          "network_type": "NBN",
-          "contract": "No Contract"
-        },
         "occom": {
           "provider": "occom",
           "plan_name": "Basic (nbn12)",
@@ -83,8 +72,8 @@
           "contract": "No Lock-in"
         }
       },
-      "cheapest": "leaptel",
-      "cheapest_price": 9.95,
+      "cheapest": "tpg",
+      "cheapest_price": 44.99,
       "most_expensive": "telstra",
       "most_expensive_price": 125.0,
       "best_value": "tpg",
@@ -151,12 +140,12 @@
           "provider": "leaptel",
           "plan_name": "Pronto",
           "speed": 25,
-          "effective_price": 29.950000000000003,
-          "regular_price": 49.95,
-          "promo_price": 29.950000000000003,
+          "effective_price": 49.95,
+          "regular_price": 69.95,
+          "promo_price": 49.95,
           "promo_period": "6 months",
-          "annual_cost": 479.4,
-          "value_score": 0.83,
+          "annual_cost": 719.4,
+          "value_score": 0.5,
           "network_type": "NBN",
           "contract": "No Contract"
         },
@@ -198,6 +187,32 @@
           "value_score": 0.32,
           "network_type": "NBN (all connections)",
           "contract": "No Lock-in"
+        },
+        "origin": {
+          "provider": "origin",
+          "plan_name": "Everyday nbn™ 25/10",
+          "speed": 25,
+          "effective_price": 94.0,
+          "regular_price": 47.0,
+          "promo_price": 94.0,
+          "promo_period": "6 months",
+          "annual_cost": 846.0,
+          "value_score": 0.27,
+          "network_type": "NBN",
+          "contract": "No Contract"
+        },
+        "spintel": {
+          "provider": "spintel",
+          "plan_name": "Home Starter",
+          "speed": 25,
+          "effective_price": 39.0,
+          "regular_price": 64.95,
+          "promo_price": 39.0,
+          "promo_period": "6 months",
+          "annual_cost": 623.7,
+          "value_score": 0.64,
+          "network_type": "NBN",
+          "contract": "No Contract"
         },
         "superloop": {
           "provider": "superloop",
@@ -265,12 +280,12 @@
           "contract": "No Lock-in"
         }
       },
-      "cheapest": "leaptel",
-      "cheapest_price": 29.950000000000003,
-      "most_expensive": "optus",
-      "most_expensive_price": 79.0,
-      "best_value": "leaptel",
-      "best_value_score": 0.83
+      "cheapest": "spintel",
+      "cheapest_price": 39.0,
+      "most_expensive": "origin",
+      "most_expensive_price": 94.0,
+      "best_value": "spintel",
+      "best_value_score": 0.64
     },
     {
       "tier": "boost",
@@ -333,12 +348,12 @@
           "provider": "leaptel",
           "plan_name": "Accelerated",
           "speed": 50,
-          "effective_price": 66.95,
-          "regular_price": 74.95,
-          "promo_price": 66.95,
+          "effective_price": 74.95,
+          "regular_price": 82.95,
+          "promo_price": 74.95,
           "promo_period": "6 months",
-          "annual_cost": 851.4,
-          "value_score": 0.75,
+          "annual_cost": 947.4,
+          "value_score": 0.67,
           "network_type": "NBN",
           "contract": "No Contract"
         },
@@ -380,6 +395,19 @@
           "value_score": 0.53,
           "network_type": "NBN (all connections)",
           "contract": "No Lock-in"
+        },
+        "origin": {
+          "provider": "origin",
+          "plan_name": "Experience nbn™ 50/20",
+          "speed": 50,
+          "effective_price": 108.0,
+          "regular_price": 54.0,
+          "promo_price": 108.0,
+          "promo_period": "6 months",
+          "annual_cost": 972.0,
+          "value_score": 0.46,
+          "network_type": "NBN",
+          "contract": "No Contract"
         },
         "superloop": {
           "provider": "superloop",
@@ -449,8 +477,8 @@
       },
       "cheapest": "tpg",
       "cheapest_price": 29.99,
-      "most_expensive": "optus",
-      "most_expensive_price": 95.0,
+      "most_expensive": "origin",
+      "most_expensive_price": 108.0,
       "best_value": "tpg",
       "best_value_score": 1.67
     },
@@ -526,15 +554,15 @@
         },
         "leaptel": {
           "provider": "leaptel",
-          "plan_name": "Full Throttle",
+          "plan_name": "Fixed Wireless +",
           "speed": 100,
-          "effective_price": 66.95,
-          "regular_price": 79.95,
-          "promo_price": 66.95,
+          "effective_price": 74.95,
+          "regular_price": 82.95,
+          "promo_price": 74.95,
           "promo_period": "12 months",
-          "annual_cost": 803.4,
-          "value_score": 1.49,
-          "network_type": "NBN",
+          "annual_cost": 899.4,
+          "value_score": 1.33,
+          "network_type": "Fixed Wireless",
           "contract": "No Contract"
         },
         "mate": {
@@ -575,6 +603,19 @@
           "value_score": 1.27,
           "network_type": "FTTN, FTTC, FTTB",
           "contract": "No Lock-in"
+        },
+        "origin": {
+          "provider": "origin",
+          "plan_name": "Enthusiast Opticomm 100/20",
+          "speed": 95,
+          "effective_price": 112.0,
+          "regular_price": 56.0,
+          "promo_price": 112.0,
+          "promo_period": "6 months",
+          "annual_cost": 1008.0,
+          "value_score": 0.85,
+          "network_type": "Opticomm",
+          "contract": "No Contract"
         },
         "superloop": {
           "provider": "superloop",
@@ -631,8 +672,8 @@
       },
       "cheapest": "tpg",
       "cheapest_price": 34.99,
-      "most_expensive": "telstra",
-      "most_expensive_price": 95.0,
+      "most_expensive": "origin",
+      "most_expensive_price": 112.0,
       "best_value": "exetel",
       "best_value_score": 3.75
     },
@@ -645,12 +686,12 @@
           "provider": "leaptel",
           "plan_name": "Fixed Wireless Fast",
           "speed": 250,
-          "effective_price": 66.95,
-          "regular_price": 79.95,
-          "promo_price": 66.95,
+          "effective_price": 79.95,
+          "regular_price": 92.95,
+          "promo_price": 79.95,
           "promo_period": "12 months",
-          "annual_cost": 803.4,
-          "value_score": 3.73,
+          "annual_cost": 959.4,
+          "value_score": 3.13,
           "network_type": "Fixed Wireless",
           "contract": "No Contract"
         },
@@ -707,12 +748,12 @@
           "contract": "No Lock-in"
         }
       },
-      "cheapest": "leaptel",
-      "cheapest_price": 66.95,
+      "cheapest": "superloop",
+      "cheapest_price": 79.0,
       "most_expensive": "occom",
       "most_expensive_price": 110.0,
-      "best_value": "leaptel",
-      "best_value_score": 3.73
+      "best_value": "telstra",
+      "best_value_score": 3.53
     },
     {
       "tier": "ultrafast",
@@ -788,12 +829,12 @@
           "provider": "leaptel",
           "plan_name": "Fast",
           "speed": 500,
-          "effective_price": 66.95,
-          "regular_price": 79.95,
-          "promo_price": 66.95,
+          "effective_price": 79.95,
+          "regular_price": 92.95,
+          "promo_price": 79.95,
           "promo_period": "12 months",
-          "annual_cost": 803.4,
-          "value_score": 7.47,
+          "annual_cost": 959.4,
+          "value_score": 6.25,
           "network_type": "NBN",
           "contract": "No Contract"
         },
@@ -835,6 +876,32 @@
           "value_score": 6.33,
           "network_type": "FTTP, HFC",
           "contract": "No Lock-in"
+        },
+        "origin": {
+          "provider": "origin",
+          "plan_name": "Extra Fast nbn™ 500/50",
+          "speed": 500,
+          "effective_price": 112.0,
+          "regular_price": 56.0,
+          "promo_price": 112.0,
+          "promo_period": "6 months",
+          "annual_cost": 1008.0,
+          "value_score": 4.46,
+          "network_type": "NBN",
+          "contract": "No Contract"
+        },
+        "spintel": {
+          "provider": "spintel",
+          "plan_name": "Home Turbo",
+          "speed": 500,
+          "effective_price": 76.0,
+          "regular_price": 86.95,
+          "promo_price": 76.0,
+          "promo_period": "6 months",
+          "annual_cost": 977.7,
+          "value_score": 6.58,
+          "network_type": "NBN",
+          "contract": "No Contract"
         },
         "superloop": {
           "provider": "superloop",
@@ -904,8 +971,8 @@
       },
       "cheapest": "tangerine",
       "cheapest_price": 63.9,
-      "most_expensive": "telstra",
-      "most_expensive_price": 99.0,
+      "most_expensive": "origin",
+      "most_expensive_price": 112.0,
       "best_value": "tangerine",
       "best_value_score": 7.82
     },
@@ -970,13 +1037,13 @@
           "provider": "leaptel",
           "plan_name": "Ultrafast",
           "speed": 1000,
-          "effective_price": 84.0,
-          "regular_price": 99.0,
-          "promo_price": 84.0,
-          "promo_period": "12 months",
-          "annual_cost": 1008.0,
-          "value_score": 11.9,
-          "network_type": "NBN",
+          "effective_price": 109.0,
+          "regular_price": 129.0,
+          "promo_price": 109.0,
+          "promo_period": "6 months",
+          "annual_cost": 1428.0,
+          "value_score": 9.17,
+          "network_type": "Opticomm",
           "contract": "No Contract"
         },
         "mate": {
@@ -1017,6 +1084,32 @@
           "value_score": 7.52,
           "network_type": "FTTP, HFC",
           "contract": "No Lock-in"
+        },
+        "origin": {
+          "provider": "origin",
+          "plan_name": "Ultra Fast nbn™ 1000/100",
+          "speed": 860,
+          "effective_price": 144.0,
+          "regular_price": 72.0,
+          "promo_price": 144.0,
+          "promo_period": "6 months",
+          "annual_cost": 1296.0,
+          "value_score": 5.97,
+          "network_type": "NBN",
+          "contract": "No Contract"
+        },
+        "spintel": {
+          "provider": "spintel",
+          "plan_name": "Home Ultrafast",
+          "speed": 850,
+          "effective_price": 89.0,
+          "regular_price": 99.95,
+          "promo_price": 89.0,
+          "promo_period": "6 months",
+          "annual_cost": 1133.7,
+          "value_score": 9.55,
+          "network_type": "NBN",
+          "contract": "No Contract"
         },
         "superloop": {
           "provider": "superloop",
@@ -1086,10 +1179,10 @@
       },
       "cheapest": "iinet",
       "cheapest_price": 69.99,
-      "most_expensive": "telstra",
-      "most_expensive_price": 119.0,
-      "best_value": "leaptel",
-      "best_value_score": 11.9
+      "most_expensive": "origin",
+      "most_expensive_price": 144.0,
+      "best_value": "swoop",
+      "best_value_score": 11.76
     },
     {
       "tier": "mega",
@@ -1098,14 +1191,14 @@
       "providers": {
         "leaptel": {
           "provider": "leaptel",
-          "plan_name": "Hyperfast HFC",
+          "plan_name": "Ultrafast",
           "speed": 2000,
-          "effective_price": 145.0,
-          "regular_price": 155.0,
-          "promo_price": 145.0,
+          "effective_price": 99.0,
+          "regular_price": 114.0,
+          "promo_price": 99.0,
           "promo_period": "12 months",
-          "annual_cost": 1740.0,
-          "value_score": 13.79,
+          "annual_cost": 1188.0,
+          "value_score": 20.2,
           "network_type": "NBN",
           "contract": "No Contract"
         },
@@ -1137,11 +1230,11 @@
         }
       },
       "cheapest": "leaptel",
-      "cheapest_price": 145.0,
+      "cheapest_price": 99.0,
       "most_expensive": "occom",
       "most_expensive_price": 165.0,
       "best_value": "leaptel",
-      "best_value_score": 13.79
+      "best_value_score": 20.2
     }
   ],
   "occom_advantages": [],
@@ -1153,10 +1246,10 @@
       "occom_plan": "Basic (nbn12)",
       "occom_speed": 12,
       "occom_value_score": 0.25,
-      "cheapest_competitor": "leaptel",
-      "cheapest_competitor_price": 9.95,
-      "gap_amount": 38.05,
-      "gap_pct": 382.4
+      "cheapest_competitor": "tpg",
+      "cheapest_competitor_price": 44.99,
+      "gap_amount": 3.01,
+      "gap_pct": 6.7
     },
     {
       "tier": "standard",
@@ -1165,10 +1258,10 @@
       "occom_plan": "Boost (nbn25)",
       "occom_speed": 25,
       "occom_value_score": 0.42,
-      "cheapest_competitor": "leaptel",
-      "cheapest_competitor_price": 29.950000000000003,
-      "gap_amount": 30.05,
-      "gap_pct": 100.3
+      "cheapest_competitor": "spintel",
+      "cheapest_competitor_price": 39.0,
+      "gap_amount": 21.0,
+      "gap_pct": 53.8
     },
     {
       "tier": "boost",
@@ -1201,10 +1294,10 @@
       "occom_plan": "Rocket (Fibre250)",
       "occom_speed": 250,
       "occom_value_score": 2.27,
-      "cheapest_competitor": "leaptel",
-      "cheapest_competitor_price": 66.95,
-      "gap_amount": 43.05,
-      "gap_pct": 64.3
+      "cheapest_competitor": "superloop",
+      "cheapest_competitor_price": 79.0,
+      "gap_amount": 31.0,
+      "gap_pct": 39.2
     },
     {
       "tier": "ultrafast",
@@ -1238,9 +1331,9 @@
       "occom_speed": 2000,
       "occom_value_score": 12.12,
       "cheapest_competitor": "leaptel",
-      "cheapest_competitor_price": 145.0,
-      "gap_amount": 20.0,
-      "gap_pct": 13.8
+      "cheapest_competitor_price": 99.0,
+      "gap_amount": 66.0,
+      "gap_pct": 66.7
     }
   ],
   "value_rankings": [
@@ -1264,13 +1357,6 @@
         },
         {
           "rank": 3,
-          "provider": "leaptel",
-          "value_score": 0.0,
-          "speed": 0,
-          "price": 9.95
-        },
-        {
-          "rank": 4,
           "provider": "telstra",
           "value_score": 0.0,
           "speed": 0,
@@ -1284,10 +1370,10 @@
       "rankings": [
         {
           "rank": 1,
-          "provider": "leaptel",
-          "value_score": 0.83,
+          "provider": "spintel",
+          "value_score": 0.64,
           "speed": 25,
-          "price": 29.950000000000003
+          "price": 39.0
         },
         {
           "rank": 2,
@@ -1312,62 +1398,76 @@
         },
         {
           "rank": 5,
+          "provider": "leaptel",
+          "value_score": 0.5,
+          "speed": 25,
+          "price": 49.95
+        },
+        {
+          "rank": 6,
           "provider": "mate",
           "value_score": 0.49,
           "speed": 25,
           "price": 51.0
         },
         {
-          "rank": 6,
+          "rank": 7,
           "provider": "swoop",
           "value_score": 0.46,
           "speed": 25,
           "price": 54.0
         },
         {
-          "rank": 7,
+          "rank": 8,
           "provider": "occom",
           "value_score": 0.42,
           "speed": 25,
           "price": 60.0
         },
         {
-          "rank": 8,
+          "rank": 9,
           "provider": "iinet",
           "value_score": 0.4,
           "speed": 20,
           "price": 49.99
         },
         {
-          "rank": 9,
+          "rank": 10,
           "provider": "kogan",
           "value_score": 0.4,
           "speed": 20,
           "price": 49.9
         },
         {
-          "rank": 10,
+          "rank": 11,
           "provider": "telstra",
           "value_score": 0.36,
           "speed": 25,
           "price": 70.0
         },
         {
-          "rank": 11,
+          "rank": 12,
           "provider": "iprimus",
           "value_score": 0.34,
           "speed": 25,
           "price": 74.0
         },
         {
-          "rank": 12,
+          "rank": 13,
           "provider": "optus",
           "value_score": 0.32,
           "speed": 25,
           "price": 79.0
         },
         {
-          "rank": 13,
+          "rank": 14,
+          "provider": "origin",
+          "value_score": 0.27,
+          "speed": 25,
+          "price": 94.0
+        },
+        {
+          "rank": 15,
           "provider": "dodo",
           "value_score": 0.22,
           "speed": 16,
@@ -1409,38 +1509,38 @@
         },
         {
           "rank": 5,
-          "provider": "leaptel",
-          "value_score": 0.75,
-          "speed": 50,
-          "price": 66.95
-        },
-        {
-          "rank": 6,
           "provider": "mate",
           "value_score": 0.74,
           "speed": 49,
           "price": 66.0
         },
         {
-          "rank": 7,
+          "rank": 6,
           "provider": "swoop",
           "value_score": 0.72,
           "speed": 50,
           "price": 69.0
         },
         {
-          "rank": 8,
+          "rank": 7,
           "provider": "kogan",
           "value_score": 0.71,
           "speed": 50,
           "price": 70.9
         },
         {
-          "rank": 9,
+          "rank": 8,
           "provider": "iprimus",
           "value_score": 0.68,
           "speed": 50,
           "price": 74.0
+        },
+        {
+          "rank": 9,
+          "provider": "leaptel",
+          "value_score": 0.67,
+          "speed": 50,
+          "price": 74.95
         },
         {
           "rank": 10,
@@ -1469,6 +1569,13 @@
           "value_score": 0.53,
           "speed": 50,
           "price": 95.0
+        },
+        {
+          "rank": 14,
+          "provider": "origin",
+          "value_score": 0.46,
+          "speed": 50,
+          "price": 108.0
         }
       ]
     },
@@ -1506,31 +1613,31 @@
         },
         {
           "rank": 5,
-          "provider": "leaptel",
-          "value_score": 1.49,
-          "speed": 100,
-          "price": 66.95
-        },
-        {
-          "rank": 6,
           "provider": "superloop",
           "value_score": 1.45,
           "speed": 100,
           "price": 69.0
         },
         {
-          "rank": 7,
+          "rank": 6,
           "provider": "kogan",
           "value_score": 1.39,
           "speed": 100,
           "price": 71.9
         },
         {
-          "rank": 8,
+          "rank": 7,
           "provider": "mate",
           "value_score": 1.37,
           "speed": 97,
           "price": 71.0
+        },
+        {
+          "rank": 8,
+          "provider": "leaptel",
+          "value_score": 1.33,
+          "speed": 100,
+          "price": 74.95
         },
         {
           "rank": 9,
@@ -1562,6 +1669,13 @@
         },
         {
           "rank": 13,
+          "provider": "origin",
+          "value_score": 0.85,
+          "speed": 95,
+          "price": 112.0
+        },
+        {
+          "rank": 14,
           "provider": "telstra",
           "value_score": 0.72,
           "speed": 68,
@@ -1575,24 +1689,24 @@
       "rankings": [
         {
           "rank": 1,
-          "provider": "leaptel",
-          "value_score": 3.73,
-          "speed": 250,
-          "price": 66.95
-        },
-        {
-          "rank": 2,
           "provider": "telstra",
           "value_score": 3.53,
           "speed": 300,
           "price": 85.0
         },
         {
-          "rank": 3,
+          "rank": 2,
           "provider": "superloop",
           "value_score": 3.16,
           "speed": 250,
           "price": 79.0
+        },
+        {
+          "rank": 3,
+          "provider": "leaptel",
+          "value_score": 3.13,
+          "speed": 250,
+          "price": 79.95
         },
         {
           "rank": 4,
@@ -1637,45 +1751,45 @@
         },
         {
           "rank": 4,
-          "provider": "leaptel",
-          "value_score": 7.47,
-          "speed": 500,
-          "price": 66.95
-        },
-        {
-          "rank": 5,
           "provider": "iprimus",
           "value_score": 7.46,
           "speed": 500,
           "price": 67.0
         },
         {
-          "rank": 6,
+          "rank": 5,
           "provider": "superloop",
           "value_score": 7.25,
           "speed": 500,
           "price": 69.0
         },
         {
-          "rank": 7,
+          "rank": 6,
           "provider": "kogan",
           "value_score": 6.95,
           "speed": 500,
           "price": 71.9
         },
         {
-          "rank": 8,
+          "rank": 7,
           "provider": "swoop",
           "value_score": 6.94,
           "speed": 500,
           "price": 72.0
         },
         {
-          "rank": 9,
+          "rank": 8,
           "provider": "mate",
           "value_score": 6.83,
           "speed": 485,
           "price": 71.0
+        },
+        {
+          "rank": 9,
+          "provider": "spintel",
+          "value_score": 6.58,
+          "speed": 500,
+          "price": 76.0
         },
         {
           "rank": 10,
@@ -1693,24 +1807,38 @@
         },
         {
           "rank": 12,
+          "provider": "leaptel",
+          "value_score": 6.25,
+          "speed": 500,
+          "price": 79.95
+        },
+        {
+          "rank": 13,
           "provider": "occom",
           "value_score": 5.88,
           "speed": 500,
           "price": 85.0
         },
         {
-          "rank": 13,
+          "rank": 14,
           "provider": "dodo",
           "value_score": 5.38,
           "speed": 500,
           "price": 92.99
         },
         {
-          "rank": 14,
+          "rank": 15,
           "provider": "telstra",
           "value_score": 5.05,
           "speed": 500,
           "price": 99.0
+        },
+        {
+          "rank": 16,
+          "provider": "origin",
+          "value_score": 4.46,
+          "speed": 500,
+          "price": 112.0
         }
       ]
     },
@@ -1720,94 +1848,108 @@
       "rankings": [
         {
           "rank": 1,
-          "provider": "leaptel",
-          "value_score": 11.9,
-          "speed": 1000,
-          "price": 84.0
-        },
-        {
-          "rank": 2,
           "provider": "swoop",
           "value_score": 11.76,
           "speed": 1000,
           "price": 85.0
         },
         {
-          "rank": 3,
+          "rank": 2,
           "provider": "iinet",
           "value_score": 10.57,
           "speed": 740,
           "price": 69.99
         },
         {
-          "rank": 4,
+          "rank": 3,
           "provider": "tpg",
           "value_score": 10.57,
           "speed": 740.0,
           "price": 69.99
         },
         {
-          "rank": 5,
+          "rank": 4,
           "provider": "superloop",
           "value_score": 10.0,
           "speed": 750,
           "price": 75.0
         },
         {
+          "rank": 5,
+          "provider": "spintel",
+          "value_score": 9.55,
+          "speed": 850,
+          "price": 89.0
+        },
+        {
           "rank": 6,
+          "provider": "leaptel",
+          "value_score": 9.17,
+          "speed": 1000,
+          "price": 109.0
+        },
+        {
+          "rank": 7,
           "provider": "kogan",
           "value_score": 8.83,
           "speed": 750,
           "price": 84.9
         },
         {
-          "rank": 7,
+          "rank": 8,
           "provider": "occom",
           "value_score": 7.84,
           "speed": 729,
           "price": 93.0
         },
         {
-          "rank": 8,
+          "rank": 9,
           "provider": "optus",
           "value_score": 7.52,
           "speed": 820,
           "price": 109.0
         },
         {
-          "rank": 9,
+          "rank": 10,
           "provider": "dodo",
           "value_score": 7.5,
           "speed": 750,
           "price": 99.99
         },
         {
-          "rank": 10,
+          "rank": 11,
           "provider": "mate",
           "value_score": 7.43,
           "speed": 713,
           "price": 96.0
         },
         {
-          "rank": 11,
+          "rank": 12,
           "provider": "tangerine",
           "value_score": 7.38,
           "speed": 700,
           "price": 94.9
         },
         {
-          "rank": 12,
+          "rank": 13,
           "provider": "iprimus",
           "value_score": 6.73,
           "speed": 700,
           "price": 104.0
         },
         {
-          "rank": 13,
+          "rank": 14,
           "provider": "telstra",
           "value_score": 6.3,
           "speed": 750,
           "price": 119.0
+        },
+        {
+          "rank": 15,
+          "provider": "origin",
+          "value_score": 5.97,
+          "speed": 860,
+          "price": 144.0
         }
       ]
     },
@@ -1818,9 +1960,9 @@
         {
           "rank": 1,
           "provider": "leaptel",
-          "value_score": 13.79,
+          "value_score": 20.2,
           "speed": 2000,
-          "price": 145.0
+          "price": 99.0
         },
         {
           "rank": 2,
