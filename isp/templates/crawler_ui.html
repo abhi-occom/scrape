@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head><title>ISP Crawler</title></head>
+<body style="font-family: Arial; max-width: 800px; margin: 50px auto; padding: 20px;">
+<h1>ISP Mini Crawler</h1>
+<p>Enter an ISP website URL to auto-discover and scrape broadband plans.</p>
+<form id="form">
+<label>URL: <input type="url" id="url" placeholder="https://example.com/plans" style="width:400px" required></label><br><br>
+<label>Name: <input type="text" id="name" placeholder="Optional"></label><br><br>
+<label>Depth: <select id="depth"><option value="1">1</option><option value="2" selected>2</option><option value="3">3</option></select></label><br><br>
+<button type="submit">Start Crawl</button>
+</form>
+<div id="status" style="margin-top:20px; padding:15px; border-radius:5px; display:none;"></div>
+<div id="results" style="margin-top:20px; display:none;"><h2>Results</h2><div id="resultsContent"></div></div>
+<script>
+let poll;
+document.getElementById('form').onsubmit = async (e) => {
+  e.preventDefault();
+  const url = document.getElementById('url').value;
+  const name = document.getElementById('name').value;
+  const depth = document.getElementById('depth').value;
+  const networks = ['nbn','opticomm','redtrain','supa'];
+  document.getElementById('status').style.display='block';
+  document.getElementById('status').style.background='#fff3cd';
+  document.getElementById('status').textContent='Starting...';
+  const res = await fetch('/isp/api/crawl', {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({url,name,networks,depth:parseInt(depth)})
+  });
+  const data = await res.json();
+  if(data.success) {
+    poll = setInterval(checkStatus, 2000);
+  } else {
+    document.getElementById('status').style.background='#f8d7da';
+    document.getElementById('status').textContent='Error: ' + data.error;
+  }
+};
+async function checkStatus() {
+  const res = await fetch('/isp/api/status');
+  const data = await res.json();
+  if(!data.running && data.status !== 'idle') {
+    clearInterval(poll);
+    if(data.status === 'success') {
+      document.getElementById('status').style.background='#d4edda';
+      document.getElementById('status').textContent=data.message;
+      showResults(data.result);
+    } else {
+      document.getElementById('status').style.background='#f8d7da';
+      document.getElementById('status').textContent='Error: ' + data.message;
+    }
+  } else if(data.running) {
+    document.getElementById('status').textContent='Running: ' + data.message;
+  }
+}
+function showResults(r) {
+  document.getElementById('results').style.display='block';
+  let html = <p><strong>Plans Found:</strong> </p>;
+  html += <p><strong>Pages Scraped:</strong> </p>;
+  html += <p><strong>Duration:</strong> s</p>;
+  if(r.plans && r.plans.length > 0) {
+    html += '<table border="1" cellpadding="8" style="width:100%;margin-top:20px"><tr><th>Plan</th><th>Network</th><th>Speed</th><th>Price</th></tr>';
+    r.plans.forEach(p => {
+      html += <tr><td></td><td></td><td>/ Mbps</td><td>/mth</td></tr>;
+    });
+    html += '</table>';
+  }
+  document.getElementById('resultsContent').innerHTML = html;
+}
+</script>
+</body>
+</html>

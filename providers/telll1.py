@@ -30,14 +30,6 @@ TELSTRA_PAGES = {
         'url': 'https://www.telstra.com.au/internet/starlink',
         'network_type': 'Satellite (Starlink)',
     },
-        'opticomm': {
-        'url': 'https://www.telstra.com.au/internet/opticomm-plans',
-        'network_type': 'Opticomm',
-    },
-    'small_business': {
-        'url': 'https://www.telstra.com.au/small-business/internet',
-        'network_type': 'Business NBN',  # default; overridden if 5G detected
-    },
 }
 
 

@@ -1,4 +1,6 @@
 {
   "base_url": "https://www.aussiebroadband.com.au/broadband/nbn/",
+  "opticomm": "https://www.aussiebroadband.com.au/internet/opticomm-plans/",
+  "nbn": "https://www.aussiebroadband.com.au/internet/nbn-plans/",
   "endpoints": []
 }

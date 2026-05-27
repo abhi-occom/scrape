@@ -2,7 +2,7 @@
 Flask API backend for ISP scraper frontend dashboard.
 Provides REST endpoints for scraping, viewing results, and downloading files.
 """
-from flask import Flask, jsonify, request, send_file, render_template
+from flask import Flask, jsonify, request, send_file, render_template, send_from_directory
 from flask_cors import CORS
 import json
 import os
@@ -18,15 +18,37 @@ from scraper_service import (
     download_json,
     download_csv
 )
+from utils.progress import finish_progress, finish_provider, get_progress, reset_progress, update_progress
 from utils.benchmark import run_benchmark, load_all_plans, save_benchmark_report, save_benchmark_csv
 from utils.alerts import run_alerts
 from benchmark_report import generate_html_report, run_and_save_benchmark
 from roi_calculator import compute_roi_data, generate_roi_page, run_and_save_roi
+from utils.screenshots import SCREENSHOT_ROOT
+
+# Import ISP Mini Crawler routes
+from isp.routes import isp_bp
 
 app = Flask(__name__, template_folder='templates')
 CORS(app)
 
+# Register ISP crawler blueprint
+app.register_blueprint(isp_bp)
+
 # API Routes
+
+
+def get_scrape_options():
+    """Read optional browser debug settings from a scrape request."""
+    payload = request.get_json(silent=True) or {}
+    slow_mo = payload.get('slow_mo', 0)
+    try:
+        slow_mo = int(slow_mo)
+    except (TypeError, ValueError):
+        slow_mo = 0
+    return {
+        'visible_browser': bool(payload.get('visible_browser')),
+        'slow_mo': max(0, min(slow_mo, 3000)),
+    }
 
 
 @app.route('/api/plans/all', methods=['GET'])
@@ -66,18 +88,43 @@ def api_get_providers():
     })
 
 
+@app.route('/api/scrape/progress', methods=['GET'])
+def api_scrape_progress():
+    """Get live progress for the currently running scrape."""
+    return jsonify({
+        'success': True,
+        'progress': get_progress(),
+    })
+
+
+@app.route('/screenshots/<path:filename>', methods=['GET'])
+def serve_screenshot(filename):
+    """Serve scraper screenshots from output/screenshots."""
+    return send_from_directory(SCREENSHOT_ROOT, filename)
+
+
 @app.route('/api/scrape/<provider_name>', methods=['POST'])
 def api_scrape_provider(provider_name):
     """
     Scrape a specific provider.
     Returns scraped plans and saves to JSON/CSV.
     """
-    result = scrape_provider(provider_name)
+    options = get_scrape_options()
+    reset_progress(mode='single', providers_total=1)
+    update_progress(
+        provider=provider_name,
+        status='starting',
+        message=f"Starting {provider_name}",
+    )
+
+    result = scrape_provider(provider_name, options=options)
     
     if result['success']:
         # Save output
         files = save_output(provider_name, result['plans'])
         result['files'] = files
+    finish_provider(provider_name, result.get('total_plans', 0), result['success'], result.get('error'))
+    finish_progress(result['success'], f"{provider_name} scrape finished")
     
     return jsonify(result)
 
@@ -87,15 +134,26 @@ def api_scrape_all():
     """Scrape all enabled providers."""
     results = {}
     total_plans = 0
+    options = get_scrape_options()
+    enabled_providers = [p for p in get_provider_list() if p['enabled']]
+
+    reset_progress(mode='all', providers_total=len(enabled_providers))
     
-    for provider in get_provider_list():
-        if provider['enabled']:
-            result = scrape_provider(provider['key'])
-            if result['success']:
-                files = save_output(provider['key'], result['plans'])
-                result['files'] = files
-            results[provider['key']] = result
-            total_plans += result.get('total_plans', 0)
+    for provider in enabled_providers:
+        update_progress(
+            provider=provider['key'],
+            status='running',
+            message=f"Scraping {provider['name']}",
+        )
+        result = scrape_provider(provider['key'], options=options)
+        if result['success']:
+            files = save_output(provider['key'], result['plans'])
+            result['files'] = files
+        results[provider['key']] = result
+        total_plans += result.get('total_plans', 0)
+        finish_provider(provider['key'], result.get('total_plans', 0), result['success'], result.get('error'))
+
+    finish_progress(True, f"Scraped {total_plans} plans from {len(results)} providers")
     
     return jsonify({
         'success': True,

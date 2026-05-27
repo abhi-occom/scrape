@@ -1,8 +1,7 @@
 # -*- coding: ascii -*-
-"""
-iiNet ISP plan scraper -- multi-page.
+"""iiNet ISP plan scraper -- multi-page.
 
-Scrapes 3 iiNet product pages:
+Scrapes 4 iiNet product pages:
 
   - /broadband/nbn/plans/fibre  -> 8 .card elements across 3 network types:
         NBN FTTP plans (NBN25, NBN50, NBN500, NBN Superfast, NBN Ultrafast)
@@ -11,6 +10,8 @@ Scrapes 3 iiNet product pages:
 
   - /broadband/nbn/plans/wireless -> Angular address-lookup app (1 visible plan:
         NBN Fixed Wireless NBN25 -- scraped from page body text)
+
+  - /internet-products/fibre/ftth  -> FTTH plans (.card elements, same format as fibre)
 
   - /nbn/fibre-upgrade -> Informational only, no plans -> skipped.
 
@@ -48,6 +49,10 @@ IINET_PAGES = {
     'wireless': {
         'url': f'{BASE}/broadband/nbn/plans/wireless',
         'method': 'wireless_text',
+    },
+    'ftth': {
+        'url': 'https://www.iinet.net.au/internet-products/fibre/ftth/',
+        'method': 'fibre_cards',
     },
     'fibre_upgrade': {
         'url': f'{BASE}/nbn/fibre-upgrade',

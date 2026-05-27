@@ -14063,5 +14063,1223 @@
     "message": "Benchmark complete: 0 wins, 8 gaps across 8 tiers",
     "provider": null,
     "data": {}
+  },
+  {
+    "timestamp": "2026-05-22T19:09:29.819216",
+    "status": "info",
+    "message": "Scraping plans: https://www.telstra.com.au/internet/plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-22T19:09:45.451799",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-22T19:09:56.903687",
+    "status": "success",
+    "message": "plans: 19 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-22T19:09:57.432830",
+    "status": "info",
+    "message": "Scraping 5g_home: https://www.telstra.com.au/internet/5g-home-internet",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-22T19:10:00.203332",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-22T19:10:14.090744",
+    "status": "success",
+    "message": "5g_home: 3 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-22T19:10:14.754132",
+    "status": "info",
+    "message": "Scraping starlink: https://www.telstra.com.au/internet/starlink",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-22T19:10:17.546522",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-22T19:10:28.349036",
+    "status": "success",
+    "message": "starlink: 1 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-22T19:10:28.791002",
+    "status": "info",
+    "message": "Scraping opticomm: https://www.telstra.com.au/internet/opticomm-plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-22T19:10:34.142696",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-22T19:10:49.466517",
+    "status": "success",
+    "message": "opticomm: 10 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-22T19:10:49.947674",
+    "status": "info",
+    "message": "Scraping small_business: https://www.telstra.com.au/small-business/internet",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-22T19:11:00.895913",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-22T19:11:19.619156",
+    "status": "success",
+    "message": "small_business: 13 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-22T19:11:21.842719",
+    "status": "success",
+    "message": "Total Telstra plans: 46",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-22T21:38:11.199297",
+    "status": "info",
+    "message": "Scraping fibre: https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-22T21:38:29.149117",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-22T21:38:36.522207",
+    "status": "info",
+    "message": "Found 8 .card elements on fibre page",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-22T21:38:39.362118",
+    "status": "success",
+    "message": "fibre: 8 plans",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-22T21:38:40.135805",
+    "status": "info",
+    "message": "Scraping wireless: https://www.iinet.net.au/internet-product/broadband/nbn/plans/wireless",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-22T21:38:49.697928",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-22T21:38:56.985286",
+    "status": "info",
+    "message": "Wireless plan section: 'Select a plan\\nNBN25\\n$ 76 .99 /mth\\n\\nMin Cost $86.99\\n\\nif you return the modem\\n\\nUses NBN25\\n\\n20Mbps\\nDownload\\n3.8Mbps\\nUpload\\nTypical Evening Speed*\\n$79.99/mth from\\n27/05/2026\\nLiimitless Data\\n\\nTypical Evening Speeds are subject to change and are measured 7pm-11pm. Speeds are not guaranteed and may vary. A'",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-22T21:38:57.186303",
+    "status": "success",
+    "message": "wireless: 1 plans",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-22T21:38:57.644230",
+    "status": "info",
+    "message": "Scraping ftth: https://www.iinet.net.au/internet-products/fibre/ftth/",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-22T21:39:01.550740",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-22T21:39:08.827167",
+    "status": "info",
+    "message": "Found 0 .card elements on fibre page",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-22T21:39:09.074683",
+    "status": "success",
+    "message": "ftth: 0 plans",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-22T21:39:09.272856",
+    "status": "info",
+    "message": "Skipping fibre_upgrade (informational only)",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-22T21:39:11.191558",
+    "status": "success",
+    "message": "Total iiNet plans: 9",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-22T21:40:29.921449",
+    "status": "info",
+    "message": "Scraping fibre: https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-22T21:40:37.482660",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-22T21:40:44.588903",
+    "status": "info",
+    "message": "Found 8 .card elements on fibre page",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-22T21:40:47.869860",
+    "status": "success",
+    "message": "fibre: 8 plans",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-22T21:40:48.439557",
+    "status": "info",
+    "message": "Scraping wireless: https://www.iinet.net.au/internet-product/broadband/nbn/plans/wireless",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-22T21:41:02.161959",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-22T21:41:09.385588",
+    "status": "info",
+    "message": "Wireless plan section: 'Select a plan\\nNBN25\\n$ 76 .99 /mth\\n\\nMin Cost $86.99\\n\\nif you return the modem\\n\\nUses NBN25\\n\\n20Mbps\\nDownload\\n3.8Mbps\\nUpload\\nTypical Evening Speed*\\n$79.99/mth from\\n27/05/2026\\nLiimitless Data\\n\\nTypical Evening Speeds are subject to change and are measured 7pm-11pm. Speeds are not guaranteed and may vary. A'",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-22T21:41:09.485959",
+    "status": "success",
+    "message": "wireless: 1 plans",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-22T21:41:09.717788",
+    "status": "info",
+    "message": "Scraping ftth: https://www.iinet.net.au/internet-products/fibre/ftth/",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-22T21:41:16.305764",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-22T21:41:23.468432",
+    "status": "info",
+    "message": "Found 0 .card elements on fibre page",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-22T21:41:23.529688",
+    "status": "success",
+    "message": "ftth: 0 plans",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-22T21:41:23.599478",
+    "status": "info",
+    "message": "Skipping fibre_upgrade (informational only)",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-22T21:41:25.025539",
+    "status": "success",
+    "message": "Total iiNet plans: 9",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:31:44.414360",
+    "status": "info",
+    "message": "Scraping plans: https://www.telstra.com.au/internet/plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:31:55.069751",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:32:02.960669",
+    "status": "success",
+    "message": "plans: 19 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:32:03.567717",
+    "status": "info",
+    "message": "Scraping 5g_home: https://www.telstra.com.au/internet/5g-home-internet",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:32:06.741925",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:32:13.279665",
+    "status": "success",
+    "message": "5g_home: 3 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:32:13.902506",
+    "status": "info",
+    "message": "Scraping starlink: https://www.telstra.com.au/internet/starlink",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:32:16.748703",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:32:23.161014",
+    "status": "success",
+    "message": "starlink: 1 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:32:23.723903",
+    "status": "info",
+    "message": "Scraping opticomm: https://www.telstra.com.au/internet/opticomm-plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:32:28.797903",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:32:36.207473",
+    "status": "success",
+    "message": "opticomm: 10 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:32:36.820711",
+    "status": "info",
+    "message": "Scraping small_business: https://www.telstra.com.au/small-business/internet",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:32:41.655693",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:32:50.774464",
+    "status": "success",
+    "message": "small_business: 13 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:32:52.704857",
+    "status": "success",
+    "message": "Total Telstra plans: 46",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:44:40.770752",
+    "status": "info",
+    "message": "Starting competitive benchmark analysis",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:44:40.901500",
+    "status": "success",
+    "message": "Benchmark complete: 0 wins, 8 gaps across 8 tiers",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:44:51.139724",
+    "status": "info",
+    "message": "Navigating to https://www.originenergy.com.au/internet/plans/",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:45:05.253585",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:45:15.408469",
+    "status": "info",
+    "message": "Found 4 tabs",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:45:15.479914",
+    "status": "info",
+    "message": "Clicking tab: nbn®",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:45:18.977516",
+    "status": "info",
+    "message": "Found 4 plan cards in nbn® tab",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:45:19.171855",
+    "status": "success",
+    "message": "Extracted plan: Everyday nbn™ 25/10",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:45:19.263612",
+    "status": "success",
+    "message": "Extracted plan: Experience nbn™ 50/20",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:45:19.424006",
+    "status": "success",
+    "message": "Extracted plan: Extra Fast nbn™ 500/50",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:45:19.568414",
+    "status": "success",
+    "message": "Extracted plan: Ultra Fast nbn™ 1000/100",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:45:19.631591",
+    "status": "info",
+    "message": "Clicking tab: Faster nbn®",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:45:23.388984",
+    "status": "info",
+    "message": "Found 4 plan cards in Faster nbn® tab",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:45:23.575083",
+    "status": "info",
+    "message": "Clicking tab: Opticomm",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:45:27.903419",
+    "status": "info",
+    "message": "Found 5 plan cards in Opticomm tab",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:45:28.006109",
+    "status": "success",
+    "message": "Extracted plan: Everyday Opticomm 25/10",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:45:28.068845",
+    "status": "success",
+    "message": "Extracted plan: Experience Opticomm 50/20",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:45:28.131352",
+    "status": "success",
+    "message": "Extracted plan: Enthusiast Opticomm 100/20",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:45:28.206092",
+    "status": "success",
+    "message": "Extracted plan: Extra Fast Opticomm 500/50",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:45:28.270917",
+    "status": "success",
+    "message": "Extracted plan: Ultra Fast Opticomm 1000/100",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:45:28.345763",
+    "status": "info",
+    "message": "Clicking tab: Faster Opticomm",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:45:31.575203",
+    "status": "info",
+    "message": "Found 5 plan cards in Faster Opticomm tab",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:45:31.708310",
+    "status": "success",
+    "message": "Total Origin plans extracted: 9 (NBN: 4, Opticomm: 5)",
+    "provider": "origin",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:45:47.408188",
+    "status": "info",
+    "message": "Starting competitive benchmark analysis",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:45:47.609855",
+    "status": "success",
+    "message": "Benchmark complete: 0 wins, 8 gaps across 8 tiers",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:46:06.351736",
+    "status": "info",
+    "message": "Navigating to https://www.optus.com.au/internet/nbn",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:46:11.084020",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:46:16.241062",
+    "status": "info",
+    "message": "Found 5 plan cards",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:46:17.053034",
+    "status": "success",
+    "message": "Extracted 5 plans from Optus",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:58:41.617004",
+    "status": "info",
+    "message": "Scraping plans: https://www.telstra.com.au/internet/plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:58:46.577232",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:58:54.194308",
+    "status": "success",
+    "message": "plans: 19 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:58:54.327708",
+    "status": "info",
+    "message": "Scraping 5g_home: https://www.telstra.com.au/internet/5g-home-internet",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:58:56.232614",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:59:02.749023",
+    "status": "success",
+    "message": "5g_home: 3 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:59:02.920465",
+    "status": "info",
+    "message": "Scraping starlink: https://www.telstra.com.au/internet/starlink",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:59:04.489915",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:59:10.737755",
+    "status": "success",
+    "message": "starlink: 1 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:59:10.946259",
+    "status": "info",
+    "message": "Scraping opticomm: https://www.telstra.com.au/internet/opticomm-plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:59:14.328497",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:59:21.812445",
+    "status": "success",
+    "message": "opticomm: 10 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:59:22.016466",
+    "status": "info",
+    "message": "Scraping small_business: https://www.telstra.com.au/small-business/internet",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:59:27.817280",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:59:35.661765",
+    "status": "success",
+    "message": "small_business: 13 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-23T23:59:36.010596",
+    "status": "success",
+    "message": "Total Telstra plans: 46",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-24T00:00:41.626468",
+    "status": "info",
+    "message": "Navigating to https://www.optus.com.au/internet/nbn",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-24T00:00:45.580775",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-24T00:00:50.835397",
+    "status": "info",
+    "message": "Found 5 plan cards",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-24T00:00:51.431666",
+    "status": "success",
+    "message": "Extracted 5 plans from Optus",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-24T00:07:11.575007",
+    "status": "info",
+    "message": "Scraping plans: https://www.telstra.com.au/internet/plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-24T00:07:14.824331",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-24T00:07:24.636793",
+    "status": "success",
+    "message": "plans: 19 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-24T00:07:24.801235",
+    "status": "info",
+    "message": "Scraping 5g_home: https://www.telstra.com.au/internet/5g-home-internet",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-24T00:07:28.974607",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-24T00:07:40.925753",
+    "status": "success",
+    "message": "5g_home: 3 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-24T00:07:41.075285",
+    "status": "info",
+    "message": "Scraping starlink: https://www.telstra.com.au/internet/starlink",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-24T00:07:43.546348",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-24T00:07:52.702006",
+    "status": "success",
+    "message": "starlink: 1 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-24T00:07:52.902744",
+    "status": "info",
+    "message": "Scraping opticomm: https://www.telstra.com.au/internet/opticomm-plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-24T00:07:59.837386",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-24T00:08:06.576734",
+    "status": "success",
+    "message": "opticomm: 10 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-24T00:08:06.713097",
+    "status": "info",
+    "message": "Scraping small_business: https://www.telstra.com.au/small-business/internet",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-24T00:08:10.370418",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-24T00:08:21.274897",
+    "status": "success",
+    "message": "small_business: 13 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-24T00:08:21.375979",
+    "status": "success",
+    "message": "Total Telstra plans: 46",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-25T21:47:58.498025",
+    "status": "info",
+    "message": "Scraping plans: https://www.telstra.com.au/internet/plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-25T21:48:03.537949",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-25T21:48:13.787630",
+    "status": "success",
+    "message": "plans: 19 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-25T21:48:13.926999",
+    "status": "info",
+    "message": "Scraping 5g_home: https://www.telstra.com.au/internet/5g-home-internet",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-25T21:48:15.951606",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-25T21:48:22.183307",
+    "status": "success",
+    "message": "5g_home: 3 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-25T21:48:22.337566",
+    "status": "info",
+    "message": "Scraping starlink: https://www.telstra.com.au/internet/starlink",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-25T21:48:24.251941",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-25T21:48:30.420345",
+    "status": "success",
+    "message": "starlink: 1 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-25T21:48:30.591057",
+    "status": "info",
+    "message": "Scraping opticomm: https://www.telstra.com.au/internet/opticomm-plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-25T21:48:33.644706",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-25T21:48:40.288970",
+    "status": "success",
+    "message": "opticomm: 10 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-25T21:48:40.456722",
+    "status": "info",
+    "message": "Scraping small_business: https://www.telstra.com.au/small-business/internet",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-25T21:48:45.674050",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-25T21:48:54.294653",
+    "status": "success",
+    "message": "small_business: 13 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-25T21:48:54.406979",
+    "status": "success",
+    "message": "Total Telstra plans: 46",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-25T21:51:35.250351",
+    "status": "info",
+    "message": "Starting competitive benchmark analysis",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-25T21:51:35.410932",
+    "status": "success",
+    "message": "Benchmark complete: 0 wins, 8 gaps across 8 tiers",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-26T20:25:21.805691",
+    "status": "info",
+    "message": "Scraping plans: https://www.telstra.com.au/internet/plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-26T20:25:32.097553",
+    "status": "info",
+    "message": "Starting Swoop scraper (all service types)",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-26T20:25:36.418925",
+    "status": "info",
+    "message": "Scraping nbn: https://www.swoop.com.au/nbn/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-26T20:25:36.925875",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-26T20:25:46.208712",
+    "status": "info",
+    "message": "Found 4 .card--plan elements on https://www.swoop.com.au/nbn/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-26T20:25:47.051145",
+    "status": "success",
+    "message": "nbn: 4 plans",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-26T20:25:47.202651",
+    "status": "info",
+    "message": "Scraping fixed_wireless: https://www.swoop.com.au/fixed-wireless/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-26T20:25:54.119430",
+    "status": "success",
+    "message": "plans: 19 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-26T20:25:54.434815",
+    "status": "info",
+    "message": "Scraping 5g_home: https://www.telstra.com.au/internet/5g-home-internet",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-26T20:25:54.844480",
+    "status": "info",
+    "message": "Found 4 .card--plan elements on https://www.swoop.com.au/fixed-wireless/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-26T20:25:57.279569",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-26T20:25:59.730917",
+    "status": "success",
+    "message": "fixed_wireless: 4 plans",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-26T20:25:59.811296",
+    "status": "info",
+    "message": "Scraping opticomm: https://www.swoop.com.au/opticomm/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-26T20:26:06.700562",
+    "status": "info",
+    "message": "Found 4 .card--plan elements on https://www.swoop.com.au/opticomm/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-26T20:26:06.875453",
+    "status": "success",
+    "message": "5g_home: 3 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-26T20:26:07.202479",
+    "status": "info",
+    "message": "Scraping starlink: https://www.telstra.com.au/internet/starlink",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-26T20:26:07.482653",
+    "status": "success",
+    "message": "opticomm: 4 plans",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-26T20:26:07.679096",
+    "status": "success",
+    "message": "Swoop total: 12 plans across all service types",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-26T20:26:10.048955",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-26T20:26:17.719785",
+    "status": "success",
+    "message": "starlink: 1 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-26T20:26:17.950294",
+    "status": "info",
+    "message": "Scraping opticomm: https://www.telstra.com.au/internet/opticomm-plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-26T20:26:23.940738",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-26T20:26:36.754520",
+    "status": "success",
+    "message": "opticomm: 10 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-26T20:26:36.994913",
+    "status": "info",
+    "message": "Scraping small_business: https://www.telstra.com.au/small-business/internet",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-26T20:26:44.924276",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-26T20:27:01.010430",
+    "status": "success",
+    "message": "small_business: 13 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-26T20:27:03.702476",
+    "status": "success",
+    "message": "Total Telstra plans: 46",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-26T21:43:44.699498",
+    "status": "info",
+    "message": "Navigating to https://www.optus.com.au/internet/nbn",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-26T21:43:50.483996",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-26T21:43:55.607315",
+    "status": "info",
+    "message": "Found 5 plan cards",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-26T21:43:56.193117",
+    "status": "success",
+    "message": "Extracted 5 plans from Optus",
+    "provider": "optus",
+    "data": {}
   }
 ]

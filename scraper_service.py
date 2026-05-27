@@ -7,12 +7,13 @@ import os
 import json
 import csv
 from datetime import datetime
-from typing import Dict, List, Optional, Any
+from typing import Callable, Dict, List, Optional, Any
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from config import PROVIDERS
-from utils.stealth import create_stealth_browser, create_stealth_page
+from utils.progress import set_active_provider, update_progress
+from utils.stealth import configure_browser
 
 BASE_OUTPUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'output')
 
@@ -55,7 +56,19 @@ def save_provider_csv(isp_name: str, filename: str, plans: List[Dict], provider_
     return filepath
 
 
-def scrape_provider(provider_name: str) -> Dict[str, Any]:
+def _plan_count(plans: Any) -> int:
+    if isinstance(plans, list):
+        return len(plans)
+    if isinstance(plans, dict):
+        return sum(len(v) for v in plans.values() if isinstance(v, list))
+    return 0
+
+
+def scrape_provider(
+    provider_name: str,
+    options: Optional[Dict[str, Any]] = None,
+    progress_callback: Optional[Callable[[Dict[str, Any]], None]] = None,
+) -> Dict[str, Any]:
     """
     Scrape a single provider and return results.
     Returns: {
@@ -74,6 +87,20 @@ def scrape_provider(provider_name: str) -> Dict[str, Any]:
         'error': None
     }
 
+    options = options or {}
+    configure_browser(
+        headless=not bool(options.get('visible_browser')),
+        slow_mo=int(options.get('slow_mo') or 0),
+    )
+    set_active_provider(provider_name)
+
+    if progress_callback:
+        progress_callback({
+            'provider': provider_name,
+            'status': 'running',
+            'message': f'Starting {provider_name}',
+        })
+
     try:
         # Import provider module dynamically
         provider_module = __import__(f'providers.{provider_name}', fromlist=[''])
@@ -89,12 +116,24 @@ def scrape_provider(provider_name: str) -> Dict[str, Any]:
             raise AttributeError(f"No scrape function found in {provider_name}")
 
         result['plans'] = plans
-        result['total_plans'] = len(plans) if isinstance(plans, list) else sum(len(v) for v in plans.values())
+        result['total_plans'] = _plan_count(plans)
         result['success'] = True
+        update_progress(
+            provider=provider_name,
+            status='success',
+            message=f'{provider_name} scraped successfully',
+            plans_found=result['total_plans'],
+        )
 
     except Exception as e:
         result['error'] = str(e)
         result['success'] = False
+        update_progress(
+            provider=provider_name,
+            status='error',
+            message=f'{provider_name} failed',
+            error=str(e),
+        )
 
     return result
 

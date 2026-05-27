@@ -9,8 +9,12 @@ from typing import List, Dict, Any
 from playwright.sync_api import sync_playwright
 import config
 from utils.logger import log_info, log_error, log_success
+from utils.progress import update_progress
+from utils.screenshots import capture_page_screenshot
+from utils.stealth import get_browser_settings, keep_open_for_debug
 
 OPTUS_URL = "https://www.optus.com.au/internet/nbn"
+_DEBUG_REFS = []
 
 
 def scrape_via_playwright() -> List[Dict[str, Any]]:
@@ -20,31 +24,84 @@ def scrape_via_playwright() -> List[Dict[str, Any]]:
     """
     plans = []
 
-    with sync_playwright() as p:
-        browser = p.firefox.launch(headless=True)
+    browser_settings = get_browser_settings()
+    if browser_settings["headless"]:
+        with sync_playwright() as p:
+            plans = _scrape_with_playwright(p, browser_settings)
+    else:
+        manager = sync_playwright()
+        p = manager.start()
+        plans = _scrape_with_playwright(p, browser_settings)
+        _DEBUG_REFS.append((manager, p))
+
+    return plans
+
+
+def _scrape_with_playwright(p, browser_settings) -> List[Dict[str, Any]]:
+    plans = []
+    browser = None
+    context = None
+    page = None
+
+    try:
+        browser = p.firefox.launch(
+            headless=browser_settings["headless"],
+            slow_mo=browser_settings["slow_mo"],
+        )
         context = browser.new_context(
             user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:128.0) Gecko/20100101 Firefox/128.0",
             viewport={"width": 1280, "height": 720},
             locale="en-AU",
         )
         page = context.new_page()
+        keep_open_for_debug(browser, context, page)
+        if not browser_settings["headless"]:
+            _DEBUG_REFS.append((browser, context, page))
+        page.on(
+            "framenavigated",
+            lambda frame: frame == page.main_frame and update_progress(
+                status="loading",
+                message="Page loaded",
+                current_url=page.url,
+            ),
+        )
+        page.on("load", lambda: capture_loaded_page(page))
 
-        try:
-            log_info(f"Navigating to {OPTUS_URL}", provider="optus")
-            resp = page.goto(OPTUS_URL, timeout=30000, wait_until="domcontentloaded")
-            log_info(f"Status: {resp.status if resp else 'no response'}", provider="optus")
+        log_info(f"Navigating to {OPTUS_URL}", provider="optus")
+        resp = page.goto(OPTUS_URL, timeout=30000, wait_until="domcontentloaded")
+        log_info(f"Status: {resp.status if resp else 'no response'}", provider="optus")
 
-            page.wait_for_timeout(5000)  # Wait for JS rendering
+        page.wait_for_timeout(5000)  # Wait for JS rendering
 
-            plans = extract_plans(page)
-            log_success(f"Extracted {len(plans)} plans from Optus", provider="optus")
+        plans = extract_plans(page)
+        log_success(f"Extracted {len(plans)} plans from Optus", provider="optus")
 
-        except Exception as e:
-            log_error(f"Scraping error: {e}", provider="optus")
-        finally:
+    except Exception as e:
+        log_error(f"Scraping error: {e}", provider="optus")
+    finally:
+        if browser:
             browser.close()
 
     return plans
+
+
+def capture_loaded_page(page) -> None:
+    """Capture a screenshot once the Optus page finishes loading."""
+    try:
+        url = page.url
+        if not url or url == getattr(page, "_last_screenshot_url", None):
+            return
+        setattr(page, "_last_screenshot_url", url)
+        screenshot = capture_page_screenshot(page, provider="optus", label="loaded")
+        if screenshot:
+            update_progress(
+                provider="optus",
+                message="Screenshot captured",
+                current_url=url,
+                screenshot=screenshot,
+            )
+    except Exception as exc:
+        update_progress(provider="optus", message=f"Screenshot failed: {exc}")
 
 
 def extract_plans(page) -> List[Dict[str, Any]]:

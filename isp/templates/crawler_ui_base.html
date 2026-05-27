@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -195,7 +195,7 @@
             font-size: 0.85em;
         }
 
-                /* ── Left Panel inner layout ── */
+                /* â”€â”€ Left Panel inner layout â”€â”€ */
         .panel-left {
             display: flex;
             flex-direction: column;
@@ -237,7 +237,7 @@
             gap: 10px;
         }
 
-                /* ── Right Panel inner layout ── */
+                /* â”€â”€ Right Panel inner layout â”€â”€ */
         .panel-right {
             display: flex;
             flex-direction: column;
@@ -269,7 +269,7 @@
             margin-top: 30px;
         }
 
-        /* ── Timer Bar ── */
+        /* â”€â”€ Timer Bar â”€â”€ */
         .timer-bar {
             display: flex;
             align-items: center;
@@ -700,7 +700,7 @@
         <header>
             <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:15px">
                 <div>
-                    <h1>🌐 ISP Plan Scraper Dashboard</h1>
+                    <h1>ðŸŒ ISP Plan Scraper Dashboard</h1>
                     <p class="subtitle">Scrape and analyze internet plans from Australian ISPs</p>
                 </div>
                 <div style="display:flex;gap:10px;flex-wrap:wrap">
@@ -769,7 +769,7 @@
                 <div class="panel-right-body">
                     <!-- Timer Bar -->
                     <div id="timer-bar" class="timer-bar hidden">
-                        <div class="timer-status" id="timer-status">⏱ Scraping in progress…</div>
+                        <div class="timer-status" id="timer-status">â± Scraping in progressâ€¦</div>
                         <div class="timer-right">
                             <span class="timer-label" id="timer-label"></span>
                             <span class="timer-display" id="timer-display">00:00</span>
@@ -823,7 +823,7 @@
 
                     <!-- Filter & Sort Bar -->
                     <div id="filter-bar" class="filter-sort-bar hidden">
-                        <h3>🔍 Filter & Sort</h3>
+                        <h3>ðŸ” Filter & Sort</h3>
                         <div class="filter-row">
                             <div class="filter-group">
                                 <label>Network Type</label>
@@ -851,10 +851,10 @@
                                 <label>Sort By</label>
                                 <select id="sort-by" onchange="applyFilters()">
                                     <option value="">Default</option>
-                                    <option value="price-asc">Price: Low → High</option>
-                                    <option value="price-desc">Price: High → Low</option>
-                                    <option value="speed-asc">Speed: Low → High</option>
-                                    <option value="speed-desc">Speed: High → Low</option>
+                                    <option value="price-asc">Price: Low â†’ High</option>
+                                    <option value="price-desc">Price: High â†’ Low</option>
+                                    <option value="speed-asc">Speed: Low â†’ High</option>
+                                    <option value="speed-desc">Speed: High â†’ Low</option>
                                 </select>
                             </div>
                             <div class="filter-actions">
@@ -874,10 +874,10 @@
 
                     <div id="download-section" class="download-buttons hidden">
                         <button class="btn btn-success btn-small" onclick="downloadJSON()">
-                            📥 Download JSON
+                            ðŸ“¥ Download JSON
                         </button>
                         <button class="btn btn-success btn-small" onclick="downloadCSV()">
-                            📥 Download CSV
+                            ðŸ“¥ Download CSV
                         </button>
                     </div>
                 </div>
@@ -892,12 +892,12 @@
         let masterPlans = [];
         let progressPoller = null;
 
-        // ── Initialise ──────────────────────────────────────────
+        // â”€â”€ Initialise â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
         document.addEventListener('DOMContentLoaded', () => {
             loadProviders();
         });
 
-        // ── Provider list ───────────────────────────────────────
+        // â”€â”€ Provider list â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
         async function loadProviders() {
             try {
                 const res = await fetch('/api/providers');
@@ -913,8 +913,8 @@
                             <h3>${p.name}</h3>
                             <div class="provider-status">
                                 ${isBlocked
-                                    ? `<span class="badge-blocked">🚫 Blocked — ${p.blocked_reason}</span>`
-                                    : p.has_saved_data ? '✓ Data available' : 'No data yet'}
+                                    ? `<span class="badge-blocked">ðŸš« Blocked â€” ${p.blocked_reason}</span>`
+                                    : p.has_saved_data ? 'âœ“ Data available' : 'No data yet'}
                             </div>
                         </div>
                         ${isBlocked
@@ -925,7 +925,7 @@
             } catch (e) { console.error('Error loading providers:', e); }
         }
 
-        // ── Scrape single ───────────────────────────────────────
+        // â”€â”€ Scrape single â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
         async function scrapeProvider(providerName) {
             currentProvider = providerName;
             showLoading();
@@ -952,17 +952,17 @@
             finally { pollProgress(true); stopProgressPollingSoon(); }
         }
 
-        // ── Scrape all ──────────────────────────────────────────
-        // ── Run Benchmark ─────────────────────────────────────
+        // â”€â”€ Scrape all â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+        // â”€â”€ Run Benchmark â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
         async function runBenchmark() {
             const btn = event.currentTarget;
             btn.disabled = true;
-            btn.textContent = '⏳ Running…';
+            btn.textContent = 'â³ Runningâ€¦';
             try {
                 const res = await fetch('/api/benchmark/run', { method: 'POST' });
                 const data = await res.json();
                 if (data.success) {
-                    showAlert('Benchmark complete! Opening dashboard…', 'success');
+                    showAlert('Benchmark complete! Opening dashboardâ€¦', 'success');
                     setTimeout(() => window.open('/benchmark', '_blank'), 800);
                 } else {
                     showAlert(`Benchmark failed: ${data.error || 'Unknown error'}`, 'error');
@@ -997,7 +997,7 @@
             finally { pollProgress(true); stopProgressPollingSoon(); }
         }
 
-        // ── Load saved results ──────────────────────────────────
+        // â”€â”€ Load saved results â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
         async function loadAllResults() {
             showLoading();
             try {
@@ -1021,7 +1021,7 @@
             } catch (e) { showAlert(`Error: ${e.message}`, 'error'); }
         }
 
-        // ── Flatten helper (handles list or dict of sub-lists) ──
+        // â”€â”€ Flatten helper (handles list or dict of sub-lists) â”€â”€
         function flattenPlans(plans, provider) {
             const flat = [];
             if (Array.isArray(plans)) {
@@ -1034,9 +1034,9 @@
             return flat;
         }
 
-        // ══════════════════════════════════════════════════════════
+        // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
         //  FILTER  &  SORT  ENGINE
-        // ══════════════════════════════════════════════════════════
+        // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 
         /** Store master list, populate network dropdown, show filter bar, render */
         function setMasterPlans(plans) {
@@ -1071,12 +1071,12 @@
 
             let filtered = [...masterPlans];
 
-            // ── Network type ────────────────────────────────────
+            // â”€â”€ Network type â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
             if (network) {
                 filtered = filtered.filter(p => p.network_type === network);
             }
 
-            // ── Price range ─────────────────────────────────────
+            // â”€â”€ Price range â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
             if (!isNaN(priceMin)) {
                 filtered = filtered.filter(p => (p.price || 0) >= priceMin);
             }
@@ -1084,7 +1084,7 @@
                 filtered = filtered.filter(p => (p.price || 0) <= priceMax);
             }
 
-            // ── Speed range ─────────────────────────────────────
+            // â”€â”€ Speed range â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
             if (!isNaN(speedMin)) {
                 filtered = filtered.filter(p => (p.download_speed || 0) >= speedMin);
             }
@@ -1092,15 +1092,15 @@
                 filtered = filtered.filter(p => (p.download_speed || 0) <= speedMax);
             }
 
-            // ── Sort ────────────────────────────────────────────
+            // â”€â”€ Sort â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
             if (sortBy) {
-                const [field, dir] = sortBy.split('-');          // "price-asc" → ["price","asc"]
+                const [field, dir] = sortBy.split('-');          // "price-asc" â†’ ["price","asc"]
                 const key = field === 'price' ? 'price' : 'download_speed';
                 const mul = dir === 'asc' ? 1 : -1;
                 filtered.sort((a, b) => mul * ((a[key] || 0) - (b[key] || 0)));
             }
 
-            // ── Render ──────────────────────────────────────────
+            // â”€â”€ Render â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
             renderFilteredTable(filtered);
             renderActiveFilters({ network, priceMin, priceMax, speedMin, speedMax, sortBy });
             updateResultsCount(filtered.length, masterPlans.length);
@@ -1135,7 +1135,7 @@
 
             let html = '';
             for (const [prov, provPlans] of Object.entries(grouped)) {
-                html += `<h3>${prov} — ${provPlans.length} plans</h3>`;
+                html += `<h3>${prov} â€” ${provPlans.length} plans</h3>`;
                 html += buildSortableTable(provPlans);
             }
             el.innerHTML = html;
@@ -1144,7 +1144,7 @@
         /** Build a single <table> with sortable column headers */
         function buildSortableTable(plans) {
             const sortBy = document.getElementById('sort-by').value;
-            const arrows = { 'price-asc': ' ▲', 'price-desc': ' ▼', 'speed-asc': ' ▲', 'speed-desc': ' ▼' };
+            const arrows = { 'price-asc': ' â–²', 'price-desc': ' â–¼', 'speed-asc': ' â–²', 'speed-desc': ' â–¼' };
             const priceArrow = sortBy.startsWith('price') ? arrows[sortBy] : '';
             const speedArrow = sortBy.startsWith('speed') ? arrows[sortBy] : '';
 
@@ -1172,7 +1172,7 @@
             return html;
         }
 
-        /** Click a column header to cycle sort: asc → desc → off */
+        /** Click a column header to cycle sort: asc â†’ desc â†’ off */
         function toggleSort(field) {
             const sel = document.getElementById('sort-by');
             if (sel.value === `${field}-asc`)       sel.value = `${field}-desc`;
@@ -1204,8 +1204,8 @@
             if (!isNaN(speedMax)) html += filterTag('Max Speed: ' + speedMax + ' Mbps', 'filter-speed-max');
             if (sortBy) {
                 const labels = {
-                    'price-asc': 'Price ↑', 'price-desc': 'Price ↓',
-                    'speed-asc': 'Speed ↑', 'speed-desc': 'Speed ↓'
+                    'price-asc': 'Price â†‘', 'price-desc': 'Price â†“',
+                    'speed-asc': 'Speed â†‘', 'speed-desc': 'Speed â†“'
                 };
                 html += filterTag('Sort: ' + labels[sortBy], 'sort-by');
             }
@@ -1215,7 +1215,7 @@
 
         function filterTag(label, inputId) {
             return `<span class="filter-tag">${label}
-                        <span class="remove-tag" onclick="clearFilter('${inputId}')">✕</span>
+                        <span class="remove-tag" onclick="clearFilter('${inputId}')">âœ•</span>
                     </span>`;
         }
 
@@ -1226,9 +1226,9 @@
             applyFilters();
         }
 
-        // ══════════════════════════════════════════════════════════
+        // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
         //  STATS  /  UI HELPERS
-        // ══════════════════════════════════════════════════════════
+        // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 
         function updateStats(data) {
             document.getElementById('stats-bar').classList.remove('hidden');
@@ -1251,7 +1251,7 @@
             }
         }
 
-        // ── Timer ────────────────────────────────────────────
+        // â”€â”€ Timer â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
         let _timerInterval = null;
         let _timerStart = null;
 
@@ -1264,7 +1264,7 @@
             const lbl = document.getElementById('timer-label');
             bar.className = 'timer-bar running';
             bar.classList.remove('hidden');
-            status.textContent = '⏱ Scraping in progress…';
+            status.textContent = 'â± Scraping in progressâ€¦';
             lbl.textContent = label || '';
             display.textContent = '00:00';
             _timerInterval = setInterval(() => {
@@ -1285,7 +1285,7 @@
             const display = document.getElementById('timer-display');
             const status = document.getElementById('timer-status');
             bar.className = success ? 'timer-bar done-success' : 'timer-bar done-error';
-            status.textContent = success ? `✅ Completed in ${timeStr}` : `❌ Failed after ${timeStr}`;
+            status.textContent = success ? `âœ… Completed in ${timeStr}` : `âŒ Failed after ${timeStr}`;
             const mm = String(Math.floor(elapsed / 60)).padStart(2, '0');
             const ss = String(elapsed % 60).padStart(2, '0');
             display.textContent = `${mm}:${ss}`;
@@ -1356,7 +1356,7 @@
 
         function showLoading() {
             document.getElementById('results-content').innerHTML = `
-                <div class="loading"><div class="spinner"></div><p>Scraping in progress…</p></div>`;
+                <div class="loading"><div class="spinner"></div><p>Scraping in progressâ€¦</p></div>`;
             document.getElementById('download-section').classList.add('hidden');
             document.getElementById('filter-bar').classList.add('hidden');
             document.getElementById('results-count').classList.add('hidden');
@@ -1382,3 +1382,4 @@
     </script>
 </body>
 </html>
+
