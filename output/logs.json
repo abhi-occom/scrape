@@ -15757,5 +15757,117 @@
     "message": "Total Telstra plans: 46",
     "provider": "telstra",
     "data": {}
+  },
+  {
+    "timestamp": "2026-05-27T13:47:04.557475",
+    "status": "info",
+    "message": "Scraping plans: https://www.telstra.com.au/internet/plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-27T13:47:07.290537",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-27T13:47:15.329365",
+    "status": "success",
+    "message": "plans: 19 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-27T13:47:15.446497",
+    "status": "info",
+    "message": "Scraping 5g_home: https://www.telstra.com.au/internet/5g-home-internet",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-27T13:47:17.082525",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-27T13:47:23.388869",
+    "status": "success",
+    "message": "5g_home: 3 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-27T13:47:23.601403",
+    "status": "info",
+    "message": "Scraping starlink: https://www.telstra.com.au/internet/starlink",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-27T13:47:25.469605",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-27T13:47:31.689033",
+    "status": "success",
+    "message": "starlink: 1 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-27T13:47:31.874397",
+    "status": "info",
+    "message": "Scraping opticomm: https://www.telstra.com.au/internet/opticomm-plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-27T13:47:35.325102",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-27T13:47:42.836611",
+    "status": "success",
+    "message": "opticomm: 10 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-27T13:47:43.016140",
+    "status": "info",
+    "message": "Scraping small_business: https://www.telstra.com.au/small-business/internet",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-27T13:47:49.570514",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-27T13:47:56.822844",
+    "status": "success",
+    "message": "small_business: 13 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-05-27T13:47:56.928396",
+    "status": "success",
+    "message": "Total Telstra plans: 46",
+    "provider": "telstra",
+    "data": {}
   }
 ]

@@ -69,7 +69,26 @@ def create_stealth_browser(playwright, headless: bool = None, slow_mo: int = Non
 
     if not headless:
         # Start virtual display if on Linux without GUI
-        _start_virtual_display()
+        display_started = _start_virtual_display()
+        
+        # If using Xvfb (virtual display), use simple launch
+        # CDP connection doesn't work reliably with Xvfb
+        if display_started:
+            update_progress(
+                status="info",
+                message="Launching browser in virtual display (viewable via VNC)"
+            )
+            return playwright.chromium.launch(
+                headless=False,
+                slow_mo=slow_mo,
+                args=[
+                    "--disable-blink-features=AutomationControlled",
+                    "--no-sandbox",
+                    "--disable-dev-shm-usage",
+                ],
+            )
+        
+        # Windows/Mac: Use CDP connection for persistent debugging
         return create_persistent_debug_chromium(playwright, slow_mo=slow_mo)
 
     return playwright.chromium.launch(
@@ -233,21 +252,26 @@ def capture_loaded_page(page: Page) -> None:
             update_progress(message=f"Screenshot failed: {exc}")
 
 
-def _start_virtual_display() -> None:
-    """Start Xvfb virtual display if needed (Linux servers without GUI)."""
+def _start_virtual_display() -> bool:
+    """Start Xvfb virtual display if needed (Linux servers without GUI).
+    
+    Returns:
+        True if virtual display was started, False otherwise
+    """
     global _virtual_display
     
     # Skip if already running
     if _virtual_display is not None:
-        return
+        return True
     
     # Skip if not Linux or pyvirtualdisplay not available
     if not HAS_VIRTUAL_DISPLAY or sys.platform not in ('linux', 'linux2'):
-        return
+        return False
     
     # Skip if DISPLAY is already set (native GUI available)
     if os.environ.get('DISPLAY'):
-        return
+        # Display already exists, but not via our virtual display
+        return False
     
     # Try to start virtual display
     try:
@@ -255,8 +279,9 @@ def _start_virtual_display() -> None:
         _virtual_display.start()
         update_progress(
             status="info",
-            message="Virtual display (Xvfb) started for visible browser debugging"
+            message="Virtual display (Xvfb) started - browser will be visible in VNC"
         )
+        return True
     except Exception as exc:
         # Fallback silently - native browser will open on Windows/Mac
         update_progress(
@@ -264,6 +289,7 @@ def _start_virtual_display() -> None:
             message=f"Virtual display unavailable, using native browser: {exc}"
         )
         _virtual_display = None
+        return False
 
 
 def _stop_virtual_display() -> None:
