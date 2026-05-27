@@ -892,9 +892,10 @@
         let masterPlans = [];
         let progressPoller = null;
 
-        // ── Initialise ──────────────────────────────────────────
+                // ── Initialise ──────────────────────────────────────────
         document.addEventListener('DOMContentLoaded', () => {
             loadProviders();
+            checkCapabilities();
         });
 
         // ── Provider list ───────────────────────────────────────
@@ -1375,9 +1376,33 @@
             if (currentProvider)
                 window.location.href = `/api/download/${currentProvider}/${currentProvider}_all_plans.json`;
         }
-        function downloadCSV() {
+                function downloadCSV() {
             if (currentProvider)
                 window.location.href = `/api/download/${currentProvider}/${currentProvider}_all_plans.csv`;
+        }
+
+        // ── Capability Check ────────────────────────────────────
+        async function checkCapabilities() {
+            try {
+                const res  = await fetch('/api/capabilities');
+                const data = await res.json();
+                if (!data.visible_browser) {
+                    const checkbox = document.getElementById('visible-browser');
+                    const slowMo   = document.getElementById('slow-mo');
+
+                    checkbox.disabled = true;
+                    slowMo.disabled   = true;
+
+                    // Visual hint
+                    const debugDiv = checkbox.closest('.debug-options');
+                    const note = document.createElement('div');
+                    note.style.cssText = 'font-size:0.78em;color:#dc3545;padding:6px 0 0;';
+                    note.innerHTML = `⚠️ ${data.reason || 'Visible browser not supported'} — <a href="https://github.com/ponty/PyVirtualDisplay" target="_blank" style="color:#667eea">Learn more</a>`;
+                    debugDiv.appendChild(note);
+                }
+            } catch (e) { 
+                console.warn('Capability check failed:', e);
+            }
         }
     </script>
 </body>

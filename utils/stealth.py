@@ -2,11 +2,13 @@
 Stealth browser utilities.
 Shared helpers for creating stealth Playwright browser instances.
 Uses playwright-stealth v2 API.
+Supports virtual display (Xvfb) for visible browser debugging on headless servers.
 """
 
 import os
 import socket
 import subprocess
+import sys
 import tempfile
 import time
 from threading import Lock
@@ -16,6 +18,14 @@ from playwright_stealth import Stealth
 from utils.progress import update_progress
 from utils.screenshots import capture_page_screenshot
 
+# Try importing pyvirtualdisplay (for Linux servers with Xvfb)
+try:
+    from pyvirtualdisplay import Display
+    HAS_VIRTUAL_DISPLAY = True
+except ImportError:
+    HAS_VIRTUAL_DISPLAY = False
+    Display = None
+
 _stealth = Stealth()
 _settings_lock = Lock()
 _browser_settings = {
@@ -24,6 +34,7 @@ _browser_settings = {
 }
 _debug_refs = []
 _debug_contexts = {}
+_virtual_display = None  # Global virtual display instance (Xvfb)
 
 
 def configure_browser(headless: bool = True, slow_mo: int = 0) -> None:
@@ -57,6 +68,8 @@ def create_stealth_browser(playwright, headless: bool = None, slow_mo: int = Non
         slow_mo = settings["slow_mo"]
 
     if not headless:
+        # Start virtual display if on Linux without GUI
+        _start_virtual_display()
         return create_persistent_debug_chromium(playwright, slow_mo=slow_mo)
 
     return playwright.chromium.launch(
@@ -194,10 +207,19 @@ def create_stealth_page(browser: Browser) -> Page:
 def capture_loaded_page(page: Page) -> None:
     """Capture a screenshot once a page finishes loading."""
     try:
+        # Check if page is still alive before taking screenshot
+        if page.is_closed():
+            return
+        
         url = page.url
         if not url or url == getattr(page, "_last_screenshot_url", None):
             return
         setattr(page, "_last_screenshot_url", url)
+        
+        # Double-check before screenshot (async event may have closed page)
+        if page.is_closed():
+            return
+            
         screenshot = capture_page_screenshot(page, label="loaded")
         if screenshot:
             update_progress(
@@ -206,4 +228,64 @@ def capture_loaded_page(page: Page) -> None:
                 screenshot=screenshot,
             )
     except Exception as exc:
-        update_progress(message=f"Screenshot failed: {exc}")
+        # Silently ignore if page closed during screenshot
+        if "closed" not in str(exc).lower():
+            update_progress(message=f"Screenshot failed: {exc}")
+
+
+def _start_virtual_display() -> None:
+    """Start Xvfb virtual display if needed (Linux servers without GUI)."""
+    global _virtual_display
+    
+    # Skip if already running
+    if _virtual_display is not None:
+        return
+    
+    # Skip if not Linux or pyvirtualdisplay not available
+    if not HAS_VIRTUAL_DISPLAY or sys.platform not in ('linux', 'linux2'):
+        return
+    
+    # Skip if DISPLAY is already set (native GUI available)
+    if os.environ.get('DISPLAY'):
+        return
+    
+    # Try to start virtual display
+    try:
+        _virtual_display = Display(visible=True, size=(1280, 900))
+        _virtual_display.start()
+        update_progress(
+            status="info",
+            message="Virtual display (Xvfb) started for visible browser debugging"
+        )
+    except Exception as exc:
+        # Fallback silently - native browser will open on Windows/Mac
+        update_progress(
+            status="warning",
+            message=f"Virtual display unavailable, using native browser: {exc}"
+        )
+        _virtual_display = None
+
+
+def _stop_virtual_display() -> None:
+    """Stop the virtual display if running."""
+    global _virtual_display
+    if _virtual_display is not None:
+        try:
+            _virtual_display.stop()
+        except Exception:
+            pass
+        _virtual_display = None
+
+
+def has_virtual_display_support() -> bool:
+    """Check if virtual display (Xvfb) is available on this system."""
+    if not HAS_VIRTUAL_DISPLAY:
+        return False
+    if sys.platform not in ('linux', 'linux2'):
+        return False
+    # Check if Xvfb is installed
+    try:
+        import shutil
+        return shutil.which('Xvfb') is not None
+    except Exception:
+        return False

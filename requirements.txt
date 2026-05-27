@@ -27,3 +27,6 @@ flask-cors>=4.0.0
 
 # Rate limiting for API protection
 flask-limiter>=3.5.0
+
+# Virtual display for headless browser debugging (cross-platform)
+pyvirtualdisplay>=3.0.0

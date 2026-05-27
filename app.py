@@ -24,6 +24,7 @@ from utils.alerts import run_alerts
 from benchmark_report import generate_html_report, run_and_save_benchmark
 from roi_calculator import compute_roi_data, generate_roi_page, run_and_save_roi
 from utils.screenshots import SCREENSHOT_ROOT
+from utils.stealth import has_virtual_display_support
 
 # Import ISP Mini Crawler routes
 from isp.routes import isp_bp
@@ -75,6 +76,45 @@ def api_get_all_plans():
 def index():
     """Serve the frontend dashboard."""
     return render_template('index.html')
+
+
+@app.route('/api/capabilities', methods=['GET'])
+def api_get_capabilities():
+    """Get server capabilities for visible browser debugging."""
+    import platform
+    import shutil
+    
+    system = platform.system()
+    has_display = bool(os.environ.get('DISPLAY') or os.environ.get('WAYLAND_DISPLAY'))
+    has_xvfb = shutil.which('Xvfb') is not None
+    has_virtual_support = has_virtual_display_support()
+    
+    # Determine if visible browser is available
+    # Windows/Mac: Always works (native browser opening)
+    # Linux: Needs either DISPLAY or Xvfb
+    if system in ('Windows', 'Darwin'):  # Darwin = macOS
+        visible_browser_available = True
+        reason = None
+    elif system == 'Linux':
+        visible_browser_available = has_display or has_virtual_support
+        if not visible_browser_available:
+            reason = 'No display server available. Install Xvfb to enable visible browser debugging.'
+        else:
+            reason = None
+    else:
+        # Unknown platform, assume it works
+        visible_browser_available = True
+        reason = None
+    
+    return jsonify({
+        'success': True,
+        'visible_browser': visible_browser_available,
+        'platform': system,
+        'has_display': has_display,
+        'has_xvfb': has_xvfb,
+        'has_virtual_support': has_virtual_support,
+        'reason': reason
+    })
 
 
 @app.route('/api/providers', methods=['GET'])
