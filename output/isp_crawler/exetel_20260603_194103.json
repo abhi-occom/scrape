@@ -1,0 +1,376 @@
+{
+  "base_url": "https://www.exetel.com.au",
+  "provider": "Exetel",
+  "started_at": "2026-06-03T19:37:24.866994",
+  "finished_at": "2026-06-03T19:41:03.754349",
+  "duration_seconds": 218.89,
+  "summary": {
+    "urls_visited": 14,
+    "plan_pages_found": 11,
+    "total_plans_scraped": 3,
+    "valid_plans": 3,
+    "invalid_plans": 0,
+    "network_types": [
+      "NBN",
+      "5G Mobile",
+      "NBN FTTP Upgrade"
+    ]
+  },
+  "discovered_urls": [
+    {
+      "url": "https://www.exetel.com.au/broadband/nbn-fibre-upgrade",
+      "score": 25,
+      "depth": 1,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.exetel.com.au/",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.exetel.com.au/broadband/nbn",
+      "score": 18,
+      "depth": 1,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.exetel.com.au/",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.exetel.com.au/broadband/fttp",
+      "score": 15,
+      "depth": 3,
+      "network_types": [],
+      "found_on": "https://www.exetel.com.au/nbn-100-vs-nbn-500",
+      "matched_networks": []
+    },
+    {
+      "url": "https://www.exetel.com.au/nbn-50-vs-nbn-500",
+      "score": 10,
+      "depth": 1,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.exetel.com.au/",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.exetel.com.au/nbn-100-vs-nbn-500",
+      "score": 10,
+      "depth": 1,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.exetel.com.au/",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.exetel.com.au/adelaide-nbn-plan",
+      "score": 10,
+      "depth": 1,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.exetel.com.au/",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.exetel.com.au/brisbane-nbn-plan",
+      "score": 10,
+      "depth": 1,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.exetel.com.au/",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.exetel.com.au/hobart-nbn-plan",
+      "score": 10,
+      "depth": 1,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.exetel.com.au/",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.exetel.com.au/melbourne-nbn-plan",
+      "score": 10,
+      "depth": 1,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.exetel.com.au/",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.exetel.com.au/perth-nbn-plan",
+      "score": 10,
+      "depth": 1,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.exetel.com.au/",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.exetel.com.au/sydney-nbn-plan",
+      "score": 10,
+      "depth": 1,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.exetel.com.au/",
+      "matched_networks": [
+        "nbn"
+      ]
+    }
+  ],
+  "page_analyses": [
+    {
+      "url": "https://www.exetel.com.au/broadband/nbn-fibre-upgrade",
+      "has_plans": true,
+      "confidence": 0.833,
+      "network_types": [
+        "nbn",
+        "fibre"
+      ],
+      "card_selector": "[role=\"group\"]",
+      "card_count": 16,
+      "name_selector": "h3",
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 5,
+      "speed_signals": 7
+    },
+    {
+      "url": "https://www.exetel.com.au/broadband/nbn",
+      "has_plans": true,
+      "confidence": 0.9,
+      "network_types": [
+        "nbn",
+        "fibre"
+      ],
+      "card_selector": "[role=\"group\"]",
+      "card_count": 11,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 10,
+      "speed_signals": 10
+    },
+    {
+      "url": "https://www.exetel.com.au/broadband/fttp",
+      "has_plans": true,
+      "confidence": 0.44999999999999996,
+      "network_types": [
+        "nbn",
+        "fibre"
+      ],
+      "card_selector": "[role=\"group\"]",
+      "card_count": 5,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 0,
+      "speed_signals": 0
+    },
+    {
+      "url": "https://www.exetel.com.au/nbn-50-vs-nbn-500",
+      "has_plans": true,
+      "confidence": 0.9,
+      "network_types": [
+        "nbn",
+        "fibre"
+      ],
+      "card_selector": "[role=\"group\"]",
+      "card_count": 8,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 6,
+      "speed_signals": 9
+    },
+    {
+      "url": "https://www.exetel.com.au/nbn-100-vs-nbn-500",
+      "has_plans": true,
+      "confidence": 0.7999999999999999,
+      "network_types": [
+        "nbn",
+        "fibre"
+      ],
+      "card_selector": "[role=\"group\"]",
+      "card_count": 8,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 4,
+      "speed_signals": 7
+    },
+    {
+      "url": "https://www.exetel.com.au/adelaide-nbn-plan",
+      "has_plans": true,
+      "confidence": 0.44999999999999996,
+      "network_types": [
+        "nbn"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 4,
+      "speed_signals": 9
+    },
+    {
+      "url": "https://www.exetel.com.au/brisbane-nbn-plan",
+      "has_plans": true,
+      "confidence": 0.6,
+      "network_types": [
+        "nbn",
+        "fibre"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 6,
+      "speed_signals": 9
+    },
+    {
+      "url": "https://www.exetel.com.au/hobart-nbn-plan",
+      "has_plans": true,
+      "confidence": 0.5,
+      "network_types": [
+        "nbn",
+        "5g",
+        "fibre"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 3,
+      "speed_signals": 7
+    },
+    {
+      "url": "https://www.exetel.com.au/melbourne-nbn-plan",
+      "has_plans": true,
+      "confidence": 0.6,
+      "network_types": [
+        "nbn",
+        "fibre"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 7,
+      "speed_signals": 9
+    },
+    {
+      "url": "https://www.exetel.com.au/perth-nbn-plan",
+      "has_plans": true,
+      "confidence": 0.6,
+      "network_types": [
+        "nbn",
+        "fibre"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 6,
+      "speed_signals": 11
+    },
+    {
+      "url": "https://www.exetel.com.au/sydney-nbn-plan",
+      "has_plans": true,
+      "confidence": 0.6,
+      "network_types": [
+        "nbn",
+        "5g",
+        "fibre"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 7,
+      "speed_signals": 9
+    }
+  ],
+  "plans": [
+    {
+      "provider": "exetel",
+      "network_type": "NBN",
+      "plan_name": "One Plan 500/50",
+      "download_speed": 500,
+      "upload_speed": 50,
+      "price": 80.0,
+      "promo_price": null,
+      "promo_period": "",
+      "contract": "No Lock-in",
+      "typical_evening_dl": 500,
+      "typical_evening_ul": 40,
+      "source_url": "https://www.exetel.com.au/broadband/nbn"
+    },
+    {
+      "provider": "exetel",
+      "network_type": "NBN FTTP Upgrade",
+      "plan_name": "One Plan 500/50",
+      "download_speed": 500,
+      "upload_speed": 50,
+      "price": 80.0,
+      "promo_price": null,
+      "promo_period": "",
+      "contract": "No Lock-in",
+      "typical_evening_dl": 500,
+      "typical_evening_ul": 40,
+      "source_url": "https://www.exetel.com.au/broadband/nbn-fibre-upgrade"
+    },
+    {
+      "provider": "exetel",
+      "network_type": "5G Mobile",
+      "plan_name": "PLUS ONE 130GB",
+      "download_speed": 150,
+      "upload_speed": 0,
+      "price": 40.0,
+      "promo_price": null,
+      "promo_period": "",
+      "contract": "No Lock-in",
+      "typical_evening_dl": 150,
+      "typical_evening_ul": 0,
+      "source_url": "https://www.exetel.com.au/mobilephone"
+    }
+  ],
+  "invalid_plans": [],
+  "errors": [
+    "Provider fallback failed: [Errno 22] Invalid argument: 'output/logs.json'"
+  ]
+}

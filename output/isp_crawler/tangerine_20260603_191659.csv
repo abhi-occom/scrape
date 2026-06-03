@@ -1,0 +1,9 @@
+provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
+Tangerine,NBN,BUILD YOUR WIRELESS nbn® PLAN,100,0,104.9,59.9,,NO LOCK-IN,0,0,https://www.tangerine.com.au/nbn/nbn-fixed-wireless
+Tangerine,NBN,choose your modem,0,0,540.0,180.0,,,0,0,https://www.tangerine.com.au/nbn/nbn-fixed-wireless
+Tangerine,NBN,BUILD YOUR nbn® PLAN,25,0,119.9,44.9,6 months,NO LOCK-IN,0,0,https://www.tangerine.com.au/nbn/nbn-broadband
+Tangerine,NBN,Add a router,0,0,540.0,180.0,,,0,0,https://www.tangerine.com.au/nbn/nbn-broadband
+Tangerine,NBN,Bundle with nbn® and save ON MOBILE SIMs,0,0,60.0,15.0,3 months,NO LOCK-IN,0,0,https://www.tangerine.com.au/nbn/nbn-broadband
+Tangerine,NBN,$120,0,0,528.0,120.0,,,0,0,https://www.tangerine.com.au/nbn/modem/netcomm-nf71-wi-fi-7-1-satellite
+Tangerine,NBN,$120,0,0,360.0,120.0,,,0,0,https://www.tangerine.com.au/nbn/modem/netcomm-nf71-wi-fi-7-2-satellites
+Tangerine,NBN,$240,0,0,528.0,240.0,,,0,0,https://www.tangerine.com.au/internet/modem/1x-ns-02-cloudmesh-satellite

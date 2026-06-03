@@ -1,0 +1,93 @@
+{
+  "base_url": "https://clevernet.com.au",
+  "provider": "Clevernet",
+  "started_at": "2026-06-03T19:00:12.899975",
+  "finished_at": "2026-06-03T19:00:38.521477",
+  "duration_seconds": 25.62,
+  "summary": {
+    "urls_visited": 1,
+    "plan_pages_found": 1,
+    "total_plans_scraped": 4,
+    "valid_plans": 4,
+    "invalid_plans": 0,
+    "network_types": [
+      "SUPA"
+    ]
+  },
+  "discovered_urls": [],
+  "page_analyses": [
+    {
+      "url": "https://clevernet.com.au",
+      "has_plans": true,
+      "confidence": 0.45,
+      "network_types": [],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 8,
+      "speed_signals": 5
+    }
+  ],
+  "plans": [
+    {
+      "provider": "Clevernet",
+      "network_type": "SUPA",
+      "plan_name": "Superfast",
+      "download_speed": 500,
+      "upload_speed": 500,
+      "price": 90.0,
+      "promo_price": null,
+      "promo_period": "30 days free",
+      "contract": "Month-to-month",
+      "typical_evening_dl": 0,
+      "typical_evening_ul": 0,
+      "source_url": "https://clevernet.com.au"
+    },
+    {
+      "provider": "Clevernet",
+      "network_type": "SUPA",
+      "plan_name": "Ultra",
+      "download_speed": 750,
+      "upload_speed": 750,
+      "price": 105.0,
+      "promo_price": null,
+      "promo_period": "30 days free",
+      "contract": "Month-to-month",
+      "typical_evening_dl": 0,
+      "typical_evening_ul": 0,
+      "source_url": "https://clevernet.com.au"
+    },
+    {
+      "provider": "Clevernet",
+      "network_type": "SUPA",
+      "plan_name": "Gigabit",
+      "download_speed": 1000,
+      "upload_speed": 1000,
+      "price": 115.0,
+      "promo_price": null,
+      "promo_period": "30 days free",
+      "contract": "Month-to-month",
+      "typical_evening_dl": 0,
+      "typical_evening_ul": 0,
+      "source_url": "https://clevernet.com.au"
+    },
+    {
+      "provider": "Clevernet",
+      "network_type": "SUPA",
+      "plan_name": "Hyper",
+      "download_speed": 2000,
+      "upload_speed": 2000,
+      "price": 150.0,
+      "promo_price": null,
+      "promo_period": "30 days free",
+      "contract": "Month-to-month",
+      "typical_evening_dl": 0,
+      "typical_evening_ul": 0,
+      "source_url": "https://clevernet.com.au"
+    }
+  ],
+  "invalid_plans": [],
+  "errors": []
+}

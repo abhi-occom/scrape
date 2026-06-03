@@ -1,0 +1,79 @@
+{
+  "base_url": "https://www.tangerine.com.au",
+  "provider": "Tangerine",
+  "started_at": "2026-06-03T19:29:13.887006",
+  "finished_at": "2026-06-03T19:29:44.357831",
+  "duration_seconds": 30.47,
+  "summary": {
+    "urls_visited": 0,
+    "plan_pages_found": 1,
+    "total_plans_scraped": 4,
+    "valid_plans": 4,
+    "invalid_plans": 0,
+    "network_types": [
+      "NBN"
+    ]
+  },
+  "discovered_urls": [],
+  "page_analyses": [],
+  "plans": [
+    {
+      "provider": "tangerine",
+      "network_type": "NBN",
+      "plan_name": "Tangerine Value",
+      "download_speed": 25,
+      "upload_speed": 8.5,
+      "price": 69.9,
+      "promo_price": 44.9,
+      "promo_period": "6 months",
+      "contract": "No Lock-in",
+      "typical_evening_dl": 25,
+      "typical_evening_ul": 8.5,
+      "source_url": "https://www.tangerine.com.au/nbn/nbn-broadband"
+    },
+    {
+      "provider": "tangerine",
+      "network_type": "NBN",
+      "plan_name": "Tangerine Value Plus",
+      "download_speed": 50,
+      "upload_speed": 17,
+      "price": 84.9,
+      "promo_price": 59.9,
+      "promo_period": "6 months",
+      "contract": "No Lock-in",
+      "typical_evening_dl": 50,
+      "typical_evening_ul": 17,
+      "source_url": "https://www.tangerine.com.au/nbn/nbn-broadband"
+    },
+    {
+      "provider": "tangerine",
+      "network_type": "NBN",
+      "plan_name": "Tangerine Speedy Max",
+      "download_speed": 500,
+      "upload_speed": 42.5,
+      "price": 88.9,
+      "promo_price": 63.9,
+      "promo_period": "6 months",
+      "contract": "No Lock-in",
+      "typical_evening_dl": 500,
+      "typical_evening_ul": 42.5,
+      "source_url": "https://www.tangerine.com.au/nbn/nbn-broadband"
+    },
+    {
+      "provider": "tangerine",
+      "network_type": "NBN",
+      "plan_name": "Tangerine UltraSpeedy",
+      "download_speed": 700,
+      "upload_speed": 85,
+      "price": 119.9,
+      "promo_price": 94.9,
+      "promo_period": "6 months",
+      "contract": "No Lock-in",
+      "typical_evening_dl": 700,
+      "typical_evening_ul": 85,
+      "source_url": "https://www.tangerine.com.au/nbn/nbn-broadband"
+    }
+  ],
+  "invalid_plans": [],
+  "errors": []
+}

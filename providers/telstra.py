@@ -106,6 +106,8 @@ def extract_plans_from_page(page, page_cfg: Dict) -> List[Dict[str, Any]]:
     default_network = page_cfg['network_type']
 
     for i, header in enumerate(headers):
+        card_text = get_card_text(header)
+
         # Plan name from data attribute or inner text
         plan_name = header.get_attribute('data-tcom-fixed-plan-card-header-label') or ''
         if not plan_name:
@@ -140,6 +142,8 @@ def extract_plans_from_page(page, page_cfg: Dict) -> List[Dict[str, Any]]:
         elif 'Satellite' in plan_name or 'Starlink' in plan_name.lower():
             network_type = 'Satellite (Starlink)'
 
+        promo_price, promo_period = parse_promo_offer(card_text, price)
+
         if plan_name and price > 0:
             plans.append({
                 'provider_id': config.PROVIDERS['telstra']['id'],
@@ -150,13 +154,62 @@ def extract_plans_from_page(page, page_cfg: Dict) -> List[Dict[str, Any]]:
                 'typical_evening_dl': download_speed,
                 'typical_evening_ul': upload_speed,
                 'price': price,
-                'promo_price': None,
-                'promo_period': None,
+                'promo_price': promo_price,
+                'promo_period': promo_period,
                 'contract': 'No Lock-in',
                 'source_url': source_url,
             })
 
     return plans
+
+
+def get_card_text(header) -> str:
+    """Return the nearest plan card text for promo parsing."""
+    try:
+        return header.evaluate(
+            """el => {
+                let node = el;
+                for (let i = 0; i < 8 && node; i++, node = node.parentElement) {
+                    const text = node.innerText || '';
+                    if (text.includes('$') && text.length > 100) return text;
+                }
+                return el.innerText || '';
+            }"""
+        )
+    except Exception:
+        try:
+            return header.inner_text()
+        except Exception:
+            return ''
+
+
+def parse_promo_offer(card_text: str, regular_price: float) -> tuple:
+    """Parse Telstra offer text like 'Get $20/mth off for 6 months'."""
+    if not card_text or regular_price <= 0:
+        return None, None
+
+    discount_match = re.search(
+        r'(?:get|save)\s*\$?\s*(\d+(?:\.\d+)?)\s*/?\s*mth\s*off\s*for\s*(\d+)\s*months?',
+        card_text,
+        re.IGNORECASE,
+    )
+    if discount_match:
+        discount = float(discount_match.group(1))
+        months = discount_match.group(2)
+        promo_price = max(0.0, regular_price - discount)
+        return round(promo_price, 2), f"{months} months"
+
+    price_period_match = re.search(
+        r'\$(\d+(?:\.\d+)?)\s*/?\s*mth\s*for\s*(\d+)\s*months?.*?then\s*\$(\d+(?:\.\d+)?)',
+        card_text,
+        re.IGNORECASE | re.DOTALL,
+    )
+    if price_period_match:
+        promo_price = float(price_period_match.group(1))
+        months = price_period_match.group(2)
+        return promo_price, f"{months} months"
+
+    return None, None
 
 
 def deduplicate_plans(plans: List[Dict[str, Any]]) -> List[Dict[str, Any]]:

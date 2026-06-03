@@ -1,0 +1,649 @@
+{
+  "base_url": "https://www.tangerine.com.au",
+  "provider": "Tangerine",
+  "started_at": "2026-06-03T20:08:21.536922",
+  "finished_at": "2026-06-03T20:14:52.071964",
+  "duration_seconds": 390.54,
+  "summary": {
+    "urls_visited": 16,
+    "plan_pages_found": 16,
+    "total_plans_scraped": 7,
+    "valid_plans": 7,
+    "invalid_plans": 0,
+    "network_types": [
+      "Fixed Wireless",
+      "NBN"
+    ]
+  },
+  "discovered_urls": [
+    {
+      "url": "https://www.tangerine.com.au/nbn/nbn-fixed-wireless",
+      "score": 23,
+      "depth": 1,
+      "network_types": [
+        "nbn",
+        "fixed_wireless"
+      ],
+      "found_on": "https://www.tangerine.com.au/",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.tangerine.com.au/nbn/nbn-broadband",
+      "score": 18,
+      "depth": 1,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.tangerine.com.au/",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.tangerine.com.au/internet/mobile-broadband",
+      "score": 15,
+      "depth": 1,
+      "network_types": [],
+      "found_on": "https://www.tangerine.com.au/",
+      "matched_networks": []
+    },
+    {
+      "url": "https://www.tangerine.com.au/nbn/modem/netcomm-nf71-wi-fi-7-1-satellite",
+      "score": 15,
+      "depth": 2,
+      "network_types": [
+        "satellite",
+        "nbn"
+      ],
+      "found_on": "https://www.tangerine.com.au/nbn/nbn-broadband",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.tangerine.com.au/nbn/modem/netcomm-nf71-wi-fi-7-2-satellites",
+      "score": 15,
+      "depth": 2,
+      "network_types": [
+        "satellite",
+        "nbn"
+      ],
+      "found_on": "https://www.tangerine.com.au/nbn/nbn-broadband",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.tangerine.com.au/fixedwirelessnbncis",
+      "score": 15,
+      "depth": 3,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.tangerine.com.au/nbn/nbn-fixed-wireless",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.tangerine.com.au/fixedwirelessnbnkfs",
+      "score": 15,
+      "depth": 3,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.tangerine.com.au/nbn/nbn-fixed-wireless",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.tangerine.com.au/internet/modem/1x-ns-02-cloudmesh-satellite",
+      "score": 12,
+      "depth": 3,
+      "network_types": [
+        "satellite"
+      ],
+      "found_on": "https://www.tangerine.com.au/nbn/modem/netcomm-cf40-wi-fi-6",
+      "matched_networks": []
+    },
+    {
+      "url": "https://www.tangerine.com.au/internet/modem/2x-ns-02-cloudmesh-satellite",
+      "score": 12,
+      "depth": 3,
+      "network_types": [
+        "satellite"
+      ],
+      "found_on": "https://www.tangerine.com.au/nbn/modem/netcomm-cf40-wi-fi-6",
+      "matched_networks": []
+    },
+    {
+      "url": "https://www.tangerine.com.au/internet/modem/netcomm-nf71-wi-fi-7-1-satellite",
+      "score": 12,
+      "depth": 3,
+      "network_types": [
+        "satellite"
+      ],
+      "found_on": "https://www.tangerine.com.au/nbn/modem/netcomm-cf40-wi-fi-6",
+      "matched_networks": []
+    },
+    {
+      "url": "https://www.tangerine.com.au/internet/modem/netcomm-nf71-wi-fi-7-2-satellites",
+      "score": 12,
+      "depth": 3,
+      "network_types": [
+        "satellite"
+      ],
+      "found_on": "https://www.tangerine.com.au/nbn/modem/netcomm-cf40-wi-fi-6",
+      "matched_networks": []
+    },
+    {
+      "url": "https://www.tangerine.com.au/nbn/fresh",
+      "score": 10,
+      "depth": 1,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.tangerine.com.au/",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.tangerine.com.au/nbn/moving-house",
+      "score": 10,
+      "depth": 1,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.tangerine.com.au/",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.tangerine.com.au/unlimitednbnkfs",
+      "score": 10,
+      "depth": 1,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.tangerine.com.au/",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.tangerine.com.au/NewCustomerPromonbnTsCs",
+      "score": 10,
+      "depth": 1,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.tangerine.com.au/",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.tangerine.com.au/unlimitednbncis",
+      "score": 10,
+      "depth": 2,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.tangerine.com.au/nbn/nbn-broadband",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.tangerine.com.au/nbn/eero-7",
+      "score": 10,
+      "depth": 2,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.tangerine.com.au/nbn/nbn-broadband",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.tangerine.com.au/nbn/modem/netcomm-cf40-wi-fi-6",
+      "score": 10,
+      "depth": 2,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.tangerine.com.au/nbn/nbn-broadband",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.tangerine.com.au/nbn/modem/netcomm-nf71-wi-fi-7",
+      "score": 10,
+      "depth": 2,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.tangerine.com.au/nbn/nbn-broadband",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.tangerine.com.au/nbn/nbn-bundles",
+      "score": 10,
+      "depth": 2,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.tangerine.com.au/nbn/nbn-broadband",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.tangerine.com.au/nbn/moving-house-new",
+      "score": 10,
+      "depth": 3,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.tangerine.com.au/nbn/moving-house",
+      "matched_networks": [
+        "nbn"
+      ]
+    }
+  ],
+  "page_analyses": [
+    {
+      "url": "https://www.tangerine.com.au/nbn/nbn-fixed-wireless",
+      "has_plans": true,
+      "confidence": 0.9,
+      "network_types": [
+        "nbn",
+        "fixed_wireless",
+        "fibre"
+      ],
+      "card_selector": "[class*=\"pricing\"]",
+      "card_count": 4,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 17,
+      "speed_signals": 6
+    },
+    {
+      "url": "https://www.tangerine.com.au/nbn/nbn-broadband",
+      "has_plans": true,
+      "confidence": 0.9,
+      "network_types": [
+        "nbn",
+        "5g",
+        "fixed_wireless",
+        "fibre"
+      ],
+      "card_selector": "[class*=\"pricing\"]",
+      "card_count": 5,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 34,
+      "speed_signals": 8
+    },
+    {
+      "url": "https://www.tangerine.com.au/internet/mobile-broadband",
+      "has_plans": true,
+      "confidence": 0.7330000000000001,
+      "network_types": [
+        "nbn",
+        "5g",
+        "fixed_wireless"
+      ],
+      "card_selector": ".card",
+      "card_count": 7,
+      "name_selector": null,
+      "price_selector": "span",
+      "speed_selector": null,
+      "price_signals": 6,
+      "speed_signals": 0
+    },
+    {
+      "url": "https://www.tangerine.com.au/nbn/modem/netcomm-nf71-wi-fi-7-1-satellite",
+      "has_plans": true,
+      "confidence": 0.55,
+      "network_types": [
+        "nbn",
+        "fixed_wireless",
+        "satellite"
+      ],
+      "card_selector": "[class*=\"pricing\"]",
+      "card_count": 2,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 7,
+      "speed_signals": 0
+    },
+    {
+      "url": "https://www.tangerine.com.au/nbn/modem/netcomm-nf71-wi-fi-7-2-satellites",
+      "has_plans": true,
+      "confidence": 0.55,
+      "network_types": [
+        "nbn",
+        "fixed_wireless",
+        "satellite"
+      ],
+      "card_selector": "[class*=\"pricing\"]",
+      "card_count": 2,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 7,
+      "speed_signals": 0
+    },
+    {
+      "url": "https://www.tangerine.com.au/internet/modem/1x-ns-02-cloudmesh-satellite",
+      "has_plans": true,
+      "confidence": 0.55,
+      "network_types": [
+        "nbn",
+        "fixed_wireless",
+        "satellite"
+      ],
+      "card_selector": "[class*=\"pricing\"]",
+      "card_count": 2,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 7,
+      "speed_signals": 0
+    },
+    {
+      "url": "https://www.tangerine.com.au/internet/modem/2x-ns-02-cloudmesh-satellite",
+      "has_plans": true,
+      "confidence": 0.55,
+      "network_types": [
+        "nbn",
+        "fixed_wireless",
+        "satellite"
+      ],
+      "card_selector": "[class*=\"pricing\"]",
+      "card_count": 2,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 7,
+      "speed_signals": 0
+    },
+    {
+      "url": "https://www.tangerine.com.au/internet/modem/netcomm-nf71-wi-fi-7-1-satellite",
+      "has_plans": true,
+      "confidence": 0.55,
+      "network_types": [
+        "nbn",
+        "fixed_wireless",
+        "satellite"
+      ],
+      "card_selector": "[class*=\"pricing\"]",
+      "card_count": 2,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 7,
+      "speed_signals": 0
+    },
+    {
+      "url": "https://www.tangerine.com.au/internet/modem/netcomm-nf71-wi-fi-7-2-satellites",
+      "has_plans": true,
+      "confidence": 0.55,
+      "network_types": [
+        "nbn",
+        "fixed_wireless",
+        "satellite"
+      ],
+      "card_selector": "[class*=\"pricing\"]",
+      "card_count": 2,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 7,
+      "speed_signals": 0
+    },
+    {
+      "url": "https://www.tangerine.com.au/nbn/fresh",
+      "has_plans": true,
+      "confidence": 0.9,
+      "network_types": [
+        "nbn",
+        "fixed_wireless",
+        "fibre"
+      ],
+      "card_selector": ".card",
+      "card_count": 6,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 13,
+      "speed_signals": 4
+    },
+    {
+      "url": "https://www.tangerine.com.au/nbn/moving-house",
+      "has_plans": true,
+      "confidence": 0.44999999999999996,
+      "network_types": [
+        "nbn",
+        "fixed_wireless"
+      ],
+      "card_selector": ".card",
+      "card_count": 5,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 0,
+      "speed_signals": 0
+    },
+    {
+      "url": "https://www.tangerine.com.au/nbn/eero-7",
+      "has_plans": true,
+      "confidence": 0.7000000000000001,
+      "network_types": [
+        "nbn",
+        "fixed_wireless",
+        "fibre"
+      ],
+      "card_selector": "[data-product-name]",
+      "card_count": 6,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 6,
+      "speed_signals": 0
+    },
+    {
+      "url": "https://www.tangerine.com.au/nbn/modem/netcomm-cf40-wi-fi-6",
+      "has_plans": true,
+      "confidence": 0.55,
+      "network_types": [
+        "nbn",
+        "fixed_wireless",
+        "fibre",
+        "satellite"
+      ],
+      "card_selector": "[class*=\"pricing\"]",
+      "card_count": 2,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 8,
+      "speed_signals": 0
+    },
+    {
+      "url": "https://www.tangerine.com.au/nbn/modem/netcomm-nf71-wi-fi-7",
+      "has_plans": true,
+      "confidence": 0.55,
+      "network_types": [
+        "nbn",
+        "fixed_wireless",
+        "satellite"
+      ],
+      "card_selector": "[class*=\"pricing\"]",
+      "card_count": 2,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 8,
+      "speed_signals": 0
+    },
+    {
+      "url": "https://www.tangerine.com.au/nbn/nbn-bundles",
+      "has_plans": true,
+      "confidence": 0.9,
+      "network_types": [
+        "nbn",
+        "5g",
+        "fixed_wireless",
+        "fibre"
+      ],
+      "card_selector": "[class*=\"pricing\"]",
+      "card_count": 5,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 34,
+      "speed_signals": 8
+    },
+    {
+      "url": "https://www.tangerine.com.au/nbn/moving-house-new",
+      "has_plans": true,
+      "confidence": 0.933,
+      "network_types": [
+        "nbn",
+        "5g",
+        "fixed_wireless",
+        "fibre"
+      ],
+      "card_selector": ".card",
+      "card_count": 6,
+      "name_selector": null,
+      "price_selector": "span",
+      "speed_selector": null,
+      "price_signals": 24,
+      "speed_signals": 6
+    }
+  ],
+  "plans": [
+    {
+      "provider": "tangerine",
+      "network_type": "NBN",
+      "plan_name": "Tangerine Value",
+      "download_speed": 25,
+      "upload_speed": 8.5,
+      "price": 69.9,
+      "promo_price": 44.9,
+      "promo_period": "6 months",
+      "contract": "No Lock-in",
+      "typical_evening_dl": 25,
+      "typical_evening_ul": 8.5,
+      "source_url": "https://www.tangerine.com.au/nbn/nbn-broadband"
+    },
+    {
+      "provider": "tangerine",
+      "network_type": "NBN",
+      "plan_name": "Tangerine Value Plus",
+      "download_speed": 50,
+      "upload_speed": 17,
+      "price": 84.9,
+      "promo_price": 59.9,
+      "promo_period": "6 months",
+      "contract": "No Lock-in",
+      "typical_evening_dl": 50,
+      "typical_evening_ul": 17,
+      "source_url": "https://www.tangerine.com.au/nbn/nbn-broadband"
+    },
+    {
+      "provider": "tangerine",
+      "network_type": "Fixed Wireless",
+      "plan_name": "Tangerine Fixed Wireless Value Plus",
+      "download_speed": 100,
+      "upload_speed": 20,
+      "price": 84.9,
+      "promo_price": 59.9,
+      "promo_period": "6 months",
+      "contract": "No Lock-in",
+      "typical_evening_dl": 100,
+      "typical_evening_ul": 20,
+      "source_url": "https://www.tangerine.com.au/nbn/nbn-fixed-wireless"
+    },
+    {
+      "provider": "tangerine",
+      "network_type": "Fixed Wireless",
+      "plan_name": "Tangerine Fixed Wireless Speedy",
+      "download_speed": 250,
+      "upload_speed": 20,
+      "price": 88.9,
+      "promo_price": 63.9,
+      "promo_period": "6 months",
+      "contract": "No Lock-in",
+      "typical_evening_dl": 250,
+      "typical_evening_ul": 20,
+      "source_url": "https://www.tangerine.com.au/nbn/nbn-fixed-wireless"
+    },
+    {
+      "provider": "tangerine",
+      "network_type": "Fixed Wireless",
+      "plan_name": "Tangerine Fixed Wireless SuperSpeedy",
+      "download_speed": 400,
+      "upload_speed": 40,
+      "price": 104.9,
+      "promo_price": 79.9,
+      "promo_period": "6 months",
+      "contract": "No Lock-in",
+      "typical_evening_dl": 400,
+      "typical_evening_ul": 40,
+      "source_url": "https://www.tangerine.com.au/nbn/nbn-fixed-wireless"
+    },
+    {
+      "provider": "tangerine",
+      "network_type": "NBN",
+      "plan_name": "Tangerine Speedy Max",
+      "download_speed": 500,
+      "upload_speed": 42.5,
+      "price": 88.9,
+      "promo_price": 63.9,
+      "promo_period": "6 months",
+      "contract": "No Lock-in",
+      "typical_evening_dl": 500,
+      "typical_evening_ul": 42.5,
+      "source_url": "https://www.tangerine.com.au/nbn/nbn-broadband"
+    },
+    {
+      "provider": "tangerine",
+      "network_type": "NBN",
+      "plan_name": "Tangerine UltraSpeedy",
+      "download_speed": 700,
+      "upload_speed": 85,
+      "price": 119.9,
+      "promo_price": 94.9,
+      "promo_period": "6 months",
+      "contract": "No Lock-in",
+      "typical_evening_dl": 700,
+      "typical_evening_ul": 85,
+      "source_url": "https://www.tangerine.com.au/nbn/nbn-broadband"
+    }
+  ],
+  "invalid_plans": [],
+  "errors": [
+    "Provider fallback failed: tangerine fallback returned no plans",
+    "Analysis error: https://www.tangerine.com.au/fixedwirelessnbncis - Page.goto: Download is starting\nCall log:\n  - navigating to \"https://www.tangerine.com.au/fixedwirelessnbncis\", waiting until \"domcontentloaded\"\n",
+    "Analysis error: https://www.tangerine.com.au/fixedwirelessnbnkfs - Page.goto: Download is starting\nCall log:\n  - navigating to \"https://www.tangerine.com.au/fixedwirelessnbnkfs\", waiting until \"domcontentloaded\"\n",
+    "Analysis error: https://www.tangerine.com.au/unlimitednbnkfs - Page.goto: Download is starting\nCall log:\n  - navigating to \"https://www.tangerine.com.au/unlimitednbnkfs\", waiting until \"domcontentloaded\"\n",
+    "Analysis error: https://www.tangerine.com.au/NewCustomerPromonbnTsCs - Page.goto: Download is starting\nCall log:\n  - navigating to \"https://www.tangerine.com.au/NewCustomerPromonbnTsCs\", waiting until \"domcontentloaded\"\n",
+    "Analysis error: https://www.tangerine.com.au/unlimitednbncis - Page.goto: Download is starting\nCall log:\n  - navigating to \"https://www.tangerine.com.au/unlimitednbncis\", waiting until \"domcontentloaded\"\n"
+  ]
+}

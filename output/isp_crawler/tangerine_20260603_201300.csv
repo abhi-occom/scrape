@@ -1,0 +1,8 @@
+provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
+tangerine,NBN,Tangerine Value,25,8.5,69.9,44.9,6 months,No Lock-in,25,8.5,https://www.tangerine.com.au/nbn/nbn-broadband
+tangerine,NBN,Tangerine Value Plus,50,17,84.9,59.9,6 months,No Lock-in,50,17,https://www.tangerine.com.au/nbn/nbn-broadband
+tangerine,Fixed Wireless,Tangerine Fixed Wireless Value Plus,100,20,84.9,59.9,6 months,No Lock-in,100,20,https://www.tangerine.com.au/nbn/nbn-fixed-wireless
+tangerine,Fixed Wireless,Tangerine Fixed Wireless Speedy,250,20,88.9,63.9,6 months,No Lock-in,250,20,https://www.tangerine.com.au/nbn/nbn-fixed-wireless
+tangerine,Fixed Wireless,Tangerine Fixed Wireless SuperSpeedy,400,40,104.9,79.9,6 months,No Lock-in,400,40,https://www.tangerine.com.au/nbn/nbn-fixed-wireless
+tangerine,NBN,Tangerine Speedy Max,500,42.5,88.9,63.9,6 months,No Lock-in,500,42.5,https://www.tangerine.com.au/nbn/nbn-broadband
+tangerine,NBN,Tangerine UltraSpeedy,700,85,119.9,94.9,6 months,No Lock-in,700,85,https://www.tangerine.com.au/nbn/nbn-broadband

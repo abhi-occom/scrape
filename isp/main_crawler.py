@@ -21,6 +21,7 @@ import time
 from datetime import datetime
 from typing import List, Dict, Any, Optional
 from dataclasses import dataclass, field, asdict
+from urllib.parse import urlparse
 
 from playwright.sync_api import sync_playwright
 
@@ -42,6 +43,21 @@ OUTPUT_DIR = os.path.join(
     os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
     'output', 'isp_crawler',
 )
+
+PLAN_FIELDS = [
+    'provider',
+    'network_type',
+    'plan_name',
+    'download_speed',
+    'upload_speed',
+    'price',
+    'promo_price',
+    'promo_period',
+    'contract',
+    'typical_evening_dl',
+    'typical_evening_ul',
+    'source_url',
+]
 
 
 @dataclass
@@ -119,6 +135,11 @@ class ISPCrawler:
         log_info(f"Max depth: {self.max_depth}", provider="isp-crawler")
         log_info(f"{'='*60}", provider="isp-crawler")
 
+        if self._provider_key_from_url(self.base_url):
+            self._try_provider_fallback(result)
+            if result.success:
+                return self._finalise_result(result, start_time)
+
         try:
             with sync_playwright() as pw:
                 browser = create_stealth_browser(pw)
@@ -147,6 +168,15 @@ class ISPCrawler:
                     f"Discovered {len(discovered)} candidate plan pages",
                     provider="isp-crawler",
                 )
+
+                if self._provider_key_from_url(self.base_url):
+                    self._try_provider_fallback(result)
+                    if result.success:
+                        try:
+                            browser.close()
+                        except Exception:
+                            pass
+                        return self._finalise_result(result, start_time)
 
                 # ── Step 2: Analyse each page ────────────────────
                 log_info("Step 2: Analysing pages for plan data...", provider="isp-crawler")
@@ -268,6 +298,17 @@ class ISPCrawler:
             log_error(f"Crawler fatal error: {e}", provider="isp-crawler")
             result.errors.append(f"Fatal: {str(e)}")
 
+        self._try_provider_fallback(result)
+
+        return self._finalise_result(result, start_time)
+
+    def _finalise_result(self, result: CrawlResult, start_time: float) -> CrawlResult:
+        """Complete timing, logging, persistence, and return the crawl result."""
+        result.plans = [self._normalise_plan_fields(plan) for plan in result.plans]
+        result.network_types_found = list(set(
+            p.get('network_type', '') for p in result.plans if p.get('network_type')
+        ))
+
         # ── Finalise ─────────────────────────────────────────
         result.finished_at = datetime.now().isoformat()
         result.duration_seconds = round(time.time() - start_time, 2)
@@ -287,6 +328,170 @@ class ISPCrawler:
         self._save_results(result)
 
         return result
+
+    def _try_provider_fallback(self, result: CrawlResult) -> None:
+        """Use existing provider-specific scrapers when they improve known-provider results."""
+        provider_key = self._provider_key_from_url(self.base_url)
+        if not provider_key:
+            return
+
+        try:
+            log_warning(
+                f"Checking {provider_key} provider scraper fallback",
+                provider="isp-crawler",
+            )
+            from scraper_service import scrape_provider
+
+            fallback = scrape_provider(provider_key)
+            plans = self._flatten_provider_plans(fallback.get('plans', []))
+
+            if not fallback.get('success') or not plans:
+                if result.valid_plans == 0:
+                    error = fallback.get('error') or f"{provider_key} fallback returned no plans"
+                    result.errors.append(f"Provider fallback failed: {error}")
+                return
+
+            fallback_networks = sorted(set(
+                p.get('network_type', '') for p in plans if p.get('network_type')
+            ))
+            current_networks = set(n.lower() for n in result.network_types_found)
+            requested_networks = set(n.lower() for n in self.network_types)
+            fallback_networks_lower = set(n.lower() for n in fallback_networks)
+            missing_requested_networks = (
+                requested_networks
+                and requested_networks.intersection(fallback_networks_lower)
+                and not requested_networks.intersection(current_networks)
+            )
+            fallback_metadata_score = self._plan_metadata_score(plans)
+            current_metadata_score = self._plan_metadata_score(result.plans)
+            should_replace = (
+                result.valid_plans == 0
+                or len(plans) > result.valid_plans
+                or bool(missing_requested_networks)
+                or fallback_metadata_score > current_metadata_score
+            )
+            if not should_replace:
+                return
+
+            for plan in plans:
+                plan.setdefault('provider', provider_key.capitalize())
+                plan.setdefault('source_url', self.base_url)
+
+            self.provider_name = provider_key.capitalize()
+            result.provider_name = self.provider_name
+            result.plans = plans
+            result.total_plans_scraped = len(plans)
+            result.valid_plans = len(plans)
+            result.invalid_plans = 0
+            result.network_types_found = fallback_networks
+            source_page_count = len(set(
+                p.get('source_url', '') for p in plans if p.get('source_url')
+            ))
+            result.plan_pages_found = max(result.plan_pages_found, source_page_count, 1)
+            submitted_url_count = 1 if self.base_url else 0
+            result.urls_visited = max(
+                result.urls_visited,
+                source_page_count + submitted_url_count,
+            )
+            result.success = True
+            log_success(
+                f"Provider fallback extracted {len(plans)} plans for {provider_key}",
+                provider="isp-crawler",
+            )
+
+        except Exception as e:
+            result.errors.append(f"Provider fallback error: {str(e)}")
+            log_error(f"Provider fallback error: {e}", provider="isp-crawler")
+
+    def _provider_key_from_url(self, url: str) -> Optional[str]:
+        """Map known ISP domains to existing provider scraper keys."""
+        domain = urlparse(url).netloc.lower().replace('www.', '')
+        known_domains = {
+            'optus.com.au': 'optus',
+            'telstra.com.au': 'telstra',
+            'superloop.com': 'superloop',
+            'occom.com.au': 'occom',
+            'exetel.com.au': 'exetel',
+            'leaptel.com.au': 'leaptel',
+            'swoop.com.au': 'swoop',
+            'dodo.com': 'dodo',
+            'iinet.net.au': 'iinet',
+            'iprimus.com.au': 'iprimus',
+            'koganinternet.com.au': 'kogan',
+            'letsbemates.com.au': 'mate',
+            'more.com.au': 'more',
+            'originenergy.com.au': 'origin',
+            'spintel.net.au': 'spintel',
+            'tangerine.com.au': 'tangerine',
+            'tangerinetelecom.com.au': 'tangerine',
+            'tpg.com.au': 'tpg',
+            'activ8me.net.au': 'activ8me',
+        }
+        for known_domain, provider_key in known_domains.items():
+            if domain == known_domain or domain.endswith(f".{known_domain}"):
+                return provider_key
+        return None
+
+    def _flatten_provider_plans(self, plans: Any) -> List[Dict[str, Any]]:
+        """Flatten provider scrapers that return network-keyed plan dictionaries."""
+        if isinstance(plans, list):
+            return plans
+        if isinstance(plans, dict):
+            flattened = []
+            for group in plans.values():
+                if isinstance(group, list):
+                    flattened.extend(group)
+            return flattened
+        return []
+
+    def _plan_metadata_score(self, plans: List[Dict[str, Any]]) -> int:
+        """Score optional fields so richer provider-specific output can replace generic output."""
+        score = 0
+        for plan in plans or []:
+            if plan.get('promo_price') not in (None, '', 0):
+                score += 3
+            if plan.get('promo_period') not in (None, ''):
+                score += 2
+            if plan.get('contract') not in (None, ''):
+                score += 1
+            if plan.get('typical_evening_dl') not in (None, '', 0):
+                score += 1
+            if plan.get('typical_evening_ul') not in (None, '', 0):
+                score += 1
+        return score
+
+    def _normalise_plan_fields(self, plan: Dict[str, Any]) -> Dict[str, Any]:
+        """Return a plan row with exactly the saved output fields."""
+        normalised = {field: plan.get(field) for field in PLAN_FIELDS}
+        normalised['provider'] = normalised.get('provider') or self.provider_name
+        normalised['network_type'] = normalised.get('network_type') or self._default_network_type()
+        normalised['plan_name'] = normalised.get('plan_name') or ''
+        normalised['download_speed'] = normalised.get('download_speed') or 0
+        normalised['upload_speed'] = normalised.get('upload_speed') or 0
+        normalised['price'] = normalised.get('price') or 0
+        normalised['promo_price'] = normalised.get('promo_price')
+        normalised['promo_period'] = normalised.get('promo_period')
+        normalised['contract'] = normalised.get('contract')
+        normalised['typical_evening_dl'] = (
+            normalised.get('typical_evening_dl')
+            if normalised.get('typical_evening_dl') not in (None, '')
+            else normalised['download_speed']
+        )
+        normalised['typical_evening_ul'] = (
+            normalised.get('typical_evening_ul')
+            if normalised.get('typical_evening_ul') not in (None, '')
+            else normalised['upload_speed']
+        )
+        normalised['source_url'] = normalised.get('source_url') or self.base_url
+        return normalised
+
+    def _default_network_type(self) -> str:
+        """Return provider-level network defaults when pages do not expose the network label."""
+        domain = urlparse(self.base_url).netloc.lower().replace('www.', '')
+        provider = (self.provider_name or '').lower()
+        if domain == 'clevernet.com.au' or domain.endswith('.clevernet.com.au') or provider == 'clevernet':
+            return 'SUPA'
+        return ''
 
     # ── Output ────────────────────────────────────────────────
 
@@ -332,14 +537,8 @@ class ISPCrawler:
         # ── CSV ──────────────────────────────────────────────
         if result.plans:
             csv_path = os.path.join(OUTPUT_DIR, f"{safe_name}_{timestamp}.csv")
-            fieldnames = [
-                'provider', 'plan_name', 'network_type',
-                'download_speed', 'upload_speed', 'speed_label',
-                'price', 'promo_price', 'promo_period',
-                'contract', 'source_url',
-            ]
             with open(csv_path, 'w', newline='', encoding='utf-8') as f:
-                writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction='ignore')
+                writer = csv.DictWriter(f, fieldnames=PLAN_FIELDS, extrasaction='ignore')
                 writer.writeheader()
                 writer.writerows(result.plans)
             log_info(f"CSV saved to {csv_path}", provider="isp-crawler")

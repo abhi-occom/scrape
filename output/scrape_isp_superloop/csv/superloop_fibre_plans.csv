@@ -1,8 +1,8 @@
 provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
-superloop,Fibre,Everyday 25/5,25,10,45.0,,,No Contract,25,4,https://www.superloop.com/internet/fibre/
-superloop,Fibre,Extra Value 50/20,50,20,65.0,,,No Contract,50,17,https://www.superloop.com/internet/fibre/
+superloop,Fibre,Everyday 25/5,25,10,72.0,45.0,6 months,No Contract,25,4,https://www.superloop.com/internet/fibre/
+superloop,Fibre,Extra Value 50/20,50,20,85.0,65.0,6 months,No Contract,50,17,https://www.superloop.com/internet/fibre/
 superloop,Fibre,Family Max 100/20,100,20,69.0,,,No Contract,95,17,https://www.superloop.com/internet/fibre/
-superloop,Fibre,Family Max 500/50,500,50,69.0,,,No Contract,500,40,https://www.superloop.com/internet/fibre/
+superloop,Fibre,Family Max 500/50,500,50,95.0,69.0,6 months,No Contract,500,40,https://www.superloop.com/internet/fibre/
 superloop,Fibre,Power Home 100/40,100,40,85.0,,,No Contract,95,34,https://www.superloop.com/internet/fibre/
-superloop,Fibre,Megaspeed 750/50,750,50,89.0,,,No Contract,750,40,https://www.superloop.com/internet/fibre/
-superloop,Fibre,Lightspeed 1000/100,1000,100,85.0,,,No Contract,860,85,https://www.superloop.com/internet/fibre/
+superloop,Fibre,Megaspeed 750/50,750,50,104.0,75.0,6 months,No Contract,750,40,https://www.superloop.com/internet/fibre/
+superloop,Fibre,Lightspeed 1000/100,1000,100,109.0,79.0,6 months,No Contract,860,85,https://www.superloop.com/internet/fibre/

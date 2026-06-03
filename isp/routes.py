@@ -119,7 +119,8 @@ def _run_crawl_async(base_url: str, name: str, networks: list, depth: int):
         with _crawl_lock:
             _crawl_state['status'] = 'success' if result.success else 'error'
             _crawl_state['message'] = (
-                f'Done: {result.valid_plans} plans from {result.plan_pages_found} pages '
+                f'Done: crawled {result.urls_visited} URLs, found {result.valid_plans} plans '
+                f'from {result.plan_pages_found} pages '
                 f'in {result.duration_seconds}s'
             )
             _crawl_state['result'] = {
@@ -174,23 +175,31 @@ def api_get_results():
         return jsonify({'success': True, 'results': []})
 
     files = []
-    for fname in sorted(os.listdir(OUTPUT_DIR), reverse=True):
-        if fname.endswith('.json') and not fname.endswith('_latest.json') and fname != 'test_report.json':
-            fpath = os.path.join(OUTPUT_DIR, fname)
-            try:
-                with open(fpath, 'r', encoding='utf-8') as f:
-                    data = json.load(f)
-                files.append({
-                    'filename': fname,
-                    'provider': data.get('provider', '?'),
-                    'base_url': data.get('base_url', ''),
-                    'plans_count': data.get('summary', {}).get('valid_plans', 0),
-                    'networks': data.get('summary', {}).get('network_types', []),
-                    'timestamp': data.get('started_at', ''),
-                    'duration': data.get('duration_seconds', 0),
-                })
-            except Exception:
-                continue
+    result_files = [
+        fname for fname in os.listdir(OUTPUT_DIR)
+        if fname.endswith('.json') and not fname.endswith('_latest.json') and fname != 'test_report.json'
+    ]
+    result_files.sort(
+        key=lambda fname: os.path.getmtime(os.path.join(OUTPUT_DIR, fname)),
+        reverse=True,
+    )
+
+    for fname in result_files:
+        fpath = os.path.join(OUTPUT_DIR, fname)
+        try:
+            with open(fpath, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            files.append({
+                'filename': fname,
+                'provider': data.get('provider', '?'),
+                'base_url': data.get('base_url', ''),
+                'plans_count': data.get('summary', {}).get('valid_plans', 0),
+                'networks': data.get('summary', {}).get('network_types', []),
+                'timestamp': data.get('started_at', ''),
+                'duration': data.get('duration_seconds', 0),
+            })
+        except Exception:
+            continue
 
     return jsonify({'success': True, 'results': files})
 
@@ -198,10 +207,79 @@ def api_get_results():
 @isp_bp.route('/api/results/<filename>', methods=['GET'])
 def api_get_result_file(filename):
     """Get a specific crawl result file."""
-    fpath = os.path.join(OUTPUT_DIR, filename)
+    fpath = _safe_result_path(filename)
+    if not fpath:
+        return jsonify({'success': False, 'error': 'Invalid filename'}), 400
     if not os.path.exists(fpath):
         return jsonify({'success': False, 'error': 'File not found'}), 404
 
     with open(fpath, 'r', encoding='utf-8') as f:
         data = json.load(f)
     return jsonify({'success': True, 'data': data})
+
+
+@isp_bp.route('/api/results/<filename>', methods=['DELETE'])
+def api_delete_result_file(filename):
+    """Delete a saved crawl result file and related exported files."""
+    fpath = _safe_result_path(filename)
+    if not fpath:
+        return jsonify({'success': False, 'error': 'Invalid filename'}), 400
+    if not os.path.exists(fpath):
+        return jsonify({'success': False, 'error': 'File not found'}), 404
+
+    deleted = []
+    try:
+        with open(fpath, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+    except Exception:
+        data = {}
+
+    try:
+        os.remove(fpath)
+        deleted.append(filename)
+    except OSError as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+    stem, _ = os.path.splitext(filename)
+    csv_path = os.path.join(OUTPUT_DIR, f"{stem}.csv")
+    if os.path.exists(csv_path):
+        try:
+            os.remove(csv_path)
+            deleted.append(f"{stem}.csv")
+        except OSError:
+            pass
+
+    provider = data.get('provider', '')
+    started_at = data.get('started_at', '')
+    if provider and started_at:
+        safe_name = provider.lower().replace(' ', '_').replace('.', '')
+        latest_path = os.path.join(OUTPUT_DIR, f"{safe_name}_latest.json")
+        try:
+            if os.path.exists(latest_path):
+                with open(latest_path, 'r', encoding='utf-8') as f:
+                    latest_data = json.load(f)
+                if latest_data.get('started_at') == started_at:
+                    os.remove(latest_path)
+                    deleted.append(f"{safe_name}_latest.json")
+        except Exception:
+            pass
+
+    return jsonify({'success': True, 'deleted': deleted})
+
+
+def _safe_result_path(filename):
+    """Resolve only timestamped crawler JSON result filenames inside OUTPUT_DIR."""
+    safe_name = os.path.basename(filename)
+    if (
+        safe_name != filename
+        or not safe_name.endswith('.json')
+        or safe_name.endswith('_latest.json')
+        or safe_name == 'test_report.json'
+    ):
+        return None
+
+    output_dir = os.path.abspath(OUTPUT_DIR)
+    fpath = os.path.abspath(os.path.join(output_dir, safe_name))
+    if os.path.commonpath([output_dir, fpath]) != output_dir:
+        return None
+    return fpath

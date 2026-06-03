@@ -33,26 +33,27 @@ from isp.plan_detector import PageAnalysis
 def _empty_plan() -> Dict[str, Any]:
     return {
         'provider': '',
-        'provider_id': 0,
-        'plan_name': '',
         'network_type': '',
+        'plan_name': '',
         'download_speed': 0,
         'upload_speed': 0,
-        'speed_label': 0,
         'price': 0.0,
         'promo_price': None,
         'promo_period': None,
         'contract': None,
+        'typical_evening_dl': 0,
+        'typical_evening_ul': 0,
         'source_url': '',
     }
 
 
 # ── Helper regexes ───────────────────────────────────────────────
 
-_RE_PRICE     = re.compile(r'\$\s*([\d]+(?:\.\d{1,2})?)')
+_RE_PRICE     = re.compile(r'(?:[A-Z]{1,3})?\$\s*([\d]+(?:\.\d{1,2})?)')
 _RE_SPEED_DL  = re.compile(r'(\d+)\s*/\s*(\d+)\s*[Mm]bps')
 _RE_SPEED_SINGLE = re.compile(r'(\d+)\s*[Mm]bps')
 _RE_PROMO_PERIOD = re.compile(r'(?:first|for)\s+(\d+)\s+months?', re.IGNORECASE)
+_RE_FREE_PERIOD = re.compile(r'(\d+)\s+days?\s+free', re.IGNORECASE)
 _RE_CONTRACT     = re.compile(r'(no\s+lock[\s-]*in|no\s+contract|month[\s-]*to[\s-]*month|\d+\s+month\s+contract)', re.IGNORECASE)
 
 # JSON blob patterns inside <script> tags
@@ -432,10 +433,98 @@ class ScraperEngine:
                 if plan['price'] > 0:
                     plans.append(plan)
 
+            if not plans:
+                plans = self._extract_from_nearby_blocks(blocks, analysis, provider_name)
+
         except Exception as e:
             log_error(f"Regex extraction failed: {e}", provider="isp-crawler")
 
         return plans
+
+    def _extract_from_nearby_blocks(
+        self,
+        blocks: List[str],
+        analysis: PageAnalysis,
+        provider_name: str,
+    ) -> List[Dict[str, Any]]:
+        """Parse plans split across nearby text blocks."""
+        plans = []
+        seen = set()
+
+        for i, block in enumerate(blocks):
+            speed_match = _RE_SPEED_DL.search(block) or _RE_SPEED_SINGLE.search(block)
+            if not speed_match:
+                continue
+
+            price_block = ''
+            for candidate in blocks[i + 1:i + 4]:
+                if _RE_PRICE.search(candidate):
+                    price_block = candidate
+                    break
+            if not price_block:
+                continue
+
+            detail_text = '\n'.join(blocks[i:i + 6])
+            plan = _empty_plan()
+            plan['provider'] = provider_name
+            plan['source_url'] = analysis.url
+
+            dl_ul = _RE_SPEED_DL.search(block)
+            if dl_ul:
+                plan['download_speed'] = int(dl_ul.group(1))
+                plan['upload_speed'] = int(dl_ul.group(2))
+            else:
+                plan['download_speed'] = int(speed_match.group(1))
+            plan['speed_label'] = plan['download_speed']
+
+            prices = [float(p) for p in _RE_PRICE.findall(price_block) if float(p) > 0]
+            if not prices:
+                continue
+            plan['price'] = max(prices)
+            if min(prices) < max(prices):
+                plan['promo_price'] = min(prices)
+
+            plan['plan_name'] = self._plan_name_from_previous_block(blocks[i - 1] if i else '')
+            if not plan['plan_name']:
+                plan['plan_name'] = f"{plan['download_speed']}Mbps Plan"
+
+            plan['network_type'] = self._detect_network_from_text(detail_text)
+            if not plan['network_type'] and analysis.network_types:
+                plan['network_type'] = analysis.network_types[0].upper()
+
+            promo = _RE_PROMO_PERIOD.search(detail_text)
+            if promo:
+                plan['promo_period'] = f"{promo.group(1)} months"
+            else:
+                free_period = _RE_FREE_PERIOD.search(detail_text)
+                if free_period:
+                    plan['promo_period'] = f"{free_period.group(1)} days free"
+
+            contract_match = _RE_CONTRACT.search(detail_text)
+            if contract_match:
+                plan['contract'] = contract_match.group(1).strip()
+
+            key = (
+                plan['plan_name'].lower(),
+                plan['download_speed'],
+                plan['upload_speed'],
+                plan['price'],
+            )
+            if key in seen:
+                continue
+            seen.add(key)
+            plans.append(plan)
+
+        return plans
+
+    def _plan_name_from_previous_block(self, text: str) -> str:
+        """Get a likely plan name from the block immediately before a speed block."""
+        skip = {'most popular', 'fastest speed', 'get started', 'view plans'}
+        lines = [line.strip() for line in text.split('\n') if line.strip()]
+        for line in reversed(lines):
+            if line.lower() not in skip and len(line) < 100:
+                return line
+        return ''
 
     # ── Shared helpers ────────────────────────────────────────
 

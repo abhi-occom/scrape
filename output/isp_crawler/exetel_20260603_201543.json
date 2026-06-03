@@ -1,0 +1,67 @@
+{
+  "base_url": "https://www.exetel.com.au",
+  "provider": "Exetel",
+  "started_at": "2026-06-03T20:15:15.186660",
+  "finished_at": "2026-06-03T20:15:43.311003",
+  "duration_seconds": 28.12,
+  "summary": {
+    "urls_visited": 4,
+    "plan_pages_found": 3,
+    "total_plans_scraped": 3,
+    "valid_plans": 3,
+    "invalid_plans": 0,
+    "network_types": [
+      "NBN FTTP Upgrade",
+      "5G Mobile",
+      "NBN"
+    ]
+  },
+  "discovered_urls": [],
+  "page_analyses": [],
+  "plans": [
+    {
+      "provider": "exetel",
+      "network_type": "NBN",
+      "plan_name": "One Plan 500/50",
+      "download_speed": 500,
+      "upload_speed": 50,
+      "price": 80.0,
+      "promo_price": null,
+      "promo_period": "",
+      "contract": "No Lock-in",
+      "typical_evening_dl": 500,
+      "typical_evening_ul": 40,
+      "source_url": "https://www.exetel.com.au/broadband/nbn"
+    },
+    {
+      "provider": "exetel",
+      "network_type": "NBN FTTP Upgrade",
+      "plan_name": "One Plan 500/50",
+      "download_speed": 500,
+      "upload_speed": 50,
+      "price": 80.0,
+      "promo_price": null,
+      "promo_period": "",
+      "contract": "No Lock-in",
+      "typical_evening_dl": 500,
+      "typical_evening_ul": 40,
+      "source_url": "https://www.exetel.com.au/broadband/nbn-fibre-upgrade"
+    },
+    {
+      "provider": "exetel",
+      "network_type": "5G Mobile",
+      "plan_name": "PLUS ONE 130GB",
+      "download_speed": 150,
+      "upload_speed": 0,
+      "price": 40.0,
+      "promo_price": null,
+      "promo_period": "",
+      "contract": "No Lock-in",
+      "typical_evening_dl": 150,
+      "typical_evening_ul": 0,
+      "source_url": "https://www.exetel.com.au/mobilephone"
+    }
+  ],
+  "invalid_plans": [],
+  "errors": []
+}

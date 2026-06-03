@@ -108,9 +108,18 @@ def extract_from_json_ld(page, network_type: str, source_url: str) -> List[Dict[
     """Extract plan data from JSON-LD ProductGroup → hasVariant."""
     plans = []
     try:
+        card_pricing = extract_rendered_card_pricing(page)
+    except Exception as e:
+        log_error(f"Rendered card pricing extraction failed: {e}", provider="superloop")
+        card_pricing = {}
+
+    try:
         scripts = page.query_selector_all('script[type="application/ld+json"]')
         for script in scripts:
-            data = json.loads(script.inner_text())
+            try:
+                data = json.loads(script.inner_text())
+            except Exception:
+                continue
             items = data if isinstance(data, list) else [data]
             for item in items:
                 if item.get('@type') != 'ProductGroup':
@@ -118,10 +127,102 @@ def extract_from_json_ld(page, network_type: str, source_url: str) -> List[Dict[
                 for variant in item.get('hasVariant', []):
                     plan = parse_json_ld_variant(variant, network_type, source_url)
                     if plan:
+                        apply_card_pricing(plan, card_pricing)
                         plans.append(plan)
     except Exception as e:
         log_error(f"JSON-LD extraction failed: {e}", provider="superloop")
+    if not plans and card_pricing:
+        plans = extract_from_rounded_cards(page, network_type, source_url)
     return plans
+
+
+def extract_rendered_card_pricing(page) -> Dict[str, Dict[str, Any]]:
+    """
+    Extract regular/promo pricing from rendered cards.
+    Superloop JSON-LD exposes the visible discounted price only; the card text
+    includes the regular price and promo period.
+    """
+    pricing = {}
+    cards = page.query_selector_all('#plans .border.rounded-\\[1\\.25rem\\]')
+
+    for card in cards:
+        try:
+            text = card.inner_text()
+            download_speed, upload_speed = extract_card_speeds(text)
+            if not download_speed or not upload_speed:
+                continue
+
+            prices = [float(p) for p in re.findall(r'\$(\d+(?:\.\d+)?)', text)]
+            if not prices:
+                continue
+
+            promo_price = None
+            regular_price = 0.0
+            then_match = re.search(r'then\s+\$(\d+(?:\.\d+)?)\s*/?\s*mth', text, re.I)
+            if then_match:
+                regular_price = float(then_match.group(1))
+                lower_prices = [p for p in prices if p < regular_price]
+                if lower_prices:
+                    promo_price = min(lower_prices)
+            elif len(prices) >= 2:
+                regular_price = max(prices[0], prices[1])
+                promo_price = min(prices[0], prices[1])
+            else:
+                regular_price = prices[0]
+
+            promo_period = None
+            period_m = re.search(r'first\s+(\d+)\s*months?', text, re.I)
+            if not period_m:
+                period_m = re.search(r'over\s+(\d+)\s*months?', text, re.I)
+            if period_m and promo_price:
+                promo_period = f"{period_m.group(1)} months"
+
+            key = speed_key(download_speed, upload_speed)
+            current = pricing.get(key)
+            if not current or (promo_price and not current.get('promo_price')):
+                pricing[key] = {
+                    'price': regular_price,
+                    'promo_price': promo_price,
+                    'promo_period': promo_period,
+                }
+        except Exception as e:
+            log_error(f"Rendered card pricing parse failed: {e}", provider="superloop")
+
+    log_info(f"Rendered card pricing entries: {len(pricing)}", provider="superloop")
+    return pricing
+
+
+def apply_card_pricing(plan: Dict[str, Any], card_pricing: Dict[str, Dict[str, Any]]) -> None:
+    """Overlay JSON-LD pricing with rendered card promo metadata when available."""
+    pricing = card_pricing.get(speed_key(plan.get('download_speed'), plan.get('upload_speed')))
+    if not pricing:
+        return
+
+    regular_price = pricing.get('price') or 0
+    promo_price = pricing.get('promo_price')
+    if regular_price > 0:
+        plan['price'] = regular_price
+    if promo_price and promo_price < plan['price']:
+        plan['promo_price'] = promo_price
+        plan['promo_period'] = pricing.get('promo_period')
+
+
+def extract_card_speeds(text: str) -> tuple[int, int]:
+    """Extract Download/Upload Mbps values from a rendered Superloop card."""
+    download_speed = 0
+    upload_speed = 0
+    dl_match = re.search(r'Download\s*\D*?(\d+)\s*Mbps', text, re.I)
+    if dl_match:
+        download_speed = int(dl_match.group(1))
+    ul_match = re.search(r'Upload\s*\D*?(\d+)\s*Mbps', text, re.I)
+    if ul_match:
+        upload_speed = int(ul_match.group(1))
+    return download_speed, upload_speed
+
+
+def speed_key(download_speed: Any, upload_speed: Any) -> str:
+    """Build a stable key for matching JSON-LD variants to rendered cards."""
+    return f"{int(download_speed or 0)}/{int(upload_speed or 0)}"
 
 
 def parse_json_ld_variant(variant: Dict, network_type: str, source_url: str) -> Optional[Dict[str, Any]]:
