@@ -188,6 +188,24 @@
       margin: 16px 0;
     }
 
+    .export-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 14px 0 4px;
+    }
+
+    .export-actions .btn {
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(23, 80, 115, 0.18);
+      color: var(--primary);
+    }
+
+    .export-actions .btn:hover {
+      background: var(--primary-soft);
+      color: var(--primary);
+    }
+
     .metric {
       padding: 14px;
       background: var(--glass-strong);
@@ -361,6 +379,9 @@
 let poll;
 let timer;
 let crawlStartedAt = 0;
+let currentResultPayload = null;
+let currentResultView = null;
+let currentResultFilename = '';
 const PLAN_COLUMNS = [
   'provider',
   'network_type',
@@ -405,11 +426,15 @@ async function checkStatus() {
     stopCrawlTimer(data.result?.duration_seconds);
     if(data.status === 'success') {
       setStatus(data.message, 'success');
+      currentResultPayload = data.result || null;
+      currentResultFilename = '';
       showResults(data.result);
       loadSavedResults();
     } else {
       setStatus('Error: ' + data.message, 'error');
       if(data.result) {
+        currentResultPayload = data.result;
+        currentResultFilename = '';
         showResults(data.result);
         loadSavedResults();
       }
@@ -525,6 +550,8 @@ async function loadResultFile(filename) {
   const data = await res.json();
   if(data.success) {
     const result = data.data;
+    currentResultPayload = result;
+    currentResultFilename = filename;
     showResults({
       valid_plans: result.summary?.valid_plans || 0,
       plan_pages_found: result.summary?.plan_pages_found || 0,
@@ -538,11 +565,21 @@ async function loadResultFile(filename) {
 }
 
 function showResults(r) {
+  currentResultView = r || {};
+  if(!currentResultPayload) {
+    currentResultPayload = currentResultView;
+  }
   document.getElementById('results').style.display='block';
   let html = '';
   if(r.provider || r.base_url) {
     html += `<div class="mb-3"><h3 class="h4 mb-1">${escapeHtml(r.provider || 'Scrape')}</h3><p class="text-secondary mb-0">${escapeHtml(r.base_url || '')}</p></div>`;
   }
+  html += `<div class="export-actions">
+    <button class="btn btn-sm" type="button" onclick="downloadCurrentJson()">Download JSON</button>
+    <button class="btn btn-sm" type="button" onclick="downloadCurrentCsv()">Download CSV</button>
+    <button class="btn btn-sm" type="button" onclick="copyCurrentApiResponse()">Copy API Response</button>
+    <button class="btn btn-sm" type="button" onclick="compareCurrentResult()" ${currentResultFilename ? '' : 'disabled'}>Compare Previous</button>
+  </div>`;
   html += `<div class="metric-grid">
     <div class="metric"><span>Plans Found</span><strong>${r.valid_plans || 0}</strong></div>
     <div class="metric"><span>URLs Crawled</span><strong>${r.urls_visited || 0}</strong></div>
@@ -568,6 +605,219 @@ function showResults(r) {
     html += '<div class="empty-state">No valid plans were found in this scrape.</div>';
   }
   document.getElementById('resultsContent').innerHTML = html;
+}
+
+async function compareCurrentResult() {
+  if(!currentResultFilename) {
+    setStatus('Open a saved scrape before comparing previous runs.', 'error');
+    return;
+  }
+
+  const res = await fetch(`/isp/api/results/${currentResultFilename}/compare`);
+  const data = await res.json();
+  if(!data.success) {
+    renderComparisonMessage(data.error || 'Could not compare this run.');
+    return;
+  }
+  renderComparison(data);
+}
+
+function renderComparisonMessage(message) {
+  const existing = document.getElementById('comparisonPanel');
+  if(existing) {
+    existing.remove();
+  }
+  document.getElementById('resultsContent').insertAdjacentHTML(
+    'beforeend',
+    `<div id="comparisonPanel" class="comparison-panel mt-3"><div class="empty-state">${escapeHtml(message)}</div></div>`
+  );
+}
+
+function renderComparison(data) {
+  const existing = document.getElementById('comparisonPanel');
+  if(existing) {
+    existing.remove();
+  }
+
+  const summary = data.summary || {};
+  const totalChanges = Object.values(summary).reduce((sum, value) => sum + Number(value || 0), 0);
+  let html = `<div id="comparisonPanel" class="comparison-panel mt-3">
+    <div class="panel-title mb-3">
+      <h2>Compared With Previous Run</h2>
+    </div>
+    <p class="text-secondary mb-3">${escapeHtml(data.previous_file || '')} -> ${escapeHtml(data.current_file || '')}</p>
+    <div class="metric-grid">
+      <div class="metric"><span>New Plans</span><strong>${summary.new_plans || 0}</strong></div>
+      <div class="metric"><span>Removed</span><strong>${summary.removed_plans || 0}</strong></div>
+      <div class="metric"><span>Price Changes</span><strong>${summary.price_changed || 0}</strong></div>
+      <div class="metric"><span>Promo Changes</span><strong>${summary.promo_changed || 0}</strong></div>
+    </div>`;
+
+  if(totalChanges === 0) {
+    html += '<div class="empty-state">No changes from previous run.</div>';
+  } else {
+    html += renderPlanChangeTable('New Plans', data.changes?.new_plans || []);
+    html += renderPlanChangeTable('Removed Plans', data.changes?.removed_plans || []);
+    html += renderPriceChangeTable(data.changes?.price_changed || []);
+    html += renderPromoChangeTable(data.changes?.promo_changed || []);
+  }
+
+  html += '</div>';
+  document.getElementById('resultsContent').insertAdjacentHTML('beforeend', html);
+}
+
+function renderPlanChangeTable(title, plans) {
+  if(!plans.length) {
+    return '';
+  }
+  let html = `<h3 class="h4 mt-3">${escapeHtml(title)}</h3><div class="table-wrap mt-3"><table class="table table-hover align-middle"><thead><tr>
+    <th>Plan</th><th>Network</th><th>Speed</th><th>Price</th><th>Promo</th>
+  </tr></thead><tbody>`;
+  plans.forEach(plan => {
+    html += `<tr>
+      <td>${escapeHtml(plan.plan_name || '')}</td>
+      <td>${escapeHtml(plan.network_type || '')}</td>
+      <td>${escapeHtml(formatSpeed(plan))}</td>
+      <td>${escapeHtml(formatMoney(plan.price))}</td>
+      <td>${escapeHtml(formatPromo(plan.promo_price, plan.promo_period))}</td>
+    </tr>`;
+  });
+  return html + '</tbody></table></div>';
+}
+
+function renderPriceChangeTable(changes) {
+  if(!changes.length) {
+    return '';
+  }
+  let html = '<h3 class="h4 mt-3">Price Changed</h3><div class="table-wrap mt-3"><table class="table table-hover align-middle"><thead><tr><th>Plan</th><th>Network</th><th>Speed</th><th>Old Price</th><th>New Price</th></tr></thead><tbody>';
+  changes.forEach(change => {
+    html += `<tr>
+      <td>${escapeHtml(change.plan?.plan_name || '')}</td>
+      <td>${escapeHtml(change.plan?.network_type || '')}</td>
+      <td>${escapeHtml(formatSpeed(change.plan || {}))}</td>
+      <td>${escapeHtml(formatMoney(change.old_price))}</td>
+      <td>${escapeHtml(formatMoney(change.new_price))}</td>
+    </tr>`;
+  });
+  return html + '</tbody></table></div>';
+}
+
+function renderPromoChangeTable(changes) {
+  if(!changes.length) {
+    return '';
+  }
+  let html = '<h3 class="h4 mt-3">Promo Changed</h3><div class="table-wrap mt-3"><table class="table table-hover align-middle"><thead><tr><th>Plan</th><th>Network</th><th>Speed</th><th>Old Promo</th><th>New Promo</th></tr></thead><tbody>';
+  changes.forEach(change => {
+    html += `<tr>
+      <td>${escapeHtml(change.plan?.plan_name || '')}</td>
+      <td>${escapeHtml(change.plan?.network_type || '')}</td>
+      <td>${escapeHtml(formatSpeed(change.plan || {}))}</td>
+      <td>${escapeHtml(formatPromo(change.old_promo_price, change.old_promo_period))}</td>
+      <td>${escapeHtml(formatPromo(change.new_promo_price, change.new_promo_period))}</td>
+    </tr>`;
+  });
+  return html + '</tbody></table></div>';
+}
+
+function downloadCurrentJson() {
+  const payload = currentResultPayload || currentResultView || {};
+  const json = JSON.stringify(payload, null, 2);
+  downloadTextFile(makeExportFilename('json'), json, 'application/json;charset=utf-8');
+}
+
+function downloadCurrentCsv() {
+  const plans = (currentResultView?.plans || currentResultPayload?.plans || []);
+  const csv = plansToCsv(plans);
+  downloadTextFile(makeExportFilename('csv'), csv, 'text/csv;charset=utf-8');
+}
+
+async function copyCurrentApiResponse() {
+  const payload = currentResultPayload || currentResultView || {};
+  const text = JSON.stringify(payload, null, 2);
+  try {
+    await navigator.clipboard.writeText(text);
+    setStatus('API response copied to clipboard.', 'success');
+  } catch(e) {
+    fallbackCopyText(text);
+    setStatus('API response copied to clipboard.', 'success');
+  }
+}
+
+function plansToCsv(plans) {
+  const rows = [PLAN_COLUMNS.join(',')];
+  (plans || []).forEach(plan => {
+    rows.push(PLAN_COLUMNS.map(column => csvCell(normaliseDisplayValue(plan, column))).join(','));
+  });
+  return rows.join('\r\n');
+}
+
+function csvCell(value) {
+  const text = String(value ?? '');
+  if(/[",\r\n]/.test(text)) {
+    return `"${text.replace(/"/g, '""')}"`;
+  }
+  return text;
+}
+
+function downloadTextFile(filename, content, mimeType) {
+  const blob = new Blob([content], { type: mimeType });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = filename;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(url);
+}
+
+function makeExportFilename(extension) {
+  const provider = (currentResultView?.provider || currentResultPayload?.provider || 'isp-crawl')
+    .toString()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '') || 'isp-crawl';
+  const stamp = new Date().toISOString().slice(0, 19).replace(/[-:T]/g, '');
+  return `${provider}_${stamp}.${extension}`;
+}
+
+function fallbackCopyText(text) {
+  const area = document.createElement('textarea');
+  area.value = text;
+  area.setAttribute('readonly', '');
+  area.style.position = 'fixed';
+  area.style.left = '-9999px';
+  document.body.appendChild(area);
+  area.select();
+  document.execCommand('copy');
+  area.remove();
+}
+
+function formatSpeed(plan) {
+  const dl = plan.download_speed ?? '';
+  const ul = plan.upload_speed ?? '';
+  if(dl === '' && ul === '') {
+    return '';
+  }
+  return `${dl}/${ul} Mbps`;
+}
+
+function formatMoney(value) {
+  if(value === null || value === undefined || value === '') {
+    return '-';
+  }
+  const number = Number(value);
+  if(Number.isFinite(number)) {
+    return `$${number.toFixed(2)}`;
+  }
+  return String(value);
+}
+
+function formatPromo(price, period) {
+  if(price === null || price === undefined || price === '') {
+    return period || '-';
+  }
+  return `${formatMoney(price)}${period ? ' / ' + period : ''}`;
 }
 
 function normaliseDisplayValue(plan, column) {

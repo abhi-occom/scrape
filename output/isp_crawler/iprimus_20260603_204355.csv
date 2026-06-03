@@ -1,0 +1,10 @@
+provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
+Iprimus,NBN,50Mbps download & 17Mbps upload typical evening speeds,50,0,87.0,,,,0,0,https://www.iprimus.com.au/nbn-plans
+Iprimus,NBN,100Mbps download & 17Mbps upload typical evening speeds,100,0,97.0,,,,0,0,https://www.iprimus.com.au/nbn-plans
+Iprimus,NBN,500Mbps download & 47Mbps upload typical evening speeds,500,0,97.0,,,,0,0,https://www.iprimus.com.au/nbn-plans
+Iprimus,NBN,700Mbps download & 49Mbps upload typical evening speeds,700,0,104.0,,,,0,0,https://www.iprimus.com.au/nbn-plans
+Iprimus,NBN,840Mbps download & 94Mbps upload typical evening speeds,840,0,119.0,,,,0,0,https://www.iprimus.com.au/nbn-plans
+Iprimus,NBN,90Mbps,90,0,97.0,,,,0,0,https://www.iprimus.com.au/fibre-plans
+Iprimus,NBN,247Mbps,247,0,104.0,,,,0,0,https://www.iprimus.com.au/fibre-plans
+Iprimus,NBN,510Mbps,510,0,119.0,,,,0,0,https://www.iprimus.com.au/fibre-plans
+Iprimus,NBN,48Mbps,48,0,87.0,,,,0,0,https://www.iprimus.com.au/fibre-plans

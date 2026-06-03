@@ -1,0 +1,1024 @@
+{
+  "base_url": "https://www.iprimus.com.au",
+  "provider": "Iprimus",
+  "started_at": "2026-06-03T20:36:33.037021",
+  "finished_at": "2026-06-03T20:43:55.425182",
+  "duration_seconds": 442.39,
+  "summary": {
+    "urls_visited": 37,
+    "plan_pages_found": 9,
+    "total_plans_scraped": 9,
+    "valid_plans": 9,
+    "invalid_plans": 0,
+    "network_types": [
+      "NBN"
+    ]
+  },
+  "discovered_urls": [
+    {
+      "url": "https://www.iprimus.com.au/critical-information-summary/nbn-internet-plans-cis",
+      "score": 25,
+      "depth": 2,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.iprimus.com.au/nbn-plans",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/service-qualification?planId=FBR25C1C&planType=Fibre",
+      "score": 25,
+      "depth": 2,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.iprimus.com.au/nbn-plans",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/service-qualification?planId=SBCHRG7&planType=Fibre",
+      "score": 25,
+      "depth": 2,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.iprimus.com.au/nbn-plans",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/service-qualification?planId=SBCHRG8&planType=Fibre",
+      "score": 25,
+      "depth": 2,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.iprimus.com.au/nbn-plans",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/service-qualification?planId=SBCHRG9&planType=Fibre",
+      "score": 25,
+      "depth": 2,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.iprimus.com.au/nbn-plans",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/service-qualification?planId=SBCHRG11&planType=Fibre",
+      "score": 25,
+      "depth": 2,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.iprimus.com.au/nbn-plans",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans",
+      "score": 18,
+      "depth": 1,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.iprimus.com.au/",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/nbn-50-plans",
+      "score": 18,
+      "depth": 1,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.iprimus.com.au/",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/nbn-95-plans",
+      "score": 18,
+      "depth": 1,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.iprimus.com.au/",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/nbn-superfast-plans",
+      "score": 18,
+      "depth": 1,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.iprimus.com.au/",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/nbn-ultrafast-plans",
+      "score": 18,
+      "depth": 1,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.iprimus.com.au/",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/service-qualification?planId=SBCHRG7&planType=NBN",
+      "score": 18,
+      "depth": 2,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.iprimus.com.au/nbn-plans",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/service-qualification?planId=SBCHRG8&planType=NBN",
+      "score": 18,
+      "depth": 2,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.iprimus.com.au/nbn-plans",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/service-qualification?planId=SBCHRG12&planType=NBN",
+      "score": 18,
+      "depth": 2,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.iprimus.com.au/nbn-plans",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/service-qualification?planId=SBCHRG9&planType=NBN",
+      "score": 18,
+      "depth": 2,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.iprimus.com.au/nbn-plans",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/service-qualification?planId=SBCHRG11&planType=NBN",
+      "score": 18,
+      "depth": 2,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.iprimus.com.au/nbn-plans",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/service-qualification?planId=SBCHRG7",
+      "score": 18,
+      "depth": 2,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.iprimus.com.au/nbn-plans",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/service-qualification?planId=SBCHRG8",
+      "score": 18,
+      "depth": 2,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.iprimus.com.au/nbn-plans",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/service-qualification?planId=SBCHRG9",
+      "score": 18,
+      "depth": 2,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.iprimus.com.au/nbn-plans",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/service-qualification?planId=SBCHRG11",
+      "score": 18,
+      "depth": 2,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.iprimus.com.au/nbn-plans",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/service-qualification?planId=FBR25C1CW&planType=NBN",
+      "score": 18,
+      "depth": 2,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.iprimus.com.au/nbn-plans",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/service-qualification?planId=FBR25C1CW",
+      "score": 18,
+      "depth": 2,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.iprimus.com.au/nbn-plans",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/service-qualification?planId=SBCHRG10&planType=NBN",
+      "score": 18,
+      "depth": 2,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.iprimus.com.au/nbn-plans",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/service-qualification?planId=SBCHRG10",
+      "score": 18,
+      "depth": 2,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.iprimus.com.au/nbn-plans",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/service-qualification?planId=FBR25C1C&planType=NBN",
+      "score": 18,
+      "depth": 2,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.iprimus.com.au/nbn-plans",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/service-qualification?planId=FBR25C1C",
+      "score": 18,
+      "depth": 2,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.iprimus.com.au/nbn-plans",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/service-qualification?planId=SBCHRG12",
+      "score": 18,
+      "depth": 2,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.iprimus.com.au/nbn-plans",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "http://www.iprimus.com.au/nbn-plans",
+      "score": 18,
+      "depth": 3,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.iprimus.com.au/nbn-plans/service-qualification?planId=SBCHRG7&planType=NBN",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.iprimus.com.au/product-info/internet/nbn-speeds",
+      "score": 17,
+      "depth": 2,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.iprimus.com.au/nbn-plans",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.iprimus.com.au/fibre-plans",
+      "score": 15,
+      "depth": 1,
+      "network_types": [],
+      "found_on": "https://www.iprimus.com.au/",
+      "matched_networks": []
+    },
+    {
+      "url": "https://www.iprimus.com.au/velocity-opticomm",
+      "score": 10,
+      "depth": 1,
+      "network_types": [
+        "opticomm"
+      ],
+      "found_on": "https://www.iprimus.com.au/",
+      "matched_networks": [
+        "opticomm"
+      ]
+    },
+    {
+      "url": "https://www.iprimus.com.au/sites/default/files/kfs/iPrimus_KFS_nbn.pdf%C2%A0",
+      "score": 10,
+      "depth": 3,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.iprimus.com.au/critical-information-summary/nbn-internet-plans-cis",
+      "matched_networks": [
+        "nbn"
+      ]
+    }
+  ],
+  "page_analyses": [
+    {
+      "url": "https://www.iprimus.com.au/critical-information-summary/nbn-internet-plans-cis",
+      "has_plans": true,
+      "confidence": 0.52,
+      "network_types": [
+        "nbn",
+        "opticomm",
+        "fixed_wireless",
+        "fibre"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 25,
+      "speed_signals": 2
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/service-qualification?planId=FBR25C1C&planType=Fibre",
+      "has_plans": false,
+      "confidence": 0.27,
+      "network_types": [
+        "nbn"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 2,
+      "speed_signals": 2
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/service-qualification?planId=SBCHRG7&planType=Fibre",
+      "has_plans": false,
+      "confidence": 0.27,
+      "network_types": [
+        "nbn"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 2,
+      "speed_signals": 2
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/service-qualification?planId=SBCHRG8&planType=Fibre",
+      "has_plans": false,
+      "confidence": 0.27,
+      "network_types": [
+        "nbn"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 2,
+      "speed_signals": 2
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/service-qualification?planId=SBCHRG9&planType=Fibre",
+      "has_plans": false,
+      "confidence": 0.27,
+      "network_types": [
+        "nbn"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 2,
+      "speed_signals": 2
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/service-qualification?planId=SBCHRG11&planType=Fibre",
+      "has_plans": false,
+      "confidence": 0.27,
+      "network_types": [
+        "nbn"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 2,
+      "speed_signals": 2
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans",
+      "has_plans": true,
+      "confidence": 0.999,
+      "network_types": [
+        "nbn",
+        "opticomm",
+        "fibre"
+      ],
+      "card_selector": "[class*=\"plan-card\"]",
+      "card_count": 5,
+      "name_selector": "strong",
+      "price_selector": "[class*=\"price\"]",
+      "speed_selector": "[class*=\"speed\"]",
+      "price_signals": 10,
+      "speed_signals": 10
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/nbn-50-plans",
+      "has_plans": true,
+      "confidence": 0.569,
+      "network_types": [
+        "nbn",
+        "opticomm",
+        "fibre"
+      ],
+      "card_selector": "[class*=\"plan-card\"]",
+      "card_count": 2,
+      "name_selector": "strong",
+      "price_selector": "[class*=\"price\"]",
+      "speed_selector": "[class*=\"speed\"]",
+      "price_signals": 2,
+      "speed_signals": 2
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/nbn-95-plans",
+      "has_plans": true,
+      "confidence": 0.8989999999999999,
+      "network_types": [
+        "nbn",
+        "opticomm",
+        "fibre"
+      ],
+      "card_selector": "[class*=\"plan-card\"]",
+      "card_count": 3,
+      "name_selector": "strong",
+      "price_selector": "[class*=\"price\"]",
+      "speed_selector": "[class*=\"speed\"]",
+      "price_signals": 4,
+      "speed_signals": 4
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/nbn-superfast-plans",
+      "has_plans": true,
+      "confidence": 0.569,
+      "network_types": [
+        "nbn",
+        "opticomm",
+        "fibre"
+      ],
+      "card_selector": "[class*=\"plan-card\"]",
+      "card_count": 2,
+      "name_selector": "strong",
+      "price_selector": "[class*=\"price\"]",
+      "speed_selector": "[class*=\"speed\"]",
+      "price_signals": 2,
+      "speed_signals": 2
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/nbn-ultrafast-plans",
+      "has_plans": true,
+      "confidence": 0.569,
+      "network_types": [
+        "nbn",
+        "opticomm",
+        "fibre"
+      ],
+      "card_selector": "[class*=\"plan-card\"]",
+      "card_count": 2,
+      "name_selector": "strong",
+      "price_selector": "[class*=\"price\"]",
+      "speed_selector": "[class*=\"speed\"]",
+      "price_signals": 2,
+      "speed_signals": 2
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/service-qualification?planId=SBCHRG7&planType=NBN",
+      "has_plans": false,
+      "confidence": 0.27,
+      "network_types": [
+        "nbn"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 2,
+      "speed_signals": 2
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/service-qualification?planId=SBCHRG8&planType=NBN",
+      "has_plans": false,
+      "confidence": 0.27,
+      "network_types": [
+        "nbn"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 2,
+      "speed_signals": 2
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/service-qualification?planId=SBCHRG12&planType=NBN",
+      "has_plans": false,
+      "confidence": 0.27,
+      "network_types": [
+        "nbn"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 2,
+      "speed_signals": 2
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/service-qualification?planId=SBCHRG9&planType=NBN",
+      "has_plans": false,
+      "confidence": 0.27,
+      "network_types": [
+        "nbn"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 2,
+      "speed_signals": 2
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/service-qualification?planId=SBCHRG11&planType=NBN",
+      "has_plans": false,
+      "confidence": 0.27,
+      "network_types": [
+        "nbn"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 2,
+      "speed_signals": 2
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/service-qualification?planId=SBCHRG7",
+      "has_plans": false,
+      "confidence": 0.27,
+      "network_types": [
+        "nbn"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 2,
+      "speed_signals": 2
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/service-qualification?planId=SBCHRG8",
+      "has_plans": false,
+      "confidence": 0.27,
+      "network_types": [
+        "nbn"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 2,
+      "speed_signals": 2
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/service-qualification?planId=SBCHRG9",
+      "has_plans": false,
+      "confidence": 0.27,
+      "network_types": [
+        "nbn"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 2,
+      "speed_signals": 2
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/service-qualification?planId=SBCHRG11",
+      "has_plans": false,
+      "confidence": 0.27,
+      "network_types": [
+        "nbn"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 2,
+      "speed_signals": 2
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/service-qualification?planId=FBR25C1CW&planType=NBN",
+      "has_plans": false,
+      "confidence": 0.31999999999999995,
+      "network_types": [
+        "nbn",
+        "fixed_wireless"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 2,
+      "speed_signals": 2
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/service-qualification?planId=FBR25C1CW",
+      "has_plans": false,
+      "confidence": 0.31999999999999995,
+      "network_types": [
+        "nbn",
+        "fixed_wireless"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 2,
+      "speed_signals": 2
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/service-qualification?planId=SBCHRG10&planType=NBN",
+      "has_plans": false,
+      "confidence": 0.31999999999999995,
+      "network_types": [
+        "nbn",
+        "fixed_wireless"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 2,
+      "speed_signals": 2
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/service-qualification?planId=SBCHRG10",
+      "has_plans": false,
+      "confidence": 0.31999999999999995,
+      "network_types": [
+        "nbn",
+        "fixed_wireless"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 2,
+      "speed_signals": 2
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/service-qualification?planId=FBR25C1C&planType=NBN",
+      "has_plans": false,
+      "confidence": 0.27,
+      "network_types": [
+        "nbn"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 2,
+      "speed_signals": 2
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/service-qualification?planId=FBR25C1C",
+      "has_plans": false,
+      "confidence": 0.27,
+      "network_types": [
+        "nbn"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 2,
+      "speed_signals": 2
+    },
+    {
+      "url": "https://www.iprimus.com.au/nbn-plans/service-qualification?planId=SBCHRG12",
+      "has_plans": false,
+      "confidence": 0.27,
+      "network_types": [
+        "nbn"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 2,
+      "speed_signals": 2
+    },
+    {
+      "url": "http://www.iprimus.com.au/nbn-plans",
+      "has_plans": true,
+      "confidence": 0.999,
+      "network_types": [
+        "nbn",
+        "opticomm",
+        "fibre"
+      ],
+      "card_selector": "[class*=\"plan-card\"]",
+      "card_count": 5,
+      "name_selector": "strong",
+      "price_selector": "[class*=\"price\"]",
+      "speed_selector": "[class*=\"speed\"]",
+      "price_signals": 10,
+      "speed_signals": 10
+    },
+    {
+      "url": "https://www.iprimus.com.au/product-info/internet/nbn-speeds",
+      "has_plans": true,
+      "confidence": 0.35,
+      "network_types": [
+        "nbn",
+        "opticomm",
+        "fixed_wireless",
+        "fibre"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 0,
+      "speed_signals": 16
+    },
+    {
+      "url": "https://www.iprimus.com.au/fibre-plans",
+      "has_plans": true,
+      "confidence": 0.999,
+      "network_types": [
+        "nbn",
+        "opticomm",
+        "redtrain"
+      ],
+      "card_selector": "[class*=\"plan-card\"]",
+      "card_count": 4,
+      "name_selector": "strong",
+      "price_selector": "[class*=\"price\"]",
+      "speed_selector": "[class*=\"speed\"]",
+      "price_signals": 9,
+      "speed_signals": 8
+    },
+    {
+      "url": "https://www.iprimus.com.au/velocity-opticomm",
+      "has_plans": false,
+      "confidence": 0.15,
+      "network_types": [
+        "nbn",
+        "opticomm"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 0,
+      "speed_signals": 0
+    }
+  ],
+  "plans": [
+    {
+      "provider": "Iprimus",
+      "network_type": "NBN",
+      "plan_name": "50Mbps download & 17Mbps upload typical evening speeds",
+      "download_speed": 50,
+      "upload_speed": 0,
+      "price": 87.0,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": null,
+      "typical_evening_dl": 0,
+      "typical_evening_ul": 0,
+      "source_url": "https://www.iprimus.com.au/nbn-plans"
+    },
+    {
+      "provider": "Iprimus",
+      "network_type": "NBN",
+      "plan_name": "100Mbps download & 17Mbps upload typical evening speeds",
+      "download_speed": 100,
+      "upload_speed": 0,
+      "price": 97.0,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": null,
+      "typical_evening_dl": 0,
+      "typical_evening_ul": 0,
+      "source_url": "https://www.iprimus.com.au/nbn-plans"
+    },
+    {
+      "provider": "Iprimus",
+      "network_type": "NBN",
+      "plan_name": "500Mbps download & 47Mbps upload typical evening speeds",
+      "download_speed": 500,
+      "upload_speed": 0,
+      "price": 97.0,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": null,
+      "typical_evening_dl": 0,
+      "typical_evening_ul": 0,
+      "source_url": "https://www.iprimus.com.au/nbn-plans"
+    },
+    {
+      "provider": "Iprimus",
+      "network_type": "NBN",
+      "plan_name": "700Mbps download & 49Mbps upload typical evening speeds",
+      "download_speed": 700,
+      "upload_speed": 0,
+      "price": 104.0,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": null,
+      "typical_evening_dl": 0,
+      "typical_evening_ul": 0,
+      "source_url": "https://www.iprimus.com.au/nbn-plans"
+    },
+    {
+      "provider": "Iprimus",
+      "network_type": "NBN",
+      "plan_name": "840Mbps download & 94Mbps upload typical evening speeds",
+      "download_speed": 840,
+      "upload_speed": 0,
+      "price": 119.0,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": null,
+      "typical_evening_dl": 0,
+      "typical_evening_ul": 0,
+      "source_url": "https://www.iprimus.com.au/nbn-plans"
+    },
+    {
+      "provider": "Iprimus",
+      "network_type": "NBN",
+      "plan_name": "90Mbps",
+      "download_speed": 90,
+      "upload_speed": 0,
+      "price": 97.0,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": null,
+      "typical_evening_dl": 0,
+      "typical_evening_ul": 0,
+      "source_url": "https://www.iprimus.com.au/fibre-plans"
+    },
+    {
+      "provider": "Iprimus",
+      "network_type": "NBN",
+      "plan_name": "247Mbps",
+      "download_speed": 247,
+      "upload_speed": 0,
+      "price": 104.0,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": null,
+      "typical_evening_dl": 0,
+      "typical_evening_ul": 0,
+      "source_url": "https://www.iprimus.com.au/fibre-plans"
+    },
+    {
+      "provider": "Iprimus",
+      "network_type": "NBN",
+      "plan_name": "510Mbps",
+      "download_speed": 510,
+      "upload_speed": 0,
+      "price": 119.0,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": null,
+      "typical_evening_dl": 0,
+      "typical_evening_ul": 0,
+      "source_url": "https://www.iprimus.com.au/fibre-plans"
+    },
+    {
+      "provider": "Iprimus",
+      "network_type": "NBN",
+      "plan_name": "48Mbps",
+      "download_speed": 48,
+      "upload_speed": 0,
+      "price": 87.0,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": null,
+      "typical_evening_dl": 0,
+      "typical_evening_ul": 0,
+      "source_url": "https://www.iprimus.com.au/fibre-plans"
+    }
+  ],
+  "invalid_plans": [],
+  "errors": [
+    "Provider fallback failed: iprimus fallback returned no plans",
+    "Provider fallback failed: iprimus fallback returned no plans"
+  ]
+}

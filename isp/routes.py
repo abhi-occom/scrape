@@ -218,6 +218,41 @@ def api_get_result_file(filename):
     return jsonify({'success': True, 'data': data})
 
 
+@isp_bp.route('/api/results/<filename>/compare', methods=['GET'])
+def api_compare_result_file(filename):
+    """Compare a saved crawl result with the previous saved run for the same provider."""
+    fpath = _safe_result_path(filename)
+    if not fpath:
+        return jsonify({'success': False, 'error': 'Invalid filename'}), 400
+    if not os.path.exists(fpath):
+        return jsonify({'success': False, 'error': 'File not found'}), 404
+
+    try:
+        with open(fpath, 'r', encoding='utf-8') as f:
+            current = json.load(f)
+    except Exception as e:
+        return jsonify({'success': False, 'error': f'Could not read result: {e}'}), 500
+
+    previous_entry = _find_previous_result(filename, current)
+    if not previous_entry:
+        return jsonify({
+            'success': False,
+            'error': 'No previous saved run found for this provider.',
+        }), 404
+
+    previous_filename, previous = previous_entry
+    comparison = _compare_result_plans(current, previous)
+    return jsonify({
+        'success': True,
+        'current_file': filename,
+        'previous_file': previous_filename,
+        'provider': current.get('provider', ''),
+        'current_started_at': current.get('started_at', ''),
+        'previous_started_at': previous.get('started_at', ''),
+        **comparison,
+    })
+
+
 @isp_bp.route('/api/results/<filename>', methods=['DELETE'])
 def api_delete_result_file(filename):
     """Delete a saved crawl result file and related exported files."""
@@ -265,6 +300,142 @@ def api_delete_result_file(filename):
             pass
 
     return jsonify({'success': True, 'deleted': deleted})
+
+
+def _find_previous_result(current_filename, current_data):
+    """Return (filename, data) for the previous timestamped result of the same provider."""
+    provider = (current_data.get('provider') or '').strip().lower()
+    current_started = current_data.get('started_at') or ''
+    if not provider or not os.path.exists(OUTPUT_DIR):
+        return None
+
+    candidates = []
+    for fname in os.listdir(OUTPUT_DIR):
+        if fname == current_filename:
+            continue
+        if not fname.endswith('.json') or fname.endswith('_latest.json') or fname == 'test_report.json':
+            continue
+
+        fpath = _safe_result_path(fname)
+        if not fpath or not os.path.exists(fpath):
+            continue
+
+        try:
+            with open(fpath, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+        except Exception:
+            continue
+
+        if (data.get('provider') or '').strip().lower() != provider:
+            continue
+
+        started = data.get('started_at') or ''
+        if current_started and started and started >= current_started:
+            continue
+
+        candidates.append((started, os.path.getmtime(fpath), fname, data))
+
+    if not candidates:
+        return None
+
+    candidates.sort(key=lambda item: (item[0], item[1]), reverse=True)
+    _, _, fname, data = candidates[0]
+    return fname, data
+
+
+def _compare_result_plans(current, previous):
+    """Build a saved-run diff for new, removed, price, and promo changes."""
+    current_map = {
+        _plan_key(plan): plan
+        for plan in current.get('plans', [])
+        if _plan_key(plan)
+    }
+    previous_map = {
+        _plan_key(plan): plan
+        for plan in previous.get('plans', [])
+        if _plan_key(plan)
+    }
+
+    current_keys = set(current_map)
+    previous_keys = set(previous_map)
+
+    new_plans = [_plan_snapshot(current_map[key]) for key in sorted(current_keys - previous_keys)]
+    removed_plans = [_plan_snapshot(previous_map[key]) for key in sorted(previous_keys - current_keys)]
+
+    price_changed = []
+    promo_changed = []
+    for key in sorted(current_keys & previous_keys):
+        current_plan = current_map[key]
+        previous_plan = previous_map[key]
+
+        current_price = _number_or_none(current_plan.get('price'))
+        previous_price = _number_or_none(previous_plan.get('price'))
+        if current_price != previous_price:
+            price_changed.append({
+                'plan': _plan_snapshot(current_plan),
+                'old_price': previous_price,
+                'new_price': current_price,
+            })
+
+        current_promo = _number_or_none(current_plan.get('promo_price'))
+        previous_promo = _number_or_none(previous_plan.get('promo_price'))
+        current_period = current_plan.get('promo_period')
+        previous_period = previous_plan.get('promo_period')
+        if current_promo != previous_promo or current_period != previous_period:
+            promo_changed.append({
+                'plan': _plan_snapshot(current_plan),
+                'old_promo_price': previous_promo,
+                'new_promo_price': current_promo,
+                'old_promo_period': previous_period,
+                'new_promo_period': current_period,
+            })
+
+    changes = {
+        'new_plans': new_plans,
+        'removed_plans': removed_plans,
+        'price_changed': price_changed,
+        'promo_changed': promo_changed,
+    }
+    return {
+        'summary': {name: len(items) for name, items in changes.items()},
+        'changes': changes,
+    }
+
+
+def _plan_key(plan):
+    """Stable identity for comparing a plan across runs."""
+    pieces = [
+        plan.get('provider', ''),
+        plan.get('network_type', ''),
+        plan.get('plan_name', ''),
+        plan.get('download_speed', ''),
+        plan.get('upload_speed', ''),
+    ]
+    return '|'.join(str(part).strip().lower() for part in pieces)
+
+
+def _plan_snapshot(plan):
+    """Small plan representation for comparison UI."""
+    return {
+        'provider': plan.get('provider'),
+        'network_type': plan.get('network_type'),
+        'plan_name': plan.get('plan_name'),
+        'download_speed': plan.get('download_speed'),
+        'upload_speed': plan.get('upload_speed'),
+        'price': plan.get('price'),
+        'promo_price': plan.get('promo_price'),
+        'promo_period': plan.get('promo_period'),
+        'source_url': plan.get('source_url'),
+    }
+
+
+def _number_or_none(value):
+    if value in (None, ''):
+        return None
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return None
 
 
 def _safe_result_path(filename):

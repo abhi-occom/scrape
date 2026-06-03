@@ -10141,5 +10141,621 @@
     "message": "Page analysis: https://www.iprimus.com.au/nbn-plans/service-qualification?planId=SBCHRG8 | plans=False confidence=0.27 networks=['nbn'] cards=0 prices=2 speeds=2",
     "provider": "isp-crawler",
     "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:41:58.245185",
+    "status": "info",
+    "message": "Page analysis: https://www.iprimus.com.au/nbn-plans/service-qualification?planId=SBCHRG9 | plans=False confidence=0.27 networks=['nbn'] cards=0 prices=2 speeds=2",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:42:05.532460",
+    "status": "info",
+    "message": "Page analysis: https://www.iprimus.com.au/nbn-plans/service-qualification?planId=SBCHRG11 | plans=False confidence=0.27 networks=['nbn'] cards=0 prices=2 speeds=2",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:42:15.323346",
+    "status": "info",
+    "message": "Page analysis: https://www.iprimus.com.au/nbn-plans/service-qualification?planId=FBR25C1CW&planType=NBN | plans=False confidence=0.32 networks=['nbn', 'fixed_wireless'] cards=0 prices=2 speeds=2",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:42:22.541224",
+    "status": "info",
+    "message": "Page analysis: https://www.iprimus.com.au/nbn-plans/service-qualification?planId=FBR25C1CW | plans=False confidence=0.32 networks=['nbn', 'fixed_wireless'] cards=0 prices=2 speeds=2",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:42:31.652113",
+    "status": "info",
+    "message": "Page analysis: https://www.iprimus.com.au/nbn-plans/service-qualification?planId=SBCHRG10&planType=NBN | plans=False confidence=0.32 networks=['nbn', 'fixed_wireless'] cards=0 prices=2 speeds=2",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:42:39.953898",
+    "status": "info",
+    "message": "Page analysis: https://www.iprimus.com.au/nbn-plans/service-qualification?planId=SBCHRG10 | plans=False confidence=0.32 networks=['nbn', 'fixed_wireless'] cards=0 prices=2 speeds=2",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:42:50.164414",
+    "status": "info",
+    "message": "Page analysis: https://www.iprimus.com.au/nbn-plans/service-qualification?planId=FBR25C1C&planType=NBN | plans=False confidence=0.27 networks=['nbn'] cards=0 prices=2 speeds=2",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:42:58.052796",
+    "status": "info",
+    "message": "Page analysis: https://www.iprimus.com.au/nbn-plans/service-qualification?planId=FBR25C1C | plans=False confidence=0.27 networks=['nbn'] cards=0 prices=2 speeds=2",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:06.271132",
+    "status": "info",
+    "message": "Page analysis: https://www.iprimus.com.au/nbn-plans/service-qualification?planId=SBCHRG12 | plans=False confidence=0.27 networks=['nbn'] cards=0 prices=2 speeds=2",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:14.876724",
+    "status": "info",
+    "message": "Page analysis: http://www.iprimus.com.au/nbn-plans | plans=True confidence=1.00 networks=['nbn', 'opticomm', 'fibre'] cards=5 prices=10 speeds=10",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:14.903479",
+    "status": "success",
+    "message": "Plan page confirmed: http://www.iprimus.com.au/nbn-plans (confidence=1.00, cards=5)",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:22.884081",
+    "status": "info",
+    "message": "Page analysis: https://www.iprimus.com.au/product-info/internet/nbn-speeds | plans=True confidence=0.35 networks=['nbn', 'opticomm', 'fixed_wireless', 'fibre'] cards=0 prices=0 speeds=16",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:22.909046",
+    "status": "success",
+    "message": "Plan page confirmed: https://www.iprimus.com.au/product-info/internet/nbn-speeds (confidence=0.35, cards=0)",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:29.590152",
+    "status": "info",
+    "message": "Page analysis: https://www.iprimus.com.au/fibre-plans | plans=True confidence=1.00 networks=['nbn', 'opticomm', 'redtrain'] cards=4 prices=9 speeds=8",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:29.616372",
+    "status": "success",
+    "message": "Plan page confirmed: https://www.iprimus.com.au/fibre-plans (confidence=1.00, cards=4)",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:36.892924",
+    "status": "info",
+    "message": "Page analysis: https://www.iprimus.com.au/velocity-opticomm | plans=False confidence=0.15 networks=['nbn', 'opticomm'] cards=0 prices=0 speeds=0",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:37.889024",
+    "status": "warning",
+    "message": "HTTP 403: https://www.iprimus.com.au/sites/default/files/kfs/iPrimus_KFS_nbn.pdf%C2%A0",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:37.926030",
+    "status": "info",
+    "message": "Found 9 confirmed plan pages out of 32 candidates",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:37.960463",
+    "status": "info",
+    "message": "Step 3: Extracting plan data...",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:38.012684",
+    "status": "warning",
+    "message": "No plans extracted from https://www.iprimus.com.au/critical-information-summary/nbn-internet-plans-cis",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:38.042954",
+    "status": "success",
+    "message": "Extracted 0 plans from https://www.iprimus.com.au/critical-information-summary/nbn-internet-plans-cis",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:38.130098",
+    "status": "info",
+    "message": "Selector extraction: 5 cards via '[class*=\"plan-card\"]'",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:38.520511",
+    "status": "success",
+    "message": "Selector strategy: 5 plans from https://www.iprimus.com.au/nbn-plans",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:38.557019",
+    "status": "success",
+    "message": "Extracted 5 plans from https://www.iprimus.com.au/nbn-plans",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:38.694409",
+    "status": "info",
+    "message": "Selector extraction: 2 cards via '[class*=\"plan-card\"]'",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:38.906943",
+    "status": "success",
+    "message": "Selector strategy: 1 plans from https://www.iprimus.com.au/nbn-plans/nbn-50-plans",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:38.941819",
+    "status": "success",
+    "message": "Extracted 1 plans from https://www.iprimus.com.au/nbn-plans/nbn-50-plans",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:39.012240",
+    "status": "info",
+    "message": "Selector extraction: 3 cards via '[class*=\"plan-card\"]'",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:39.311989",
+    "status": "success",
+    "message": "Selector strategy: 2 plans from https://www.iprimus.com.au/nbn-plans/nbn-95-plans",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:39.338061",
+    "status": "success",
+    "message": "Extracted 2 plans from https://www.iprimus.com.au/nbn-plans/nbn-95-plans",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:39.391032",
+    "status": "info",
+    "message": "Selector extraction: 2 cards via '[class*=\"plan-card\"]'",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:39.574519",
+    "status": "success",
+    "message": "Selector strategy: 1 plans from https://www.iprimus.com.au/nbn-plans/nbn-superfast-plans",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:39.599047",
+    "status": "success",
+    "message": "Extracted 1 plans from https://www.iprimus.com.au/nbn-plans/nbn-superfast-plans",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:39.654078",
+    "status": "info",
+    "message": "Selector extraction: 2 cards via '[class*=\"plan-card\"]'",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:39.798684",
+    "status": "success",
+    "message": "Selector strategy: 1 plans from https://www.iprimus.com.au/nbn-plans/nbn-ultrafast-plans",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:39.836696",
+    "status": "success",
+    "message": "Extracted 1 plans from https://www.iprimus.com.au/nbn-plans/nbn-ultrafast-plans",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:39.895111",
+    "status": "info",
+    "message": "Selector extraction: 5 cards via '[class*=\"plan-card\"]'",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:40.310099",
+    "status": "success",
+    "message": "Selector strategy: 5 plans from http://www.iprimus.com.au/nbn-plans",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:40.331727",
+    "status": "success",
+    "message": "Extracted 5 plans from http://www.iprimus.com.au/nbn-plans",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:40.407840",
+    "status": "warning",
+    "message": "No plans extracted from https://www.iprimus.com.au/product-info/internet/nbn-speeds",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:40.435400",
+    "status": "success",
+    "message": "Extracted 0 plans from https://www.iprimus.com.au/product-info/internet/nbn-speeds",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:40.495499",
+    "status": "info",
+    "message": "Selector extraction: 4 cards via '[class*=\"plan-card\"]'",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:40.791095",
+    "status": "success",
+    "message": "Selector strategy: 4 plans from https://www.iprimus.com.au/fibre-plans",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:40.822565",
+    "status": "success",
+    "message": "Extracted 4 plans from https://www.iprimus.com.au/fibre-plans",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:40.866070",
+    "status": "info",
+    "message": "Deduplicated: 19 → 9 plans",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:40.902576",
+    "status": "info",
+    "message": "Step 4: Validating scraped plans...",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:40.944399",
+    "status": "info",
+    "message": "Validation complete: 9 valid, 0 invalid out of 9",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:42.811772",
+    "status": "warning",
+    "message": "Checking iprimus provider scraper fallback",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:42.830239",
+    "status": "info",
+    "message": "Starting iPrimus scraper",
+    "provider": "iprimus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:53.659299",
+    "status": "info",
+    "message": "Found 5 primary plan_tile cards",
+    "provider": "iprimus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:53.818669",
+    "status": "info",
+    "message": "Found 13 modal plan_tile cards",
+    "provider": "iprimus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:55.383647",
+    "status": "success",
+    "message": "iPrimus scraper complete: 0 plans (0 NBN, 0 Fixed Wireless, 0 Fibre)",
+    "provider": "iprimus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:55.425182",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:55.467148",
+    "status": "success",
+    "message": "Crawl complete for Iprimus: 9 valid plans, 0 invalid, 9 pages scraped in 442.39s",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:55.510146",
+    "status": "info",
+    "message": "Network types: ['NBN']",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:55.562709",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:55.613192",
+    "status": "info",
+    "message": "Results saved to C:\\xampp\\htdocs\\scrape\\output\\isp_crawler\\iprimus_20260603_204355.json",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T20:43:55.670886",
+    "status": "info",
+    "message": "CSV saved to C:\\xampp\\htdocs\\scrape\\output\\isp_crawler\\iprimus_20260603_204355.csv",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T21:53:18.441848",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T21:53:18.561578",
+    "status": "info",
+    "message": "ISP Crawler starting for: https://www.tpg.com.au",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T21:53:18.673457",
+    "status": "info",
+    "message": "Provider: Tpg",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T21:53:18.775935",
+    "status": "info",
+    "message": "Network types: ['nbn', 'opticomm', 'redtrain', 'supa']",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T21:53:18.876077",
+    "status": "info",
+    "message": "Max depth: 2",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T21:53:18.963367",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T21:53:19.075378",
+    "status": "warning",
+    "message": "Checking tpg provider scraper fallback",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T21:53:22.222733",
+    "status": "info",
+    "message": "Scraping nbn: https://www.tpg.com.au/nbn",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T21:53:41.847160",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T21:53:50.190945",
+    "status": "info",
+    "message": "Found 50 nbnLabels cards",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T21:54:02.341159",
+    "status": "success",
+    "message": "nbn: 7 plans",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T21:54:02.512023",
+    "status": "info",
+    "message": "Skipping fibre_upgrade (informational)",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T21:54:02.866651",
+    "status": "info",
+    "message": "Scraping home_wireless: https://www.tpg.com.au/home-wireless-broadband",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T21:54:08.650871",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T21:54:15.971980",
+    "status": "success",
+    "message": "home_wireless: 1 plans",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T21:54:16.559102",
+    "status": "info",
+    "message": "Scraping 5g_home: https://www.tpg.com.au/5g-home-broadband",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T21:54:24.865008",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T21:54:31.633474",
+    "status": "success",
+    "message": "5g_home: 2 plans",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T21:54:32.155602",
+    "status": "info",
+    "message": "Scraping fttb: https://www.tpg.com.au/fttb",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T21:54:37.123335",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T21:54:44.004184",
+    "status": "info",
+    "message": "Found 3 FTTB plan-cards",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T21:54:45.698498",
+    "status": "success",
+    "message": "fttb: 3 plans",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T21:54:53.012497",
+    "status": "success",
+    "message": "Total TPG plans: 13",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T21:54:53.087925",
+    "status": "success",
+    "message": "Provider fallback extracted 13 plans for tpg",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T21:54:53.160013",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T21:54:53.276067",
+    "status": "success",
+    "message": "Crawl complete for Tpg: 13 valid plans, 0 invalid, 4 pages scraped in 94.72s",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T21:54:53.407054",
+    "status": "info",
+    "message": "Network types: ['NBN', 'FTTB', '4G Home Wireless', '5G']",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T21:54:53.514257",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T21:54:53.717157",
+    "status": "info",
+    "message": "Results saved to C:\\xampp\\htdocs\\scrape\\output\\isp_crawler\\tpg_20260603_215453.json",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-03T21:54:53.847690",
+    "status": "info",
+    "message": "CSV saved to C:\\xampp\\htdocs\\scrape\\output\\isp_crawler\\tpg_20260603_215453.csv",
+    "provider": "isp-crawler",
+    "data": {}
   }
 ]
