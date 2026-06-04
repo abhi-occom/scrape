@@ -1,0 +1,65 @@
+{
+  "base_url": "https://www.spintel.net.au",
+  "provider": "Spintel",
+  "started_at": "2026-06-04T10:04:52.292393",
+  "finished_at": "2026-06-04T10:05:11.968028",
+  "duration_seconds": 19.67,
+  "summary": {
+    "urls_visited": 2,
+    "plan_pages_found": 1,
+    "total_plans_scraped": 3,
+    "valid_plans": 3,
+    "invalid_plans": 0,
+    "network_types": [
+      "NBN"
+    ]
+  },
+  "discovered_urls": [],
+  "page_analyses": [],
+  "plans": [
+    {
+      "provider": "spintel",
+      "network_type": "NBN",
+      "plan_name": "Home Starter",
+      "download_speed": 25,
+      "upload_speed": 8,
+      "price": 64.95,
+      "promo_price": 39.0,
+      "promo_period": "6 months",
+      "contract": "No Contract",
+      "typical_evening_dl": 25,
+      "typical_evening_ul": 8,
+      "source_url": "https://www.spintel.net.au/home-internet/nbn"
+    },
+    {
+      "provider": "spintel",
+      "network_type": "NBN",
+      "plan_name": "Home Turbo",
+      "download_speed": 500,
+      "upload_speed": 42,
+      "price": 86.95,
+      "promo_price": 76.0,
+      "promo_period": "6 months",
+      "contract": "No Contract",
+      "typical_evening_dl": 500,
+      "typical_evening_ul": 42,
+      "source_url": "https://www.spintel.net.au/home-internet/nbn"
+    },
+    {
+      "provider": "spintel",
+      "network_type": "NBN",
+      "plan_name": "Home Ultrafast",
+      "download_speed": 850,
+      "upload_speed": 82,
+      "price": 99.95,
+      "promo_price": 89.0,
+      "promo_period": "6 months",
+      "contract": "No Contract",
+      "typical_evening_dl": 850,
+      "typical_evening_ul": 82,
+      "source_url": "https://www.spintel.net.au/home-internet/nbn"
+    }
+  ],
+  "invalid_plans": [],
+  "errors": []
+}

@@ -170,6 +170,8 @@
       background: rgba(255, 255, 255, 0.64);
       border: 1px solid rgba(23, 80, 115, 0.16);
       border-radius: 8px;
+      max-height: 230px;
+      overflow-y: auto;
     }
 
     .progress-list {
@@ -187,6 +189,7 @@
       align-items: start;
       color: var(--muted);
       font-size: 0.9rem;
+      overflow-wrap: anywhere;
     }
 
     .progress-dot {
@@ -358,6 +361,10 @@
       height: 550px;
     }
 
+    .start-panel {
+      overflow-y: auto;
+    }
+
     .saved-panel {
       display: flex;
       flex-direction: column;
@@ -398,7 +405,7 @@
 
     <div class="row g-4 crawler-grid">
       <section class="col-lg-5">
-        <div class="glass-panel p-4 crawler-panel">
+        <div class="glass-panel p-4 crawler-panel start-panel">
           <div class="panel-title">
             <h2>Start a Crawl</h2>
           </div>

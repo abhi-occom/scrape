@@ -10785,5 +10785,145 @@
     "message": "Extracted 5 plans from Optus",
     "provider": "optus",
     "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T10:04:52.295678",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T10:04:52.337635",
+    "status": "info",
+    "message": "ISP Crawler starting for: https://www.spintel.net.au",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T10:04:52.425883",
+    "status": "info",
+    "message": "Provider: Spintel",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T10:04:52.521313",
+    "status": "info",
+    "message": "Network types: ['nbn', 'opticomm', 'redtrain', 'supa']",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T10:04:52.577750",
+    "status": "info",
+    "message": "Max depth: 2",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T10:04:52.608644",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T10:04:52.628313",
+    "status": "warning",
+    "message": "Checking spintel provider scraper fallback",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T10:04:52.660169",
+    "status": "info",
+    "message": "Starting Spintel scraper",
+    "provider": "spintel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T10:05:09.480037",
+    "status": "info",
+    "message": "Found 24 plan-block.product-option elements",
+    "provider": "spintel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T10:05:09.664406",
+    "status": "info",
+    "message": "  Found: Home Starter (NBN) $64.95",
+    "provider": "spintel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T10:05:09.909453",
+    "status": "info",
+    "message": "  Found: Home Turbo (NBN) $86.95",
+    "provider": "spintel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T10:05:10.021984",
+    "status": "info",
+    "message": "  Found: Home Ultrafast (NBN) $99.95",
+    "provider": "spintel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T10:05:11.908102",
+    "status": "success",
+    "message": "Spintel scraper complete: 3 plans (3 NBN, 0 Fixed Wireless, 0 Fibre)",
+    "provider": "spintel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T10:05:11.947005",
+    "status": "success",
+    "message": "Provider fallback extracted 3 plans for spintel",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T10:05:11.968028",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T10:05:11.983343",
+    "status": "success",
+    "message": "Crawl complete for Spintel: 3 valid plans, 0 invalid, 1 pages scraped in 19.67s",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T10:05:12.006781",
+    "status": "info",
+    "message": "Network types: ['NBN']",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T10:05:12.034865",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T10:05:12.052509",
+    "status": "info",
+    "message": "Results saved to C:\\xampp\\htdocs\\scrape\\output\\isp_crawler\\spintel_20260604_100512.json",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T10:05:12.080251",
+    "status": "info",
+    "message": "CSV saved to C:\\xampp\\htdocs\\scrape\\output\\isp_crawler\\spintel_20260604_100512.csv",
+    "provider": "isp-crawler",
+    "data": {}
   }
 ]
