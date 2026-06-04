@@ -19,6 +19,8 @@ Unlike traditional scrapers that require manual selector configuration for each 
 
 ## 🚀 Quick Start
 
+**New to this tool?** 👉 [Start with QUICKSTART.md](QUICKSTART.md) for a 5-minute setup guide.
+
 ### **Web UI** (Recommended)
 
 1. Start the Flask server:
@@ -49,24 +51,59 @@ python -m isp.main_crawler https://www.superloop.com \
     --max-urls 150
 ```
 
+📖 **More examples?** See [EXAMPLES.md](EXAMPLES.md) for detailed code samples.
+
 ---
 
 ## 📂 Module Structure
 
 ```
 isp/
-├── __init__.py              # Package initializer
-├── url_discovery.py         # URL crawling engine
-├── plan_detector.py         # Plan page analysis & selector detection
-├── scraper_engine.py        # Dynamic data extraction (3 strategies)
-├── validator.py             # Data validation & comparison logging
-├── main_crawler.py          # Main orchestrator
-├── routes.py                # Flask API endpoints
-├── test_crawler.py          # Test suite
+├── __init__.py                 # Package initializer
+├── url_discovery.py            # URL crawling engine (262 lines)
+├── plan_detector.py            # Plan page analysis & selector detection (248 lines)
+├── scraper_engine.py           # Dynamic data extraction (3 strategies) (504 lines)
+├── validator.py                # Data validation & comparison logging (227 lines)
+├── main_crawler.py             # Main orchestrator & result saver (425 lines)
+├── routes.py                   # Flask API endpoints (150 lines)
+├── test_crawler.py             # Comprehensive test suite (332 lines)
 ├── templates/
-│   └── crawler_ui.html      # Web interface
-└── README.md                # This file
+│   ├── crawler_ui.html         # Main web interface (400+ lines)
+│   └── crawler_ui_base.html    # Base layout template (inherited by crawler_ui.html)
+├── README.md                   # Full technical documentation (this file)
+├── QUICKSTART.md               # 5-minute getting started guide ⭐
+├── EXAMPLES.md                 # Detailed usage examples & code snippets ⭐
+└── IMPLEMENTATION_SUMMARY.md   # Implementation overview & changelog ⭐
 ```
+
+### 📚 Documentation Files
+
+We provide **three levels of documentation**:
+
+1. **[QUICKSTART.md](QUICKSTART.md)** — Start here! 🚀
+   - 5-minute setup guide
+   - Common use cases
+   - Troubleshooting quick fixes
+   - Command-line examples
+
+2. **[EXAMPLES.md](EXAMPLES.md)** — Learn by example
+   - Real-world crawl scenarios
+   - Custom extraction logic
+   - Advanced API usage
+   - Code snippets for common tasks
+
+3. **[IMPLEMENTATION_SUMMARY.md](IMPLEMENTATION_SUMMARY.md)** — Deep dive
+   - Architecture overview
+   - Design decisions & rationale
+   - Test coverage details
+   - Performance characteristics
+   - Extension points for customization
+
+4. **[README.md](README.md)** (this file) — Complete reference
+   - How each component works
+   - Full API documentation
+   - Configuration guide
+   - Output format specification
 
 ---
 
@@ -182,6 +219,8 @@ python -m isp.test_crawler --provider telstra
 - Exetel, Leaptel (various layouts)
 
 Test report saved to: `output/isp_crawler/test_report.json`
+
+**Test Coverage:** 6 ISP scenarios with expected vs actual comparison logging, match rate calculation, and validation checks. See [IMPLEMENTATION_SUMMARY.md](IMPLEMENTATION_SUMMARY.md) for detailed test metrics.
 
 ---
 
@@ -339,6 +378,8 @@ PLAN_KEYWORDS = {
 
 ## 🎓 Advanced Usage
 
+**For detailed code examples and advanced patterns, see [EXAMPLES.md](EXAMPLES.md)**
+
 ### **Custom Extraction Logic**
 
 Subclass `ScraperEngine` and override extraction methods:
@@ -387,6 +428,8 @@ python C:\xampp\htdocs\scrape\isp\main_crawler.py https://www.telstra.com.au/int
 0 2 * * * cd /path/to/scrape && python -m isp.main_crawler https://www.telstra.com.au/internet
 ```
 
+📖 **More advanced patterns?** Check [EXAMPLES.md](EXAMPLES.md) and [IMPLEMENTATION_SUMMARY.md](IMPLEMENTATION_SUMMARY.md)
+
 ---
 
 ## 🤝 Contributing
@@ -423,6 +466,40 @@ For issues, questions, or feature requests:
 **"Discovered Opticomm plans from a provider we didn't know offered them"**
 
 **"Cut scraper maintenance time by 80% — no more fixing broken selectors every week"**
+
+---
+
+## 📚 Documentation Roadmap
+
+Choose your reading path based on your needs:
+
+```
+┌─ New User?
+│  └─> Read QUICKSTART.md (5 minutes)
+│
+├─ Want Code Examples?
+│  └─> Read EXAMPLES.md (15 minutes)
+│
+├─ Want Technical Deep Dive?
+│  └─> Read IMPLEMENTATION_SUMMARY.md (20 minutes)
+│
+└─ Need Complete Reference?
+   └─> Read README.md (full, 30+ minutes)
+```
+
+---
+
+## 📞 Quick Help
+
+| Question | Answer |
+|----------|--------|
+| How do I get started? | Start with [QUICKSTART.md](QUICKSTART.md) |
+| How do I use the CLI? | See [QUICKSTART.md](QUICKSTART.md) or `python -m isp.main_crawler --help` |
+| Can you show me code examples? | Yes, see [EXAMPLES.md](EXAMPLES.md) |
+| How does the crawler work internally? | See [IMPLEMENTATION_SUMMARY.md](IMPLEMENTATION_SUMMARY.md) |
+| What are all the options? | See ⚙️ Configuration section above |
+| Where are results saved? | See 📝 Output Format section above |
+| What if something breaks? | See 🐛 Troubleshooting section above |
 
 ---
 
