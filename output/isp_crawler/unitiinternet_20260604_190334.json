@@ -1,0 +1,49 @@
+{
+  "base_url": "https://unitiinternet.com",
+  "provider": "Unitiinternet",
+  "started_at": "2026-06-04T19:02:28.012972",
+  "finished_at": "2026-06-04T19:03:34.383018",
+  "duration_seconds": 66.37,
+  "summary": {
+    "urls_visited": 10,
+    "plan_pages_found": 0,
+    "total_plans_scraped": 0,
+    "valid_plans": 0,
+    "invalid_plans": 0,
+    "network_types": []
+  },
+  "discovered_urls": [
+    {
+      "url": "https://unitiinternet.com/internet/opticomm",
+      "score": 17,
+      "depth": 1,
+      "network_types": [
+        "opticomm"
+      ],
+      "found_on": "https://unitiinternet.com/",
+      "matched_networks": [
+        "opticomm"
+      ]
+    }
+  ],
+  "page_analyses": [
+    {
+      "url": "https://unitiinternet.com/internet/opticomm",
+      "has_plans": false,
+      "confidence": 0.1,
+      "network_types": [
+        "opticomm"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 0,
+      "speed_signals": 0
+    }
+  ],
+  "plans": [],
+  "invalid_plans": [],
+  "errors": []
+}

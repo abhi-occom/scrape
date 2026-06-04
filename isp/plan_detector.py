@@ -58,6 +58,12 @@ _network_regexes: Dict[str, re.Pattern] = {
     for name, patterns in NETWORK_SIGNATURES.items()
 }
 
+_RE_INLINE_PRICE_SIGNAL = re.compile(r'\$\s*\d')
+_RE_PRICE_ONLY_SIGNAL = re.compile(r'^\$?\s*\d+(?:\.\d{1,2})?$', re.IGNORECASE)
+_RE_MTH_SIGNAL = re.compile(r'/(?:mth|mo|month)|\b(?:mth|month)\b', re.IGNORECASE)
+_RE_Mbps_SIGNAL = re.compile(r'\d+\s*[Mm]bps')
+_RE_THE_SPEED_PLAN = re.compile(r'\bThe\s+\d{2,4}\+?\b', re.IGNORECASE)
+
 
 # ── Plan card selector candidates ────────────────────────────────
 
@@ -171,8 +177,8 @@ class PlanDetector:
             result.network_types = self._detect_networks(combined_text)
 
             # ── 3. Count pricing / speed signals ─────────────────
-            result.price_signals = len(re.findall(r'\$\d', body_text))
-            result.speed_signals = len(re.findall(r'\d+\s*[Mm]bps', body_text))
+            result.price_signals = self._count_price_signals(body_text)
+            result.speed_signals = self._count_speed_signals(body_text)
 
             # ── 4. Find best card selector ───────────────────────
             best_selector, best_count = self._find_best_card_selector(page)
@@ -211,6 +217,26 @@ class PlanDetector:
             if regex.search(text):
                 found.append(name)
         return found
+
+    def _count_price_signals(self, text: str) -> int:
+        """Count inline and visually split monthly price signals."""
+        lines = [line.strip() for line in text.splitlines() if line.strip()]
+        count = len(_RE_INLINE_PRICE_SIGNAL.findall(text))
+
+        for index, line in enumerate(lines):
+            if line == '$' and index + 2 < len(lines):
+                if _RE_PRICE_ONLY_SIGNAL.match(lines[index + 1]) and _RE_MTH_SIGNAL.search(lines[index + 2]):
+                    count += 1
+            elif _RE_PRICE_ONLY_SIGNAL.match(line) and index + 1 < len(lines):
+                previous = lines[index - 1] if index > 0 else ''
+                if previous == '$' and _RE_MTH_SIGNAL.search(lines[index + 1]):
+                    count += 1
+
+        return count
+
+    def _count_speed_signals(self, text: str) -> int:
+        """Count explicit Mbps labels and plan-name speed tiers like 'The 25'."""
+        return len(_RE_Mbps_SIGNAL.findall(text)) + len(_RE_THE_SPEED_PLAN.findall(text))
 
     # ── Selector probing ──────────────────────────────────────
 

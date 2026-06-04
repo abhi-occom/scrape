@@ -156,8 +156,15 @@ class ISPCrawler:
                 log_info("Step 1: Discovering plan page URLs...", provider="isp-crawler")
                 self._progress('discovering_urls', 'running', 'Discovering inner URLs and likely plan pages.')
                 discovered = self.discovery.crawl(browser)
-                result.discovered_urls = discovered
                 result.urls_visited = len(self.discovery.visited)
+
+                base_entry = {
+                    'url': self.base_url,
+                    'score': 0,
+                    'depth': 0,
+                    'network_types': [],
+                    'matched_networks': [],
+                }
 
                 if not discovered:
                     # If discovery found nothing, try the base URL directly
@@ -165,13 +172,13 @@ class ISPCrawler:
                         "No plan pages discovered via crawl, trying base URL directly",
                         provider="isp-crawler",
                     )
-                    discovered = [{
-                        'url': self.base_url,
-                        'score': 0,
-                        'depth': 0,
-                        'network_types': [],
-                        'matched_networks': [],
-                    }]
+                    discovered = [base_entry]
+                elif not any(entry.get('url') == self.base_url for entry in discovered):
+                    # Some ISPs put plan cards on the landing page while discovery
+                    # points to gated inner pages. Always analyse the submitted URL.
+                    discovered = [base_entry] + discovered
+
+                result.discovered_urls = discovered
 
                 log_success(
                     f"Discovered {len(discovered)} candidate plan pages",
@@ -523,12 +530,12 @@ class ISPCrawler:
         normalised['contract'] = normalised.get('contract')
         normalised['typical_evening_dl'] = (
             normalised.get('typical_evening_dl')
-            if normalised.get('typical_evening_dl') not in (None, '')
+            if normalised.get('typical_evening_dl') not in (None, '', 0)
             else normalised['download_speed']
         )
         normalised['typical_evening_ul'] = (
             normalised.get('typical_evening_ul')
-            if normalised.get('typical_evening_ul') not in (None, '')
+            if normalised.get('typical_evening_ul') not in (None, '', 0)
             else normalised['upload_speed']
         )
         normalised['source_url'] = normalised.get('source_url') or self.base_url

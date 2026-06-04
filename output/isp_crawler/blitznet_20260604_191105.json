@@ -1,9 +1,9 @@
 {
   "base_url": "https://blitznet.com.au",
   "provider": "Blitznet",
-  "started_at": "2026-06-04T19:12:05.190766",
-  "finished_at": "2026-06-04T19:12:38.590905",
-  "duration_seconds": 33.4,
+  "started_at": "2026-06-04T19:10:30.124173",
+  "finished_at": "2026-06-04T19:11:05.156179",
+  "duration_seconds": 35.03,
   "summary": {
     "urls_visited": 5,
     "plan_pages_found": 1,
@@ -42,7 +42,7 @@
       "price": 69.0,
       "promo_price": null,
       "promo_period": null,
-      "contract": "No lock-in / month-to-month",
+      "contract": "month-to-month",
       "typical_evening_dl": 25,
       "typical_evening_ul": 10,
       "source_url": "https://blitznet.com.au"
@@ -56,7 +56,7 @@
       "price": 75.0,
       "promo_price": null,
       "promo_period": null,
-      "contract": "No lock-in / month-to-month",
+      "contract": "NO LOCK-IN",
       "typical_evening_dl": 50,
       "typical_evening_ul": 20,
       "source_url": "https://blitznet.com.au"
@@ -70,7 +70,7 @@
       "price": 85.0,
       "promo_price": null,
       "promo_period": null,
-      "contract": "No lock-in / month-to-month",
+      "contract": "NO LOCK-IN",
       "typical_evening_dl": 500,
       "typical_evening_ul": 500,
       "source_url": "https://blitznet.com.au"
@@ -84,7 +84,7 @@
       "price": 130.0,
       "promo_price": null,
       "promo_period": null,
-      "contract": "No lock-in / month-to-month",
+      "contract": "NO LOCK-IN",
       "typical_evening_dl": 1000,
       "typical_evening_ul": 1000,
       "source_url": "https://blitznet.com.au"

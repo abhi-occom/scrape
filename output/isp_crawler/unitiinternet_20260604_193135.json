@@ -1,0 +1,116 @@
+{
+  "base_url": "https://unitiinternet.com",
+  "provider": "Unitiinternet",
+  "started_at": "2026-06-04T19:30:30.682608",
+  "finished_at": "2026-06-04T19:31:35.472850",
+  "duration_seconds": 64.79,
+  "summary": {
+    "urls_visited": 10,
+    "plan_pages_found": 1,
+    "total_plans_scraped": 3,
+    "valid_plans": 3,
+    "invalid_plans": 0,
+    "network_types": [
+      "Opticomm"
+    ]
+  },
+  "discovered_urls": [
+    {
+      "url": "https://unitiinternet.com",
+      "score": 0,
+      "depth": 0,
+      "network_types": [],
+      "matched_networks": []
+    },
+    {
+      "url": "https://unitiinternet.com/internet/opticomm",
+      "score": 17,
+      "depth": 1,
+      "network_types": [
+        "opticomm"
+      ],
+      "found_on": "https://unitiinternet.com/",
+      "matched_networks": [
+        "opticomm"
+      ]
+    }
+  ],
+  "page_analyses": [
+    {
+      "url": "https://unitiinternet.com",
+      "has_plans": true,
+      "confidence": 0.55,
+      "network_types": [
+        "opticomm"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 18,
+      "speed_signals": 12
+    },
+    {
+      "url": "https://unitiinternet.com/internet/opticomm",
+      "has_plans": false,
+      "confidence": 0.1,
+      "network_types": [
+        "opticomm"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 0,
+      "speed_signals": 0
+    }
+  ],
+  "plans": [
+    {
+      "provider": "Unitiinternet",
+      "network_type": "Opticomm",
+      "plan_name": "The 25",
+      "download_speed": 25,
+      "upload_speed": 5,
+      "price": 55.14,
+      "promo_price": null,
+      "promo_period": "6 months",
+      "contract": "No lock-in / month-to-month",
+      "typical_evening_dl": 25,
+      "typical_evening_ul": 5,
+      "source_url": "https://unitiinternet.com"
+    },
+    {
+      "provider": "Unitiinternet",
+      "network_type": "Opticomm",
+      "plan_name": "The 50",
+      "download_speed": 50,
+      "upload_speed": 20,
+      "price": 71.14,
+      "promo_price": null,
+      "promo_period": "6 months",
+      "contract": "No lock-in / month-to-month",
+      "typical_evening_dl": 50,
+      "typical_evening_ul": 20,
+      "source_url": "https://unitiinternet.com"
+    },
+    {
+      "provider": "Unitiinternet",
+      "network_type": "Opticomm",
+      "plan_name": "The 100",
+      "download_speed": 100,
+      "upload_speed": 20,
+      "price": 82.14,
+      "promo_price": null,
+      "promo_period": "6 months",
+      "contract": "No lock-in / month-to-month",
+      "typical_evening_dl": 100,
+      "typical_evening_ul": 20,
+      "source_url": "https://unitiinternet.com"
+    }
+  ],
+  "invalid_plans": [],
+  "errors": []
+}

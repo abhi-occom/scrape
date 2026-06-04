@@ -1,0 +1,53 @@
+{
+  "base_url": "https://blitznet.com.au",
+  "provider": "Blitznet",
+  "started_at": "2026-06-04T19:08:25.980724",
+  "finished_at": "2026-06-04T19:09:00.117950",
+  "duration_seconds": 34.14,
+  "summary": {
+    "urls_visited": 5,
+    "plan_pages_found": 1,
+    "total_plans_scraped": 1,
+    "valid_plans": 1,
+    "invalid_plans": 0,
+    "network_types": [
+      "FIBRE"
+    ]
+  },
+  "discovered_urls": [],
+  "page_analyses": [
+    {
+      "url": "https://blitznet.com.au",
+      "has_plans": true,
+      "confidence": 0.6659999999999999,
+      "network_types": [
+        "fibre"
+      ],
+      "card_selector": "[class*=\"pricing\"]",
+      "card_count": 30,
+      "name_selector": "h2",
+      "price_selector": "[class*=\"price\"]",
+      "speed_selector": null,
+      "price_signals": 0,
+      "speed_signals": 8
+    }
+  ],
+  "plans": [
+    {
+      "provider": "Blitznet",
+      "network_type": "FIBRE",
+      "plan_name": "Home",
+      "download_speed": 25,
+      "upload_speed": 10,
+      "price": 130.0,
+      "promo_price": 69.0,
+      "promo_period": null,
+      "contract": "NO LOCK-IN",
+      "typical_evening_dl": 25,
+      "typical_evening_ul": 10,
+      "source_url": "https://blitznet.com.au"
+    }
+  ],
+  "invalid_plans": [],
+  "errors": []
+}
