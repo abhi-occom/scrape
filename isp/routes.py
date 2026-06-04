@@ -31,7 +31,9 @@ _crawl_lock = threading.Lock()
 _crawl_state = {
     'running': False,
     'status': 'idle',
+    'stage': 'idle',
     'message': '',
+    'progress': [],
     'result': None,
 }
 
@@ -83,7 +85,13 @@ def api_start_crawl():
     with _crawl_lock:
         _crawl_state['running'] = True
         _crawl_state['status'] = 'starting'
+        _crawl_state['stage'] = 'starting'
         _crawl_state['message'] = f'Starting crawl for {base_url}'
+        _crawl_state['progress'] = [{
+            'stage': 'starting',
+            'status': 'running',
+            'message': f'Starting crawl for {base_url}',
+        }]
         _crawl_state['result'] = None
 
     thread = threading.Thread(
@@ -103,9 +111,34 @@ def api_start_crawl():
 def _run_crawl_async(base_url: str, name: str, networks: list, depth: int):
     """Background thread that runs the crawler."""
     global _crawl_state
+
+    def progress_callback(event):
+        event = event or {}
+        stage = event.get('stage', 'running')
+        status = event.get('status', 'running')
+        message = event.get('message', '')
+        with _crawl_lock:
+            _crawl_state['stage'] = stage
+            _crawl_state['message'] = message or _crawl_state['message']
+            progress = _crawl_state.setdefault('progress', [])
+            for item in progress:
+                if item.get('stage') == stage:
+                    item.update({
+                        'status': status,
+                        'message': message,
+                    })
+                    break
+            else:
+                progress.append({
+                    'stage': stage,
+                    'status': status,
+                    'message': message,
+                })
+
     try:
         with _crawl_lock:
             _crawl_state['status'] = 'running'
+            _crawl_state['stage'] = 'starting'
             _crawl_state['message'] = f'Crawling {base_url}...'
 
         crawler = ISPCrawler(
@@ -113,11 +146,13 @@ def _run_crawl_async(base_url: str, name: str, networks: list, depth: int):
             network_types=networks,
             max_depth=depth,
             provider_name=name,
+            progress_callback=progress_callback,
         )
         result = crawler.run()
 
         with _crawl_lock:
             _crawl_state['status'] = 'success' if result.success else 'error'
+            _crawl_state['stage'] = 'completed' if result.success else 'error'
             _crawl_state['message'] = (
                 f'Done: crawled {result.urls_visited} URLs, found {result.valid_plans} plans '
                 f'from {result.plan_pages_found} pages '
@@ -143,7 +178,13 @@ def _run_crawl_async(base_url: str, name: str, networks: list, depth: int):
     except Exception as e:
         with _crawl_lock:
             _crawl_state['status'] = 'error'
+            _crawl_state['stage'] = 'error'
             _crawl_state['message'] = f'Crawl failed: {str(e)}'
+            _crawl_state.setdefault('progress', []).append({
+                'stage': 'error',
+                'status': 'error',
+                'message': f'Crawl failed: {str(e)}',
+            })
             _crawl_state['result'] = {'error': str(e), 'success': False}
 
     finally:
@@ -161,7 +202,9 @@ def api_crawl_status():
             'success': True,
             'running': _crawl_state['running'],
             'status': _crawl_state['status'],
+            'stage': _crawl_state['stage'],
             'message': _crawl_state['message'],
+            'progress': _crawl_state.get('progress', []),
             'result': _crawl_state['result'],
         })
 

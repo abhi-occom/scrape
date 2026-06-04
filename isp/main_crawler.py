@@ -19,7 +19,7 @@ import os
 import csv
 import time
 from datetime import datetime
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any, Optional, Callable
 from dataclasses import dataclass, field, asdict
 from urllib.parse import urlparse
 
@@ -94,12 +94,14 @@ class ISPCrawler:
         max_depth: int = 2,
         max_urls: int = 150,
         provider_name: str = '',
+        progress_callback: Optional[Callable[[Dict[str, Any]], None]] = None,
     ):
         self.base_url = base_url.rstrip('/')
         self.network_types = network_types or ['nbn', 'opticomm', 'redtrain', 'supa']
         self.max_depth = max_depth
         self.max_urls = max_urls
         self.provider_name = provider_name or self._guess_provider(base_url)
+        self.progress_callback = progress_callback
 
         # Components
         self.discovery = URLDiscovery(
@@ -134,11 +136,17 @@ class ISPCrawler:
         log_info(f"Network types: {self.network_types}", provider="isp-crawler")
         log_info(f"Max depth: {self.max_depth}", provider="isp-crawler")
         log_info(f"{'='*60}", provider="isp-crawler")
+        self._progress('starting', 'done', f'Started crawl for {self.base_url}')
 
         if self._provider_key_from_url(self.base_url):
+            self._progress('discovering_urls', 'done', 'Known provider detected; using provider scraper first.')
+            self._progress('scraping_plans', 'running', 'Running provider-specific scraper.')
             self._try_provider_fallback(result)
             if result.success:
+                self._progress('scraping_plans', 'done', f'Provider scraper returned {result.valid_plans} plans.')
+                self._progress('validating', 'done', 'Provider-specific plan output accepted.')
                 return self._finalise_result(result, start_time)
+            self._progress('scraping_plans', 'done', 'Provider scraper did not return complete plans; trying generic crawler.')
 
         try:
             with sync_playwright() as pw:
@@ -146,6 +154,7 @@ class ISPCrawler:
 
                 # ── Step 1: Discover plan URLs ───────────────────
                 log_info("Step 1: Discovering plan page URLs...", provider="isp-crawler")
+                self._progress('discovering_urls', 'running', 'Discovering inner URLs and likely plan pages.')
                 discovered = self.discovery.crawl(browser)
                 result.discovered_urls = discovered
                 result.urls_visited = len(self.discovery.visited)
@@ -168,10 +177,18 @@ class ISPCrawler:
                     f"Discovered {len(discovered)} candidate plan pages",
                     provider="isp-crawler",
                 )
+                self._progress(
+                    'discovering_urls',
+                    'done',
+                    f'Discovered {len(discovered)} candidate pages from {result.urls_visited} visited URLs.',
+                )
 
                 if self._provider_key_from_url(self.base_url):
+                    self._progress('scraping_plans', 'running', 'Running provider-specific scraper after discovery.')
                     self._try_provider_fallback(result)
                     if result.success:
+                        self._progress('scraping_plans', 'done', f'Provider scraper returned {result.valid_plans} plans.')
+                        self._progress('validating', 'done', 'Provider-specific plan output accepted.')
                         try:
                             browser.close()
                         except Exception:
@@ -180,10 +197,12 @@ class ISPCrawler:
 
                 # ── Step 2: Analyse each page ────────────────────
                 log_info("Step 2: Analysing pages for plan data...", provider="isp-crawler")
+                self._progress('analyzing_pages', 'running', f'Analyzing {len(discovered)} candidate pages for plan signals.')
                 plan_pages: List[Dict] = []
 
-                for entry in discovered:
+                for index, entry in enumerate(discovered, start=1):
                     url = entry['url']
+                    self._progress('analyzing_pages', 'running', f'Analyzing page {index} of {len(discovered)}.')
                     page = create_stealth_page(browser)
                     try:
                         resp = page.goto(url, wait_until='domcontentloaded', timeout=25000)
@@ -233,6 +252,11 @@ class ISPCrawler:
                             pass
 
                 result.plan_pages_found = len(plan_pages)
+                self._progress(
+                    'analyzing_pages',
+                    'done',
+                    f'Confirmed {len(plan_pages)} plan pages from {len(discovered)} candidates.',
+                )
                 log_info(
                     f"Found {len(plan_pages)} confirmed plan pages out of {len(discovered)} candidates",
                     provider="isp-crawler",
@@ -240,12 +264,14 @@ class ISPCrawler:
 
                 # ── Step 3: Scrape plans from each page ──────────
                 log_info("Step 3: Extracting plan data...", provider="isp-crawler")
+                self._progress('scraping_plans', 'running', f'Scraping plans from {len(plan_pages)} confirmed pages.')
                 all_plans: List[Dict] = []
 
-                for pp in plan_pages:
+                for index, pp in enumerate(plan_pages, start=1):
                     url = pp['entry']['url']
                     analysis: PageAnalysis = pp['analysis']
                     page: Any = pp['page']
+                    self._progress('scraping_plans', 'running', f'Scraping page {index} of {len(plan_pages)}.')
 
                     try:
                         plans = self.engine.extract(
@@ -277,9 +303,11 @@ class ISPCrawler:
 
                 # ── Step 4: Deduplicate across pages ─────────────
                 all_plans = self._global_deduplicate(all_plans)
+                self._progress('scraping_plans', 'done', f'Scraped {len(all_plans)} unique plans before validation.')
 
                 # ── Step 5: Validate ─────────────────────────────
                 log_info("Step 4: Validating scraped plans...", provider="isp-crawler")
+                self._progress('validating', 'running', f'Validating {len(all_plans)} scraped plans.')
                 valid, invalid, _ = self.validator.validate_batch(all_plans)
 
                 result.plans = valid
@@ -291,14 +319,19 @@ class ISPCrawler:
                     p.get('network_type', '') for p in valid if p.get('network_type')
                 ))
                 result.success = len(valid) > 0
+                self._progress('validating', 'done', f'Validated {len(valid)} plans; rejected {len(invalid)}.')
 
                 browser.close()
 
         except Exception as e:
             log_error(f"Crawler fatal error: {e}", provider="isp-crawler")
             result.errors.append(f"Fatal: {str(e)}")
+            self._progress('error', 'error', f'Crawler fatal error: {str(e)}')
 
+        self._progress('scraping_plans', 'running', 'Checking provider-specific fallback for richer data.')
         self._try_provider_fallback(result)
+        if result.success:
+            self._progress('scraping_plans', 'done', f'Plan extraction complete with {result.valid_plans} valid plans.')
 
         return self._finalise_result(result, start_time)
 
@@ -325,9 +358,25 @@ class ISPCrawler:
         log_info(f"{'='*60}", provider="isp-crawler")
 
         # Save output
+        self._progress('saving', 'running', 'Saving JSON and CSV output files.')
         self._save_results(result)
+        self._progress('saving', 'done', 'Saved crawl output files.')
+        self._progress('completed', 'done', f'Crawl complete with {result.valid_plans} valid plans.')
 
         return result
+
+    def _progress(self, stage: str, status: str = 'running', message: str = '') -> None:
+        """Send a UI progress event when a callback is attached."""
+        if not self.progress_callback:
+            return
+        try:
+            self.progress_callback({
+                'stage': stage,
+                'status': status,
+                'message': message,
+            })
+        except Exception:
+            pass
 
     def _try_provider_fallback(self, result: CrawlResult) -> None:
         """Use existing provider-specific scrapers when they improve known-provider results."""

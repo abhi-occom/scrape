@@ -163,6 +163,59 @@
       font-variant-numeric: tabular-nums;
     }
 
+    .progress-panel {
+      display: none;
+      margin-top: 12px;
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.64);
+      border: 1px solid rgba(23, 80, 115, 0.16);
+      border-radius: 8px;
+    }
+
+    .progress-list {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .progress-item {
+      display: grid;
+      grid-template-columns: 12px 1fr;
+      gap: 10px;
+      align-items: start;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .progress-dot {
+      width: 10px;
+      height: 10px;
+      margin-top: 5px;
+      border-radius: 50%;
+      background: rgba(96, 112, 137, 0.34);
+    }
+
+    .progress-item strong {
+      display: block;
+      color: var(--ink);
+      font-size: 0.86rem;
+    }
+
+    .progress-status-running .progress-dot {
+      background: var(--accent);
+      box-shadow: 0 0 0 4px var(--accent-soft);
+    }
+
+    .progress-status-done .progress-dot {
+      background: var(--primary);
+    }
+
+    .progress-status-error .progress-dot {
+      background: #9f2f22;
+    }
+
     .status-starting {
       color: #7c2d21;
       background: var(--accent-soft);
@@ -264,6 +317,26 @@
       white-space: normal;
     }
 
+    .confidence-panel {
+      margin-top: 16px;
+      padding: 16px;
+      background: rgba(255, 255, 255, 0.58);
+      border: 1px solid rgba(82, 103, 132, 0.14);
+      border-radius: 8px;
+    }
+
+    .confidence-panel h3 {
+      margin: 0 0 10px;
+      color: var(--primary);
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    .confidence-note {
+      color: var(--muted);
+      margin: 0 0 12px;
+    }
+
     .empty-state {
       color: var(--muted);
       padding: 22px;
@@ -354,6 +427,7 @@
 
           <div id="status" class="status-card"></div>
           <div id="crawlTimer" class="crawl-timer">Elapsed: 00:00</div>
+          <div id="progressPanel" class="progress-panel"></div>
         </div>
       </section>
 
@@ -396,6 +470,16 @@ const PLAN_COLUMNS = [
   'typical_evening_ul',
   'source_url'
 ];
+const STAGE_LABELS = {
+  starting: 'Starting',
+  discovering_urls: 'Discovering URLs',
+  analyzing_pages: 'Analyzing Pages',
+  scraping_plans: 'Scraping Plans',
+  validating: 'Validating',
+  saving: 'Saving Files',
+  completed: 'Completed',
+  error: 'Error'
+};
 document.addEventListener('DOMContentLoaded', loadSavedResults);
 document.getElementById('form').onsubmit = async (e) => {
   e.preventDefault();
@@ -405,6 +489,7 @@ document.getElementById('form').onsubmit = async (e) => {
   const networks = ['nbn','opticomm','redtrain','supa'];
   setStatus('Starting...', 'starting');
   startCrawlTimer();
+  renderProgress([{stage: 'starting', status: 'running', message: 'Starting crawl request.'}]);
   const res = await fetch('/isp/api/crawl', {
     method:'POST',
     headers:{'Content-Type':'application/json'},
@@ -421,6 +506,7 @@ document.getElementById('form').onsubmit = async (e) => {
 async function checkStatus() {
   const res = await fetch('/isp/api/status');
   const data = await res.json();
+  renderProgress(data.progress || []);
   if(!data.running && data.status !== 'idle') {
     clearInterval(poll);
     stopCrawlTimer(data.result?.duration_seconds);
@@ -450,6 +536,30 @@ function setStatus(message, type) {
   el.style.display = 'block';
   el.className = `status-card status-${type}`;
   el.textContent = message;
+}
+
+function renderProgress(progress) {
+  const panel = document.getElementById('progressPanel');
+  const items = Array.isArray(progress) ? progress : [];
+  if(!items.length) {
+    panel.style.display = 'none';
+    panel.innerHTML = '';
+    return;
+  }
+
+  panel.style.display = 'block';
+  let html = '<ul class="progress-list">';
+  items.forEach(item => {
+    const status = item.status || 'running';
+    const stage = item.stage || '';
+    const label = STAGE_LABELS[stage] || titleCase(stage.replace(/_/g, ' '));
+    html += `<li class="progress-item progress-status-${escapeHtml(status)}">
+      <span class="progress-dot"></span>
+      <span><strong>${escapeHtml(label)}</strong>${escapeHtml(item.message || '')}</span>
+    </li>`;
+  });
+  html += '</ul>';
+  panel.innerHTML = html;
 }
 
 function startCrawlTimer() {
@@ -558,6 +668,12 @@ async function loadResultFile(filename) {
       urls_visited: result.summary?.urls_visited || 0,
       duration_seconds: result.duration_seconds || 0,
       plans: result.plans || [],
+      total_plans_scraped: result.summary?.total_plans_scraped || 0,
+      invalid_plans: result.summary?.invalid_plans || 0,
+      network_types_found: result.summary?.network_types || [],
+      discovered_urls: result.discovered_urls || [],
+      page_analyses: result.page_analyses || [],
+      errors: result.errors || [],
       provider: result.provider || '',
       base_url: result.base_url || ''
     });
@@ -586,6 +702,7 @@ function showResults(r) {
     <div class="metric"><span>Pages Scraped</span><strong>${r.plan_pages_found || 0}</strong></div>
     <div class="metric"><span>Duration</span><strong>${r.duration_seconds || 0}s</strong></div>
   </div>`;
+  html += renderConfidenceReport(r);
   if(r.plans && r.plans.length > 0) {
     html += '<div class="table-wrap mt-3"><table class="table table-hover align-middle"><thead><tr>';
     PLAN_COLUMNS.forEach(column => {
@@ -605,6 +722,85 @@ function showResults(r) {
     html += '<div class="empty-state">No valid plans were found in this scrape.</div>';
   }
   document.getElementById('resultsContent').innerHTML = html;
+}
+
+function renderConfidenceReport(result) {
+  const analyses = Array.isArray(result.page_analyses) ? result.page_analyses : [];
+  const discovered = Array.isArray(result.discovered_urls) ? result.discovered_urls : [];
+  const plans = Array.isArray(result.plans) ? result.plans : [];
+  const sourcePages = uniqueValues(plans.map(plan => plan.source_url).filter(Boolean));
+  const networks = result.network_types_found || uniqueValues(plans.map(plan => plan.network_type).filter(Boolean));
+  const errors = Array.isArray(result.errors) ? result.errors : [];
+
+  let html = '<div class="confidence-panel">';
+  html += '<h3>Provider Confidence Report</h3>';
+
+  if(!analyses.length) {
+    html += `<p class="confidence-note">Provider-specific scraper used or generic page analysis was skipped. The result is based on ${sourcePages.length || result.plan_pages_found || 0} source page(s), ${plans.length} valid plan(s), and network type(s): ${escapeHtml((networks || []).join(', ') || '-')}.</p>`;
+    if(sourcePages.length) {
+      html += '<div class="table-wrap"><table class="table table-hover align-middle"><thead><tr><th>Source URL</th><th>Plans</th></tr></thead><tbody>';
+      sourcePages.forEach(url => {
+        const count = plans.filter(plan => plan.source_url === url).length;
+        html += `<tr><td>${escapeHtml(url)}</td><td>${count}</td></tr>`;
+      });
+      html += '</tbody></table></div>';
+    }
+    if(errors.length) {
+      html += `<p class="confidence-note mt-3">Errors recorded: ${escapeHtml(errors.slice(0, 3).join(' | '))}${errors.length > 3 ? '...' : ''}</p>`;
+    }
+    return html + '</div>';
+  }
+
+  const confirmed = analyses.filter(item => item.has_plans);
+  const priceSignals = analyses.reduce((sum, item) => sum + Number(item.price_signals || 0), 0);
+  const speedSignals = analyses.reduce((sum, item) => sum + Number(item.speed_signals || 0), 0);
+  const avgConfidence = analyses.reduce((sum, item) => sum + Number(item.confidence || 0), 0) / analyses.length;
+  html += `<p class="confidence-note">Visited ${result.urls_visited || 0} URL(s), discovered ${discovered.length || analyses.length} candidate page(s), confirmed ${confirmed.length} plan page(s). Average confidence: ${Math.round(avgConfidence * 100)}%. Price signals: ${priceSignals}. Speed signals: ${speedSignals}.</p>`;
+  html += '<div class="table-wrap"><table class="table table-hover align-middle"><thead><tr><th>URL</th><th>Confidence</th><th>Plans</th><th>Signals</th><th>Selectors</th><th>Hint</th></tr></thead><tbody>';
+  analyses.forEach(item => {
+    const selectors = [
+      item.card_selector ? `cards: ${item.card_count || 0}` : 'cards: missing',
+      item.name_selector ? 'name: found' : 'name: missing',
+      item.price_selector ? 'price: found' : 'price: missing',
+      item.speed_selector ? 'speed: found' : 'speed: missing'
+    ].join(', ');
+    html += `<tr>
+      <td>${escapeHtml(item.url || '')}</td>
+      <td>${Math.round(Number(item.confidence || 0) * 100)}%</td>
+      <td>${item.has_plans ? 'Yes' : 'No'}</td>
+      <td>price ${Number(item.price_signals || 0)}, speed ${Number(item.speed_signals || 0)}</td>
+      <td>${escapeHtml(selectors)}</td>
+      <td>${escapeHtml(confidenceHint(item))}</td>
+    </tr>`;
+  });
+  html += '</tbody></table></div>';
+  if(errors.length) {
+    html += `<p class="confidence-note mt-3">Errors recorded: ${escapeHtml(errors.slice(0, 3).join(' | '))}${errors.length > 3 ? '...' : ''}</p>`;
+  }
+  return html + '</div>';
+}
+
+function confidenceHint(item) {
+  const hints = [];
+  if(!item.has_plans) {
+    hints.push('No complete plan pattern found');
+  }
+  if(!item.price_signals) {
+    hints.push('price signal missing');
+  }
+  if(!item.speed_signals) {
+    hints.push('speed signal missing');
+  }
+  if(!item.card_selector) {
+    hints.push('plan card selector missing');
+  }
+  if(!item.price_selector) {
+    hints.push('price selector missing');
+  }
+  if(!item.speed_selector) {
+    hints.push('speed selector missing');
+  }
+  return hints.length ? hints.join(', ') : 'Strong plan-page evidence';
 }
 
 async function compareCurrentResult() {
@@ -831,6 +1027,14 @@ function normaliseDisplayValue(plan, column) {
     return plan.typical_evening_ul ?? plan.upload_speed ?? '';
   }
   return plan[column] ?? '';
+}
+
+function uniqueValues(values) {
+  return [...new Set((values || []).filter(value => value !== null && value !== undefined && value !== ''))];
+}
+
+function titleCase(value) {
+  return String(value || '').replace(/\w\S*/g, word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase());
 }
 
 function escapeHtml(value) {
