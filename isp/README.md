@@ -1,506 +1,486 @@
-# ISP Mini Crawler 🔍
+# ISP Mini Crawler
 
-**Auto-discover and scrape broadband plans from any ISP website — no hardcoded selectors needed!**
+The `isp` folder contains a Playwright-powered crawler for discovering and scraping Australian ISP broadband plan pages. It is designed to work from a single provider URL, discover likely plan pages, analyse rendered HTML for broadband plan signals, extract normalised plan data, validate the results, and save JSON/CSV output for later review.
 
----
+The package can be used from the command line, imported from Python, or mounted into the main Flask app through the `isp` blueprint at `/isp`.
 
-## 📖 Overview
+## Current Folder Summary
 
-The ISP Mini Crawler is an intelligent web scraping system that can automatically:
-- **Discover** inner plan pages from any ISP base URL
-- **Detect** network types (NBN, Opticomm, RedTrain, Supa, 5G, etc.)
-- **Scrape** plan data using multiple extraction strategies
-- **Validate** and normalise scraped data
-- **Save** results to JSON/CSV
+This folder is a self-contained crawler module inside `C:\xampp\htdocs\scrape`. It includes:
 
-Unlike traditional scrapers that require manual selector configuration for each provider, this crawler uses heuristic analysis and multiple fallback strategies to extract data from ANY ISP website.
+- Generic crawler pipeline modules: URL discovery, page analysis, extraction, validation, orchestration.
+- Flask routes and a browser UI for starting crawls and viewing saved results.
+- A test runner with known ISP scenarios.
+- Documentation for quick start, examples, implementation notes, before/after comparison, and verification.
+- A local `.git` directory, so this folder appears to be versioned separately from the parent workspace.
+- Generated Python bytecode in `__pycache__`, which is runtime output and not part of the source design.
 
----
+## Main Capabilities
 
-## 🚀 Quick Start
+- Discover internal ISP URLs using weighted broadband and network keywords.
+- Analyse rendered pages with Playwright so JavaScript navigation and plan cards are visible.
+- Detect network types such as NBN, Opticomm, RedTrain, Supa, 5G, fixed wireless, fibre, and satellite.
+- Score pages for plan likelihood using price signals, speed signals, network mentions, card selectors, and sub-selectors.
+- Extract plans using selector-based parsing, embedded JSON parsing, and regex text parsing.
+- Prefer existing provider-specific scrapers for known providers when those results are richer than the generic crawler.
+- Validate plan records and split valid/invalid data.
+- Deduplicate results across pages.
+- Save timestamped JSON, latest JSON, and CSV exports.
+- Provide a web UI with progress events, saved scrape history, JSON/CSV download, delete, and previous-run comparison.
 
-**New to this tool?** 👉 [Start with QUICKSTART.md](QUICKSTART.md) for a 5-minute setup guide.
+## File Inventory
 
-### **Web UI** (Recommended)
+| Path | Purpose |
+| --- | --- |
+| `__init__.py` | Package marker and brief usage docstring. |
+| `main_crawler.py` | Main orchestrator. Runs discovery, analysis, extraction, validation, provider fallback, deduplication, and file persistence. Also exposes the CLI entry point. |
+| `url_discovery.py` | Crawls internal rendered links and ranks candidate plan URLs with keyword scoring. |
+| `plan_detector.py` | Analyses rendered pages and returns a `PageAnalysis` confidence report with network types and selector hints. |
+| `scraper_engine.py` | Extracts plan data using selector, JSON, and regex strategies. |
+| `validator.py` | Validates plan schema fields and provides comparison logging helpers for tests. |
+| `routes.py` | Flask blueprint mounted at `/isp`; provides UI, crawl, status, saved result, compare, and delete endpoints. |
+| `test_crawler.py` | End-to-end test runner for Telstra, Superloop, Swoop, Occom, Exetel, and Leaptel scenarios. |
+| `templates/crawler_ui.html` | Active ISP Mini Crawler dashboard used by `/isp/`. |
+| `templates/crawler_ui_base.html` | Older/larger dashboard template retained in the folder; not currently rendered by `routes.py`. |
+| `QUICKSTART.md` | Short setup and first-run guide. |
+| `EXAMPLES.md` | Usage examples and code snippets. |
+| `IMPLEMENTATION_SUMMARY.md` | Architecture and design notes. |
+| `BEFORE_AFTER_COMPARISON.md` | Notes comparing previous and current crawler/UI behavior. |
+| `VERIFICATION_CHECKLIST.md` | Manual verification checklist. |
+| `README_OLD.md` | Older README snapshot. |
+| `README_CHANGES.md` | Prior README change summary. |
 
-1. Start the Flask server:
-   ```bash
-   cd C:\xampp\htdocs\scrape
-   python app.py
-   ```
+Approximate source sizes at the time of this review:
 
-2. Navigate to: **http://localhost:5000/isp**
+- `main_crawler.py`: 686 lines
+- `routes.py`: 499 lines
+- `scraper_engine.py`: 593 lines
+- `plan_detector.py`: 351 lines
+- `url_discovery.py`: 324 lines
+- `validator.py`: 271 lines
+- `test_crawler.py`: 377 lines
+- `templates/crawler_ui.html`: 1052 lines
 
-3. Enter an ISP URL (e.g., `https://www.telstra.com.au/internet`)
+## How The Pipeline Works
 
-4. Click **"Start Crawling"** and watch the magic happen! ✨
+1. `ISPCrawler` receives a base URL, optional provider name, network list, depth, URL limit, and optional progress callback.
+2. For known provider domains, it first tries the existing provider-specific scraper through `scraper_service.scrape_provider`.
+3. If provider-specific output is not enough, it launches Playwright using the shared stealth utilities from `utils.stealth`.
+4. `URLDiscovery` crawls internal links up to the configured depth and ranks candidate pages.
+5. `PlanDetector` opens each candidate page, waits for rendering, and computes whether the page likely contains broadband plans.
+6. `ScraperEngine` extracts plans from confirmed pages.
+7. The crawler deduplicates plans across pages.
+8. `ISPValidator` validates each plan.
+9. The provider fallback is checked again and may replace generic results if it finds more plans, missing requested networks, or richer metadata.
+10. Final results are normalised into the standard output fields and saved to `output/isp_crawler`.
 
-### **Command Line**
+## URL Discovery
+
+`url_discovery.py` starts from the base URL and follows internal links. It normalises URLs, strips fragments, excludes non-plan pages, and scores each URL with `PLAN_KEYWORDS`.
+
+Strong signals include:
+
+- Network terms: `nbn`, `opticomm`, `redtrain`, `supa`, `5g`, `fixed-wireless`, `satellite`, `starlink`
+- Product terms: `plans`, `broadband`, `internet`, `home-internet`, `fibre`, `fttp`
+- Pricing terms: `pricing`, `price`, `compare`, `compare-plans`
+- Business terms: `small-business`, `business-internet`, `business-nbn`
+
+Excluded URLs include common non-plan sections such as blog, news, support, contact, login, terms, privacy, static assets, images, scripts, PDFs, anchors, mail links, and phone links.
+
+## Page Detection
+
+`plan_detector.py` returns a `PageAnalysis` object. It captures:
+
+- URL and page title
+- Whether plans were detected
+- Confidence score from `0.0` to `1.0`
+- Detected network types
+- Best card selector and card count
+- Best name, price, and speed sub-selectors
+- Count of price and speed signals
+- First body-text snippet and any error
+
+Confidence is based on:
+
+- 2 or more candidate card elements
+- Multiple price signals
+- Multiple speed signals
+- Network type mentions
+- Successful name, price, or speed sub-selector probes
+
+A page is treated as a plan page when confidence is at least `0.35`.
+
+## Extraction Strategies
+
+`scraper_engine.py` tries these strategies in order:
+
+1. Selector-based extraction
+   - Uses `PageAnalysis.card_selector` and sub-selectors.
+   - Best for traditional card or product tile layouts.
+
+2. Embedded JSON extraction
+   - Looks through `<script>` tags for arrays under keys such as `plans`, `products`, or `items`.
+   - Maps common fields like `planName`, `monthlyCost`, `downloadSpeed`, and `networkType`.
+
+3. Regex text parsing
+   - Scans visible body text for price and speed patterns.
+   - Includes a nearby-block fallback for pages where plan name, speed, and price are split across adjacent text sections.
+
+Each extracted plan is normalised toward this shape:
+
+```json
+{
+  "provider": "Telstra",
+  "network_type": "NBN",
+  "plan_name": "Basic NBN Home",
+  "download_speed": 25,
+  "upload_speed": 5,
+  "price": 85.0,
+  "promo_price": null,
+  "promo_period": null,
+  "contract": null,
+  "typical_evening_dl": 25,
+  "typical_evening_ul": 5,
+  "source_url": "https://www.telstra.com.au/internet"
+}
+```
+
+## Provider-Specific Fallback
+
+`main_crawler.py` recognises known provider domains and maps them to existing provider scraper keys. The current known-domain list includes:
+
+- `optus.com.au`
+- `telstra.com.au`
+- `superloop.com`
+- `occom.com.au`
+- `exetel.com.au`
+- `leaptel.com.au`
+- `swoop.com.au`
+- `dodo.com`
+- `iinet.net.au`
+- `iprimus.com.au`
+- `koganinternet.com.au`
+- `letsbemates.com.au`
+- `more.com.au`
+- `originenergy.com.au`
+- `spintel.net.au`
+- `tangerine.com.au`
+- `tangerinetelecom.com.au`
+- `tpg.com.au`
+- `activ8me.net.au`
+
+When a known provider is detected, the crawler calls `scraper_service.scrape_provider(provider_key)`. Provider-specific output replaces generic output when it has no current generic result, more plans, requested networks missing from the generic result, or richer metadata such as promo price, promo period, contract, and typical evening speeds.
+
+## Validation
+
+`validator.py` checks:
+
+- `plan_name` exists and is not too long.
+- `price` is numeric, positive, and not unusually high.
+- `promo_price` is valid and lower than regular price.
+- `download_speed` is numeric where possible; it can be inferred from the plan name.
+- `network_type` is known or produces a warning.
+
+Invalid records are stored separately in the saved JSON under `invalid_plans`.
+
+Known network types include NBN, Opticomm, RedTrain, Supa, 5G, fixed wireless, fibre/FTTP/FTTB/FTTN/FTTC, satellite, and business NBN.
+
+## Output Location
+
+Crawler output is saved under:
+
+```text
+C:\xampp\htdocs\scrape\output\isp_crawler
+```
+
+For each successful run, the crawler writes:
+
+- `<provider>_<timestamp>.json`: full crawl result
+- `<provider>_latest.json`: latest result for that provider
+- `<provider>_<timestamp>.csv`: plan rows only, when plans exist
+
+The test runner writes:
+
+- `test_report.json`
+
+## Output JSON Structure
+
+Saved JSON files use this top-level shape:
+
+```json
+{
+  "base_url": "https://www.telstra.com.au/internet",
+  "provider": "Telstra",
+  "started_at": "2026-06-04T07:59:00",
+  "finished_at": "2026-06-04T08:00:10",
+  "duration_seconds": 70.25,
+  "summary": {
+    "urls_visited": 42,
+    "plan_pages_found": 5,
+    "total_plans_scraped": 17,
+    "valid_plans": 17,
+    "invalid_plans": 0,
+    "network_types": ["NBN", "5G"]
+  },
+  "discovered_urls": [],
+  "page_analyses": [],
+  "plans": [],
+  "invalid_plans": [],
+  "errors": []
+}
+```
+
+CSV exports use the field order defined by `PLAN_FIELDS` in `main_crawler.py`:
+
+```text
+provider, network_type, plan_name, download_speed, upload_speed, price, promo_price, promo_period, contract, typical_evening_dl, typical_evening_ul, source_url
+```
+
+## Web UI
+
+Start the parent Flask application from the workspace root:
+
+```bash
+cd C:\xampp\htdocs\scrape
+python app.py
+```
+
+Then open:
+
+```text
+http://localhost:5000/isp
+```
+
+The active UI at `templates/crawler_ui.html` provides:
+
+- ISP URL input
+- Optional provider name
+- Crawl depth selector from 1 to 3
+- Fixed network request list: `nbn`, `opticomm`, `redtrain`, `supa`
+- Async crawl progress polling
+- Elapsed timer
+- Saved scrape table
+- Latest scrape auto-load
+- JSON download
+- CSV download
+- Copy API response
+- Previous-run comparison for saved results
+- Saved result deletion
+- Provider confidence report from `page_analyses`
+
+## Flask API
+
+The blueprint in `routes.py` is registered as `isp_bp` with URL prefix `/isp`.
+
+| Endpoint | Method | Purpose |
+| --- | --- | --- |
+| `/isp/` | GET | Render the crawler UI. |
+| `/isp/api/crawl` | POST | Start a background crawl. |
+| `/isp/api/status` | GET | Return current crawl state, progress events, and result summary. |
+| `/isp/api/results` | GET | List timestamped saved JSON results. |
+| `/isp/api/results/<filename>` | GET | Return one saved result file. |
+| `/isp/api/results/<filename>/compare` | GET | Compare a saved result with the previous run for the same provider. |
+| `/isp/api/results/<filename>` | DELETE | Delete a saved JSON result, matching CSV, and matching latest file when applicable. |
+
+Example crawl request:
+
+```json
+{
+  "url": "https://www.telstra.com.au/internet",
+  "name": "Telstra",
+  "networks": ["nbn", "opticomm", "redtrain", "supa"],
+  "depth": 2
+}
+```
+
+The route caps `depth` at `3`. If the URL does not start with `http`, it prefixes `https://`.
+
+## Command-Line Usage
+
+From the parent workspace root:
 
 ```bash
 cd C:\xampp\htdocs\scrape
 python -m isp.main_crawler https://www.telstra.com.au/internet
 ```
 
-**Advanced CLI options:**
+With options:
+
 ```bash
-python -m isp.main_crawler https://www.superloop.com \
-    --name "Superloop" \
-    --networks nbn opticomm \
-    --depth 2 \
-    --max-urls 150
+python -m isp.main_crawler https://www.superloop.com/consumer/internet ^
+  --name "Superloop" ^
+  --networks nbn opticomm ^
+  --depth 2 ^
+  --max-urls 150
 ```
 
-📖 **More examples?** See [EXAMPLES.md](EXAMPLES.md) for detailed code samples.
+CLI arguments:
 
----
+| Argument | Default | Description |
+| --- | --- | --- |
+| `url` | required | Base ISP URL to crawl. |
+| `--name` | inferred from domain | Human-readable provider name. |
+| `--depth` | `2` | Maximum crawl depth. |
+| `--networks` | `nbn opticomm redtrain supa` | Network keywords to prioritise. |
+| `--max-urls` | `150` | Maximum URLs to visit. |
 
-## 📂 Module Structure
+## Python Usage
 
-```
-isp/
-├── __init__.py                 # Package initializer
-├── url_discovery.py            # URL crawling engine (262 lines)
-├── plan_detector.py            # Plan page analysis & selector detection (248 lines)
-├── scraper_engine.py           # Dynamic data extraction (3 strategies) (504 lines)
-├── validator.py                # Data validation & comparison logging (227 lines)
-├── main_crawler.py             # Main orchestrator & result saver (425 lines)
-├── routes.py                   # Flask API endpoints (150 lines)
-├── test_crawler.py             # Comprehensive test suite (332 lines)
-├── templates/
-│   ├── crawler_ui.html         # Main web interface (400+ lines)
-│   └── crawler_ui_base.html    # Base layout template (inherited by crawler_ui.html)
-├── README.md                   # Full technical documentation (this file)
-├── QUICKSTART.md               # 5-minute getting started guide ⭐
-├── EXAMPLES.md                 # Detailed usage examples & code snippets ⭐
-└── IMPLEMENTATION_SUMMARY.md   # Implementation overview & changelog ⭐
-```
+```python
+from isp.main_crawler import ISPCrawler
 
-### 📚 Documentation Files
+crawler = ISPCrawler(
+    base_url="https://www.telstra.com.au/internet",
+    provider_name="Telstra",
+    network_types=["nbn", "opticomm"],
+    max_depth=2,
+    max_urls=150,
+)
 
-We provide **three levels of documentation**:
-
-1. **[QUICKSTART.md](QUICKSTART.md)** — Start here! 🚀
-   - 5-minute setup guide
-   - Common use cases
-   - Troubleshooting quick fixes
-   - Command-line examples
-
-2. **[EXAMPLES.md](EXAMPLES.md)** — Learn by example
-   - Real-world crawl scenarios
-   - Custom extraction logic
-   - Advanced API usage
-   - Code snippets for common tasks
-
-3. **[IMPLEMENTATION_SUMMARY.md](IMPLEMENTATION_SUMMARY.md)** — Deep dive
-   - Architecture overview
-   - Design decisions & rationale
-   - Test coverage details
-   - Performance characteristics
-   - Extension points for customization
-
-4. **[README.md](README.md)** (this file) — Complete reference
-   - How each component works
-   - Full API documentation
-   - Configuration guide
-   - Output format specification
-
----
-
-## 🛠️ How It Works
-
-### **1. URL Discovery** (`url_discovery.py`)
-
-Crawls the ISP website starting from the base URL and discovers plan pages using:
-- **Keyword scoring**: URLs containing 'nbn', 'opticomm', 'plans', etc. get higher scores
-- **Depth-first crawling**: Recursively follows high-scoring links
-- **Smart filtering**: Excludes blog, support, media pages
-- **Network type detection**: Identifies which networks are mentioned in each URL
-
-**Output:** Ranked list of candidate plan page URLs
-
-### **2. Plan Detection** (`plan_detector.py`)
-
-Analyses each discovered page to determine:
-- **Has plans?** Confidence score based on price/speed signals and DOM structure
-- **Network types**: Which broadband technologies are mentioned
-- **Best selectors**: Auto-detects CSS selectors for plan cards, names, prices, speeds
-
-**Output:** PageAnalysis object with confidence score and detected selectors
-
-### **3. Data Extraction** (`scraper_engine.py`)
-
-Three extraction strategies (tried in order):
-
-#### **Strategy 1: Selector-Based**
-- Uses auto-detected selectors from PageAnalysis
-- Iterates over plan card elements
-- Extracts name, price, speed from sub-selectors
-- **Best for:** Traditional card-based layouts
-
-#### **Strategy 2: Embedded JSON**
-- Searches for `<script>` tags containing plan data
-- Looks for JSON arrays with keys like `planName`, `monthlyCost`, `speed`
-- Maps JSON fields to standard schema
-- **Best for:** React/Vue SPAs with embedded data
-
-#### **Strategy 3: Regex Text-Parse**
-- Fallback when selectors and JSON fail
-- Scans page text for price + speed patterns
-- Groups related data into plan objects
-- **Best for:** Simple static pages, last resort
-
-**Output:** List of normalised plan dicts
-
-### **4. Validation** (`validator.py`)
-
-Validates scraped data:
-- ✅ `plan_name` is non-empty
-- ✅ `price` is positive and reasonable
-- ✅ `download_speed` is valid
-- ✅ `network_type` is recognized
-- ⚠️  Warnings for missing/unusual values
-
-**Output:** Split into valid and invalid plans
-
-### **5. Save Results** (`main_crawler.py`)
-
-Saves to `output/isp_crawler/`:
-- `<provider>_<timestamp>.json` — Full crawl result
-- `<provider>_latest.json` — Latest result (overwritten)
-- `<provider>_<timestamp>.csv` — Plans only in CSV
-
----
-
-## 📊 API Endpoints
-
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/isp/` | GET | Serve the crawler UI |
-| `/isp/api/crawl` | POST | Start a new crawl job |
-| `/isp/api/status` | GET | Get current crawl status & results |
-| `/isp/api/results` | GET | List all saved crawl results |
-| `/isp/api/results/<filename>` | GET | Get specific result file |
-
-**Example POST to `/isp/api/crawl`:**
-```json
-{
-    "url": "https://www.telstra.com.au/internet",
-    "name": "Telstra",
-    "networks": ["nbn", "opticomm", "5g"],
-    "depth": 2
-}
+result = crawler.run()
+print(result.valid_plans)
+print(result.plans)
 ```
 
----
+For UI progress, pass a callback:
 
-## 🧪 Testing
+```python
+def on_progress(event):
+    print(event["stage"], event["status"], event["message"])
 
-### **Run Full Test Suite**
+crawler = ISPCrawler(
+    base_url="https://www.example.com/internet",
+    progress_callback=on_progress,
+)
+result = crawler.run()
+```
+
+Progress stages currently include:
+
+- `starting`
+- `discovering_urls`
+- `analyzing_pages`
+- `scraping_plans`
+- `validating`
+- `saving`
+- `completed`
+- `error`
+
+## Testing
+
+Run all crawler scenarios:
+
 ```bash
+cd C:\xampp\htdocs\scrape
 python -m isp.test_crawler
 ```
 
-### **Quick Smoke Test** (Telstra only)
+Run a quick Telstra smoke test:
+
 ```bash
 python -m isp.test_crawler --quick
 ```
 
-### **Test Specific Provider**
+Run one provider:
+
 ```bash
 python -m isp.test_crawler --provider telstra
 ```
 
-**Test scenarios include:**
-- Telstra (dynamic, multi-page)
-- Superloop (dynamic JS)
-- Swoop (card-based)
-- Occom (multi-network)
-- Exetel, Leaptel (various layouts)
+Configured test scenarios:
 
-Test report saved to: `output/isp_crawler/test_report.json`
+- `telstra`
+- `superloop`
+- `swoop`
+- `occom`
+- `exetel`
+- `leaptel`
 
-**Test Coverage:** 6 ISP scenarios with expected vs actual comparison logging, match rate calculation, and validation checks. See [IMPLEMENTATION_SUMMARY.md](IMPLEMENTATION_SUMMARY.md) for detailed test metrics.
+The tests are live website tests. They require browser automation, network access, and current provider pages that still match the expected minimums.
 
----
+## Dependencies And Integration Points
 
-## 🔑 Key Features
+The package imports:
 
-### **No Hardcoded Selectors**
-- Auto-detects CSS selectors for each provider
-- Falls back to multiple extraction strategies
-- Works on sites you've never seen before
+- `playwright.sync_api`
+- Flask objects in `routes.py`
+- Parent workspace utilities: `utils.logger` and `utils.stealth`
+- Parent workspace provider scraper bridge: `scraper_service.scrape_provider`
 
-### **Multi-Network Support**
-- NBN, Opticomm, RedTrain, Supa
-- 5G, Fixed Wireless, Satellite
-- Fibre (FTTP/FTTB/FTTN)
+This means the module should normally be run from `C:\xampp\htdocs\scrape`, not from inside `isp`, so parent imports resolve correctly.
 
-### **Intelligent Crawling**
-- Keyword-based URL scoring
-- Depth control to prevent infinite crawls
-- Respects robots.txt (configurable)
-
-### **Robust Error Handling**
-- Isolated page failures don't crash crawler
-- Multiple fallback strategies
-- Detailed error logging
-
-### **Validation Matrix**
-- Expected vs actual comparison
-- Missing plan detection
-- Price/speed accuracy checks
-- Match rate calculation
-
----
-
-## 🎯 Use Cases
-
-### **1. Competitive Intelligence**
-Quickly discover what plans competitors are offering without manual browsing
-
-### **2. Price Monitoring**
-Automated tracking of competitor pricing changes over time
-
-### **3. Market Research**
-Understand plan structures and pricing across the industry
-
-### **4. Provider Integration**
-Rapid integration of new ISPs without custom scraper development
-
-### **5. Data Aggregation**
-Build centralised databases of broadband plans from multiple sources
-
----
-
-## ⚙️ Configuration
-
-Key parameters in `URLDiscovery` class:
+Expected parent integration:
 
 ```python
-crawler = ISPCrawler(
-    base_url="https://www.example.com/plans",
-    network_types=['nbn', 'opticomm'],    # Networks to search for
-    max_depth=2,                           # How deep to crawl
-    max_urls=150,                          # Max URLs to visit
-    provider_name="Example ISP",           # Human-readable name
-)
+from isp.routes import isp_bp
+app.register_blueprint(isp_bp)
 ```
 
-Keyword scoring weights in `url_discovery.py`:
-```python
-PLAN_KEYWORDS = {
-    'nbn': 10,
-    'opticomm': 10,
-    'plans': 8,
-    'broadband': 8,
-    ...
-}
-```
+## Extending The Crawler
 
----
+To add a new network type:
 
-## 📝 Output Format
+1. Add URL keywords to `PLAN_KEYWORDS` in `url_discovery.py`.
+2. Add text signatures to `NETWORK_SIGNATURES` in `plan_detector.py`.
+3. Add output validation spelling to `KNOWN_NETWORK_TYPES` in `validator.py`.
+4. Add UI checkbox/request support if the active UI should expose it.
+5. Add or update a test scenario in `test_crawler.py`.
 
-### **CrawlResult JSON:**
-```json
-{
-    "base_url": "https://www.telstra.com.au/internet",
-    "provider": "Telstra",
-    "started_at": "2026-05-25T21:30:00",
-    "finished_at": "2026-05-25T21:32:45",
-    "duration_seconds": 165.3,
-    "summary": {
-        "urls_visited": 42,
-        "plan_pages_found": 5,
-        "total_plans_scraped": 17,
-        "valid_plans": 17,
-        "invalid_plans": 0,
-        "network_types": ["NBN", "5G"]
-    },
-    "discovered_urls": [
-        {"url": "...", "score": 20, "network_types": ["nbn"]},
-        ...
-    ],
-    "page_analyses": [
-        {
-            "url": "...",
-            "has_plans": true,
-            "confidence": 0.85,
-            "card_selector": ".plan-card",
-            ...
-        },
-        ...
-    ],
-    "plans": [
-        {
-            "provider": "Telstra",
-            "plan_name": "Basic NBN Home",
-            "network_type": "NBN",
-            "download_speed": 25,
-            "upload_speed": 5,
-            "price": 85.00,
-            "promo_price": null,
-            "source_url": "..."
-        },
-        ...
-    ],
-    "errors": []
-}
-```
+To improve extraction for unusual sites:
 
----
+1. Add selector candidates in `plan_detector.py`.
+2. Add JSON field aliases in `scraper_engine.py`.
+3. Add regex patterns or nearby-block parsing improvements in `scraper_engine.py`.
+4. Add provider-specific fallback support in the parent `scraper_service` when a generic strategy is not reliable enough.
 
-## 🐛 Troubleshooting
+## Operational Notes
 
-### **No plans found**
-- Check if URL is correct and publicly accessible
-- Increase `max_depth` to crawl deeper
-- Try adding more network types
-- Check `page_analyses` in output to see detection results
+- Live crawl speed depends on page load time, JavaScript rendering, crawl depth, and URL count.
+- `URLDiscovery` waits around 3 seconds after page load; page analysis waits around 5 seconds.
+- Generic extraction can fail on heavily interactive address-gated pages.
+- Known-provider fallback can bypass generic analysis and may produce results without `page_analyses`.
+- The active UI uses Bootstrap from CDN but includes lightweight CSS fallbacks for local/offline use.
+- `routes.py` stores crawl state in process memory, so status is not shared across multiple Python processes.
+- Only one crawl can run at a time through the `/isp/api/crawl` route.
+- Saved result filenames are restricted by `_safe_result_path` to timestamped JSON files inside `output/isp_crawler`.
 
-### **Incorrect data extracted**
-- Page may use unusual HTML structure
-- Try different extraction strategies manually
-- Check `card_selector` in page analysis
-- Add custom patterns to regex fallback
+## Troubleshooting
 
-### **Crawler too slow**
-- Reduce `max_depth`
-- Reduce `max_urls`
-- Target specific plan URLs directly
+If no plans are found:
 
-### **Plans missing network type**
-- Add custom network detection patterns to `plan_detector.py`
-- Check page content for network mentions
+- Try a more direct plan URL.
+- Increase crawl depth to `2` or `3`.
+- Check `page_analyses` in the JSON output for confidence, selectors, price signals, and speed signals.
+- Confirm the provider page is publicly reachable without address entry, login, or bot blocking.
+- For known providers, check whether `scraper_service.scrape_provider` supports the domain.
 
----
+If extracted data looks wrong:
 
-## 🎓 Advanced Usage
+- Inspect the saved `page_analyses` selector fields.
+- Check whether the page exposes plan data in embedded JSON.
+- Add selector candidates or JSON aliases.
+- Tighten regex parsing for that provider layout.
 
-**For detailed code examples and advanced patterns, see [EXAMPLES.md](EXAMPLES.md)**
+If the UI does not update:
 
-### **Custom Extraction Logic**
+- Check `/isp/api/status`.
+- Confirm no other crawl is already running.
+- Restart the Flask app to clear in-memory crawl state.
 
-Subclass `ScraperEngine` and override extraction methods:
+If tests fail:
 
-```python
-from isp.scraper_engine import ScraperEngine
+- Remember the tests hit live provider websites.
+- Re-run a single provider to isolate the issue.
+- Check provider page changes, bot blocking, timeout errors, and minimum expected plan counts.
 
-class CustomEngine(ScraperEngine):
-    def _extract_via_selectors(self, page, analysis, provider_name):
-        # Your custom selector logic
-        pass
-```
+## Related Documentation
 
-### **Comparison Logging**
+- `QUICKSTART.md`: Fast setup and basic usage.
+- `EXAMPLES.md`: Example command and Python workflows.
+- `IMPLEMENTATION_SUMMARY.md`: Architecture notes and rationale.
+- `BEFORE_AFTER_COMPARISON.md`: Recent behavior/UI comparison notes.
+- `VERIFICATION_CHECKLIST.md`: Manual QA checklist.
 
-Use `ComparisonLogger` for test validation:
+## Review Summary
 
-```python
-from isp.validator import ComparisonLogger
-
-logger = ComparisonLogger()
-logger.add_scenario(
-    url="https://provider.com/plans",
-    scenario="static_menu",
-    expected_plans=10,
-    expected_data=[
-        {"plan_name": "Basic", "price": 60, "download_speed": 50},
-        ...
-    ],
-    actual_plans=scraped_plans,
-)
-
-report = logger.generate_report()
-print(f"Match rate: {report['overall_match_rate']}%")
-```
-
-### **Scheduled Crawling**
-
-Use Windows Task Scheduler or cron:
-
-```bash
-# Windows Task Scheduler action:
-python C:\xampp\htdocs\scrape\isp\main_crawler.py https://www.telstra.com.au/internet
-
-# Linux cron (daily at 2 AM):
-0 2 * * * cd /path/to/scrape && python -m isp.main_crawler https://www.telstra.com.au/internet
-```
-
-📖 **More advanced patterns?** Check [EXAMPLES.md](EXAMPLES.md) and [IMPLEMENTATION_SUMMARY.md](IMPLEMENTATION_SUMMARY.md)
-
----
-
-## 🤝 Contributing
-
-To add support for a new network type:
-
-1. Add keywords to `NETWORK_SIGNATURES` in `plan_detector.py`
-2. Add to default `network_types` in `URLDiscovery`
-3. Update UI checkboxes in `crawler_ui.html`
-4. Add test scenario to `test_crawler.py`
-
----
-
-## 📜 License
-
-Part of the ISP Plan Scraping System — see main project README for license details.
-
----
-
-## 🆘 Support
-
-For issues, questions, or feature requests:
-- Check `output/isp_crawler/<provider>_latest.json` for detailed crawl results
-- Check `output/logs.json` for error messages
-- Review `page_analyses` to see what was detected
-- Enable debug mode in Flask for detailed error traces
-
----
-
-## 🎉 Success Stories
-
-**"Integrated 5 new ISPs in one afternoon without writing provider-specific code"**
-
-**"Discovered Opticomm plans from a provider we didn't know offered them"**
-
-**"Cut scraper maintenance time by 80% — no more fixing broken selectors every week"**
-
----
-
-## 📚 Documentation Roadmap
-
-Choose your reading path based on your needs:
-
-```
-┌─ New User?
-│  └─> Read QUICKSTART.md (5 minutes)
-│
-├─ Want Code Examples?
-│  └─> Read EXAMPLES.md (15 minutes)
-│
-├─ Want Technical Deep Dive?
-│  └─> Read IMPLEMENTATION_SUMMARY.md (20 minutes)
-│
-└─ Need Complete Reference?
-   └─> Read README.md (full, 30+ minutes)
-```
-
----
-
-## 📞 Quick Help
-
-| Question | Answer |
-|----------|--------|
-| How do I get started? | Start with [QUICKSTART.md](QUICKSTART.md) |
-| How do I use the CLI? | See [QUICKSTART.md](QUICKSTART.md) or `python -m isp.main_crawler --help` |
-| Can you show me code examples? | Yes, see [EXAMPLES.md](EXAMPLES.md) |
-| How does the crawler work internally? | See [IMPLEMENTATION_SUMMARY.md](IMPLEMENTATION_SUMMARY.md) |
-| What are all the options? | See ⚙️ Configuration section above |
-| Where are results saved? | See 📝 Output Format section above |
-| What if something breaks? | See 🐛 Troubleshooting section above |
-
----
-
-**Happy Crawling! 🕷️**
+This folder implements a practical hybrid crawler: generic discovery and extraction for unknown ISP sites, plus known-provider fallback for better accuracy where a custom scraper already exists. The most important current behavior to understand is that saved results may come from either the generic Playwright pipeline or the provider-specific fallback. When generic analysis is skipped or replaced, `page_analyses` may be empty, and the UI handles that as a provider-specific result.
