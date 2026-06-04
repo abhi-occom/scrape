@@ -46,6 +46,12 @@ def crawler_ui():
     return render_template('crawler_ui.html')
 
 
+@isp_bp.route('/health')
+def health_report_ui():
+    """Serve the saved-run scrape health report."""
+    return render_template('health_report.html')
+
+
 # ── API: Start crawl ─────────────────────────────────────────────
 
 @isp_bp.route('/api/crawl', methods=['POST'])
@@ -261,6 +267,16 @@ def api_get_result_file(filename):
     return jsonify({'success': True, 'data': data})
 
 
+@isp_bp.route('/api/health', methods=['GET'])
+def api_health_report():
+    """Build a scrape health report from saved timestamped crawl results."""
+    runs = _load_saved_result_runs()
+    return jsonify({
+        'success': True,
+        'health': _build_health_report(runs),
+    })
+
+
 @isp_bp.route('/api/results/<filename>/compare', methods=['GET'])
 def api_compare_result_file(filename):
     """Compare a saved crawl result with the previous saved run for the same provider."""
@@ -343,6 +359,227 @@ def api_delete_result_file(filename):
             pass
 
     return jsonify({'success': True, 'deleted': deleted})
+
+
+def _load_saved_result_runs():
+    """Load timestamped saved result files with metadata used by reports."""
+    if not os.path.exists(OUTPUT_DIR):
+        return []
+
+    runs = []
+    for fname in os.listdir(OUTPUT_DIR):
+        if not fname.endswith('.json') or fname.endswith('_latest.json') or fname == 'test_report.json':
+            continue
+
+        fpath = _safe_result_path(fname)
+        if not fpath or not os.path.exists(fpath):
+            continue
+
+        try:
+            with open(fpath, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+        except Exception:
+            continue
+
+        runs.append({
+            'filename': fname,
+            'mtime': os.path.getmtime(fpath),
+            'data': data,
+        })
+
+    runs.sort(
+        key=lambda item: (item['data'].get('started_at') or '', item['mtime']),
+        reverse=True,
+    )
+    return runs
+
+
+def _build_health_report(runs):
+    """Summarise scrape reliability, output volume, failures, and latest changes."""
+    total_runs = len(runs)
+    if total_runs == 0:
+        return {
+            'total_runs': 0,
+            'successful_runs': 0,
+            'failed_runs': 0,
+            'success_rate': 0,
+            'average_duration_seconds': 0,
+            'average_valid_plans': 0,
+            'total_valid_plans': 0,
+            'total_failed_pages': 0,
+            'total_errors': 0,
+            'latest_run': None,
+            'changes_since_last_run': _empty_change_summary(),
+            'providers': [],
+            'recent_failures': [],
+        }
+
+    successful_runs = 0
+    total_duration = 0.0
+    total_valid_plans = 0
+    total_failed_pages = 0
+    total_errors = 0
+    providers = {}
+    recent_failures = []
+
+    for run in runs:
+        data = run['data']
+        summary = data.get('summary', {})
+        provider = (data.get('provider') or 'Unknown').strip() or 'Unknown'
+        valid_plans = _int_value(summary.get('valid_plans'))
+        duration = _float_value(data.get('duration_seconds'))
+        failed_pages = _failed_page_count(data)
+        error_count = len(data.get('errors') or [])
+        is_success = _result_success(data)
+
+        if is_success:
+            successful_runs += 1
+        else:
+            recent_failures.append({
+                'filename': run['filename'],
+                'provider': provider,
+                'started_at': data.get('started_at', ''),
+                'valid_plans': valid_plans,
+                'errors': (data.get('errors') or [])[:3],
+                'failed_pages': failed_pages,
+            })
+
+        total_duration += duration
+        total_valid_plans += valid_plans
+        total_failed_pages += failed_pages
+        total_errors += error_count
+
+        bucket = providers.setdefault(provider.lower(), {
+            'provider': provider,
+            'runs': [],
+            'successful_runs': 0,
+            'total_duration': 0.0,
+            'total_valid_plans': 0,
+            'total_failed_pages': 0,
+            'total_errors': 0,
+        })
+        bucket['runs'].append(run)
+        bucket['successful_runs'] += 1 if is_success else 0
+        bucket['total_duration'] += duration
+        bucket['total_valid_plans'] += valid_plans
+        bucket['total_failed_pages'] += failed_pages
+        bucket['total_errors'] += error_count
+
+    provider_reports = []
+    aggregate_changes = _empty_change_summary()
+
+    for bucket in providers.values():
+        provider_runs = bucket['runs']
+        provider_runs.sort(
+            key=lambda item: (item['data'].get('started_at') or '', item['mtime']),
+            reverse=True,
+        )
+        latest = provider_runs[0]
+        latest_data = latest['data']
+        latest_summary = latest_data.get('summary', {})
+        changes = _empty_change_summary()
+        previous_filename = ''
+
+        if len(provider_runs) > 1:
+            previous = provider_runs[1]
+            previous_filename = previous['filename']
+            comparison = _compare_result_plans(latest_data, previous['data'])
+            changes = comparison.get('summary', _empty_change_summary())
+            aggregate_changes = _add_change_summaries(aggregate_changes, changes)
+
+        provider_reports.append({
+            'provider': bucket['provider'],
+            'runs': len(provider_runs),
+            'successful_runs': bucket['successful_runs'],
+            'failed_runs': len(provider_runs) - bucket['successful_runs'],
+            'success_rate': _percent(bucket['successful_runs'], len(provider_runs)),
+            'average_duration_seconds': round(bucket['total_duration'] / len(provider_runs), 2),
+            'average_valid_plans': round(bucket['total_valid_plans'] / len(provider_runs), 2),
+            'total_failed_pages': bucket['total_failed_pages'],
+            'total_errors': bucket['total_errors'],
+            'latest_filename': latest['filename'],
+            'latest_started_at': latest_data.get('started_at', ''),
+            'latest_valid_plans': _int_value(latest_summary.get('valid_plans')),
+            'latest_duration_seconds': _float_value(latest_data.get('duration_seconds')),
+            'previous_filename': previous_filename,
+            'changes_since_last_run': changes,
+        })
+
+    provider_reports.sort(key=lambda item: item['latest_started_at'], reverse=True)
+    latest_run = runs[0]
+    latest_data = latest_run['data']
+    latest_summary = latest_data.get('summary', {})
+
+    return {
+        'total_runs': total_runs,
+        'successful_runs': successful_runs,
+        'failed_runs': total_runs - successful_runs,
+        'success_rate': _percent(successful_runs, total_runs),
+        'average_duration_seconds': round(total_duration / total_runs, 2),
+        'average_valid_plans': round(total_valid_plans / total_runs, 2),
+        'total_valid_plans': total_valid_plans,
+        'total_failed_pages': total_failed_pages,
+        'total_errors': total_errors,
+        'latest_run': {
+            'filename': latest_run['filename'],
+            'provider': latest_data.get('provider', ''),
+            'started_at': latest_data.get('started_at', ''),
+            'valid_plans': _int_value(latest_summary.get('valid_plans')),
+            'duration_seconds': _float_value(latest_data.get('duration_seconds')),
+        },
+        'changes_since_last_run': aggregate_changes,
+        'providers': provider_reports,
+        'recent_failures': recent_failures[:10],
+    }
+
+
+def _result_success(data):
+    """Treat a saved run as healthy when it produced at least one valid plan."""
+    summary = data.get('summary', {})
+    return _int_value(summary.get('valid_plans')) > 0
+
+
+def _failed_page_count(data):
+    """Count analysed pages that failed plan detection plus explicit page errors."""
+    failed = 0
+    for analysis in data.get('page_analyses') or []:
+        if analysis.get('error') or not analysis.get('has_plans'):
+            failed += 1
+    return failed
+
+
+def _empty_change_summary():
+    return {
+        'new_plans': 0,
+        'removed_plans': 0,
+        'price_changed': 0,
+        'promo_changed': 0,
+    }
+
+
+def _add_change_summaries(left, right):
+    return {
+        key: _int_value(left.get(key)) + _int_value(right.get(key))
+        for key in _empty_change_summary()
+    }
+
+
+def _percent(value, total):
+    return round((value / total) * 100, 1) if total else 0
+
+
+def _int_value(value):
+    try:
+        return int(value or 0)
+    except (TypeError, ValueError):
+        return 0
+
+
+def _float_value(value):
+    try:
+        return float(value or 0)
+    except (TypeError, ValueError):
+        return 0.0
 
 
 def _find_previous_result(current_filename, current_data):

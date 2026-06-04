@@ -10925,5 +10925,432 @@
     "message": "CSV saved to C:\\xampp\\htdocs\\scrape\\output\\isp_crawler\\spintel_20260604_100512.csv",
     "provider": "isp-crawler",
     "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:01:04.170248",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:01:04.375869",
+    "status": "info",
+    "message": "ISP Crawler starting for: https://blitznet.com.au",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:01:04.450705",
+    "status": "info",
+    "message": "Provider: Blitznet",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:01:04.517091",
+    "status": "info",
+    "message": "Network types: ['nbn', 'opticomm', 'redtrain', 'supa']",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:01:04.595238",
+    "status": "info",
+    "message": "Max depth: 2",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:01:04.674818",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:01:08.183347",
+    "status": "info",
+    "message": "Step 1: Discovering plan page URLs...",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:01:08.404149",
+    "status": "info",
+    "message": "Starting URL discovery from https://blitznet.com.au",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:01:09.093728",
+    "status": "info",
+    "message": "[depth=0] Crawling: https://blitznet.com.au/",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:01:18.654156",
+    "status": "info",
+    "message": "[depth=1] Crawling: https://blitznet.com.au/confirmation-page?pn=Blits%20Netz&pl=Basic%20Internet&dl=25&up=10&pr=69&sbun=31&act=45",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:01:24.578105",
+    "status": "info",
+    "message": "[depth=1] Crawling: https://blitznet.com.au/confirmation-page?pn=Blits%20Netz&pl=Standard%20Internet&dl=50&up=20&pr=75&sbun=32&act=45",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:01:31.135687",
+    "status": "info",
+    "message": "[depth=1] Crawling: https://blitznet.com.au/confirmation-page?pn=Blits%20Netz&pl=Premium%20Internet&dl=500&up=500&pr=85&sbun=190&act=45",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:01:38.531362",
+    "status": "info",
+    "message": "[depth=1] Crawling: https://blitznet.com.au/confirmation-page?pn=Blits%20Netz&pl=Ultimate%20Internet&dl=1000&up=1000&pr=130&sbun=202&act=45",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:01:52.138328",
+    "status": "info",
+    "message": "Discovery complete: 5 pages visited, 0 candidate plan pages found",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:01:52.256716",
+    "status": "warning",
+    "message": "No plan pages discovered via crawl, trying base URL directly",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:01:52.340641",
+    "status": "success",
+    "message": "Discovered 1 candidate plan pages",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:01:52.451701",
+    "status": "info",
+    "message": "Step 2: Analysing pages for plan data...",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:02:02.305111",
+    "status": "info",
+    "message": "Page analysis: https://blitznet.com.au | plans=True confidence=0.67 networks=['fibre'] cards=30 prices=0 speeds=8",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:02:02.418276",
+    "status": "success",
+    "message": "Plan page confirmed: https://blitznet.com.au (confidence=0.67, cards=30)",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:02:02.651247",
+    "status": "info",
+    "message": "Found 1 confirmed plan pages out of 1 candidates",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:02:02.895604",
+    "status": "info",
+    "message": "Step 3: Extracting plan data...",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:02:03.405016",
+    "status": "info",
+    "message": "Selector extraction: 30 cards via '[class*=\"pricing\"]'",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:02:08.534284",
+    "status": "success",
+    "message": "Selector strategy: 9 plans from https://blitznet.com.au",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:02:08.629401",
+    "status": "success",
+    "message": "Extracted 9 plans from https://blitznet.com.au",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:02:08.777693",
+    "status": "info",
+    "message": "Step 4: Validating scraped plans...",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:02:08.883660",
+    "status": "warning",
+    "message": "Validation warning for '69.00': download_speed is 0 or missing",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:02:08.982612",
+    "status": "warning",
+    "message": "Validation warning for '75.00': download_speed is 0 or missing",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:02:09.125007",
+    "status": "warning",
+    "message": "Validation warning for '85.00': download_speed is 0 or missing",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:02:09.312932",
+    "status": "warning",
+    "message": "Validation warning for '130.00': download_speed is 0 or missing",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:02:09.558807",
+    "status": "info",
+    "message": "Validation complete: 9 valid, 0 invalid out of 9",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:02:11.502139",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:02:11.609199",
+    "status": "success",
+    "message": "Crawl complete for Blitznet: 9 valid plans, 0 invalid, 1 pages scraped in 67.34s",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:02:11.715436",
+    "status": "info",
+    "message": "Network types: ['FIBRE']",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:02:11.798136",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:02:11.897479",
+    "status": "info",
+    "message": "Results saved to C:\\xampp\\htdocs\\scrape\\output\\isp_crawler\\blitznet_20260604_170211.json",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:02:11.979928",
+    "status": "info",
+    "message": "CSV saved to C:\\xampp\\htdocs\\scrape\\output\\isp_crawler\\blitznet_20260604_170211.csv",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:02:45.742628",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:02:45.833641",
+    "status": "info",
+    "message": "ISP Crawler starting for: https://www.swoop.com.au",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:02:45.969363",
+    "status": "info",
+    "message": "Provider: Swoop",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:02:46.082240",
+    "status": "info",
+    "message": "Network types: ['nbn', 'opticomm', 'redtrain', 'supa']",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:02:46.224390",
+    "status": "info",
+    "message": "Max depth: 2",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:02:46.383643",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:02:46.532688",
+    "status": "warning",
+    "message": "Checking swoop provider scraper fallback",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:02:46.764761",
+    "status": "info",
+    "message": "Starting Swoop scraper (all service types)",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:02:49.766338",
+    "status": "info",
+    "message": "Scraping nbn: https://www.swoop.com.au/nbn/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:03:05.575700",
+    "status": "info",
+    "message": "Found 4 .card--plan elements on https://www.swoop.com.au/nbn/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:03:06.613251",
+    "status": "success",
+    "message": "nbn: 4 plans",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:03:06.729515",
+    "status": "info",
+    "message": "Scraping fixed_wireless: https://www.swoop.com.au/fixed-wireless/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:03:16.332717",
+    "status": "info",
+    "message": "Found 4 .card--plan elements on https://www.swoop.com.au/fixed-wireless/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:03:17.643263",
+    "status": "success",
+    "message": "fixed_wireless: 4 plans",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:03:17.787533",
+    "status": "info",
+    "message": "Scraping opticomm: https://www.swoop.com.au/opticomm/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:03:25.745167",
+    "status": "info",
+    "message": "Found 4 .card--plan elements on https://www.swoop.com.au/opticomm/",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:03:29.715957",
+    "status": "success",
+    "message": "opticomm: 4 plans",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:03:30.565609",
+    "status": "success",
+    "message": "Swoop total: 12 plans across all service types",
+    "provider": "swoop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:03:30.626753",
+    "status": "success",
+    "message": "Provider fallback extracted 12 plans for swoop",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:03:30.693028",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:03:30.820565",
+    "status": "success",
+    "message": "Crawl complete for Swoop: 12 valid plans, 0 invalid, 3 pages scraped in 44.95s",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:03:31.000690",
+    "status": "info",
+    "message": "Network types: ['Fixed Wireless', 'Opticomm', 'NBN']",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:03:31.168490",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:03:31.349014",
+    "status": "info",
+    "message": "Results saved to C:\\xampp\\htdocs\\scrape\\output\\isp_crawler\\swoop_20260604_170331.json",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-04T17:03:31.666520",
+    "status": "info",
+    "message": "CSV saved to C:\\xampp\\htdocs\\scrape\\output\\isp_crawler\\swoop_20260604_170331.csv",
+    "provider": "isp-crawler",
+    "data": {}
   }
 ]

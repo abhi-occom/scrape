@@ -275,10 +275,12 @@ The blueprint in `routes.py` is registered as `isp_bp` with URL prefix `/isp`.
 | Endpoint | Method | Purpose |
 | --- | --- | --- |
 | `/isp/` | GET | Render the crawler UI. |
+| `/isp/health` | GET | Render the standalone scrape health report page. |
 | `/isp/api/crawl` | POST | Start a background crawl. |
 | `/isp/api/status` | GET | Return current crawl state, progress events, and result summary. |
 | `/isp/api/results` | GET | List timestamped saved JSON results. |
 | `/isp/api/results/<filename>` | GET | Return one saved result file. |
+| `/isp/api/health` | GET | Return scrape health metrics from saved runs. |
 | `/isp/api/results/<filename>/compare` | GET | Compare a saved result with the previous run for the same provider. |
 | `/isp/api/results/<filename>` | DELETE | Delete a saved JSON result, matching CSV, and matching latest file when applicable. |
 
@@ -294,6 +296,47 @@ Example crawl request:
 ```
 
 The route caps `depth` at `3`. If the URL does not start with `http`, it prefixes `https://`.
+
+## Scrape Health Report
+
+The standalone health page at `/isp/health` calls `/isp/api/health` to summarise saved timestamped crawler runs. The report is built from JSON files in `output/isp_crawler`, so it survives Flask restarts. The main crawler dashboard links to this page through the `Scrape Health Report` button.
+
+The health report includes:
+
+- Overall success rate, where a run is successful when it produced at least one valid plan.
+- Average crawl duration.
+- Average number of valid plans per run.
+- Total failed pages, based on analysed pages that did not become confirmed plan pages or recorded an analysis error.
+- Total saved-run errors.
+- Latest run metadata.
+- Latest-vs-previous change counts across providers: new plans, removed plans, price changes, and promo changes.
+- Per-provider health rows with run counts, success rate, average duration, latest valid plan count, failed pages, and latest change counts.
+- Recent failed runs for quick review.
+
+Example response shape:
+
+```json
+{
+  "success": true,
+  "health": {
+    "total_runs": 12,
+    "successful_runs": 10,
+    "failed_runs": 2,
+    "success_rate": 83.3,
+    "average_duration_seconds": 42.8,
+    "average_valid_plans": 8.5,
+    "total_failed_pages": 6,
+    "total_errors": 3,
+    "changes_since_last_run": {
+      "new_plans": 1,
+      "removed_plans": 0,
+      "price_changed": 2,
+      "promo_changed": 1
+    },
+    "providers": []
+  }
+}
+```
 
 ## Command-Line Usage
 
