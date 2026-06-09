@@ -14,7 +14,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from scraper_service import (
     scrape_provider,
     save_output,
-    get_saved_results,
+    load_all_plans_snapshot,
     get_provider_list,
     download_json,
     download_csv
@@ -217,17 +217,8 @@ def api_get_plans():
     sort_by = request.args.get('sort_by', 'price')  # price, speed
     order = request.args.get('order', 'asc')  # asc, desc
     
-    # Get all results
-    results = get_saved_results()
-    
-    # Flatten all plans
-    all_plans = []
-    for provider_name, provider_data in results.items():
-        for data_key, plans in provider_data.items():
-            if isinstance(plans, list):
-                for plan in plans:
-                    plan['provider_key'] = provider_name
-                    all_plans.append(plan)
+    snapshot = load_all_plans_snapshot()
+    all_plans = [dict(plan) for plan in snapshot.get('plans', [])]
     
     # Apply filters
     filtered_plans = filter_plans(
@@ -250,6 +241,9 @@ def api_get_plans():
     response = standardize_response(data={
         'plans': filtered_plans,
         'total': len(filtered_plans),
+        'source': snapshot.get('source'),
+        'scraped_at': snapshot.get('scraped_at'),
+        'total_available': snapshot.get('total_plans', len(all_plans)),
         'filters': {
             'provider': provider,
             'network_type': network_type,
@@ -279,8 +273,8 @@ def api_get_all_plans():
             message='Invalid or missing API key. Use header: X-API-Key: your_key'
         )), 401
     
-    results = get_saved_results()
-    return jsonify(standardize_response(data=results))
+    snapshot = load_all_plans_snapshot()
+    return jsonify(standardize_response(data=snapshot))
 
 @app.route('/api/plans/<provider_name>', methods=['GET'])
 def api_get_provider_plans(provider_name):
@@ -294,16 +288,26 @@ def api_get_provider_plans(provider_name):
             message='Invalid or missing API key. Use header: X-API-Key: your_key'
         )), 401
     
-    results = get_saved_results(provider_name)
+    snapshot = load_all_plans_snapshot()
+    plans = [
+        plan for plan in snapshot.get('plans', [])
+        if plan.get('provider', '').lower() == provider_name.lower()
+    ]
     
-    if not results:
+    if not plans:
         return jsonify(standardize_response(
             success=False,
             error='Provider not found',
             message=f'No data found for provider: {provider_name}'
         )), 404
     
-    return jsonify(standardize_response(data=results))
+    return jsonify(standardize_response(data={
+        'provider': provider_name,
+        'plans': plans,
+        'total': len(plans),
+        'source': snapshot.get('source'),
+        'scraped_at': snapshot.get('scraped_at')
+    }))
 
 # ============================================================
 # HEALTH CHECK

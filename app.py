@@ -14,6 +14,7 @@ from scraper_service import (
     scrape_provider,
     save_output,
     get_saved_results,
+    load_all_plans_snapshot,
     get_provider_list,
     download_json,
     download_csv
@@ -55,20 +56,17 @@ def get_scrape_options():
 @app.route('/api/plans/all', methods=['GET'])
 def api_get_all_plans():
     """Get all plans from all providers."""
-    results = get_saved_results()
-    
-    all_plans = []
-    for provider_name, provider_data in results.items():
-        for data_type, data in provider_data.items():
-            if isinstance(data, list):
-                for plan in data:
-                    plan['provider'] = provider_name
-                    all_plans.append(plan)
+    snapshot = load_all_plans_snapshot()
+    all_plans = snapshot.get('plans', [])
     
     return jsonify({
         'success': True,
         'plans': all_plans,
-        'total': len(all_plans)
+        'total': len(all_plans),
+        'providers': snapshot.get('providers', []),
+        'total_providers': snapshot.get('total_providers', 0),
+        'source': snapshot.get('source'),
+        'scraped_at': snapshot.get('scraped_at')
     })
 
 

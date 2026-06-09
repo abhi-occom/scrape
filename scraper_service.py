@@ -16,6 +16,7 @@ from utils.progress import set_active_provider, update_progress
 from utils.stealth import configure_browser
 
 BASE_OUTPUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'output')
+ALL_PLANS_JSON_PATH = os.path.join(BASE_OUTPUT_DIR, 'all_plans.json')
 
 CSV_COLUMNS = [
     'provider', 'network_type', 'plan_name', 'download_speed', 'upload_speed',
@@ -210,6 +211,30 @@ def get_saved_results(provider_name: Optional[str] = None) -> Dict[str, Any]:
                     results[provider] = provider_results
 
     return results
+
+
+def load_all_plans_snapshot() -> Dict[str, Any]:
+    """Load the combined ISP crawler snapshot from output/all_plans.json."""
+    if not os.path.exists(ALL_PLANS_JSON_PATH):
+        return {
+            'scraped_at': None,
+            'source': 'missing_all_plans_snapshot',
+            'total_providers': 0,
+            'total_plans': 0,
+            'providers': [],
+            'plans': [],
+        }
+
+    with open(ALL_PLANS_JSON_PATH, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+
+    plans = data.get('plans') or []
+    providers = data.get('providers') or []
+    data['plans'] = plans
+    data['providers'] = providers
+    data['total_plans'] = len(plans)
+    data['total_providers'] = len(providers)
+    return data
 
 
 def get_provider_list() -> List[Dict[str, Any]]:
