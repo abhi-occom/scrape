@@ -18,6 +18,7 @@ import json
 import os
 import csv
 import time
+import re
 from datetime import datetime
 from typing import List, Dict, Any, Optional, Callable
 from dataclasses import dataclass, field, asdict
@@ -43,6 +44,7 @@ OUTPUT_DIR = os.path.join(
     os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
     'output', 'isp_crawler',
 )
+ALL_PLANS_JSON_PATH = os.path.join(os.path.dirname(OUTPUT_DIR), 'all_plans.json')
 
 PLAN_FIELDS = [
     'provider',
@@ -345,7 +347,7 @@ class ISPCrawler:
     def _finalise_result(self, result: CrawlResult, start_time: float) -> CrawlResult:
         """Complete timing, logging, persistence, and return the crawl result."""
         result.plans = [self._normalise_plan_fields(plan) for plan in result.plans]
-        result.network_types_found = list(set(
+        result.network_types_found = sorted(set(
             p.get('network_type', '') for p in result.plans if p.get('network_type')
         ))
 
@@ -482,6 +484,15 @@ class ISPCrawler:
             'tangerinetelecom.com.au': 'tangerine',
             'tpg.com.au': 'tpg',
             'activ8me.net.au': 'activ8me',
+            'aussiebroadband.com.au': 'aussie',
+            'airtel.au': 'airtel',
+            'alpha.net.au': 'alpha',
+            'home.alpha.net.au': 'alpha',
+            'city7net.com.au': 'city7net',
+            'epsinet.com.au': 'epsinet',
+            'iqnet.com.au': 'iqnet',
+            'newausfiber.com.au': 'newausfiber',
+            'vocphone.com': 'vocphone',
         }
         for known_domain, provider_key in known_domains.items():
             if domain == known_domain or domain.endswith(f".{known_domain}"):
@@ -520,7 +531,9 @@ class ISPCrawler:
         """Return a plan row with exactly the saved output fields."""
         normalised = {field: plan.get(field) for field in PLAN_FIELDS}
         normalised['provider'] = normalised.get('provider') or self.provider_name
-        normalised['network_type'] = normalised.get('network_type') or self._default_network_type()
+        normalised['network_type'] = self._canonical_network_type(
+            normalised.get('network_type') or self._default_network_type()
+        )
         normalised['plan_name'] = normalised.get('plan_name') or ''
         normalised['download_speed'] = normalised.get('download_speed') or 0
         normalised['upload_speed'] = normalised.get('upload_speed') or 0
@@ -541,12 +554,29 @@ class ISPCrawler:
         normalised['source_url'] = normalised.get('source_url') or self.base_url
         return normalised
 
+    @staticmethod
+    def _canonical_network_type(network_type: Any) -> str:
+        """Collapse known private-network aliases into UI/filter friendly labels."""
+        raw = str(network_type or '').strip()
+        compact = re.sub(r'[\s_-]+', ' ', raw).lower()
+
+        if 'opticomm' in compact:
+            return 'Opticomm'
+        if 'redtrain' in compact or 'red train' in compact:
+            return 'Redtrain'
+        if 'supa' in compact or 'supanetwork' in compact:
+            return 'Supa'
+        if compact == 'nbn':
+            return 'NBN'
+
+        return raw
+
     def _default_network_type(self) -> str:
         """Return provider-level network defaults when pages do not expose the network label."""
         domain = urlparse(self.base_url).netloc.lower().replace('www.', '')
         provider = (self.provider_name or '').lower()
         if domain == 'clevernet.com.au' or domain.endswith('.clevernet.com.au') or provider == 'clevernet':
-            return 'SUPA'
+            return 'Supa'
         return ''
 
     # ── Output ────────────────────────────────────────────────
@@ -598,6 +628,62 @@ class ISPCrawler:
                 writer.writeheader()
                 writer.writerows(result.plans)
             log_info(f"CSV saved to {csv_path}", provider="isp-crawler")
+
+        self._save_all_plans_snapshot()
+
+    def _save_all_plans_snapshot(self):
+        """Rebuild output/all_plans.json and CSV from every provider latest file."""
+        all_plans = []
+        providers = []
+
+        for filename in sorted(os.listdir(OUTPUT_DIR)):
+            if not filename.endswith('_latest.json'):
+                continue
+            path = os.path.join(OUTPUT_DIR, filename)
+            try:
+                with open(path, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+            except (OSError, json.JSONDecodeError):
+                continue
+
+            plans = []
+            for plan in data.get('plans') or []:
+                normalised = self._normalise_plan_fields(plan)
+                normalised['provider'] = plan.get('provider') or data.get('provider') or normalised['provider']
+                normalised['source_url'] = plan.get('source_url') or data.get('base_url', '') or normalised['source_url']
+                plans.append(normalised)
+            provider = data.get('provider') or filename.replace('_latest.json', '')
+            providers.append({
+                'provider': provider,
+                'base_url': data.get('base_url', ''),
+                'latest_file': filename,
+                'plans_count': len(plans),
+                'started_at': data.get('started_at', ''),
+            })
+            all_plans.extend(plans)
+
+        combined = {
+            'scraped_at': datetime.now().strftime('%Y-%m-%d_%H-%M-%S'),
+            'source': 'isp_crawler_latest_files',
+            'total_providers': len(providers),
+            'total_plans': len(all_plans),
+            'providers': providers,
+            'plans': all_plans,
+        }
+
+        with open(ALL_PLANS_JSON_PATH, 'w', encoding='utf-8') as f:
+            json.dump(combined, f, indent=2, ensure_ascii=False)
+
+        csv_path = os.path.splitext(ALL_PLANS_JSON_PATH)[0] + '.csv'
+        with open(csv_path, 'w', newline='', encoding='utf-8') as f:
+            writer = csv.DictWriter(f, fieldnames=PLAN_FIELDS, extrasaction='ignore')
+            writer.writeheader()
+            writer.writerows(all_plans)
+
+        log_info(
+            f"All plans snapshot rebuilt with {len(all_plans)} plans from {len(providers)} providers",
+            provider="isp-crawler",
+        )
 
     # ── Helpers ───────────────────────────────────────────────
 

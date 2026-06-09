@@ -1,0 +1,117 @@
+{
+  "base_url": "https://epsinet.com.au",
+  "provider": "Epsinet",
+  "started_at": "2026-06-07T17:12:13.563483",
+  "finished_at": "2026-06-07T17:12:27.171830",
+  "duration_seconds": 13.61,
+  "summary": {
+    "urls_visited": 1,
+    "plan_pages_found": 1,
+    "total_plans_scraped": 5,
+    "valid_plans": 5,
+    "invalid_plans": 0,
+    "network_types": [
+      "Fibre"
+    ]
+  },
+  "discovered_urls": [
+    {
+      "url": "https://epsinet.com.au",
+      "score": 0,
+      "depth": 0,
+      "network_types": [],
+      "matched_networks": []
+    }
+  ],
+  "page_analyses": [
+    {
+      "url": "https://epsinet.com.au",
+      "has_plans": true,
+      "confidence": 0.44999999999999996,
+      "network_types": [
+        "fibre"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 5,
+      "speed_signals": 8
+    }
+  ],
+  "plans": [
+    {
+      "provider": "Epsinet",
+      "network_type": "Fibre",
+      "plan_name": "Choose your month-to-month plans",
+      "download_speed": 25,
+      "upload_speed": 10,
+      "price": 69.0,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": "No lock-in / month-to-month",
+      "typical_evening_dl": 25,
+      "typical_evening_ul": 10,
+      "source_url": "https://epsinet.com.au"
+    },
+    {
+      "provider": "Epsinet",
+      "network_type": "Fibre",
+      "plan_name": "Ideal for browsing",
+      "download_speed": 50,
+      "upload_speed": 20,
+      "price": 45.0,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": "No lock-in / month-to-month",
+      "typical_evening_dl": 50,
+      "typical_evening_ul": 20,
+      "source_url": "https://epsinet.com.au"
+    },
+    {
+      "provider": "Epsinet",
+      "network_type": "Fibre",
+      "plan_name": "sign up",
+      "download_speed": 50,
+      "upload_speed": 20,
+      "price": 79.0,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": "No lock-in / month-to-month",
+      "typical_evening_dl": 50,
+      "typical_evening_ul": 20,
+      "source_url": "https://epsinet.com.au"
+    },
+    {
+      "provider": "Epsinet",
+      "network_type": "Fibre",
+      "plan_name": "sign up",
+      "download_speed": 100,
+      "upload_speed": 40,
+      "price": 99.0,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": "No lock-in / month-to-month",
+      "typical_evening_dl": 100,
+      "typical_evening_ul": 40,
+      "source_url": "https://epsinet.com.au"
+    },
+    {
+      "provider": "Epsinet",
+      "network_type": "Fibre",
+      "plan_name": "sign up",
+      "download_speed": 250,
+      "upload_speed": 50,
+      "price": 129.0,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": "No lock-in / month-to-month",
+      "typical_evening_dl": 250,
+      "typical_evening_ul": 50,
+      "source_url": "https://epsinet.com.au"
+    }
+  ],
+  "invalid_plans": [],
+  "errors": []
+}

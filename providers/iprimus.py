@@ -135,7 +135,7 @@ def _extract_card(card, is_modal: bool) -> Optional[Dict[str, Any]]:
     """
     try:
         # --- Heading --- 
-        heading_el = card.query_selector('.plan-heading')
+        heading_el = card.query_selector('.plan_tile__heading')
         if not heading_el:
             return None
         heading_raw = heading_el.inner_text().strip()
@@ -148,66 +148,66 @@ def _extract_card(card, is_modal: bool) -> Optional[Dict[str, Any]]:
         network_type = _network_type_from_name(heading_norm)
 
         # --- Price ---
-        price_el = card.query_selector('.plan-price')
+        price_el = card.query_selector('.plan_tile__price')
         price_raw = price_el.inner_text().strip() if price_el else ''
         current_price = _parse_price(price_raw) if price_raw else None
         if current_price is None:
             return None
 
         # --- Was price (discount element) ---
-        disc_el = card.query_selector('.plan-price--discount')
+        disc_el = card.query_selector('.plan_tile__price--discount')
         disc_raw = disc_el.inner_text().strip() if disc_el else ''
         was_price = _parse_price(disc_raw) if disc_raw and disc_raw != '0' else None
 
         # Regular price (was price if exists, otherwise current)
         regular_price = was_price if was_price else current_price
 
-        # --- Speed (from .plan-description) ---
-        speed_el = card.query_selector('.plan-description')
+        # --- Speed ---
+        speed_el = card.query_selector('.plan_tile__content__speed__text')
         speed_raw = speed_el.inner_text().strip() if speed_el else ''
-        speed_match = re.search(r'(\d+)/(\d+)\s*Mbps', speed_raw)
-        download_speed, upload_speed = 0, 0
-        if speed_match:
-            download_speed = int(speed_match.group(1))
-            upload_speed = int(speed_match.group(2))
-        else:
-            # Fallback based on plan name (e.g., standard, premium, home)
-            if 'standard' in heading_norm:
-                download_speed, upload_speed = 25, 8
-            elif 'premium' in heading_norm or 'plus' in heading_norm:
-                download_speed, upload_speed = 500, 50
-            elif 'home' in heading_norm:
-                download_speed, upload_speed = 1000, 100
-            else:
-                download_speed, upload_speed = 0, 0  # Default fallback
+        download_speed, upload_speed = _parse_speed_text(speed_raw)
+        if not download_speed:
+            download_speed, upload_speed = KNOWN_SPEEDS.get(heading_norm, (0, 0))
+        if not download_speed:
+            return None
 
-        # --- Promo period (from .plan-description) ---
-        promo_text = ""
-        promo_period = None
-        # Look for promo text like "For 6 months, then $22 ongoing*"
-        promo_match = re.search(r'For\s+(?:the\s+)?(?:first\s+)?(\d+)\s*months?', speed_raw, re.IGNORECASE)
-        if promo_match:
-            promo_period = promo_match.group(1).strip()
-        else:
-            promo_period = '6 months'  # Default
+        # --- Promo period ---
+        promo_el = card.query_selector('.plan_tile__upgrade__title')
+        promo_text = promo_el.inner_text().strip() if promo_el else ''
+        promo_price, promo_period = _parse_promo(promo_text, was_price, current_price)
+        if not promo_period:
+            promo_match = re.search(
+                r'for\s+(?:the\s+)?(?:first\s+)?(\d+\s*months?)',
+                f'{promo_text} {card.inner_text()}',
+                re.IGNORECASE,
+            )
+            promo_period = promo_match.group(1).strip() if promo_match else None
+
+        plan_name = re.sub(
+            r'\s+',
+            ' ',
+            heading_raw.replace('\u00ae', '').replace('®', ''),
+        ).strip()
 
         return {
             'provider_id': PROVIDER_ID,
-            'provider': 'spintel',
-            'plan_name': heading_raw,
+            'provider': 'iprimus',
+            'plan_name': plan_name,
             'network_type': network_type,
             'download_speed': download_speed,
             'upload_speed': upload_speed,
             'speed': download_speed,
             'price': regular_price,
-            'promo_price': None,  # No explicit promo price in data
+            'promo_price': promo_price,
             'promo_period': promo_period,
             'contract': 'No Contract',
+            'typical_evening_dl': download_speed,
+            'typical_evening_ul': upload_speed,
             'source_url': URL,
         }
 
     except Exception as e:
-        log_error(f'Error extracting spintel card: {e}', provider='spintel')
+        log_error(f'Error extracting iPrimus card: {e}', provider='iprimus')
         return None
 
 def scrape_iprimus_plans() -> List[Dict[str, Any]]:

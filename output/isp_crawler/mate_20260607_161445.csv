@@ -1,0 +1,8 @@
+provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
+mate,NBN,MATE Crikey nbn 25/10,25,10,76.0,51.0,6 months,No Contract,25,10,https://www.letsbemates.com.au/mate/crikey-nbn-25-10/
+mate,NBN,MATE Ripper nbn 50/20,49,19,86.0,66.0,6 months,No Contract,49,19,https://www.letsbemates.com.au/mate/ripper-nbn-50-20/
+mate,NBN,MATE No Worries nbn 100/20,97,19,96.0,71.0,6 months,No Contract,97,19,https://www.letsbemates.com.au/mate/no-worries-100-20/
+mate,NBN,MATE You Beaut nbn 100/40,97,36,106.0,81.0,6 months,No Contract,97,36,https://www.letsbemates.com.au/mate/you-beaut-100-40/
+mate,NBN,MATE No Worries nbn 500/50,485,46,96.0,71.0,6 months,No Contract,485,46,https://www.letsbemates.com.au/mate/no-worries-500-50/
+mate,NBN,MATE Fair Dinkum nbn 750/50,713,46,121.0,96.0,6 months,No Contract,713,46,https://www.letsbemates.com.au/mate/fair-dinkum-750-50/
+mate,NBN,MATE Flamin' Fast nbn 1000/100,913,94,126.0,101.0,6 months,No Contract,913,94,https://www.letsbemates.com.au/mate/flamin-fast-1000-100/

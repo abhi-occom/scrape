@@ -1,75 +1,399 @@
 provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
-telstra,NBN,Basic nbn® Internet Only,25,4,85.0,,,No Contract,,,https://www.telstra.com.au/internet/nbn
-telstra,NBN,Basic nbn®,25,4,93.0,,,No Contract,,,https://www.telstra.com.au/internet/nbn
-telstra,NBN,Essential nbn®,50,17,95.0,,,No Contract,,,https://www.telstra.com.au/internet/nbn
-telstra,5G,5G Internet,300,30,85.0,,,No Contract,,,https://www.telstra.com.au/internet/nbn
-telstra,NBN,Essential nbn® Internet Only,50,17,89.0,,,No Contract,,,https://www.telstra.com.au/internet/nbn
-telstra,NBN,Premium nbn®,100,17,95.0,,,No Contract,,,https://www.telstra.com.au/internet/nbn
-telstra,NBN,Premium nbn® Internet Only,100,17,89.0,,,No Contract,,,https://www.telstra.com.au/internet/nbn
-telstra,NBN,Ultimate nbn®,750,40,109.0,,,No Contract,,,https://www.telstra.com.au/internet/nbn
-telstra,NBN,Ultimate nbn® Internet Only,750,40,104.0,,,No Contract,,,https://www.telstra.com.au/internet/nbn
-telstra,NBN,Ultrafast nbn®,815,80,119.0,,,No Contract,,,https://www.telstra.com.au/internet/nbn
-telstra,NBN,Ultrafast nbn® Internet Only,815,80,114.0,,,No Contract,,,https://www.telstra.com.au/internet/nbn
-superloop,NBN,Extra Value - nbn 50/20,50,20,65.0,,,No Contract,50,17,https://www.superloop.com/internet/nbn/
-superloop,NBN,Family Max - nbn 100/20,100,20,69.0,,,No Contract,95,17,https://www.superloop.com/internet/nbn/
-superloop,NBN,Family Max - nbn 500/50,500,50,69.0,,,No Contract,500,40,https://www.superloop.com/internet/nbn/
-superloop,NBN,Power Home - nbn 100/40,100,40,85.0,,,No Contract,95,34,https://www.superloop.com/internet/nbn/
-superloop,NBN,Creator - nbn 250/100,250,100,85.0,,,No Contract,250,85,https://www.superloop.com/internet/nbn/
-superloop,NBN,Megaspeed - nbn 750/50,750,50,89.0,,,No Contract,750,40,https://www.superloop.com/internet/nbn/
-superloop,NBN,Lightspeed - nbn 1000/100,1000,100,85.0,,,No Contract,860,85,https://www.superloop.com/internet/nbn/
-superloop,NBN,Hyperspeed - nbn 2000/100,2000,100,145.0,,,No Contract,1700,85,https://www.superloop.com/internet/nbn/
-superloop,NBN,Hyperspeed - nbn 2000/200,2000,200,145.0,,,No Contract,1700,170,https://www.superloop.com/internet/nbn/
-occom,NBN,Hyper (nbn2000),2000,100,185.0,165.0,12 months,No Contract,,,https://occom.com.au/nbn-plans/
-occom,NBN,Lightning (nbn1000),1000,100,115.0,105.0,12 months,No Contract,,,https://occom.com.au/nbn-plans/
-occom,NBN,Ultra (nbn750),750,50,98.0,93.0,12 months,No Contract,,,https://occom.com.au/nbn-plans/
-occom,NBN,Turbo (nbn500),500,48,90.0,85.0,12 months,No Contract,,,https://occom.com.au/nbn-plans/
-occom,NBN,Superfast (nbn100),100,17,90.0,80.0,6 months,No Contract,,,https://occom.com.au/nbn-plans/
-occom,NBN,Boost Plus (nbn50),50,17,85.0,75.0,6 months,No Contract,,,https://occom.com.au/nbn-plans/
-occom,NBN,Boost (nbn25),25,8,70.0,60.0,6 months,No Contract,,,https://occom.com.au/nbn-plans/
-occom,NBN,Basic (nbn12),12,0,58.0,48.0,6 months,No Contract,,,https://occom.com.au/nbn-plans/
-occom,Opticomm,Lightning (Fibre1000),900,85,115.0,105.0,12 months,No Contract,,,https://occom.com.au/opticomm-plans/
-occom,Opticomm,Ultra (Fibre750),750,48,98.0,93.0,12 months,No Contract,,,https://occom.com.au/opticomm-plans/
-occom,Opticomm,Turbo (Fibre500),500,48,90.0,85.0,,No Contract,,,https://occom.com.au/opticomm-plans/
-occom,Opticomm,Superfast (Fibre100),100,17,90.0,80.0,6 months,No Contract,,,https://occom.com.au/opticomm-plans/
-occom,Opticomm,Boost Plus (Fibre50),50,17,85.0,75.0,6 months,No Contract,,,https://occom.com.au/opticomm-plans/
-occom,Opticomm,Boost (Fibre25),25,8,70.0,60.0,6 months,No Contract,,,https://occom.com.au/opticomm-plans/
-occom,Opticomm,Basic (Fibre12),12,1,58.0,48.0,6 months,No Contract,,,https://occom.com.au/opticomm-plans/
-occom,NBN FTTP,Hyper (nbn2000),2000,100,185.0,165.0,12 months,No Contract,,,https://occom.com.au/nbn-fttp-upgrade/
-occom,NBN FTTP,Lightning (nbn1000),1000,100,115.0,105.0,12 months,No Contract,,,https://occom.com.au/nbn-fttp-upgrade/
-occom,NBN FTTP,Ultra (nbn750),750,50,98.0,93.0,12 months,No Contract,,,https://occom.com.au/nbn-fttp-upgrade/
-occom,NBN FTTP,Turbo (nbn500),500,48,90.0,85.0,12 months,No Contract,,,https://occom.com.au/nbn-fttp-upgrade/
-occom,NBN FTTP,Superfast (nbn100),100,17,90.0,80.0,6 months,No Contract,,,https://occom.com.au/nbn-fttp-upgrade/
-occom,NBN FTTP,Boost Plus (nbn50),50,17,85.0,75.0,6 months,No Contract,,,https://occom.com.au/nbn-fttp-upgrade/
-occom,NBN FTTP,Boost (nbn25),25,8,70.0,60.0,6 months,No Contract,,,https://occom.com.au/nbn-fttp-upgrade/
-occom,NBN FTTP,Basic (nbn12),12,0,58.0,48.0,6 months,No Contract,,,https://occom.com.au/nbn-fttp-upgrade/
-occom,Supa,Lightning (Fibre1000),1000,1000,120.0,110.0,6 months,No Contract,,,https://occom.com.au/supa-network-plans/
-occom,Supa,Ultra (Fibre750),750,750,110.0,95.0,6 months,No Contract,,,https://occom.com.au/supa-network-plans/
-occom,Supa,Turbo (Fibre500),500,500,90.0,85.0,6 months,No Contract,,,https://occom.com.au/supa-network-plans/
-occom,Supa,Boost Plus (Fibre50),50,17,85.0,75.0,6 months,No Contract,,,https://occom.com.au/supa-network-plans/
-occom,Supa,Boost (Fibre25),25,8,70.0,65.0,6 months,No Contract,,,https://occom.com.au/supa-network-plans/
-occom,Redtrain,Lightning (Fibre1000),1000,50,130.0,115.0,12 months,No Contract,,,https://occom.com.au/redtrain-plans/
-occom,Redtrain,Turbo (Fibre500),500,50,120.0,110.0,12 months,No Contract,,,https://occom.com.au/redtrain-plans/
-occom,Redtrain,Rocket (Fibre250),250,22,120.0,110.0,12 months,No Contract,,,https://occom.com.au/redtrain-plans/
-occom,Redtrain,Superfast (Fibre100),100,17,90.0,85.0,6 months,No Contract,,,https://occom.com.au/redtrain-plans/
-occom,Redtrain,Boost Plus (Fibre50),50,17,85.0,75.0,6 months,No Contract,,,https://occom.com.au/redtrain-plans/
-occom,Redtrain,Boost (Fibre25),25,4,70.0,60.0,6 months,No Contract,,,https://occom.com.au/redtrain-plans/
-occom,Redtrain,Basic (Fibre12),12,0,58.0,48.0,6 months,No Contract,,,https://occom.com.au/redtrain-plans/
-occom,Community Fibre,Hyper (Fibre2000),2000,200,200.0,180.0,12 months,No Contract,,,https://occom.com.au/community-fibre-plans/
-occom,Community Fibre,Lightning (Fibre1000),1000,100,100.0,90.0,6 months,No Contract,,,https://occom.com.au/community-fibre-plans/
-occom,Community Fibre,Turbo (Fibre500),500,100,80.0,70.0,6 months,No Contract,,,https://occom.com.au/community-fibre-plans/
-occom,Community Fibre,Superfast (Fibre100),100,100,65.0,55.0,6 months,No Contract,,,https://occom.com.au/community-fibre-plans/
-occom,Community Fibre,Boost Plus (Fibre50),50,50,60.0,50.0,6 months,No Contract,,,https://occom.com.au/community-fibre-plans/
-occom,Community Fibre,Boost (Fibre25),25,25,55.0,45.0,6 months,No Contract,,,https://occom.com.au/community-fibre-plans/
-tpg,NBN,NBN50,50.0,17.0,84.99,64.99,6 months,No Lock-in,50.0,17.0,https://www.tpg.com.au/nbn
-tpg,NBN,NBN100,99.0,17.0,94.99,64.99,6 months,No Lock-in,99.0,17.0,https://www.tpg.com.au/nbn
-tpg,NBN,NBN500,500.0,42.0,94.99,64.99,6 months,No Lock-in,500.0,42.0,https://www.tpg.com.au/nbn
-tpg,NBN,NBN12,12.0,0.8,74.99,54.99,6 months,No Lock-in,12.0,0.8,https://www.tpg.com.au/nbn
-tpg,NBN,NBN25,25.0,4.0,76.99,56.99,6 months,No Lock-in,25.0,4.0,https://www.tpg.com.au/nbn
-tpg,NBN,NBN Home Superfast,740.0,42.0,99.99,69.99,6 months,No Lock-in,740.0,42.0,https://www.tpg.com.au/nbn
-tpg,NBN,NBN Home Ultrafast,820.0,85.0,109.99,79.99,6 months,No Lock-in,820.0,85.0,https://www.tpg.com.au/nbn
-tpg,4G Home Wireless,Home Wireless Broadband,15.0,1.9,54.99,44.99,6 months,No Lock-in,15.0,1.9,https://www.tpg.com.au/home-wireless-broadband
-tpg,5G,5G Home Broadband Plus,50.0,16.0,59.99,29.99,6 months,No Lock-in,50.0,16.0,https://www.tpg.com.au/5g-home-broadband
-tpg,5G,5G Home Broadband Premium,100.0,17.0,64.99,34.99,6 months,No Lock-in,100.0,17.0,https://www.tpg.com.au/5g-home-broadband
-tpg,FTTB,FTTB25,25.0,4.0,39.99,0.0,3 months,No Lock-in,25.0,4.0,https://www.tpg.com.au/fttb
-tpg,FTTB,FTTB100,100.0,25.0,74.99,0.0,3 months,No Lock-in,100.0,25.0,https://www.tpg.com.au/fttb
-tpg,FTTB,FTTB Max,700.0,25.0,79.99,0.0,3 months,No Lock-in,700.0,25.0,https://www.tpg.com.au/fttb
+activ8me,NBN,Standard 25 Unlimited Data Allowance,25,10,69.95,54.95,6 months,Month-to-Month,25,10,https://www.activ8me.net.au/internet/nbn-fibre-fttp-hfc
+activ8me,NBN,Standard 50 Unlimited Data Allowance,50,20,74.95,,,Month-to-Month,47,17,https://www.activ8me.net.au/internet/nbn-fibre-fttp-hfc
+activ8me,NBN,Home Fast 100 Unlimited Data Allowance,100,20,94.95,84.95,6 months,Month-to-Month,84,17,https://www.activ8me.net.au/internet/nbn-fibre-fttp-hfc
+activ8me,NBN,Home Fast 500 Unlimited Data Allowance,500,50,94.95,84.95,6 months,Month-to-Month,404,42,https://www.activ8me.net.au/internet/nbn-fibre-fttp-hfc
+activ8me,NBN,Super Fast 750 Unlimited Data Allowance,750,50,109.95,,,Month-to-Month,575,42,https://www.activ8me.net.au/internet/nbn-fibre-fttp-hfc
+Airtel,4G Mobile,Airtel Nano 4G 10GB,100,100,30.0,,,No Lock-in,100,100,https://airtel.au/mobile
+Airtel,4G Mobile,Airtel Micro 4G 15GB,100,100,35.0,,,No Lock-in,100,100,https://airtel.au/mobile
+Airtel,4G Mobile,Airtel Micro + 5G 29GB,100,150,40.0,,,No Lock-in,100,150,https://airtel.au/mobile
+Airtel,5G Mobile,Airtel Flexi 5G 40GB,150,150,45.0,,,No Lock-in,150,150,https://airtel.au/mobile
+Airtel,5G Mobile,Airtel Ultimate 5G 65GB,150,150,55.0,,,No Lock-in,150,150,https://airtel.au/mobile
+Airtel,5G Mobile,Airtel Legend 5G 100GB,150,150,65.0,,,No Lock-in,150,150,https://airtel.au/mobile
+Airtel,5G Mobile,Airtel Legend + 5G 120GB,250,250,70.0,,,No Lock-in,250,250,https://airtel.au/mobile
+Airtel,5G Mobile,Airtel Ultimate + 5G 150GB,250,250,80.0,,,No Lock-in,250,250,https://airtel.au/mobile
+Airtel,5G Mobile,Airtel Super Flex 180GB,250,250,85.0,,,No Lock-in,250,250,https://airtel.au/mobile
+Airtel,5G Mobile Broadband,Airtel 5G Mobile Broadband 40GB,150,150,40.0,,,No Lock-in,150,150,https://airtel.au/mobile
+Airtel,5G Mobile Broadband,Airtel 5G Mobile Broadband 100GB,150,150,60.0,,,No Lock-in,150,150,https://airtel.au/mobile
+Airtel,5G Mobile Broadband,Airtel 5G Mobile Broadband 50GB,150,150,65.0,,,No Lock-in,150,150,https://airtel.au/mobile
+Airtel,5G Mobile Broadband,Airtel 5G Mobile Broadband 120GB,250,250,70.0,,,No Lock-in,250,250,https://airtel.au/mobile
+Airtel,5G Mobile Broadband,Airtel 5G Mobile Broadband 150GB,250,250,80.0,,,No Lock-in,250,250,https://airtel.au/mobile
+Airtel,5G Mobile Broadband,Airtel 5G Mobile Broadband 180GB,250,250,85.0,,,No Lock-in,250,250,https://airtel.au/mobile
+Airtel,Family Share Mobile,Airtel Family Share Pool A 10GB,100,100,35.0,,,No Lock-in,100,100,https://airtel.au/mobile
+Airtel,Family Share Mobile,Airtel Family Share Pool B 30GB,100,100,50.0,,,No Lock-in,100,100,https://airtel.au/mobile
+Airtel,Family Share Mobile,Airtel Family Share Pool C 45GB,150,150,65.0,,,No Lock-in,150,150,https://airtel.au/mobile
+Airtel,Family Share Mobile,Airtel Family Share Pool D 60GB,250,250,75.0,,,No Lock-in,250,250,https://airtel.au/mobile
+Airtel,Roaming Mobile,Airtel Roaming International 5GB,0,0,60.0,,,No Lock-in,0,0,https://airtel.au/mobile
+Airtel,Roaming Mobile,Airtel Roaming International 10GB,0,0,85.0,,,No Lock-in,0,0,https://airtel.au/mobile
+Airtel,Travel SIM Asia,Airtel Asia Data package 1GB,1,0,18.0,,30 Days,Prepaid,1,0,https://airtel.au/travel-sim
+Airtel,Travel SIM Asia,Airtel Asia Data package 3GB,3,0,39.0,,30 Days,Prepaid,3,0,https://airtel.au/travel-sim
+Airtel,Travel SIM Asia,Airtel Asia Data package 5GB,5,0,89.0,,30 Days,Prepaid,5,0,https://airtel.au/travel-sim
+Airtel,Travel SIM Asia,Airtel Asia Data package 10GB,10,0,178.0,,30 Days,Prepaid,10,0,https://airtel.au/travel-sim
+Airtel,Travel SIM Asia,Airtel Asia Data package 20GB,20,0,406.0,,30 Days,Prepaid,20,0,https://airtel.au/travel-sim
+Airtel,Travel SIM Asia Zone 2,Airtel Asia Special Data Package 5GB Zone 2,5,0,61.0,,7 Days,Prepaid,5,0,https://airtel.au/travel-sim
+Airtel,Travel SIM Asia Zone 2,Airtel Asia Special Data Package 10GB Zone 2,10,0,92.0,,7 Days,Prepaid,10,0,https://airtel.au/travel-sim
+Airtel,Travel SIM Asia Zone 2,Airtel Asia Special Data Package 15GB Zone 2,15,0,137.0,,14 Days,Prepaid,15,0,https://airtel.au/travel-sim
+Airtel,Travel SIM Asia Zone 2,Airtel Asia Special Data Package 25GB Zone 2,25,0,229.0,,14 Days,Prepaid,25,0,https://airtel.au/travel-sim
+Airtel,Travel SIM Europe,Airtel EU Data Package 5GB,5,0,7.0,,7 Days,Prepaid,5,0,https://airtel.au/travel-sim
+Airtel,Travel SIM Europe,Airtel EU Data Package 10GB,10,0,11.0,,7 Days,Prepaid,10,0,https://airtel.au/travel-sim
+Airtel,Travel SIM Europe,Airtel EU Data Package 25GB,25,0,26.0,,14 Days,Prepaid,25,0,https://airtel.au/travel-sim
+Airtel,Travel SIM Europe,Airtel EU Data Package 50GB,50,0,52.0,,30 Days,Prepaid,50,0,https://airtel.au/travel-sim
+Airtel,Travel SIM Global,Airtel Global Zone A Package 5GB,5,0,13.0,,7 Days,Prepaid,5,0,https://airtel.au/travel-sim
+Airtel,Travel SIM Global,Airtel Global Zone A Package 10GB,10,0,20.0,,7 Days,Prepaid,10,0,https://airtel.au/travel-sim
+Airtel,Travel SIM Global,Airtel Global Zone A Package 25GB,25,0,49.0,,14 Days,Prepaid,25,0,https://airtel.au/travel-sim
+Alpha,Lynham Networks,Alpha Lynham Networks 50Mbps/20mbps,50,20,75.0,,,"Month to month, no cancellation fees; $66.00 setup fee",50,20,https://home.alpha.net.au/plans/plan-lynham-networks.html
+Alpha,Lynham Networks,Alpha Lynham Networks 100Mbps/20mbps,100,20,85.0,,,"Month to month, no cancellation fees; $66.00 setup fee",100,20,https://home.alpha.net.au/plans/plan-lynham-networks.html
+Alpha,Lynham Networks,Alpha Lynham Networks 200Mbps/25mbps,200,25,115.5,,,"Month to month, no cancellation fees; $66.00 setup fee",200,25,https://home.alpha.net.au/plans/plan-lynham-networks.html
+Alpha,NBN,Alpha NBN 25Mbps/5mbps,25,5,69.99,,,"Month to month, no cancellation fees",25,5,https://home.alpha.net.au/plans/plan-nbn.html
+Alpha,NBN,Alpha NBN 50Mbps/20Mbps,50,20,84.99,,,"Month to month, no cancellation fees",50,20,https://home.alpha.net.au/plans/plan-nbn.html
+Alpha,NBN,Alpha NBN 500mbps/50mbps,500,50,94.99,,,"Month to month, no cancellation fees",500,50,https://home.alpha.net.au/plans/plan-nbn.html
+Alpha,Opticomm,Alpha Opticomm 25Mbps/5Mbps,25,5,65.0,,,"Month to month, no cancellation fees; $110.00 setup fee",25,5,https://home.alpha.net.au/plans/plan-opticomm.html
+Alpha,Opticomm,Alpha Opticomm 50Mbps/20Mbps,50,20,75.0,,,"Month to month, no cancellation fees; $110.00 setup fee",50,20,https://home.alpha.net.au/plans/plan-opticomm.html
+Alpha,Opticomm,Alpha Opticomm 100Mbps/20Mbps,100,20,85.0,,,"Month to month, no cancellation fees; $110.00 setup fee",100,20,https://home.alpha.net.au/plans/plan-opticomm.html
+Alpha,Opticomm,Alpha Opticomm 250Mbps/25Mbps,250,25,109.0,,,"Month to month, no cancellation fees; $110.00 setup fee",250,25,https://home.alpha.net.au/plans/plan-opticomm.html
+Alpha,Supa,Alpha Supanetworks 25Mbps/10Mbps,25,10,65.0,,,"Month to month, no cancellation fees; $15.00 setup fee",25,10,https://home.alpha.net.au/plans/plan-supanetworks.html
+Alpha,Supa,Alpha Supanetworks 50Mbps/20Mbps,50,20,75.0,,,"Month to month, no cancellation fees; $15.00 setup fee",50,20,https://home.alpha.net.au/plans/plan-supanetworks.html
+Alpha,Supa,Alpha Supanetworks 500mbps/500mbps,500,500,85.0,,,"Month to month, no cancellation fees; $15.00 setup fee",500,500,https://home.alpha.net.au/plans/plan-supanetworks.html
+Alpha,Supa,Alpha Supanetworks 750mbps/750mbps,750,750,109.0,,,"Month to month, no cancellation fees; $15.00 setup fee",750,750,https://home.alpha.net.au/plans/plan-supanetworks.html
+Aussie Broadband,NBN,Aussie Broadband NBN Basic 12/1,12,1,73.0,,,No lock-in contract,12,1,https://www.aussiebroadband.com.au/internet/nbn-plans/
+Aussie Broadband,NBN,Aussie Broadband NBN Basic Plus 25/10,25,10,79.0,55.3,first month; $58.10/month for months 2-3,No lock-in contract,23,9,https://www.aussiebroadband.com.au/internet/nbn-plans/
+Aussie Broadband,NBN,Aussie Broadband NBN Value 50/20,50,20,93.0,65.1,first month; $66.50/month for months 2-3,No lock-in contract,47,18,https://www.aussiebroadband.com.au/internet/nbn-plans/
+Aussie Broadband,NBN,Aussie Broadband NBN Fast 100/20,100,20,95.0,80.0,first month; $84/month for months 2-6,No lock-in contract,94,18,https://www.aussiebroadband.com.au/internet/nbn-plans/
+Aussie Broadband,NBN,Aussie Broadband NBN Fast Fibre 500/50,500,50,95.0,80.0,first month; $84/month for months 2-6,No lock-in contract,500,44,https://www.aussiebroadband.com.au/internet/nbn-plans/
+Aussie Broadband,NBN,Aussie Broadband NBN Ultrafast Fibre 1000/100,1000,100,129.0,109.0,first 6 months,No lock-in contract,875,92,https://www.aussiebroadband.com.au/internet/nbn-plans/
+Aussie Broadband,NBN,Aussie Broadband NBN Hyperfast 2000/200,2000,200,189.0,169.0,first 6 months,No lock-in contract,1810,178,https://www.aussiebroadband.com.au/internet/nbn-plans/
+Aussie Broadband,Opticomm,Aussie Broadband Opticomm Basic 12/1,12,1,73.0,,,No lock-in contract,12,1,https://www.aussiebroadband.com.au/internet/opticomm-plans/
+Aussie Broadband,Opticomm,Aussie Broadband Opticomm Basic Plus 25/10,25,10,79.0,55.3,first month; $58.10/month for months 2-3,No lock-in contract,23,9,https://www.aussiebroadband.com.au/internet/opticomm-plans/
+Aussie Broadband,Opticomm,Aussie Broadband Opticomm Value 50/20,50,20,93.0,65.1,first month; $66.50/month for months 2-3,No lock-in contract,47,18,https://www.aussiebroadband.com.au/internet/opticomm-plans/
+Aussie Broadband,Opticomm,Aussie Broadband Opticomm Fast 100/20,100,20,95.0,80.0,first month; $84/month for months 2-6,No lock-in contract,94,18,https://www.aussiebroadband.com.au/internet/opticomm-plans/
+Aussie Broadband,Opticomm,Aussie Broadband Opticomm SuperFast 250/25,250,25,119.0,104.0,first 6 months,No lock-in contract,250,22,https://www.aussiebroadband.com.au/internet/opticomm-plans/
+Aussie Broadband,Opticomm,Aussie Broadband Opticomm Ultrafast 1000/50,1000,50,129.0,109.0,first 6 months,No lock-in contract,875,42,https://www.aussiebroadband.com.au/internet/opticomm-plans/
+Aussie Broadband,Redtrain,Aussie Broadband Redtrain Basic 12/1,12,1,73.0,,,No lock-in contract,12,1,https://www.aussiebroadband.com.au/
+Aussie Broadband,Redtrain,Aussie Broadband Redtrain Basic Plus 25/10,25,10,79.0,55.3,first month; $58.10/month for months 2-3,No lock-in contract,23,9,https://www.aussiebroadband.com.au/
+Aussie Broadband,Redtrain,Aussie Broadband Redtrain Value 50/20,50,20,93.0,65.1,first month; $66.50/month for months 2-3,No lock-in contract,47,18,https://www.aussiebroadband.com.au/
+Aussie Broadband,Redtrain,Aussie Broadband Redtrain Fast 100/20,100,20,95.0,80.0,first month; $84/month for months 2-6,No lock-in contract,94,18,https://www.aussiebroadband.com.au/
+Aussie Broadband,Redtrain,Aussie Broadband Redtrain SuperFast 250/25,250,25,119.0,104.0,first 6 months,No lock-in contract,250,22,https://www.aussiebroadband.com.au/
+Aussie Broadband,Redtrain,Aussie Broadband Redtrain Ultrafast 1000/50,1000,50,129.0,109.0,first 6 months,No lock-in contract,875,42,https://www.aussiebroadband.com.au/
+Aussie Broadband,Supa,Aussie Broadband Supa Basic 12/1,12,1,73.0,,,No lock-in contract,12,1,https://www.aussiebroadband.com.au/
+Aussie Broadband,Supa,Aussie Broadband Supa Basic Plus 25/10,25,10,79.0,55.3,first month; $58.10/month for months 2-3,No lock-in contract,23,9,https://www.aussiebroadband.com.au/
+Aussie Broadband,Supa,Aussie Broadband Supa Value 50/20,50,20,93.0,65.1,first month; $66.50/month for months 2-3,No lock-in contract,47,18,https://www.aussiebroadband.com.au/
+Aussie Broadband,Supa,Aussie Broadband Supa Fast 100/20,100,20,95.0,80.0,first month; $84/month for months 2-6,No lock-in contract,94,18,https://www.aussiebroadband.com.au/
+Aussie Broadband,Supa,Aussie Broadband Supa SuperFast 250/25,250,25,119.0,104.0,first 6 months,No lock-in contract,250,22,https://www.aussiebroadband.com.au/
+Aussie Broadband,Supa,Aussie Broadband Supa Ultrafast 1000/50,1000,50,129.0,109.0,first 6 months,No lock-in contract,875,42,https://www.aussiebroadband.com.au/
+Blitznet,FIBRE,Fiber Broadband - Basic Internet,25,10,69.0,,,No lock-in / month-to-month,25,10,https://blitznet.com.au
+Blitznet,FIBRE,Fiber Broadband - Standard Internet,50,20,75.0,,,No lock-in / month-to-month,50,20,https://blitznet.com.au
+Blitznet,FIBRE,Fiber Broadband - Premium Internet,500,500,85.0,,,No lock-in / month-to-month,500,500,https://blitznet.com.au
+Blitznet,FIBRE,Fiber Broadband - Ultimate Internet,1000,1000,130.0,,,No lock-in / month-to-month,1000,1000,https://blitznet.com.au
+City7Net,Fibre,City7Net Basic,25,10,69.0,,,"Month to month, no lock-in",25,10,https://city7net.com.au/
+City7Net,Fibre,City7Net Standard,50,20,78.0,,,"Month to month, no lock-in",50,20,https://city7net.com.au/
+City7Net,Fibre,City7Net Premium,500,500,89.0,,,"Month to month, no lock-in",500,500,https://city7net.com.au/
+City7Net,Fibre,City7Net Ultimate,1000,1000,130.0,,,"Month to month, no lock-in",1000,1000,https://city7net.com.au/
+Clevernet,Supa,30 days free - See CIS,750,750,45.0,,30 days free,No lock-in / month-to-month,750,750,https://clevernet.com.au
+Clevernet,Supa,30 days free - See CIS,1000,1000,45.0,,30 days free,No lock-in / month-to-month,1000,1000,https://clevernet.com.au
+dodo,NBN,Dodo NBN 23,23,4,71.99,41.99,6 months,No Contract,23,4,https://www.dodo.com/nbn
+dodo,NBN,Dodo NBN 25,25,9,71.99,41.99,6 months,No Contract,25,9,https://www.dodo.com/nbn
+dodo,NBN,Dodo NBN 50,50,17,85.99,55.99,6 months,No Contract,50,17,https://www.dodo.com/nbn
+dodo,NBN,Dodo NBN 63,63,10,85.99,55.99,6 months,No Contract,63,10,https://www.dodo.com/nbn
+dodo,NBN,Dodo NBN 100,100,17,92.99,62.99,6 months,No Contract,100,17,https://www.dodo.com/nbn
+dodo,NBN,Dodo NBN 500,500,48,92.99,62.99,6 months,No Contract,500,48,https://www.dodo.com/nbn
+dodo,NBN,Dodo NBN 700,700,49,99.99,69.99,6 months,No Contract,700,49,https://www.dodo.com/nbn
+dodo,NBN,Dodo NBN 840,840,94,109.99,79.99,6 months,No Contract,840,94,https://www.dodo.com/nbn
+Epsinet,Fibre,Epsinet Casual,25,10,69.0,,,"Month to month, no lock-in",25,10,https://epsinet.com.au/
+Epsinet,Fibre,Epsinet Everyday,50,20,79.0,,,"Month to month, no lock-in",50,20,https://epsinet.com.au/
+Epsinet,Fibre,Epsinet Family,100,40,99.0,,,"Month to month, no lock-in",100,40,https://epsinet.com.au/
+Epsinet,Fibre,Epsinet Power User,250,50,129.0,,,"Month to month, no lock-in",250,50,https://epsinet.com.au/
+exetel,NBN,One Plan 500/50,500,50,80.0,,,No Lock-in,500,40,https://www.exetel.com.au/broadband/nbn
+exetel,NBN FTTP Upgrade,One Plan 500/50,500,50,80.0,,,No Lock-in,500,40,https://www.exetel.com.au/broadband/nbn-fibre-upgrade
+exetel,5G Mobile,PLUS ONE 130GB,150,0,40.0,,,No Lock-in,150,0,https://www.exetel.com.au/mobilephone
+iinet,5G Home Broadband,5G Plus,50,20,59.99,39.99,6 months,No Lock-in,50.0,16.0,https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre
+iinet,5G Home Broadband,5G Premium,100,20,69.99,49.99,6 months,No Lock-in,100.0,17.0,https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre
+iinet,NBN,NBN500,500,42,94.99,69.99,6 months,No Lock-in,500.0,42.0,https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre
+iinet,NBN,NBN25,25,8,79.99,59.99,6 months,No Lock-in,25.0,8.0,https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre
+iinet,NBN,NBN50,50,17,89.99,69.99,6 months,No Lock-in,50.0,17.0,https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre
+iinet,NBN,NBN Superfast,740,42,104.99,74.99,6 months,No Lock-in,740.0,42.0,https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre
+iinet,NBN,NBN Ultrafast,820,85,114.99,84.99,6 months,No Lock-in,820.0,85.0,https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre
+iinet,4G Home Wireless,Home Wireless Broadband,20,2,59.99,49.99,6 months,No Lock-in,15.0,1.9,https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre
+iinet,NBN Fixed Wireless,NBN25,20,3,79.99,,,No Lock-in,20.0,3.8,https://www.iinet.net.au/internet-product/broadband/nbn/plans/wireless
+iprimus,NBN,nbn Standard,25,5,74.0,,,No Contract,25,5,https://www.iprimus.com.au/nbn-plans
+iprimus,NBN,nbn Standard Plus,50,17,87.0,,,No Contract,50,17,https://www.iprimus.com.au/nbn-plans
+iprimus,NBN,nbn Premium,100,17,97.0,,,No Contract,100,17,https://www.iprimus.com.au/nbn-plans
+iprimus,NBN,nbn Premium plus,500,47,97.0,,,No Contract,500,47,https://www.iprimus.com.au/nbn-plans
+iprimus,NBN,nbn Home Superfast,700,49,104.0,,,No Contract,700,49,https://www.iprimus.com.au/nbn-plans
+iprimus,NBN,nbn Home Ultrafast,840,94,119.0,,,No Contract,840,94,https://www.iprimus.com.au/nbn-plans
+iprimus,Fixed Wireless,Fixed Wireless Standard,25,5,74.0,,,No Contract,25,5,https://www.iprimus.com.au/nbn-plans
+iprimus,Fixed Wireless,Fixed Wireless Plus,50,17,84.0,,,No Contract,50,17,https://www.iprimus.com.au/nbn-plans
+iprimus,Fibre,Fibre Standard,50,17,74.0,,,No Contract,50,17,https://www.iprimus.com.au/nbn-plans
+iprimus,Fibre,Fibre Standard Plus,100,17,87.0,,,No Contract,100,17,https://www.iprimus.com.au/nbn-plans
+iprimus,Fibre,Fibre Premium,500,47,97.0,,,No Contract,500,47,https://www.iprimus.com.au/nbn-plans
+iprimus,Fibre,Fibre Home Superfast,700,49,104.0,,,No Contract,700,49,https://www.iprimus.com.au/nbn-plans
+iprimus,Fibre,Fibre Home Ultrafast,840,94,119.0,,,No Contract,840,94,https://www.iprimus.com.au/nbn-plans
+IQNet,ASN Telecom,IQNet ASN Networks Basic Speed,25,5,69.0,,,"No lock-in, unlimited data; $45 connection fee",25,5,https://iqnet.com.au/asn/
+IQNet,ASN Telecom,IQNet ASN Networks Standard Speed,50,20,75.0,,,"No lock-in, unlimited data; $45 connection fee",50,20,https://iqnet.com.au/asn/
+IQNet,ASN Telecom,IQNet ASN Networks Advance Speed,100,20,85.0,,,"No lock-in, unlimited data; $45 connection fee",100,20,https://iqnet.com.au/asn/
+IQNet,ASN Telecom,IQNet ASN Networks Extreme Speed,250,25,110.0,,,"No lock-in, unlimited data; $45 connection fee",250,25,https://iqnet.com.au/asn/
+IQNet,Lynham Networks,IQNet Lynham Networks Basic Speed,25,10,69.0,,,"No lock-in, unlimited data; $45 connection fee",25,10,https://iqnet.com.au/choose-iq-net-as-your-lynham-networks/
+IQNet,Lynham Networks,IQNet Lynham Networks Basic Boost,25,25,79.0,,,"No lock-in, unlimited data; $45 connection fee",25,25,https://iqnet.com.au/choose-iq-net-as-your-lynham-networks/
+IQNet,Lynham Networks,IQNet Lynham Networks Standard Speed,50,20,75.0,,,"No lock-in, unlimited data; $45 connection fee",50,20,https://iqnet.com.au/choose-iq-net-as-your-lynham-networks/
+IQNet,Lynham Networks,IQNet Lynham Networks Standard Boost,50,50,85.0,,,"No lock-in, unlimited data; $45 connection fee",50,50,https://iqnet.com.au/choose-iq-net-as-your-lynham-networks/
+IQNet,Lynham Networks,IQNet Lynham Networks Advance Speed,100,20,85.0,,,"No lock-in, unlimited data; $45 connection fee",100,20,https://iqnet.com.au/choose-iq-net-as-your-lynham-networks/
+IQNet,Lynham Networks,IQNet Lynham Networks Advance Boost,100,100,100.0,,,"No lock-in, unlimited data; $45 connection fee",100,100,https://iqnet.com.au/choose-iq-net-as-your-lynham-networks/
+IQNet,Lynham Networks,IQNet Lynham Networks Extreme Speed,200,25,110.0,,,"No lock-in, unlimited data; $45 connection fee",200,25,https://iqnet.com.au/choose-iq-net-as-your-lynham-networks/
+IQNet,Lynham Networks,IQNet Lynham Networks Extreme Boost,200,200,150.0,,,"No lock-in, unlimited data; $45 connection fee",200,200,https://iqnet.com.au/choose-iq-net-as-your-lynham-networks/
+IQNet,NBN,IQNet Broadband Basic Speed,25,10,69.0,,,"No lock-in, unlimited data",25,10,https://iqnet.com.au/nbn-co/
+IQNet,NBN,IQNet Broadband Standard Speed,50,20,75.0,,,"No lock-in, unlimited data",50,20,https://iqnet.com.au/nbn-co/
+IQNet,NBN,IQNet Broadband Advance Speed,100,40,85.0,,,"No lock-in, unlimited data",100,40,https://iqnet.com.au/nbn-co/
+IQNet,NBN,IQNet Fibre-HFC Broadband 500,500,50,85.0,,,"No lock-in, unlimited data",500,50,https://iqnet.com.au/nbn-co/
+IQNet,NBN,IQNet Fibre-HFC Broadband 1000,1000,100,130.0,,,"No lock-in, unlimited data",1000,100,https://iqnet.com.au/nbn-co/
+IQNet,Supa,IQNet Fibre Broadband Basic Speed,25,10,69.0,,,"No lock-in, unlimited data",25,10,https://iqnet.com.au/broadband/
+IQNet,Supa,IQNet Fibre Broadband Standard Speed,50,20,75.0,,,"No lock-in, unlimited data",50,20,https://iqnet.com.au/broadband/
+IQNet,Supa,IQNet Fibre Broadband Advance Speed,500,500,85.0,,,"No lock-in, unlimited data",500,500,https://iqnet.com.au/broadband/
+IQNet,Supa,IQNet Fibre Broadband Extreme Speed,1000,1000,130.0,,,"No lock-in, unlimited data",1000,1000,https://iqnet.com.au/broadband/
+IQNet,Vision Networks,IQNet Vision Networks Basic Speed,25,25,69.0,,,"No lock-in, unlimited data; $45 connection fee",25,25,https://iqnet.com.au/vision
+IQNet,Vision Networks,IQNet Vision Networks Standard Speed,50,50,75.0,,,"No lock-in, unlimited data; $45 connection fee",50,50,https://iqnet.com.au/vision
+IQNet,Vision Networks,IQNet Vision Networks Advance Speed,100,100,85.0,,,"No lock-in, unlimited data; $45 connection fee",100,100,https://iqnet.com.au/vision
+IQNet,Vision Networks,IQNet Vision Networks Extreme Speed,200,200,110.0,,,"No lock-in, unlimited data; $45 connection fee",200,200,https://iqnet.com.au/vision
+kogan,4G,Kogan 4G Internet,20,1.9,54.9,49.9,12 months,No Contract,17,1.9,https://www.koganinternet.com.au/plans/
+kogan,NBN,Kogan Bronze,25,8.0,70.9,58.9,12 months,No Contract,25,8.0,https://www.koganinternet.com.au/plans/
+kogan,NBN,Kogan Silver,50,17.0,80.9,69.9,12 months,No Contract,50,17.0,https://www.koganinternet.com.au/plans/
+kogan,NBN,Kogan Gold,100,17.0,85.9,69.9,12 months,No Contract,99,17.0,https://www.koganinternet.com.au/plans/
+kogan,NBN,Kogan Gold Plus,500,42.0,85.9,69.9,12 months,No Contract,500,42.0,https://www.koganinternet.com.au/plans/
+kogan,NBN,Kogan Platinum,750,42.0,94.9,84.9,12 months,No Contract,740,42.0,https://www.koganinternet.com.au/plans/
+kogan,NBN,Kogan Diamond,1000,85.0,108.9,94.9,12 months,No Contract,850,85.0,https://www.koganinternet.com.au/plans/
+Leaptel,NBN,Pronto,25,10,69.95,49.95,6 months,No Contract,25,10,https://leaptel.com.au/plans/?provider=nbn
+Leaptel,NBN,Accelerated,50,20,82.95,74.95,6 months,No Contract,50,20,https://leaptel.com.au/plans/?provider=nbn
+Leaptel,NBN,Full Throttle,100,20,92.95,79.95,12 months,No Contract,100,20,https://leaptel.com.au/plans/?provider=nbn
+Leaptel,NBN,Fast,500,50,92.95,79.95,12 months,No Contract,500,50,https://leaptel.com.au/plans/?provider=nbn
+Leaptel,NBN,Ultrafast,2000,200,114.0,99.0,12 months,No Contract,2000,200,https://leaptel.com.au/plans/?provider=nbn
+Leaptel,Opticomm,Pronto,25,10,69.95,,,No Contract,25,10,https://leaptel.com.au/plans/?provider=opt
+Leaptel,Opticomm,Accelerated,50,20,82.95,74.95,6 months,No Contract,50,20,https://leaptel.com.au/plans/?provider=opt
+Leaptel,Opticomm,Full Throttle,100,20,92.95,79.95,6 months,No Contract,100,20,https://leaptel.com.au/plans/?provider=opt
+Leaptel,Opticomm,Fast,500,50,94.95,84.95,6 months,No Contract,500,50,https://leaptel.com.au/plans/?provider=opt
+Leaptel,Opticomm,Ultrafast,1000,100,129.0,109.0,6 months,No Contract,1000,100,https://leaptel.com.au/plans/?provider=opt
+Leaptel,Redtrain,Pronto,25,5,59.95,,,No Contract,25,5,https://leaptel.com.au/plans/?provider=red
+Leaptel,Redtrain,Accelerated,50,20,84.95,,,No Contract,50,20,https://leaptel.com.au/plans/?provider=red
+Leaptel,Redtrain,Full Throttle,100,20,92.95,,,No Contract,100,20,https://leaptel.com.au/plans/?provider=red
+Leaptel,Fixed Wireless,Fixed Wireless +,100,20,82.95,74.95,12 months,No Contract,100,20,https://leaptel.com.au/fixed-wireless/
+Leaptel,Fixed Wireless,Fixed Wireless Fast,250,20,92.95,79.95,12 months,No Contract,250,20,https://leaptel.com.au/fixed-wireless/
+Leaptel,Fixed Wireless,Fixed Wireless Superfast,400,40,104.95,89.95,12 months,No Contract,400,40,https://leaptel.com.au/fixed-wireless/
+mate,NBN,MATE Crikey nbn 25/10,25,10,76.0,51.0,6 months,No Contract,25,10,https://www.letsbemates.com.au/mate/crikey-nbn-25-10/
+mate,NBN,MATE Ripper nbn 50/20,49,19,86.0,66.0,6 months,No Contract,49,19,https://www.letsbemates.com.au/mate/ripper-nbn-50-20/
+mate,NBN,MATE No Worries nbn 100/20,97,19,96.0,71.0,6 months,No Contract,97,19,https://www.letsbemates.com.au/mate/no-worries-100-20/
+mate,NBN,MATE You Beaut nbn 100/40,97,36,106.0,81.0,6 months,No Contract,97,36,https://www.letsbemates.com.au/mate/you-beaut-100-40/
+mate,NBN,MATE No Worries nbn 500/50,485,46,96.0,71.0,6 months,No Contract,485,46,https://www.letsbemates.com.au/mate/no-worries-500-50/
+mate,NBN,MATE Fair Dinkum nbn 750/50,713,46,121.0,96.0,6 months,No Contract,713,46,https://www.letsbemates.com.au/mate/fair-dinkum-750-50/
+mate,NBN,MATE Flamin' Fast nbn 1000/100,913,94,126.0,101.0,6 months,No Contract,913,94,https://www.letsbemates.com.au/mate/flamin-fast-1000-100/
+More,NBN,More Value,25,8.5,68.0,53.0,36 months,No Lock-in,25,8.5,https://more.com.au/personal/nbn-plans
+More,NBN,More Value Plus,50,17,85.0,70.0,36 months,No Lock-in,50,17,https://more.com.au/personal/nbn-plans
+More,Fixed Wireless,More Fixed Wireless Value Plus,100,20,85.0,70.0,36 months,No Lock-in,100,20,https://more.com.au/personal/nbn-fixed-wireless
+More,4G Mobile,More Mobile 14GB,100,0,24.0,18.0,36 months,No Lock-in,100,0,https://more.com.au/personal/mobile-plans
+More,Business Fixed Wireless,More Business Fixed Wireless Value Plus,100,20,95.0,,,No Lock-in,100,20,https://more.com.au/business/business-nbn-fixed-wireless
+More,5G Mobile,More Mobile 30GB,150,0,29.0,23.0,36 months,No Lock-in,150,0,https://more.com.au/personal/mobile-plans
+More,5G Mobile,More Mobile 50GB,150,0,36.0,30.0,36 months,No Lock-in,150,0,https://more.com.au/personal/mobile-plans
+More,5G Mobile,More Mobile 75GB,150,0,42.0,36.0,36 months,No Lock-in,150,0,https://more.com.au/personal/mobile-plans
+More,5G Mobile,More Mobile 100GB,150,0,48.0,42.0,36 months,No Lock-in,150,0,https://more.com.au/personal/mobile-plans
+More,4G Mobile,More Business Mobile 14GB,150,0,28.0,,,No Lock-in,150,0,https://more.com.au/business/business-mobile-plans
+More,5G Mobile,More Business Mobile 30GB,150,0,33.0,,,No Lock-in,150,0,https://more.com.au/business/business-mobile-plans
+More,5G Mobile,More Business Mobile 50GB,150,0,40.0,,,No Lock-in,150,0,https://more.com.au/business/business-mobile-plans
+More,5G Mobile,More Business Mobile 75GB,150,0,46.0,,,No Lock-in,150,0,https://more.com.au/business/business-mobile-plans
+More,5G Mobile,More Business Mobile 100GB,150,0,52.0,,,No Lock-in,150,0,https://more.com.au/business/business-mobile-plans
+More,Fixed Wireless,More Fixed Wireless Fast,250,20,90.0,75.0,36 months,No Lock-in,250,20,https://more.com.au/personal/nbn-fixed-wireless
+More,5G Mobile,More Mobile 160GB,250,0,61.0,55.0,36 months,No Lock-in,250,0,https://more.com.au/personal/mobile-plans
+More,Business NBN,More Business Superfast,250,85,120.0,,,No Lock-in,250,85,https://more.com.au/business/business-nbn-plans
+More,Business Fixed Wireless,More Business Fixed Wireless Fast,250,20,100.0,,,No Lock-in,250,20,https://more.com.au/business/business-nbn-fixed-wireless
+More,5G Mobile,More Business Mobile 160GB,250,0,65.0,,,No Lock-in,250,0,https://more.com.au/business/business-mobile-plans
+More,Fixed Wireless,More Fixed Wireless Superfast,400,40,100.0,85.0,36 months,No Lock-in,400,40,https://more.com.au/personal/nbn-fixed-wireless
+More,Business Fixed Wireless,More Business Fixed Wireless Superfast,400,40,110.0,,,No Lock-in,400,40,https://more.com.au/business/business-nbn-fixed-wireless
+More,NBN,More Fast Max,500,42.5,90.0,75.0,36 months,No Lock-in,500,42.5,https://more.com.au/personal/nbn-plans
+More,Business NBN,More Business Fast Max,500,42.5,110.0,,,No Lock-in,500,42.5,https://more.com.au/business/business-nbn-plans
+More,Business NBN,More Business Ultrafast,500,170,150.0,,,No Lock-in,500,170,https://more.com.au/business/business-nbn-plans
+More,NBN,More Ultrafast,700,85,119.0,104.0,36 months,No Lock-in,700,85,https://more.com.au/personal/nbn-plans
+More,Business NBN,More Business Ultrafast Plus,700,340,180.0,,,No Lock-in,700,340,https://more.com.au/business/business-nbn-plans
+New Aus Fiber,Fibre,New Aus Fiber Casual,25,25,69.0,,,"Month to month, no lock-in",25,25,https://newausfiber.com.au/
+New Aus Fiber,Fibre,New Aus Fiber Everyday,50,50,77.0,,,"Month to month, no lock-in",50,50,https://newausfiber.com.au/
+New Aus Fiber,Fibre,New Aus Fiber Family,500,500,95.0,,,"Month to month, no lock-in",500,500,https://newausfiber.com.au/
+New Aus Fiber,Fibre,New Aus Fiber Extreme,1000,1000,130.0,,,"Month to month, no lock-in",1000,1000,https://newausfiber.com.au/
+Occom,NBN,Hyper (nbn2000),2000,100,185.0,165.0,6 months,No Contract,2000,100,https://occom.com.au/nbn-plans/
+Occom,NBN,Lightning (nbn1000),885,91,115.0,105.0,6 months,No Contract,885,91,https://occom.com.au/nbn-plans/
+Occom,NBN,Ultra (nbn750),729,47,98.0,93.0,6 months,No Contract,729,47,https://occom.com.au/nbn-plans/
+Occom,NBN,Turbo (nbn500),500,48,90.0,85.0,6 months,No Contract,500,48,https://occom.com.au/nbn-plans/
+Occom,NBN,Superfast (nbn100),100,17,90.0,80.0,6 months,No Contract,100,17,https://occom.com.au/nbn-plans/
+Occom,NBN,Boost Plus (nbn50),50,17,85.0,75.0,6 months,No Contract,50,17,https://occom.com.au/nbn-plans/
+Occom,NBN,Boost (nbn25),25,8,70.0,60.0,6 months,No Contract,25,8,https://occom.com.au/nbn-plans/
+Occom,NBN,Basic (nbn12),12,0,58.0,48.0,6 months,No Contract,12,0,https://occom.com.au/nbn-plans/
+Occom,NBN,Hyper Pro (nbn2000),2000,500,220.0,200.0,6 months,No Contract,2000,500,https://occom.com.au/nbn-plans/
+Occom,NBN,Lightning Pro (nbn1000),1000,400,160.0,140.0,6 months,No Contract,1000,400,https://occom.com.au/nbn-plans/
+Occom,NBN,Turbo Pro (nbn500),500,170,140.0,130.0,6 months,No Contract,500,170,https://occom.com.au/nbn-plans/
+Occom,Opticomm,Lightning (Fibre1000),900,85,115.0,105.0,6 months,No Contract,900,85,https://occom.com.au/opticomm-plans/
+Occom,Opticomm,Ultra (Fibre750),750,48,98.0,93.0,6 months,No Contract,750,48,https://occom.com.au/opticomm-plans/
+Occom,Opticomm,Turbo (Fibre500),500,48,90.0,85.0,6 months,No Contract,500,48,https://occom.com.au/opticomm-plans/
+Occom,Opticomm,Superfast (Fibre100),100,17,90.0,80.0,6 months,No Contract,100,17,https://occom.com.au/opticomm-plans/
+Occom,Opticomm,Boost Plus (Fibre50),50,17,85.0,75.0,6 months,No Contract,50,17,https://occom.com.au/opticomm-plans/
+Occom,Opticomm,Boost (Fibre25),25,8,70.0,60.0,6 months,No Contract,25,8,https://occom.com.au/opticomm-plans/
+Occom,Opticomm,Basic (Fibre12),12,1,58.0,48.0,6 months,No Contract,12,1,https://occom.com.au/opticomm-plans/
+Occom,NBN FTTP,Hyper (nbn2000),2000,100,185.0,165.0,6 months,No Contract,2000,100,https://occom.com.au/nbn-fttp-upgrade/
+Occom,NBN FTTP,Lightning (nbn1000),885,91,115.0,105.0,6 months,No Contract,885,91,https://occom.com.au/nbn-fttp-upgrade/
+Occom,NBN FTTP,Ultra (nbn750),729,47,98.0,93.0,6 months,No Contract,729,47,https://occom.com.au/nbn-fttp-upgrade/
+Occom,NBN FTTP,Turbo (nbn500),500,48,90.0,85.0,6 months,No Contract,500,48,https://occom.com.au/nbn-fttp-upgrade/
+Occom,NBN FTTP,Superfast (nbn100),100,17,90.0,80.0,6 months,No Contract,100,17,https://occom.com.au/nbn-fttp-upgrade/
+Occom,NBN FTTP,Boost Plus (nbn50),50,17,85.0,75.0,6 months,No Contract,50,17,https://occom.com.au/nbn-fttp-upgrade/
+Occom,NBN FTTP,Boost (nbn25),25,8,70.0,60.0,6 months,No Contract,25,8,https://occom.com.au/nbn-fttp-upgrade/
+Occom,NBN FTTP,Basic (nbn12),12,0,58.0,48.0,6 months,No Contract,12,0,https://occom.com.au/nbn-fttp-upgrade/
+Occom,Supa,Lightning (Fibre1000),1000,1000,120.0,110.0,6 months,No Contract,1000,1000,https://occom.com.au/supa-network-plans/
+Occom,Supa,Ultra (Fibre750),750,750,110.0,95.0,6 months,No Contract,750,750,https://occom.com.au/supa-network-plans/
+Occom,Supa,Turbo (Fibre500),500,500,90.0,85.0,6 months,No Contract,500,500,https://occom.com.au/supa-network-plans/
+Occom,Supa,Boost Plus (Fibre50),50,17,85.0,75.0,6 months,No Contract,50,17,https://occom.com.au/supa-network-plans/
+Occom,Supa,Boost (Fibre25),25,8,70.0,65.0,6 months,No Contract,25,8,https://occom.com.au/supa-network-plans/
+Optus,NBN (all connections),Optus Basic 25Mbps,25,5,79.0,,,No Lock-in,25,5,https://www.optus.com.au/internet/nbn
+Optus,NBN (all connections),Optus Everyday 50Mbps,50,10,95.0,,,No Lock-in,50,10,https://www.optus.com.au/internet/nbn
+Optus,"FTTN, FTTC, FTTB",Optus Fast 100Mbps,100,20,99.0,79.0,,No Lock-in,100,20,https://www.optus.com.au/internet/nbn
+Optus,"FTTP, HFC",Most Popular Optus Superfast 500Mbps,500,43,99.0,79.0,,No Lock-in,500,43,https://www.optus.com.au/internet/nbn
+Optus,"FTTP, HFC",Optus Ultrafast 820Mbps,820,80,129.0,109.0,,No Lock-in,820,80,https://www.optus.com.au/internet/nbn
+Origin,NBN,Everyday nbn™ 25/10,25,8,47.0,94.0,6 months,No Contract,25,8,https://www.originenergy.com.au/internet/plans/
+Origin,NBN,Experience nbn™ 50/20,50,17,54.0,108.0,6 months,No Contract,50,17,https://www.originenergy.com.au/internet/plans/
+Origin,NBN,Extra Fast nbn™ 500/50,500,40,56.0,112.0,6 months,No Contract,500,40,https://www.originenergy.com.au/internet/plans/
+Origin,NBN,Ultra Fast nbn™ 1000/100,860,85,72.0,144.0,6 months,No Contract,860,85,https://www.originenergy.com.au/internet/plans/
+Origin,Opticomm,Everyday Opticomm 25/10,25,8,47.0,94.0,6 months,No Contract,25,8,https://www.originenergy.com.au/internet/plans/
+Origin,Opticomm,Experience Opticomm 50/20,50,17,54.0,108.0,6 months,No Contract,50,17,https://www.originenergy.com.au/internet/plans/
+Origin,Opticomm,Enthusiast Opticomm 100/20,95,17,56.0,112.0,6 months,No Contract,95,17,https://www.originenergy.com.au/internet/plans/
+Origin,Opticomm,Extra Fast Opticomm 500/50,500,40,56.0,112.0,6 months,No Contract,500,40,https://www.originenergy.com.au/internet/plans/
+Origin,Opticomm,Ultra Fast Opticomm 1000/100,860,85,72.0,144.0,6 months,No Contract,860,85,https://www.originenergy.com.au/internet/plans/
+spintel,NBN,Home Starter,25,8,64.95,39.0,6 months,No Contract,25,8,https://www.spintel.net.au/home-internet/nbn
+spintel,NBN,Home Turbo,500,42,86.95,76.0,6 months,No Contract,500,42,https://www.spintel.net.au/home-internet/nbn
+spintel,NBN,Home Ultrafast,850,82,99.95,89.0,6 months,No Contract,850,82,https://www.spintel.net.au/home-internet/nbn
+Superloop,NBN,Everyday - nbn 25/10,25,10,72.0,45.0,6 months,No Contract,25,8,https://www.superloop.com/internet/nbn/
+Superloop,NBN,Extra Value - nbn 50/20,50,20,85.0,65.0,6 months,No Contract,50,17,https://www.superloop.com/internet/nbn/
+Superloop,NBN,Family Max - nbn 100/20,100,20,69.0,,,No Contract,95,17,https://www.superloop.com/internet/nbn/
+Superloop,NBN,Family Max - nbn 500/50,500,40,69.0,,,No Contract,500,40,https://www.superloop.com/internet/nbn/
+Superloop,NBN,Power Home - nbn 100/40,100,40,85.0,,,No Contract,95,34,https://www.superloop.com/internet/nbn/
+Superloop,NBN,Creator - nbn 250/100,250,100,85.0,,,No Contract,250,85,https://www.superloop.com/internet/nbn/
+Superloop,NBN,Megaspeed - nbn 750/50,750,50,104.0,75.0,6 months,No Contract,750,40,https://www.superloop.com/internet/nbn/
+Superloop,NBN,Lightspeed - nbn 1000/100,1000,100,109.0,79.0,6 months,No Contract,860,85,https://www.superloop.com/internet/nbn/
+Superloop,NBN,Hyperspeed - nbn 2000/100,2000,100,145.0,,,No Contract,1700,85,https://www.superloop.com/internet/nbn/
+Superloop,NBN,Hyperspeed - nbn 2000/200,2000,200,145.0,,,No Contract,1700,170,https://www.superloop.com/internet/nbn/
+Superloop,NBN,nbn Fixed wireless - Plus 100/20,100,20,75.0,,,No Contract,50,8,https://www.superloop.com/internet/nbn/
+Superloop,NBN,nbn Fixed wireless - Home Fast 250/20,250,20,79.0,,,No Contract,90,8,https://www.superloop.com/internet/nbn/
+Superloop,NBN,nbn Fixed Wireless – Super Fast 400/40,400,40,89.0,,,No Contract,120,8,https://www.superloop.com/internet/nbn/
+Superloop,Fibre,Everyday 25/5,25,10,72.0,45.0,6 months,No Contract,25,4,https://www.superloop.com/internet/fibre/
+Superloop,Fibre,Extra Value 50/20,50,20,85.0,65.0,6 months,No Contract,50,17,https://www.superloop.com/internet/fibre/
+Superloop,Fibre,Family Max 100/20,100,20,69.0,,,No Contract,95,17,https://www.superloop.com/internet/fibre/
+Superloop,Fibre,Family Max 500/50,500,50,95.0,69.0,6 months,No Contract,500,40,https://www.superloop.com/internet/fibre/
+Superloop,Fibre,Power Home 100/40,100,40,85.0,,,No Contract,95,34,https://www.superloop.com/internet/fibre/
+Superloop,Fibre,Megaspeed 750/50,750,50,104.0,75.0,6 months,No Contract,750,40,https://www.superloop.com/internet/fibre/
+Superloop,Fibre,Lightspeed 1000/100,1000,100,109.0,79.0,6 months,No Contract,860,85,https://www.superloop.com/internet/fibre/
+Superloop,FTTP Upgrade,Everyday 25/10,25,10,72.0,45.0,6 months,No Contract,25,10,https://www.superloop.com/flip-to-fibre/
+Superloop,FTTP Upgrade,Extra Value 50/20,50,20,85.0,65.0,6 months,No Contract,50,20,https://www.superloop.com/flip-to-fibre/
+Superloop,FTTP Upgrade,Family Max 500/50,500,50,95.0,69.0,6 months,No Contract,500,50,https://www.superloop.com/flip-to-fibre/
+Superloop,FTTP Upgrade,Megaspeed 750/50,750,50,104.0,75.0,6 months,No Contract,750,50,https://www.superloop.com/flip-to-fibre/
+Superloop,FTTP Upgrade,Lightspeed 1000/100,1000,100,109.0,79.0,6 months,No Contract,1000,100,https://www.superloop.com/flip-to-fibre/
+Superloop,Fixed Wireless,Fixed Wireless Plus 100/20,100,20,89.0,75.0,6 months,No Contract,50,8,https://www.superloop.com/internet/fixed-wireless/
+Superloop,Fixed Wireless,Fixed Wireless Home Fast 250/20,250,20,95.0,79.0,6 months,No Contract,90,8,https://www.superloop.com/internet/fixed-wireless/
+Superloop,Fixed Wireless,Fixed Wireless Super Fast 400/40,400,40,105.0,89.0,6 months,No Contract,120,8,https://www.superloop.com/internet/fixed-wireless/
+swoop,NBN,nbn® 25/10 Mbps,25,10,69.0,54.0,,No Contract,25,10,https://www.swoop.com.au/nbn/
+swoop,NBN,nbn® 50/20 Mbps,50,20,84.0,69.0,,No Contract,50,20,https://www.swoop.com.au/nbn/
+swoop,NBN,nbn® 500/50 Mbps,500,50,94.0,72.0,,No Contract,500,50,https://www.swoop.com.au/nbn/
+swoop,NBN,nbn® 1000/100 Mbps,1000,100,109.0,85.0,,No Contract,1000,100,https://www.swoop.com.au/nbn/
+swoop,Fixed Wireless,Swoop Fixed Wireless 30/10 Mbps,30,10,69.0,54.0,,No Contract,30,10,https://www.swoop.com.au/fixed-wireless/
+swoop,Fixed Wireless,Swoop Fixed Wireless 70/20 Mbps,70,20,79.0,64.0,,No Contract,70,20,https://www.swoop.com.au/fixed-wireless/
+swoop,Fixed Wireless,Swoop Fixed Wireless 120/20 Mbps,120,20,94.0,74.0,,No Contract,120,20,https://www.swoop.com.au/fixed-wireless/
+swoop,Fixed Wireless,Swoop Fixed Wireless 250/100 Mbps,250,100,119.0,94.0,,No Contract,250,100,https://www.swoop.com.au/fixed-wireless/
+swoop,Opticomm,Opticomm Fibre 25/5 Mbps,25,5,69.0,54.0,,No Contract,25,5,https://www.swoop.com.au/opticomm/
+swoop,Opticomm,Opticomm Fibre 50/20 Mbps,50,20,84.0,69.0,,No Contract,50,20,https://www.swoop.com.au/opticomm/
+swoop,Opticomm,Opticomm Fibre 100/20 Mbps,100,20,99.0,84.0,,No Contract,100,20,https://www.swoop.com.au/opticomm/
+swoop,Opticomm,Opticomm Fibre 250/25 Mbps,250,25,129.0,114.0,,No Contract,250,25,https://www.swoop.com.au/opticomm/
+tangerine,NBN,Tangerine Value,25,10,69.9,44.9,6 months,No Lock-in,25,8.5,https://www.tangerine.com.au/nbn/nbn-broadband
+tangerine,NBN,Tangerine Value Plus,50,20,84.9,59.9,6 months,No Lock-in,50,17,https://www.tangerine.com.au/nbn/nbn-broadband
+tangerine,NBN,Tangerine Speedy,100,20,88.9,63.9,6 months,No Lock-in,100,17,https://www.tangerine.com.au/nbn/nbn-broadband
+tangerine,NBN,Tangerine Speedy Plus,100,40,92.9,67.9,6 months,No Lock-in,100,34,https://www.tangerine.com.au/nbn/nbn-broadband
+tangerine,Fixed Wireless,Tangerine Fixed Wireless Value Plus,100,20,84.9,59.9,6 months,No Lock-in,100,20,https://www.tangerine.com.au/nbn/nbn-fixed-wireless
+tangerine,Fixed Wireless,Tangerine Fixed Wireless Speedy,250,20,88.9,63.9,6 months,No Lock-in,250,20,https://www.tangerine.com.au/nbn/nbn-fixed-wireless
+tangerine,Fixed Wireless,Tangerine Fixed Wireless SuperSpeedy,400,40,104.9,79.9,6 months,No Lock-in,400,40,https://www.tangerine.com.au/nbn/nbn-fixed-wireless
+tangerine,NBN,Tangerine Speedy Max,500,42.5,88.9,63.9,6 months,No Lock-in,500,42.5,https://www.tangerine.com.au/nbn/nbn-broadband
+tangerine,NBN,Tangerine UltraSpeedy,700,85,119.9,94.9,6 months,No Lock-in,700,85,https://www.tangerine.com.au/nbn/nbn-broadband
+Teletech,NBN,Basic Fibre Internet,25,5,69.0,,,,25,5,https://teletech.cc
+Teletech,NBN,Standard Fibre Internet,50,20,75.0,,,,50,20,https://teletech.cc
+Teletech,NBN,Advanced Speed Plan,500,50,85.0,,,,500,50,https://teletech.cc
+Teletech,NBN,Superb Speed Plan,1000,50,130.0,,,,1000,50,https://teletech.cc
+Telstra,5G,Basic 5G Internet,25,5,70.0,,,No Lock-in,25,5,https://www.telstra.com.au/internet/plans
+Telstra,5G,Essential 5G Internet,50,20,80.0,,,No Lock-in,50,20,https://www.telstra.com.au/internet/plans
+Telstra,NBN,Basic nbn®,23,3,93.0,,,No Lock-in,23,3,https://www.telstra.com.au/internet/plans
+Telstra,NBN,Basic nbn®,25,4,93.0,,,No Lock-in,25,4,https://www.telstra.com.au/internet/plans
+Telstra,NBN,Basic nbn® Internet Only,25,4,85.0,,,No Lock-in,25,4,https://www.telstra.com.au/internet/plans
+Telstra,NBN,Basic nbn® Internet Only,23,3,85.0,,,No Lock-in,23,3,https://www.telstra.com.au/internet/plans
+Telstra,NBN,Essential nbn®,50,17,109.0,,,No Lock-in,50,17,https://www.telstra.com.au/internet/plans
+Telstra,NBN,Essential nbn®,68,7,109.0,,,No Lock-in,68,7,https://www.telstra.com.au/internet/plans
+Telstra,5G,Premium 5G Internet,300,30,85.0,,,No Lock-in,300,30,https://www.telstra.com.au/internet/plans
+Telstra,NBN,Premium nbn®,100,17,99.0,99.0,6 months,No Lock-in,100,17,https://www.telstra.com.au/internet/plans
+Telstra,NBN,Essential nbn® Internet Only,50,17,95.0,,,No Lock-in,50,17,https://www.telstra.com.au/internet/plans
+Telstra,NBN,Essential nbn® Internet Only,68,7,95.0,,,No Lock-in,68,7,https://www.telstra.com.au/internet/plans
+Telstra,NBN,Premium nbn®,500,40,99.0,99.0,6 months,No Lock-in,500,40,https://www.telstra.com.au/internet/plans
+Telstra,NBN,Premium nbn® Internet Only,100,17,89.0,89.0,6 months,No Lock-in,100,17,https://www.telstra.com.au/internet/plans
+Telstra,NBN,Premium nbn® Internet Only,500,40,89.0,89.0,6 months,No Lock-in,500,40,https://www.telstra.com.au/internet/plans
+Telstra,NBN,Ultimate nbn®,750,40,99.0,99.0,6 months,No Lock-in,750,40,https://www.telstra.com.au/internet/plans
+Telstra,NBN,Ultrafast nbn®,815,80,109.0,109.0,6 months,No Lock-in,815,80,https://www.telstra.com.au/internet/plans
+Telstra,NBN,Ultimate nbn® Internet Only,750,40,89.0,89.0,6 months,No Lock-in,750,40,https://www.telstra.com.au/internet/plans
+Telstra,NBN,Ultrafast nbn® Internet Only,815,80,99.0,99.0,6 months,No Lock-in,815,80,https://www.telstra.com.au/internet/plans
+Telstra,5G,Basic 5G Internet,25,5,70.0,,,No Lock-in,25,5,https://www.telstra.com.au/internet/5g-home-internet
+Telstra,5G,Essential 5G Internet,50,20,80.0,,,No Lock-in,50,20,https://www.telstra.com.au/internet/5g-home-internet
+Telstra,5G,Premium 5G Internet,300,30,85.0,,,No Lock-in,300,30,https://www.telstra.com.au/internet/5g-home-internet
+Telstra,Satellite (Starlink),Satellite Home Internet,0,0,125.0,,,No Lock-in,0,0,https://www.telstra.com.au/internet/starlink
+Telstra,Opticomm,Basic,25,4,93.0,,,No Lock-in,25,4,https://www.telstra.com.au/internet/opticomm-plans
+Telstra,Opticomm,Basic Internet Only,25,4,85.0,,,No Lock-in,25,4,https://www.telstra.com.au/internet/opticomm-plans
+Telstra,Opticomm,Essential,50,17,109.0,,,No Lock-in,50,17,https://www.telstra.com.au/internet/opticomm-plans
+Telstra,Opticomm,Essential Internet Only,50,17,95.0,,,No Lock-in,50,17,https://www.telstra.com.au/internet/opticomm-plans
+Telstra,Opticomm,Premium,400,40,99.0,99.0,6 months,No Lock-in,400,40,https://www.telstra.com.au/internet/opticomm-plans
+Telstra,Opticomm,Premium Internet Only,400,40,89.0,89.0,6 months,No Lock-in,400,40,https://www.telstra.com.au/internet/opticomm-plans
+Telstra,Opticomm,Ultimate,600,40,99.0,99.0,6 months,No Lock-in,600,40,https://www.telstra.com.au/internet/opticomm-plans
+Telstra,Opticomm,Ultrafast,800,80,109.0,109.0,6 months,No Lock-in,800,80,https://www.telstra.com.au/internet/opticomm-plans
+Telstra,Opticomm,Ultimate Internet Only,600,40,89.0,89.0,6 months,No Lock-in,600,40,https://www.telstra.com.au/internet/opticomm-plans
+Telstra,Opticomm,Ultrafast Internet Only,800,80,99.0,99.0,6 months,No Lock-in,800,80,https://www.telstra.com.au/internet/opticomm-plans
+Telstra,5G,Basic 5G Business Internet,25,5,70.0,,,No Lock-in,25,5,https://www.telstra.com.au/small-business/internet
+Telstra,5G,Essential 5G Business Internet,50,20,80.0,,,No Lock-in,50,20,https://www.telstra.com.au/small-business/internet
+Telstra,5G,Premium 5G Business Internet,300,30,85.0,,,No Lock-in,300,30,https://www.telstra.com.au/small-business/internet
+Telstra,Business NBN,Essential nbn®,50,17,120.0,,,No Lock-in,50,17,https://www.telstra.com.au/small-business/internet
+Telstra,Business NBN,Premium nbn®,100,32,105.0,105.0,6 months,No Lock-in,100,32,https://www.telstra.com.au/small-business/internet
+Telstra,Business NBN,Essential nbn® Internet Only,50,17,105.0,,,No Lock-in,50,17,https://www.telstra.com.au/small-business/internet
+Telstra,Business NBN,Pro Fast nbn®,250,80,105.0,105.0,6 months,No Lock-in,250,80,https://www.telstra.com.au/small-business/internet
+Telstra,Business NBN,Premium nbn® Internet Only,100,32,95.0,95.0,6 months,No Lock-in,100,32,https://www.telstra.com.au/small-business/internet
+Telstra,Business NBN,Pro Fast nbn® Internet Only,250,80,95.0,95.0,6 months,No Lock-in,250,80,https://www.telstra.com.au/small-business/internet
+Telstra,Business NBN,Pro Superfast nbn®,500,160,109.0,109.0,6 months,No Lock-in,500,160,https://www.telstra.com.au/small-business/internet
+Telstra,Business NBN,Pro Superfast nbn® Internet Only,500,160,99.0,99.0,6 months,No Lock-in,500,160,https://www.telstra.com.au/small-business/internet
+Telstra,Business NBN,Pro Ultrafast nbn®,815,320,129.0,129.0,6 months,No Lock-in,815,320,https://www.telstra.com.au/small-business/internet
+Telstra,Business NBN,Pro Ultrafast nbn® Internet Only,815,320,119.0,119.0,6 months,No Lock-in,815,320,https://www.telstra.com.au/small-business/internet
+Tpg,NBN,NBN50,50.0,17.0,84.99,64.99,6 months,No Lock-in,50.0,17.0,https://www.tpg.com.au/nbn
+Tpg,NBN,NBN100,97.0,17.0,94.99,64.99,6 months,No Lock-in,97.0,17.0,https://www.tpg.com.au/nbn
+Tpg,NBN,NBN500,500.0,42.0,94.99,64.99,6 months,No Lock-in,500.0,42.0,https://www.tpg.com.au/nbn
+Tpg,NBN,NBN12,12.0,0.8,74.99,54.99,6 months,No Lock-in,12.0,0.8,https://www.tpg.com.au/nbn
+Tpg,NBN,NBN25,25.0,4.0,76.99,56.99,6 months,No Lock-in,25.0,4.0,https://www.tpg.com.au/nbn
+Tpg,NBN,NBN Home Superfast,740.0,42.0,99.99,69.99,6 months,No Lock-in,740.0,42.0,https://www.tpg.com.au/nbn
+Tpg,NBN,NBN Home Ultrafast,820.0,85.0,109.99,79.99,6 months,No Lock-in,820.0,85.0,https://www.tpg.com.au/nbn
+Tpg,4G Home Wireless,Home Wireless Broadband,15.0,1.9,54.99,44.99,6 months,No Lock-in,15.0,1.9,https://www.tpg.com.au/home-wireless-broadband
+Tpg,5G,5G Home Broadband Plus,50.0,16.0,59.99,29.99,6 months,No Lock-in,50.0,16.0,https://www.tpg.com.au/5g-home-broadband
+Tpg,5G,5G Home Broadband Premium,100.0,17.0,64.99,34.99,6 months,No Lock-in,100.0,17.0,https://www.tpg.com.au/5g-home-broadband
+Tpg,FTTB,FTTB25,25.0,4.0,39.99,,,No Lock-in,25.0,4.0,https://www.tpg.com.au/fttb
+Tpg,FTTB,FTTB100,91.0,25.0,74.99,,,No Lock-in,91.0,25.0,https://www.tpg.com.au/fttb
+Tpg,FTTB,FTTB Max,500.0,25.0,79.99,,,No Lock-in,500.0,25.0,https://www.tpg.com.au/fttb
+Unitiinternet,Opticomm,The 25,25,5,55.14,,6 months,No lock-in / month-to-month,25,5,https://unitiinternet.com
+Unitiinternet,Opticomm,The 50,50,20,71.14,,6 months,No lock-in / month-to-month,50,20,https://unitiinternet.com
+Unitiinternet,Opticomm,The 100,100,20,82.14,,6 months,No lock-in / month-to-month,100,20,https://unitiinternet.com
+Unitiinternet,Opticomm,The 100+,100,20,87.14,,6 months,No lock-in / month-to-month,100,20,https://unitiinternet.com
+Unitiinternet,Opticomm,The 500,500,50,80.14,,6 months,No lock-in / month-to-month,500,50,https://unitiinternet.com
+Unitiinternet,Opticomm,The 500+,500,50,135.14,,6 months,No lock-in / month-to-month,500,50,https://unitiinternet.com
+Unitiinternet,Opticomm,The 750,750,50,90.14,,6 months,No lock-in / month-to-month,750,50,https://unitiinternet.com
+Unitiinternet,Opticomm,The 1000,1000,50,97.14,,6 months,No lock-in / month-to-month,1000,50,https://unitiinternet.com
+Unitiinternet,Opticomm,The 1000+,1000,50,155.14,,6 months,No lock-in / month-to-month,1000,50,https://unitiinternet.com
+VOCPhone,NBN,VOCPhone NBN Home 100/20,100,20,99.9,79.9,Sale price,No Contract,92,17,https://vocphone.com/nbn-plans
+VOCPhone,NBN,VOCPhone NBN Business 250/100,250,100,104.9,89.9,Sale price,No Contract,237,96,https://vocphone.com/nbn-plans
+VOCPhone,NBN,VOCPhone NBN Business 500/200,500,200,124.9,109.9,Sale price,No Contract,467,191,https://vocphone.com/nbn-plans
+VOCPhone,NBN,VOCPhone NBN Business 1000/400,1000,400,164.9,139.9,Sale price,No Contract,957,388,https://vocphone.com/nbn-plans
+VOCPhone,Supa,VOCPhone Fiber 50 50/20,50,20,79.9,59.9,3 months,No Contract,48,17,https://vocphone.com/pricing/internet-pricing
+VOCPhone,Supa,VOCPhone Fiber 500 500/500,500,500,89.9,69.9,3 months,No Contract,416,416,https://vocphone.com/pricing/internet-pricing
+VOCPhone,Supa,VOCPhone Fiber 750 750/750,750,750,109.9,89.9,3 months,No Contract,657,657,https://vocphone.com/pricing/internet-pricing
+VOCPhone,Supa,VOCPhone Fiber 1000 1000/1000,1000,1000,139.9,119.9,3 months,No Contract,784,784,https://vocphone.com/pricing/internet-pricing
+Wavezone,FIBRE,Choose your month-to-month plans,25,10,69.0,,,No lock-in / month-to-month,25,10,https://wavezone.net
+Wavezone,FIBRE,SIGN UP,50,20,75.0,,,No lock-in / month-to-month,50,20,https://wavezone.net
+Wavezone,FIBRE,SIGN UP,500,500,85.0,,,No lock-in / month-to-month,500,500,https://wavezone.net
+Wavezone,FIBRE,SIGN UP,1000,1000,130.0,,,No lock-in / month-to-month,1000,1000,https://wavezone.net
+Zennet,FIBRE,Choose your month-to-month plans,25,10,69.0,,,No lock-in / month-to-month,25,10,https://zennet.com.au
+Zennet,FIBRE,SIGN UP,50,20,75.0,,,No lock-in / month-to-month,50,20,https://zennet.com.au
+Zennet,FIBRE,SIGN UP,500,500,87.0,,,No lock-in / month-to-month,500,500,https://zennet.com.au
+Zennet,FIBRE,SIGN UP,1000,1000,130.0,,,No lock-in / month-to-month,1000,1000,https://zennet.com.au

@@ -27,6 +27,7 @@ from utils.logger import log_info, log_warning
 
 KNOWN_NETWORK_TYPES = {
     'NBN', 'OPTICOMM', 'REDTRAIN', 'SUPA',
+    'SUPA NETWORKS', 'SUPANETWORKS', 'SUPA FIBRE',
     '5G', 'FIXED WIRELESS', 'FIXED_WIRELESS',
     'FIBRE', 'FTTP', 'FTTB', 'FTTN', 'FTTC',
     'SATELLITE', 'BUSINESS NBN',

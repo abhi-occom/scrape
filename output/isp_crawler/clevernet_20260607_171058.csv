@@ -1,0 +1,3 @@
+provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
+Clevernet,SUPA,30 days free - See CIS,750,750,45.0,,30 days free,No lock-in / month-to-month,750,750,https://clevernet.com.au
+Clevernet,SUPA,30 days free - See CIS,1000,1000,45.0,,30 days free,No lock-in / month-to-month,1000,1000,https://clevernet.com.au

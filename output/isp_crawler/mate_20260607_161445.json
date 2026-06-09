@@ -1,0 +1,121 @@
+{
+  "base_url": "https://www.letsbemates.com.au",
+  "provider": "Mate",
+  "started_at": "2026-06-07T16:13:18.001218",
+  "finished_at": "2026-06-07T16:14:45.586557",
+  "duration_seconds": 87.59,
+  "summary": {
+    "urls_visited": 8,
+    "plan_pages_found": 7,
+    "total_plans_scraped": 7,
+    "valid_plans": 7,
+    "invalid_plans": 0,
+    "network_types": [
+      "NBN"
+    ]
+  },
+  "discovered_urls": [],
+  "page_analyses": [],
+  "plans": [
+    {
+      "provider": "mate",
+      "network_type": "NBN",
+      "plan_name": "MATE Crikey nbn 25/10",
+      "download_speed": 25,
+      "upload_speed": 10,
+      "price": 76.0,
+      "promo_price": 51.0,
+      "promo_period": "6 months",
+      "contract": "No Contract",
+      "typical_evening_dl": 25,
+      "typical_evening_ul": 10,
+      "source_url": "https://www.letsbemates.com.au/mate/crikey-nbn-25-10/"
+    },
+    {
+      "provider": "mate",
+      "network_type": "NBN",
+      "plan_name": "MATE Ripper nbn 50/20",
+      "download_speed": 49,
+      "upload_speed": 19,
+      "price": 86.0,
+      "promo_price": 66.0,
+      "promo_period": "6 months",
+      "contract": "No Contract",
+      "typical_evening_dl": 49,
+      "typical_evening_ul": 19,
+      "source_url": "https://www.letsbemates.com.au/mate/ripper-nbn-50-20/"
+    },
+    {
+      "provider": "mate",
+      "network_type": "NBN",
+      "plan_name": "MATE No Worries nbn 100/20",
+      "download_speed": 97,
+      "upload_speed": 19,
+      "price": 96.0,
+      "promo_price": 71.0,
+      "promo_period": "6 months",
+      "contract": "No Contract",
+      "typical_evening_dl": 97,
+      "typical_evening_ul": 19,
+      "source_url": "https://www.letsbemates.com.au/mate/no-worries-100-20/"
+    },
+    {
+      "provider": "mate",
+      "network_type": "NBN",
+      "plan_name": "MATE You Beaut nbn 100/40",
+      "download_speed": 97,
+      "upload_speed": 36,
+      "price": 106.0,
+      "promo_price": 81.0,
+      "promo_period": "6 months",
+      "contract": "No Contract",
+      "typical_evening_dl": 97,
+      "typical_evening_ul": 36,
+      "source_url": "https://www.letsbemates.com.au/mate/you-beaut-100-40/"
+    },
+    {
+      "provider": "mate",
+      "network_type": "NBN",
+      "plan_name": "MATE No Worries nbn 500/50",
+      "download_speed": 485,
+      "upload_speed": 46,
+      "price": 96.0,
+      "promo_price": 71.0,
+      "promo_period": "6 months",
+      "contract": "No Contract",
+      "typical_evening_dl": 485,
+      "typical_evening_ul": 46,
+      "source_url": "https://www.letsbemates.com.au/mate/no-worries-500-50/"
+    },
+    {
+      "provider": "mate",
+      "network_type": "NBN",
+      "plan_name": "MATE Fair Dinkum nbn 750/50",
+      "download_speed": 713,
+      "upload_speed": 46,
+      "price": 121.0,
+      "promo_price": 96.0,
+      "promo_period": "6 months",
+      "contract": "No Contract",
+      "typical_evening_dl": 713,
+      "typical_evening_ul": 46,
+      "source_url": "https://www.letsbemates.com.au/mate/fair-dinkum-750-50/"
+    },
+    {
+      "provider": "mate",
+      "network_type": "NBN",
+      "plan_name": "MATE Flamin' Fast nbn 1000/100",
+      "download_speed": 913,
+      "upload_speed": 94,
+      "price": 126.0,
+      "promo_price": 101.0,
+      "promo_period": "6 months",
+      "contract": "No Contract",
+      "typical_evening_dl": 913,
+      "typical_evening_ul": 94,
+      "source_url": "https://www.letsbemates.com.au/mate/flamin-fast-1000-100/"
+    }
+  ],
+  "invalid_plans": [],
+  "errors": []
+}

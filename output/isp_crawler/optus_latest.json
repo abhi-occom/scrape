@@ -1,0 +1,95 @@
+{
+  "base_url": "https://www.optus.com.au",
+  "provider": "Optus",
+  "started_at": "2026-06-07T16:05:14.341882",
+  "finished_at": "2026-06-07T16:05:31.360897",
+  "duration_seconds": 17.02,
+  "summary": {
+    "urls_visited": 2,
+    "plan_pages_found": 1,
+    "total_plans_scraped": 5,
+    "valid_plans": 5,
+    "invalid_plans": 0,
+    "network_types": [
+      "FTTP, HFC",
+      "NBN (all connections)",
+      "FTTN, FTTC, FTTB"
+    ]
+  },
+  "discovered_urls": [],
+  "page_analyses": [],
+  "plans": [
+    {
+      "provider": "Optus",
+      "network_type": "NBN (all connections)",
+      "plan_name": "Optus Basic 25Mbps",
+      "download_speed": 25,
+      "upload_speed": 5,
+      "price": 79.0,
+      "promo_price": null,
+      "promo_period": "",
+      "contract": "No Lock-in",
+      "typical_evening_dl": 25,
+      "typical_evening_ul": 5,
+      "source_url": "https://www.optus.com.au/internet/nbn"
+    },
+    {
+      "provider": "Optus",
+      "network_type": "NBN (all connections)",
+      "plan_name": "Optus Everyday 50Mbps",
+      "download_speed": 50,
+      "upload_speed": 10,
+      "price": 95.0,
+      "promo_price": null,
+      "promo_period": "",
+      "contract": "No Lock-in",
+      "typical_evening_dl": 50,
+      "typical_evening_ul": 10,
+      "source_url": "https://www.optus.com.au/internet/nbn"
+    },
+    {
+      "provider": "Optus",
+      "network_type": "FTTN, FTTC, FTTB",
+      "plan_name": "Optus Fast 100Mbps",
+      "download_speed": 100,
+      "upload_speed": 20,
+      "price": 99.0,
+      "promo_price": 79.0,
+      "promo_period": "",
+      "contract": "No Lock-in",
+      "typical_evening_dl": 100,
+      "typical_evening_ul": 20,
+      "source_url": "https://www.optus.com.au/internet/nbn"
+    },
+    {
+      "provider": "Optus",
+      "network_type": "FTTP, HFC",
+      "plan_name": "Most Popular Optus Superfast 500Mbps",
+      "download_speed": 500,
+      "upload_speed": 43,
+      "price": 99.0,
+      "promo_price": 79.0,
+      "promo_period": "",
+      "contract": "No Lock-in",
+      "typical_evening_dl": 500,
+      "typical_evening_ul": 43,
+      "source_url": "https://www.optus.com.au/internet/nbn"
+    },
+    {
+      "provider": "Optus",
+      "network_type": "FTTP, HFC",
+      "plan_name": "Optus Ultrafast 820Mbps",
+      "download_speed": 820,
+      "upload_speed": 80,
+      "price": 129.0,
+      "promo_price": 109.0,
+      "promo_period": "",
+      "contract": "No Lock-in",
+      "typical_evening_dl": 820,
+      "typical_evening_ul": 80,
+      "source_url": "https://www.optus.com.au/internet/nbn"
+    }
+  ],
+  "invalid_plans": [],
+  "errors": []
+}

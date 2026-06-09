@@ -1,0 +1,103 @@
+{
+  "base_url": "https://zennet.com.au",
+  "provider": "Zennet",
+  "started_at": "2026-06-07T17:36:58.795565",
+  "finished_at": "2026-06-07T17:37:21.238067",
+  "duration_seconds": 22.44,
+  "summary": {
+    "urls_visited": 1,
+    "plan_pages_found": 1,
+    "total_plans_scraped": 4,
+    "valid_plans": 4,
+    "invalid_plans": 0,
+    "network_types": [
+      "FIBRE"
+    ]
+  },
+  "discovered_urls": [
+    {
+      "url": "https://zennet.com.au",
+      "score": 0,
+      "depth": 0,
+      "network_types": [],
+      "matched_networks": []
+    }
+  ],
+  "page_analyses": [
+    {
+      "url": "https://zennet.com.au",
+      "has_plans": true,
+      "confidence": 0.44999999999999996,
+      "network_types": [
+        "fibre"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 4,
+      "speed_signals": 8
+    }
+  ],
+  "plans": [
+    {
+      "provider": "Zennet",
+      "network_type": "FIBRE",
+      "plan_name": "Choose your month-to-month plans",
+      "download_speed": 25,
+      "upload_speed": 10,
+      "price": 69.0,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": "No lock-in / month-to-month",
+      "typical_evening_dl": 25,
+      "typical_evening_ul": 10,
+      "source_url": "https://zennet.com.au"
+    },
+    {
+      "provider": "Zennet",
+      "network_type": "FIBRE",
+      "plan_name": "SIGN UP",
+      "download_speed": 50,
+      "upload_speed": 20,
+      "price": 75.0,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": "No lock-in / month-to-month",
+      "typical_evening_dl": 50,
+      "typical_evening_ul": 20,
+      "source_url": "https://zennet.com.au"
+    },
+    {
+      "provider": "Zennet",
+      "network_type": "FIBRE",
+      "plan_name": "SIGN UP",
+      "download_speed": 500,
+      "upload_speed": 500,
+      "price": 87.0,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": "No lock-in / month-to-month",
+      "typical_evening_dl": 500,
+      "typical_evening_ul": 500,
+      "source_url": "https://zennet.com.au"
+    },
+    {
+      "provider": "Zennet",
+      "network_type": "FIBRE",
+      "plan_name": "SIGN UP",
+      "download_speed": 1000,
+      "upload_speed": 1000,
+      "price": 130.0,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": "No lock-in / month-to-month",
+      "typical_evening_dl": 1000,
+      "typical_evening_ul": 1000,
+      "source_url": "https://zennet.com.au"
+    }
+  ],
+  "invalid_plans": [],
+  "errors": []
+}

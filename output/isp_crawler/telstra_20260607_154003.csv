@@ -1,0 +1,47 @@
+provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
+Telstra,5G,Basic 5G Internet,25,5,70.0,,,No Lock-in,25,5,https://www.telstra.com.au/internet/plans
+Telstra,5G,Essential 5G Internet,50,20,80.0,,,No Lock-in,50,20,https://www.telstra.com.au/internet/plans
+Telstra,NBN,Basic nbn®,23,3,93.0,,,No Lock-in,23,3,https://www.telstra.com.au/internet/plans
+Telstra,NBN,Basic nbn®,25,4,93.0,,,No Lock-in,25,4,https://www.telstra.com.au/internet/plans
+Telstra,NBN,Basic nbn® Internet Only,25,4,85.0,,,No Lock-in,25,4,https://www.telstra.com.au/internet/plans
+Telstra,NBN,Basic nbn® Internet Only,23,3,85.0,,,No Lock-in,23,3,https://www.telstra.com.au/internet/plans
+Telstra,NBN,Essential nbn®,50,17,109.0,,,No Lock-in,50,17,https://www.telstra.com.au/internet/plans
+Telstra,NBN,Essential nbn®,68,7,109.0,,,No Lock-in,68,7,https://www.telstra.com.au/internet/plans
+Telstra,5G,Premium 5G Internet,300,30,85.0,,,No Lock-in,300,30,https://www.telstra.com.au/internet/plans
+Telstra,NBN,Premium nbn®,100,17,99.0,99.0,6 months,No Lock-in,100,17,https://www.telstra.com.au/internet/plans
+Telstra,NBN,Essential nbn® Internet Only,50,17,95.0,,,No Lock-in,50,17,https://www.telstra.com.au/internet/plans
+Telstra,NBN,Essential nbn® Internet Only,68,7,95.0,,,No Lock-in,68,7,https://www.telstra.com.au/internet/plans
+Telstra,NBN,Premium nbn®,500,40,99.0,99.0,6 months,No Lock-in,500,40,https://www.telstra.com.au/internet/plans
+Telstra,NBN,Premium nbn® Internet Only,100,17,89.0,89.0,6 months,No Lock-in,100,17,https://www.telstra.com.au/internet/plans
+Telstra,NBN,Premium nbn® Internet Only,500,40,89.0,89.0,6 months,No Lock-in,500,40,https://www.telstra.com.au/internet/plans
+Telstra,NBN,Ultimate nbn®,750,40,99.0,99.0,6 months,No Lock-in,750,40,https://www.telstra.com.au/internet/plans
+Telstra,NBN,Ultrafast nbn®,815,80,109.0,109.0,6 months,No Lock-in,815,80,https://www.telstra.com.au/internet/plans
+Telstra,NBN,Ultimate nbn® Internet Only,750,40,89.0,89.0,6 months,No Lock-in,750,40,https://www.telstra.com.au/internet/plans
+Telstra,NBN,Ultrafast nbn® Internet Only,815,80,99.0,99.0,6 months,No Lock-in,815,80,https://www.telstra.com.au/internet/plans
+Telstra,5G,Basic 5G Internet,25,5,70.0,,,No Lock-in,25,5,https://www.telstra.com.au/internet/5g-home-internet
+Telstra,5G,Essential 5G Internet,50,20,80.0,,,No Lock-in,50,20,https://www.telstra.com.au/internet/5g-home-internet
+Telstra,5G,Premium 5G Internet,300,30,85.0,,,No Lock-in,300,30,https://www.telstra.com.au/internet/5g-home-internet
+Telstra,Satellite (Starlink),Satellite Home Internet,0,0,125.0,,,No Lock-in,0,0,https://www.telstra.com.au/internet/starlink
+Telstra,Opticomm,Basic,25,4,93.0,,,No Lock-in,25,4,https://www.telstra.com.au/internet/opticomm-plans
+Telstra,Opticomm,Basic Internet Only,25,4,85.0,,,No Lock-in,25,4,https://www.telstra.com.au/internet/opticomm-plans
+Telstra,Opticomm,Essential,50,17,109.0,,,No Lock-in,50,17,https://www.telstra.com.au/internet/opticomm-plans
+Telstra,Opticomm,Essential Internet Only,50,17,95.0,,,No Lock-in,50,17,https://www.telstra.com.au/internet/opticomm-plans
+Telstra,Opticomm,Premium,400,40,99.0,99.0,6 months,No Lock-in,400,40,https://www.telstra.com.au/internet/opticomm-plans
+Telstra,Opticomm,Premium Internet Only,400,40,89.0,89.0,6 months,No Lock-in,400,40,https://www.telstra.com.au/internet/opticomm-plans
+Telstra,Opticomm,Ultimate,600,40,99.0,99.0,6 months,No Lock-in,600,40,https://www.telstra.com.au/internet/opticomm-plans
+Telstra,Opticomm,Ultrafast,800,80,109.0,109.0,6 months,No Lock-in,800,80,https://www.telstra.com.au/internet/opticomm-plans
+Telstra,Opticomm,Ultimate Internet Only,600,40,89.0,89.0,6 months,No Lock-in,600,40,https://www.telstra.com.au/internet/opticomm-plans
+Telstra,Opticomm,Ultrafast Internet Only,800,80,99.0,99.0,6 months,No Lock-in,800,80,https://www.telstra.com.au/internet/opticomm-plans
+Telstra,5G,Basic 5G Business Internet,25,5,70.0,,,No Lock-in,25,5,https://www.telstra.com.au/small-business/internet
+Telstra,5G,Essential 5G Business Internet,50,20,80.0,,,No Lock-in,50,20,https://www.telstra.com.au/small-business/internet
+Telstra,5G,Premium 5G Business Internet,300,30,85.0,,,No Lock-in,300,30,https://www.telstra.com.au/small-business/internet
+Telstra,Business NBN,Essential nbn®,50,17,120.0,,,No Lock-in,50,17,https://www.telstra.com.au/small-business/internet
+Telstra,Business NBN,Premium nbn®,100,32,105.0,105.0,6 months,No Lock-in,100,32,https://www.telstra.com.au/small-business/internet
+Telstra,Business NBN,Essential nbn® Internet Only,50,17,105.0,,,No Lock-in,50,17,https://www.telstra.com.au/small-business/internet
+Telstra,Business NBN,Pro Fast nbn®,250,80,105.0,105.0,6 months,No Lock-in,250,80,https://www.telstra.com.au/small-business/internet
+Telstra,Business NBN,Premium nbn® Internet Only,100,32,95.0,95.0,6 months,No Lock-in,100,32,https://www.telstra.com.au/small-business/internet
+Telstra,Business NBN,Pro Fast nbn® Internet Only,250,80,95.0,95.0,6 months,No Lock-in,250,80,https://www.telstra.com.au/small-business/internet
+Telstra,Business NBN,Pro Superfast nbn®,500,160,109.0,109.0,6 months,No Lock-in,500,160,https://www.telstra.com.au/small-business/internet
+Telstra,Business NBN,Pro Superfast nbn® Internet Only,500,160,99.0,99.0,6 months,No Lock-in,500,160,https://www.telstra.com.au/small-business/internet
+Telstra,Business NBN,Pro Ultrafast nbn®,815,320,129.0,129.0,6 months,No Lock-in,815,320,https://www.telstra.com.au/small-business/internet
+Telstra,Business NBN,Pro Ultrafast nbn® Internet Only,815,320,119.0,119.0,6 months,No Lock-in,815,320,https://www.telstra.com.au/small-business/internet

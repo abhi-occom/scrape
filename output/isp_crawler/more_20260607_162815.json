@@ -1,0 +1,79 @@
+{
+  "base_url": "https://more.com.au",
+  "provider": "More",
+  "started_at": "2026-06-07T16:27:57.226111",
+  "finished_at": "2026-06-07T16:28:15.763765",
+  "duration_seconds": 18.54,
+  "summary": {
+    "urls_visited": 2,
+    "plan_pages_found": 1,
+    "total_plans_scraped": 4,
+    "valid_plans": 4,
+    "invalid_plans": 0,
+    "network_types": [
+      "NBN"
+    ]
+  },
+  "discovered_urls": [],
+  "page_analyses": [],
+  "plans": [
+    {
+      "provider": "More",
+      "network_type": "NBN",
+      "plan_name": "More Value",
+      "download_speed": 25,
+      "upload_speed": 8.5,
+      "price": 78.0,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": "No Lock-in",
+      "typical_evening_dl": 25,
+      "typical_evening_ul": 8.5,
+      "source_url": "https://more.com.au/personal/nbn-plans"
+    },
+    {
+      "provider": "More",
+      "network_type": "NBN",
+      "plan_name": "More Value Plus",
+      "download_speed": 50,
+      "upload_speed": 17,
+      "price": 95.0,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": "No Lock-in",
+      "typical_evening_dl": 50,
+      "typical_evening_ul": 17,
+      "source_url": "https://more.com.au/personal/nbn-plans"
+    },
+    {
+      "provider": "More",
+      "network_type": "NBN",
+      "plan_name": "More Fast Max",
+      "download_speed": 500,
+      "upload_speed": 42.5,
+      "price": 100.0,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": "No Lock-in",
+      "typical_evening_dl": 500,
+      "typical_evening_ul": 42.5,
+      "source_url": "https://more.com.au/personal/nbn-plans"
+    },
+    {
+      "provider": "More",
+      "network_type": "NBN",
+      "plan_name": "More Ultrafast",
+      "download_speed": 700,
+      "upload_speed": 85,
+      "price": 129.0,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": "No Lock-in",
+      "typical_evening_dl": 700,
+      "typical_evening_ul": 85,
+      "source_url": "https://more.com.au/personal/nbn-plans"
+    }
+  ],
+  "invalid_plans": [],
+  "errors": []
+}

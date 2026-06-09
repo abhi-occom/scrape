@@ -1,0 +1,5 @@
+provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
+More,NBN,More Value,25,8.5,78.0,,,No Lock-in,25,8.5,https://more.com.au/personal/nbn-plans
+More,NBN,More Value Plus,50,17,95.0,,,No Lock-in,50,17,https://more.com.au/personal/nbn-plans
+More,NBN,More Fast Max,500,42.5,100.0,,,No Lock-in,500,42.5,https://more.com.au/personal/nbn-plans
+More,NBN,More Ultrafast,700,85,129.0,,,No Lock-in,700,85,https://more.com.au/personal/nbn-plans

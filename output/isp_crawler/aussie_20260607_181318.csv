@@ -1,0 +1,8 @@
+provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
+Aussie Broadband,NBN,Aussie Broadband Basic 12/1,12,1,73.0,,,No lock-in contract,12,1,https://www.aussiebroadband.com.au/internet/nbn-plans/
+Aussie Broadband,NBN,Aussie Broadband Basic Plus 25/10,25,10,79.0,55.3,first month; $58.10/month for months 2-3,No lock-in contract,23,9,https://www.aussiebroadband.com.au/internet/nbn-plans/
+Aussie Broadband,NBN,Aussie Broadband Value 50/20,50,20,93.0,65.1,first month; $66.50/month for months 2-3,No lock-in contract,47,18,https://www.aussiebroadband.com.au/internet/nbn-plans/
+Aussie Broadband,NBN,Aussie Broadband Fast 100/20,100,20,95.0,80.0,first month; $84/month for months 2-6,No lock-in contract,94,18,https://www.aussiebroadband.com.au/internet/nbn-plans/
+Aussie Broadband,NBN,Aussie Broadband Fast Fibre 500/50,500,50,95.0,80.0,first month; $84/month for months 2-6,No lock-in contract,500,44,https://www.aussiebroadband.com.au/internet/nbn-plans/
+Aussie Broadband,NBN,Aussie Broadband Ultrafast Fibre 1000/100,1000,100,129.0,109.0,first 6 months,No lock-in contract,875,92,https://www.aussiebroadband.com.au/internet/nbn-plans/
+Aussie Broadband,NBN,Aussie Broadband Hyperfast 2000/200,2000,200,189.0,169.0,first 6 months,No lock-in contract,1810,178,https://www.aussiebroadband.com.au/internet/nbn-plans/

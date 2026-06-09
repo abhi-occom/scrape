@@ -115,6 +115,48 @@ PROVIDERS = {
         'enabled': True,
         'note': 'Scrapes NBN plans (4 tiers) from /internet/plans/ -- JavaScript rendered'
     },
+    'airtel': {
+        'id': 19,
+        'name': 'Airtel',
+        'enabled': True,
+        'note': 'Scrapes Airtel AU mobile and travel SIM plans'
+    },
+    'alpha': {
+        'id': 20,
+        'name': 'Alpha',
+        'enabled': True,
+        'note': 'Scrapes Alpha residential Supanetworks, Lynham, Opticomm and NBN plans'
+    },
+    'city7net': {
+        'id': 21,
+        'name': 'City7Net',
+        'enabled': True,
+        'note': 'Scrapes City7Net fibre month-to-month plans from the homepage'
+    },
+    'epsinet': {
+        'id': 22,
+        'name': 'Epsinet',
+        'enabled': True,
+        'note': 'Scrapes Epsinet fibre month-to-month plans from the homepage'
+    },
+    'iqnet': {
+        'id': 23,
+        'name': 'IQNet',
+        'enabled': True,
+        'note': 'Scrapes IQNet ASN, Lynham, SUPA, NBN and Vision network plans'
+    },
+    'newausfiber': {
+        'id': 24,
+        'name': 'New Aus Fiber',
+        'enabled': True,
+        'note': 'Scrapes New Aus Fiber month-to-month fibre plans from the homepage'
+    },
+    'vocphone': {
+        'id': 25,
+        'name': 'VOCPhone',
+        'enabled': True,
+        'note': 'Scrapes VOCPhone NBN and SUPA fibre internet plans'
+    },
 }
 
 # Output paths

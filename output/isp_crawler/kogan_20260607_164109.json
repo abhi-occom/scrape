@@ -1,0 +1,122 @@
+{
+  "base_url": "https://www.koganinternet.com.au",
+  "provider": "Kogan",
+  "started_at": "2026-06-07T16:40:53.177299",
+  "finished_at": "2026-06-07T16:41:09.665499",
+  "duration_seconds": 16.49,
+  "summary": {
+    "urls_visited": 2,
+    "plan_pages_found": 1,
+    "total_plans_scraped": 7,
+    "valid_plans": 7,
+    "invalid_plans": 0,
+    "network_types": [
+      "4G",
+      "NBN"
+    ]
+  },
+  "discovered_urls": [],
+  "page_analyses": [],
+  "plans": [
+    {
+      "provider": "kogan",
+      "network_type": "4G",
+      "plan_name": "Kogan 4G Internet",
+      "download_speed": 20,
+      "upload_speed": 1.9,
+      "price": 54.9,
+      "promo_price": 49.9,
+      "promo_period": "12 months",
+      "contract": "No Contract",
+      "typical_evening_dl": 17,
+      "typical_evening_ul": 1.9,
+      "source_url": "https://www.koganinternet.com.au/plans/"
+    },
+    {
+      "provider": "kogan",
+      "network_type": "NBN",
+      "plan_name": "Kogan Bronze",
+      "download_speed": 25,
+      "upload_speed": 8.0,
+      "price": 70.9,
+      "promo_price": 58.9,
+      "promo_period": "12 months",
+      "contract": "No Contract",
+      "typical_evening_dl": 25,
+      "typical_evening_ul": 8.0,
+      "source_url": "https://www.koganinternet.com.au/plans/"
+    },
+    {
+      "provider": "kogan",
+      "network_type": "NBN",
+      "plan_name": "Kogan Silver",
+      "download_speed": 50,
+      "upload_speed": 17.0,
+      "price": 80.9,
+      "promo_price": 69.9,
+      "promo_period": "12 months",
+      "contract": "No Contract",
+      "typical_evening_dl": 50,
+      "typical_evening_ul": 17.0,
+      "source_url": "https://www.koganinternet.com.au/plans/"
+    },
+    {
+      "provider": "kogan",
+      "network_type": "NBN",
+      "plan_name": "Kogan Gold",
+      "download_speed": 100,
+      "upload_speed": 17.0,
+      "price": 85.9,
+      "promo_price": 69.9,
+      "promo_period": "12 months",
+      "contract": "No Contract",
+      "typical_evening_dl": 99,
+      "typical_evening_ul": 17.0,
+      "source_url": "https://www.koganinternet.com.au/plans/"
+    },
+    {
+      "provider": "kogan",
+      "network_type": "NBN",
+      "plan_name": "Kogan Gold Plus",
+      "download_speed": 500,
+      "upload_speed": 42.0,
+      "price": 85.9,
+      "promo_price": 69.9,
+      "promo_period": "12 months",
+      "contract": "No Contract",
+      "typical_evening_dl": 500,
+      "typical_evening_ul": 42.0,
+      "source_url": "https://www.koganinternet.com.au/plans/"
+    },
+    {
+      "provider": "kogan",
+      "network_type": "NBN",
+      "plan_name": "Kogan Platinum",
+      "download_speed": 750,
+      "upload_speed": 42.0,
+      "price": 94.9,
+      "promo_price": 84.9,
+      "promo_period": "12 months",
+      "contract": "No Contract",
+      "typical_evening_dl": 740,
+      "typical_evening_ul": 42.0,
+      "source_url": "https://www.koganinternet.com.au/plans/"
+    },
+    {
+      "provider": "kogan",
+      "network_type": "NBN",
+      "plan_name": "Kogan Diamond",
+      "download_speed": 1000,
+      "upload_speed": 85.0,
+      "price": 108.9,
+      "promo_price": 94.9,
+      "promo_period": "12 months",
+      "contract": "No Contract",
+      "typical_evening_dl": 850,
+      "typical_evening_ul": 85.0,
+      "source_url": "https://www.koganinternet.com.au/plans/"
+    }
+  ],
+  "invalid_plans": [],
+  "errors": []
+}

@@ -16,58 +16,124 @@ from playwright.sync_api import sync_playwright, ElementHandle
 PROVIDER_ID = 14
 URL = 'https://more.com.au/personal/nbn-plans'
 
+PLAN_PAGES = [
+    {
+        'url': 'https://more.com.au/personal/nbn-plans',
+        'network_type': 'NBN',
+        'valid_names': ['Value', 'Value Plus', 'Fast Max', 'Ultrafast'],
+        'prefix': 'More ',
+    },
+    {
+        'url': 'https://more.com.au/personal/nbn-fixed-wireless',
+        'network_type': 'Fixed Wireless',
+        'valid_names': ['Fixed Wireless Value Plus', 'Fixed Wireless Fast', 'Fixed Wireless Superfast'],
+        'prefix': 'More ',
+    },
+    {
+        'url': 'https://more.com.au/personal/mobile-plans',
+        'network_type': 'Mobile',
+        'valid_names': ['14GB', '30GB', '50GB', '75GB', '100GB', '160GB'],
+        'prefix': 'More Mobile ',
+    },
+    {
+        'url': 'https://more.com.au/business/business-nbn-plans',
+        'network_type': 'Business NBN',
+        'valid_names': ['Business Fast Max', 'Business Superfast', 'Business Ultrafast', 'Business Ultrafast Plus'],
+        'prefix': 'More ',
+    },
+    {
+        'url': 'https://more.com.au/business/business-nbn-fixed-wireless',
+        'network_type': 'Business Fixed Wireless',
+        'valid_names': ['Fixed Wireless Value Plus', 'Fixed Wireless Fast', 'Fixed Wireless Superfast'],
+        'prefix': 'More Business ',
+    },
+    {
+        'url': 'https://more.com.au/business/business-mobile-plans',
+        'network_type': 'Business Mobile',
+        'valid_names': ['14GB', '30GB', '50GB', '75GB', '100GB', '160GB'],
+        'prefix': 'More Business Mobile ',
+    },
+]
+
+
+def _clean_money(value):
+    return float(re.sub(r'\s+', '', value))
+
 
 def _parse_price(raw):
-    m = re.search(r'\$([0-9]+(?:\.[0-9]+)?)', raw.replace(',', ''))
-    return float(m.group(1)) if m else None
+    m = re.search(r'\$\s*([0-9]+(?:\s*\.\s*[0-9]+)?)', raw.replace(',', ''))
+    return _clean_money(m.group(1)) if m else None
 
 
 def _parse_speeds(text):
     # Handle various formats like "25Mbps", "42.5Mbps", "85 Mbps"
     dl = re.search(r'([0-9]+(?:\.[0-9]+)?)\s*Mbps\s*Download', text, re.IGNORECASE)
     ul = re.search(r'([0-9]+(?:\.[0-9]+)?)\s*Mbps\s*Upload', text, re.IGNORECASE)
-    download = int(float(dl.group(1))) if dl else 0
-    upload = int(float(ul.group(1))) if ul else 0
+    if not dl:
+        dl = re.search(
+            r'Download\s+speeds\s+are\s+capped\s+at\s+([0-9]+(?:\.[0-9]+)?)\s*Mbps',
+            text,
+            re.IGNORECASE,
+        )
+    download = float(dl.group(1)) if dl else 0
+    upload = float(ul.group(1)) if ul else 0
+    download = int(download) if download.is_integer() else download
+    upload = int(upload) if upload.is_integer() else upload
     return download, upload
 
 
 def _parse_promo_info(text):
     # Check for promo pattern: "$XX/mth for XX months, then $XX/mth"
-    promo_match = re.search(r'\$([0-9]+(?:\.[0-9]+)?)\s*/mth\s*for\s*([0-9]+)\s*months?', text, re.IGNORECASE)
+    money = r'\$\s*([0-9]+(?:\s*\.\s*[0-9]+)?)'
+    monthly = rf'{money}\s*(?:/|per)?\s*mth'
+    promo_match = re.search(
+        rf'{monthly}\s*for\s*([0-9]+)\s*months?',
+        text,
+        re.IGNORECASE,
+    )
     if promo_match:
-        promo_price = float(promo_match.group(1))
+        promo_price = _clean_money(promo_match.group(1))
         promo_period = promo_match.group(2) + ' months'
-        then_match = re.search(r'then\s*\$([0-9]+(?:\.[0-9]+)?)\s*/mth', text, re.IGNORECASE)
-        regular_price = float(then_match.group(1)) if then_match else None
+        then_match = re.search(rf'then\s*{monthly}', text, re.IGNORECASE)
+        regular_price = _clean_money(then_match.group(1)) if then_match else None
         return promo_price, promo_period, regular_price
-    
+
     # Check for RRP price (regular price before any promo)
-    rrp_match = re.search(r'RRP\s*\$([0-9]+(?:\.[0-9]+)?)', text, re.IGNORECASE)
+    rrp_match = re.search(rf'RRP\s*{money}', text, re.IGNORECASE)
     if rrp_match:
-        rrp_price = float(rrp_match.group(1))
+        rrp_price = _clean_money(rrp_match.group(1))
         # Look for displayed price (could be promo)
-        price_match = re.search(r'\$([0-9]+(?:\.[0-9]+)?)\s*/mth', text, re.IGNORECASE)
+        price_matches = list(re.finditer(monthly, text, re.IGNORECASE))
+        price_match = price_matches[0] if price_matches else None
         if price_match:
-            display_price = float(price_match.group(1))
+            display_price = _clean_money(price_match.group(1))
             if display_price < rrp_price:
                 # Display price is promo
-                return display_price, 'Promo', rrp_price
+                period_match = re.search(r'for\s*([0-9]+)\s*months?', text, re.IGNORECASE)
+                promo_period = period_match.group(1) + ' months' if period_match else 'Promo'
+                then_match = re.search(rf'then\s*{monthly}', text, re.IGNORECASE)
+                regular_price = _clean_money(then_match.group(1)) if then_match else rrp_price
+                return display_price, promo_period, regular_price
             else:
                 return None, None, display_price
         return None, None, rrp_price
-    
+
     # Simple price without promo
-    price_match = re.search(r'\$([0-9]+(?:\.[0-9]+)?)\s*/mth', text, re.IGNORECASE)
+    price_match = re.search(monthly, text, re.IGNORECASE)
     if price_match:
-        return None, None, float(price_match.group(1))
-    
+        return None, None, _clean_money(price_match.group(1))
+
+    price = _parse_price(text)
+    if price is not None:
+        return None, None, price
+
     return None, None, None
 
 
-def _extract_plan(card):
+def _extract_plan(card, page_cfg):
     try:
         text = card.inner_text()
-        valid_names = ['Value', 'Value Plus', 'Fast Max', 'Ultrafast']
+        valid_names = page_cfg['valid_names']
         if not any(name in text for name in valid_names):
             return None
         lines = [l.strip() for l in text.split('\n') if l.strip()]
@@ -85,18 +151,24 @@ def _extract_plan(card):
             log_warning(f'More: missing required data for {plan_name}', provider='more')
             return None
         
+        network_type = page_cfg['network_type']
+        if network_type in ('Mobile', 'Business Mobile'):
+            network_type = '4G Mobile' if '4G NETWORK ACCESS' in text else '5G Mobile'
+
         return {
             'provider_id': PROVIDER_ID,
-            'provider': 'more',
-            'plan_name': 'More ' + plan_name,
-            'network_type': 'NBN',
+            'provider': 'More',
+            'plan_name': page_cfg['prefix'] + plan_name,
+            'network_type': network_type,
             'download_speed': download_speed,
             'upload_speed': upload_speed,
             'price': regular_price,
             'promo_price': promo_price,
             'promo_period': promo_period,
             'contract': 'No Lock-in',
-            'source_url': URL
+            'typical_evening_dl': download_speed,
+            'typical_evening_ul': upload_speed,
+            'source_url': page_cfg['url']
         }
     except Exception as e:
         log_error(f'More: error extracting card - {e}', provider='more')
@@ -110,27 +182,30 @@ def scrape_more_plans():
         with sync_playwright() as p:
             browser = create_stealth_browser(p)
             page = create_stealth_page(browser)
-            page.goto(URL, timeout=40000, wait_until='domcontentloaded')
-            page.wait_for_timeout(8000)
-            container = page.query_selector('#products-list')
-            if not container:
-                container = page.query_selector('#speeds')
-            if not container:
-                log_error('Could not find products container', provider='more')
-                browser.close()
-                return []
-            cards = container.query_selector_all('.owl-item')
-            log_info(f'Found {len(cards)} owl-item elements', provider='more')
             seen = set()
-            for card in cards:
-                plan = _extract_plan(card)
-                if plan is None:
+            for page_cfg in PLAN_PAGES:
+                page.goto(page_cfg['url'], timeout=40000, wait_until='domcontentloaded')
+                page.wait_for_timeout(7000)
+                container = page.query_selector('#products-list')
+                if not container:
+                    container = page.query_selector('#speeds')
+                if not container:
+                    log_error(f"Could not find products container: {page_cfg['url']}", provider='more')
                     continue
-                key = plan['plan_name']
-                if key in seen:
-                    continue
-                seen.add(key)
-                all_plans.append(plan)
+                cards = container.query_selector_all('.owl-item')
+                log_info(
+                    f"Found {len(cards)} owl-item elements on {page_cfg['url']}",
+                    provider='more',
+                )
+                for card in cards:
+                    plan = _extract_plan(card, page_cfg)
+                    if plan is None:
+                        continue
+                    key = (plan['plan_name'], plan['network_type'], plan['source_url'])
+                    if key in seen:
+                        continue
+                    seen.add(key)
+                    all_plans.append(plan)
             browser.close()
     except Exception as e:
         log_error(f'More scraper failed: {e}', provider='more')

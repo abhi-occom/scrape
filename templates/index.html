@@ -1047,10 +1047,22 @@
             applyFilters();           // render with current (default) filters
         }
 
+        function normalizeNetworkType(networkType) {
+            const raw = String(networkType || '').trim();
+            const compact = raw.toLowerCase().replace(/[\s_-]+/g, ' ');
+
+            if (compact.includes('opticomm')) return 'Opticomm';
+            if (compact.includes('redtrain') || compact.includes('red train')) return 'Redtrain';
+            if (compact.includes('supa') || compact.includes('supanetwork')) return 'Supa';
+            if (compact === 'nbn') return 'NBN';
+
+            return raw;
+        }
+
         /** Build unique network-type options */
         function populateNetworkFilter(plans) {
             const sel = document.getElementById('filter-network');
-            const networks = [...new Set(plans.map(p => p.network_type).filter(Boolean))].sort();
+            const networks = [...new Set(plans.map(p => normalizeNetworkType(p.network_type)).filter(Boolean))].sort();
             // Keep the first "All Networks" option, replace the rest
             sel.innerHTML = '<option value="">All Networks</option>';
             networks.forEach(n => {
@@ -1074,7 +1086,7 @@
 
             // ── Network type ────────────────────────────────────
             if (network) {
-                filtered = filtered.filter(p => p.network_type === network);
+                filtered = filtered.filter(p => normalizeNetworkType(p.network_type) === network);
             }
 
             // ── Price range ─────────────────────────────────────
@@ -1162,7 +1174,7 @@
             plans.forEach(p => {
                 html += `<tr>
                     <td>${p.plan_name || 'N/A'}</td>
-                    <td>${p.network_type || 'N/A'}</td>
+                    <td>${normalizeNetworkType(p.network_type) || 'N/A'}</td>
                     <td>${p.download_speed || 'N/A'}/${p.upload_speed || 'N/A'} Mbps</td>
                     <td>$${p.price != null ? p.price : 'N/A'}</td>
                     <td>${p.promo_price ? '$' + p.promo_price : '-'}</td>

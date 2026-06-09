@@ -1,0 +1,21 @@
+provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
+Vocphone,NBN,MBPS · DOWN / UP,92,17,99.9,,,No lock-in / month-to-month,92,17,https://vocphone.com/pricing/nbn-internet
+Vocphone,NBN,MBPS · DOWN / UP,92,17,79.9,,,No lock-in / month-to-month,92,17,https://vocphone.com/pricing/nbn-internet
+Vocphone,NBN,MBPS · DOWN / UP,237,96,104.9,,,No lock-in / month-to-month,237,96,https://vocphone.com/pricing/nbn-internet
+Vocphone,NBN,MBPS · DOWN / UP,237,96,89.9,,,No lock-in / month-to-month,237,96,https://vocphone.com/pricing/nbn-internet
+Vocphone,NBN,MBPS · DOWN / UP,467,191,124.9,,,No lock-in / month-to-month,467,191,https://vocphone.com/pricing/nbn-internet
+Vocphone,NBN,MBPS · DOWN / UP,467,191,109.9,,,No lock-in / month-to-month,467,191,https://vocphone.com/pricing/nbn-internet
+Vocphone,NBN,MBPS · DOWN / UP,957,388,164.9,,,No lock-in / month-to-month,957,388,https://vocphone.com/pricing/nbn-internet
+Vocphone,NBN,MBPS · DOWN / UP,957,388,139.9,,,No lock-in / month-to-month,957,388,https://vocphone.com/pricing/nbn-internet
+Vocphone,Supa,MBPS · DOWN / UP,48,17,79.9,,3 months,No lock-in / month-to-month,48,17,https://vocphone.com/pricing/internet-pricing
+Vocphone,Supa,MBPS · DOWN / UP,48,17,59.9,,3 months,No lock-in / month-to-month,48,17,https://vocphone.com/pricing/internet-pricing
+Vocphone,Supa,PROMO · FIRST 3 MONTHS,48,17,79.9,,3 months,No lock-in / month-to-month,48,17,https://vocphone.com/pricing/internet-pricing
+Vocphone,Supa,MBPS · DOWN / UP,416,416,89.9,,3 months,No lock-in / month-to-month,416,416,https://vocphone.com/pricing/internet-pricing
+Vocphone,Supa,MBPS · DOWN / UP,416,416,69.9,,3 months,No lock-in / month-to-month,416,416,https://vocphone.com/pricing/internet-pricing
+Vocphone,Supa,PROMO · FIRST 3 MONTHS,416,416,89.9,,3 months,No lock-in / month-to-month,416,416,https://vocphone.com/pricing/internet-pricing
+Vocphone,Supa,MBPS · DOWN / UP,657,657,109.9,,3 months,No lock-in / month-to-month,657,657,https://vocphone.com/pricing/internet-pricing
+Vocphone,Supa,MBPS · DOWN / UP,657,657,89.9,,3 months,No lock-in / month-to-month,657,657,https://vocphone.com/pricing/internet-pricing
+Vocphone,Supa,PROMO · FIRST 3 MONTHS,657,657,109.9,,3 months,No lock-in / month-to-month,657,657,https://vocphone.com/pricing/internet-pricing
+Vocphone,Supa,MBPS · DOWN / UP,784,784,139.9,,3 months,No lock-in / month-to-month,784,784,https://vocphone.com/pricing/internet-pricing
+Vocphone,Supa,MBPS · DOWN / UP,784,784,119.9,,3 months,No lock-in / month-to-month,784,784,https://vocphone.com/pricing/internet-pricing
+Vocphone,Supa,PROMO · FIRST 3 MONTHS,784,784,139.9,,3 months,No lock-in / month-to-month,784,784,https://vocphone.com/pricing/internet-pricing

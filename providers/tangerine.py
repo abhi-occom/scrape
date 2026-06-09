@@ -16,8 +16,13 @@ NBN_URL = "https://www.tangerine.com.au/nbn/nbn-broadband"
 FIXED_WIRELESS_URL = "https://www.tangerine.com.au/nbn/nbn-fixed-wireless"
 
 TANGERINE_PLANS = [
-    {"plan_name": "Value", "network": "NBN", "download": 25, "upload": 8.5, "promo_price": 44.90, "promo_months": 6, "regular_price": 69.90, "url": NBN_URL},
-    {"plan_name": "Value Plus", "network": "NBN", "download": 50, "upload": 17, "promo_price": 59.90, "promo_months": 6, "regular_price": 84.90, "url": NBN_URL},
+    {"plan_name": "Value", "network": "NBN", "download": 25, "upload": 10, "typical_upload": 8.5, "promo_price": 44.90, "promo_months": 6, "regular_price": 69.90, "url": NBN_URL},
+    {"plan_name": "Value Plus", "network": "NBN", "download": 50, "upload": 20, "typical_upload": 17, "promo_price": 59.90, "promo_months": 6, "regular_price": 84.90, "url": NBN_URL},
+    # Address-gated fixed-line tiers. These are listed in Tangerine's plan
+    # table/CIS, but their order cards only appear after an eligible address
+    # lookup, so the fallback catalog must include them explicitly.
+    {"plan_name": "Speedy", "network": "NBN", "download": 100, "upload": 20, "typical_upload": 17, "promo_price": 63.90, "promo_months": 6, "regular_price": 88.90, "url": NBN_URL},
+    {"plan_name": "Speedy Plus", "network": "NBN", "download": 100, "upload": 40, "typical_upload": 34, "promo_price": 67.90, "promo_months": 6, "regular_price": 92.90, "url": NBN_URL},
     {"plan_name": "Speedy Max", "network": "NBN", "download": 500, "upload": 42.5, "promo_price": 63.90, "promo_months": 6, "regular_price": 88.90, "url": NBN_URL},
     {"plan_name": "UltraSpeedy", "network": "NBN", "download": 700, "upload": 85, "promo_price": 94.90, "promo_months": 6, "regular_price": 119.90, "url": NBN_URL},
     {"plan_name": "Fixed Wireless Value Plus", "network": "Fixed Wireless", "download": 100, "upload": 20, "promo_price": 59.90, "promo_months": 6, "regular_price": 84.90, "url": FIXED_WIRELESS_URL},
@@ -62,7 +67,7 @@ def scrape_tangerine_plans():
                         "download_speed": plan_data["download"],
                         "upload_speed": plan_data["upload"],
                         "typical_evening_dl": plan_data["download"],
-                        "typical_evening_ul": plan_data["upload"],
+                        "typical_evening_ul": plan_data.get("typical_upload", plan_data["upload"]),
                         "price": plan_data["regular_price"],
                         "promo_price": plan_data["promo_price"],
                         "promo_period": f"{plan_data['promo_months']} months",

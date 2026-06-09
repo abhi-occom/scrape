@@ -1,0 +1,6 @@
+provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
+activ8me,NBN,Standard 25 Unlimited Data Allowance,25,10,69.95,54.95,6 months,Month-to-Month,25,10,https://www.activ8me.net.au/internet/nbn-fibre-fttp-hfc
+activ8me,NBN,Standard 50 Unlimited Data Allowance,50,20,74.95,,,Month-to-Month,47,17,https://www.activ8me.net.au/internet/nbn-fibre-fttp-hfc
+activ8me,NBN,Home Fast 100 Unlimited Data Allowance,100,20,94.95,84.95,6 months,Month-to-Month,84,17,https://www.activ8me.net.au/internet/nbn-fibre-fttp-hfc
+activ8me,NBN,Home Fast 500 Unlimited Data Allowance,500,50,94.95,84.95,6 months,Month-to-Month,404,42,https://www.activ8me.net.au/internet/nbn-fibre-fttp-hfc
+activ8me,NBN,Super Fast 750 Unlimited Data Allowance,750,50,109.95,,,Month-to-Month,575,42,https://www.activ8me.net.au/internet/nbn-fibre-fttp-hfc

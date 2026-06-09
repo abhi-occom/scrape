@@ -1,0 +1,5 @@
+provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
+Blitznet,FIBRE,Fiber Broadband - Basic Internet,25,10,69.0,,,No lock-in / month-to-month,25,10,https://blitznet.com.au
+Blitznet,FIBRE,Fiber Broadband - Standard Internet,50,20,75.0,,,No lock-in / month-to-month,50,20,https://blitznet.com.au
+Blitznet,FIBRE,Fiber Broadband - Premium Internet,500,500,85.0,,,No lock-in / month-to-month,500,500,https://blitznet.com.au
+Blitznet,FIBRE,Fiber Broadband - Ultimate Internet,1000,1000,130.0,,,No lock-in / month-to-month,1000,1000,https://blitznet.com.au

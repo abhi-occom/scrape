@@ -1,0 +1,20 @@
+provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
+Activ8me,NBN,Unlimited Data Allowance,47,0,74.95,,6 months,No lock-in / month-to-month,47,0,https://www.activ8me.net.au/internet/nbn-fibre-fttp-hfc
+Activ8me,NBN,Unlimited Data Allowance,84,0,84.95,,6 months,No lock-in / month-to-month,84,0,https://www.activ8me.net.au/internet/nbn-fibre-fttp-hfc
+Activ8me,NBN,Unlimited Data Allowance,84,0,94.95,,6 months,No lock-in / month-to-month,84,0,https://www.activ8me.net.au/internet/nbn-fibre-fttp-hfc
+Activ8me,Opticomm,Special Offer!,84,0,60.0,,6 months,No lock-in / month-to-month,84,0,https://www.activ8me.net.au/internet/nbn-fibre-fttp-hfc
+Activ8me,NBN,Unlimited Data Allowance,404,0,84.95,,6 months,No lock-in / month-to-month,404,0,https://www.activ8me.net.au/internet/nbn-fibre-fttp-hfc
+Activ8me,NBN,Unlimited Data Allowance,404,0,94.95,,6 months,No lock-in / month-to-month,404,0,https://www.activ8me.net.au/internet/nbn-fibre-fttp-hfc
+Activ8me,Opticomm,Special Offer!,404,0,60.0,,6 months,No lock-in / month-to-month,404,0,https://www.activ8me.net.au/internet/nbn-fibre-fttp-hfc
+Activ8me,NBN,Unlimited Data Allowance,575,0,109.95,,6 months,No lock-in / month-to-month,575,0,https://www.activ8me.net.au/internet/nbn-fibre-fttp-hfc
+Activ8me,NBN,100GB,47,0,64.95,,6 months,No lock-in / month-to-month,47,0,https://www.activ8me.net.au/internet/nbn-fibre-fttp-hfc
+Activ8me,NBN,Standard 25,25,5,90.0,54.95,6 months,Month-to-Month,25,5,https://www.activ8me.net.au/internet/nbn-fixed-wireless
+Activ8me,NBN,Plus,50,20,74.95,,,Month-to-Month,50,20,https://www.activ8me.net.au/internet/nbn-fixed-wireless
+Activ8me,NBN,Home Fast,90,0,79.95,,,Month-to-Month,90,0,https://www.activ8me.net.au/internet/nbn-fixed-wireless
+Activ8me,NBN,Super Fast,120,0,120.0,89.95,6 months,Month-to-Month,120,0,https://www.activ8me.net.au/internet/nbn-fixed-wireless
+Activ8me,Opticomm,UNLIMITED DATA ALLOWANCE,7,0,59.95,,6 months,Month-to-month,7,0,https://www.activ8me.net.au/internet/opticomm-fibre-vdsl
+Activ8me,Opticomm,UNLIMITED DATA ALLOWANCE,23,0,69.95,,6 months,Month-to-month,23,0,https://www.activ8me.net.au/internet/opticomm-fibre-vdsl
+Activ8me,Opticomm,UNLIMITED DATA ALLOWANCE,39,0,79.95,,6 months,Month-to-month,39,0,https://www.activ8me.net.au/internet/opticomm-fibre-vdsl
+Activ8me,Opticomm,UNLIMITED DATA ALLOWANCE,329,0,89.95,,6 months,Month-to-month,329,0,https://www.activ8me.net.au/internet/opticomm-fibre-vdsl
+Activ8me,Opticomm,UNLIMITED DATA ALLOWANCE,329,0,99.95,,6 months,Month-to-month,329,0,https://www.activ8me.net.au/internet/opticomm-fibre-vdsl
+Activ8me,Opticomm,Special Offer!,329,0,60.0,,6 months,Month-to-month,329,0,https://www.activ8me.net.au/internet/opticomm-fibre-vdsl

@@ -1,0 +1,79 @@
+{
+  "base_url": "https://city7net.com.au",
+  "provider": "City7net",
+  "started_at": "2026-06-07T17:09:53.972940",
+  "finished_at": "2026-06-07T17:09:55.833621",
+  "duration_seconds": 1.86,
+  "summary": {
+    "urls_visited": 2,
+    "plan_pages_found": 1,
+    "total_plans_scraped": 4,
+    "valid_plans": 4,
+    "invalid_plans": 0,
+    "network_types": [
+      "Fibre"
+    ]
+  },
+  "discovered_urls": [],
+  "page_analyses": [],
+  "plans": [
+    {
+      "provider": "City7Net",
+      "network_type": "Fibre",
+      "plan_name": "City7Net Basic",
+      "download_speed": 25,
+      "upload_speed": 10,
+      "price": 69.0,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": "Month to month, no lock-in",
+      "typical_evening_dl": 25,
+      "typical_evening_ul": 10,
+      "source_url": "https://city7net.com.au/"
+    },
+    {
+      "provider": "City7Net",
+      "network_type": "Fibre",
+      "plan_name": "City7Net Standard",
+      "download_speed": 50,
+      "upload_speed": 20,
+      "price": 78.0,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": "Month to month, no lock-in",
+      "typical_evening_dl": 50,
+      "typical_evening_ul": 20,
+      "source_url": "https://city7net.com.au/"
+    },
+    {
+      "provider": "City7Net",
+      "network_type": "Fibre",
+      "plan_name": "City7Net Premium",
+      "download_speed": 500,
+      "upload_speed": 500,
+      "price": 89.0,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": "Month to month, no lock-in",
+      "typical_evening_dl": 500,
+      "typical_evening_ul": 500,
+      "source_url": "https://city7net.com.au/"
+    },
+    {
+      "provider": "City7Net",
+      "network_type": "Fibre",
+      "plan_name": "City7Net Ultimate",
+      "download_speed": 1000,
+      "upload_speed": 1000,
+      "price": 130.0,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": "Month to month, no lock-in",
+      "typical_evening_dl": 1000,
+      "typical_evening_ul": 1000,
+      "source_url": "https://city7net.com.au/"
+    }
+  ],
+  "invalid_plans": [],
+  "errors": []
+}

@@ -1,0 +1,22 @@
+provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
+iPrimus,Fixed Wireless,Early Termination of Hardware Repayment Term,250,25,10.0,,18 months,Month-to-month,250,25,https://www.iprimus.com.au/critical-information-summary/nbn-internet-plans-cis
+iPrimus,NBN,All our plans are month-to-month with unlimited data - nbn® Standard Plus,50,20,87.0,,18 months,Month-to-month,50,20,https://www.iprimus.com.au/nbn-plans
+iPrimus,NBN,More info,100,20,267.0,,18 months,Month-to-month,100,20,https://www.iprimus.com.au/nbn-plans
+iPrimus,NBN,More info - nbn® Premium,100,20,97.0,,18 months,Month-to-month,100,20,https://www.iprimus.com.au/nbn-plans
+iPrimus,NBN,More info,500,50,277.0,,18 months,Month-to-month,500,50,https://www.iprimus.com.au/nbn-plans
+iPrimus,NBN,More info - nbn® Premium plus,500,50,97.0,,18 months,Month-to-month,500,50,https://www.iprimus.com.au/nbn-plans
+iPrimus,NBN,More info,700,0,277.0,,18 months,Month-to-month,700,0,https://www.iprimus.com.au/nbn-plans
+iPrimus,NBN,More info - nbn® Home Superfast,700,0,104.0,,18 months,Month-to-month,700,0,https://www.iprimus.com.au/nbn-plans
+iPrimus,NBN,More info,840,0,284.0,,18 months,Month-to-month,840,0,https://www.iprimus.com.au/nbn-plans
+iPrimus,NBN,More info - nbn® Home Ultrafast,840,0,119.0,,18 months,Month-to-month,840,0,https://www.iprimus.com.au/nbn-plans
+iPrimus,NBN,This plan is designed for users with medium internet use such as streaming a movie. - nbn® Standard Plus,50,20,87.0,,18 months,,50,20,https://www.iprimus.com.au/nbn-plans/nbn-50-plans
+iPrimus,NBN,"This plan is designed for users working-from-home, gaming online or streaming movies. - nbn® Premium",100,20,97.0,,18 months,,100,20,https://www.iprimus.com.au/nbn-plans/nbn-95-plans
+iPrimus,NBN,"This plan is designed for multiple people working-from-home, gaming online or streaming movies. - nbn® Home Superfast",700,0,104.0,,18 months,,700,0,https://www.iprimus.com.au/nbn-plans/nbn-superfast-plans
+iPrimus,NBN,Is this plan right for me? - nbn® Home Ultrafast,840,0,119.0,,18 months,,840,0,https://www.iprimus.com.au/nbn-plans/nbn-ultrafast-plans
+iPrimus,Opticomm,All our plans are month-to-month with unlimited data - Fibre Premium,90,0,97.0,,18 months,Month-to-month,90,0,https://www.iprimus.com.au/fibre-plans
+iPrimus,Fibre,More info,247,0,277.0,,18 months,Month-to-month,247,0,https://www.iprimus.com.au/fibre-plans
+iPrimus,Fibre,More info - Fibre Home Superfast,247,0,104.0,,18 months,Month-to-month,247,0,https://www.iprimus.com.au/fibre-plans
+iPrimus,Fibre,More info,510,0,284.0,,18 months,Month-to-month,510,0,https://www.iprimus.com.au/fibre-plans
+iPrimus,Fibre,More info - Fibre Home Ultrafast,510,0,119.0,,18 months,Month-to-month,510,0,https://www.iprimus.com.au/fibre-plans
+iPrimus,Fibre,More info,48,0,299.0,,18 months,Month-to-month,48,0,https://www.iprimus.com.au/fibre-plans
+iPrimus,Fibre,More info - Fibre Standard Plus,48,0,87.0,,18 months,Month-to-month,48,0,https://www.iprimus.com.au/fibre-plans

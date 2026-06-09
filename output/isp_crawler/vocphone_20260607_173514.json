@@ -1,0 +1,437 @@
+{
+  "base_url": "https://vocphone.com",
+  "provider": "Vocphone",
+  "started_at": "2026-06-07T17:33:33.658841",
+  "finished_at": "2026-06-07T17:35:14.140908",
+  "duration_seconds": 100.48,
+  "summary": {
+    "urls_visited": 7,
+    "plan_pages_found": 3,
+    "total_plans_scraped": 20,
+    "valid_plans": 20,
+    "invalid_plans": 0,
+    "network_types": [
+      "NBN",
+      "Supa"
+    ]
+  },
+  "discovered_urls": [
+    {
+      "url": "https://vocphone.com",
+      "score": 0,
+      "depth": 0,
+      "network_types": [],
+      "matched_networks": []
+    },
+    {
+      "url": "https://vocphone.com/pricing/nbn-internet",
+      "score": 24,
+      "depth": 1,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://vocphone.com/",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://vocphone.com/nbn-plans",
+      "score": 18,
+      "depth": 1,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://vocphone.com/",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://vocphone.com/pricing/plans-pricing",
+      "score": 15,
+      "depth": 1,
+      "network_types": [],
+      "found_on": "https://vocphone.com/",
+      "matched_networks": []
+    },
+    {
+      "url": "https://vocphone.com/pricing/internet-pricing",
+      "score": 14,
+      "depth": 1,
+      "network_types": [],
+      "found_on": "https://vocphone.com/",
+      "matched_networks": []
+    },
+    {
+      "url": "https://vocphone.com/pricing/price-guarantee",
+      "score": 13,
+      "depth": 1,
+      "network_types": [],
+      "found_on": "https://vocphone.com/",
+      "matched_networks": []
+    }
+  ],
+  "page_analyses": [
+    {
+      "url": "https://vocphone.com",
+      "has_plans": false,
+      "confidence": 0.1,
+      "network_types": [
+        "nbn"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 0,
+      "speed_signals": 0
+    },
+    {
+      "url": "https://vocphone.com/pricing/nbn-internet",
+      "has_plans": true,
+      "confidence": 0.949,
+      "network_types": [
+        "nbn"
+      ],
+      "card_selector": "[class*=\"plan-card\"]",
+      "card_count": 4,
+      "name_selector": "h3",
+      "price_selector": "[class*=\"price\"]",
+      "speed_selector": "[class*=\"speed\"]",
+      "price_signals": 11,
+      "speed_signals": 4
+    },
+    {
+      "url": "https://vocphone.com/nbn-plans",
+      "has_plans": true,
+      "confidence": 0.949,
+      "network_types": [
+        "nbn"
+      ],
+      "card_selector": "[class*=\"plan-card\"]",
+      "card_count": 4,
+      "name_selector": "h3",
+      "price_selector": "[class*=\"price\"]",
+      "speed_selector": "[class*=\"speed\"]",
+      "price_signals": 11,
+      "speed_signals": 4
+    },
+    {
+      "url": "https://vocphone.com/pricing/plans-pricing",
+      "has_plans": false,
+      "confidence": 0.15000000000000002,
+      "network_types": [
+        "nbn"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 1,
+      "speed_signals": 0
+    },
+    {
+      "url": "https://vocphone.com/pricing/internet-pricing",
+      "has_plans": true,
+      "confidence": 0.999,
+      "network_types": [
+        "nbn",
+        "supa"
+      ],
+      "card_selector": "[class*=\"plan-card\"]",
+      "card_count": 4,
+      "name_selector": "h3",
+      "price_selector": "[class*=\"price\"]",
+      "speed_selector": "[class*=\"speed\"]",
+      "price_signals": 20,
+      "speed_signals": 4
+    }
+  ],
+  "plans": [
+    {
+      "provider": "Vocphone",
+      "network_type": "NBN",
+      "plan_name": "MBPS · DOWN / UP",
+      "download_speed": 92,
+      "upload_speed": 17,
+      "price": 99.9,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": "No lock-in / month-to-month",
+      "typical_evening_dl": 92,
+      "typical_evening_ul": 17,
+      "source_url": "https://vocphone.com/pricing/nbn-internet"
+    },
+    {
+      "provider": "Vocphone",
+      "network_type": "NBN",
+      "plan_name": "MBPS · DOWN / UP",
+      "download_speed": 92,
+      "upload_speed": 17,
+      "price": 79.9,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": "No lock-in / month-to-month",
+      "typical_evening_dl": 92,
+      "typical_evening_ul": 17,
+      "source_url": "https://vocphone.com/pricing/nbn-internet"
+    },
+    {
+      "provider": "Vocphone",
+      "network_type": "NBN",
+      "plan_name": "MBPS · DOWN / UP",
+      "download_speed": 237,
+      "upload_speed": 96,
+      "price": 104.9,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": "No lock-in / month-to-month",
+      "typical_evening_dl": 237,
+      "typical_evening_ul": 96,
+      "source_url": "https://vocphone.com/pricing/nbn-internet"
+    },
+    {
+      "provider": "Vocphone",
+      "network_type": "NBN",
+      "plan_name": "MBPS · DOWN / UP",
+      "download_speed": 237,
+      "upload_speed": 96,
+      "price": 89.9,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": "No lock-in / month-to-month",
+      "typical_evening_dl": 237,
+      "typical_evening_ul": 96,
+      "source_url": "https://vocphone.com/pricing/nbn-internet"
+    },
+    {
+      "provider": "Vocphone",
+      "network_type": "NBN",
+      "plan_name": "MBPS · DOWN / UP",
+      "download_speed": 467,
+      "upload_speed": 191,
+      "price": 124.9,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": "No lock-in / month-to-month",
+      "typical_evening_dl": 467,
+      "typical_evening_ul": 191,
+      "source_url": "https://vocphone.com/pricing/nbn-internet"
+    },
+    {
+      "provider": "Vocphone",
+      "network_type": "NBN",
+      "plan_name": "MBPS · DOWN / UP",
+      "download_speed": 467,
+      "upload_speed": 191,
+      "price": 109.9,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": "No lock-in / month-to-month",
+      "typical_evening_dl": 467,
+      "typical_evening_ul": 191,
+      "source_url": "https://vocphone.com/pricing/nbn-internet"
+    },
+    {
+      "provider": "Vocphone",
+      "network_type": "NBN",
+      "plan_name": "MBPS · DOWN / UP",
+      "download_speed": 957,
+      "upload_speed": 388,
+      "price": 164.9,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": "No lock-in / month-to-month",
+      "typical_evening_dl": 957,
+      "typical_evening_ul": 388,
+      "source_url": "https://vocphone.com/pricing/nbn-internet"
+    },
+    {
+      "provider": "Vocphone",
+      "network_type": "NBN",
+      "plan_name": "MBPS · DOWN / UP",
+      "download_speed": 957,
+      "upload_speed": 388,
+      "price": 139.9,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": "No lock-in / month-to-month",
+      "typical_evening_dl": 957,
+      "typical_evening_ul": 388,
+      "source_url": "https://vocphone.com/pricing/nbn-internet"
+    },
+    {
+      "provider": "Vocphone",
+      "network_type": "Supa",
+      "plan_name": "MBPS · DOWN / UP",
+      "download_speed": 48,
+      "upload_speed": 17,
+      "price": 79.9,
+      "promo_price": null,
+      "promo_period": "3 months",
+      "contract": "No lock-in / month-to-month",
+      "typical_evening_dl": 48,
+      "typical_evening_ul": 17,
+      "source_url": "https://vocphone.com/pricing/internet-pricing"
+    },
+    {
+      "provider": "Vocphone",
+      "network_type": "Supa",
+      "plan_name": "MBPS · DOWN / UP",
+      "download_speed": 48,
+      "upload_speed": 17,
+      "price": 59.9,
+      "promo_price": null,
+      "promo_period": "3 months",
+      "contract": "No lock-in / month-to-month",
+      "typical_evening_dl": 48,
+      "typical_evening_ul": 17,
+      "source_url": "https://vocphone.com/pricing/internet-pricing"
+    },
+    {
+      "provider": "Vocphone",
+      "network_type": "Supa",
+      "plan_name": "PROMO · FIRST 3 MONTHS",
+      "download_speed": 48,
+      "upload_speed": 17,
+      "price": 79.9,
+      "promo_price": null,
+      "promo_period": "3 months",
+      "contract": "No lock-in / month-to-month",
+      "typical_evening_dl": 48,
+      "typical_evening_ul": 17,
+      "source_url": "https://vocphone.com/pricing/internet-pricing"
+    },
+    {
+      "provider": "Vocphone",
+      "network_type": "Supa",
+      "plan_name": "MBPS · DOWN / UP",
+      "download_speed": 416,
+      "upload_speed": 416,
+      "price": 89.9,
+      "promo_price": null,
+      "promo_period": "3 months",
+      "contract": "No lock-in / month-to-month",
+      "typical_evening_dl": 416,
+      "typical_evening_ul": 416,
+      "source_url": "https://vocphone.com/pricing/internet-pricing"
+    },
+    {
+      "provider": "Vocphone",
+      "network_type": "Supa",
+      "plan_name": "MBPS · DOWN / UP",
+      "download_speed": 416,
+      "upload_speed": 416,
+      "price": 69.9,
+      "promo_price": null,
+      "promo_period": "3 months",
+      "contract": "No lock-in / month-to-month",
+      "typical_evening_dl": 416,
+      "typical_evening_ul": 416,
+      "source_url": "https://vocphone.com/pricing/internet-pricing"
+    },
+    {
+      "provider": "Vocphone",
+      "network_type": "Supa",
+      "plan_name": "PROMO · FIRST 3 MONTHS",
+      "download_speed": 416,
+      "upload_speed": 416,
+      "price": 89.9,
+      "promo_price": null,
+      "promo_period": "3 months",
+      "contract": "No lock-in / month-to-month",
+      "typical_evening_dl": 416,
+      "typical_evening_ul": 416,
+      "source_url": "https://vocphone.com/pricing/internet-pricing"
+    },
+    {
+      "provider": "Vocphone",
+      "network_type": "Supa",
+      "plan_name": "MBPS · DOWN / UP",
+      "download_speed": 657,
+      "upload_speed": 657,
+      "price": 109.9,
+      "promo_price": null,
+      "promo_period": "3 months",
+      "contract": "No lock-in / month-to-month",
+      "typical_evening_dl": 657,
+      "typical_evening_ul": 657,
+      "source_url": "https://vocphone.com/pricing/internet-pricing"
+    },
+    {
+      "provider": "Vocphone",
+      "network_type": "Supa",
+      "plan_name": "MBPS · DOWN / UP",
+      "download_speed": 657,
+      "upload_speed": 657,
+      "price": 89.9,
+      "promo_price": null,
+      "promo_period": "3 months",
+      "contract": "No lock-in / month-to-month",
+      "typical_evening_dl": 657,
+      "typical_evening_ul": 657,
+      "source_url": "https://vocphone.com/pricing/internet-pricing"
+    },
+    {
+      "provider": "Vocphone",
+      "network_type": "Supa",
+      "plan_name": "PROMO · FIRST 3 MONTHS",
+      "download_speed": 657,
+      "upload_speed": 657,
+      "price": 109.9,
+      "promo_price": null,
+      "promo_period": "3 months",
+      "contract": "No lock-in / month-to-month",
+      "typical_evening_dl": 657,
+      "typical_evening_ul": 657,
+      "source_url": "https://vocphone.com/pricing/internet-pricing"
+    },
+    {
+      "provider": "Vocphone",
+      "network_type": "Supa",
+      "plan_name": "MBPS · DOWN / UP",
+      "download_speed": 784,
+      "upload_speed": 784,
+      "price": 139.9,
+      "promo_price": null,
+      "promo_period": "3 months",
+      "contract": "No lock-in / month-to-month",
+      "typical_evening_dl": 784,
+      "typical_evening_ul": 784,
+      "source_url": "https://vocphone.com/pricing/internet-pricing"
+    },
+    {
+      "provider": "Vocphone",
+      "network_type": "Supa",
+      "plan_name": "MBPS · DOWN / UP",
+      "download_speed": 784,
+      "upload_speed": 784,
+      "price": 119.9,
+      "promo_price": null,
+      "promo_period": "3 months",
+      "contract": "No lock-in / month-to-month",
+      "typical_evening_dl": 784,
+      "typical_evening_ul": 784,
+      "source_url": "https://vocphone.com/pricing/internet-pricing"
+    },
+    {
+      "provider": "Vocphone",
+      "network_type": "Supa",
+      "plan_name": "PROMO · FIRST 3 MONTHS",
+      "download_speed": 784,
+      "upload_speed": 784,
+      "price": 139.9,
+      "promo_price": null,
+      "promo_period": "3 months",
+      "contract": "No lock-in / month-to-month",
+      "typical_evening_dl": 784,
+      "typical_evening_ul": 784,
+      "source_url": "https://vocphone.com/pricing/internet-pricing"
+    }
+  ],
+  "invalid_plans": [],
+  "errors": []
+}

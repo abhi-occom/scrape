@@ -1,0 +1,103 @@
+{
+  "base_url": "https://teletech.cc",
+  "provider": "Teletech",
+  "started_at": "2026-06-07T17:31:23.536348",
+  "finished_at": "2026-06-07T17:31:44.420478",
+  "duration_seconds": 20.88,
+  "summary": {
+    "urls_visited": 1,
+    "plan_pages_found": 1,
+    "total_plans_scraped": 4,
+    "valid_plans": 4,
+    "invalid_plans": 0,
+    "network_types": [
+      "NBN"
+    ]
+  },
+  "discovered_urls": [
+    {
+      "url": "https://teletech.cc",
+      "score": 0,
+      "depth": 0,
+      "network_types": [],
+      "matched_networks": []
+    }
+  ],
+  "page_analyses": [
+    {
+      "url": "https://teletech.cc",
+      "has_plans": true,
+      "confidence": 0.8159999999999998,
+      "network_types": [
+        "nbn"
+      ],
+      "card_selector": "[class*=\"pricing\"]",
+      "card_count": 36,
+      "name_selector": "h2",
+      "price_selector": "[class*=\"price\"]",
+      "speed_selector": null,
+      "price_signals": 5,
+      "speed_signals": 12
+    }
+  ],
+  "plans": [
+    {
+      "provider": "Teletech",
+      "network_type": "NBN",
+      "plan_name": "Basic Fibre Internet",
+      "download_speed": 25,
+      "upload_speed": 5,
+      "price": 69.0,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": null,
+      "typical_evening_dl": 25,
+      "typical_evening_ul": 5,
+      "source_url": "https://teletech.cc"
+    },
+    {
+      "provider": "Teletech",
+      "network_type": "NBN",
+      "plan_name": "Standard Fibre Internet",
+      "download_speed": 50,
+      "upload_speed": 20,
+      "price": 75.0,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": null,
+      "typical_evening_dl": 50,
+      "typical_evening_ul": 20,
+      "source_url": "https://teletech.cc"
+    },
+    {
+      "provider": "Teletech",
+      "network_type": "NBN",
+      "plan_name": "Advanced Speed Plan",
+      "download_speed": 500,
+      "upload_speed": 50,
+      "price": 85.0,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": null,
+      "typical_evening_dl": 500,
+      "typical_evening_ul": 50,
+      "source_url": "https://teletech.cc"
+    },
+    {
+      "provider": "Teletech",
+      "network_type": "NBN",
+      "plan_name": "Superb Speed Plan",
+      "download_speed": 1000,
+      "upload_speed": 50,
+      "price": 130.0,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": null,
+      "typical_evening_dl": 1000,
+      "typical_evening_ul": 50,
+      "source_url": "https://teletech.cc"
+    }
+  ],
+  "invalid_plans": [],
+  "errors": []
+}

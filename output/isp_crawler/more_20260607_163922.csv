@@ -1,0 +1,27 @@
+provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
+More,NBN,More Value,25,8.5,68.0,53.0,36 months,No Lock-in,25,8.5,https://more.com.au/personal/nbn-plans
+More,NBN,More Value Plus,50,17,85.0,70.0,36 months,No Lock-in,50,17,https://more.com.au/personal/nbn-plans
+More,Fixed Wireless,More Fixed Wireless Value Plus,100,20,85.0,70.0,36 months,No Lock-in,100,20,https://more.com.au/personal/nbn-fixed-wireless
+More,4G Mobile,More Mobile 14GB,100,0,24.0,18.0,36 months,No Lock-in,100,0,https://more.com.au/personal/mobile-plans
+More,Business Fixed Wireless,More Business Fixed Wireless Value Plus,100,20,95.0,,,No Lock-in,100,20,https://more.com.au/business/business-nbn-fixed-wireless
+More,5G Mobile,More Mobile 30GB,150,0,29.0,23.0,36 months,No Lock-in,150,0,https://more.com.au/personal/mobile-plans
+More,5G Mobile,More Mobile 50GB,150,0,36.0,30.0,36 months,No Lock-in,150,0,https://more.com.au/personal/mobile-plans
+More,5G Mobile,More Mobile 75GB,150,0,42.0,36.0,36 months,No Lock-in,150,0,https://more.com.au/personal/mobile-plans
+More,5G Mobile,More Mobile 100GB,150,0,48.0,42.0,36 months,No Lock-in,150,0,https://more.com.au/personal/mobile-plans
+More,4G Mobile,More Business Mobile 14GB,150,0,28.0,,,No Lock-in,150,0,https://more.com.au/business/business-mobile-plans
+More,5G Mobile,More Business Mobile 30GB,150,0,33.0,,,No Lock-in,150,0,https://more.com.au/business/business-mobile-plans
+More,5G Mobile,More Business Mobile 50GB,150,0,40.0,,,No Lock-in,150,0,https://more.com.au/business/business-mobile-plans
+More,5G Mobile,More Business Mobile 75GB,150,0,46.0,,,No Lock-in,150,0,https://more.com.au/business/business-mobile-plans
+More,5G Mobile,More Business Mobile 100GB,150,0,52.0,,,No Lock-in,150,0,https://more.com.au/business/business-mobile-plans
+More,Fixed Wireless,More Fixed Wireless Fast,250,20,90.0,75.0,36 months,No Lock-in,250,20,https://more.com.au/personal/nbn-fixed-wireless
+More,5G Mobile,More Mobile 160GB,250,0,61.0,55.0,36 months,No Lock-in,250,0,https://more.com.au/personal/mobile-plans
+More,Business NBN,More Business Superfast,250,85,120.0,,,No Lock-in,250,85,https://more.com.au/business/business-nbn-plans
+More,Business Fixed Wireless,More Business Fixed Wireless Fast,250,20,100.0,,,No Lock-in,250,20,https://more.com.au/business/business-nbn-fixed-wireless
+More,5G Mobile,More Business Mobile 160GB,250,0,65.0,,,No Lock-in,250,0,https://more.com.au/business/business-mobile-plans
+More,Fixed Wireless,More Fixed Wireless Superfast,400,40,100.0,85.0,36 months,No Lock-in,400,40,https://more.com.au/personal/nbn-fixed-wireless
+More,Business Fixed Wireless,More Business Fixed Wireless Superfast,400,40,110.0,,,No Lock-in,400,40,https://more.com.au/business/business-nbn-fixed-wireless
+More,NBN,More Fast Max,500,42.5,90.0,75.0,36 months,No Lock-in,500,42.5,https://more.com.au/personal/nbn-plans
+More,Business NBN,More Business Fast Max,500,42.5,110.0,,,No Lock-in,500,42.5,https://more.com.au/business/business-nbn-plans
+More,Business NBN,More Business Ultrafast,500,170,150.0,,,No Lock-in,500,170,https://more.com.au/business/business-nbn-plans
+More,NBN,More Ultrafast,700,85,119.0,104.0,36 months,No Lock-in,700,85,https://more.com.au/personal/nbn-plans
+More,Business NBN,More Business Ultrafast Plus,700,340,180.0,,,No Lock-in,700,340,https://more.com.au/business/business-nbn-plans

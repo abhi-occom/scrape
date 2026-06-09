@@ -1,0 +1,42 @@
+provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
+More,Fixed Wireless,What do you need?,100,20,115.0,100.0,12 months,No lock-in / month-to-month,100,20,https://more.com.au/business/business-nbn-fixed-wireless
+More,Fixed Wireless,What do you need? - Fixed Wireless Value Plus,100,20,95.0,,12 months,No lock-in / month-to-month,100,20,https://more.com.au/business/business-nbn-fixed-wireless
+More,Fixed Wireless,NBN Key Fact Sheets - Fixed Wireless Fast,250,25,100.0,,12 months,No lock-in / month-to-month,250,25,https://more.com.au/business/business-nbn-fixed-wireless
+More,Fixed Wireless,NBN Key Fact Sheets - Fixed Wireless Superfast,400,0,110.0,,12 months,No lock-in / month-to-month,400,0,https://more.com.au/business/business-nbn-fixed-wireless
+More,5G,14GB,150,0,28.0,,12 months,No lock-in / month-to-month,150,0,https://more.com.au/business/business-nbn-fixed-wireless
+More,5G,30GB,150,0,33.0,,12 months,No lock-in / month-to-month,150,0,https://more.com.au/business/business-nbn-fixed-wireless
+More,5G,50GB,150,0,40.0,,12 months,No lock-in / month-to-month,150,0,https://more.com.au/business/business-nbn-fixed-wireless
+More,5G,75GB,150,0,46.0,,12 months,No lock-in / month-to-month,150,0,https://more.com.au/business/business-nbn-fixed-wireless
+More,5G,100GB,150,0,52.0,,12 months,No lock-in / month-to-month,150,0,https://more.com.au/business/business-nbn-fixed-wireless
+More,5G,160GB,250,25,65.0,,12 months,No lock-in / month-to-month,250,25,https://more.com.au/business/business-nbn-fixed-wireless
+More,NBN,Can't find your address? - Choose your business nbn® plan,500,50,185.0,115.0,12 months,No lock-in / month-to-month,500,50,https://more.com.au/business/business-nbn-plans
+More,NBN,Choose your business nbn® plan - Business Fast Max,500,50,110.0,,12 months,No lock-in / month-to-month,500,50,https://more.com.au/business/business-nbn-plans
+More,NBN,NBN Key Fact Sheet - Business Superfast,250,25,120.0,,12 months,No lock-in / month-to-month,250,25,https://more.com.au/business/business-nbn-plans
+More,NBN,NBN Key Fact Sheet - Business Ultrafast,500,50,150.0,,12 months,No lock-in / month-to-month,500,50,https://more.com.au/business/business-nbn-plans
+More,NBN,NBN Key Fact Sheet - Business Ultrafast Plus,700,0,180.0,,12 months,No lock-in / month-to-month,700,0,https://more.com.au/business/business-nbn-plans
+More,5G,mth,500,50,110.0,,12 months,No lock-in / month-to-month,500,50,https://more.com.au/business/business-nbn-plans?toggle=Commbank
+More,5G,mth,250,25,120.0,,12 months,No lock-in / month-to-month,250,25,https://more.com.au/business/business-nbn-plans?toggle=Commbank
+More,5G,mth,500,50,150.0,,12 months,No lock-in / month-to-month,500,50,https://more.com.au/business/business-nbn-plans?toggle=Commbank
+More,5G,mth,700,0,180.0,,12 months,No lock-in / month-to-month,700,0,https://more.com.au/business/business-nbn-plans?toggle=Commbank
+More,5G,14GB,150,0,22.0,,12 months,No lock-in / month-to-month,150,0,https://more.com.au/business/business-nbn-plans?toggle=Commbank
+More,5G,"for 12 months, then",150,0,28.0,,12 months,No lock-in / month-to-month,150,0,https://more.com.au/business/business-nbn-plans?toggle=Commbank
+More,5G,30GB,150,0,26.0,,12 months,No lock-in / month-to-month,150,0,https://more.com.au/business/business-nbn-plans?toggle=Commbank
+More,5G,"for 12 months, then",150,0,33.0,,12 months,No lock-in / month-to-month,150,0,https://more.com.au/business/business-nbn-plans?toggle=Commbank
+More,5G,50GB,150,0,32.0,,12 months,No lock-in / month-to-month,150,0,https://more.com.au/business/business-nbn-plans?toggle=Commbank
+More,5G,"for 12 months, then",150,0,40.0,,12 months,No lock-in / month-to-month,150,0,https://more.com.au/business/business-nbn-plans?toggle=Commbank
+More,5G,75GB,150,0,36.0,,12 months,No lock-in / month-to-month,150,0,https://more.com.au/business/business-nbn-plans?toggle=Commbank
+More,5G,"for 12 months, then",150,0,46.0,,12 months,No lock-in / month-to-month,150,0,https://more.com.au/business/business-nbn-plans?toggle=Commbank
+More,5G,100GB,150,0,41.0,,12 months,No lock-in / month-to-month,150,0,https://more.com.au/business/business-nbn-plans?toggle=Commbank
+More,5G,"for 12 months, then",150,0,52.0,,12 months,No lock-in / month-to-month,150,0,https://more.com.au/business/business-nbn-plans?toggle=Commbank
+More,5G,160GB,250,25,52.0,,12 months,No lock-in / month-to-month,250,25,https://more.com.au/business/business-nbn-plans?toggle=Commbank
+More,5G,"for 12 months, then",250,25,65.0,,12 months,No lock-in / month-to-month,250,25,https://more.com.au/business/business-nbn-plans?toggle=Commbank
+More,NBN,Can't find your address? - Choose your nbn® plan,25,5,125.0,80.0,36 months,No lock-in / month-to-month,25,5,https://more.com.au/personal/nbn-plans-wireless
+More,NBN,Choose your nbn® plan - Value,25,5,78.0,,36 months,No lock-in / month-to-month,25,5,https://more.com.au/personal/nbn-plans-wireless
+More,NBN,nbn® Key Fact Sheet - Value Plus,50,20,95.0,,36 months,No lock-in / month-to-month,50,20,https://more.com.au/personal/nbn-plans-wireless
+More,NBN,nbn® Key Fact Sheet - Fast Max,500,50,100.0,,36 months,No lock-in / month-to-month,500,50,https://more.com.au/personal/nbn-plans-wireless
+More,NBN,nbn® Key Fact Sheet - Ultrafast,700,0,129.0,,36 months,No lock-in / month-to-month,700,0,https://more.com.au/personal/nbn-plans-wireless
+More,5G,14GB,100,20,28.0,,36 months,No lock-in / month-to-month,100,20,https://more.com.au/personal/nbn-plans-wireless
+More,Fixed Wireless,Can't find your address? - Choose your nbn® plan,100,20,115.0,100.0,36 months,No lock-in / month-to-month,100,20,https://more.com.au/personal/nbn-fixed-wireless
+More,Fixed Wireless,Choose your nbn® plan - Fixed Wireless Value Plus,100,20,95.0,,36 months,No lock-in / month-to-month,100,20,https://more.com.au/personal/nbn-fixed-wireless
+More,Fixed Wireless,nbn® Key Fact Sheet - Fixed Wireless Fast,250,25,100.0,,36 months,No lock-in / month-to-month,250,25,https://more.com.au/personal/nbn-fixed-wireless
+More,Fixed Wireless,nbn® Key Fact Sheet - Fixed Wireless Superfast,400,0,110.0,,36 months,No lock-in / month-to-month,400,0,https://more.com.au/personal/nbn-fixed-wireless

@@ -1,0 +1,14 @@
+provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
+iprimus,NBN,nbn Standard,25,5,74.0,,,No Contract,25,5,https://www.iprimus.com.au/nbn-plans
+iprimus,NBN,nbn Standard Plus,50,17,87.0,,,No Contract,50,17,https://www.iprimus.com.au/nbn-plans
+iprimus,NBN,nbn Premium,100,17,97.0,,,No Contract,100,17,https://www.iprimus.com.au/nbn-plans
+iprimus,NBN,nbn Premium plus,500,47,97.0,,,No Contract,500,47,https://www.iprimus.com.au/nbn-plans
+iprimus,NBN,nbn Home Superfast,700,49,104.0,,,No Contract,700,49,https://www.iprimus.com.au/nbn-plans
+iprimus,NBN,nbn Home Ultrafast,840,94,119.0,,,No Contract,840,94,https://www.iprimus.com.au/nbn-plans
+iprimus,Fixed Wireless,Fixed Wireless Standard,25,5,74.0,,,No Contract,25,5,https://www.iprimus.com.au/nbn-plans
+iprimus,Fixed Wireless,Fixed Wireless Plus,50,17,84.0,,,No Contract,50,17,https://www.iprimus.com.au/nbn-plans
+iprimus,Fibre,Fibre Standard,50,17,74.0,,,No Contract,50,17,https://www.iprimus.com.au/nbn-plans
+iprimus,Fibre,Fibre Standard Plus,100,17,87.0,,,No Contract,100,17,https://www.iprimus.com.au/nbn-plans
+iprimus,Fibre,Fibre Premium,500,47,97.0,,,No Contract,500,47,https://www.iprimus.com.au/nbn-plans
+iprimus,Fibre,Fibre Home Superfast,700,49,104.0,,,No Contract,700,49,https://www.iprimus.com.au/nbn-plans
+iprimus,Fibre,Fibre Home Ultrafast,840,94,119.0,,,No Contract,840,94,https://www.iprimus.com.au/nbn-plans

@@ -1,0 +1,15 @@
+provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
+Alpha,Lynham Networks,Alpha Lynham Networks 50Mbps/20mbps,50,20,75.0,,,"Month to month, no cancellation fees; $66.00 setup fee",50,20,https://home.alpha.net.au/plans/plan-lynham-networks.html
+Alpha,Lynham Networks,Alpha Lynham Networks 100Mbps/20mbps,100,20,85.0,,,"Month to month, no cancellation fees; $66.00 setup fee",100,20,https://home.alpha.net.au/plans/plan-lynham-networks.html
+Alpha,Lynham Networks,Alpha Lynham Networks 200Mbps/25mbps,200,25,115.5,,,"Month to month, no cancellation fees; $66.00 setup fee",200,25,https://home.alpha.net.au/plans/plan-lynham-networks.html
+Alpha,NBN,Alpha NBN 25Mbps/5mbps,25,5,69.99,,,"Month to month, no cancellation fees",25,5,https://home.alpha.net.au/plans/plan-nbn.html
+Alpha,NBN,Alpha NBN 50Mbps/20Mbps,50,20,84.99,,,"Month to month, no cancellation fees",50,20,https://home.alpha.net.au/plans/plan-nbn.html
+Alpha,NBN,Alpha NBN 500mbps/50mbps,500,50,94.99,,,"Month to month, no cancellation fees",500,50,https://home.alpha.net.au/plans/plan-nbn.html
+Alpha,Opticomm,Alpha Opticomm 25Mbps/5Mbps,25,5,65.0,,,"Month to month, no cancellation fees; $110.00 setup fee",25,5,https://home.alpha.net.au/plans/plan-opticomm.html
+Alpha,Opticomm,Alpha Opticomm 50Mbps/20Mbps,50,20,75.0,,,"Month to month, no cancellation fees; $110.00 setup fee",50,20,https://home.alpha.net.au/plans/plan-opticomm.html
+Alpha,Opticomm,Alpha Opticomm 100Mbps/20Mbps,100,20,85.0,,,"Month to month, no cancellation fees; $110.00 setup fee",100,20,https://home.alpha.net.au/plans/plan-opticomm.html
+Alpha,Opticomm,Alpha Opticomm 250Mbps/25Mbps,250,25,109.0,,,"Month to month, no cancellation fees; $110.00 setup fee",250,25,https://home.alpha.net.au/plans/plan-opticomm.html
+Alpha,Supanetworks,Alpha Supanetworks 25Mbps/10Mbps,25,10,65.0,,,"Month to month, no cancellation fees; $15.00 setup fee",25,10,https://home.alpha.net.au/plans/plan-supanetworks.html
+Alpha,Supanetworks,Alpha Supanetworks 50Mbps/20Mbps,50,20,75.0,,,"Month to month, no cancellation fees; $15.00 setup fee",50,20,https://home.alpha.net.au/plans/plan-supanetworks.html
+Alpha,Supanetworks,Alpha Supanetworks 500mbps/500mbps,500,500,85.0,,,"Month to month, no cancellation fees; $15.00 setup fee",500,500,https://home.alpha.net.au/plans/plan-supanetworks.html
+Alpha,Supanetworks,Alpha Supanetworks 750mbps/750mbps,750,750,109.0,,,"Month to month, no cancellation fees; $15.00 setup fee",750,750,https://home.alpha.net.au/plans/plan-supanetworks.html

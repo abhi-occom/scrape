@@ -1,0 +1,8 @@
+provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
+kogan,4G,Kogan 4G Internet,20,1.9,54.9,49.9,12 months,No Contract,17,1.9,https://www.koganinternet.com.au/plans/
+kogan,NBN,Kogan Bronze,25,8.0,70.9,58.9,12 months,No Contract,25,8.0,https://www.koganinternet.com.au/plans/
+kogan,NBN,Kogan Silver,50,17.0,80.9,69.9,12 months,No Contract,50,17.0,https://www.koganinternet.com.au/plans/
+kogan,NBN,Kogan Gold,100,17.0,85.9,69.9,12 months,No Contract,99,17.0,https://www.koganinternet.com.au/plans/
+kogan,NBN,Kogan Gold Plus,500,42.0,85.9,69.9,12 months,No Contract,500,42.0,https://www.koganinternet.com.au/plans/
+kogan,NBN,Kogan Platinum,750,42.0,94.9,84.9,12 months,No Contract,740,42.0,https://www.koganinternet.com.au/plans/
+kogan,NBN,Kogan Diamond,1000,85.0,108.9,94.9,12 months,No Contract,850,85.0,https://www.koganinternet.com.au/plans/
