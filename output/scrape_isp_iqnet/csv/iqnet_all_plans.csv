@@ -1,0 +1,26 @@
+provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
+iqnet,ASN Telecom,IQNet ASN Networks Basic Speed,25,5,69.0,,,"No lock-in, unlimited data; $45 connection fee",25,5,https://iqnet.com.au/asn/
+iqnet,ASN Telecom,IQNet ASN Networks Standard Speed,50,20,75.0,,,"No lock-in, unlimited data; $45 connection fee",50,20,https://iqnet.com.au/asn/
+iqnet,ASN Telecom,IQNet ASN Networks Advance Speed,100,20,85.0,,,"No lock-in, unlimited data; $45 connection fee",100,20,https://iqnet.com.au/asn/
+iqnet,ASN Telecom,IQNet ASN Networks Extreme Speed,250,25,110.0,,,"No lock-in, unlimited data; $45 connection fee",250,25,https://iqnet.com.au/asn/
+iqnet,Lynham Networks,IQNet Lynham Networks Basic Speed,25,10,69.0,,,"No lock-in, unlimited data; $45 connection fee",25,10,https://iqnet.com.au/choose-iq-net-as-your-lynham-networks/
+iqnet,Lynham Networks,IQNet Lynham Networks Basic Boost,25,25,79.0,,,"No lock-in, unlimited data; $45 connection fee",25,25,https://iqnet.com.au/choose-iq-net-as-your-lynham-networks/
+iqnet,Lynham Networks,IQNet Lynham Networks Standard Speed,50,20,75.0,,,"No lock-in, unlimited data; $45 connection fee",50,20,https://iqnet.com.au/choose-iq-net-as-your-lynham-networks/
+iqnet,Lynham Networks,IQNet Lynham Networks Standard Boost,50,50,85.0,,,"No lock-in, unlimited data; $45 connection fee",50,50,https://iqnet.com.au/choose-iq-net-as-your-lynham-networks/
+iqnet,Lynham Networks,IQNet Lynham Networks Advance Speed,100,20,85.0,,,"No lock-in, unlimited data; $45 connection fee",100,20,https://iqnet.com.au/choose-iq-net-as-your-lynham-networks/
+iqnet,Lynham Networks,IQNet Lynham Networks Advance Boost,100,100,100.0,,,"No lock-in, unlimited data; $45 connection fee",100,100,https://iqnet.com.au/choose-iq-net-as-your-lynham-networks/
+iqnet,Lynham Networks,IQNet Lynham Networks Extreme Speed,200,25,110.0,,,"No lock-in, unlimited data; $45 connection fee",200,25,https://iqnet.com.au/choose-iq-net-as-your-lynham-networks/
+iqnet,Lynham Networks,IQNet Lynham Networks Extreme Boost,200,200,150.0,,,"No lock-in, unlimited data; $45 connection fee",200,200,https://iqnet.com.au/choose-iq-net-as-your-lynham-networks/
+iqnet,NBN,IQNet Broadband Basic Speed,25,10,69.0,,,"No lock-in, unlimited data",25,10,https://iqnet.com.au/nbn-co/
+iqnet,NBN,IQNet Broadband Standard Speed,50,20,75.0,,,"No lock-in, unlimited data",50,20,https://iqnet.com.au/nbn-co/
+iqnet,NBN,IQNet Broadband Advance Speed,100,40,85.0,,,"No lock-in, unlimited data",100,40,https://iqnet.com.au/nbn-co/
+iqnet,NBN,IQNet Fibre-HFC Broadband 500,500,50,85.0,,,"No lock-in, unlimited data",500,50,https://iqnet.com.au/nbn-co/
+iqnet,NBN,IQNet Fibre-HFC Broadband 1000,1000,100,130.0,,,"No lock-in, unlimited data",1000,100,https://iqnet.com.au/nbn-co/
+iqnet,SUPA Networks,IQNet Fibre Broadband Basic Speed,25,10,69.0,,,"No lock-in, unlimited data",25,10,https://iqnet.com.au/broadband/
+iqnet,SUPA Networks,IQNet Fibre Broadband Standard Speed,50,20,75.0,,,"No lock-in, unlimited data",50,20,https://iqnet.com.au/broadband/
+iqnet,SUPA Networks,IQNet Fibre Broadband Advance Speed,500,500,85.0,,,"No lock-in, unlimited data",500,500,https://iqnet.com.au/broadband/
+iqnet,SUPA Networks,IQNet Fibre Broadband Extreme Speed,1000,1000,130.0,,,"No lock-in, unlimited data",1000,1000,https://iqnet.com.au/broadband/
+iqnet,Vision Networks,IQNet Vision Networks Basic Speed,25,25,69.0,,,"No lock-in, unlimited data; $45 connection fee",25,25,https://iqnet.com.au/vision
+iqnet,Vision Networks,IQNet Vision Networks Standard Speed,50,50,75.0,,,"No lock-in, unlimited data; $45 connection fee",50,50,https://iqnet.com.au/vision
+iqnet,Vision Networks,IQNet Vision Networks Advance Speed,100,100,85.0,,,"No lock-in, unlimited data; $45 connection fee",100,100,https://iqnet.com.au/vision
+iqnet,Vision Networks,IQNet Vision Networks Extreme Speed,200,200,110.0,,,"No lock-in, unlimited data; $45 connection fee",200,200,https://iqnet.com.au/vision

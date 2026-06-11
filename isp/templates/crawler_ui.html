@@ -151,6 +151,38 @@
       font-weight: 700;
     }
 
+    .scrape-all-banner {
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 18px;
+      padding: 16px 20px;
+      color: #3d4863;
+      background: rgba(255, 255, 255, 0.72);
+      border: 2px solid #6578ff;
+      border-radius: 8px;
+      box-shadow: 0 8px 22px rgba(101, 120, 255, 0.18);
+      font-weight: 800;
+    }
+
+    .scrape-all-meta {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .scrape-all-clock {
+      color: #6578ff;
+      font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+      font-size: 1.45rem;
+      font-weight: 900;
+      letter-spacing: 0;
+      font-variant-numeric: tabular-nums;
+    }
+
     .crawl-timer {
       display: none;
       margin-top: 10px;
@@ -172,6 +204,94 @@
       border-radius: 8px;
       max-height: 230px;
       overflow-y: auto;
+    }
+
+    .batch-progress-panel {
+      display: none;
+      margin-top: 16px;
+      padding: 16px;
+      background: rgba(255, 255, 255, 0.64);
+      border: 1px solid rgba(23, 80, 115, 0.16);
+      border-radius: 8px;
+    }
+
+    .batch-progress-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .batch-progress-title {
+      font-weight: 900;
+    }
+
+    .batch-progress-pill {
+      padding: 5px 12px;
+      color: #fff;
+      background: #6578ff;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .batch-progress-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .batch-progress-card {
+      min-width: 0;
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.74);
+      border: 1px solid rgba(82, 103, 132, 0.14);
+      border-radius: 8px;
+    }
+
+    .batch-progress-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .batch-progress-card strong {
+      display: block;
+      margin-top: 5px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 0.95rem;
+    }
+
+    .batch-events {
+      max-height: 180px;
+      overflow-y: auto;
+      background: rgba(255, 255, 255, 0.52);
+      border: 1px solid rgba(82, 103, 132, 0.12);
+      border-radius: 8px;
+    }
+
+    .batch-event {
+      padding: 8px 10px;
+      color: #555;
+      border-bottom: 1px solid rgba(82, 103, 132, 0.1);
+      font-size: 0.88rem;
+      overflow-wrap: anywhere;
+    }
+
+    .batch-event:last-child {
+      border-bottom: 0;
+    }
+
+    .batch-event strong {
+      color: #555;
+      text-transform: uppercase;
     }
 
     .progress-list {
@@ -392,6 +512,15 @@
       .metric-grid {
         grid-template-columns: 1fr;
       }
+
+      .scrape-all-banner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .batch-progress-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -403,6 +532,14 @@
       <p>Enter an ISP website URL to discover plan pages, extract broadband prices, and review saved scrape runs from one dashboard.</p>
       <div class="export-actions">
         <a class="btn btn-sm" href="/isp/health">Scrape Health Report</a>
+      </div>
+    </section>
+
+    <section id="scrapeAllBanner" class="scrape-all-banner">
+      <div id="scrapeAllBannerText">Scraping in progress...</div>
+      <div class="scrape-all-meta">
+        <span>All providers</span>
+        <span id="scrapeAllClock" class="scrape-all-clock">00:00</span>
       </div>
     </section>
 
@@ -431,13 +568,17 @@
               </select>
             </div>
             <div class="col-12 d-grid">
-              <button type="submit" class="btn btn-primary btn-lg">Start Crawling</button>
+              <button id="startCrawlButton" type="submit" class="btn btn-primary btn-lg">Start Crawling</button>
+            </div>
+            <div class="col-12 d-grid">
+              <button id="scrapeAllButton" type="button" class="btn btn-primary btn-lg" onclick="startScrapeAll()">Scrape All Providers</button>
             </div>
           </form>
 
           <div id="status" class="status-card"></div>
           <div id="crawlTimer" class="crawl-timer">Elapsed: 00:00</div>
           <div id="progressPanel" class="progress-panel"></div>
+          <div id="batchProgressPanel" class="batch-progress-panel"></div>
         </div>
       </section>
 
@@ -462,6 +603,9 @@
   <script>
 let poll;
 let timer;
+let scrapeAllPoller;
+let scrapeAllTimer;
+let scrapeAllStartedAt = 0;
 let crawlStartedAt = 0;
 let currentResultPayload = null;
 let currentResultView = null;
@@ -497,6 +641,7 @@ document.getElementById('form').onsubmit = async (e) => {
   const name = document.getElementById('name').value;
   const depth = document.getElementById('depth').value;
   const networks = ['nbn','opticomm','redtrain','supa'];
+  setCrawlButtonsDisabled(true);
   setStatus('Starting...', 'starting');
   startCrawlTimer();
   renderProgress([{stage: 'starting', status: 'running', message: 'Starting crawl request.'}]);
@@ -509,6 +654,7 @@ document.getElementById('form').onsubmit = async (e) => {
   if(data.success) {
     poll = setInterval(checkStatus, 2000);
   } else {
+    setCrawlButtonsDisabled(false);
     stopCrawlTimer();
     setStatus('Error: ' + data.error, 'error');
   }
@@ -526,6 +672,7 @@ async function checkStatus() {
       currentResultFilename = '';
       showResults(data.result);
       loadSavedResults();
+      setCrawlButtonsDisabled(false);
     } else {
       setStatus('Error: ' + data.message, 'error');
       if(data.result) {
@@ -534,10 +681,84 @@ async function checkStatus() {
         showResults(data.result);
         loadSavedResults();
       }
+      setCrawlButtonsDisabled(false);
     }
   } else if(data.running) {
     setStatus('Running: ' + data.message, 'starting');
     updateCrawlTimer();
+  }
+}
+
+async function startScrapeAll() {
+  setCrawlButtonsDisabled(true);
+  currentResultFilename = '';
+  setStatus('Starting scrape all providers...', 'starting');
+  startScrapeAllTimer();
+  renderBatchProgress({
+    status: 'starting',
+    current_provider: '-',
+    current_url: '-',
+    plans_found: 0,
+    providers_done: 0,
+    providers_total: 0,
+    events: [{provider: 'All providers', status: 'running', message: 'Starting scrape all request.'}]
+  });
+
+  try {
+    const res = await fetch('/isp/api/crawl-all', { method: 'POST' });
+    const data = await res.json();
+    if(data.success || res.status === 409) {
+      scrapeAllPoller = setInterval(checkScrapeAllStatus, 1000);
+      checkScrapeAllStatus();
+      if(!data.success) {
+        setStatus(data.error || 'A scrape is already running.', 'starting');
+      }
+    } else {
+      stopScrapeAllTimer();
+      setCrawlButtonsDisabled(false);
+      setStatus('Error: ' + (data.error || 'Could not start scrape all.'), 'error');
+    }
+  } catch(e) {
+    stopScrapeAllTimer();
+    setCrawlButtonsDisabled(false);
+    setStatus('Error: Could not start scrape all providers.', 'error');
+  }
+}
+
+async function checkScrapeAllStatus() {
+  try {
+    const res = await fetch('/isp/api/crawl-all/status');
+    const data = await res.json();
+    if(!data.success) {
+      return;
+    }
+    renderBatchProgress(data);
+
+    if(data.running) {
+      setStatus('Running: ' + (data.message || 'Scraping all providers'), 'starting');
+      updateScrapeAllTimer();
+      return;
+    }
+
+    clearInterval(scrapeAllPoller);
+    scrapeAllPoller = null;
+    stopScrapeAllTimer();
+    setCrawlButtonsDisabled(false);
+
+    if(data.status === 'success' || data.status === 'partial_success') {
+      setStatus(data.message || 'Scrape all complete.', data.status === 'success' ? 'success' : 'starting');
+      await loadAllPlansSnapshot();
+      loadSavedResults();
+    } else if(data.status !== 'idle') {
+      setStatus('Error: ' + (data.message || 'Scrape all failed.'), 'error');
+      await loadAllPlansSnapshot();
+    }
+  } catch(e) {
+    clearInterval(scrapeAllPoller);
+    scrapeAllPoller = null;
+    stopScrapeAllTimer();
+    setCrawlButtonsDisabled(false);
+    setStatus('Error: Could not read scrape all status.', 'error');
   }
 }
 
@@ -572,11 +793,74 @@ function renderProgress(progress) {
   panel.innerHTML = html;
 }
 
+function renderBatchProgress(state) {
+  const panel = document.getElementById('batchProgressPanel');
+  const events = Array.isArray(state.events) ? state.events.slice(-14).reverse() : [];
+  panel.style.display = 'block';
+  panel.innerHTML = `<div class="batch-progress-top">
+    <div class="batch-progress-title">Live scrape progress</div>
+    <div class="batch-progress-pill">${escapeHtml(state.status || 'idle')}</div>
+  </div>
+  <div class="batch-progress-grid">
+    <div class="batch-progress-card"><span>Provider</span><strong title="${escapeHtml(state.current_provider || '-')}">${escapeHtml(state.current_provider || '-')}</strong></div>
+    <div class="batch-progress-card"><span>URL</span><strong title="${escapeHtml(state.current_url || '-')}">${escapeHtml(state.current_url || '-')}</strong></div>
+    <div class="batch-progress-card"><span>Plans Found</span><strong>${Number(state.plans_found || 0)}</strong></div>
+    <div class="batch-progress-card"><span>Providers Done</span><strong>${Number(state.providers_done || 0)} / ${Number(state.providers_total || 0)}</strong></div>
+  </div>
+  <div class="batch-events">
+    ${events.length ? events.map(renderBatchEvent).join('') : '<div class="batch-event">Waiting for scrape to start...</div>'}
+  </div>`;
+}
+
+function renderBatchEvent(event) {
+  const provider = event.provider || '-';
+  const status = event.status || '';
+  const message = event.message || '';
+  const url = event.url ? ` <span>${escapeHtml(event.url)}</span>` : '';
+  const plans = event.plans_found !== null && event.plans_found !== undefined
+    ? ` (${Number(event.plans_found || 0)} plans)`
+    : '';
+  return `<div class="batch-event"><strong>${escapeHtml(provider)}</strong> ${escapeHtml(status)} - ${escapeHtml(message)}${plans}${url}</div>`;
+}
+
+async function loadAllPlansSnapshot() {
+  const res = await fetch('/isp/api/all-plans');
+  const data = await res.json();
+  if(data.success) {
+    renderAllPlansSnapshot(data.data || {});
+  } else {
+    setStatus('Error: ' + (data.error || 'Could not load all plans.'), 'error');
+  }
+}
+
 function startCrawlTimer() {
   crawlStartedAt = Date.now();
   updateCrawlTimer();
   clearInterval(timer);
   timer = setInterval(updateCrawlTimer, 1000);
+}
+
+function startScrapeAllTimer() {
+  scrapeAllStartedAt = Date.now();
+  document.getElementById('scrapeAllBanner').style.display = 'flex';
+  document.getElementById('scrapeAllBannerText').textContent = 'Scraping in progress...';
+  updateScrapeAllTimer();
+  clearInterval(scrapeAllTimer);
+  scrapeAllTimer = setInterval(updateScrapeAllTimer, 1000);
+}
+
+function stopScrapeAllTimer() {
+  clearInterval(scrapeAllTimer);
+  scrapeAllTimer = null;
+  updateScrapeAllTimer();
+}
+
+function updateScrapeAllTimer() {
+  if(!scrapeAllStartedAt) {
+    return;
+  }
+  const elapsed = Math.max(0, Math.floor((Date.now() - scrapeAllStartedAt) / 1000));
+  document.getElementById('scrapeAllClock').textContent = formatElapsed(elapsed);
 }
 
 function stopCrawlTimer(finalSeconds) {
@@ -732,6 +1016,56 @@ function showResults(r) {
     html += '<div class="empty-state">No valid plans were found in this scrape.</div>';
   }
   document.getElementById('resultsContent').innerHTML = html;
+}
+
+function renderAllPlansSnapshot(snapshot) {
+  currentResultPayload = snapshot;
+  currentResultView = {
+    provider: 'All Providers',
+    plans: snapshot.plans || []
+  };
+  currentResultFilename = '';
+  document.getElementById('results').style.display='block';
+
+  const plans = Array.isArray(snapshot.plans) ? snapshot.plans : [];
+  const providers = Array.isArray(snapshot.providers) ? snapshot.providers : [];
+  let html = '<div class="mb-3"><h3 class="h4 mb-1">All Providers</h3>';
+  html += `<p class="text-secondary mb-0">${escapeHtml(snapshot.scraped_at || '')}</p></div>`;
+  html += `<div class="export-actions">
+    <button class="btn btn-sm" type="button" onclick="downloadCurrentJson()">Download JSON</button>
+    <button class="btn btn-sm" type="button" onclick="downloadCurrentCsv()">Download CSV</button>
+    <button class="btn btn-sm" type="button" onclick="copyCurrentApiResponse()">Copy JSON</button>
+  </div>`;
+  html += `<div class="metric-grid">
+    <div class="metric"><span>Providers</span><strong>${providers.length || Number(snapshot.total_providers || 0)}</strong></div>
+    <div class="metric"><span>Total Plans</span><strong>${plans.length || Number(snapshot.total_plans || 0)}</strong></div>
+    <div class="metric"><span>Source</span><strong>${escapeHtml(snapshot.source || '-')}</strong></div>
+    <div class="metric"><span>Saved File</span><strong>all_plans.json</strong></div>
+  </div>`;
+
+  if(plans.length) {
+    html += '<div class="table-wrap mt-3"><table class="table table-hover align-middle"><thead><tr>';
+    PLAN_COLUMNS.forEach(column => {
+      html += `<th>${column}</th>`;
+    });
+    html += '</tr></thead><tbody>';
+    plans.forEach(plan => {
+      html += '<tr>';
+      PLAN_COLUMNS.forEach(column => {
+        html += `<td>${escapeHtml(normaliseDisplayValue(plan, column))}</td>`;
+      });
+      html += '</tr>';
+    });
+    html += '</tbody></table></div>';
+  } else {
+    html += '<div class="empty-state">No plans were found in all_plans.json.</div>';
+  }
+  document.getElementById('resultsContent').innerHTML = html;
+}
+
+function setCrawlButtonsDisabled(disabled) {
+  document.getElementById('startCrawlButton').disabled = disabled;
+  document.getElementById('scrapeAllButton').disabled = disabled;
 }
 
 function renderConfidenceReport(result) {

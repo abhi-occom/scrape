@@ -1,36 +1,36 @@
 {
-  "scraped_at": "2026-06-08_07-08-18",
+  "scraped_at": "2026-06-11_08-28-11",
   "source": "isp_crawler_latest_files",
   "total_providers": 32,
-  "total_plans": 398,
+  "total_plans": 391,
   "providers": [
     {
       "provider": "Activ8me",
       "base_url": "https://www.activ8me.net.au",
       "latest_file": "activ8me_latest.json",
-      "plans_count": 5,
-      "started_at": "2026-06-07T15:38:00.429599"
+      "plans_count": 9,
+      "started_at": "2026-06-11T08:27:49.358972"
     },
     {
       "provider": "Airtel",
-      "base_url": "https://airtel.au",
+      "base_url": "https://airtel.au/mobile",
       "latest_file": "airtel_latest.json",
       "plans_count": 37,
-      "started_at": "2026-06-07T16:54:10.471215"
+      "started_at": "2026-06-09T19:28:10.720076"
     },
     {
       "provider": "Alpha",
-      "base_url": "https://www.alpha.net.au",
+      "base_url": "https://home.alpha.net.au/plans/plan-supanetworks.html",
       "latest_file": "alpha_latest.json",
       "plans_count": 14,
-      "started_at": "2026-06-07T17:05:01.350981"
+      "started_at": "2026-06-09T19:29:10.153543"
     },
     {
       "provider": "Aussie",
-      "base_url": "https://www.aussiebroadband.com.au/",
+      "base_url": "https://www.aussiebroadband.com.au/internet/nbn-plans",
       "latest_file": "aussie_latest.json",
       "plans_count": 25,
-      "started_at": "2026-06-08T07:08:18.097544"
+      "started_at": "2026-06-09T19:14:44.713773"
     },
     {
       "provider": "Blitznet",
@@ -44,7 +44,7 @@
       "base_url": "https://city7net.com.au",
       "latest_file": "city7net_latest.json",
       "plans_count": 4,
-      "started_at": "2026-06-07T17:09:53.972940"
+      "started_at": "2026-06-09T19:29:20.034013"
     },
     {
       "provider": "Clevernet",
@@ -55,129 +55,129 @@
     },
     {
       "provider": "Dodo",
-      "base_url": "https://www.dodo.com",
+      "base_url": "https://www.dodo.com/nbn",
       "latest_file": "dodo_latest.json",
       "plans_count": 8,
-      "started_at": "2026-06-07T16:09:20.517488"
+      "started_at": "2026-06-09T19:22:32.876693"
     },
     {
       "provider": "Epsinet",
       "base_url": "https://epsinet.com.au",
       "latest_file": "epsinet_latest.json",
       "plans_count": 4,
-      "started_at": "2026-06-07T17:19:25.237879"
+      "started_at": "2026-06-09T19:29:25.738460"
     },
     {
       "provider": "Exetel",
-      "base_url": "https://www.exetel.com.au",
+      "base_url": "https://www.exetel.com.au/broadband/nbn",
       "latest_file": "exetel_latest.json",
-      "plans_count": 3,
-      "started_at": "2026-06-07T14:52:43.345654"
+      "plans_count": 2,
+      "started_at": "2026-06-09T19:19:31.286021"
     },
     {
       "provider": "Iinet",
-      "base_url": "https://www.iinet.net.au",
+      "base_url": "https://www.iinet.net.au/internet-product",
       "latest_file": "iinet_latest.json",
       "plans_count": 9,
-      "started_at": "2026-06-07T14:55:08.845226"
+      "started_at": "2026-06-09T19:20:58.119086"
     },
     {
       "provider": "Iprimus",
-      "base_url": "https://www.iprimus.com.au",
+      "base_url": "https://www.iprimus.com.au/nbn-plans",
       "latest_file": "iprimus_latest.json",
       "plans_count": 13,
-      "started_at": "2026-06-07T15:23:12.773500"
+      "started_at": "2026-06-09T19:22:10.136439"
     },
     {
       "provider": "Iqnet",
-      "base_url": "https://iqnet.com.au",
+      "base_url": "https://iqnet.com.au/broadband",
       "latest_file": "iqnet_latest.json",
       "plans_count": 25,
-      "started_at": "2026-06-07T17:26:07.178030"
+      "started_at": "2026-06-09T19:29:31.799217"
     },
     {
       "provider": "Kogan",
-      "base_url": "https://www.koganinternet.com.au",
+      "base_url": "https://www.koganinternet.com.au/plans",
       "latest_file": "kogan_latest.json",
       "plans_count": 7,
-      "started_at": "2026-06-07T16:40:53.177299"
+      "started_at": "2026-06-09T19:22:56.267477"
     },
     {
       "provider": "Leaptel",
-      "base_url": "https://leaptel.com.au",
+      "base_url": "https://leaptel.com.au/plans/?provider=nbn",
       "latest_file": "leaptel_latest.json",
       "plans_count": 16,
-      "started_at": "2026-06-07T14:56:46.117508"
+      "started_at": "2026-06-09T19:20:11.896831"
     },
     {
       "provider": "Mate",
-      "base_url": "https://www.letsbemates.com.au",
+      "base_url": "https://www.letsbemates.com.au/mate/crikey-nbn-25-10",
       "latest_file": "mate_latest.json",
       "plans_count": 7,
-      "started_at": "2026-06-07T16:13:18.001218"
+      "started_at": "2026-06-09T19:25:20.752922"
     },
     {
       "provider": "More",
-      "base_url": "https://more.com.au",
+      "base_url": "https://more.com.au/personal/nbn-plans",
       "latest_file": "more_latest.json",
       "plans_count": 26,
-      "started_at": "2026-06-07T16:38:15.182232"
+      "started_at": "2026-06-09T19:23:23.030593"
     },
     {
       "provider": "Newausfiber",
       "base_url": "https://newausfiber.com.au",
       "latest_file": "newausfiber_latest.json",
       "plans_count": 4,
-      "started_at": "2026-06-07T17:30:41.615125"
+      "started_at": "2026-06-09T19:29:54.662752"
     },
     {
       "provider": "Occom",
-      "base_url": "https://occom.com.au",
+      "base_url": "https://occom.com.au/nbn-plans",
       "latest_file": "occom_latest.json",
       "plans_count": 31,
-      "started_at": "2026-06-07T15:45:12.211476"
+      "started_at": "2026-06-09T19:15:19.550020"
     },
     {
       "provider": "Optus",
-      "base_url": "https://www.optus.com.au",
+      "base_url": "https://www.optus.com.au/internet/nbn",
       "latest_file": "optus_latest.json",
       "plans_count": 5,
-      "started_at": "2026-06-07T16:05:14.341882"
+      "started_at": "2026-06-09T19:14:27.757929"
     },
     {
       "provider": "Origin",
-      "base_url": "https://www.originenergy.com.au",
+      "base_url": "https://www.originenergy.com.au/internet/plans",
       "latest_file": "origin_latest.json",
       "plans_count": 9,
-      "started_at": "2026-06-07T16:42:41.190890"
+      "started_at": "2026-06-09T19:27:33.732831"
     },
     {
       "provider": "Spintel",
-      "base_url": "https://www.spintel.net.au",
+      "base_url": "https://www.spintel.net.au/home-internet/nbn",
       "latest_file": "spintel_latest.json",
       "plans_count": 3,
-      "started_at": "2026-06-07T16:40:06.835593"
+      "started_at": "2026-06-09T19:27:06.554324"
     },
     {
       "provider": "Superloop",
-      "base_url": "https://www.superloop.com",
+      "base_url": "https://www.superloop.com/internet/nbn",
       "latest_file": "superloop_latest.json",
       "plans_count": 28,
-      "started_at": "2026-06-07T16:11:13.682423"
+      "started_at": "2026-06-09T19:14:45.823602"
     },
     {
       "provider": "Swoop",
-      "base_url": "https://www.swoop.com.au",
+      "base_url": "https://www.swoop.com.au/nbn",
       "latest_file": "swoop_latest.json",
       "plans_count": 12,
-      "started_at": "2026-06-07T14:58:24.893493"
+      "started_at": "2026-06-09T19:21:37.660507"
     },
     {
       "provider": "Tangerine",
-      "base_url": "https://www.tangerine.com.au",
+      "base_url": "https://www.tangerine.com.au/nbn/nbn-broadband",
       "latest_file": "tangerine_latest.json",
       "plans_count": 9,
-      "started_at": "2026-06-07T16:10:08.678662"
+      "started_at": "2026-06-09T19:24:43.375092"
     },
     {
       "provider": "Teletech",
@@ -188,17 +188,17 @@
     },
     {
       "provider": "Telstra",
-      "base_url": "https://www.telstra.com.au",
+      "base_url": "https://www.telstra.com.au/internet/plans",
       "latest_file": "telstra_latest.json",
       "plans_count": 46,
-      "started_at": "2026-06-07T15:39:00.976092"
+      "started_at": "2026-06-09T19:13:16.368586"
     },
     {
       "provider": "Tpg",
-      "base_url": "https://www.tpg.com.au",
+      "base_url": "https://www.tpg.com.au/nbn",
       "latest_file": "tpg_latest.json",
-      "plans_count": 13,
-      "started_at": "2026-06-07T15:24:18.043080"
+      "plans_count": 3,
+      "started_at": "2026-06-09T19:17:32.545557"
     },
     {
       "provider": "Unitiinternet",
@@ -209,10 +209,10 @@
     },
     {
       "provider": "Vocphone",
-      "base_url": "https://vocphone.com",
+      "base_url": "https://vocphone.com/nbn-plans",
       "latest_file": "vocphone_latest.json",
       "plans_count": 8,
-      "started_at": "2026-06-07T17:53:31.373733"
+      "started_at": "2026-06-09T19:30:02.560498"
     },
     {
       "provider": "Wavezone",
@@ -236,7 +236,7 @@
       "plan_name": "Standard 25 Unlimited Data Allowance",
       "download_speed": 25,
       "upload_speed": 10,
-      "price": 69.95,
+      "price": 74.95,
       "promo_price": 54.95,
       "promo_period": "6 months",
       "contract": "Month-to-Month",
@@ -250,9 +250,9 @@
       "plan_name": "Standard 50 Unlimited Data Allowance",
       "download_speed": 50,
       "upload_speed": 20,
-      "price": 74.95,
-      "promo_price": null,
-      "promo_period": null,
+      "price": 84.95,
+      "promo_price": 74.95,
+      "promo_period": "6 months",
       "contract": "Month-to-Month",
       "typical_evening_dl": 47,
       "typical_evening_ul": 17,
@@ -264,7 +264,7 @@
       "plan_name": "Home Fast 100 Unlimited Data Allowance",
       "download_speed": 100,
       "upload_speed": 20,
-      "price": 94.95,
+      "price": 99.95,
       "promo_price": 84.95,
       "promo_period": "6 months",
       "contract": "Month-to-Month",
@@ -278,7 +278,7 @@
       "plan_name": "Home Fast 500 Unlimited Data Allowance",
       "download_speed": 500,
       "upload_speed": 50,
-      "price": 94.95,
+      "price": 99.95,
       "promo_price": 84.95,
       "promo_period": "6 months",
       "contract": "Month-to-Month",
@@ -292,13 +292,69 @@
       "plan_name": "Super Fast 750 Unlimited Data Allowance",
       "download_speed": 750,
       "upload_speed": 50,
-      "price": 109.95,
+      "price": 114.95,
       "promo_price": null,
       "promo_period": null,
       "contract": "Month-to-Month",
       "typical_evening_dl": 575,
       "typical_evening_ul": 42,
       "source_url": "https://www.activ8me.net.au/internet/nbn-fibre-fttp-hfc"
+    },
+    {
+      "provider": "activ8me",
+      "network_type": "Opticomm",
+      "plan_name": "Basic 12",
+      "download_speed": 12,
+      "upload_speed": 1,
+      "price": 64.95,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": "Month-to-Month",
+      "typical_evening_dl": 7,
+      "typical_evening_ul": 0.85,
+      "source_url": "https://www.activ8me.net.au/internet/opticomm-fibre-vdsl"
+    },
+    {
+      "provider": "activ8me",
+      "network_type": "Opticomm",
+      "plan_name": "Standard 25",
+      "download_speed": 25,
+      "upload_speed": 5,
+      "price": 69.95,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": "Month-to-Month",
+      "typical_evening_dl": 23,
+      "typical_evening_ul": 4.25,
+      "source_url": "https://www.activ8me.net.au/internet/opticomm-fibre-vdsl"
+    },
+    {
+      "provider": "activ8me",
+      "network_type": "Opticomm",
+      "plan_name": "Standard 50",
+      "download_speed": 50,
+      "upload_speed": 20,
+      "price": 84.95,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": "Month-to-Month",
+      "typical_evening_dl": 39,
+      "typical_evening_ul": 17,
+      "source_url": "https://www.activ8me.net.au/internet/opticomm-fibre-vdsl"
+    },
+    {
+      "provider": "activ8me",
+      "network_type": "Opticomm",
+      "plan_name": "Home Fast 500",
+      "download_speed": 500,
+      "upload_speed": 50,
+      "price": 104.95,
+      "promo_price": 89.95,
+      "promo_period": "6 months",
+      "contract": "Month-to-Month",
+      "typical_evening_dl": 329,
+      "typical_evening_ul": 42,
+      "source_url": "https://www.activ8me.net.au/internet/opticomm-fibre-vdsl"
     },
     {
       "provider": "Airtel",
@@ -1701,20 +1757,6 @@
       "source_url": "https://www.exetel.com.au/broadband/nbn-fibre-upgrade"
     },
     {
-      "provider": "exetel",
-      "network_type": "5G Mobile",
-      "plan_name": "PLUS ONE 130GB",
-      "download_speed": 150,
-      "upload_speed": 0,
-      "price": 40.0,
-      "promo_price": null,
-      "promo_period": "",
-      "contract": "No Lock-in",
-      "typical_evening_dl": 150,
-      "typical_evening_ul": 0,
-      "source_url": "https://www.exetel.com.au/mobilephone"
-    },
-    {
       "provider": "iinet",
       "network_type": "5G Home Broadband",
       "plan_name": "5G Plus",
@@ -2798,9 +2840,9 @@
       "plan_name": "More Value",
       "download_speed": 25,
       "upload_speed": 8.5,
-      "price": 68.0,
-      "promo_price": 53.0,
-      "promo_period": "36 months",
+      "price": 78.0,
+      "promo_price": null,
+      "promo_period": null,
       "contract": "No Lock-in",
       "typical_evening_dl": 25,
       "typical_evening_ul": 8.5,
@@ -2812,9 +2854,9 @@
       "plan_name": "More Value Plus",
       "download_speed": 50,
       "upload_speed": 17,
-      "price": 85.0,
-      "promo_price": 70.0,
-      "promo_period": "36 months",
+      "price": 95.0,
+      "promo_price": null,
+      "promo_period": null,
       "contract": "No Lock-in",
       "typical_evening_dl": 50,
       "typical_evening_ul": 17,
@@ -2826,9 +2868,9 @@
       "plan_name": "More Fixed Wireless Value Plus",
       "download_speed": 100,
       "upload_speed": 20,
-      "price": 85.0,
-      "promo_price": 70.0,
-      "promo_period": "36 months",
+      "price": 95.0,
+      "promo_price": null,
+      "promo_period": null,
       "contract": "No Lock-in",
       "typical_evening_dl": 100,
       "typical_evening_ul": 20,
@@ -2994,9 +3036,9 @@
       "plan_name": "More Fixed Wireless Fast",
       "download_speed": 250,
       "upload_speed": 20,
-      "price": 90.0,
-      "promo_price": 75.0,
-      "promo_period": "36 months",
+      "price": 100.0,
+      "promo_price": null,
+      "promo_period": null,
       "contract": "No Lock-in",
       "typical_evening_dl": 250,
       "typical_evening_ul": 20,
@@ -3064,9 +3106,9 @@
       "plan_name": "More Fixed Wireless Superfast",
       "download_speed": 400,
       "upload_speed": 40,
-      "price": 100.0,
-      "promo_price": 85.0,
-      "promo_period": "36 months",
+      "price": 110.0,
+      "promo_price": null,
+      "promo_period": null,
       "contract": "No Lock-in",
       "typical_evening_dl": 400,
       "typical_evening_ul": 40,
@@ -3092,9 +3134,9 @@
       "plan_name": "More Fast Max",
       "download_speed": 500,
       "upload_speed": 42.5,
-      "price": 90.0,
-      "promo_price": 75.0,
-      "promo_period": "36 months",
+      "price": 100.0,
+      "promo_price": null,
+      "promo_period": null,
       "contract": "No Lock-in",
       "typical_evening_dl": 500,
       "typical_evening_ul": 42.5,
@@ -3134,9 +3176,9 @@
       "plan_name": "More Ultrafast",
       "download_speed": 700,
       "upload_speed": 85,
-      "price": 119.0,
-      "promo_price": 104.0,
-      "promo_period": "36 months",
+      "price": 129.0,
+      "promo_price": null,
+      "promo_period": null,
       "contract": "No Lock-in",
       "typical_evening_dl": 700,
       "typical_evening_ul": 85,
@@ -4686,20 +4728,6 @@
       "provider": "Telstra",
       "network_type": "NBN",
       "plan_name": "Basic nbn® Internet Only",
-      "download_speed": 25,
-      "upload_speed": 4,
-      "price": 85.0,
-      "promo_price": null,
-      "promo_period": null,
-      "contract": "No Lock-in",
-      "typical_evening_dl": 25,
-      "typical_evening_ul": 4,
-      "source_url": "https://www.telstra.com.au/internet/plans"
-    },
-    {
-      "provider": "Telstra",
-      "network_type": "NBN",
-      "plan_name": "Basic nbn® Internet Only",
       "download_speed": 23,
       "upload_speed": 3,
       "price": 85.0,
@@ -4708,6 +4736,20 @@
       "contract": "No Lock-in",
       "typical_evening_dl": 23,
       "typical_evening_ul": 3,
+      "source_url": "https://www.telstra.com.au/internet/plans"
+    },
+    {
+      "provider": "Telstra",
+      "network_type": "NBN",
+      "plan_name": "Basic nbn® Internet Only",
+      "download_speed": 25,
+      "upload_speed": 4,
+      "price": 85.0,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": "No Lock-in",
+      "typical_evening_dl": 25,
+      "typical_evening_ul": 4,
       "source_url": "https://www.telstra.com.au/internet/plans"
     },
     {
@@ -5272,146 +5314,6 @@
     },
     {
       "provider": "Tpg",
-      "network_type": "NBN",
-      "plan_name": "NBN50",
-      "download_speed": 50.0,
-      "upload_speed": 17.0,
-      "price": 84.99,
-      "promo_price": 64.99,
-      "promo_period": "6 months",
-      "contract": "No Lock-in",
-      "typical_evening_dl": 50.0,
-      "typical_evening_ul": 17.0,
-      "source_url": "https://www.tpg.com.au/nbn"
-    },
-    {
-      "provider": "Tpg",
-      "network_type": "NBN",
-      "plan_name": "NBN100",
-      "download_speed": 97.0,
-      "upload_speed": 17.0,
-      "price": 94.99,
-      "promo_price": 64.99,
-      "promo_period": "6 months",
-      "contract": "No Lock-in",
-      "typical_evening_dl": 97.0,
-      "typical_evening_ul": 17.0,
-      "source_url": "https://www.tpg.com.au/nbn"
-    },
-    {
-      "provider": "Tpg",
-      "network_type": "NBN",
-      "plan_name": "NBN500",
-      "download_speed": 500.0,
-      "upload_speed": 42.0,
-      "price": 94.99,
-      "promo_price": 64.99,
-      "promo_period": "6 months",
-      "contract": "No Lock-in",
-      "typical_evening_dl": 500.0,
-      "typical_evening_ul": 42.0,
-      "source_url": "https://www.tpg.com.au/nbn"
-    },
-    {
-      "provider": "Tpg",
-      "network_type": "NBN",
-      "plan_name": "NBN12",
-      "download_speed": 12.0,
-      "upload_speed": 0.8,
-      "price": 74.99,
-      "promo_price": 54.99,
-      "promo_period": "6 months",
-      "contract": "No Lock-in",
-      "typical_evening_dl": 12.0,
-      "typical_evening_ul": 0.8,
-      "source_url": "https://www.tpg.com.au/nbn"
-    },
-    {
-      "provider": "Tpg",
-      "network_type": "NBN",
-      "plan_name": "NBN25",
-      "download_speed": 25.0,
-      "upload_speed": 4.0,
-      "price": 76.99,
-      "promo_price": 56.99,
-      "promo_period": "6 months",
-      "contract": "No Lock-in",
-      "typical_evening_dl": 25.0,
-      "typical_evening_ul": 4.0,
-      "source_url": "https://www.tpg.com.au/nbn"
-    },
-    {
-      "provider": "Tpg",
-      "network_type": "NBN",
-      "plan_name": "NBN Home Superfast",
-      "download_speed": 740.0,
-      "upload_speed": 42.0,
-      "price": 99.99,
-      "promo_price": 69.99,
-      "promo_period": "6 months",
-      "contract": "No Lock-in",
-      "typical_evening_dl": 740.0,
-      "typical_evening_ul": 42.0,
-      "source_url": "https://www.tpg.com.au/nbn"
-    },
-    {
-      "provider": "Tpg",
-      "network_type": "NBN",
-      "plan_name": "NBN Home Ultrafast",
-      "download_speed": 820.0,
-      "upload_speed": 85.0,
-      "price": 109.99,
-      "promo_price": 79.99,
-      "promo_period": "6 months",
-      "contract": "No Lock-in",
-      "typical_evening_dl": 820.0,
-      "typical_evening_ul": 85.0,
-      "source_url": "https://www.tpg.com.au/nbn"
-    },
-    {
-      "provider": "Tpg",
-      "network_type": "4G Home Wireless",
-      "plan_name": "Home Wireless Broadband",
-      "download_speed": 15.0,
-      "upload_speed": 1.9,
-      "price": 54.99,
-      "promo_price": 44.99,
-      "promo_period": "6 months",
-      "contract": "No Lock-in",
-      "typical_evening_dl": 15.0,
-      "typical_evening_ul": 1.9,
-      "source_url": "https://www.tpg.com.au/home-wireless-broadband"
-    },
-    {
-      "provider": "Tpg",
-      "network_type": "5G",
-      "plan_name": "5G Home Broadband Plus",
-      "download_speed": 50.0,
-      "upload_speed": 16.0,
-      "price": 59.99,
-      "promo_price": 29.99,
-      "promo_period": "6 months",
-      "contract": "No Lock-in",
-      "typical_evening_dl": 50.0,
-      "typical_evening_ul": 16.0,
-      "source_url": "https://www.tpg.com.au/5g-home-broadband"
-    },
-    {
-      "provider": "Tpg",
-      "network_type": "5G",
-      "plan_name": "5G Home Broadband Premium",
-      "download_speed": 100.0,
-      "upload_speed": 17.0,
-      "price": 64.99,
-      "promo_price": 34.99,
-      "promo_period": "6 months",
-      "contract": "No Lock-in",
-      "typical_evening_dl": 100.0,
-      "typical_evening_ul": 17.0,
-      "source_url": "https://www.tpg.com.au/5g-home-broadband"
-    },
-    {
-      "provider": "Tpg",
       "network_type": "FTTB",
       "plan_name": "FTTB25",
       "download_speed": 25.0,
@@ -5428,13 +5330,13 @@
       "provider": "Tpg",
       "network_type": "FTTB",
       "plan_name": "FTTB100",
-      "download_speed": 91.0,
+      "download_speed": 100.0,
       "upload_speed": 25.0,
       "price": 74.99,
       "promo_price": null,
       "promo_period": "",
       "contract": "No Lock-in",
-      "typical_evening_dl": 91.0,
+      "typical_evening_dl": 100.0,
       "typical_evening_ul": 25.0,
       "source_url": "https://www.tpg.com.au/fttb"
     },
@@ -5442,13 +5344,13 @@
       "provider": "Tpg",
       "network_type": "FTTB",
       "plan_name": "FTTB Max",
-      "download_speed": 500.0,
+      "download_speed": 700.0,
       "upload_speed": 25.0,
       "price": 79.99,
       "promo_price": null,
       "promo_period": "",
       "contract": "No Lock-in",
-      "typical_evening_dl": 500.0,
+      "typical_evening_dl": 700.0,
       "typical_evening_ul": 25.0,
       "source_url": "https://www.tpg.com.au/fttb"
     },

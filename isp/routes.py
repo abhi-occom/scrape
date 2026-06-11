@@ -11,12 +11,14 @@ Mount these in the main app.py via:
 import os
 import json
 import threading
+from datetime import datetime
 from flask import Blueprint, request, jsonify, render_template
 
 import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from isp.main_crawler import ISPCrawler, OUTPUT_DIR
+from config import PROVIDERS
+from isp.main_crawler import ISPCrawler, OUTPUT_DIR, ALL_PLANS_JSON_PATH, PLAN_FIELDS
 
 
 isp_bp = Blueprint(
@@ -35,6 +37,52 @@ _crawl_state = {
     'message': '',
     'progress': [],
     'result': None,
+}
+
+_crawl_all_state = {
+    'running': False,
+    'status': 'idle',
+    'message': '',
+    'current_provider': None,
+    'current_url': None,
+    'plans_found': 0,
+    'providers_total': 0,
+    'providers_done': 0,
+    'total_plans': 0,
+    'started_at': None,
+    'finished_at': None,
+    'events': [],
+    'errors': [],
+    'result': None,
+}
+
+PROVIDER_CRAWL_URLS = {
+    'telstra': 'https://www.telstra.com.au/internet/plans',
+    'optus': 'https://www.optus.com.au/internet/nbn',
+    'aussie': 'https://www.aussiebroadband.com.au/internet/nbn-plans/',
+    'superloop': 'https://www.superloop.com/internet/nbn/',
+    'occom': 'https://occom.com.au/nbn-plans/',
+    'tpg': 'https://www.tpg.com.au/nbn',
+    'exetel': 'https://www.exetel.com.au/broadband/nbn',
+    'leaptel': 'https://leaptel.com.au/plans/?provider=nbn',
+    'iinet': 'https://www.iinet.net.au/internet-product',
+    'swoop': 'https://www.swoop.com.au/nbn/',
+    'iprimus': 'https://www.iprimus.com.au/nbn-plans',
+    'dodo': 'https://www.dodo.com/nbn',
+    'kogan': 'https://www.koganinternet.com.au/plans/',
+    'more': 'https://more.com.au/personal/nbn-plans',
+    'tangerine': 'https://www.tangerine.com.au/nbn/nbn-broadband',
+    'mate': 'https://www.letsbemates.com.au/mate/crikey-nbn-25-10/',
+    'spintel': 'https://www.spintel.net.au/home-internet/nbn',
+    'origin': 'https://www.originenergy.com.au/internet/plans/',
+    'airtel': 'https://airtel.au/mobile',
+    'alpha': 'https://home.alpha.net.au/plans/plan-supanetworks.html',
+    'city7net': 'https://city7net.com.au/',
+    'epsinet': 'https://epsinet.com.au/',
+    'iqnet': 'https://iqnet.com.au/broadband/',
+    'newausfiber': 'https://newausfiber.com.au/',
+    'vocphone': 'https://vocphone.com/nbn-plans',
+    'activ8me': 'https://www.activ8me.net.au/internet/nbn-fibre-fttp-hfc',
 }
 
 
@@ -68,7 +116,7 @@ def api_start_crawl():
         }
     """
     with _crawl_lock:
-        if _crawl_state['running']:
+        if _crawl_state['running'] or _crawl_all_state['running']:
             return jsonify({
                 'success': False,
                 'error': 'A crawl is already running. Wait for it to finish.',
@@ -112,6 +160,316 @@ def api_start_crawl():
         'message': f'Crawl started for {base_url}',
         'status': 'starting',
     })
+
+
+@isp_bp.route('/api/crawl-all', methods=['POST'])
+def api_start_crawl_all():
+    """Start a background crawl across every enabled provider URL."""
+    with _crawl_lock:
+        if _crawl_state['running'] or _crawl_all_state['running']:
+            return jsonify({
+                'success': False,
+                'error': 'A crawl is already running. Wait for it to finish.',
+            }), 409
+
+        providers = _enabled_provider_crawl_targets()
+        if not providers:
+            return jsonify({
+                'success': False,
+                'error': 'No enabled providers have crawl URLs configured.',
+            }), 400
+
+        _crawl_all_state.update({
+            'running': True,
+            'status': 'starting',
+            'message': f'Starting scrape all for {len(providers)} providers',
+            'current_provider': None,
+            'current_url': None,
+            'plans_found': 0,
+            'providers_total': len(providers),
+            'providers_done': 0,
+            'total_plans': 0,
+            'started_at': datetime.now().isoformat(),
+            'finished_at': None,
+            'events': [],
+            'errors': [],
+            'result': None,
+        })
+        _append_crawl_all_event(
+            provider='All providers',
+            status='running',
+            message=f'Starting scrape all for {len(providers)} providers',
+        )
+
+    thread = threading.Thread(
+        target=_run_crawl_all_async,
+        args=(providers,),
+        daemon=True,
+    )
+    thread.start()
+
+    return jsonify({
+        'success': True,
+        'message': f'Scrape all started for {len(providers)} providers',
+        'providers_total': len(providers),
+        'status': 'starting',
+    })
+
+
+@isp_bp.route('/api/crawl-all/status', methods=['GET'])
+def api_crawl_all_status():
+    """Get current scrape-all status and batch results."""
+    with _crawl_lock:
+        return jsonify({
+            'success': True,
+            **_crawl_all_state,
+        })
+
+
+@isp_bp.route('/api/all-plans', methods=['GET'])
+def api_get_all_plans_snapshot():
+    """Return the combined all-plans snapshot saved by crawler runs."""
+    if not os.path.exists(ALL_PLANS_JSON_PATH):
+        return jsonify({
+            'success': True,
+            'data': {
+                'scraped_at': None,
+                'source': 'missing_all_plans_snapshot',
+                'total_providers': 0,
+                'total_plans': 0,
+                'providers': [],
+                'plans': [],
+            },
+        })
+
+    try:
+        with open(ALL_PLANS_JSON_PATH, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+    except (OSError, json.JSONDecodeError) as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+    return jsonify({'success': True, 'data': data})
+
+
+def _run_crawl_all_async(providers):
+    """Background thread that crawls all configured providers sequentially."""
+    provider_results = []
+
+    for index, provider in enumerate(providers, start=1):
+        key = provider['key']
+        name = provider['name']
+        url = provider['url']
+
+        with _crawl_lock:
+            _crawl_all_state.update({
+                'status': 'running',
+                'message': f'Scraping {name}',
+                'current_provider': key,
+                'current_url': url,
+                'plans_found': 0,
+            })
+            _append_crawl_all_event(
+                provider=key,
+                status='running',
+                message=f'Scraping {name}',
+                url=url,
+            )
+
+        def progress_callback(event, provider_key=key, provider_url=url):
+            event = event or {}
+            message = event.get('message') or ''
+            status = event.get('status') or 'running'
+            stage = event.get('stage') or 'running'
+            with _crawl_lock:
+                _crawl_all_state['message'] = message or _crawl_all_state['message']
+                _append_crawl_all_event(
+                    provider=provider_key,
+                    status=status,
+                    message=message or stage,
+                    url=provider_url,
+                )
+
+        try:
+            crawler = ISPCrawler(
+                base_url=url,
+                provider_name=name,
+                network_types=['nbn', 'opticomm', 'redtrain', 'supa'],
+                max_depth=2,
+                progress_callback=progress_callback,
+            )
+            result = crawler.run()
+            provider_result = {
+                'key': key,
+                'provider': result.provider_name or name,
+                'base_url': result.base_url,
+                'started_at': result.started_at,
+                'finished_at': result.finished_at,
+                'duration_seconds': result.duration_seconds,
+                'urls_visited': result.urls_visited,
+                'plan_pages_found': result.plan_pages_found,
+                'total_plans_scraped': result.total_plans_scraped,
+                'valid_plans': result.valid_plans,
+                'invalid_plans': result.invalid_plans,
+                'network_types_found': result.network_types_found,
+                'plans': result.plans,
+                'errors': result.errors,
+                'success': result.success,
+            }
+        except Exception as e:
+            provider_result = {
+                'key': key,
+                'provider': name,
+                'base_url': url,
+                'valid_plans': 0,
+                'plans': [],
+                'errors': [str(e)],
+                'success': False,
+            }
+
+        provider_results.append(provider_result)
+        plans_found = len(provider_result.get('plans') or [])
+        success = bool(provider_result.get('success'))
+        status = 'success' if success else 'error'
+        message = (
+            f"{name} completed with {plans_found} plans"
+            if success
+            else f"{name} failed"
+        )
+
+        with _crawl_lock:
+            _crawl_all_state['providers_done'] = index
+            _crawl_all_state['plans_found'] = plans_found
+            _crawl_all_state['total_plans'] += plans_found
+            if not success:
+                _crawl_all_state['errors'].append({
+                    'provider': key,
+                    'message': '; '.join(provider_result.get('errors') or ['Unknown error']),
+                    'time': datetime.now().isoformat(),
+                })
+            _append_crawl_all_event(
+                provider=key,
+                status=status,
+                message=message,
+                url=url,
+                plans_found=plans_found,
+            )
+
+    try:
+        snapshot = _save_batch_all_plans_snapshot(provider_results)
+        status = 'success' if not _crawl_all_state['errors'] else 'partial_success'
+        message = (
+            f"Scraped {snapshot['total_plans']} plans from "
+            f"{snapshot['total_providers']} providers"
+        )
+        if _crawl_all_state['errors']:
+            message += f" with {len(_crawl_all_state['errors'])} provider error(s)"
+    except Exception as e:
+        snapshot = None
+        status = 'error'
+        message = f'Could not save all_plans.json: {e}'
+        with _crawl_lock:
+            _crawl_all_state['errors'].append({
+                'provider': 'All providers',
+                'message': str(e),
+                'time': datetime.now().isoformat(),
+            })
+
+    with _crawl_lock:
+        _crawl_all_state.update({
+            'running': False,
+            'status': status,
+            'message': message,
+            'current_provider': None,
+            'current_url': None,
+            'finished_at': datetime.now().isoformat(),
+            'result': {
+                'providers': provider_results,
+                'snapshot': snapshot,
+            },
+        })
+        _append_crawl_all_event(
+            provider='All providers',
+            status=status,
+            message=message,
+        )
+
+
+def _enabled_provider_crawl_targets():
+    """Return enabled provider crawl targets in config order."""
+    targets = []
+    for key, config in PROVIDERS.items():
+        if not config.get('enabled'):
+            continue
+        url = PROVIDER_CRAWL_URLS.get(key)
+        if not url:
+            continue
+        targets.append({
+            'key': key,
+            'name': config.get('name') or key.title(),
+            'url': url,
+        })
+    return targets
+
+
+def _append_crawl_all_event(provider, status, message, url=None, plans_found=None):
+    """Append a compact scrape-all progress event to the in-memory state."""
+    _crawl_all_state['events'].append({
+        'time': datetime.now().isoformat(),
+        'provider': provider,
+        'status': status,
+        'message': message,
+        'url': url,
+        'plans_found': plans_found,
+    })
+    _crawl_all_state['events'] = _crawl_all_state['events'][-120:]
+
+
+def _save_batch_all_plans_snapshot(provider_results):
+    """Write output/all_plans.json and CSV from this batch's successful results."""
+    os.makedirs(os.path.dirname(ALL_PLANS_JSON_PATH), exist_ok=True)
+    all_plans = []
+    providers = []
+
+    for result in provider_results:
+        plans = result.get('plans') or []
+        if not plans:
+            continue
+        provider_name = result.get('provider') or result.get('key') or 'Unknown'
+        providers.append({
+            'provider': provider_name,
+            'base_url': result.get('base_url', ''),
+            'plans_count': len(plans),
+            'started_at': result.get('started_at', ''),
+            'finished_at': result.get('finished_at', ''),
+            'success': bool(result.get('success')),
+            'errors': result.get('errors') or [],
+        })
+        for plan in plans:
+            row = {field: plan.get(field) for field in PLAN_FIELDS}
+            row['provider'] = row.get('provider') or provider_name
+            row['source_url'] = row.get('source_url') or result.get('base_url', '')
+            all_plans.append(row)
+
+    snapshot = {
+        'scraped_at': datetime.now().strftime('%Y-%m-%d_%H-%M-%S'),
+        'source': 'isp_crawler_scrape_all',
+        'total_providers': len(providers),
+        'total_plans': len(all_plans),
+        'providers': providers,
+        'plans': all_plans,
+    }
+
+    with open(ALL_PLANS_JSON_PATH, 'w', encoding='utf-8') as f:
+        json.dump(snapshot, f, indent=2, ensure_ascii=False)
+
+    csv_path = os.path.splitext(ALL_PLANS_JSON_PATH)[0] + '.csv'
+    import csv
+    with open(csv_path, 'w', newline='', encoding='utf-8') as f:
+        writer = csv.DictWriter(f, fieldnames=PLAN_FIELDS, extrasaction='ignore')
+        writer.writeheader()
+        writer.writerows(all_plans)
+
+    return snapshot
 
 
 def _run_crawl_async(base_url: str, name: str, networks: list, depth: int):

@@ -1,0 +1,62 @@
+[
+  {
+    "provider_id": 21,
+    "provider": "City7Net",
+    "network_type": "Fibre",
+    "plan_name": "City7Net Basic",
+    "download_speed": 25,
+    "upload_speed": 10,
+    "price": 69.0,
+    "promo_price": null,
+    "promo_period": null,
+    "contract": "Month to month, no lock-in",
+    "typical_evening_dl": 25,
+    "typical_evening_ul": 10,
+    "source_url": "https://city7net.com.au/"
+  },
+  {
+    "provider_id": 21,
+    "provider": "City7Net",
+    "network_type": "Fibre",
+    "plan_name": "City7Net Standard",
+    "download_speed": 50,
+    "upload_speed": 20,
+    "price": 78.0,
+    "promo_price": null,
+    "promo_period": null,
+    "contract": "Month to month, no lock-in",
+    "typical_evening_dl": 50,
+    "typical_evening_ul": 20,
+    "source_url": "https://city7net.com.au/"
+  },
+  {
+    "provider_id": 21,
+    "provider": "City7Net",
+    "network_type": "Fibre",
+    "plan_name": "City7Net Premium",
+    "download_speed": 500,
+    "upload_speed": 500,
+    "price": 89.0,
+    "promo_price": null,
+    "promo_period": null,
+    "contract": "Month to month, no lock-in",
+    "typical_evening_dl": 500,
+    "typical_evening_ul": 500,
+    "source_url": "https://city7net.com.au/"
+  },
+  {
+    "provider_id": 21,
+    "provider": "City7Net",
+    "network_type": "Fibre",
+    "plan_name": "City7Net Ultimate",
+    "download_speed": 1000,
+    "upload_speed": 1000,
+    "price": 130.0,
+    "promo_price": null,
+    "promo_period": null,
+    "contract": "Month to month, no lock-in",
+    "typical_evening_dl": 1000,
+    "typical_evening_ul": 1000,
+    "source_url": "https://city7net.com.au/"
+  }
+]

@@ -1,0 +1,9 @@
+provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
+VOCPhone,NBN,VOCPhone NBN Home 100/20,100,20,99.9,79.9,Sale price,No Contract,92,17,https://vocphone.com/nbn-plans
+VOCPhone,NBN,VOCPhone NBN Business 250/100,250,100,104.9,89.9,Sale price,No Contract,237,96,https://vocphone.com/nbn-plans
+VOCPhone,NBN,VOCPhone NBN Business 500/200,500,200,124.9,109.9,Sale price,No Contract,467,191,https://vocphone.com/nbn-plans
+VOCPhone,NBN,VOCPhone NBN Business 1000/400,1000,400,164.9,139.9,Sale price,No Contract,957,388,https://vocphone.com/nbn-plans
+VOCPhone,Supa,VOCPhone Fiber 50 50/20,50,20,79.9,59.9,3 months,No Contract,48,17,https://vocphone.com/pricing/internet-pricing
+VOCPhone,Supa,VOCPhone Fiber 500 500/500,500,500,89.9,69.9,3 months,No Contract,416,416,https://vocphone.com/pricing/internet-pricing
+VOCPhone,Supa,VOCPhone Fiber 750 750/750,750,750,109.9,89.9,3 months,No Contract,657,657,https://vocphone.com/pricing/internet-pricing
+VOCPhone,Supa,VOCPhone Fiber 1000 1000/1000,1000,1000,139.9,119.9,3 months,No Contract,784,784,https://vocphone.com/pricing/internet-pricing

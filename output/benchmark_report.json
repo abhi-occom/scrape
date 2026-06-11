@@ -1,16 +1,24 @@
 {
-  "generated_at": "2026-05-25T21:51:35.394915",
+  "generated_at": "2026-06-09T19:08:32.977014",
   "summary": {
-    "total_plans_analyzed": 214,
-    "total_providers": 16,
+    "total_plans_analyzed": 370,
+    "total_providers": 25,
     "providers": [
+      "airtel",
+      "alpha",
+      "aussie broadband",
+      "city7net",
       "dodo",
+      "epsinet",
       "exetel",
       "iinet",
       "iprimus",
+      "iqnet",
       "kogan",
       "leaptel",
       "mate",
+      "more",
+      "new aus fiber",
       "occom",
       "optus",
       "origin",
@@ -19,7 +27,8 @@
       "swoop",
       "tangerine",
       "telstra",
-      "tpg"
+      "tpg",
+      "vocphone"
     ],
     "total_speed_tiers": 8,
     "occom_cheapest_tiers": 0,
@@ -32,6 +41,32 @@
       "tier_label": "Basic",
       "speed_range": "0-15 Mbps",
       "providers": {
+        "airtel": {
+          "provider": "airtel",
+          "plan_name": "Airtel EU Data Package 5GB",
+          "speed": 5,
+          "effective_price": 7.0,
+          "regular_price": 7.0,
+          "promo_price": null,
+          "promo_period": "7 Days",
+          "annual_cost": 84.0,
+          "value_score": 0.71,
+          "network_type": "Travel SIM Europe",
+          "contract": "Prepaid"
+        },
+        "aussie broadband": {
+          "provider": "aussie broadband",
+          "plan_name": "Aussie Broadband NBN Basic 12/1",
+          "speed": 12,
+          "effective_price": 73.0,
+          "regular_price": 73.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 876.0,
+          "value_score": 0.16,
+          "network_type": "NBN",
+          "contract": "No lock-in contract"
+        },
         "occom": {
           "provider": "occom",
           "plan_name": "Basic (nbn12)",
@@ -72,30 +107,95 @@
           "contract": "No Lock-in"
         }
       },
-      "cheapest": "tpg",
-      "cheapest_price": 44.99,
+      "cheapest": "airtel",
+      "cheapest_price": 7.0,
       "most_expensive": "telstra",
       "most_expensive_price": 125.0,
-      "best_value": "tpg",
-      "best_value_score": 0.33
+      "best_value": "airtel",
+      "best_value_score": 0.71
     },
     {
       "tier": "standard",
       "tier_label": "Standard",
       "speed_range": "16-30 Mbps",
       "providers": {
-        "dodo": {
-          "provider": "dodo",
-          "plan_name": "Dodo NBN 16",
-          "speed": 16,
-          "effective_price": 71.99,
-          "regular_price": 71.99,
+        "airtel": {
+          "provider": "airtel",
+          "plan_name": "Airtel EU Data Package 25GB",
+          "speed": 25,
+          "effective_price": 26.0,
+          "regular_price": 26.0,
+          "promo_price": null,
+          "promo_period": "14 Days",
+          "annual_cost": 312.0,
+          "value_score": 0.96,
+          "network_type": "Travel SIM Europe",
+          "contract": "Prepaid"
+        },
+        "alpha": {
+          "provider": "alpha",
+          "plan_name": "Alpha Opticomm 25Mbps/5Mbps",
+          "speed": 25,
+          "effective_price": 65.0,
+          "regular_price": 65.0,
           "promo_price": null,
           "promo_period": null,
-          "annual_cost": 863.88,
-          "value_score": 0.22,
+          "annual_cost": 780.0,
+          "value_score": 0.38,
+          "network_type": "Opticomm",
+          "contract": "Month to month, no cancellation fees; $110.00 setup fee"
+        },
+        "aussie broadband": {
+          "provider": "aussie broadband",
+          "plan_name": "Aussie Broadband NBN Basic Plus 25/10",
+          "speed": 25,
+          "effective_price": 55.3,
+          "regular_price": 79.0,
+          "promo_price": 55.3,
+          "promo_period": "first month; $58.10/month for months 2-3",
+          "annual_cost": 663.6,
+          "value_score": 0.45,
+          "network_type": "NBN",
+          "contract": "No lock-in contract"
+        },
+        "city7net": {
+          "provider": "city7net",
+          "plan_name": "City7Net Basic",
+          "speed": 25,
+          "effective_price": 69.0,
+          "regular_price": 69.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 828.0,
+          "value_score": 0.36,
+          "network_type": "Fibre",
+          "contract": "Month to month, no lock-in"
+        },
+        "dodo": {
+          "provider": "dodo",
+          "plan_name": "Dodo NBN 23",
+          "speed": 23,
+          "effective_price": 41.99,
+          "regular_price": 71.99,
+          "promo_price": 41.99,
+          "promo_period": "6 months",
+          "annual_cost": 683.88,
+          "value_score": 0.55,
           "network_type": "NBN",
           "contract": "No Contract"
+        },
+        "epsinet": {
+          "provider": "epsinet",
+          "plan_name": "Epsinet Casual",
+          "speed": 25,
+          "effective_price": 69.0,
+          "regular_price": 69.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 828.0,
+          "value_score": 0.36,
+          "network_type": "Fibre",
+          "contract": "Month to month, no lock-in"
         },
         "iinet": {
           "provider": "iinet",
@@ -112,7 +212,7 @@
         },
         "iprimus": {
           "provider": "iprimus",
-          "plan_name": "nbn® Standard",
+          "plan_name": "nbn Standard",
           "speed": 25,
           "effective_price": 74.0,
           "regular_price": 74.0,
@@ -122,6 +222,19 @@
           "value_score": 0.34,
           "network_type": "NBN",
           "contract": "No Contract"
+        },
+        "iqnet": {
+          "provider": "iqnet",
+          "plan_name": "IQNet ASN Networks Basic Speed",
+          "speed": 25,
+          "effective_price": 69.0,
+          "regular_price": 69.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 828.0,
+          "value_score": 0.36,
+          "network_type": "ASN Telecom",
+          "contract": "No lock-in, unlimited data; $45 connection fee"
         },
         "kogan": {
           "provider": "kogan",
@@ -161,6 +274,32 @@
           "value_score": 0.49,
           "network_type": "NBN",
           "contract": "No Contract"
+        },
+        "more": {
+          "provider": "more",
+          "plan_name": "More Value",
+          "speed": 25,
+          "effective_price": 78.0,
+          "regular_price": 78.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 936.0,
+          "value_score": 0.32,
+          "network_type": "NBN",
+          "contract": "No Lock-in"
+        },
+        "new aus fiber": {
+          "provider": "new aus fiber",
+          "plan_name": "New Aus Fiber Casual",
+          "speed": 25,
+          "effective_price": 69.0,
+          "regular_price": 69.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 828.0,
+          "value_score": 0.36,
+          "network_type": "Fibre",
+          "contract": "Month to month, no lock-in"
         },
         "occom": {
           "provider": "occom",
@@ -219,10 +358,10 @@
           "plan_name": "Everyday - nbn 25/10",
           "speed": 25,
           "effective_price": 45.0,
-          "regular_price": 45.0,
-          "promo_price": null,
-          "promo_period": null,
-          "annual_cost": 540.0,
+          "regular_price": 72.0,
+          "promo_price": 45.0,
+          "promo_period": "6 months",
+          "annual_cost": 702.0,
           "value_score": 0.56,
           "network_type": "NBN",
           "contract": "No Contract"
@@ -272,38 +411,103 @@
           "speed": 25.0,
           "effective_price": 39.99,
           "regular_price": 39.99,
-          "promo_price": 0.0,
-          "promo_period": "3 months",
+          "promo_price": null,
+          "promo_period": "",
           "annual_cost": 479.88,
           "value_score": 0.63,
           "network_type": "FTTB",
           "contract": "No Lock-in"
         }
       },
-      "cheapest": "spintel",
-      "cheapest_price": 39.0,
+      "cheapest": "airtel",
+      "cheapest_price": 26.0,
       "most_expensive": "origin",
       "most_expensive_price": 94.0,
-      "best_value": "spintel",
-      "best_value_score": 0.64
+      "best_value": "airtel",
+      "best_value_score": 0.96
     },
     {
       "tier": "boost",
       "tier_label": "Boost",
       "speed_range": "31-60 Mbps",
       "providers": {
+        "airtel": {
+          "provider": "airtel",
+          "plan_name": "Airtel EU Data Package 50GB",
+          "speed": 50,
+          "effective_price": 52.0,
+          "regular_price": 52.0,
+          "promo_price": null,
+          "promo_period": "30 Days",
+          "annual_cost": 624.0,
+          "value_score": 0.96,
+          "network_type": "Travel SIM Europe",
+          "contract": "Prepaid"
+        },
+        "alpha": {
+          "provider": "alpha",
+          "plan_name": "Alpha Lynham Networks 50Mbps/20mbps",
+          "speed": 50,
+          "effective_price": 75.0,
+          "regular_price": 75.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 900.0,
+          "value_score": 0.67,
+          "network_type": "Lynham Networks",
+          "contract": "Month to month, no cancellation fees; $66.00 setup fee"
+        },
+        "aussie broadband": {
+          "provider": "aussie broadband",
+          "plan_name": "Aussie Broadband NBN Value 50/20",
+          "speed": 50,
+          "effective_price": 65.1,
+          "regular_price": 93.0,
+          "promo_price": 65.1,
+          "promo_period": "first month; $66.50/month for months 2-3",
+          "annual_cost": 781.2,
+          "value_score": 0.77,
+          "network_type": "NBN",
+          "contract": "No lock-in contract"
+        },
+        "city7net": {
+          "provider": "city7net",
+          "plan_name": "City7Net Standard",
+          "speed": 50,
+          "effective_price": 78.0,
+          "regular_price": 78.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 936.0,
+          "value_score": 0.64,
+          "network_type": "Fibre",
+          "contract": "Month to month, no lock-in"
+        },
         "dodo": {
           "provider": "dodo",
           "plan_name": "Dodo NBN 50",
           "speed": 50,
-          "effective_price": 85.99,
+          "effective_price": 55.99,
           "regular_price": 85.99,
-          "promo_price": null,
-          "promo_period": null,
-          "annual_cost": 1031.88,
-          "value_score": 0.58,
+          "promo_price": 55.99,
+          "promo_period": "6 months",
+          "annual_cost": 851.88,
+          "value_score": 0.89,
           "network_type": "NBN",
           "contract": "No Contract"
+        },
+        "epsinet": {
+          "provider": "epsinet",
+          "plan_name": "Epsinet Everyday",
+          "speed": 50,
+          "effective_price": 79.0,
+          "regular_price": 79.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 948.0,
+          "value_score": 0.63,
+          "network_type": "Fibre",
+          "contract": "Month to month, no lock-in"
         },
         "iinet": {
           "provider": "iinet",
@@ -331,16 +535,29 @@
           "network_type": "Fibre",
           "contract": "No Contract"
         },
+        "iqnet": {
+          "provider": "iqnet",
+          "plan_name": "IQNet ASN Networks Standard Speed",
+          "speed": 50,
+          "effective_price": 75.0,
+          "regular_price": 75.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 900.0,
+          "value_score": 0.67,
+          "network_type": "ASN Telecom",
+          "contract": "No lock-in, unlimited data; $45 connection fee"
+        },
         "kogan": {
           "provider": "kogan",
           "plan_name": "Kogan Silver",
           "speed": 50,
-          "effective_price": 70.9,
+          "effective_price": 69.9,
           "regular_price": 80.9,
-          "promo_price": 70.9,
+          "promo_price": 69.9,
           "promo_period": "12 months",
-          "annual_cost": 850.8,
-          "value_score": 0.71,
+          "annual_cost": 838.8,
+          "value_score": 0.72,
           "network_type": "NBN",
           "contract": "No Contract"
         },
@@ -369,6 +586,32 @@
           "value_score": 0.74,
           "network_type": "NBN",
           "contract": "No Contract"
+        },
+        "more": {
+          "provider": "more",
+          "plan_name": "More Value Plus",
+          "speed": 50,
+          "effective_price": 95.0,
+          "regular_price": 95.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 1140.0,
+          "value_score": 0.53,
+          "network_type": "NBN",
+          "contract": "No Lock-in"
+        },
+        "new aus fiber": {
+          "provider": "new aus fiber",
+          "plan_name": "New Aus Fiber Everyday",
+          "speed": 50,
+          "effective_price": 77.0,
+          "regular_price": 77.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 924.0,
+          "value_score": 0.65,
+          "network_type": "Fibre",
+          "contract": "Month to month, no lock-in"
         },
         "occom": {
           "provider": "occom",
@@ -414,10 +657,10 @@
           "plan_name": "Extra Value - nbn 50/20",
           "speed": 50,
           "effective_price": 65.0,
-          "regular_price": 65.0,
-          "promo_price": null,
-          "promo_period": null,
-          "annual_cost": 780.0,
+          "regular_price": 85.0,
+          "promo_price": 65.0,
+          "promo_period": "6 months",
+          "annual_cost": 900.0,
           "value_score": 0.77,
           "network_type": "NBN",
           "contract": "No Contract"
@@ -473,6 +716,19 @@
           "value_score": 1.67,
           "network_type": "5G",
           "contract": "No Lock-in"
+        },
+        "vocphone": {
+          "provider": "vocphone",
+          "plan_name": "VOCPhone Fiber 50 50/20",
+          "speed": 50,
+          "effective_price": 59.9,
+          "regular_price": 79.9,
+          "promo_price": 59.9,
+          "promo_period": "3 months",
+          "annual_cost": 898.8,
+          "value_score": 0.83,
+          "network_type": "SUPA Fibre",
+          "contract": "No Contract"
         }
       },
       "cheapest": "tpg",
@@ -487,18 +743,70 @@
       "tier_label": "Fast",
       "speed_range": "61-150 Mbps",
       "providers": {
-        "dodo": {
-          "provider": "dodo",
-          "plan_name": "Dodo NBN 100",
+        "airtel": {
+          "provider": "airtel",
+          "plan_name": "Airtel Nano 4G 10GB",
           "speed": 100,
-          "effective_price": 92.99,
-          "regular_price": 92.99,
+          "effective_price": 30.0,
+          "regular_price": 30.0,
           "promo_price": null,
           "promo_period": null,
-          "annual_cost": 1115.88,
-          "value_score": 1.08,
+          "annual_cost": 360.0,
+          "value_score": 3.33,
+          "network_type": "4G Mobile",
+          "contract": "No Lock-in"
+        },
+        "alpha": {
+          "provider": "alpha",
+          "plan_name": "Alpha Lynham Networks 100Mbps/20mbps",
+          "speed": 100,
+          "effective_price": 85.0,
+          "regular_price": 85.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 1020.0,
+          "value_score": 1.18,
+          "network_type": "Lynham Networks",
+          "contract": "Month to month, no cancellation fees; $66.00 setup fee"
+        },
+        "aussie broadband": {
+          "provider": "aussie broadband",
+          "plan_name": "Aussie Broadband NBN Fast 100/20",
+          "speed": 100,
+          "effective_price": 80.0,
+          "regular_price": 95.0,
+          "promo_price": 80.0,
+          "promo_period": "first month; $84/month for months 2-6",
+          "annual_cost": 960.0,
+          "value_score": 1.25,
+          "network_type": "NBN",
+          "contract": "No lock-in contract"
+        },
+        "dodo": {
+          "provider": "dodo",
+          "plan_name": "Dodo NBN 63",
+          "speed": 63,
+          "effective_price": 55.99,
+          "regular_price": 85.99,
+          "promo_price": 55.99,
+          "promo_period": "6 months",
+          "annual_cost": 851.88,
+          "value_score": 1.13,
           "network_type": "NBN",
           "contract": "No Contract"
+        },
+        "epsinet": {
+          "provider": "epsinet",
+          "plan_name": "Epsinet Family",
+          "speed": 100,
+          "effective_price": 99.0,
+          "regular_price": 99.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 1188.0,
+          "value_score": 1.01,
+          "network_type": "Fibre",
+          "contract": "Month to month, no lock-in"
         },
         "exetel": {
           "provider": "exetel",
@@ -528,27 +836,40 @@
         },
         "iprimus": {
           "provider": "iprimus",
-          "plan_name": "nbn® Premium",
+          "plan_name": "Fibre Standard Plus",
           "speed": 100,
-          "effective_price": 67.0,
-          "regular_price": 97.0,
-          "promo_price": 67.0,
-          "promo_period": "6 months",
-          "annual_cost": 984.0,
-          "value_score": 1.49,
-          "network_type": "NBN",
+          "effective_price": 87.0,
+          "regular_price": 87.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 1044.0,
+          "value_score": 1.15,
+          "network_type": "Fibre",
           "contract": "No Contract"
+        },
+        "iqnet": {
+          "provider": "iqnet",
+          "plan_name": "IQNet ASN Networks Advance Speed",
+          "speed": 100,
+          "effective_price": 85.0,
+          "regular_price": 85.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 1020.0,
+          "value_score": 1.18,
+          "network_type": "ASN Telecom",
+          "contract": "No lock-in, unlimited data; $45 connection fee"
         },
         "kogan": {
           "provider": "kogan",
           "plan_name": "Kogan Gold",
           "speed": 100,
-          "effective_price": 71.9,
+          "effective_price": 69.9,
           "regular_price": 85.9,
-          "promo_price": 71.9,
+          "promo_price": 69.9,
           "promo_period": "12 months",
-          "annual_cost": 862.8,
-          "value_score": 1.39,
+          "annual_cost": 838.8,
+          "value_score": 1.43,
           "network_type": "NBN",
           "contract": "No Contract"
         },
@@ -577,6 +898,19 @@
           "value_score": 1.37,
           "network_type": "NBN",
           "contract": "No Contract"
+        },
+        "more": {
+          "provider": "more",
+          "plan_name": "More Mobile 14GB",
+          "speed": 100,
+          "effective_price": 18.0,
+          "regular_price": 24.0,
+          "promo_price": 18.0,
+          "promo_period": "36 months",
+          "annual_cost": 216.0,
+          "value_score": 5.56,
+          "network_type": "4G Mobile",
+          "contract": "No Lock-in"
         },
         "occom": {
           "provider": "occom",
@@ -643,16 +977,29 @@
           "network_type": "Fixed Wireless",
           "contract": "No Contract"
         },
+        "tangerine": {
+          "provider": "tangerine",
+          "plan_name": "Tangerine Fixed Wireless Value Plus",
+          "speed": 100,
+          "effective_price": 59.9,
+          "regular_price": 84.9,
+          "promo_price": 59.9,
+          "promo_period": "6 months",
+          "annual_cost": 868.8,
+          "value_score": 1.67,
+          "network_type": "Fixed Wireless",
+          "contract": "No Lock-in"
+        },
         "telstra": {
           "provider": "telstra",
-          "plan_name": "Essential nbn® Internet Only",
-          "speed": 68,
-          "effective_price": 95.0,
-          "regular_price": 95.0,
-          "promo_price": null,
-          "promo_period": null,
-          "annual_cost": 1140.0,
-          "value_score": 0.72,
+          "plan_name": "Premium nbn® Internet Only",
+          "speed": 100,
+          "effective_price": 89.0,
+          "regular_price": 89.0,
+          "promo_price": 89.0,
+          "promo_period": "6 months",
+          "annual_cost": 1068.0,
+          "value_score": 1.12,
           "network_type": "NBN",
           "contract": "No Lock-in"
         },
@@ -668,20 +1015,98 @@
           "value_score": 2.86,
           "network_type": "5G",
           "contract": "No Lock-in"
+        },
+        "vocphone": {
+          "provider": "vocphone",
+          "plan_name": "VOCPhone NBN Home 100/20",
+          "speed": 100,
+          "effective_price": 79.9,
+          "regular_price": 99.9,
+          "promo_price": 79.9,
+          "promo_period": "Sale price",
+          "annual_cost": 1198.8,
+          "value_score": 1.25,
+          "network_type": "NBN",
+          "contract": "No Contract"
         }
       },
-      "cheapest": "tpg",
-      "cheapest_price": 34.99,
+      "cheapest": "more",
+      "cheapest_price": 18.0,
       "most_expensive": "origin",
       "most_expensive_price": 112.0,
-      "best_value": "exetel",
-      "best_value_score": 3.75
+      "best_value": "more",
+      "best_value_score": 5.56
     },
     {
       "tier": "superfast",
       "tier_label": "Superfast",
       "speed_range": "151-300 Mbps",
       "providers": {
+        "airtel": {
+          "provider": "airtel",
+          "plan_name": "Airtel Legend + 5G 120GB",
+          "speed": 250,
+          "effective_price": 70.0,
+          "regular_price": 70.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 840.0,
+          "value_score": 3.57,
+          "network_type": "5G Mobile",
+          "contract": "No Lock-in"
+        },
+        "alpha": {
+          "provider": "alpha",
+          "plan_name": "Alpha Opticomm 250Mbps/25Mbps",
+          "speed": 250,
+          "effective_price": 109.0,
+          "regular_price": 109.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 1308.0,
+          "value_score": 2.29,
+          "network_type": "Opticomm",
+          "contract": "Month to month, no cancellation fees; $110.00 setup fee"
+        },
+        "aussie broadband": {
+          "provider": "aussie broadband",
+          "plan_name": "Aussie Broadband Opticomm SuperFast 250/25",
+          "speed": 250,
+          "effective_price": 104.0,
+          "regular_price": 119.0,
+          "promo_price": 104.0,
+          "promo_period": "first 6 months",
+          "annual_cost": 1338.0,
+          "value_score": 2.4,
+          "network_type": "Opticomm",
+          "contract": "No lock-in contract"
+        },
+        "epsinet": {
+          "provider": "epsinet",
+          "plan_name": "Epsinet Power User",
+          "speed": 250,
+          "effective_price": 129.0,
+          "regular_price": 129.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 1548.0,
+          "value_score": 1.94,
+          "network_type": "Fibre",
+          "contract": "Month to month, no lock-in"
+        },
+        "iqnet": {
+          "provider": "iqnet",
+          "plan_name": "IQNet ASN Networks Extreme Speed",
+          "speed": 250,
+          "effective_price": 110.0,
+          "regular_price": 110.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 1320.0,
+          "value_score": 2.27,
+          "network_type": "ASN Telecom",
+          "contract": "No lock-in, unlimited data; $45 connection fee"
+        },
         "leaptel": {
           "provider": "leaptel",
           "plan_name": "Fixed Wireless Fast",
@@ -694,6 +1119,19 @@
           "value_score": 3.13,
           "network_type": "Fixed Wireless",
           "contract": "No Contract"
+        },
+        "more": {
+          "provider": "more",
+          "plan_name": "More Mobile 160GB",
+          "speed": 250,
+          "effective_price": 55.0,
+          "regular_price": 61.0,
+          "promo_price": 55.0,
+          "promo_period": "36 months",
+          "annual_cost": 660.0,
+          "value_score": 4.55,
+          "network_type": "5G Mobile",
+          "contract": "No Lock-in"
         },
         "occom": {
           "provider": "occom",
@@ -734,6 +1172,19 @@
           "network_type": "Fixed Wireless",
           "contract": "No Contract"
         },
+        "tangerine": {
+          "provider": "tangerine",
+          "plan_name": "Tangerine Fixed Wireless Speedy",
+          "speed": 250,
+          "effective_price": 63.9,
+          "regular_price": 88.9,
+          "promo_price": 63.9,
+          "promo_period": "6 months",
+          "annual_cost": 916.8,
+          "value_score": 3.91,
+          "network_type": "Fixed Wireless",
+          "contract": "No Lock-in"
+        },
         "telstra": {
           "provider": "telstra",
           "plan_name": "Premium 5G Internet",
@@ -746,30 +1197,82 @@
           "value_score": 3.53,
           "network_type": "5G",
           "contract": "No Lock-in"
+        },
+        "vocphone": {
+          "provider": "vocphone",
+          "plan_name": "VOCPhone NBN Business 250/100",
+          "speed": 250,
+          "effective_price": 89.9,
+          "regular_price": 104.9,
+          "promo_price": 89.9,
+          "promo_period": "Sale price",
+          "annual_cost": 1258.8,
+          "value_score": 2.78,
+          "network_type": "NBN",
+          "contract": "No Contract"
         }
       },
-      "cheapest": "superloop",
-      "cheapest_price": 79.0,
-      "most_expensive": "occom",
-      "most_expensive_price": 110.0,
-      "best_value": "telstra",
-      "best_value_score": 3.53
+      "cheapest": "more",
+      "cheapest_price": 55.0,
+      "most_expensive": "epsinet",
+      "most_expensive_price": 129.0,
+      "best_value": "more",
+      "best_value_score": 4.55
     },
     {
       "tier": "ultrafast",
       "tier_label": "Ultrafast",
       "speed_range": "301-600 Mbps",
       "providers": {
+        "alpha": {
+          "provider": "alpha",
+          "plan_name": "Alpha Supanetworks 500mbps/500mbps",
+          "speed": 500,
+          "effective_price": 85.0,
+          "regular_price": 85.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 1020.0,
+          "value_score": 5.88,
+          "network_type": "Supanetworks",
+          "contract": "Month to month, no cancellation fees; $15.00 setup fee"
+        },
+        "aussie broadband": {
+          "provider": "aussie broadband",
+          "plan_name": "Aussie Broadband NBN Fast Fibre 500/50",
+          "speed": 500,
+          "effective_price": 80.0,
+          "regular_price": 95.0,
+          "promo_price": 80.0,
+          "promo_period": "first month; $84/month for months 2-6",
+          "annual_cost": 960.0,
+          "value_score": 6.25,
+          "network_type": "NBN",
+          "contract": "No lock-in contract"
+        },
+        "city7net": {
+          "provider": "city7net",
+          "plan_name": "City7Net Premium",
+          "speed": 500,
+          "effective_price": 89.0,
+          "regular_price": 89.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 1068.0,
+          "value_score": 5.62,
+          "network_type": "Fibre",
+          "contract": "Month to month, no lock-in"
+        },
         "dodo": {
           "provider": "dodo",
           "plan_name": "Dodo NBN 500",
           "speed": 500,
-          "effective_price": 92.99,
+          "effective_price": 62.99,
           "regular_price": 92.99,
-          "promo_price": null,
-          "promo_period": null,
-          "annual_cost": 1115.88,
-          "value_score": 5.38,
+          "promo_price": 62.99,
+          "promo_period": "6 months",
+          "annual_cost": 935.88,
+          "value_score": 7.94,
           "network_type": "NBN",
           "contract": "No Contract"
         },
@@ -790,38 +1293,51 @@
           "provider": "iinet",
           "plan_name": "NBN500",
           "speed": 500,
-          "effective_price": 64.99,
+          "effective_price": 69.99,
           "regular_price": 94.99,
-          "promo_price": 64.99,
+          "promo_price": 69.99,
           "promo_period": "6 months",
-          "annual_cost": 959.88,
-          "value_score": 7.69,
+          "annual_cost": 989.88,
+          "value_score": 7.14,
           "network_type": "NBN",
           "contract": "No Lock-in"
         },
         "iprimus": {
           "provider": "iprimus",
-          "plan_name": "nbn® Premium plus",
+          "plan_name": "nbn Premium plus",
           "speed": 500,
-          "effective_price": 67.0,
+          "effective_price": 97.0,
           "regular_price": 97.0,
-          "promo_price": 67.0,
-          "promo_period": "6 months",
-          "annual_cost": 984.0,
-          "value_score": 7.46,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 1164.0,
+          "value_score": 5.15,
           "network_type": "NBN",
           "contract": "No Contract"
+        },
+        "iqnet": {
+          "provider": "iqnet",
+          "plan_name": "IQNet Fibre-HFC Broadband 500",
+          "speed": 500,
+          "effective_price": 85.0,
+          "regular_price": 85.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 1020.0,
+          "value_score": 5.88,
+          "network_type": "NBN",
+          "contract": "No lock-in, unlimited data"
         },
         "kogan": {
           "provider": "kogan",
           "plan_name": "Kogan Gold Plus",
           "speed": 500,
-          "effective_price": 71.9,
+          "effective_price": 69.9,
           "regular_price": 85.9,
-          "promo_price": 71.9,
+          "promo_price": 69.9,
           "promo_period": "12 months",
-          "annual_cost": 862.8,
-          "value_score": 6.95,
+          "annual_cost": 838.8,
+          "value_score": 7.15,
           "network_type": "NBN",
           "contract": "No Contract"
         },
@@ -851,6 +1367,32 @@
           "network_type": "NBN",
           "contract": "No Contract"
         },
+        "more": {
+          "provider": "more",
+          "plan_name": "More Fast Max",
+          "speed": 500,
+          "effective_price": 100.0,
+          "regular_price": 100.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 1200.0,
+          "value_score": 5.0,
+          "network_type": "NBN",
+          "contract": "No Lock-in"
+        },
+        "new aus fiber": {
+          "provider": "new aus fiber",
+          "plan_name": "New Aus Fiber Family",
+          "speed": 500,
+          "effective_price": 95.0,
+          "regular_price": 95.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 1140.0,
+          "value_score": 5.26,
+          "network_type": "Fibre",
+          "contract": "Month to month, no lock-in"
+        },
         "occom": {
           "provider": "occom",
           "plan_name": "Turbo (nbn500)",
@@ -858,8 +1400,8 @@
           "effective_price": 85.0,
           "regular_price": 90.0,
           "promo_price": 85.0,
-          "promo_period": "12 months",
-          "annual_cost": 1020.0,
+          "promo_period": "6 months",
+          "annual_cost": 1050.0,
           "value_score": 5.88,
           "network_type": "NBN",
           "contract": "No Contract"
@@ -946,12 +1488,12 @@
           "provider": "telstra",
           "plan_name": "Premium nbn® Internet Only",
           "speed": 500,
-          "effective_price": 99.0,
-          "regular_price": 99.0,
-          "promo_price": null,
-          "promo_period": null,
-          "annual_cost": 1188.0,
-          "value_score": 5.05,
+          "effective_price": 89.0,
+          "regular_price": 89.0,
+          "promo_price": 89.0,
+          "promo_period": "6 months",
+          "annual_cost": 1068.0,
+          "value_score": 5.62,
           "network_type": "NBN",
           "contract": "No Lock-in"
         },
@@ -967,30 +1509,82 @@
           "value_score": 7.69,
           "network_type": "NBN",
           "contract": "No Lock-in"
+        },
+        "vocphone": {
+          "provider": "vocphone",
+          "plan_name": "VOCPhone Fiber 500 500/500",
+          "speed": 500,
+          "effective_price": 69.9,
+          "regular_price": 89.9,
+          "promo_price": 69.9,
+          "promo_period": "3 months",
+          "annual_cost": 1018.8,
+          "value_score": 7.15,
+          "network_type": "SUPA Fibre",
+          "contract": "No Contract"
         }
       },
-      "cheapest": "tangerine",
-      "cheapest_price": 63.9,
+      "cheapest": "dodo",
+      "cheapest_price": 62.99,
       "most_expensive": "origin",
       "most_expensive_price": 112.0,
-      "best_value": "tangerine",
-      "best_value_score": 7.82
+      "best_value": "dodo",
+      "best_value_score": 7.94
     },
     {
       "tier": "hyper",
       "tier_label": "Hyper",
       "speed_range": "601-1000 Mbps",
       "providers": {
-        "dodo": {
-          "provider": "dodo",
-          "plan_name": "Dodo NBN 750",
+        "alpha": {
+          "provider": "alpha",
+          "plan_name": "Alpha Supanetworks 750mbps/750mbps",
           "speed": 750,
-          "effective_price": 99.99,
-          "regular_price": 99.99,
+          "effective_price": 109.0,
+          "regular_price": 109.0,
           "promo_price": null,
           "promo_period": null,
-          "annual_cost": 1199.88,
-          "value_score": 7.5,
+          "annual_cost": 1308.0,
+          "value_score": 6.88,
+          "network_type": "Supanetworks",
+          "contract": "Month to month, no cancellation fees; $15.00 setup fee"
+        },
+        "aussie broadband": {
+          "provider": "aussie broadband",
+          "plan_name": "Aussie Broadband NBN Ultrafast Fibre 1000/100",
+          "speed": 1000,
+          "effective_price": 109.0,
+          "regular_price": 129.0,
+          "promo_price": 109.0,
+          "promo_period": "first 6 months",
+          "annual_cost": 1428.0,
+          "value_score": 9.17,
+          "network_type": "NBN",
+          "contract": "No lock-in contract"
+        },
+        "city7net": {
+          "provider": "city7net",
+          "plan_name": "City7Net Ultimate",
+          "speed": 1000,
+          "effective_price": 130.0,
+          "regular_price": 130.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 1560.0,
+          "value_score": 7.69,
+          "network_type": "Fibre",
+          "contract": "Month to month, no lock-in"
+        },
+        "dodo": {
+          "provider": "dodo",
+          "plan_name": "Dodo NBN 700",
+          "speed": 700,
+          "effective_price": 69.99,
+          "regular_price": 99.99,
+          "promo_price": 69.99,
+          "promo_period": "6 months",
+          "annual_cost": 1019.88,
+          "value_score": 10.0,
           "network_type": "NBN",
           "contract": "No Contract"
         },
@@ -998,18 +1592,18 @@
           "provider": "iinet",
           "plan_name": "NBN Superfast",
           "speed": 740,
-          "effective_price": 69.99,
-          "regular_price": 99.99,
-          "promo_price": 69.99,
+          "effective_price": 74.99,
+          "regular_price": 104.99,
+          "promo_price": 74.99,
           "promo_period": "6 months",
-          "annual_cost": 1019.88,
-          "value_score": 10.57,
+          "annual_cost": 1079.88,
+          "value_score": 9.87,
           "network_type": "NBN",
           "contract": "No Lock-in"
         },
         "iprimus": {
           "provider": "iprimus",
-          "plan_name": "nbn® Home Superfast",
+          "plan_name": "nbn Home Superfast",
           "speed": 700,
           "effective_price": 104.0,
           "regular_price": 104.0,
@@ -1019,6 +1613,19 @@
           "value_score": 6.73,
           "network_type": "NBN",
           "contract": "No Contract"
+        },
+        "iqnet": {
+          "provider": "iqnet",
+          "plan_name": "IQNet Fibre-HFC Broadband 1000",
+          "speed": 1000,
+          "effective_price": 130.0,
+          "regular_price": 130.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 1560.0,
+          "value_score": 7.69,
+          "network_type": "NBN",
+          "contract": "No lock-in, unlimited data"
         },
         "kogan": {
           "provider": "kogan",
@@ -1059,6 +1666,32 @@
           "network_type": "NBN",
           "contract": "No Contract"
         },
+        "more": {
+          "provider": "more",
+          "plan_name": "More Ultrafast",
+          "speed": 700,
+          "effective_price": 129.0,
+          "regular_price": 129.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 1548.0,
+          "value_score": 5.43,
+          "network_type": "NBN",
+          "contract": "No Lock-in"
+        },
+        "new aus fiber": {
+          "provider": "new aus fiber",
+          "plan_name": "New Aus Fiber Extreme",
+          "speed": 1000,
+          "effective_price": 130.0,
+          "regular_price": 130.0,
+          "promo_price": null,
+          "promo_period": null,
+          "annual_cost": 1560.0,
+          "value_score": 7.69,
+          "network_type": "Fibre",
+          "contract": "Month to month, no lock-in"
+        },
         "occom": {
           "provider": "occom",
           "plan_name": "Ultra (nbn750)",
@@ -1066,8 +1699,8 @@
           "effective_price": 93.0,
           "regular_price": 98.0,
           "promo_price": 93.0,
-          "promo_period": "12 months",
-          "annual_cost": 1116.0,
+          "promo_period": "6 months",
+          "annual_cost": 1146.0,
           "value_score": 7.84,
           "network_type": "NBN",
           "contract": "No Contract"
@@ -1116,10 +1749,10 @@
           "plan_name": "Megaspeed - nbn 750/50",
           "speed": 750,
           "effective_price": 75.0,
-          "regular_price": 75.0,
-          "promo_price": null,
-          "promo_period": null,
-          "annual_cost": 900.0,
+          "regular_price": 104.0,
+          "promo_price": 75.0,
+          "promo_period": "6 months",
+          "annual_cost": 1074.0,
           "value_score": 10.0,
           "network_type": "NBN",
           "contract": "No Contract"
@@ -1154,12 +1787,12 @@
           "provider": "telstra",
           "plan_name": "Ultimate nbn® Internet Only",
           "speed": 750,
-          "effective_price": 119.0,
-          "regular_price": 119.0,
-          "promo_price": null,
-          "promo_period": null,
-          "annual_cost": 1428.0,
-          "value_score": 6.3,
+          "effective_price": 89.0,
+          "regular_price": 89.0,
+          "promo_price": 89.0,
+          "promo_period": "6 months",
+          "annual_cost": 1068.0,
+          "value_score": 8.43,
           "network_type": "NBN",
           "contract": "No Lock-in"
         },
@@ -1175,9 +1808,22 @@
           "value_score": 10.57,
           "network_type": "NBN",
           "contract": "No Lock-in"
+        },
+        "vocphone": {
+          "provider": "vocphone",
+          "plan_name": "VOCPhone Fiber 750 750/750",
+          "speed": 750,
+          "effective_price": 89.9,
+          "regular_price": 109.9,
+          "promo_price": 89.9,
+          "promo_period": "3 months",
+          "annual_cost": 1258.8,
+          "value_score": 8.34,
+          "network_type": "SUPA Fibre",
+          "contract": "No Contract"
         }
       },
-      "cheapest": "iinet",
+      "cheapest": "dodo",
       "cheapest_price": 69.99,
       "most_expensive": "origin",
       "most_expensive_price": 144.0,
@@ -1189,6 +1835,19 @@
       "tier_label": "Mega",
       "speed_range": "1001-99999 Mbps",
       "providers": {
+        "aussie broadband": {
+          "provider": "aussie broadband",
+          "plan_name": "Aussie Broadband NBN Hyperfast 2000/200",
+          "speed": 2000,
+          "effective_price": 169.0,
+          "regular_price": 189.0,
+          "promo_price": 169.0,
+          "promo_period": "first 6 months",
+          "annual_cost": 2148.0,
+          "value_score": 11.83,
+          "network_type": "NBN",
+          "contract": "No lock-in contract"
+        },
         "leaptel": {
           "provider": "leaptel",
           "plan_name": "Ultrafast",
@@ -1209,8 +1868,8 @@
           "effective_price": 165.0,
           "regular_price": 185.0,
           "promo_price": 165.0,
-          "promo_period": "12 months",
-          "annual_cost": 1980.0,
+          "promo_period": "6 months",
+          "annual_cost": 2100.0,
           "value_score": 12.12,
           "network_type": "NBN",
           "contract": "No Contract"
@@ -1231,8 +1890,8 @@
       },
       "cheapest": "leaptel",
       "cheapest_price": 99.0,
-      "most_expensive": "occom",
-      "most_expensive_price": 165.0,
+      "most_expensive": "aussie broadband",
+      "most_expensive_price": 169.0,
       "best_value": "leaptel",
       "best_value_score": 20.2
     }
@@ -1246,10 +1905,10 @@
       "occom_plan": "Basic (nbn12)",
       "occom_speed": 12,
       "occom_value_score": 0.25,
-      "cheapest_competitor": "tpg",
-      "cheapest_competitor_price": 44.99,
-      "gap_amount": 3.01,
-      "gap_pct": 6.7
+      "cheapest_competitor": "airtel",
+      "cheapest_competitor_price": 7.0,
+      "gap_amount": 41.0,
+      "gap_pct": 585.7
     },
     {
       "tier": "standard",
@@ -1258,10 +1917,10 @@
       "occom_plan": "Boost (nbn25)",
       "occom_speed": 25,
       "occom_value_score": 0.42,
-      "cheapest_competitor": "spintel",
-      "cheapest_competitor_price": 39.0,
-      "gap_amount": 21.0,
-      "gap_pct": 53.8
+      "cheapest_competitor": "airtel",
+      "cheapest_competitor_price": 26.0,
+      "gap_amount": 34.0,
+      "gap_pct": 130.8
     },
     {
       "tier": "boost",
@@ -1282,10 +1941,10 @@
       "occom_plan": "Superfast (nbn100)",
       "occom_speed": 100,
       "occom_value_score": 1.25,
-      "cheapest_competitor": "tpg",
-      "cheapest_competitor_price": 34.99,
-      "gap_amount": 45.01,
-      "gap_pct": 128.6
+      "cheapest_competitor": "more",
+      "cheapest_competitor_price": 18.0,
+      "gap_amount": 62.0,
+      "gap_pct": 344.4
     },
     {
       "tier": "superfast",
@@ -1294,10 +1953,10 @@
       "occom_plan": "Rocket (Fibre250)",
       "occom_speed": 250,
       "occom_value_score": 2.27,
-      "cheapest_competitor": "superloop",
-      "cheapest_competitor_price": 79.0,
-      "gap_amount": 31.0,
-      "gap_pct": 39.2
+      "cheapest_competitor": "more",
+      "cheapest_competitor_price": 55.0,
+      "gap_amount": 55.0,
+      "gap_pct": 100.0
     },
     {
       "tier": "ultrafast",
@@ -1306,10 +1965,10 @@
       "occom_plan": "Turbo (nbn500)",
       "occom_speed": 500,
       "occom_value_score": 5.88,
-      "cheapest_competitor": "tangerine",
-      "cheapest_competitor_price": 63.9,
-      "gap_amount": 21.1,
-      "gap_pct": 33.0
+      "cheapest_competitor": "dodo",
+      "cheapest_competitor_price": 62.99,
+      "gap_amount": 22.01,
+      "gap_pct": 34.9
     },
     {
       "tier": "hyper",
@@ -1318,7 +1977,7 @@
       "occom_plan": "Ultra (nbn750)",
       "occom_speed": 729,
       "occom_value_score": 7.84,
-      "cheapest_competitor": "iinet",
+      "cheapest_competitor": "dodo",
       "cheapest_competitor_price": 69.99,
       "gap_amount": 23.01,
       "gap_pct": 32.9
@@ -1343,20 +2002,34 @@
       "rankings": [
         {
           "rank": 1,
+          "provider": "airtel",
+          "value_score": 0.71,
+          "speed": 5,
+          "price": 7.0
+        },
+        {
+          "rank": 2,
           "provider": "tpg",
           "value_score": 0.33,
           "speed": 15.0,
           "price": 44.99
         },
         {
-          "rank": 2,
+          "rank": 3,
           "provider": "occom",
           "value_score": 0.25,
           "speed": 12,
           "price": 48.0
         },
         {
-          "rank": 3,
+          "rank": 4,
+          "provider": "aussie broadband",
+          "value_score": 0.16,
+          "speed": 12,
+          "price": 73.0
+        },
+        {
+          "rank": 5,
           "provider": "telstra",
           "value_score": 0.0,
           "speed": 0,
@@ -1370,108 +2043,164 @@
       "rankings": [
         {
           "rank": 1,
+          "provider": "airtel",
+          "value_score": 0.96,
+          "speed": 25,
+          "price": 26.0
+        },
+        {
+          "rank": 2,
           "provider": "spintel",
           "value_score": 0.64,
           "speed": 25,
           "price": 39.0
         },
         {
-          "rank": 2,
+          "rank": 3,
           "provider": "tpg",
           "value_score": 0.63,
           "speed": 25.0,
           "price": 39.99
         },
         {
-          "rank": 3,
+          "rank": 4,
           "provider": "superloop",
           "value_score": 0.56,
           "speed": 25,
           "price": 45.0
         },
         {
-          "rank": 4,
+          "rank": 5,
           "provider": "tangerine",
           "value_score": 0.56,
           "speed": 25,
           "price": 44.9
         },
         {
-          "rank": 5,
+          "rank": 6,
+          "provider": "dodo",
+          "value_score": 0.55,
+          "speed": 23,
+          "price": 41.99
+        },
+        {
+          "rank": 7,
           "provider": "leaptel",
           "value_score": 0.5,
           "speed": 25,
           "price": 49.95
         },
         {
-          "rank": 6,
+          "rank": 8,
           "provider": "mate",
           "value_score": 0.49,
           "speed": 25,
           "price": 51.0
         },
         {
-          "rank": 7,
+          "rank": 9,
           "provider": "swoop",
           "value_score": 0.46,
           "speed": 25,
           "price": 54.0
         },
         {
-          "rank": 8,
+          "rank": 10,
+          "provider": "aussie broadband",
+          "value_score": 0.45,
+          "speed": 25,
+          "price": 55.3
+        },
+        {
+          "rank": 11,
           "provider": "occom",
           "value_score": 0.42,
           "speed": 25,
           "price": 60.0
         },
         {
-          "rank": 9,
+          "rank": 12,
           "provider": "iinet",
           "value_score": 0.4,
           "speed": 20,
           "price": 49.99
         },
         {
-          "rank": 10,
+          "rank": 13,
           "provider": "kogan",
           "value_score": 0.4,
           "speed": 20,
           "price": 49.9
         },
         {
-          "rank": 11,
+          "rank": 14,
+          "provider": "alpha",
+          "value_score": 0.38,
+          "speed": 25,
+          "price": 65.0
+        },
+        {
+          "rank": 15,
+          "provider": "city7net",
+          "value_score": 0.36,
+          "speed": 25,
+          "price": 69.0
+        },
+        {
+          "rank": 16,
+          "provider": "epsinet",
+          "value_score": 0.36,
+          "speed": 25,
+          "price": 69.0
+        },
+        {
+          "rank": 17,
+          "provider": "iqnet",
+          "value_score": 0.36,
+          "speed": 25,
+          "price": 69.0
+        },
+        {
+          "rank": 18,
+          "provider": "new aus fiber",
+          "value_score": 0.36,
+          "speed": 25,
+          "price": 69.0
+        },
+        {
+          "rank": 19,
           "provider": "telstra",
           "value_score": 0.36,
           "speed": 25,
           "price": 70.0
         },
         {
-          "rank": 12,
+          "rank": 20,
           "provider": "iprimus",
           "value_score": 0.34,
           "speed": 25,
           "price": 74.0
         },
         {
-          "rank": 13,
+          "rank": 21,
+          "provider": "more",
+          "value_score": 0.32,
+          "speed": 25,
+          "price": 78.0
+        },
+        {
+          "rank": 22,
           "provider": "optus",
           "value_score": 0.32,
           "speed": 25,
           "price": 79.0
         },
         {
-          "rank": 14,
+          "rank": 23,
           "provider": "origin",
           "value_score": 0.27,
           "speed": 25,
           "price": 94.0
-        },
-        {
-          "rank": 15,
-          "provider": "dodo",
-          "value_score": 0.22,
-          "speed": 16,
-          "price": 71.99
         }
       ]
     },
@@ -1495,83 +2224,146 @@
         },
         {
           "rank": 3,
+          "provider": "airtel",
+          "value_score": 0.96,
+          "speed": 50,
+          "price": 52.0
+        },
+        {
+          "rank": 4,
+          "provider": "dodo",
+          "value_score": 0.89,
+          "speed": 50,
+          "price": 55.99
+        },
+        {
+          "rank": 5,
           "provider": "tangerine",
           "value_score": 0.83,
           "speed": 50,
           "price": 59.9
         },
         {
-          "rank": 4,
+          "rank": 6,
+          "provider": "vocphone",
+          "value_score": 0.83,
+          "speed": 50,
+          "price": 59.9
+        },
+        {
+          "rank": 7,
+          "provider": "aussie broadband",
+          "value_score": 0.77,
+          "speed": 50,
+          "price": 65.1
+        },
+        {
+          "rank": 8,
           "provider": "superloop",
           "value_score": 0.77,
           "speed": 50,
           "price": 65.0
         },
         {
-          "rank": 5,
+          "rank": 9,
           "provider": "mate",
           "value_score": 0.74,
           "speed": 49,
           "price": 66.0
         },
         {
-          "rank": 6,
+          "rank": 10,
+          "provider": "kogan",
+          "value_score": 0.72,
+          "speed": 50,
+          "price": 69.9
+        },
+        {
+          "rank": 11,
           "provider": "swoop",
           "value_score": 0.72,
           "speed": 50,
           "price": 69.0
         },
         {
-          "rank": 7,
-          "provider": "kogan",
-          "value_score": 0.71,
-          "speed": 50,
-          "price": 70.9
-        },
-        {
-          "rank": 8,
+          "rank": 12,
           "provider": "iprimus",
           "value_score": 0.68,
           "speed": 50,
           "price": 74.0
         },
         {
-          "rank": 9,
+          "rank": 13,
+          "provider": "alpha",
+          "value_score": 0.67,
+          "speed": 50,
+          "price": 75.0
+        },
+        {
+          "rank": 14,
+          "provider": "iqnet",
+          "value_score": 0.67,
+          "speed": 50,
+          "price": 75.0
+        },
+        {
+          "rank": 15,
           "provider": "leaptel",
           "value_score": 0.67,
           "speed": 50,
           "price": 74.95
         },
         {
-          "rank": 10,
+          "rank": 16,
           "provider": "occom",
           "value_score": 0.67,
           "speed": 50,
           "price": 75.0
         },
         {
-          "rank": 11,
+          "rank": 17,
+          "provider": "new aus fiber",
+          "value_score": 0.65,
+          "speed": 50,
+          "price": 77.0
+        },
+        {
+          "rank": 18,
+          "provider": "city7net",
+          "value_score": 0.64,
+          "speed": 50,
+          "price": 78.0
+        },
+        {
+          "rank": 19,
+          "provider": "epsinet",
+          "value_score": 0.63,
+          "speed": 50,
+          "price": 79.0
+        },
+        {
+          "rank": 20,
           "provider": "telstra",
           "value_score": 0.62,
           "speed": 50,
           "price": 80.0
         },
         {
-          "rank": 12,
-          "provider": "dodo",
-          "value_score": 0.58,
+          "rank": 21,
+          "provider": "more",
+          "value_score": 0.53,
           "speed": 50,
-          "price": 85.99
+          "price": 95.0
         },
         {
-          "rank": 13,
+          "rank": 22,
           "provider": "optus",
           "value_score": 0.53,
           "speed": 50,
           "price": 95.0
         },
         {
-          "rank": 14,
+          "rank": 23,
           "provider": "origin",
           "value_score": 0.46,
           "speed": 50,
@@ -1585,101 +2377,157 @@
       "rankings": [
         {
           "rank": 1,
+          "provider": "more",
+          "value_score": 5.56,
+          "speed": 100,
+          "price": 18.0
+        },
+        {
+          "rank": 2,
           "provider": "exetel",
           "value_score": 3.75,
           "speed": 150,
           "price": 40.0
         },
         {
-          "rank": 2,
+          "rank": 3,
+          "provider": "airtel",
+          "value_score": 3.33,
+          "speed": 100,
+          "price": 30.0
+        },
+        {
+          "rank": 4,
           "provider": "tpg",
           "value_score": 2.86,
           "speed": 100.0,
           "price": 34.99
         },
         {
-          "rank": 3,
+          "rank": 5,
           "provider": "iinet",
           "value_score": 2.0,
           "speed": 100,
           "price": 49.99
         },
         {
-          "rank": 4,
-          "provider": "iprimus",
-          "value_score": 1.49,
+          "rank": 6,
+          "provider": "tangerine",
+          "value_score": 1.67,
           "speed": 100,
-          "price": 67.0
+          "price": 59.9
         },
         {
-          "rank": 5,
+          "rank": 7,
           "provider": "superloop",
           "value_score": 1.45,
           "speed": 100,
           "price": 69.0
         },
         {
-          "rank": 6,
+          "rank": 8,
           "provider": "kogan",
-          "value_score": 1.39,
+          "value_score": 1.43,
           "speed": 100,
-          "price": 71.9
+          "price": 69.9
         },
         {
-          "rank": 7,
+          "rank": 9,
           "provider": "mate",
           "value_score": 1.37,
           "speed": 97,
           "price": 71.0
         },
         {
-          "rank": 8,
+          "rank": 10,
           "provider": "leaptel",
           "value_score": 1.33,
           "speed": 100,
           "price": 74.95
         },
         {
-          "rank": 9,
+          "rank": 11,
           "provider": "optus",
           "value_score": 1.27,
           "speed": 100,
           "price": 79.0
         },
         {
-          "rank": 10,
+          "rank": 12,
+          "provider": "aussie broadband",
+          "value_score": 1.25,
+          "speed": 100,
+          "price": 80.0
+        },
+        {
+          "rank": 13,
           "provider": "occom",
           "value_score": 1.25,
           "speed": 100,
           "price": 80.0
         },
         {
-          "rank": 11,
+          "rank": 14,
+          "provider": "vocphone",
+          "value_score": 1.25,
+          "speed": 100,
+          "price": 79.9
+        },
+        {
+          "rank": 15,
+          "provider": "alpha",
+          "value_score": 1.18,
+          "speed": 100,
+          "price": 85.0
+        },
+        {
+          "rank": 16,
+          "provider": "iqnet",
+          "value_score": 1.18,
+          "speed": 100,
+          "price": 85.0
+        },
+        {
+          "rank": 17,
+          "provider": "iprimus",
+          "value_score": 1.15,
+          "speed": 100,
+          "price": 87.0
+        },
+        {
+          "rank": 18,
+          "provider": "dodo",
+          "value_score": 1.13,
+          "speed": 63,
+          "price": 55.99
+        },
+        {
+          "rank": 19,
+          "provider": "telstra",
+          "value_score": 1.12,
+          "speed": 100,
+          "price": 89.0
+        },
+        {
+          "rank": 20,
           "provider": "swoop",
           "value_score": 1.09,
           "speed": 70,
           "price": 64.0
         },
         {
-          "rank": 12,
-          "provider": "dodo",
-          "value_score": 1.08,
+          "rank": 21,
+          "provider": "epsinet",
+          "value_score": 1.01,
           "speed": 100,
-          "price": 92.99
+          "price": 99.0
         },
         {
-          "rank": 13,
+          "rank": 22,
           "provider": "origin",
           "value_score": 0.85,
           "speed": 95,
           "price": 112.0
-        },
-        {
-          "rank": 14,
-          "provider": "telstra",
-          "value_score": 0.72,
-          "speed": 68,
-          "price": 95.0
         }
       ]
     },
@@ -1689,38 +2537,94 @@
       "rankings": [
         {
           "rank": 1,
+          "provider": "more",
+          "value_score": 4.55,
+          "speed": 250,
+          "price": 55.0
+        },
+        {
+          "rank": 2,
+          "provider": "tangerine",
+          "value_score": 3.91,
+          "speed": 250,
+          "price": 63.9
+        },
+        {
+          "rank": 3,
+          "provider": "airtel",
+          "value_score": 3.57,
+          "speed": 250,
+          "price": 70.0
+        },
+        {
+          "rank": 4,
           "provider": "telstra",
           "value_score": 3.53,
           "speed": 300,
           "price": 85.0
         },
         {
-          "rank": 2,
+          "rank": 5,
           "provider": "superloop",
           "value_score": 3.16,
           "speed": 250,
           "price": 79.0
         },
         {
-          "rank": 3,
+          "rank": 6,
           "provider": "leaptel",
           "value_score": 3.13,
           "speed": 250,
           "price": 79.95
         },
         {
-          "rank": 4,
+          "rank": 7,
+          "provider": "vocphone",
+          "value_score": 2.78,
+          "speed": 250,
+          "price": 89.9
+        },
+        {
+          "rank": 8,
           "provider": "swoop",
           "value_score": 2.66,
           "speed": 250,
           "price": 94.0
         },
         {
-          "rank": 5,
+          "rank": 9,
+          "provider": "aussie broadband",
+          "value_score": 2.4,
+          "speed": 250,
+          "price": 104.0
+        },
+        {
+          "rank": 10,
+          "provider": "alpha",
+          "value_score": 2.29,
+          "speed": 250,
+          "price": 109.0
+        },
+        {
+          "rank": 11,
+          "provider": "iqnet",
+          "value_score": 2.27,
+          "speed": 250,
+          "price": 110.0
+        },
+        {
+          "rank": 12,
           "provider": "occom",
           "value_score": 2.27,
           "speed": 250,
           "price": 110.0
+        },
+        {
+          "rank": 13,
+          "provider": "epsinet",
+          "value_score": 1.94,
+          "speed": 250,
+          "price": 129.0
         }
       ]
     },
@@ -1730,17 +2634,17 @@
       "rankings": [
         {
           "rank": 1,
+          "provider": "dodo",
+          "value_score": 7.94,
+          "speed": 500,
+          "price": 62.99
+        },
+        {
+          "rank": 2,
           "provider": "tangerine",
           "value_score": 7.82,
           "speed": 500,
           "price": 63.9
-        },
-        {
-          "rank": 2,
-          "provider": "iinet",
-          "value_score": 7.69,
-          "speed": 500,
-          "price": 64.99
         },
         {
           "rank": 3,
@@ -1751,90 +2655,139 @@
         },
         {
           "rank": 4,
-          "provider": "iprimus",
-          "value_score": 7.46,
-          "speed": 500,
-          "price": 67.0
-        },
-        {
-          "rank": 5,
           "provider": "superloop",
           "value_score": 7.25,
           "speed": 500,
           "price": 69.0
         },
         {
-          "rank": 6,
+          "rank": 5,
           "provider": "kogan",
-          "value_score": 6.95,
+          "value_score": 7.15,
           "speed": 500,
-          "price": 71.9
+          "price": 69.9
+        },
+        {
+          "rank": 6,
+          "provider": "vocphone",
+          "value_score": 7.15,
+          "speed": 500,
+          "price": 69.9
         },
         {
           "rank": 7,
+          "provider": "iinet",
+          "value_score": 7.14,
+          "speed": 500,
+          "price": 69.99
+        },
+        {
+          "rank": 8,
           "provider": "swoop",
           "value_score": 6.94,
           "speed": 500,
           "price": 72.0
         },
         {
-          "rank": 8,
+          "rank": 9,
           "provider": "mate",
           "value_score": 6.83,
           "speed": 485,
           "price": 71.0
         },
         {
-          "rank": 9,
+          "rank": 10,
           "provider": "spintel",
           "value_score": 6.58,
           "speed": 500,
           "price": 76.0
         },
         {
-          "rank": 10,
+          "rank": 11,
           "provider": "optus",
           "value_score": 6.33,
           "speed": 500,
           "price": 79.0
         },
         {
-          "rank": 11,
+          "rank": 12,
+          "provider": "aussie broadband",
+          "value_score": 6.25,
+          "speed": 500,
+          "price": 80.0
+        },
+        {
+          "rank": 13,
           "provider": "exetel",
           "value_score": 6.25,
           "speed": 500,
           "price": 80.0
         },
         {
-          "rank": 12,
+          "rank": 14,
           "provider": "leaptel",
           "value_score": 6.25,
           "speed": 500,
           "price": 79.95
         },
         {
-          "rank": 13,
+          "rank": 15,
+          "provider": "alpha",
+          "value_score": 5.88,
+          "speed": 500,
+          "price": 85.0
+        },
+        {
+          "rank": 16,
+          "provider": "iqnet",
+          "value_score": 5.88,
+          "speed": 500,
+          "price": 85.0
+        },
+        {
+          "rank": 17,
           "provider": "occom",
           "value_score": 5.88,
           "speed": 500,
           "price": 85.0
         },
         {
-          "rank": 14,
-          "provider": "dodo",
-          "value_score": 5.38,
+          "rank": 18,
+          "provider": "city7net",
+          "value_score": 5.62,
           "speed": 500,
-          "price": 92.99
+          "price": 89.0
         },
         {
-          "rank": 15,
+          "rank": 19,
           "provider": "telstra",
-          "value_score": 5.05,
+          "value_score": 5.62,
           "speed": 500,
-          "price": 99.0
+          "price": 89.0
         },
         {
-          "rank": 16,
+          "rank": 20,
+          "provider": "new aus fiber",
+          "value_score": 5.26,
+          "speed": 500,
+          "price": 95.0
+        },
+        {
+          "rank": 21,
+          "provider": "iprimus",
+          "value_score": 5.15,
+          "speed": 500,
+          "price": 97.0
+        },
+        {
+          "rank": 22,
+          "provider": "more",
+          "value_score": 5.0,
+          "speed": 500,
+          "price": 100.0
+        },
+        {
+          "rank": 23,
           "provider": "origin",
           "value_score": 4.46,
           "speed": 500,
@@ -1855,16 +2808,16 @@
         },
         {
           "rank": 2,
-          "provider": "iinet",
+          "provider": "tpg",
           "value_score": 10.57,
-          "speed": 740,
+          "speed": 740.0,
           "price": 69.99
         },
         {
           "rank": 3,
-          "provider": "tpg",
-          "value_score": 10.57,
-          "speed": 740.0,
+          "provider": "dodo",
+          "value_score": 10.0,
+          "speed": 700,
           "price": 69.99
         },
         {
@@ -1876,80 +2829,129 @@
         },
         {
           "rank": 5,
+          "provider": "iinet",
+          "value_score": 9.87,
+          "speed": 740,
+          "price": 74.99
+        },
+        {
+          "rank": 6,
           "provider": "spintel",
           "value_score": 9.55,
           "speed": 850,
           "price": 89.0
         },
         {
-          "rank": 6,
+          "rank": 7,
+          "provider": "aussie broadband",
+          "value_score": 9.17,
+          "speed": 1000,
+          "price": 109.0
+        },
+        {
+          "rank": 8,
           "provider": "leaptel",
           "value_score": 9.17,
           "speed": 1000,
           "price": 109.0
         },
         {
-          "rank": 7,
+          "rank": 9,
           "provider": "kogan",
           "value_score": 8.83,
           "speed": 750,
           "price": 84.9
         },
         {
-          "rank": 8,
+          "rank": 10,
+          "provider": "telstra",
+          "value_score": 8.43,
+          "speed": 750,
+          "price": 89.0
+        },
+        {
+          "rank": 11,
+          "provider": "vocphone",
+          "value_score": 8.34,
+          "speed": 750,
+          "price": 89.9
+        },
+        {
+          "rank": 12,
           "provider": "occom",
           "value_score": 7.84,
           "speed": 729,
           "price": 93.0
         },
         {
-          "rank": 9,
+          "rank": 13,
+          "provider": "city7net",
+          "value_score": 7.69,
+          "speed": 1000,
+          "price": 130.0
+        },
+        {
+          "rank": 14,
+          "provider": "iqnet",
+          "value_score": 7.69,
+          "speed": 1000,
+          "price": 130.0
+        },
+        {
+          "rank": 15,
+          "provider": "new aus fiber",
+          "value_score": 7.69,
+          "speed": 1000,
+          "price": 130.0
+        },
+        {
+          "rank": 16,
           "provider": "optus",
           "value_score": 7.52,
           "speed": 820,
           "price": 109.0
         },
         {
-          "rank": 10,
-          "provider": "dodo",
-          "value_score": 7.5,
-          "speed": 750,
-          "price": 99.99
-        },
-        {
-          "rank": 11,
+          "rank": 17,
           "provider": "mate",
           "value_score": 7.43,
           "speed": 713,
           "price": 96.0
         },
         {
-          "rank": 12,
+          "rank": 18,
           "provider": "tangerine",
           "value_score": 7.38,
           "speed": 700,
           "price": 94.9
         },
         {
-          "rank": 13,
+          "rank": 19,
+          "provider": "alpha",
+          "value_score": 6.88,
+          "speed": 750,
+          "price": 109.0
+        },
+        {
+          "rank": 20,
           "provider": "iprimus",
           "value_score": 6.73,
           "speed": 700,
           "price": 104.0
         },
         {
-          "rank": 14,
-          "provider": "telstra",
-          "value_score": 6.3,
-          "speed": 750,
-          "price": 119.0
-        },
-        {
-          "rank": 15,
+          "rank": 21,
           "provider": "origin",
           "value_score": 5.97,
           "speed": 860,
           "price": 144.0
+        },
+        {
+          "rank": 22,
+          "provider": "more",
+          "value_score": 5.43,
+          "speed": 700,
+          "price": 129.0
         }
       ]
     },
@@ -1977,6 +2979,13 @@
           "value_score": 12.12,
           "speed": 2000,
           "price": 165.0
+        },
+        {
+          "rank": 4,
+          "provider": "aussie broadband",
+          "value_score": 11.83,
+          "speed": 2000,
+          "price": 169.0
         }
       ]
     }

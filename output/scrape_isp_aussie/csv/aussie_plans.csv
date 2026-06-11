@@ -1,1 +1,26 @@
 provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
+aussie,NBN,Aussie Broadband NBN Basic 12/1,12,1,73.0,,,No lock-in contract,12,1,https://www.aussiebroadband.com.au/internet/nbn-plans/
+aussie,NBN,Aussie Broadband NBN Basic Plus 25/10,25,10,79.0,55.3,first month; $58.10/month for months 2-3,No lock-in contract,23,9,https://www.aussiebroadband.com.au/internet/nbn-plans/
+aussie,NBN,Aussie Broadband NBN Value 50/20,50,20,93.0,65.1,first month; $66.50/month for months 2-3,No lock-in contract,47,18,https://www.aussiebroadband.com.au/internet/nbn-plans/
+aussie,NBN,Aussie Broadband NBN Fast 100/20,100,20,95.0,80.0,first month; $84/month for months 2-6,No lock-in contract,94,18,https://www.aussiebroadband.com.au/internet/nbn-plans/
+aussie,NBN,Aussie Broadband NBN Fast Fibre 500/50,500,50,95.0,80.0,first month; $84/month for months 2-6,No lock-in contract,500,44,https://www.aussiebroadband.com.au/internet/nbn-plans/
+aussie,NBN,Aussie Broadband NBN Ultrafast Fibre 1000/100,1000,100,129.0,109.0,first 6 months,No lock-in contract,875,92,https://www.aussiebroadband.com.au/internet/nbn-plans/
+aussie,NBN,Aussie Broadband NBN Hyperfast 2000/200,2000,200,189.0,169.0,first 6 months,No lock-in contract,1810,178,https://www.aussiebroadband.com.au/internet/nbn-plans/
+aussie,Opticomm,Aussie Broadband Opticomm Basic 12/1,12,1,73.0,,,No lock-in contract,12,1,https://www.aussiebroadband.com.au/internet/opticomm-plans/
+aussie,Opticomm,Aussie Broadband Opticomm Basic Plus 25/10,25,10,79.0,55.3,first month; $58.10/month for months 2-3,No lock-in contract,23,9,https://www.aussiebroadband.com.au/internet/opticomm-plans/
+aussie,Opticomm,Aussie Broadband Opticomm Value 50/20,50,20,93.0,65.1,first month; $66.50/month for months 2-3,No lock-in contract,47,18,https://www.aussiebroadband.com.au/internet/opticomm-plans/
+aussie,Opticomm,Aussie Broadband Opticomm Fast 100/20,100,20,95.0,80.0,first month; $84/month for months 2-6,No lock-in contract,94,18,https://www.aussiebroadband.com.au/internet/opticomm-plans/
+aussie,Opticomm,Aussie Broadband Opticomm SuperFast 250/25,250,25,119.0,104.0,first 6 months,No lock-in contract,250,22,https://www.aussiebroadband.com.au/internet/opticomm-plans/
+aussie,Opticomm,Aussie Broadband Opticomm Ultrafast 1000/50,1000,50,129.0,109.0,first 6 months,No lock-in contract,875,42,https://www.aussiebroadband.com.au/internet/opticomm-plans/
+aussie,Redtrain,Aussie Broadband Redtrain Basic 12/1,12,1,73.0,,,No lock-in contract,12,1,https://www.aussiebroadband.com.au/
+aussie,Redtrain,Aussie Broadband Redtrain Basic Plus 25/10,25,10,79.0,55.3,first month; $58.10/month for months 2-3,No lock-in contract,23,9,https://www.aussiebroadband.com.au/
+aussie,Redtrain,Aussie Broadband Redtrain Value 50/20,50,20,93.0,65.1,first month; $66.50/month for months 2-3,No lock-in contract,47,18,https://www.aussiebroadband.com.au/
+aussie,Redtrain,Aussie Broadband Redtrain Fast 100/20,100,20,95.0,80.0,first month; $84/month for months 2-6,No lock-in contract,94,18,https://www.aussiebroadband.com.au/
+aussie,Redtrain,Aussie Broadband Redtrain SuperFast 250/25,250,25,119.0,104.0,first 6 months,No lock-in contract,250,22,https://www.aussiebroadband.com.au/
+aussie,Redtrain,Aussie Broadband Redtrain Ultrafast 1000/50,1000,50,129.0,109.0,first 6 months,No lock-in contract,875,42,https://www.aussiebroadband.com.au/
+aussie,Supa,Aussie Broadband Supa Basic 12/1,12,1,73.0,,,No lock-in contract,12,1,https://www.aussiebroadband.com.au/
+aussie,Supa,Aussie Broadband Supa Basic Plus 25/10,25,10,79.0,55.3,first month; $58.10/month for months 2-3,No lock-in contract,23,9,https://www.aussiebroadband.com.au/
+aussie,Supa,Aussie Broadband Supa Value 50/20,50,20,93.0,65.1,first month; $66.50/month for months 2-3,No lock-in contract,47,18,https://www.aussiebroadband.com.au/
+aussie,Supa,Aussie Broadband Supa Fast 100/20,100,20,95.0,80.0,first month; $84/month for months 2-6,No lock-in contract,94,18,https://www.aussiebroadband.com.au/
+aussie,Supa,Aussie Broadband Supa SuperFast 250/25,250,25,119.0,104.0,first 6 months,No lock-in contract,250,22,https://www.aussiebroadband.com.au/
+aussie,Supa,Aussie Broadband Supa Ultrafast 1000/50,1000,50,129.0,109.0,first 6 months,No lock-in contract,875,42,https://www.aussiebroadband.com.au/

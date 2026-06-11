@@ -2,7 +2,7 @@
   {
     "provider_id": 11,
     "provider": "iprimus",
-    "plan_name": "nbn® Standard",
+    "plan_name": "nbn Standard",
     "network_type": "NBN",
     "download_speed": 25,
     "upload_speed": 5,
@@ -11,12 +11,14 @@
     "promo_price": null,
     "promo_period": null,
     "contract": "No Contract",
+    "typical_evening_dl": 25,
+    "typical_evening_ul": 5,
     "source_url": "https://www.iprimus.com.au/nbn-plans"
   },
   {
     "provider_id": 11,
     "provider": "iprimus",
-    "plan_name": "nbn® Standard Plus",
+    "plan_name": "nbn Standard Plus",
     "network_type": "NBN",
     "download_speed": 50,
     "upload_speed": 17,
@@ -25,40 +27,46 @@
     "promo_price": null,
     "promo_period": null,
     "contract": "No Contract",
+    "typical_evening_dl": 50,
+    "typical_evening_ul": 17,
     "source_url": "https://www.iprimus.com.au/nbn-plans"
   },
   {
     "provider_id": 11,
     "provider": "iprimus",
-    "plan_name": "nbn® Premium",
+    "plan_name": "nbn Premium",
     "network_type": "NBN",
     "download_speed": 100,
     "upload_speed": 17,
     "speed": 100,
     "price": 97.0,
-    "promo_price": 67.0,
-    "promo_period": "6 months",
+    "promo_price": null,
+    "promo_period": null,
     "contract": "No Contract",
+    "typical_evening_dl": 100,
+    "typical_evening_ul": 17,
     "source_url": "https://www.iprimus.com.au/nbn-plans"
   },
   {
     "provider_id": 11,
     "provider": "iprimus",
-    "plan_name": "nbn® Premium plus",
+    "plan_name": "nbn Premium plus",
     "network_type": "NBN",
     "download_speed": 500,
     "upload_speed": 47,
     "speed": 500,
     "price": 97.0,
-    "promo_price": 67.0,
-    "promo_period": "6 months",
+    "promo_price": null,
+    "promo_period": null,
     "contract": "No Contract",
+    "typical_evening_dl": 500,
+    "typical_evening_ul": 47,
     "source_url": "https://www.iprimus.com.au/nbn-plans"
   },
   {
     "provider_id": 11,
     "provider": "iprimus",
-    "plan_name": "nbn® Home Superfast",
+    "plan_name": "nbn Home Superfast",
     "network_type": "NBN",
     "download_speed": 700,
     "upload_speed": 49,
@@ -67,12 +75,14 @@
     "promo_price": null,
     "promo_period": null,
     "contract": "No Contract",
+    "typical_evening_dl": 700,
+    "typical_evening_ul": 49,
     "source_url": "https://www.iprimus.com.au/nbn-plans"
   },
   {
     "provider_id": 11,
     "provider": "iprimus",
-    "plan_name": "nbn® Home Ultrafast",
+    "plan_name": "nbn Home Ultrafast",
     "network_type": "NBN",
     "download_speed": 840,
     "upload_speed": 94,
@@ -81,6 +91,8 @@
     "promo_price": null,
     "promo_period": null,
     "contract": "No Contract",
+    "typical_evening_dl": 840,
+    "typical_evening_ul": 94,
     "source_url": "https://www.iprimus.com.au/nbn-plans"
   },
   {
@@ -95,6 +107,8 @@
     "promo_price": null,
     "promo_period": null,
     "contract": "No Contract",
+    "typical_evening_dl": 25,
+    "typical_evening_ul": 5,
     "source_url": "https://www.iprimus.com.au/nbn-plans"
   },
   {
@@ -109,6 +123,8 @@
     "promo_price": null,
     "promo_period": null,
     "contract": "No Contract",
+    "typical_evening_dl": 50,
+    "typical_evening_ul": 17,
     "source_url": "https://www.iprimus.com.au/nbn-plans"
   },
   {
@@ -123,6 +139,8 @@
     "promo_price": null,
     "promo_period": null,
     "contract": "No Contract",
+    "typical_evening_dl": 50,
+    "typical_evening_ul": 17,
     "source_url": "https://www.iprimus.com.au/nbn-plans"
   },
   {
@@ -137,6 +155,8 @@
     "promo_price": null,
     "promo_period": null,
     "contract": "No Contract",
+    "typical_evening_dl": 100,
+    "typical_evening_ul": 17,
     "source_url": "https://www.iprimus.com.au/nbn-plans"
   },
   {
@@ -148,9 +168,11 @@
     "upload_speed": 47,
     "speed": 500,
     "price": 97.0,
-    "promo_price": 67.0,
-    "promo_period": "6 months",
+    "promo_price": null,
+    "promo_period": null,
     "contract": "No Contract",
+    "typical_evening_dl": 500,
+    "typical_evening_ul": 47,
     "source_url": "https://www.iprimus.com.au/nbn-plans"
   },
   {
@@ -165,6 +187,8 @@
     "promo_price": null,
     "promo_period": null,
     "contract": "No Contract",
+    "typical_evening_dl": 700,
+    "typical_evening_ul": 49,
     "source_url": "https://www.iprimus.com.au/nbn-plans"
   },
   {
@@ -179,6 +203,8 @@
     "promo_price": null,
     "promo_period": null,
     "contract": "No Contract",
+    "typical_evening_dl": 840,
+    "typical_evening_ul": 94,
     "source_url": "https://www.iprimus.com.au/nbn-plans"
   }
 ]

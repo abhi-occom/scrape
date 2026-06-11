@@ -8,7 +8,7 @@
     "upload_speed": 100,
     "price": 185.0,
     "promo_price": 165.0,
-    "promo_period": "12 months",
+    "promo_period": "6 months",
     "contract": "No Contract",
     "source_url": "https://occom.com.au/nbn-fttp-upgrade/"
   },
@@ -21,7 +21,7 @@
     "upload_speed": 91,
     "price": 115.0,
     "promo_price": 105.0,
-    "promo_period": "12 months",
+    "promo_period": "6 months",
     "contract": "No Contract",
     "source_url": "https://occom.com.au/nbn-fttp-upgrade/"
   },
@@ -34,7 +34,7 @@
     "upload_speed": 47,
     "price": 98.0,
     "promo_price": 93.0,
-    "promo_period": "12 months",
+    "promo_period": "6 months",
     "contract": "No Contract",
     "source_url": "https://occom.com.au/nbn-fttp-upgrade/"
   },
@@ -47,7 +47,7 @@
     "upload_speed": 48,
     "price": 90.0,
     "promo_price": 85.0,
-    "promo_period": "12 months",
+    "promo_period": "6 months",
     "contract": "No Contract",
     "source_url": "https://occom.com.au/nbn-fttp-upgrade/"
   },

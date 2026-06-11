@@ -1,0 +1,5 @@
+provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
+city7net,Fibre,City7Net Basic,25,10,69.0,,,"Month to month, no lock-in",25,10,https://city7net.com.au/
+city7net,Fibre,City7Net Standard,50,20,78.0,,,"Month to month, no lock-in",50,20,https://city7net.com.au/
+city7net,Fibre,City7Net Premium,500,500,89.0,,,"Month to month, no lock-in",500,500,https://city7net.com.au/
+city7net,Fibre,City7Net Ultimate,1000,1000,130.0,,,"Month to month, no lock-in",1000,1000,https://city7net.com.au/

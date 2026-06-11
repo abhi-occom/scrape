@@ -1,0 +1,62 @@
+[
+  {
+    "provider_id": 22,
+    "provider": "Epsinet",
+    "network_type": "Fibre",
+    "plan_name": "Epsinet Casual",
+    "download_speed": 25,
+    "upload_speed": 10,
+    "price": 69.0,
+    "promo_price": null,
+    "promo_period": null,
+    "contract": "Month to month, no lock-in",
+    "typical_evening_dl": 25,
+    "typical_evening_ul": 10,
+    "source_url": "https://epsinet.com.au/"
+  },
+  {
+    "provider_id": 22,
+    "provider": "Epsinet",
+    "network_type": "Fibre",
+    "plan_name": "Epsinet Everyday",
+    "download_speed": 50,
+    "upload_speed": 20,
+    "price": 79.0,
+    "promo_price": null,
+    "promo_period": null,
+    "contract": "Month to month, no lock-in",
+    "typical_evening_dl": 50,
+    "typical_evening_ul": 20,
+    "source_url": "https://epsinet.com.au/"
+  },
+  {
+    "provider_id": 22,
+    "provider": "Epsinet",
+    "network_type": "Fibre",
+    "plan_name": "Epsinet Family",
+    "download_speed": 100,
+    "upload_speed": 40,
+    "price": 99.0,
+    "promo_price": null,
+    "promo_period": null,
+    "contract": "Month to month, no lock-in",
+    "typical_evening_dl": 100,
+    "typical_evening_ul": 40,
+    "source_url": "https://epsinet.com.au/"
+  },
+  {
+    "provider_id": 22,
+    "provider": "Epsinet",
+    "network_type": "Fibre",
+    "plan_name": "Epsinet Power User",
+    "download_speed": 250,
+    "upload_speed": 50,
+    "price": 129.0,
+    "promo_price": null,
+    "promo_period": null,
+    "contract": "Month to month, no lock-in",
+    "typical_evening_dl": 250,
+    "typical_evening_ul": 50,
+    "source_url": "https://epsinet.com.au/"
+  }
+]

@@ -1,0 +1,5 @@
+provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
+epsinet,Fibre,Epsinet Casual,25,10,69.0,,,"Month to month, no lock-in",25,10,https://epsinet.com.au/
+epsinet,Fibre,Epsinet Everyday,50,20,79.0,,,"Month to month, no lock-in",50,20,https://epsinet.com.au/
+epsinet,Fibre,Epsinet Family,100,40,99.0,,,"Month to month, no lock-in",100,40,https://epsinet.com.au/
+epsinet,Fibre,Epsinet Power User,250,50,129.0,,,"Month to month, no lock-in",250,50,https://epsinet.com.au/

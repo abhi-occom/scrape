@@ -1,9 +1,13 @@
 provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
-activ8me,NBN,Standard 25 Unlimited Data Allowance,25,10,69.95,54.95,6 months,Month-to-Month,25,10,https://www.activ8me.net.au/internet/nbn-fibre-fttp-hfc
-activ8me,NBN,Standard 50 Unlimited Data Allowance,50,20,74.95,,,Month-to-Month,47,17,https://www.activ8me.net.au/internet/nbn-fibre-fttp-hfc
-activ8me,NBN,Home Fast 100 Unlimited Data Allowance,100,20,94.95,84.95,6 months,Month-to-Month,84,17,https://www.activ8me.net.au/internet/nbn-fibre-fttp-hfc
-activ8me,NBN,Home Fast 500 Unlimited Data Allowance,500,50,94.95,84.95,6 months,Month-to-Month,404,42,https://www.activ8me.net.au/internet/nbn-fibre-fttp-hfc
-activ8me,NBN,Super Fast 750 Unlimited Data Allowance,750,50,109.95,,,Month-to-Month,575,42,https://www.activ8me.net.au/internet/nbn-fibre-fttp-hfc
+activ8me,NBN,Standard 25 Unlimited Data Allowance,25,10,74.95,54.95,6 months,Month-to-Month,25,10,https://www.activ8me.net.au/internet/nbn-fibre-fttp-hfc
+activ8me,NBN,Standard 50 Unlimited Data Allowance,50,20,84.95,74.95,6 months,Month-to-Month,47,17,https://www.activ8me.net.au/internet/nbn-fibre-fttp-hfc
+activ8me,NBN,Home Fast 100 Unlimited Data Allowance,100,20,99.95,84.95,6 months,Month-to-Month,84,17,https://www.activ8me.net.au/internet/nbn-fibre-fttp-hfc
+activ8me,NBN,Home Fast 500 Unlimited Data Allowance,500,50,99.95,84.95,6 months,Month-to-Month,404,42,https://www.activ8me.net.au/internet/nbn-fibre-fttp-hfc
+activ8me,NBN,Super Fast 750 Unlimited Data Allowance,750,50,114.95,,,Month-to-Month,575,42,https://www.activ8me.net.au/internet/nbn-fibre-fttp-hfc
+activ8me,Opticomm,Basic 12,12,1,64.95,,,Month-to-Month,7,0.85,https://www.activ8me.net.au/internet/opticomm-fibre-vdsl
+activ8me,Opticomm,Standard 25,25,5,69.95,,,Month-to-Month,23,4.25,https://www.activ8me.net.au/internet/opticomm-fibre-vdsl
+activ8me,Opticomm,Standard 50,50,20,84.95,,,Month-to-Month,39,17,https://www.activ8me.net.au/internet/opticomm-fibre-vdsl
+activ8me,Opticomm,Home Fast 500,500,50,104.95,89.95,6 months,Month-to-Month,329,42,https://www.activ8me.net.au/internet/opticomm-fibre-vdsl
 Airtel,4G Mobile,Airtel Nano 4G 10GB,100,100,30.0,,,No Lock-in,100,100,https://airtel.au/mobile
 Airtel,4G Mobile,Airtel Micro 4G 15GB,100,100,35.0,,,No Lock-in,100,100,https://airtel.au/mobile
 Airtel,4G Mobile,Airtel Micro + 5G 29GB,100,150,40.0,,,No Lock-in,100,150,https://airtel.au/mobile
@@ -104,7 +108,6 @@ Epsinet,Fibre,Epsinet Family,100,40,99.0,,,"Month to month, no lock-in",100,40,h
 Epsinet,Fibre,Epsinet Power User,250,50,129.0,,,"Month to month, no lock-in",250,50,https://epsinet.com.au/
 exetel,NBN,One Plan 500/50,500,50,80.0,,,No Lock-in,500,40,https://www.exetel.com.au/broadband/nbn
 exetel,NBN FTTP Upgrade,One Plan 500/50,500,50,80.0,,,No Lock-in,500,40,https://www.exetel.com.au/broadband/nbn-fibre-upgrade
-exetel,5G Mobile,PLUS ONE 130GB,150,0,40.0,,,No Lock-in,150,0,https://www.exetel.com.au/mobilephone
 iinet,5G Home Broadband,5G Plus,50,20,59.99,39.99,6 months,No Lock-in,50.0,16.0,https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre
 iinet,5G Home Broadband,5G Premium,100,20,69.99,49.99,6 months,No Lock-in,100.0,17.0,https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre
 iinet,NBN,NBN500,500,42,94.99,69.99,6 months,No Lock-in,500.0,42.0,https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre
@@ -182,9 +185,9 @@ mate,NBN,MATE You Beaut nbn 100/40,97,36,106.0,81.0,6 months,No Contract,97,36,h
 mate,NBN,MATE No Worries nbn 500/50,485,46,96.0,71.0,6 months,No Contract,485,46,https://www.letsbemates.com.au/mate/no-worries-500-50/
 mate,NBN,MATE Fair Dinkum nbn 750/50,713,46,121.0,96.0,6 months,No Contract,713,46,https://www.letsbemates.com.au/mate/fair-dinkum-750-50/
 mate,NBN,MATE Flamin' Fast nbn 1000/100,913,94,126.0,101.0,6 months,No Contract,913,94,https://www.letsbemates.com.au/mate/flamin-fast-1000-100/
-More,NBN,More Value,25,8.5,68.0,53.0,36 months,No Lock-in,25,8.5,https://more.com.au/personal/nbn-plans
-More,NBN,More Value Plus,50,17,85.0,70.0,36 months,No Lock-in,50,17,https://more.com.au/personal/nbn-plans
-More,Fixed Wireless,More Fixed Wireless Value Plus,100,20,85.0,70.0,36 months,No Lock-in,100,20,https://more.com.au/personal/nbn-fixed-wireless
+More,NBN,More Value,25,8.5,78.0,,,No Lock-in,25,8.5,https://more.com.au/personal/nbn-plans
+More,NBN,More Value Plus,50,17,95.0,,,No Lock-in,50,17,https://more.com.au/personal/nbn-plans
+More,Fixed Wireless,More Fixed Wireless Value Plus,100,20,95.0,,,No Lock-in,100,20,https://more.com.au/personal/nbn-fixed-wireless
 More,4G Mobile,More Mobile 14GB,100,0,24.0,18.0,36 months,No Lock-in,100,0,https://more.com.au/personal/mobile-plans
 More,Business Fixed Wireless,More Business Fixed Wireless Value Plus,100,20,95.0,,,No Lock-in,100,20,https://more.com.au/business/business-nbn-fixed-wireless
 More,5G Mobile,More Mobile 30GB,150,0,29.0,23.0,36 months,No Lock-in,150,0,https://more.com.au/personal/mobile-plans
@@ -196,17 +199,17 @@ More,5G Mobile,More Business Mobile 30GB,150,0,33.0,,,No Lock-in,150,0,https://m
 More,5G Mobile,More Business Mobile 50GB,150,0,40.0,,,No Lock-in,150,0,https://more.com.au/business/business-mobile-plans
 More,5G Mobile,More Business Mobile 75GB,150,0,46.0,,,No Lock-in,150,0,https://more.com.au/business/business-mobile-plans
 More,5G Mobile,More Business Mobile 100GB,150,0,52.0,,,No Lock-in,150,0,https://more.com.au/business/business-mobile-plans
-More,Fixed Wireless,More Fixed Wireless Fast,250,20,90.0,75.0,36 months,No Lock-in,250,20,https://more.com.au/personal/nbn-fixed-wireless
+More,Fixed Wireless,More Fixed Wireless Fast,250,20,100.0,,,No Lock-in,250,20,https://more.com.au/personal/nbn-fixed-wireless
 More,5G Mobile,More Mobile 160GB,250,0,61.0,55.0,36 months,No Lock-in,250,0,https://more.com.au/personal/mobile-plans
 More,Business NBN,More Business Superfast,250,85,120.0,,,No Lock-in,250,85,https://more.com.au/business/business-nbn-plans
 More,Business Fixed Wireless,More Business Fixed Wireless Fast,250,20,100.0,,,No Lock-in,250,20,https://more.com.au/business/business-nbn-fixed-wireless
 More,5G Mobile,More Business Mobile 160GB,250,0,65.0,,,No Lock-in,250,0,https://more.com.au/business/business-mobile-plans
-More,Fixed Wireless,More Fixed Wireless Superfast,400,40,100.0,85.0,36 months,No Lock-in,400,40,https://more.com.au/personal/nbn-fixed-wireless
+More,Fixed Wireless,More Fixed Wireless Superfast,400,40,110.0,,,No Lock-in,400,40,https://more.com.au/personal/nbn-fixed-wireless
 More,Business Fixed Wireless,More Business Fixed Wireless Superfast,400,40,110.0,,,No Lock-in,400,40,https://more.com.au/business/business-nbn-fixed-wireless
-More,NBN,More Fast Max,500,42.5,90.0,75.0,36 months,No Lock-in,500,42.5,https://more.com.au/personal/nbn-plans
+More,NBN,More Fast Max,500,42.5,100.0,,,No Lock-in,500,42.5,https://more.com.au/personal/nbn-plans
 More,Business NBN,More Business Fast Max,500,42.5,110.0,,,No Lock-in,500,42.5,https://more.com.au/business/business-nbn-plans
 More,Business NBN,More Business Ultrafast,500,170,150.0,,,No Lock-in,500,170,https://more.com.au/business/business-nbn-plans
-More,NBN,More Ultrafast,700,85,119.0,104.0,36 months,No Lock-in,700,85,https://more.com.au/personal/nbn-plans
+More,NBN,More Ultrafast,700,85,129.0,,,No Lock-in,700,85,https://more.com.au/personal/nbn-plans
 More,Business NBN,More Business Ultrafast Plus,700,340,180.0,,,No Lock-in,700,340,https://more.com.au/business/business-nbn-plans
 New Aus Fiber,Fibre,New Aus Fiber Casual,25,25,69.0,,,"Month to month, no lock-in",25,25,https://newausfiber.com.au/
 New Aus Fiber,Fibre,New Aus Fiber Everyday,50,50,77.0,,,"Month to month, no lock-in",50,50,https://newausfiber.com.au/
@@ -317,8 +320,8 @@ Telstra,5G,Basic 5G Internet,25,5,70.0,,,No Lock-in,25,5,https://www.telstra.com
 Telstra,5G,Essential 5G Internet,50,20,80.0,,,No Lock-in,50,20,https://www.telstra.com.au/internet/plans
 Telstra,NBN,Basic nbn®,23,3,93.0,,,No Lock-in,23,3,https://www.telstra.com.au/internet/plans
 Telstra,NBN,Basic nbn®,25,4,93.0,,,No Lock-in,25,4,https://www.telstra.com.au/internet/plans
-Telstra,NBN,Basic nbn® Internet Only,25,4,85.0,,,No Lock-in,25,4,https://www.telstra.com.au/internet/plans
 Telstra,NBN,Basic nbn® Internet Only,23,3,85.0,,,No Lock-in,23,3,https://www.telstra.com.au/internet/plans
+Telstra,NBN,Basic nbn® Internet Only,25,4,85.0,,,No Lock-in,25,4,https://www.telstra.com.au/internet/plans
 Telstra,NBN,Essential nbn®,50,17,109.0,,,No Lock-in,50,17,https://www.telstra.com.au/internet/plans
 Telstra,NBN,Essential nbn®,68,7,109.0,,,No Lock-in,68,7,https://www.telstra.com.au/internet/plans
 Telstra,5G,Premium 5G Internet,300,30,85.0,,,No Lock-in,300,30,https://www.telstra.com.au/internet/plans
@@ -359,19 +362,9 @@ Telstra,Business NBN,Pro Superfast nbn®,500,160,109.0,109.0,6 months,No Lock-in
 Telstra,Business NBN,Pro Superfast nbn® Internet Only,500,160,99.0,99.0,6 months,No Lock-in,500,160,https://www.telstra.com.au/small-business/internet
 Telstra,Business NBN,Pro Ultrafast nbn®,815,320,129.0,129.0,6 months,No Lock-in,815,320,https://www.telstra.com.au/small-business/internet
 Telstra,Business NBN,Pro Ultrafast nbn® Internet Only,815,320,119.0,119.0,6 months,No Lock-in,815,320,https://www.telstra.com.au/small-business/internet
-Tpg,NBN,NBN50,50.0,17.0,84.99,64.99,6 months,No Lock-in,50.0,17.0,https://www.tpg.com.au/nbn
-Tpg,NBN,NBN100,97.0,17.0,94.99,64.99,6 months,No Lock-in,97.0,17.0,https://www.tpg.com.au/nbn
-Tpg,NBN,NBN500,500.0,42.0,94.99,64.99,6 months,No Lock-in,500.0,42.0,https://www.tpg.com.au/nbn
-Tpg,NBN,NBN12,12.0,0.8,74.99,54.99,6 months,No Lock-in,12.0,0.8,https://www.tpg.com.au/nbn
-Tpg,NBN,NBN25,25.0,4.0,76.99,56.99,6 months,No Lock-in,25.0,4.0,https://www.tpg.com.au/nbn
-Tpg,NBN,NBN Home Superfast,740.0,42.0,99.99,69.99,6 months,No Lock-in,740.0,42.0,https://www.tpg.com.au/nbn
-Tpg,NBN,NBN Home Ultrafast,820.0,85.0,109.99,79.99,6 months,No Lock-in,820.0,85.0,https://www.tpg.com.au/nbn
-Tpg,4G Home Wireless,Home Wireless Broadband,15.0,1.9,54.99,44.99,6 months,No Lock-in,15.0,1.9,https://www.tpg.com.au/home-wireless-broadband
-Tpg,5G,5G Home Broadband Plus,50.0,16.0,59.99,29.99,6 months,No Lock-in,50.0,16.0,https://www.tpg.com.au/5g-home-broadband
-Tpg,5G,5G Home Broadband Premium,100.0,17.0,64.99,34.99,6 months,No Lock-in,100.0,17.0,https://www.tpg.com.au/5g-home-broadband
 Tpg,FTTB,FTTB25,25.0,4.0,39.99,,,No Lock-in,25.0,4.0,https://www.tpg.com.au/fttb
-Tpg,FTTB,FTTB100,91.0,25.0,74.99,,,No Lock-in,91.0,25.0,https://www.tpg.com.au/fttb
-Tpg,FTTB,FTTB Max,500.0,25.0,79.99,,,No Lock-in,500.0,25.0,https://www.tpg.com.au/fttb
+Tpg,FTTB,FTTB100,100.0,25.0,74.99,,,No Lock-in,100.0,25.0,https://www.tpg.com.au/fttb
+Tpg,FTTB,FTTB Max,700.0,25.0,79.99,,,No Lock-in,700.0,25.0,https://www.tpg.com.au/fttb
 Unitiinternet,Opticomm,The 25,25,5,55.14,,6 months,No lock-in / month-to-month,25,5,https://unitiinternet.com
 Unitiinternet,Opticomm,The 50,50,20,71.14,,6 months,No lock-in / month-to-month,50,20,https://unitiinternet.com
 Unitiinternet,Opticomm,The 100,100,20,82.14,,6 months,No lock-in / month-to-month,100,20,https://unitiinternet.com

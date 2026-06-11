@@ -1,0 +1,5 @@
+provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
+New Aus Fiber,Fibre,New Aus Fiber Casual,25,25,69.0,,,"Month to month, no lock-in",25,25,https://newausfiber.com.au/
+New Aus Fiber,Fibre,New Aus Fiber Everyday,50,50,77.0,,,"Month to month, no lock-in",50,50,https://newausfiber.com.au/
+New Aus Fiber,Fibre,New Aus Fiber Family,500,500,95.0,,,"Month to month, no lock-in",500,500,https://newausfiber.com.au/
+New Aus Fiber,Fibre,New Aus Fiber Extreme,1000,1000,130.0,,,"Month to month, no lock-in",1000,1000,https://newausfiber.com.au/
