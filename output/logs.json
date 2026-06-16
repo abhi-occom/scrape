@@ -18310,5 +18310,208 @@
     "message": "All plans snapshot rebuilt with 391 plans from 32 providers",
     "provider": "isp-crawler",
     "data": {}
+  },
+  {
+    "timestamp": "2026-06-16T21:49:26.410247",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-16T21:49:26.700084",
+    "status": "info",
+    "message": "ISP Crawler starting for: https://www.iinet.net.au",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-16T21:49:26.834038",
+    "status": "info",
+    "message": "Provider: Iinet",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-16T21:49:26.983947",
+    "status": "info",
+    "message": "Network types: ['nbn', 'opticomm', 'redtrain', 'supa']",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-16T21:49:27.105147",
+    "status": "info",
+    "message": "Max depth: 2",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-16T21:49:27.322323",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-16T21:49:27.504418",
+    "status": "warning",
+    "message": "Checking iinet provider scraper fallback",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-16T21:49:32.636412",
+    "status": "info",
+    "message": "Scraping fibre: https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-16T21:49:48.497827",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-16T21:49:55.723059",
+    "status": "info",
+    "message": "Found 8 .card elements on fibre page",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-16T21:49:58.186582",
+    "status": "success",
+    "message": "fibre: 8 plans",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-16T21:49:58.650686",
+    "status": "info",
+    "message": "Scraping wireless: https://www.iinet.net.au/internet-product/broadband/nbn/plans/wireless",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-16T21:50:01.022419",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-16T21:50:08.381707",
+    "status": "info",
+    "message": "Wireless plan section: 'Select a plan\\nNBN25\\n$ 79 .99 /mth\\n\\nMin Cost $89.99\\n\\nif you return the modem\\n\\nUses NBN25\\n\\n20Mbps\\nDownload\\n3.8Mbps\\nUpload\\nTypical Evening Speed*\\nLiimitless Data\\n\\nTypical Evening Speeds are subject to change and are measured 7pm-11pm. Speeds are not guaranteed and may vary. Addresses with speeds affect'",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-16T21:50:08.540843",
+    "status": "success",
+    "message": "wireless: 1 plans",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-16T21:50:09.075554",
+    "status": "info",
+    "message": "Scraping ftth: https://www.iinet.net.au/internet-products/fibre/ftth/",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-16T21:50:12.825960",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-16T21:50:20.194360",
+    "status": "info",
+    "message": "Found 0 .card elements on fibre page",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-16T21:50:20.439936",
+    "status": "success",
+    "message": "ftth: 0 plans",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-16T21:50:20.715761",
+    "status": "info",
+    "message": "Skipping fibre_upgrade (informational only)",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-16T21:50:23.247810",
+    "status": "success",
+    "message": "Total iiNet plans: 9",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-16T21:50:23.364693",
+    "status": "success",
+    "message": "Provider fallback extracted 9 plans for iinet",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-16T21:50:23.495964",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-16T21:50:23.632707",
+    "status": "success",
+    "message": "Crawl complete for Iinet: 9 valid plans, 0 invalid, 2 pages scraped in 57.09s",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-16T21:50:23.762836",
+    "status": "info",
+    "message": "Network types: ['4G Home Wireless', '5G Home Broadband', 'NBN', 'NBN Fixed Wireless']",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-16T21:50:23.919203",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-16T21:50:24.119725",
+    "status": "info",
+    "message": "Results saved to C:\\xampp\\htdocs\\scrape\\output\\isp_crawler\\iinet_20260616_215024.json",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-16T21:50:24.262882",
+    "status": "info",
+    "message": "CSV saved to C:\\xampp\\htdocs\\scrape\\output\\isp_crawler\\iinet_20260616_215024.csv",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-16T21:50:24.616129",
+    "status": "info",
+    "message": "All plans snapshot rebuilt with 391 plans from 32 providers",
+    "provider": "isp-crawler",
+    "data": {}
   }
 ]

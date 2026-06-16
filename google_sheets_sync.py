@@ -76,25 +76,6 @@ PROVIDER_ALIASES = {
     "KOGAN": "KOGAN",
 }
 
-FIXED_INCLUDE_TERMS = [
-    "nbn",
-    "fibre",
-    "fiber",
-    "fttp",
-    "fttb",
-    "fttc",
-    "fttn",
-    "hfc",
-    "opticomm",
-    "redtrain",
-    "supa",
-    "fixed wireless",
-    "home internet",
-    "home broadband",
-    "broadband",
-    "internet",
-]
-
 EXCLUDED_TERMS = [
     "mobile",
     "sim",
@@ -286,7 +267,7 @@ def plan_is_eligible(plan: Dict[str, Any]) -> bool:
 
     if any(term in source for term in EXCLUDED_TERMS):
         return False
-    return any(term in source for term in FIXED_INCLUDE_TERMS)
+    return "nbn" in source
 
 
 def canonical_provider(provider: Any) -> Optional[str]:

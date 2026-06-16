@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-06-12_13-01-21",
+  "scraped_at": "2026-06-16_21-50-24",
   "source": "isp_crawler_latest_files",
   "total_providers": 32,
   "total_plans": 391,
@@ -76,10 +76,10 @@
     },
     {
       "provider": "Iinet",
-      "base_url": "https://www.iinet.net.au/internet-product",
+      "base_url": "https://www.iinet.net.au",
       "latest_file": "iinet_latest.json",
       "plans_count": 9,
-      "started_at": "2026-06-09T19:20:58.119086"
+      "started_at": "2026-06-16T21:49:26.410247"
     },
     {
       "provider": "Iprimus",
