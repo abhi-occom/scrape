@@ -18191,5 +18191,124 @@
     "message": "All plans snapshot rebuilt with 391 plans from 32 providers",
     "provider": "isp-crawler",
     "data": {}
+  },
+  {
+    "timestamp": "2026-06-12T13:00:49.927642",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-12T13:00:50.051034",
+    "status": "info",
+    "message": "ISP Crawler starting for: https://www.activ8me.net.au",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-12T13:00:50.216520",
+    "status": "info",
+    "message": "Provider: Activ8me",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-12T13:00:50.354677",
+    "status": "info",
+    "message": "Network types: ['nbn', 'opticomm', 'redtrain', 'supa']",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-12T13:00:50.489787",
+    "status": "info",
+    "message": "Max depth: 2",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-12T13:00:50.644083",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-12T13:00:50.806177",
+    "status": "warning",
+    "message": "Checking activ8me provider scraper fallback",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-12T13:00:52.790100",
+    "status": "info",
+    "message": "Starting activ8me scraper",
+    "provider": "activ8me",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-12T13:01:20.297472",
+    "status": "success",
+    "message": "activ8me scraper complete: 9 plans",
+    "provider": "activ8me",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-12T13:01:20.369352",
+    "status": "success",
+    "message": "Provider fallback extracted 9 plans for activ8me",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-12T13:01:20.480845",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-12T13:01:20.594105",
+    "status": "success",
+    "message": "Crawl complete for Activ8me: 9 valid plans, 0 invalid, 2 pages scraped in 30.55s",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-12T13:01:20.697747",
+    "status": "info",
+    "message": "Network types: ['NBN', 'Opticomm']",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-12T13:01:20.816818",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-12T13:01:20.891331",
+    "status": "info",
+    "message": "Results saved to C:\\xampp\\htdocs\\scrape\\output\\isp_crawler\\activ8me_20260612_130120.json",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-12T13:01:20.974392",
+    "status": "info",
+    "message": "CSV saved to C:\\xampp\\htdocs\\scrape\\output\\isp_crawler\\activ8me_20260612_130120.csv",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-12T13:01:21.129615",
+    "status": "info",
+    "message": "All plans snapshot rebuilt with 391 plans from 32 providers",
+    "provider": "isp-crawler",
+    "data": {}
   }
 ]

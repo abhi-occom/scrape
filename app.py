@@ -2,11 +2,17 @@
 Flask API backend for ISP scraper frontend dashboard.
 Provides REST endpoints for scraping, viewing results, and downloading files.
 """
-from flask import Flask, jsonify, request, send_file, render_template, send_from_directory
+from flask import Flask, jsonify, redirect, request, send_file, render_template, send_from_directory, session, url_for
 from flask_cors import CORS
 import json
 import os
 import sys
+
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
@@ -26,11 +32,20 @@ from benchmark_report import generate_html_report, run_and_save_benchmark
 from roi_calculator import compute_roi_data, generate_roi_page, run_and_save_roi
 from utils.screenshots import SCREENSHOT_ROOT
 from utils.stealth import has_virtual_display_support
+from google_sheets_sync import (
+    authorization_url,
+    dry_run_with_known_sheet,
+    fetch_token,
+    get_config as get_sheets_config,
+    status_payload as sheets_status_payload,
+    sync_sheet,
+)
 
 # Import ISP Mini Crawler routes
 from isp.routes import isp_bp
 
 app = Flask(__name__, template_folder='templates')
+app.secret_key = os.environ.get('FLASK_SECRET_KEY', 'dev-only-change-me')
 CORS(app)
 
 # Register ISP crawler blueprint
@@ -68,6 +83,86 @@ def api_get_all_plans():
         'source': snapshot.get('source'),
         'scraped_at': snapshot.get('scraped_at')
     })
+
+
+@app.route('/sheets')
+def sheets_dashboard():
+    """Serve the Google Sheets price sync page."""
+    snapshot = load_all_plans_snapshot()
+    return render_template(
+        'sheets.html',
+        sheet_id=get_sheets_config().get('sheet_id'),
+        snapshot=snapshot,
+    )
+
+
+@app.route('/api/sheets/status', methods=['GET'])
+def api_sheets_status():
+    """Return Google OAuth and target spreadsheet status."""
+    try:
+        status = sheets_status_payload(include_metadata=True)
+        snapshot = load_all_plans_snapshot()
+        status['snapshot'] = {
+            'scraped_at': snapshot.get('scraped_at'),
+            'source': snapshot.get('source'),
+            'total_plans': snapshot.get('total_plans', len(snapshot.get('plans', []))),
+            'total_providers': snapshot.get('total_providers', len(snapshot.get('providers', []))),
+        }
+        return jsonify({'success': True, **status})
+    except Exception as exc:
+        return jsonify({'success': False, 'error': str(exc)}), 500
+
+
+@app.route('/api/google/auth/start', methods=['GET'])
+def api_google_auth_start():
+    """Start Google OAuth for Sheets access."""
+    try:
+        auth_url, state, code_verifier = authorization_url()
+        session['google_oauth_state'] = state
+        session['google_oauth_code_verifier'] = code_verifier
+        return redirect(auth_url)
+    except Exception as exc:
+        return jsonify({'success': False, 'error': str(exc)}), 500
+
+
+@app.route('/oauth2callback', methods=['GET'])
+def oauth2callback():
+    """Handle Google OAuth redirect."""
+    try:
+        fetch_token(
+            request.url,
+            state=session.get('google_oauth_state'),
+            code_verifier=session.get('google_oauth_code_verifier'),
+        )
+        session.pop('google_oauth_state', None)
+        session.pop('google_oauth_code_verifier', None)
+        return redirect(url_for('sheets_dashboard', connected='1'))
+    except Exception as exc:
+        return render_template('sheets.html', sheet_id=get_sheets_config().get('sheet_id'), snapshot=load_all_plans_snapshot(), oauth_error=str(exc)), 500
+
+
+@app.route('/api/sheets/sync', methods=['POST'])
+def api_sheets_sync():
+    """Sync the current saved plan snapshot to Google Sheets."""
+    payload = request.get_json(silent=True) or {}
+    dry_run = bool(payload.get('dry_run'))
+    snapshot = load_all_plans_snapshot()
+    if not snapshot.get('plans'):
+        return jsonify({'success': False, 'error': 'No plan data available in /api/plans/all'}), 404
+
+    try:
+        if dry_run:
+            result = dry_run_with_known_sheet(snapshot)
+        else:
+            result = sync_sheet(snapshot, dry_run=False)
+        result['snapshot'] = {
+            'scraped_at': snapshot.get('scraped_at'),
+            'source': snapshot.get('source'),
+            'total_plans': snapshot.get('total_plans', len(snapshot.get('plans', []))),
+        }
+        return jsonify(result)
+    except Exception as exc:
+        return jsonify({'success': False, 'error': str(exc)}), 500
 
 
 @app.route('/')

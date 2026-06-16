@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Sheets Price Sync</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f6fb;
+            color: #1f2937;
+        }
+
+        header {
+            background: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 18px 28px;
+            display: flex;
+            justify-content: space-between;
+            gap: 18px;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 1.45rem;
+            margin: 0 0 4px;
+        }
+
+        p {
+            margin: 0;
+            color: #6b7280;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 28px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .panel {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+        }
+
+        .panel-wide {
+            grid-column: 1 / -1;
+        }
+
+        .label {
+            color: #6b7280;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .value {
+            font-size: 1.05rem;
+            font-weight: 700;
+            word-break: break-word;
+        }
+
+        .stack {
+            display: grid;
+            gap: 16px;
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 18px;
+        }
+
+        .btn {
+            appearance: none;
+            border: 0;
+            border-radius: 8px;
+            color: #ffffff;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 700;
+            padding: 12px 18px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+        }
+
+        .btn-primary {
+            background: #2563eb;
+        }
+
+        .btn-secondary {
+            background: #4b5563;
+        }
+
+        .btn-success {
+            background: #15803d;
+        }
+
+        .btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.55;
+        }
+
+        .status {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 999px;
+            font-weight: 700;
+            padding: 6px 10px;
+            font-size: 0.85rem;
+        }
+
+        .status-ok {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .status-warn {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .status-bad {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .notice {
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+            border-radius: 8px;
+            color: #92400e;
+            margin-bottom: 18px;
+            padding: 14px 16px;
+        }
+
+        .result {
+            background: #f8fafc;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            min-height: 150px;
+            overflow: auto;
+            padding: 14px;
+            white-space: pre-wrap;
+        }
+
+        .summary {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 14px;
+        }
+
+        .metric {
+            background: #f8fafc;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 12px;
+        }
+
+        .metric strong {
+            display: block;
+            font-size: 1.35rem;
+            margin-bottom: 3px;
+        }
+
+        .metric span {
+            color: #6b7280;
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 760px) {
+            header {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            main {
+                padding: 18px;
+            }
+
+            .grid,
+            .summary {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>Google Sheets Price Sync</h1>
+            <p>Update provider price cells from the current ISP plans API snapshot.</p>
+        </div>
+        <a class="btn btn-secondary" href="/">Back to Dashboard</a>
+    </header>
+
+    <main>
+        {% if oauth_error %}
+        <div class="notice">OAuth failed: {{ oauth_error }}</div>
+        {% endif %}
+
+        <div class="notice">
+            Rotate the OAuth client secret before production use if the old secret was shared. Configure credentials through environment variables, not source code.
+        </div>
+
+        <section class="grid">
+            <div class="panel stack">
+                <div>
+                    <div class="label">Google connection</div>
+                    <div id="connection-status" class="status status-warn">Checking...</div>
+                </div>
+                <div>
+                    <div class="label">Spreadsheet</div>
+                    <div id="sheet-title" class="value">{{ sheet_id }}</div>
+                </div>
+                <div>
+                    <div class="label">Tab</div>
+                    <div id="sheet-tab" class="value">Sheet1</div>
+                </div>
+                <div class="actions">
+                    <a id="connect-button" class="btn btn-primary" href="/api/google/auth/start">Connect Google</a>
+                    <button id="refresh-button" class="btn btn-secondary" type="button">Refresh Status</button>
+                </div>
+            </div>
+
+            <div class="panel stack">
+                <div>
+                    <div class="label">API snapshot</div>
+                    <div class="value">{{ snapshot.scraped_at or "Not available" }}</div>
+                </div>
+                <div class="summary">
+                    <div class="metric">
+                        <strong id="total-plans">{{ snapshot.total_plans or snapshot.plans|length }}</strong>
+                        <span>Plans</span>
+                    </div>
+                    <div class="metric">
+                        <strong id="total-providers">{{ snapshot.total_providers or snapshot.providers|length }}</strong>
+                        <span>Providers</span>
+                    </div>
+                    <div class="metric">
+                        <strong id="rows-processed">0</strong>
+                        <span>Rows</span>
+                    </div>
+                    <div class="metric">
+                        <strong id="cells-updated">0</strong>
+                        <span>Cells</span>
+                    </div>
+                </div>
+                <div class="actions">
+                    <button id="dry-run-button" class="btn btn-secondary" type="button">Preview Mapping</button>
+                    <button id="sync-button" class="btn btn-success" type="button" disabled>Sync Prices to Sheet</button>
+                </div>
+            </div>
+
+            <div class="panel panel-wide">
+                <div class="label">Result</div>
+                <div id="result-box" class="result">Ready.</div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const statusEl = document.getElementById('connection-status');
+        const connectButton = document.getElementById('connect-button');
+        const refreshButton = document.getElementById('refresh-button');
+        const dryRunButton = document.getElementById('dry-run-button');
+        const syncButton = document.getElementById('sync-button');
+        const resultBox = document.getElementById('result-box');
+
+        function setResult(message, data) {
+            resultBox.textContent = data ? `${message}\n\n${JSON.stringify(data, null, 2)}` : message;
+        }
+
+        function setStatus(text, kind) {
+            statusEl.textContent = text;
+            statusEl.className = `status status-${kind}`;
+        }
+
+        function updateMetrics(data) {
+            if (data.rows_processed !== undefined) {
+                document.getElementById('rows-processed').textContent = data.rows_processed;
+            }
+            if (data.cells_updated !== undefined) {
+                document.getElementById('cells-updated').textContent = data.cells_updated;
+            }
+        }
+
+        async function loadStatus() {
+            try {
+                const res = await fetch('/api/sheets/status');
+                const data = await res.json();
+                if (!data.success) {
+                    throw new Error(data.error || 'Status check failed');
+                }
+
+                if (!data.dependencies_installed) {
+                    setStatus('Missing Google libraries', 'bad');
+                    syncButton.disabled = true;
+                } else if (!data.oauth_configured) {
+                    setStatus('OAuth env missing', 'bad');
+                    syncButton.disabled = true;
+                } else if (!data.connected) {
+                    setStatus('Not connected', 'warn');
+                    syncButton.disabled = true;
+                } else {
+                    setStatus('Connected', 'ok');
+                    syncButton.disabled = false;
+                }
+
+                connectButton.style.display = data.connected ? 'none' : 'inline-flex';
+                if (data.metadata) {
+                    document.getElementById('sheet-title').textContent = data.metadata.title || data.sheet_id;
+                    document.getElementById('sheet-tab').textContent = data.metadata.tab_name || data.tab_name;
+                }
+                if (data.snapshot) {
+                    document.getElementById('total-plans').textContent = data.snapshot.total_plans || 0;
+                    document.getElementById('total-providers').textContent = data.snapshot.total_providers || 0;
+                }
+                setResult('Status loaded.', data);
+            } catch (error) {
+                setStatus('Status error', 'bad');
+                syncButton.disabled = true;
+                setResult(error.message);
+            }
+        }
+
+        async function runSync(dryRun) {
+            const button = dryRun ? dryRunButton : syncButton;
+            button.disabled = true;
+            setResult(dryRun ? 'Building preview...' : 'Syncing prices...');
+            try {
+                const res = await fetch('/api/sheets/sync', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ dry_run: dryRun })
+                });
+                const data = await res.json();
+                if (!data.success) {
+                    throw new Error(data.error || 'Sync failed');
+                }
+                updateMetrics(data);
+                setResult(dryRun ? 'Preview complete.' : 'Sheet sync complete.', data);
+            } catch (error) {
+                setResult(error.message);
+            } finally {
+                button.disabled = false;
+                if (!dryRun) {
+                    await loadStatus();
+                }
+            }
+        }
+
+        refreshButton.addEventListener('click', loadStatus);
+        dryRunButton.addEventListener('click', () => runSync(true));
+        syncButton.addEventListener('click', () => runSync(false));
+        document.addEventListener('DOMContentLoaded', loadStatus);
+    </script>
+</body>
+</html>

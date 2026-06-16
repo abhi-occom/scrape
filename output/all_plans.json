@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-06-11_08-28-11",
+  "scraped_at": "2026-06-12_13-01-21",
   "source": "isp_crawler_latest_files",
   "total_providers": 32,
   "total_plans": 391,
@@ -9,7 +9,7 @@
       "base_url": "https://www.activ8me.net.au",
       "latest_file": "activ8me_latest.json",
       "plans_count": 9,
-      "started_at": "2026-06-11T08:27:49.358972"
+      "started_at": "2026-06-12T13:00:49.924029"
     },
     {
       "provider": "Airtel",
