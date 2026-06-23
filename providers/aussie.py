@@ -3,7 +3,7 @@
 The live Aussie Broadband checkout is protected by Cloudflare Turnstile in
 automated browser sessions. Aussie publishes plan-card content for NBN and
 Opticomm pages, so this module keeps those public values as a maintained
-fallback and expands the private-fibre catalogue for carrier filters.
+fallback.
 """
 
 from typing import Any, Dict, List, Sequence, Tuple
@@ -16,7 +16,6 @@ PROVIDER_ID = config.PROVIDERS.get('aussie', {}).get('id', 3)
 PROVIDER_NAME = 'Aussie Broadband'
 NBN_SOURCE_URL = 'https://www.aussiebroadband.com.au/internet/nbn-plans/'
 OPTICOMM_SOURCE_URL = 'https://www.aussiebroadband.com.au/internet/opticomm-plans/'
-ADDRESS_SOURCE_URL = 'https://www.aussiebroadband.com.au/'
 
 
 PlanSeed = Dict[str, Any]
@@ -137,8 +136,6 @@ OPTICOMM_PLANS: Sequence[PlanSeed] = [
 NETWORK_CATALOGUES: Sequence[Tuple[str, str, Sequence[PlanSeed]]] = (
     ('NBN', NBN_SOURCE_URL, NBN_PLANS),
     ('Opticomm', OPTICOMM_SOURCE_URL, OPTICOMM_PLANS),
-    ('Redtrain', ADDRESS_SOURCE_URL, OPTICOMM_PLANS),
-    ('Supa', ADDRESS_SOURCE_URL, OPTICOMM_PLANS),
 )
 
 
@@ -163,7 +160,7 @@ def _plan_row(network_type: str, source_url: str, plan: PlanSeed) -> Dict[str, A
 
 
 def scrape_aussie_plans() -> List[Dict[str, Any]]:
-    """Return Aussie Broadband rows for NBN and private-fibre carrier filters."""
+    """Return maintained Aussie Broadband NBN and Opticomm rows."""
     log_info('Starting Aussie Broadband scraper', provider='aussie')
     plans = [
         _plan_row(network_type, source_url, plan)

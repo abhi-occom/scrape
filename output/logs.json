@@ -18513,5 +18513,2357 @@
     "message": "All plans snapshot rebuilt with 391 plans from 32 providers",
     "provider": "isp-crawler",
     "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T08:51:10.435151",
+    "status": "warning",
+    "message": "Checking aussie provider scraper fallback",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T08:51:10.481740",
+    "status": "success",
+    "message": "Provider fallback extracted 1 plans for aussie",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T08:51:10.517190",
+    "status": "warning",
+    "message": "Checking occom provider scraper fallback",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T08:51:10.549594",
+    "status": "success",
+    "message": "Provider fallback extracted 1 plans for occom",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T08:51:10.581761",
+    "status": "info",
+    "message": "Starting Aussie Broadband scraper",
+    "provider": "aussie",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T08:51:10.618593",
+    "status": "success",
+    "message": "Aussie Broadband scraper complete: 13 plans",
+    "provider": "aussie",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T08:51:58.468950",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T08:51:58.508292",
+    "status": "info",
+    "message": "ISP Crawler starting for: https://www.aussiebroadband.com.au",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T08:51:58.555863",
+    "status": "info",
+    "message": "Provider: Aussiebroadband",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T08:51:58.599896",
+    "status": "info",
+    "message": "Network types: ['nbn', 'opticomm', 'redtrain', 'supa']",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T08:51:58.630948",
+    "status": "info",
+    "message": "Max depth: 2",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T08:51:58.668724",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T08:51:58.683722",
+    "status": "warning",
+    "message": "Checking aussie provider scraper fallback",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T08:51:58.741343",
+    "status": "info",
+    "message": "Starting Aussie Broadband scraper",
+    "provider": "aussie",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T08:51:58.766444",
+    "status": "success",
+    "message": "Aussie Broadband scraper complete: 13 plans",
+    "provider": "aussie",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T08:51:58.793929",
+    "status": "success",
+    "message": "Provider fallback extracted 13 plans for aussie",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T08:51:58.828803",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T08:51:58.858705",
+    "status": "success",
+    "message": "Crawl complete for Aussie: 13 valid plans, 0 invalid, 2 pages scraped in 0.36s",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T08:51:58.874350",
+    "status": "info",
+    "message": "Network types: ['NBN', 'Opticomm']",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T08:51:58.919117",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T08:51:58.950954",
+    "status": "info",
+    "message": "Results saved to C:\\xampp\\htdocs\\scrape\\output\\isp_crawler\\aussie_20260622_085158.json",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T08:51:59.004196",
+    "status": "info",
+    "message": "CSV saved to C:\\xampp\\htdocs\\scrape\\output\\isp_crawler\\aussie_20260622_085158.csv",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T08:51:59.117291",
+    "status": "info",
+    "message": "All plans snapshot rebuilt with 379 plans from 32 providers",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T09:50:52.801488",
+    "status": "warning",
+    "message": "Checking aussie provider scraper fallback",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T09:50:52.827905",
+    "status": "success",
+    "message": "Provider fallback extracted 1 plans for aussie",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T09:50:52.856117",
+    "status": "warning",
+    "message": "Checking occom provider scraper fallback",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T09:50:52.883008",
+    "status": "success",
+    "message": "Provider fallback extracted 1 plans for occom",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T09:50:52.903062",
+    "status": "info",
+    "message": "Starting Aussie Broadband scraper",
+    "provider": "aussie",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T09:50:52.932436",
+    "status": "success",
+    "message": "Aussie Broadband scraper complete: 13 plans",
+    "provider": "aussie",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:16:15.291369",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:16:15.635900",
+    "status": "info",
+    "message": "ISP Crawler starting for: https://home.alpha.net.au",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:16:15.814132",
+    "status": "info",
+    "message": "Provider: Home",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:16:16.001918",
+    "status": "info",
+    "message": "Network types: ['nbn', 'opticomm', 'redtrain', 'supa']",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:16:16.184398",
+    "status": "info",
+    "message": "Max depth: 2",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:16:16.502153",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:16:16.838698",
+    "status": "warning",
+    "message": "Checking alpha provider scraper fallback",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:16:19.326525",
+    "status": "info",
+    "message": "Starting Alpha scraper",
+    "provider": "alpha",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:16:26.798911",
+    "status": "info",
+    "message": "Supanetworks: extracted 4 plans",
+    "provider": "alpha",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:16:27.932705",
+    "status": "info",
+    "message": "Lynham Networks: extracted 3 plans",
+    "provider": "alpha",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:16:29.366868",
+    "status": "info",
+    "message": "Opticomm: extracted 4 plans",
+    "provider": "alpha",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:16:31.403365",
+    "status": "info",
+    "message": "NBN: extracted 3 plans",
+    "provider": "alpha",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:16:31.785521",
+    "status": "success",
+    "message": "Alpha scraper complete: 14 plans",
+    "provider": "alpha",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:16:32.359965",
+    "status": "success",
+    "message": "Provider fallback extracted 7 plans for alpha",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:16:32.595439",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:16:32.832281",
+    "status": "success",
+    "message": "Crawl complete for Alpha: 7 valid plans, 0 invalid, 2 pages scraped in 17.3s",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:16:33.032936",
+    "status": "info",
+    "message": "Network types: ['NBN', 'Opticomm']",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:16:33.224784",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:16:33.583090",
+    "status": "info",
+    "message": "Results saved to C:\\xampp\\htdocs\\scrape\\output\\isp_crawler\\alpha_20260622_181633.json",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:16:34.247874",
+    "status": "info",
+    "message": "CSV saved to C:\\xampp\\htdocs\\scrape\\output\\isp_crawler\\alpha_20260622_181633.csv",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:16:35.739662",
+    "status": "info",
+    "message": "All plans snapshot rebuilt with 372 plans from 32 providers",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:17:11.222621",
+    "status": "info",
+    "message": "Navigating to https://www.optus.com.au/internet/nbn",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:17:22.776148",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:17:30.810006",
+    "status": "info",
+    "message": "Found 5 plan cards",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:17:36.406037",
+    "status": "success",
+    "message": "Extracted 5 plans from Optus",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:27:57.143305",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:27:57.399106",
+    "status": "info",
+    "message": "ISP Crawler starting for: https://www.telstra.com.au/internet/plans",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:27:57.527292",
+    "status": "info",
+    "message": "Provider: Telstra",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:27:57.655386",
+    "status": "info",
+    "message": "Network types: ['nbn', 'opticomm', 'redtrain', 'supa']",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:27:57.990648",
+    "status": "info",
+    "message": "Max depth: 2",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:27:58.215494",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:27:58.526485",
+    "status": "warning",
+    "message": "Checking telstra provider scraper fallback",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:28:02.035388",
+    "status": "info",
+    "message": "Scraping plans: https://www.telstra.com.au/internet/plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:28:32.520766",
+    "status": "error",
+    "message": "Error scraping plans: Page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"https://www.telstra.com.au/internet/plans\", waiting until \"domcontentloaded\"\n",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:28:33.824375",
+    "status": "info",
+    "message": "Scraping 5g_home: https://www.telstra.com.au/internet/5g-home-internet",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:28:40.218353",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:29:07.672483",
+    "status": "success",
+    "message": "5g_home: 3 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:29:09.509580",
+    "status": "info",
+    "message": "Scraping starlink: https://www.telstra.com.au/internet/starlink",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:29:19.255211",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:29:32.615046",
+    "status": "success",
+    "message": "starlink: 1 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:29:34.219856",
+    "status": "info",
+    "message": "Scraping opticomm: https://www.telstra.com.au/internet/opticomm-plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:29:47.747612",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:30:25.952734",
+    "status": "success",
+    "message": "opticomm: 10 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:30:30.222365",
+    "status": "info",
+    "message": "Scraping small_business: https://www.telstra.com.au/small-business/internet",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:30:57.089030",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:31:28.652505",
+    "status": "success",
+    "message": "small_business: 13 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:32:28.115483",
+    "status": "success",
+    "message": "Total Telstra plans: 27",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:32:28.392621",
+    "status": "success",
+    "message": "Provider fallback extracted 10 plans for telstra",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:32:28.559925",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:32:28.756714",
+    "status": "success",
+    "message": "Crawl complete for Telstra: 10 valid plans, 0 invalid, 1 pages scraped in 271.42s",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:32:28.959323",
+    "status": "info",
+    "message": "Network types: ['Opticomm']",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:32:29.225921",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:32:29.592065",
+    "status": "info",
+    "message": "Results saved to C:\\xampp\\htdocs\\scrape\\output\\isp_crawler\\telstra_20260622_183229.json",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:32:29.771994",
+    "status": "info",
+    "message": "CSV saved to C:\\xampp\\htdocs\\scrape\\output\\isp_crawler\\telstra_20260622_183229.csv",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:32:30.234350",
+    "status": "info",
+    "message": "All plans snapshot rebuilt with 336 plans from 32 providers",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:32:30.530422",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:32:30.992895",
+    "status": "info",
+    "message": "ISP Crawler starting for: https://www.optus.com.au/internet/nbn",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:32:31.242338",
+    "status": "info",
+    "message": "Provider: Optus",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:32:31.446172",
+    "status": "info",
+    "message": "Network types: ['nbn', 'opticomm', 'redtrain', 'supa']",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:32:31.712127",
+    "status": "info",
+    "message": "Max depth: 2",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:32:31.905473",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:32:32.382492",
+    "status": "warning",
+    "message": "Checking optus provider scraper fallback",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:32:50.362997",
+    "status": "info",
+    "message": "Navigating to https://www.optus.com.au/internet/nbn",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:33:19.823613",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:33:26.976977",
+    "status": "info",
+    "message": "Found 5 plan cards",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:33:30.479946",
+    "status": "success",
+    "message": "Extracted 5 plans from Optus",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:33:55.532994",
+    "status": "info",
+    "message": "Step 1: Discovering plan page URLs...",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:33:55.733484",
+    "status": "info",
+    "message": "Starting URL discovery from https://www.optus.com.au/internet/nbn",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:33:56.318277",
+    "status": "info",
+    "message": "[depth=0] Crawling: https://www.optus.com.au/internet/nbn",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:34:00.215494",
+    "status": "error",
+    "message": "Error crawling https://www.optus.com.au/internet/nbn: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.optus.com.au/internet/nbn\nCall log:\n  - navigating to \"https://www.optus.com.au/internet/nbn\", waiting until \"domcontentloaded\"\n",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:34:00.496670",
+    "status": "info",
+    "message": "Discovery complete: 1 pages visited, 0 candidate plan pages found",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:34:00.786372",
+    "status": "warning",
+    "message": "No plan pages discovered via crawl, trying base URL directly",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:34:03.575390",
+    "status": "warning",
+    "message": "Checking optus provider scraper fallback",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:34:05.539313",
+    "status": "info",
+    "message": "Step 2: Analysing pages for plan data...",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:34:07.982780",
+    "status": "error",
+    "message": "Error analysing https://www.optus.com.au/internet/nbn: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.optus.com.au/internet/nbn\nCall log:\n  - navigating to \"https://www.optus.com.au/internet/nbn\", waiting until \"domcontentloaded\"\n",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:34:08.833160",
+    "status": "info",
+    "message": "Found 0 confirmed plan pages out of 1 candidates",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:34:09.431811",
+    "status": "info",
+    "message": "Step 3: Extracting plan data...",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:34:09.847635",
+    "status": "info",
+    "message": "Step 4: Validating scraped plans...",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:34:10.246766",
+    "status": "info",
+    "message": "Validation complete: 0 valid, 0 invalid out of 0",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:34:25.448581",
+    "status": "warning",
+    "message": "Checking optus provider scraper fallback",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:34:37.136878",
+    "status": "info",
+    "message": "Navigating to https://www.optus.com.au/internet/nbn",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:34:51.351219",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:34:58.076176",
+    "status": "info",
+    "message": "Found 5 plan cards",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:35:06.681034",
+    "status": "success",
+    "message": "Extracted 5 plans from Optus",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:35:21.921914",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:35:22.174266",
+    "status": "success",
+    "message": "Crawl complete for Optus: 0 valid plans, 0 invalid, 0 pages scraped in 171.39s",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:35:22.441009",
+    "status": "info",
+    "message": "Network types: []",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:35:23.536256",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:35:23.772713",
+    "status": "info",
+    "message": "Results saved to C:\\xampp\\htdocs\\scrape\\output\\isp_crawler\\optus_20260622_183523.json",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:35:24.782229",
+    "status": "info",
+    "message": "All plans snapshot rebuilt with 331 plans from 32 providers",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:35:25.148321",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:35:25.354523",
+    "status": "info",
+    "message": "ISP Crawler starting for: https://www.aussiebroadband.com.au/internet/nbn-plans",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:35:25.572311",
+    "status": "info",
+    "message": "Provider: Aussie Broadband",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:35:25.908875",
+    "status": "info",
+    "message": "Network types: ['nbn', 'opticomm', 'redtrain', 'supa']",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:35:26.260364",
+    "status": "info",
+    "message": "Max depth: 2",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:35:26.684409",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:35:26.869320",
+    "status": "warning",
+    "message": "Checking aussie provider scraper fallback",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:35:27.143315",
+    "status": "info",
+    "message": "Starting Aussie Broadband scraper",
+    "provider": "aussie",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:35:27.870678",
+    "status": "success",
+    "message": "Aussie Broadband scraper complete: 13 plans",
+    "provider": "aussie",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:35:28.320664",
+    "status": "success",
+    "message": "Provider fallback extracted 13 plans for aussie",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:35:28.553260",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:35:28.827284",
+    "status": "success",
+    "message": "Crawl complete for Aussie: 13 valid plans, 0 invalid, 2 pages scraped in 3.4s",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:35:29.039541",
+    "status": "info",
+    "message": "Network types: ['NBN', 'Opticomm']",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:35:29.292092",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:35:29.692037",
+    "status": "info",
+    "message": "Results saved to C:\\xampp\\htdocs\\scrape\\output\\isp_crawler\\aussie_20260622_183529.json",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:35:29.987341",
+    "status": "info",
+    "message": "CSV saved to C:\\xampp\\htdocs\\scrape\\output\\isp_crawler\\aussie_20260622_183529.csv",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:35:30.438644",
+    "status": "info",
+    "message": "All plans snapshot rebuilt with 331 plans from 32 providers",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:35:30.677427",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:35:30.953746",
+    "status": "info",
+    "message": "ISP Crawler starting for: https://www.superloop.com/internet/nbn",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:35:31.128243",
+    "status": "info",
+    "message": "Provider: Superloop",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:35:31.341419",
+    "status": "info",
+    "message": "Network types: ['nbn', 'opticomm', 'redtrain', 'supa']",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:35:31.556364",
+    "status": "info",
+    "message": "Max depth: 2",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:35:31.708443",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:35:31.930156",
+    "status": "warning",
+    "message": "Checking superloop provider scraper fallback",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:35:37.106384",
+    "status": "info",
+    "message": "Scraping nbn: https://www.superloop.com/internet/nbn/",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:35:48.047816",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:35:54.829936",
+    "status": "info",
+    "message": "Rendered card pricing entries: 0",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:35:56.879048",
+    "status": "success",
+    "message": "nbn: 0 plans",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:36:00.211309",
+    "status": "info",
+    "message": "Scraping fibre: https://www.superloop.com/internet/fibre/",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:36:01.576299",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:36:07.077802",
+    "status": "info",
+    "message": "Rendered card pricing entries: 0",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:36:11.049536",
+    "status": "success",
+    "message": "fibre: 7 plans",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:36:13.772043",
+    "status": "info",
+    "message": "Scraping flip_to_fibre: https://www.superloop.com/flip-to-fibre/",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:36:16.228654",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:36:23.431817",
+    "status": "info",
+    "message": "Rounded cards found: 0",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:36:24.330840",
+    "status": "success",
+    "message": "flip_to_fibre: 0 plans",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:36:25.912671",
+    "status": "info",
+    "message": "Scraping fixed_wireless: https://www.superloop.com/internet/fixed-wireless/",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:36:27.434495",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:36:34.967860",
+    "status": "info",
+    "message": "Fixed wireless cards found: 0",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:36:37.078966",
+    "status": "success",
+    "message": "fixed_wireless: 0 plans",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:36:55.770606",
+    "status": "success",
+    "message": "Total Superloop plans: 7",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:37:00.644277",
+    "status": "info",
+    "message": "Step 1: Discovering plan page URLs...",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:37:01.421770",
+    "status": "info",
+    "message": "Starting URL discovery from https://www.superloop.com/internet/nbn",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:37:03.013179",
+    "status": "info",
+    "message": "[depth=0] Crawling: https://www.superloop.com/internet/nbn",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:37:27.979377",
+    "status": "info",
+    "message": "[depth=1] Crawling: https://www.superloop.com/internet/nbn-2gbps-plan",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:37:35.556513",
+    "status": "info",
+    "message": "Discovery complete: 2 pages visited, 1 candidate plan pages found",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:37:37.013941",
+    "status": "success",
+    "message": "Discovered 2 candidate plan pages",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:37:37.651071",
+    "status": "warning",
+    "message": "Checking superloop provider scraper fallback",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:37:38.086344",
+    "status": "info",
+    "message": "Step 2: Analysing pages for plan data...",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:37:47.704627",
+    "status": "info",
+    "message": "Page analysis: https://www.superloop.com/internet/nbn | plans=False confidence=0.00 networks=[] cards=0 prices=0 speeds=0",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:37:58.039430",
+    "status": "info",
+    "message": "Page analysis: https://www.superloop.com/internet/nbn-2gbps-plan | plans=False confidence=0.00 networks=[] cards=0 prices=0 speeds=0",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:37:58.359882",
+    "status": "info",
+    "message": "Found 0 confirmed plan pages out of 2 candidates",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:37:58.679863",
+    "status": "info",
+    "message": "Step 3: Extracting plan data...",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:37:59.059200",
+    "status": "info",
+    "message": "Step 4: Validating scraped plans...",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:37:59.522428",
+    "status": "info",
+    "message": "Validation complete: 0 valid, 0 invalid out of 0",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:38:18.060948",
+    "status": "warning",
+    "message": "Checking superloop provider scraper fallback",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:38:22.113458",
+    "status": "info",
+    "message": "Scraping nbn: https://www.superloop.com/internet/nbn/",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:38:32.502377",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:38:41.724886",
+    "status": "info",
+    "message": "Rendered card pricing entries: 0",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:38:45.619762",
+    "status": "success",
+    "message": "nbn: 13 plans",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:38:49.005562",
+    "status": "info",
+    "message": "Scraping fibre: https://www.superloop.com/internet/fibre/",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:38:51.497657",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:38:57.882792",
+    "status": "info",
+    "message": "Rendered card pricing entries: 0",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:39:01.606671",
+    "status": "success",
+    "message": "fibre: 7 plans",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:39:03.609583",
+    "status": "info",
+    "message": "Scraping flip_to_fibre: https://www.superloop.com/flip-to-fibre/",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:39:05.105837",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:39:13.243679",
+    "status": "info",
+    "message": "Rounded cards found: 0",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:39:15.542876",
+    "status": "success",
+    "message": "flip_to_fibre: 0 plans",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:39:19.113178",
+    "status": "info",
+    "message": "Scraping fixed_wireless: https://www.superloop.com/internet/fixed-wireless/",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:39:20.816309",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:39:28.694430",
+    "status": "info",
+    "message": "Fixed wireless cards found: 0",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:39:30.342942",
+    "status": "success",
+    "message": "fixed_wireless: 0 plans",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:40:04.418189",
+    "status": "success",
+    "message": "Total Superloop plans: 20",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:40:04.716375",
+    "status": "success",
+    "message": "Provider fallback extracted 13 plans for superloop",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:40:05.001447",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:40:05.746374",
+    "status": "success",
+    "message": "Crawl complete for Superloop: 13 valid plans, 0 invalid, 1 pages scraped in 274.32s",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:40:06.568592",
+    "status": "info",
+    "message": "Network types: ['NBN']",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:40:06.883288",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:40:07.138707",
+    "status": "info",
+    "message": "Results saved to C:\\xampp\\htdocs\\scrape\\output\\isp_crawler\\superloop_20260622_184007.json",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:40:07.420678",
+    "status": "info",
+    "message": "CSV saved to C:\\xampp\\htdocs\\scrape\\output\\isp_crawler\\superloop_20260622_184007.csv",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:40:07.684875",
+    "status": "info",
+    "message": "All plans snapshot rebuilt with 316 plans from 32 providers",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:40:07.887335",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:40:08.468823",
+    "status": "info",
+    "message": "ISP Crawler starting for: https://occom.com.au/nbn-plans",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:40:09.282224",
+    "status": "info",
+    "message": "Provider: Occom",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:40:09.666874",
+    "status": "info",
+    "message": "Network types: ['nbn', 'opticomm', 'redtrain', 'supa']",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:40:09.952077",
+    "status": "info",
+    "message": "Max depth: 2",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:40:10.260645",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:40:10.503780",
+    "status": "warning",
+    "message": "Checking occom provider scraper fallback",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:40:10.732938",
+    "status": "info",
+    "message": "Starting Occom multi-page scraper",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:40:20.144055",
+    "status": "info",
+    "message": "Scraping NBN plans from https://occom.com.au/nbn-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:41:06.776038",
+    "status": "info",
+    "message": "Found 11 cards on https://occom.com.au/nbn-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:41:44.068047",
+    "status": "success",
+    "message": "Scraped 11 NBN plans",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:41:44.417916",
+    "status": "info",
+    "message": "Scraping Opticomm plans from https://occom.com.au/opticomm-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:42:04.777616",
+    "status": "info",
+    "message": "Found 7 cards on https://occom.com.au/opticomm-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:42:45.871148",
+    "status": "success",
+    "message": "Scraped 7 Opticomm plans",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:42:46.253959",
+    "status": "info",
+    "message": "Scraping NBN FTTP plans from https://occom.com.au/nbn-fttp-upgrade/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:43:03.613069",
+    "status": "info",
+    "message": "Found 8 cards on https://occom.com.au/nbn-fttp-upgrade/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:43:47.399269",
+    "status": "success",
+    "message": "Scraped 8 NBN FTTP plans",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:43:47.784723",
+    "status": "info",
+    "message": "Scraping Supa plans from https://occom.com.au/supa-network-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:44:07.310005",
+    "status": "info",
+    "message": "Found 5 cards on https://occom.com.au/supa-network-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:45:03.570156",
+    "status": "success",
+    "message": "Scraped 5 Supa plans",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:45:04.096564",
+    "status": "info",
+    "message": "Scraping Redtrain plans from https://occom.com.au/redtrain-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:45:21.460054",
+    "status": "info",
+    "message": "Found 7 cards on https://occom.com.au/redtrain-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:46:01.257179",
+    "status": "success",
+    "message": "Scraped 7 Redtrain plans",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:46:01.882905",
+    "status": "info",
+    "message": "Scraping Community Fibre plans from https://occom.com.au/community-fibre-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:46:25.234368",
+    "status": "info",
+    "message": "Found 6 cards on https://occom.com.au/community-fibre-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:47:04.490592",
+    "status": "success",
+    "message": "Scraped 6 Community Fibre plans",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:47:18.224297",
+    "status": "success",
+    "message": "Total Occom plans scraped: 44 across 6 pages",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:47:18.468728",
+    "status": "success",
+    "message": "Provider fallback extracted 30 plans for occom",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:47:18.703956",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:47:18.936448",
+    "status": "success",
+    "message": "Crawl complete for Occom: 30 valid plans, 0 invalid, 4 pages scraped in 430.82s",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:47:19.163344",
+    "status": "info",
+    "message": "Network types: ['NBN', 'Opticomm', 'Redtrain', 'Supa']",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:47:19.351768",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:47:19.545536",
+    "status": "info",
+    "message": "Results saved to C:\\xampp\\htdocs\\scrape\\output\\isp_crawler\\occom_20260622_184719.json",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:47:19.734265",
+    "status": "info",
+    "message": "CSV saved to C:\\xampp\\htdocs\\scrape\\output\\isp_crawler\\occom_20260622_184719.csv",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:47:20.090341",
+    "status": "info",
+    "message": "All plans snapshot rebuilt with 315 plans from 32 providers",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:47:20.357433",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:47:20.763885",
+    "status": "info",
+    "message": "ISP Crawler starting for: https://www.tpg.com.au/nbn",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:47:21.016903",
+    "status": "info",
+    "message": "Provider: TPG",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:47:21.798280",
+    "status": "info",
+    "message": "Network types: ['nbn', 'opticomm', 'redtrain', 'supa']",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:47:22.319287",
+    "status": "info",
+    "message": "Max depth: 2",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:47:22.539215",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:47:22.745978",
+    "status": "warning",
+    "message": "Checking tpg provider scraper fallback",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:47:27.277534",
+    "status": "info",
+    "message": "Scraping nbn: https://www.tpg.com.au/nbn",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:47:42.738548",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:47:55.319305",
+    "status": "info",
+    "message": "Found 44 nbnLabels cards",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:48:13.185104",
+    "status": "success",
+    "message": "nbn: 6 plans",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:48:13.479090",
+    "status": "info",
+    "message": "Skipping fibre_upgrade (informational)",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:48:14.152907",
+    "status": "info",
+    "message": "Scraping home_wireless: https://www.tpg.com.au/home-wireless-broadband",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:48:20.909297",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:48:28.709732",
+    "status": "success",
+    "message": "home_wireless: 1 plans",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:48:31.562595",
+    "status": "info",
+    "message": "Scraping 5g_home: https://www.tpg.com.au/5g-home-broadband",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:48:43.507262",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:48:51.335403",
+    "status": "success",
+    "message": "5g_home: 2 plans",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:48:52.415789",
+    "status": "info",
+    "message": "Scraping fttb: https://www.tpg.com.au/fttb",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:48:58.765888",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:49:08.172058",
+    "status": "info",
+    "message": "Found 3 FTTB plan-cards",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:49:13.463311",
+    "status": "success",
+    "message": "fttb: 3 plans",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:49:56.865515",
+    "status": "success",
+    "message": "Total TPG plans: 12",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:49:57.504261",
+    "status": "success",
+    "message": "Provider fallback extracted 6 plans for tpg",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:49:58.308235",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:49:59.267756",
+    "status": "success",
+    "message": "Crawl complete for Tpg: 6 valid plans, 0 invalid, 1 pages scraped in 157.95s",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:49:59.780458",
+    "status": "info",
+    "message": "Network types: ['NBN']",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:50:00.573496",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:50:01.017169",
+    "status": "info",
+    "message": "Results saved to C:\\xampp\\htdocs\\scrape\\output\\isp_crawler\\tpg_20260622_185000.json",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:50:02.327948",
+    "status": "info",
+    "message": "CSV saved to C:\\xampp\\htdocs\\scrape\\output\\isp_crawler\\tpg_20260622_185000.csv",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:50:04.507140",
+    "status": "info",
+    "message": "All plans snapshot rebuilt with 318 plans from 32 providers",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:50:05.616525",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:50:07.154466",
+    "status": "info",
+    "message": "ISP Crawler starting for: https://www.exetel.com.au/broadband/nbn",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:50:07.577961",
+    "status": "info",
+    "message": "Provider: Exetel",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:50:07.905787",
+    "status": "info",
+    "message": "Network types: ['nbn', 'opticomm', 'redtrain', 'supa']",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:50:08.200993",
+    "status": "info",
+    "message": "Max depth: 2",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:50:08.594193",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:50:09.413015",
+    "status": "warning",
+    "message": "Checking exetel provider scraper fallback",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:50:20.076200",
+    "status": "info",
+    "message": "Scraping nbn: https://www.exetel.com.au/broadband/nbn",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:50:49.731019",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:50:58.947768",
+    "status": "info",
+    "message": "Found 1 CMSPlanCardBroadband cards",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:51:01.824802",
+    "status": "success",
+    "message": "nbn: 1 plans",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:51:03.408969",
+    "status": "info",
+    "message": "Scraping nbn_fibre_upgrade: https://www.exetel.com.au/broadband/nbn-fibre-upgrade",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:51:06.713505",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:51:18.276733",
+    "status": "info",
+    "message": "Found 1 CMSPlanCardBroadband cards",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:51:20.054509",
+    "status": "success",
+    "message": "nbn_fibre_upgrade: 1 plans",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:51:21.809804",
+    "status": "info",
+    "message": "Scraping mobile: https://www.exetel.com.au/mobilephone",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:51:24.301988",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:51:35.318381",
+    "status": "info",
+    "message": "Found 1 CMSPlanMobile cards",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:51:39.782015",
+    "status": "success",
+    "message": "mobile: 1 plans",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:51:49.926381",
+    "status": "success",
+    "message": "Total Exetel plans: 3",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:51:50.320530",
+    "status": "success",
+    "message": "Provider fallback extracted 1 plans for exetel",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:51:51.490222",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:51:52.153390",
+    "status": "success",
+    "message": "Crawl complete for Exetel: 1 valid plans, 0 invalid, 1 pages scraped in 105.87s",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:51:52.806282",
+    "status": "info",
+    "message": "Network types: ['NBN']",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:51:53.248965",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:51:53.510655",
+    "status": "info",
+    "message": "Results saved to C:\\xampp\\htdocs\\scrape\\output\\isp_crawler\\exetel_20260622_185153.json",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:51:53.877934",
+    "status": "info",
+    "message": "CSV saved to C:\\xampp\\htdocs\\scrape\\output\\isp_crawler\\exetel_20260622_185153.csv",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:51:54.245102",
+    "status": "info",
+    "message": "All plans snapshot rebuilt with 317 plans from 32 providers",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:51:54.430957",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:51:54.726700",
+    "status": "info",
+    "message": "ISP Crawler starting for: https://leaptel.com.au/plans/?provider=nbn",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:51:55.071987",
+    "status": "info",
+    "message": "Provider: Leaptel",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:51:55.986943",
+    "status": "info",
+    "message": "Network types: ['nbn', 'opticomm', 'redtrain', 'supa']",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:51:56.430897",
+    "status": "info",
+    "message": "Max depth: 2",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:51:56.669717",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:51:56.854611",
+    "status": "warning",
+    "message": "Checking leaptel provider scraper fallback",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:52:03.407249",
+    "status": "info",
+    "message": "Scraping nbn plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:52:40.307479",
+    "status": "info",
+    "message": "Found 5 plan blocks on NBN page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:52:42.221185",
+    "status": "success",
+    "message": "Extracted 5 unique plans from NBN page",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T18:52:44.426620",
+    "status": "info",
+    "message": "Scraping opticomm plans",
+    "provider": "leaptel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T19:26:44.999549",
+    "status": "info",
+    "message": "Starting competitive benchmark analysis",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T19:26:45.799233",
+    "status": "success",
+    "message": "Benchmark complete: 0 wins, 8 gaps across 8 tiers",
+    "provider": null,
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T19:50:23.503531",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T19:50:23.605219",
+    "status": "info",
+    "message": "ISP Crawler starting for: https://www.iinet.net.au",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T19:50:23.694982",
+    "status": "info",
+    "message": "Provider: Iinet",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T19:50:23.782736",
+    "status": "info",
+    "message": "Network types: ['nbn', 'opticomm', 'redtrain', 'supa']",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T19:50:23.865376",
+    "status": "info",
+    "message": "Max depth: 2",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T19:50:23.949429",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T19:50:24.035207",
+    "status": "warning",
+    "message": "Checking iinet provider scraper fallback",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T19:50:27.010864",
+    "status": "info",
+    "message": "Scraping fibre: https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T19:50:41.732620",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T19:50:49.027811",
+    "status": "info",
+    "message": "Found 8 .card elements on fibre page",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T19:50:50.433358",
+    "status": "success",
+    "message": "fibre: 8 plans",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T19:50:50.727463",
+    "status": "info",
+    "message": "Scraping wireless: https://www.iinet.net.au/internet-product/broadband/nbn/plans/wireless",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T19:50:53.770257",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T19:51:00.968780",
+    "status": "info",
+    "message": "Wireless plan section: 'Select a plan\\nNBN25\\n$ 79 .99 /mth\\n\\nMin Cost $89.99\\n\\nif you return the modem\\n\\nUses NBN25\\n\\n20Mbps\\nDownload\\n3.8Mbps\\nUpload\\nTypical Evening Speed*\\nLiimitless Data\\n\\nTypical Evening Speeds are subject to change and are measured 7pm-11pm. Speeds are not guaranteed and may vary. Addresses with speeds affect'",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T19:51:01.062592",
+    "status": "success",
+    "message": "wireless: 1 plans",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T19:51:01.545781",
+    "status": "info",
+    "message": "Scraping ftth: https://www.iinet.net.au/internet-products/fibre/ftth/",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T19:51:05.220788",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T19:51:12.364311",
+    "status": "info",
+    "message": "Found 0 .card elements on fibre page",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T19:51:12.447833",
+    "status": "success",
+    "message": "ftth: 0 plans",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T19:51:12.566988",
+    "status": "info",
+    "message": "Skipping fibre_upgrade (informational only)",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T19:51:13.589616",
+    "status": "success",
+    "message": "Total iiNet plans: 9",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T19:51:13.700402",
+    "status": "success",
+    "message": "Provider fallback extracted 5 plans for iinet",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T19:51:13.850956",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T19:51:13.949014",
+    "status": "success",
+    "message": "Crawl complete for Iinet: 5 valid plans, 0 invalid, 1 pages scraped in 50.35s",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T19:51:14.066438",
+    "status": "info",
+    "message": "Network types: ['NBN']",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T19:51:14.161582",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T19:51:14.250782",
+    "status": "info",
+    "message": "Results saved to C:\\xampp\\htdocs\\scrape\\output\\isp_crawler\\iinet_20260622_195114.json",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T19:51:14.343390",
+    "status": "info",
+    "message": "CSV saved to C:\\xampp\\htdocs\\scrape\\output\\isp_crawler\\iinet_20260622_195114.csv",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-06-22T19:51:14.521994",
+    "status": "info",
+    "message": "All plans snapshot rebuilt with 313 plans from 32 providers",
+    "provider": "isp-crawler",
+    "data": {}
   }
 ]

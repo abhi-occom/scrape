@@ -19,6 +19,8 @@ _state: Dict[str, Any] = {
     "current_screenshot": None,
     "providers_total": 0,
     "providers_done": 0,
+    "completed_results": [],
+    "result_version": 0,
     "errors": [],
     "events": [],
     "started_at": None,
@@ -47,6 +49,8 @@ def reset_progress(mode: str = "single", providers_total: int = 1) -> None:
             "current_screenshot": None,
             "providers_total": providers_total,
             "providers_done": 0,
+            "completed_results": [],
+            "result_version": 0,
             "errors": [],
             "events": [],
             "started_at": _now(),
@@ -112,19 +116,55 @@ def update_progress(
         _state["events"] = _state["events"][-80:]
 
 
-def finish_provider(provider: str, plans_found: int, success: bool, error: Optional[str] = None) -> None:
+def finish_provider(
+    provider: str,
+    plans_found: int,
+    success: bool,
+    error: Optional[str] = None,
+    status: Optional[str] = None,
+) -> None:
     """Record completion for a provider."""
-    status = "success" if success else "error"
-    message = f"{provider} completed with {plans_found} plans" if success else f"{provider} failed"
+    final_status = status or ("success" if success else "error")
+    if final_status in ("blocked", "disabled"):
+        message = f"{provider} {final_status}: {error}"
+    else:
+        message = f"{provider} completed with {plans_found} plans" if success else f"{provider} failed"
     with _lock:
         _state["providers_done"] += 1
     update_progress(
         provider=provider,
-        status=status,
+        status=final_status,
         message=message,
         plans_found=plans_found,
         error=error,
     )
+
+
+def publish_provider_result(
+    provider: str,
+    plans: Any,
+    success: bool,
+    error: Optional[str] = None,
+    status: Optional[str] = None,
+) -> None:
+    """Publish one completed provider batch for incremental dashboard rendering."""
+    total_plans = 0
+    if isinstance(plans, list):
+        total_plans = len(plans)
+    elif isinstance(plans, dict):
+        total_plans = sum(len(value) for value in plans.values() if isinstance(value, list))
+
+    with _lock:
+        _state["result_version"] += 1
+        _state["completed_results"].append({
+            "version": _state["result_version"],
+            "provider": provider,
+            "plans": deepcopy(plans),
+            "total_plans": total_plans,
+            "success": success,
+            "status": status or ("success" if success else "error"),
+            "error": error,
+        })
 
 
 def finish_progress(success: bool = True, message: Optional[str] = None) -> None:

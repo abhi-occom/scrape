@@ -440,6 +440,59 @@
       white-space: normal;
     }
 
+    .network-tabs {
+      display: flex;
+      gap: 8px;
+      margin: 16px 0 12px;
+      padding-bottom: 4px;
+      overflow-x: auto;
+      scrollbar-width: thin;
+    }
+
+    .network-tab {
+      flex: 0 0 auto;
+      padding: 8px 14px;
+      color: var(--primary);
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(23, 80, 115, 0.24);
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 0.86rem;
+      font-weight: 800;
+    }
+
+    .network-tab:hover,
+    .network-tab.active {
+      color: #fff;
+      background: var(--primary);
+      border-color: var(--primary);
+    }
+
+    .network-tab-count {
+      margin-left: 5px;
+      opacity: 0.78;
+    }
+
+    .network-provider-group {
+      margin-top: 18px;
+    }
+
+    .network-provider-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 0 0 8px;
+      color: var(--primary);
+      font-size: 1rem;
+      font-weight: 900;
+    }
+
+    .network-provider-title span {
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
     .confidence-panel {
       margin-top: 16px;
       padding: 16px;
@@ -610,6 +663,9 @@ let crawlStartedAt = 0;
 let currentResultPayload = null;
 let currentResultView = null;
 let currentResultFilename = '';
+let activeNetworkTab = '';
+let lastBatchResultVersion = 0;
+const liveProviderResults = new Map();
 const PLAN_COLUMNS = [
   'provider',
   'network_type',
@@ -692,6 +748,7 @@ async function checkStatus() {
 async function startScrapeAll() {
   setCrawlButtonsDisabled(true);
   currentResultFilename = '';
+  resetLiveBatchResults();
   setStatus('Starting scrape all providers...', 'starting');
   startScrapeAllTimer();
   renderBatchProgress({
@@ -733,6 +790,7 @@ async function checkScrapeAllStatus() {
       return;
     }
     renderBatchProgress(data);
+    mergeCompletedProviderResults(data);
 
     if(data.running) {
       setStatus('Running: ' + (data.message || 'Scraping all providers'), 'starting');
@@ -821,6 +879,61 @@ function renderBatchEvent(event) {
     ? ` (${Number(event.plans_found || 0)} plans)`
     : '';
   return `<div class="batch-event"><strong>${escapeHtml(provider)}</strong> ${escapeHtml(status)} - ${escapeHtml(message)}${plans}${url}</div>`;
+}
+
+function resetLiveBatchResults() {
+  lastBatchResultVersion = 0;
+  liveProviderResults.clear();
+  activeNetworkTab = '';
+}
+
+function mergeCompletedProviderResults(state) {
+  const batches = Array.isArray(state.completed_results) ? state.completed_results : [];
+  let changed = false;
+
+  batches.forEach(batch => {
+    const version = Number(batch.version || 0);
+    if(!version || version <= lastBatchResultVersion) {
+      return;
+    }
+    lastBatchResultVersion = Math.max(lastBatchResultVersion, version);
+    if(batch.success) {
+      const providerName = batch.provider || batch.key || 'Unknown';
+      liveProviderResults.set(batch.key || batch.provider, {
+        provider: providerName,
+        base_url: batch.base_url || '',
+        plans: Array.isArray(batch.plans)
+          ? batch.plans.map(plan => ({
+              ...plan,
+              provider: plan.provider || providerName,
+              source_url: plan.source_url || batch.base_url || ''
+            }))
+          : []
+      });
+      changed = true;
+    }
+  });
+
+  if(!changed) {
+    return;
+  }
+
+  const providers = [...liveProviderResults.values()];
+  const plans = providers.flatMap(item => item.plans);
+  const snapshot = {
+    scraped_at: 'Live scrape in progress',
+    source: 'isp_crawler_live',
+    total_providers: providers.length,
+    total_plans: plans.length,
+    providers: providers.map(item => ({
+      provider: item.provider,
+      base_url: item.base_url,
+      plans_count: item.plans.length,
+      success: true
+    })),
+    plans
+  };
+  renderAllPlansSnapshot(snapshot);
 }
 
 async function loadAllPlansSnapshot() {
@@ -998,20 +1111,7 @@ function showResults(r) {
   </div>`;
   html += renderConfidenceReport(r);
   if(r.plans && r.plans.length > 0) {
-    html += '<div class="table-wrap mt-3"><table class="table table-hover align-middle"><thead><tr>';
-    PLAN_COLUMNS.forEach(column => {
-      html += `<th>${column}</th>`;
-    });
-    html += '</tr></thead><tbody>';
-    r.plans.forEach(p => {
-      html += '<tr>';
-      PLAN_COLUMNS.forEach(column => {
-        const value = normaliseDisplayValue(p, column);
-        html += `<td>${escapeHtml(value)}</td>`;
-      });
-      html += '</tr>';
-    });
-    html += '</tbody></table></div>';
+    html += `<div id="networkPlanResults">${renderNetworkPlanTabs(r.plans)}</div>`;
   } else {
     html += '<div class="empty-state">No valid plans were found in this scrape.</div>';
   }
@@ -1040,27 +1140,121 @@ function renderAllPlansSnapshot(snapshot) {
     <div class="metric"><span>Providers</span><strong>${providers.length || Number(snapshot.total_providers || 0)}</strong></div>
     <div class="metric"><span>Total Plans</span><strong>${plans.length || Number(snapshot.total_plans || 0)}</strong></div>
     <div class="metric"><span>Source</span><strong>${escapeHtml(snapshot.source || '-')}</strong></div>
-    <div class="metric"><span>Saved File</span><strong>all_plans.json</strong></div>
+    <div class="metric"><span>${snapshot.source === 'isp_crawler_live' ? 'Status' : 'Saved File'}</span><strong>${snapshot.source === 'isp_crawler_live' ? 'Live' : 'all_plans.json'}</strong></div>
   </div>`;
 
   if(plans.length) {
-    html += '<div class="table-wrap mt-3"><table class="table table-hover align-middle"><thead><tr>';
-    PLAN_COLUMNS.forEach(column => {
-      html += `<th>${column}</th>`;
-    });
-    html += '</tr></thead><tbody>';
-    plans.forEach(plan => {
-      html += '<tr>';
-      PLAN_COLUMNS.forEach(column => {
-        html += `<td>${escapeHtml(normaliseDisplayValue(plan, column))}</td>`;
-      });
-      html += '</tr>';
-    });
-    html += '</tbody></table></div>';
+    html += `<div id="networkPlanResults">${renderNetworkPlanTabs(plans)}</div>`;
   } else {
     html += '<div class="empty-state">No plans were found in all_plans.json.</div>';
   }
   document.getElementById('resultsContent').innerHTML = html;
+}
+
+function normaliseNetworkType(networkType) {
+  const raw = String(networkType || '').trim();
+  const compact = raw.toLowerCase().replace(/[\s_-]+/g, ' ');
+
+  if(!compact || ['unknown', 'n/a', 'na', 'none', 'other'].includes(compact)) return 'Other';
+  if(compact.includes('opticomm')) return 'Opticomm';
+  if(compact.includes('redtrain') || compact.includes('red train')) return 'Redtrain';
+  if(compact.includes('supa') || compact.includes('supanetwork')) return 'Supa';
+  if(compact.includes('fixed wireless')) return 'Fixed Wireless';
+  if(compact.includes('5g')) return '5G';
+  if(compact.includes('starlink') || compact.includes('satellite')) return 'Satellite';
+  if(compact.includes('mobile') || compact.includes('travel sim') || compact.includes('roaming')) return 'Mobile';
+  if(compact === 'nbn' || compact.startsWith('nbn ') || compact.endsWith(' nbn')) return 'NBN';
+  if(
+    compact.includes('fibre') || compact.includes('fiber') ||
+    compact.includes('ftth') || compact.includes('fttb') || compact.includes('fttp')
+  ) return 'Fibre';
+  return raw;
+}
+
+function orderedNetworkTypes(plans) {
+  const preferred = [
+    'NBN', 'Opticomm', '5G', 'Fibre', 'Fixed Wireless',
+    'Supa', 'Redtrain', 'Mobile', 'Satellite', 'Other'
+  ];
+  const networks = uniqueValues(plans.map(plan => normaliseNetworkType(plan.network_type)));
+  return networks.sort((a, b) => {
+    const ai = preferred.indexOf(a);
+    const bi = preferred.indexOf(b);
+    if(ai !== -1 || bi !== -1) {
+      return (ai === -1 ? preferred.length : ai) - (bi === -1 ? preferred.length : bi);
+    }
+    return a.localeCompare(b);
+  });
+}
+
+function renderNetworkPlanTabs(plans) {
+  const rows = Array.isArray(plans) ? plans : [];
+  const networks = orderedNetworkTypes(rows);
+  if(!networks.length) {
+    activeNetworkTab = '';
+    return '<div class="empty-state">No valid plans were found in this scrape.</div>';
+  }
+
+  const counts = {};
+  rows.forEach(plan => {
+    const network = normaliseNetworkType(plan.network_type);
+    counts[network] = (counts[network] || 0) + 1;
+  });
+  if(!activeNetworkTab || !counts[activeNetworkTab]) {
+    activeNetworkTab = networks[0];
+  }
+
+  let html = '<div class="network-tabs" role="tablist">';
+  networks.forEach(network => {
+    html += `<button class="network-tab ${network === activeNetworkTab ? 'active' : ''}"
+      type="button" role="tab" aria-selected="${network === activeNetworkTab ? 'true' : 'false'}"
+      data-network="${escapeHtml(network)}" onclick="selectNetworkTab(this.dataset.network)">
+      ${escapeHtml(network)}<span class="network-tab-count">${counts[network]}</span>
+    </button>`;
+  });
+  html += '</div>';
+
+  const activePlans = rows.filter(plan => normaliseNetworkType(plan.network_type) === activeNetworkTab);
+  const grouped = {};
+  activePlans.forEach(plan => {
+    const provider = String(plan.provider || 'Unknown').trim() || 'Unknown';
+    (grouped[provider] = grouped[provider] || []).push(plan);
+  });
+
+  Object.keys(grouped).sort((a, b) => a.localeCompare(b)).forEach(provider => {
+    const providerPlans = grouped[provider];
+    html += `<section class="network-provider-group">
+      <h3 class="network-provider-title">${escapeHtml(provider)}
+        <span>${providerPlans.length} plan${providerPlans.length === 1 ? '' : 's'}</span>
+      </h3>`;
+    html += renderPlansTable(providerPlans);
+    html += '</section>';
+  });
+  return html;
+}
+
+function renderPlansTable(plans) {
+  let html = '<div class="table-wrap"><table class="table table-hover align-middle"><thead><tr>';
+  PLAN_COLUMNS.forEach(column => {
+    html += `<th>${escapeHtml(column)}</th>`;
+  });
+  html += '</tr></thead><tbody>';
+  plans.forEach(plan => {
+    html += '<tr>';
+    PLAN_COLUMNS.forEach(column => {
+      html += `<td>${escapeHtml(normaliseDisplayValue(plan, column))}</td>`;
+    });
+    html += '</tr>';
+  });
+  return html + '</tbody></table></div>';
+}
+
+function selectNetworkTab(network) {
+  activeNetworkTab = network;
+  const container = document.getElementById('networkPlanResults');
+  if(container) {
+    container.innerHTML = renderNetworkPlanTabs(currentResultView?.plans || []);
+  }
 }
 
 function setCrawlButtonsDisabled(disabled) {

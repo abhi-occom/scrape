@@ -232,8 +232,20 @@ def save_to_database(plans: List[Dict[str, Any]]):
         # Create table if it doesn't exist
         create_table_if_not_exists(connection)
         
-        # Insert plans in batch
-        insert_plans_batch(connection, plans)
+        # Replace Aussie Broadband atomically so plans removed from the latest
+        # catalogue do not remain in plans_current.
+        aussie_provider_id = config.PROVIDERS.get('aussie', {}).get('id', 3)
+        replace_provider_ids = (
+            {aussie_provider_id}
+            if any(plan.get('provider_id') == aussie_provider_id for plan in plans)
+            else set()
+        )
+        if not insert_plans_batch(
+            connection,
+            plans,
+            replace_provider_ids=replace_provider_ids,
+        ):
+            raise RuntimeError("Batch plan synchronization failed")
         
         log_success(f"Successfully saved {len(plans)} plans to database")
         return True

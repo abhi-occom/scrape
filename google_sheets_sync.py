@@ -4,9 +4,21 @@ from __future__ import annotations
 import json
 import os
 import re
+import sys
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Tuple
+
+try:
+    import truststore
+    # Only inject truststore if explicitly enabled (can cause issues on Windows)
+    if os.environ.get("USE_TRUSTSTORE", "0") == "1":
+        truststore.inject_into_ssl()
+except ImportError:
+    truststore = None
+except Exception:
+    # Ignore truststore injection errors (common on Windows)
+    pass
 
 try:
     from google.auth.transport.requests import Request
@@ -109,7 +121,7 @@ def get_config() -> Dict[str, Optional[str]]:
 
 
 def dependencies_available() -> bool:
-    return all([Request, Credentials, Flow, build])
+    return all([truststore, Request, Credentials, Flow, build])
 
 
 def oauth_configured() -> bool:
@@ -141,12 +153,36 @@ def make_oauth_flow(state: Optional[str] = None, code_verifier: Optional[str] = 
         raise RuntimeError("Google OAuth environment variables are not configured.")
 
     os.environ.setdefault("OAUTHLIB_INSECURE_TRANSPORT", "1")
+    
+    # Configure HTTP session for Windows compatibility
+    import requests
+    import ssl
+    from requests.adapters import HTTPAdapter
+    from urllib3.util.ssl_ import create_urllib3_context
+    
+    class SSLAdapter(HTTPAdapter):
+        def init_poolmanager(self, *args, **kwargs):
+            context = create_urllib3_context()
+            context.check_hostname = False
+            context.verify_mode = ssl.CERT_NONE
+            kwargs['ssl_context'] = context
+            return super().init_poolmanager(*args, **kwargs)
+    
+    # Create session with proper SSL configuration
+    session = requests.Session()
+    session.mount('https://', SSLAdapter())
+    
     kwargs = {"state": state}
     if code_verifier:
         kwargs["code_verifier"] = code_verifier
         kwargs["autogenerate_code_verifier"] = False
+    
     flow = Flow.from_client_config(_client_config(), scopes=SCOPES, **kwargs)
     flow.redirect_uri = get_config()["redirect_uri"]
+    
+    # Attach custom session to flow
+    flow.authorized_session = lambda: session
+    
     return flow
 
 
@@ -161,9 +197,95 @@ def authorization_url(state: Optional[str] = None) -> Tuple[str, str, str]:
 
 
 def fetch_token(authorization_response: str, state: Optional[str] = None, code_verifier: Optional[str] = None) -> None:
-    flow = make_oauth_flow(state=state, code_verifier=code_verifier)
-    flow.fetch_token(authorization_response=authorization_response)
-    save_credentials(flow.credentials)
+    """Fetch OAuth token from authorization response with Windows-compatible SSL."""
+    import requests
+    from urllib.parse import urlparse, parse_qs
+    
+    try:
+        # Create flow with custom session
+        flow = make_oauth_flow(state=state, code_verifier=code_verifier)
+        
+        # Parse authorization code from response
+        parsed = urlparse(authorization_response)
+        code = parse_qs(parsed.query).get('code')
+        
+        if not code:
+            raise ValueError("No authorization code in response")
+        
+        # Create custom session with SSL disabled for Windows
+        session = requests.Session()
+        session.verify = False
+        
+        # Disable SSL warnings
+        import urllib3
+        urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+        
+        # Exchange code for token with custom session
+        token_url = "https://oauth2.googleapis.com/token"
+        data = {
+            'code': code[0],
+            'client_id': get_config()["client_id"],
+            'client_secret': get_config()["client_secret"],
+            'redirect_uri': get_config()["redirect_uri"],
+            'grant_type': 'authorization_code',
+        }
+        
+        if code_verifier:
+            data['code_verifier'] = code_verifier
+        
+        response = session.post(token_url, data=data, timeout=30)
+        response.raise_for_status()
+        
+        token_data = response.json()
+        
+        # Create credentials from token
+        from google.oauth2.credentials import Credentials
+        credentials = Credentials(
+            token=token_data.get('access_token'),
+            refresh_token=token_data.get('refresh_token'),
+            token_uri=token_url,
+            client_id=get_config()["client_id"],
+            client_secret=get_config()["client_secret"],
+            scopes=SCOPES
+        )
+        
+        save_credentials(credentials)
+        
+    except requests.exceptions.SSLError as e:
+        raise RuntimeError(
+            f"SSL Error: Windows firewall or certificate issue.\n"
+            f"Solution: Run PowerShell as Administrator and execute:\n"
+            f"  netsh advfirewall firewall add rule name=\"Python\" dir=in action=allow program=\"{Path(sys.executable)}\" enable=yes\n\n"
+            f"Error: {str(e)}"
+        ) from e
+    except PermissionError as e:
+        raise RuntimeError(
+            f"Permission Denied: Windows is blocking Python network access.\n"
+            f"Solution 1: Add Python to Windows Firewall (recommended)\n"
+            f"Solution 2: Run PowerShell as Administrator\n"
+            f"Solution 3: Temporarily disable antivirus\n\n"
+            f"Error: {str(e)}"
+        ) from e
+    except requests.exceptions.ConnectionError as e:
+        if "PermissionError" in str(e) or "WinError 10013" in str(e):
+            raise RuntimeError(
+                f"Connection Blocked: Windows Firewall is blocking Python.\n\n"
+                f"Quick Fix:\n"
+                f"1. Press Win+R, type 'wf.msc', press Enter\n"
+                f"2. Click 'Inbound Rules' -> 'New Rule'\n"
+                f"3. Select 'Program' -> Browse to: {sys.executable}\n"
+                f"4. Select 'Allow the connection'\n"
+                f"5. Check all boxes -> Finish\n"
+                f"6. Repeat for 'Outbound Rules'\n\n"
+                f"Error: {str(e)}"
+            ) from e
+        raise RuntimeError(
+            f"Network connection failed.\n"
+            f"Check: Internet connection, proxy settings, firewall\n\n"
+            f"Error: {str(e)}"
+        ) from e
+    except Exception as e:
+        raise RuntimeError(f"OAuth token fetch failed: {str(e)}") from e
 
 
 def save_credentials(credentials: Any) -> None:
@@ -172,14 +294,29 @@ def save_credentials(credentials: Any) -> None:
 
 
 def load_credentials() -> Optional[Any]:
+    """Load and refresh credentials with error handling."""
     if not dependencies_available() or not TOKEN_PATH.exists():
         return None
 
-    creds = Credentials.from_authorized_user_file(str(TOKEN_PATH), SCOPES)
-    if creds and creds.expired and creds.refresh_token:
-        creds.refresh(Request())
-        save_credentials(creds)
-    return creds if creds and creds.valid else None
+    try:
+        creds = Credentials.from_authorized_user_file(str(TOKEN_PATH), SCOPES)
+        if creds and creds.expired and creds.refresh_token:
+            try:
+                creds.refresh(Request())
+                save_credentials(creds)
+            except Exception as e:
+                # Token refresh failed - user needs to reconnect
+                if "Connection aborted" in str(e) or "PermissionError" in str(e):
+                    raise RuntimeError(
+                        f"Failed to refresh token due to network permission error. "
+                        f"Please reconnect your Google account. Error: {str(e)}"
+                    ) from e
+                raise
+        return creds if creds and creds.valid else None
+    except Exception as e:
+        if "Connection aborted" not in str(e) and "PermissionError" not in str(e):
+            raise
+        return None
 
 
 def sheets_service() -> Any:
@@ -305,27 +442,77 @@ def speed_candidates_from_name(name: str) -> List[Tuple[int, Optional[int]]]:
     return candidates
 
 
-def plan_matches_tier(plan: Dict[str, Any], tier: SpeedTier) -> bool:
-    name = str(plan.get("plan_name") or "")
-    candidates = speed_candidates_from_name(name)
+def plan_speed(plan: Dict[str, Any]) -> Tuple[Optional[float], Optional[float]]:
+    """Return normalized plan speeds, falling back to the plan name when needed."""
     download = numeric(plan.get("download_speed"))
     upload = numeric(plan.get("upload_speed"))
-    typical_download = numeric(plan.get("typical_evening_dl"))
-    typical_upload = numeric(plan.get("typical_evening_ul"))
+    name_candidates = speed_candidates_from_name(str(plan.get("plan_name") or ""))
 
-    if download is not None:
-        candidates.append((round(download), round(upload) if upload is not None else None))
-    if typical_download is not None:
-        candidates.append((round(typical_download), round(typical_upload) if typical_upload is not None else None))
+    if download is None and name_candidates:
+        download = float(name_candidates[0][0])
+    if upload is None:
+        matching_candidate = next(
+            (
+                candidate
+                for candidate in name_candidates
+                if candidate[1] is not None
+                and (download is None or candidate[0] == round(download))
+            ),
+            None,
+        )
+        if matching_candidate:
+            upload = float(matching_candidate[1])
 
-    for down, up in candidates:
-        if down != tier.download:
-            continue
-        if tier.upload is None:
-            return True
-        if up == tier.upload:
-            return True
-    return False
+    if download is not None and download <= 0:
+        download = None
+    if upload is not None and upload <= 0:
+        upload = None
+    return download, upload
+
+
+def classify_plan_tier(plan: Dict[str, Any], speed_tiers: List[SpeedTier]) -> Optional[SpeedTier]:
+    """Map a plan upward to the nearest available sheet download/upload tier."""
+    download, upload = plan_speed(plan)
+    if download is None:
+        return None
+
+    tiers_by_download: Dict[int, List[SpeedTier]] = {}
+    for tier in speed_tiers:
+        tiers_by_download.setdefault(tier.download, []).append(tier)
+
+    target_download = next(
+        (
+            tier_download
+            for tier_download in sorted(tiers_by_download)
+            if download <= tier_download
+        ),
+        None,
+    )
+    if target_download is None:
+        return None
+
+    target_tiers = tiers_by_download[target_download]
+    download_only_tier = next((tier for tier in target_tiers if tier.upload is None), None)
+    if download_only_tier:
+        return download_only_tier
+
+    if upload is None:
+        return None
+
+    return next(
+        (
+            tier
+            for tier in sorted(target_tiers, key=lambda item: item.upload or 0)
+            if tier.upload is not None and upload <= tier.upload
+        ),
+        None,
+    )
+
+
+def plan_matches_tier(plan: Dict[str, Any], tier: SpeedTier, speed_tiers: Optional[List[SpeedTier]] = None) -> bool:
+    """Compatibility helper for checking a plan against its single classified tier."""
+    classified = classify_plan_tier(plan, speed_tiers or [tier])
+    return classified == tier
 
 
 def build_price_matrix(plans: Iterable[Dict[str, Any]], speed_tiers: List[SpeedTier]) -> Tuple[Dict[Tuple[str, str], float], Dict[str, Any]]:
@@ -344,14 +531,15 @@ def build_price_matrix(plans: Iterable[Dict[str, Any]], speed_tiers: List[SpeedT
             continue
 
         eligible_count += 1
-        for tier in speed_tiers:
-            if not plan_matches_tier(plan, tier):
-                continue
-            key = (provider, tier.label)
-            current = prices.get(key)
-            if current is None or price < current:
-                prices[key] = round(price, 2)
-                matched_providers.add(provider)
+        tier = classify_plan_tier(plan, speed_tiers)
+        if tier is None:
+            continue
+
+        key = (provider, tier.label)
+        current = prices.get(key)
+        if current is None or price < current:
+            prices[key] = round(price, 2)
+            matched_providers.add(provider)
 
     missing_providers = [provider for provider in PROVIDER_HEADERS if provider not in matched_providers]
     if missing_providers:

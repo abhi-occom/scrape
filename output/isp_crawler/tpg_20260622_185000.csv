@@ -1,0 +1,7 @@
+provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
+Tpg,NBN,NBN50,50.0,17.0,89.99,69.99,6 months,No Lock-in,50.0,17.0,https://www.tpg.com.au/nbn
+Tpg,NBN,NBN100,99.0,17.0,94.99,69.99,12 months,No Lock-in,99.0,17.0,https://www.tpg.com.au/nbn
+Tpg,NBN,NBN500,500.0,42.0,94.99,69.99,12 months,No Lock-in,500.0,42.0,https://www.tpg.com.au/nbn
+Tpg,NBN,NBN25,25.0,8.0,79.99,59.99,6 months,No Lock-in,25.0,8.0,https://www.tpg.com.au/nbn
+Tpg,NBN,NBN Home Superfast,740.0,42.0,104.99,74.99,6 months,No Lock-in,740.0,42.0,https://www.tpg.com.au/nbn
+Tpg,NBN,NBN Home Ultrafast,820.0,85.0,114.99,84.99,6 months,No Lock-in,820.0,85.0,https://www.tpg.com.au/nbn

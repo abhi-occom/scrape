@@ -53,6 +53,8 @@ _crawl_all_state = {
     'finished_at': None,
     'events': [],
     'errors': [],
+    'completed_results': [],
+    'result_version': 0,
     'result': None,
 }
 
@@ -193,6 +195,8 @@ def api_start_crawl_all():
             'finished_at': None,
             'events': [],
             'errors': [],
+            'completed_results': [],
+            'result_version': 0,
             'result': None,
         })
         _append_crawl_all_event(
@@ -340,6 +344,17 @@ def _run_crawl_all_async(providers):
             _crawl_all_state['providers_done'] = index
             _crawl_all_state['plans_found'] = plans_found
             _crawl_all_state['total_plans'] += plans_found
+            _crawl_all_state['result_version'] += 1
+            _crawl_all_state['completed_results'].append({
+                'version': _crawl_all_state['result_version'],
+                'key': key,
+                'provider': provider_result.get('provider') or name,
+                'base_url': provider_result.get('base_url') or url,
+                'plans': provider_result.get('plans') or [],
+                'total_plans': plans_found,
+                'success': success,
+                'errors': provider_result.get('errors') or [],
+            })
             if not success:
                 _crawl_all_state['errors'].append({
                     'provider': key,

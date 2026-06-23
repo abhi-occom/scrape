@@ -29,7 +29,8 @@ PROVIDERS = {
         'name': 'Aussie Broadband',
         'enabled': True,
         'blocked': True,
-        'blocked_reason': 'Cloudflare Turnstile'
+        'blocked_reason': 'Cloudflare Turnstile',
+        'supported_networks': ['NBN', 'Opticomm']
     },
     'superloop': {
         'id': 4,

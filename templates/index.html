@@ -554,6 +554,43 @@
             padding: 8px 0;
         }
 
+        .network-tabs {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding: 2px 0 12px;
+            margin-bottom: 8px;
+            scrollbar-width: thin;
+        }
+
+        .network-tab {
+            flex: 0 0 auto;
+            border: 1px solid #cfd5e3;
+            border-radius: 999px;
+            background: white;
+            color: #495057;
+            cursor: pointer;
+            font-size: 0.86em;
+            font-weight: 700;
+            padding: 8px 14px;
+        }
+
+        .network-tab:hover {
+            border-color: #667eea;
+            color: #667eea;
+        }
+
+        .network-tab.active {
+            border-color: #667eea;
+            background: #667eea;
+            color: white;
+        }
+
+        .network-tab-count {
+            opacity: 0.8;
+            margin-left: 4px;
+        }
+
         .sort-indicator {
             font-size: 0.75em;
             margin-left: 4px;
@@ -821,16 +858,12 @@
                         </div>
                     </div>
 
+                    <div id="network-tabs" class="network-tabs hidden"></div>
+
                     <!-- Filter & Sort Bar -->
                     <div id="filter-bar" class="filter-sort-bar hidden">
                         <h3>🔍 Filter & Sort</h3>
                         <div class="filter-row">
-                            <div class="filter-group">
-                                <label>Network Type</label>
-                                <select id="filter-network" onchange="applyFilters()">
-                                    <option value="">All Networks</option>
-                                </select>
-                            </div>
                             <div class="filter-group">
                                 <label>Min Price ($)</label>
                                 <input type="number" id="filter-price-min" placeholder="0" min="0" onchange="applyFilters()">
@@ -891,6 +924,9 @@
         // Master flat list of all currently-loaded plans (unfiltered)
         let masterPlans = [];
         let progressPoller = null;
+        let activeNetworkTab = '';
+        let lastResultVersion = 0;
+        const liveProviderPlans = new Map();
 
                 // ── Initialise ──────────────────────────────────────────
         document.addEventListener('DOMContentLoaded', () => {
@@ -929,6 +965,7 @@
         // ── Scrape single ───────────────────────────────────────
         async function scrapeProvider(providerName) {
             currentProvider = providerName;
+            resetLiveResults();
             showLoading();
             startTimer(providerName);
             startProgressPolling();
@@ -977,6 +1014,7 @@
         }
 
         async function scrapeAll() {
+            resetLiveResults();
             showLoading();
             startTimer('All Providers');
             startProgressPolling();
@@ -989,7 +1027,11 @@
                 const data = await res.json();
                 if (data.success) {
                     stopTimer(true);
-                    showAlert(`Scraped ${data.total_plans} plans from ${data.providers_scraped} providers`, 'success');
+                    showAlert(
+                        `Completed ${data.providers_scraped} providers: ${data.providers_successful} successful, ` +
+                        `${data.providers_failed} failed, ${data.providers_blocked} blocked`,
+                        'success'
+                    );
                     loadAllResults();
                 } else {
                     stopTimer(false);
@@ -1039,10 +1081,10 @@
         //  FILTER  &  SORT  ENGINE
         // ══════════════════════════════════════════════════════════
 
-        /** Store master list, populate network dropdown, show filter bar, render */
+        /** Store master list, build network tabs, show filter bar, render */
         function setMasterPlans(plans) {
             masterPlans = plans;
-            populateNetworkFilter(plans);
+            renderNetworkTabs(plans);
             document.getElementById('filter-bar').classList.remove('hidden');
             applyFilters();           // render with current (default) filters
         }
@@ -1051,31 +1093,76 @@
             const raw = String(networkType || '').trim();
             const compact = raw.toLowerCase().replace(/[\s_-]+/g, ' ');
 
+            if (!compact || ['unknown', 'n/a', 'na', 'none', 'other'].includes(compact)) return 'Other';
             if (compact.includes('opticomm')) return 'Opticomm';
             if (compact.includes('redtrain') || compact.includes('red train')) return 'Redtrain';
             if (compact.includes('supa') || compact.includes('supanetwork')) return 'Supa';
-            if (compact === 'nbn') return 'NBN';
+            if (compact.includes('fixed wireless')) return 'Fixed Wireless';
+            if (compact.includes('5g')) return '5G';
+            if (compact.includes('mobile')) return 'Mobile';
+            if (compact.includes('starlink') || compact.includes('satellite')) return 'Satellite';
+            if (compact === 'nbn' || compact.startsWith('nbn ') || compact.endsWith(' nbn')) return 'NBN';
+            if (
+                compact.includes('fibre') || compact.includes('fiber') ||
+                compact.includes('ftth') || compact.includes('fttb') || compact.includes('fttp')
+            ) return 'Fibre';
 
             return raw;
         }
 
-        /** Build unique network-type options */
-        function populateNetworkFilter(plans) {
-            const sel = document.getElementById('filter-network');
-            const networks = [...new Set(plans.map(p => normalizeNetworkType(p.network_type)).filter(Boolean))].sort();
-            // Keep the first "All Networks" option, replace the rest
-            sel.innerHTML = '<option value="">All Networks</option>';
-            networks.forEach(n => {
-                const opt = document.createElement('option');
-                opt.value = n;
-                opt.textContent = n;
-                sel.appendChild(opt);
+        function renderNetworkTabs(plans) {
+            const counts = {};
+            plans.forEach(plan => {
+                const network = normalizeNetworkType(plan.network_type);
+                counts[network] = (counts[network] || 0) + 1;
             });
+
+            const preferredOrder = [
+                'NBN', 'Opticomm', '5G', 'Fibre', 'Fixed Wireless',
+                'Supa', 'Redtrain', 'Mobile', 'Satellite', 'Other'
+            ];
+            const networks = Object.keys(counts).sort((a, b) => {
+                const ai = preferredOrder.indexOf(a);
+                const bi = preferredOrder.indexOf(b);
+                if (ai !== -1 || bi !== -1) {
+                    return (ai === -1 ? preferredOrder.length : ai) -
+                           (bi === -1 ? preferredOrder.length : bi);
+                }
+                return a.localeCompare(b);
+            });
+
+            const tabs = document.getElementById('network-tabs');
+            if (!networks.length) {
+                activeNetworkTab = '';
+                tabs.innerHTML = '';
+                tabs.classList.add('hidden');
+                return;
+            }
+
+            if (!activeNetworkTab || !counts[activeNetworkTab]) {
+                activeNetworkTab = networks[0];
+            }
+
+            tabs.innerHTML = networks.map(network => `
+                <button class="network-tab ${network === activeNetworkTab ? 'active' : ''}"
+                        data-network="${escapeHtml(network)}"
+                        onclick="selectNetworkTab(this.dataset.network)">
+                    ${escapeHtml(network)}
+                    <span class="network-tab-count">${counts[network]}</span>
+                </button>
+            `).join('');
+            tabs.classList.remove('hidden');
+        }
+
+        function selectNetworkTab(network) {
+            activeNetworkTab = network;
+            renderNetworkTabs(masterPlans);
+            applyFilters();
         }
 
         /** Read filter controls, filter + sort masterPlans, re-render */
         function applyFilters() {
-            const network  = document.getElementById('filter-network').value;
+            const network  = activeNetworkTab;
             const priceMin = parseFloat(document.getElementById('filter-price-min').value);
             const priceMax = parseFloat(document.getElementById('filter-price-max').value);
             const speedMin = parseFloat(document.getElementById('filter-speed-min').value);
@@ -1121,7 +1208,6 @@
 
         /** Reset every filter control and re-render */
         function resetFilters() {
-            document.getElementById('filter-network').value   = '';
             document.getElementById('filter-price-min').value = '';
             document.getElementById('filter-price-max').value = '';
             document.getElementById('filter-speed-min').value = '';
@@ -1210,7 +1296,6 @@
             const el = document.getElementById('active-filters');
             let html = '';
 
-            if (network)        html += filterTag('Network: ' + network, 'filter-network');
             if (!isNaN(priceMin)) html += filterTag('Min Price: $' + priceMin, 'filter-price-min');
             if (!isNaN(priceMax)) html += filterTag('Max Price: $' + priceMax, 'filter-price-max');
             if (!isNaN(speedMin)) html += filterTag('Min Speed: ' + speedMin + ' Mbps', 'filter-speed-min');
@@ -1239,6 +1324,45 @@
             applyFilters();
         }
 
+        function escapeHtml(value) {
+            return String(value)
+                .replaceAll('&', '&amp;')
+                .replaceAll('<', '&lt;')
+                .replaceAll('>', '&gt;')
+                .replaceAll('"', '&quot;')
+                .replaceAll("'", '&#039;');
+        }
+
+        function resetLiveResults() {
+            lastResultVersion = 0;
+            liveProviderPlans.clear();
+            activeNetworkTab = '';
+            masterPlans = [];
+        }
+
+        function mergeCompletedResults(progress) {
+            const batches = progress.completed_results || [];
+            let changed = false;
+
+            batches.forEach(batch => {
+                if (!batch.version || batch.version <= lastResultVersion) return;
+                lastResultVersion = Math.max(lastResultVersion, batch.version);
+                if (batch.success) {
+                    liveProviderPlans.set(
+                        batch.provider,
+                        flattenPlans(batch.plans || [], batch.provider)
+                    );
+                    changed = true;
+                }
+            });
+
+            if (changed) {
+                const plans = [...liveProviderPlans.values()].flat();
+                setMasterPlans(plans);
+                updateStatsFromPlans(plans);
+            }
+        }
+
         // ══════════════════════════════════════════════════════════
         //  STATS  /  UI HELPERS
         // ══════════════════════════════════════════════════════════
@@ -1262,6 +1386,22 @@
                 document.getElementById('speed-range').textContent =
                     `${Math.min(...speeds)}-${Math.max(...speeds)} Mbps`;
             }
+        }
+
+        function updateStatsFromPlans(plans) {
+            document.getElementById('stats-bar').classList.remove('hidden');
+            document.getElementById('total-providers').textContent =
+                new Set(plans.map(p => p._provider || p.provider).filter(Boolean)).size;
+            document.getElementById('total-plans').textContent = plans.length;
+
+            const prices = plans.map(p => Number(p.price)).filter(Number.isFinite);
+            const speeds = plans.map(p => Number(p.download_speed)).filter(Number.isFinite);
+            document.getElementById('price-range').textContent = prices.length
+                ? `$${Math.min(...prices)}-$${Math.max(...prices)}`
+                : '$0';
+            document.getElementById('speed-range').textContent = speeds.length
+                ? `${Math.min(...speeds)}-${Math.max(...speeds)} Mbps`
+                : '0';
         }
 
         // ── Timer ────────────────────────────────────────────
@@ -1346,6 +1486,7 @@
         }
 
         function renderProgress(progress) {
+            mergeCompletedResults(progress);
             document.getElementById('progress-status').textContent = progress.status || 'Idle';
             document.getElementById('progress-provider').textContent = progress.current_provider || '-';
             document.getElementById('progress-url').textContent = progress.current_url || '-';
@@ -1372,6 +1513,7 @@
                 <div class="loading"><div class="spinner"></div><p>Scraping in progress…</p></div>`;
             document.getElementById('download-section').classList.add('hidden');
             document.getElementById('filter-bar').classList.add('hidden');
+            document.getElementById('network-tabs').classList.add('hidden');
             document.getElementById('results-count').classList.add('hidden');
         }
 

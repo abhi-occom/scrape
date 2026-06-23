@@ -32,6 +32,7 @@ flask-limiter>=3.5.0
 google-api-python-client>=2.130.0
 google-auth>=2.29.0
 google-auth-oauthlib>=1.2.0
+truststore>=0.10.4
 
 # Virtual display for headless browser debugging (cross-platform)
 pyvirtualdisplay>=3.0.0

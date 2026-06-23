@@ -2,6 +2,12 @@
 Flask API backend for ISP scraper frontend dashboard.
 Provides REST endpoints for scraping, viewing results, and downloading files.
 """
+try:
+    import truststore
+    truststore.inject_into_ssl()
+except ImportError:
+    pass
+
 from flask import Flask, jsonify, redirect, request, send_file, render_template, send_from_directory, session, url_for
 from flask_cors import CORS
 import json
@@ -25,7 +31,14 @@ from scraper_service import (
     download_json,
     download_csv
 )
-from utils.progress import finish_progress, finish_provider, get_progress, reset_progress, update_progress
+from utils.progress import (
+    finish_progress,
+    finish_provider,
+    get_progress,
+    publish_provider_result,
+    reset_progress,
+    update_progress,
+)
 from utils.benchmark import run_benchmark, load_all_plans, save_benchmark_report, save_benchmark_csv
 from utils.alerts import run_alerts
 from benchmark_report import generate_html_report, run_and_save_benchmark
@@ -127,7 +140,7 @@ def api_google_auth_start():
 
 @app.route('/oauth2callback', methods=['GET'])
 def oauth2callback():
-    """Handle Google OAuth redirect."""
+    """Handle Google OAuth redirect with enhanced error handling."""
     try:
         fetch_token(
             request.url,
@@ -137,8 +150,27 @@ def oauth2callback():
         session.pop('google_oauth_state', None)
         session.pop('google_oauth_code_verifier', None)
         return redirect(url_for('sheets_dashboard', connected='1'))
+    except RuntimeError as exc:
+        # Custom errors from fetch_token with helpful messages
+        error_msg = str(exc)
+        session.pop('google_oauth_state', None)
+        session.pop('google_oauth_code_verifier', None)
+        return render_template(
+            'sheets.html',
+            sheet_id=get_sheets_config().get('sheet_id'),
+            snapshot=load_all_plans_snapshot(),
+            oauth_error=error_msg
+        ), 500
     except Exception as exc:
-        return render_template('sheets.html', sheet_id=get_sheets_config().get('sheet_id'), snapshot=load_all_plans_snapshot(), oauth_error=str(exc)), 500
+        # Generic error fallback
+        session.pop('google_oauth_state', None)
+        session.pop('google_oauth_code_verifier', None)
+        return render_template(
+            'sheets.html',
+            sheet_id=get_sheets_config().get('sheet_id'),
+            snapshot=load_all_plans_snapshot(),
+            oauth_error=f"OAuth connection failed: {str(exc)}"
+        ), 500
 
 
 @app.route('/api/sheets/sync', methods=['POST'])
@@ -256,6 +288,12 @@ def api_scrape_provider(provider_name):
         # Save output
         files = save_output(provider_name, result['plans'])
         result['files'] = files
+    publish_provider_result(
+        provider_name,
+        result.get('plans', []),
+        result['success'],
+        result.get('error'),
+    )
     finish_provider(provider_name, result.get('total_plans', 0), result['success'], result.get('error'))
     finish_progress(result['success'], f"{provider_name} scrape finished")
     
@@ -264,15 +302,62 @@ def api_scrape_provider(provider_name):
 
 @app.route('/api/scrape/all', methods=['POST'])
 def api_scrape_all():
-    """Scrape all enabled providers."""
+    """Scrape or report every configured provider without stopping on failures."""
     results = {}
     total_plans = 0
     options = get_scrape_options()
-    enabled_providers = [p for p in get_provider_list() if p['enabled']]
+    providers = get_provider_list()
+    successful = 0
+    failed = 0
+    blocked = 0
 
-    reset_progress(mode='all', providers_total=len(enabled_providers))
+    reset_progress(mode='all', providers_total=len(providers))
     
-    for provider in enabled_providers:
+    for provider in providers:
+        if provider.get('blocked'):
+            reason = provider.get('blocked_reason') or 'Provider is blocked'
+            result = {
+                'success': False,
+                'provider': provider['key'],
+                'plans': [],
+                'total_plans': 0,
+                'error': reason,
+                'status': 'blocked',
+            }
+            results[provider['key']] = result
+            blocked += 1
+            publish_provider_result(
+                provider['key'],
+                [],
+                False,
+                reason,
+                status='blocked',
+            )
+            finish_provider(provider['key'], 0, False, reason, status='blocked')
+            continue
+
+        if not provider.get('enabled'):
+            reason = 'Provider is disabled'
+            result = {
+                'success': False,
+                'provider': provider['key'],
+                'plans': [],
+                'total_plans': 0,
+                'error': reason,
+                'status': 'disabled',
+            }
+            results[provider['key']] = result
+            blocked += 1
+            publish_provider_result(
+                provider['key'],
+                [],
+                False,
+                reason,
+                status='disabled',
+            )
+            finish_provider(provider['key'], 0, False, reason, status='disabled')
+            continue
+
         update_progress(
             provider=provider['key'],
             status='running',
@@ -282,17 +367,32 @@ def api_scrape_all():
         if result['success']:
             files = save_output(provider['key'], result['plans'])
             result['files'] = files
+            successful += 1
+        else:
+            failed += 1
         results[provider['key']] = result
         total_plans += result.get('total_plans', 0)
+        publish_provider_result(
+            provider['key'],
+            result.get('plans', []),
+            result['success'],
+            result.get('error'),
+        )
         finish_provider(provider['key'], result.get('total_plans', 0), result['success'], result.get('error'))
 
-    finish_progress(True, f"Scraped {total_plans} plans from {len(results)} providers")
+    finish_progress(
+        True,
+        f"Completed {len(results)} providers: {successful} successful, {failed} failed, {blocked} blocked",
+    )
     
     return jsonify({
         'success': True,
         'results': results,
         'total_plans': total_plans,
-        'providers_scraped': len(results)
+        'providers_scraped': len(results),
+        'providers_successful': successful,
+        'providers_failed': failed,
+        'providers_blocked': blocked,
     })
 
 

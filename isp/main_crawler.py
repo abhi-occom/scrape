@@ -31,6 +31,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from utils.logger import log_info, log_error, log_success, log_warning
 from utils.stealth import create_stealth_browser, create_stealth_page
+from config import PROVIDERS
 
 from isp.url_discovery import URLDiscovery
 from isp.plan_detector import PlanDetector, PageAnalysis
@@ -409,11 +410,31 @@ class ISPCrawler:
                     result.errors.append(f"Provider fallback failed: {error}")
                 return
 
+            requested_networks = set(n.lower() for n in self.network_types)
+            supported_networks = {
+                str(n).lower()
+                for n in PROVIDERS.get(provider_key, {}).get('supported_networks', [])
+            }
+            allowed_networks = requested_networks
+            if supported_networks:
+                allowed_networks = requested_networks.intersection(supported_networks)
+
+            plans = [
+                plan for plan in plans
+                if str(plan.get('network_type', '')).lower() in allowed_networks
+            ]
+            if not plans:
+                if result.valid_plans == 0:
+                    result.errors.append(
+                        f"Provider fallback returned no plans for requested networks: "
+                        f"{', '.join(sorted(allowed_networks))}"
+                    )
+                return
+
             fallback_networks = sorted(set(
                 p.get('network_type', '') for p in plans if p.get('network_type')
             ))
             current_networks = set(n.lower() for n in result.network_types_found)
-            requested_networks = set(n.lower() for n in self.network_types)
             fallback_networks_lower = set(n.lower() for n in fallback_networks)
             missing_requested_networks = (
                 requested_networks
