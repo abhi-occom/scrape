@@ -1,0 +1,33 @@
+{
+  "base_url": "https://www.optus.com.au/internet/nbn",
+  "provider": "Optus",
+  "started_at": "2026-07-06T07:08:48.686655",
+  "finished_at": "2026-07-06T07:09:14.349336",
+  "duration_seconds": 25.66,
+  "summary": {
+    "urls_visited": 1,
+    "plan_pages_found": 0,
+    "total_plans_scraped": 0,
+    "valid_plans": 0,
+    "invalid_plans": 0,
+    "network_types": []
+  },
+  "discovered_urls": [
+    {
+      "url": "https://www.optus.com.au/internet/nbn",
+      "score": 0,
+      "depth": 0,
+      "network_types": [],
+      "matched_networks": []
+    }
+  ],
+  "page_analyses": [],
+  "plans": [],
+  "invalid_plans": [],
+  "errors": [
+    "Provider fallback returned no plans for requested networks: nbn, opticomm, redtrain, supa",
+    "Provider fallback failed: It looks like you are using Playwright Sync API inside the asyncio loop.\nPlease use the Async API instead.",
+    "Analysis error: https://www.optus.com.au/internet/nbn - Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.optus.com.au/internet/nbn\nCall log:\n  - navigating to \"https://www.optus.com.au/internet/nbn\", waiting until \"domcontentloaded\"\n",
+    "Provider fallback returned no plans for requested networks: nbn, opticomm, redtrain, supa"
+  ]
+}

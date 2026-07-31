@@ -193,17 +193,12 @@ class ISPCrawler:
                     f'Discovered {len(discovered)} candidate pages from {result.urls_visited} visited URLs.',
                 )
 
-                if self._provider_key_from_url(self.base_url):
-                    self._progress('scraping_plans', 'running', 'Running provider-specific scraper after discovery.')
-                    self._try_provider_fallback(result)
-                    if result.success:
-                        self._progress('scraping_plans', 'done', f'Provider scraper returned {result.valid_plans} plans.')
-                        self._progress('validating', 'done', 'Provider-specific plan output accepted.')
-                        try:
-                            browser.close()
-                        except Exception:
-                            pass
-                        return self._finalise_result(result, start_time)
+                # Note: provider-specific fallback is intentionally not retried here.
+                # It is already attempted before this sync_playwright() block opens
+                # (see the call above) and again after it closes (see below). Calling
+                # it here would nest a second sync_playwright() instance inside this
+                # one, which Playwright's sync API does not support in a single
+                # thread ("Sync API inside the asyncio loop" error).
 
                 # ── Step 2: Analyse each page ────────────────────
                 log_info("Step 2: Analysing pages for plan data...", provider="isp-crawler")
@@ -421,7 +416,10 @@ class ISPCrawler:
 
             plans = [
                 plan for plan in plans
-                if str(plan.get('network_type', '')).lower() in allowed_networks
+                if any(
+                    network in str(plan.get('network_type', '')).lower()
+                    for network in allowed_networks
+                )
             ]
             if not plans:
                 if result.valid_plans == 0:

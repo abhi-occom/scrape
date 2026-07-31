@@ -1,0 +1,37 @@
+{
+  "base_url": "https://www.exetel.com.au/broadband/nbn",
+  "provider": "Exetel",
+  "started_at": "2026-07-06T07:13:06.196493",
+  "finished_at": "2026-07-06T07:13:32.427878",
+  "duration_seconds": 26.23,
+  "summary": {
+    "urls_visited": 2,
+    "plan_pages_found": 1,
+    "total_plans_scraped": 1,
+    "valid_plans": 1,
+    "invalid_plans": 0,
+    "network_types": [
+      "NBN"
+    ]
+  },
+  "discovered_urls": [],
+  "page_analyses": [],
+  "plans": [
+    {
+      "provider": "exetel",
+      "network_type": "NBN",
+      "plan_name": "One Plan 500/50",
+      "download_speed": 500,
+      "upload_speed": 50,
+      "price": 80.0,
+      "promo_price": null,
+      "promo_period": "",
+      "contract": "No Lock-in",
+      "typical_evening_dl": 500,
+      "typical_evening_ul": 40,
+      "source_url": "https://www.exetel.com.au/broadband/nbn"
+    }
+  ],
+  "invalid_plans": [],
+  "errors": []
+}

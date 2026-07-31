@@ -1,0 +1,52 @@
+{
+  "base_url": "https://www.exetel.com.au/broadband/nbn",
+  "provider": "Exetel",
+  "started_at": "2026-07-07T07:36:27.160785",
+  "finished_at": "2026-07-07T07:36:55.383957",
+  "duration_seconds": 28.22,
+  "summary": {
+    "urls_visited": 3,
+    "plan_pages_found": 2,
+    "total_plans_scraped": 2,
+    "valid_plans": 2,
+    "invalid_plans": 0,
+    "network_types": [
+      "NBN",
+      "NBN FTTP Upgrade"
+    ]
+  },
+  "discovered_urls": [],
+  "page_analyses": [],
+  "plans": [
+    {
+      "provider": "exetel",
+      "network_type": "NBN",
+      "plan_name": "One Plan 500/50",
+      "download_speed": 500,
+      "upload_speed": 50,
+      "price": 80.0,
+      "promo_price": null,
+      "promo_period": "",
+      "contract": "No Lock-in",
+      "typical_evening_dl": 500,
+      "typical_evening_ul": 40,
+      "source_url": "https://www.exetel.com.au/broadband/nbn"
+    },
+    {
+      "provider": "exetel",
+      "network_type": "NBN FTTP Upgrade",
+      "plan_name": "One Plan 500/50",
+      "download_speed": 500,
+      "upload_speed": 50,
+      "price": 80.0,
+      "promo_price": null,
+      "promo_period": "",
+      "contract": "No Lock-in",
+      "typical_evening_dl": 500,
+      "typical_evening_ul": 40,
+      "source_url": "https://www.exetel.com.au/broadband/nbn-fibre-upgrade"
+    }
+  ],
+  "invalid_plans": [],
+  "errors": []
+}

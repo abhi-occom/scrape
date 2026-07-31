@@ -1,0 +1,105 @@
+{
+  "base_url": "https://city7net.com.au",
+  "provider": "City7Net",
+  "started_at": "2026-07-30T15:10:05.739020",
+  "finished_at": "2026-07-30T15:10:46.087210",
+  "duration_seconds": 40.35,
+  "summary": {
+    "urls_visited": 1,
+    "plan_pages_found": 1,
+    "total_plans_scraped": 4,
+    "valid_plans": 4,
+    "invalid_plans": 0,
+    "network_types": [
+      "FIBRE"
+    ]
+  },
+  "discovered_urls": [
+    {
+      "url": "https://city7net.com.au",
+      "score": 0,
+      "depth": 0,
+      "network_types": [],
+      "matched_networks": []
+    }
+  ],
+  "page_analyses": [
+    {
+      "url": "https://city7net.com.au",
+      "has_plans": true,
+      "confidence": 0.44999999999999996,
+      "network_types": [
+        "fibre"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 4,
+      "speed_signals": 8
+    }
+  ],
+  "plans": [
+    {
+      "provider": "City7Net",
+      "network_type": "FIBRE",
+      "plan_name": "Choose your month-to-month plans - Basic",
+      "download_speed": 25,
+      "upload_speed": 10,
+      "price": 69.0,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": "No lock-in / month-to-month",
+      "typical_evening_dl": 25,
+      "typical_evening_ul": 10,
+      "source_url": "https://city7net.com.au"
+    },
+    {
+      "provider": "City7Net",
+      "network_type": "FIBRE",
+      "plan_name": "MOST POPULAR",
+      "download_speed": 50,
+      "upload_speed": 20,
+      "price": 78.0,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": "No lock-in / month-to-month",
+      "typical_evening_dl": 50,
+      "typical_evening_ul": 20,
+      "source_url": "https://city7net.com.au"
+    },
+    {
+      "provider": "City7Net",
+      "network_type": "FIBRE",
+      "plan_name": "SELECT - Premium",
+      "download_speed": 500,
+      "upload_speed": 500,
+      "price": 89.0,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": "No lock-in / month-to-month",
+      "typical_evening_dl": 500,
+      "typical_evening_ul": 500,
+      "source_url": "https://city7net.com.au"
+    },
+    {
+      "provider": "City7Net",
+      "network_type": "FIBRE",
+      "plan_name": "SELECT - Ultimate",
+      "download_speed": 1000,
+      "upload_speed": 1000,
+      "price": 130.0,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": "No lock-in / month-to-month",
+      "typical_evening_dl": 1000,
+      "typical_evening_ul": 1000,
+      "source_url": "https://city7net.com.au"
+    }
+  ],
+  "invalid_plans": [],
+  "errors": [
+    "Provider fallback returned no plans for requested networks: nbn, opticomm, redtrain, supa"
+  ]
+}

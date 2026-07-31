@@ -1,0 +1,79 @@
+{
+  "base_url": "https://vocphone.com/nbn-plans",
+  "provider": "Vocphone",
+  "started_at": "2026-07-06T07:33:16.218552",
+  "finished_at": "2026-07-06T07:33:36.607155",
+  "duration_seconds": 20.39,
+  "summary": {
+    "urls_visited": 2,
+    "plan_pages_found": 1,
+    "total_plans_scraped": 4,
+    "valid_plans": 4,
+    "invalid_plans": 0,
+    "network_types": [
+      "NBN"
+    ]
+  },
+  "discovered_urls": [],
+  "page_analyses": [],
+  "plans": [
+    {
+      "provider": "VOCPhone",
+      "network_type": "NBN",
+      "plan_name": "VOCPhone NBN Home 100/20",
+      "download_speed": 100,
+      "upload_speed": 20,
+      "price": 99.9,
+      "promo_price": 79.9,
+      "promo_period": "Sale price",
+      "contract": "No Contract",
+      "typical_evening_dl": 92,
+      "typical_evening_ul": 17,
+      "source_url": "https://vocphone.com/nbn-plans"
+    },
+    {
+      "provider": "VOCPhone",
+      "network_type": "NBN",
+      "plan_name": "VOCPhone NBN Business 250/100",
+      "download_speed": 250,
+      "upload_speed": 100,
+      "price": 104.9,
+      "promo_price": 89.9,
+      "promo_period": "Sale price",
+      "contract": "No Contract",
+      "typical_evening_dl": 237,
+      "typical_evening_ul": 96,
+      "source_url": "https://vocphone.com/nbn-plans"
+    },
+    {
+      "provider": "VOCPhone",
+      "network_type": "NBN",
+      "plan_name": "VOCPhone NBN Business 500/200",
+      "download_speed": 500,
+      "upload_speed": 200,
+      "price": 124.9,
+      "promo_price": 109.9,
+      "promo_period": "Sale price",
+      "contract": "No Contract",
+      "typical_evening_dl": 467,
+      "typical_evening_ul": 191,
+      "source_url": "https://vocphone.com/nbn-plans"
+    },
+    {
+      "provider": "VOCPhone",
+      "network_type": "NBN",
+      "plan_name": "VOCPhone NBN Business 1000/400",
+      "download_speed": 1000,
+      "upload_speed": 400,
+      "price": 164.9,
+      "promo_price": 139.9,
+      "promo_period": "Sale price",
+      "contract": "No Contract",
+      "typical_evening_dl": 957,
+      "typical_evening_ul": 388,
+      "source_url": "https://vocphone.com/nbn-plans"
+    }
+  ],
+  "invalid_plans": [],
+  "errors": []
+}

@@ -1,0 +1,29 @@
+provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
+Dodo,NBN,"e.g. Unit 4, 3 Palmer Street, Townsville QLD 4810",25,5,30.0,,6 months,No lock-in,25,5,https://www.dodo.com/nbn
+Dodo,NBN,EVERYDAY NBN25/10,25,5,73.99,43.99,6 months,No lock-in,25,5,https://www.dodo.com/nbn
+Dodo,NBN,Offer ends 1 Sep 2026,50,20,30.0,,6 months,No lock-in,50,20,https://www.dodo.com/nbn
+Dodo,NBN,Offer ends 1 Sep 2026 - VALUE NBN50/20,50,20,87.99,57.99,6 months,No lock-in,50,20,https://www.dodo.com/nbn
+Dodo,NBN,Offer ends 1 Sep 2026,100,20,30.0,,6 months,No lock-in,100,20,https://www.dodo.com/nbn
+Dodo,NBN,Offer ends 1 Sep 2026 - FAST NBN100/20,100,20,92.99,62.99,6 months,No lock-in,100,20,https://www.dodo.com/nbn
+Dodo,NBN,Offer ends 1 Sep 2026,500,50,30.0,,6 months,No lock-in,500,50,https://www.dodo.com/nbn
+Dodo,NBN,Offer ends 1 Sep 2026 - FAST PLUS NBN500/50,500,50,92.99,62.99,6 months,No lock-in,500,50,https://www.dodo.com/nbn
+Dodo,NBN,Offer ends 1 Sep 2026,740,0,30.0,,6 months,No lock-in,740,0,https://www.dodo.com/nbn
+Dodo,NBN,Offer ends 1 Sep 2026 - SUPERFAST NBN750/50,740,0,99.99,69.99,6 months,No lock-in,740,0,https://www.dodo.com/nbn
+Dodo,NBN,Offer ends 1 Sep 2026,800,0,30.0,,6 months,No lock-in,800,0,https://www.dodo.com/nbn
+Dodo,NBN,Offer ends 1 Sep 2026 - ULTRAFAST NBN1000/100,800,0,109.99,79.99,6 months,No lock-in,800,0,https://www.dodo.com/nbn
+Dodo,Fixed Wireless,Critical Information Summary,25,5,30.0,,6 months,No lock-in,25,5,https://www.dodo.com/nbn
+Dodo,NBN,"e.g. Unit 4, 3 Palmer Street, Townsville QLD 4810",50,20,30.0,,6 months,No lock-in,50,20,https://www.dodo.com/nbn/plans/50
+Dodo,NBN,"e.g. Unit 4, 3 Palmer Street, Townsville QLD 4810 - VALUE NBN50/20",50,20,87.99,57.99,6 months,No lock-in,50,20,https://www.dodo.com/nbn/plans/50
+Dodo,NBN,the price you want.,500,50,30.0,,6 months,No lock-in,500,50,https://www.dodo.com/nbn/plans/100
+Dodo,NBN,the price you want.,500,50,62.99,,6 months,No lock-in,500,50,https://www.dodo.com/nbn/plans/100
+Dodo,NBN,"e.g. Unit 4, 3 Palmer Street, Townsville QLD 4810",100,20,30.0,,6 months,No lock-in,100,20,https://www.dodo.com/nbn/plans/100
+Dodo,NBN,"e.g. Unit 4, 3 Palmer Street, Townsville QLD 4810 - FAST NBN100/20",100,20,92.99,62.99,6 months,No lock-in,100,20,https://www.dodo.com/nbn/plans/100
+Dodo,NBN,the price you want.,700,0,30.0,,6 months,No lock-in,700,0,https://www.dodo.com/nbn/plans/superfast
+Dodo,NBN,the price you want.,700,0,69.99,,6 months,No lock-in,700,0,https://www.dodo.com/nbn/plans/superfast
+Dodo,NBN,"e.g. Unit 4, 3 Palmer Street, Townsville QLD 4810",740,0,30.0,,6 months,No lock-in,740,0,https://www.dodo.com/nbn/plans/superfast
+Dodo,NBN,"e.g. Unit 4, 3 Palmer Street, Townsville QLD 4810 - SUPERFAST NBN750/50",740,0,99.99,69.99,6 months,No lock-in,740,0,https://www.dodo.com/nbn/plans/superfast
+Dodo,NBN,the price you want.,840,0,30.0,,6 months,No lock-in,840,0,https://www.dodo.com/nbn/plans/ultrafast
+Dodo,NBN,the price you want.,840,0,79.99,,6 months,No lock-in,840,0,https://www.dodo.com/nbn/plans/ultrafast
+Dodo,NBN,"e.g. Unit 4, 3 Palmer Street, Townsville QLD 4810",800,0,30.0,,6 months,No lock-in,800,0,https://www.dodo.com/nbn/plans/ultrafast
+Dodo,NBN,"e.g. Unit 4, 3 Palmer Street, Townsville QLD 4810 - ULTRAFAST NBN1000/100",800,0,109.99,79.99,6 months,No lock-in,800,0,https://www.dodo.com/nbn/plans/ultrafast
+Dodo,NBN,Optional Modem fee,15,0,169.9,7.5,24 months,1 month contract,15,0,https://www.dodo.com/plan-summaries/nbn-cis

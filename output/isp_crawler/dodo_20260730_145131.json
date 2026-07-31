@@ -1,0 +1,731 @@
+{
+  "base_url": "https://www.dodo.com/nbn",
+  "provider": "Dodo",
+  "started_at": "2026-07-30T14:47:12.962167",
+  "finished_at": "2026-07-30T14:51:29.761851",
+  "duration_seconds": 256.8,
+  "summary": {
+    "urls_visited": 15,
+    "plan_pages_found": 9,
+    "total_plans_scraped": 28,
+    "valid_plans": 28,
+    "invalid_plans": 0,
+    "network_types": [
+      "Fixed Wireless",
+      "NBN"
+    ]
+  },
+  "discovered_urls": [
+    {
+      "url": "https://www.dodo.com/nbn",
+      "score": 0,
+      "depth": 0,
+      "network_types": [],
+      "matched_networks": []
+    },
+    {
+      "url": "https://www.dodo.com/nbn/plans/25",
+      "score": 18,
+      "depth": 1,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.dodo.com/nbn",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.dodo.com/nbn/plans/50",
+      "score": 18,
+      "depth": 1,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.dodo.com/nbn",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.dodo.com/nbn/plans/100",
+      "score": 18,
+      "depth": 1,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.dodo.com/nbn",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.dodo.com/nbn/plans/superfast",
+      "score": 18,
+      "depth": 1,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.dodo.com/nbn",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.dodo.com/nbn/plans/ultrafast",
+      "score": 18,
+      "depth": 1,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.dodo.com/nbn",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.dodo.com/nbn/nbn-rollout-map",
+      "score": 10,
+      "depth": 1,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.dodo.com/nbn",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.dodo.com/plan-summaries/nbn-cis",
+      "score": 10,
+      "depth": 1,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.dodo.com/nbn",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.dodo.com/nbn/speed-tiers",
+      "score": 10,
+      "depth": 1,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.dodo.com/nbn",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.dodo.com/form/nbn-quiz",
+      "score": 10,
+      "depth": 2,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.dodo.com/nbn/plans/25",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.dodo.com/nbn/2025/speed-tiers",
+      "score": 10,
+      "depth": 3,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.dodo.com/nbn/plans/100",
+      "matched_networks": [
+        "nbn"
+      ]
+    }
+  ],
+  "page_analyses": [
+    {
+      "url": "https://www.dodo.com/nbn",
+      "has_plans": true,
+      "confidence": 0.999,
+      "network_types": [
+        "nbn",
+        "fixed_wireless",
+        "fibre"
+      ],
+      "card_selector": "[data-plan-name]",
+      "card_count": 8,
+      "name_selector": "h3",
+      "price_selector": "[class*=\"price\"]",
+      "speed_selector": "[class*=\"speed\"]",
+      "price_signals": 24,
+      "speed_signals": 13
+    },
+    {
+      "url": "https://www.dodo.com/nbn/plans/25",
+      "has_plans": true,
+      "confidence": 0.919,
+      "network_types": [
+        "nbn",
+        "fixed_wireless",
+        "fibre"
+      ],
+      "card_selector": "[data-plan-name]",
+      "card_count": 3,
+      "name_selector": "h2",
+      "price_selector": "[class*=\"price\"]",
+      "speed_selector": "[class*=\"speed\"]",
+      "price_signals": 10,
+      "speed_signals": 2
+    },
+    {
+      "url": "https://www.dodo.com/nbn/plans/50",
+      "has_plans": true,
+      "confidence": 0.919,
+      "network_types": [
+        "nbn",
+        "fixed_wireless",
+        "fibre"
+      ],
+      "card_selector": "[data-plan-name]",
+      "card_count": 3,
+      "name_selector": "h2",
+      "price_selector": "[class*=\"price\"]",
+      "speed_selector": "[class*=\"speed\"]",
+      "price_signals": 10,
+      "speed_signals": 2
+    },
+    {
+      "url": "https://www.dodo.com/nbn/plans/100",
+      "has_plans": true,
+      "confidence": 0.999,
+      "network_types": [
+        "nbn",
+        "fixed_wireless",
+        "fibre"
+      ],
+      "card_selector": "[data-plan-name]",
+      "card_count": 6,
+      "name_selector": "h3",
+      "price_selector": "[class*=\"price\"]",
+      "speed_selector": "[class*=\"speed\"]",
+      "price_signals": 12,
+      "speed_signals": 7
+    },
+    {
+      "url": "https://www.dodo.com/nbn/plans/superfast",
+      "has_plans": true,
+      "confidence": 0.919,
+      "network_types": [
+        "nbn",
+        "fixed_wireless",
+        "fibre"
+      ],
+      "card_selector": "[data-plan-name]",
+      "card_count": 3,
+      "name_selector": "h2",
+      "price_selector": "[class*=\"price\"]",
+      "speed_selector": "[class*=\"speed\"]",
+      "price_signals": 10,
+      "speed_signals": 3
+    },
+    {
+      "url": "https://www.dodo.com/nbn/plans/ultrafast",
+      "has_plans": true,
+      "confidence": 0.919,
+      "network_types": [
+        "nbn",
+        "fixed_wireless",
+        "fibre"
+      ],
+      "card_selector": "[data-plan-name]",
+      "card_count": 3,
+      "name_selector": "h2",
+      "price_selector": "[class*=\"price\"]",
+      "speed_selector": "[class*=\"speed\"]",
+      "price_signals": 10,
+      "speed_signals": 3
+    },
+    {
+      "url": "https://www.dodo.com/nbn/nbn-rollout-map",
+      "has_plans": false,
+      "confidence": 0.1,
+      "network_types": [
+        "nbn"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 0,
+      "speed_signals": 0
+    },
+    {
+      "url": "https://www.dodo.com/plan-summaries/nbn-cis",
+      "has_plans": true,
+      "confidence": 0.44999999999999996,
+      "network_types": [
+        "nbn",
+        "fixed_wireless",
+        "fibre"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 20,
+      "speed_signals": 1
+    },
+    {
+      "url": "https://www.dodo.com/nbn/speed-tiers",
+      "has_plans": true,
+      "confidence": 0.35,
+      "network_types": [
+        "nbn",
+        "fixed_wireless",
+        "fibre",
+        "satellite"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 0,
+      "speed_signals": 22
+    },
+    {
+      "url": "https://www.dodo.com/form/nbn-quiz",
+      "has_plans": false,
+      "confidence": 0.1,
+      "network_types": [
+        "nbn"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 0,
+      "speed_signals": 0
+    },
+    {
+      "url": "https://www.dodo.com/nbn/2025/speed-tiers",
+      "has_plans": true,
+      "confidence": 0.35,
+      "network_types": [
+        "nbn",
+        "fixed_wireless",
+        "fibre"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 0,
+      "speed_signals": 8
+    }
+  ],
+  "plans": [
+    {
+      "provider": "Dodo",
+      "network_type": "NBN",
+      "plan_name": "e.g. Unit 4, 3 Palmer Street, Townsville QLD 4810",
+      "download_speed": 25,
+      "upload_speed": 5,
+      "price": 30.0,
+      "promo_price": null,
+      "promo_period": "6 months",
+      "contract": "No lock-in",
+      "typical_evening_dl": 25,
+      "typical_evening_ul": 5,
+      "source_url": "https://www.dodo.com/nbn"
+    },
+    {
+      "provider": "Dodo",
+      "network_type": "NBN",
+      "plan_name": "EVERYDAY NBN25/10",
+      "download_speed": 25,
+      "upload_speed": 5,
+      "price": 73.99,
+      "promo_price": 43.99,
+      "promo_period": "6 months",
+      "contract": "No lock-in",
+      "typical_evening_dl": 25,
+      "typical_evening_ul": 5,
+      "source_url": "https://www.dodo.com/nbn"
+    },
+    {
+      "provider": "Dodo",
+      "network_type": "NBN",
+      "plan_name": "Offer ends 1 Sep 2026",
+      "download_speed": 50,
+      "upload_speed": 20,
+      "price": 30.0,
+      "promo_price": null,
+      "promo_period": "6 months",
+      "contract": "No lock-in",
+      "typical_evening_dl": 50,
+      "typical_evening_ul": 20,
+      "source_url": "https://www.dodo.com/nbn"
+    },
+    {
+      "provider": "Dodo",
+      "network_type": "NBN",
+      "plan_name": "Offer ends 1 Sep 2026 - VALUE NBN50/20",
+      "download_speed": 50,
+      "upload_speed": 20,
+      "price": 87.99,
+      "promo_price": 57.99,
+      "promo_period": "6 months",
+      "contract": "No lock-in",
+      "typical_evening_dl": 50,
+      "typical_evening_ul": 20,
+      "source_url": "https://www.dodo.com/nbn"
+    },
+    {
+      "provider": "Dodo",
+      "network_type": "NBN",
+      "plan_name": "Offer ends 1 Sep 2026",
+      "download_speed": 100,
+      "upload_speed": 20,
+      "price": 30.0,
+      "promo_price": null,
+      "promo_period": "6 months",
+      "contract": "No lock-in",
+      "typical_evening_dl": 100,
+      "typical_evening_ul": 20,
+      "source_url": "https://www.dodo.com/nbn"
+    },
+    {
+      "provider": "Dodo",
+      "network_type": "NBN",
+      "plan_name": "Offer ends 1 Sep 2026 - FAST NBN100/20",
+      "download_speed": 100,
+      "upload_speed": 20,
+      "price": 92.99,
+      "promo_price": 62.99,
+      "promo_period": "6 months",
+      "contract": "No lock-in",
+      "typical_evening_dl": 100,
+      "typical_evening_ul": 20,
+      "source_url": "https://www.dodo.com/nbn"
+    },
+    {
+      "provider": "Dodo",
+      "network_type": "NBN",
+      "plan_name": "Offer ends 1 Sep 2026",
+      "download_speed": 500,
+      "upload_speed": 50,
+      "price": 30.0,
+      "promo_price": null,
+      "promo_period": "6 months",
+      "contract": "No lock-in",
+      "typical_evening_dl": 500,
+      "typical_evening_ul": 50,
+      "source_url": "https://www.dodo.com/nbn"
+    },
+    {
+      "provider": "Dodo",
+      "network_type": "NBN",
+      "plan_name": "Offer ends 1 Sep 2026 - FAST PLUS NBN500/50",
+      "download_speed": 500,
+      "upload_speed": 50,
+      "price": 92.99,
+      "promo_price": 62.99,
+      "promo_period": "6 months",
+      "contract": "No lock-in",
+      "typical_evening_dl": 500,
+      "typical_evening_ul": 50,
+      "source_url": "https://www.dodo.com/nbn"
+    },
+    {
+      "provider": "Dodo",
+      "network_type": "NBN",
+      "plan_name": "Offer ends 1 Sep 2026",
+      "download_speed": 740,
+      "upload_speed": 0,
+      "price": 30.0,
+      "promo_price": null,
+      "promo_period": "6 months",
+      "contract": "No lock-in",
+      "typical_evening_dl": 740,
+      "typical_evening_ul": 0,
+      "source_url": "https://www.dodo.com/nbn"
+    },
+    {
+      "provider": "Dodo",
+      "network_type": "NBN",
+      "plan_name": "Offer ends 1 Sep 2026 - SUPERFAST NBN750/50",
+      "download_speed": 740,
+      "upload_speed": 0,
+      "price": 99.99,
+      "promo_price": 69.99,
+      "promo_period": "6 months",
+      "contract": "No lock-in",
+      "typical_evening_dl": 740,
+      "typical_evening_ul": 0,
+      "source_url": "https://www.dodo.com/nbn"
+    },
+    {
+      "provider": "Dodo",
+      "network_type": "NBN",
+      "plan_name": "Offer ends 1 Sep 2026",
+      "download_speed": 800,
+      "upload_speed": 0,
+      "price": 30.0,
+      "promo_price": null,
+      "promo_period": "6 months",
+      "contract": "No lock-in",
+      "typical_evening_dl": 800,
+      "typical_evening_ul": 0,
+      "source_url": "https://www.dodo.com/nbn"
+    },
+    {
+      "provider": "Dodo",
+      "network_type": "NBN",
+      "plan_name": "Offer ends 1 Sep 2026 - ULTRAFAST NBN1000/100",
+      "download_speed": 800,
+      "upload_speed": 0,
+      "price": 109.99,
+      "promo_price": 79.99,
+      "promo_period": "6 months",
+      "contract": "No lock-in",
+      "typical_evening_dl": 800,
+      "typical_evening_ul": 0,
+      "source_url": "https://www.dodo.com/nbn"
+    },
+    {
+      "provider": "Dodo",
+      "network_type": "Fixed Wireless",
+      "plan_name": "Critical Information Summary",
+      "download_speed": 25,
+      "upload_speed": 5,
+      "price": 30.0,
+      "promo_price": null,
+      "promo_period": "6 months",
+      "contract": "No lock-in",
+      "typical_evening_dl": 25,
+      "typical_evening_ul": 5,
+      "source_url": "https://www.dodo.com/nbn"
+    },
+    {
+      "provider": "Dodo",
+      "network_type": "NBN",
+      "plan_name": "e.g. Unit 4, 3 Palmer Street, Townsville QLD 4810",
+      "download_speed": 50,
+      "upload_speed": 20,
+      "price": 30.0,
+      "promo_price": null,
+      "promo_period": "6 months",
+      "contract": "No lock-in",
+      "typical_evening_dl": 50,
+      "typical_evening_ul": 20,
+      "source_url": "https://www.dodo.com/nbn/plans/50"
+    },
+    {
+      "provider": "Dodo",
+      "network_type": "NBN",
+      "plan_name": "e.g. Unit 4, 3 Palmer Street, Townsville QLD 4810 - VALUE NBN50/20",
+      "download_speed": 50,
+      "upload_speed": 20,
+      "price": 87.99,
+      "promo_price": 57.99,
+      "promo_period": "6 months",
+      "contract": "No lock-in",
+      "typical_evening_dl": 50,
+      "typical_evening_ul": 20,
+      "source_url": "https://www.dodo.com/nbn/plans/50"
+    },
+    {
+      "provider": "Dodo",
+      "network_type": "NBN",
+      "plan_name": "the price you want.",
+      "download_speed": 500,
+      "upload_speed": 50,
+      "price": 30.0,
+      "promo_price": null,
+      "promo_period": "6 months",
+      "contract": "No lock-in",
+      "typical_evening_dl": 500,
+      "typical_evening_ul": 50,
+      "source_url": "https://www.dodo.com/nbn/plans/100"
+    },
+    {
+      "provider": "Dodo",
+      "network_type": "NBN",
+      "plan_name": "the price you want.",
+      "download_speed": 500,
+      "upload_speed": 50,
+      "price": 62.99,
+      "promo_price": null,
+      "promo_period": "6 months",
+      "contract": "No lock-in",
+      "typical_evening_dl": 500,
+      "typical_evening_ul": 50,
+      "source_url": "https://www.dodo.com/nbn/plans/100"
+    },
+    {
+      "provider": "Dodo",
+      "network_type": "NBN",
+      "plan_name": "e.g. Unit 4, 3 Palmer Street, Townsville QLD 4810",
+      "download_speed": 100,
+      "upload_speed": 20,
+      "price": 30.0,
+      "promo_price": null,
+      "promo_period": "6 months",
+      "contract": "No lock-in",
+      "typical_evening_dl": 100,
+      "typical_evening_ul": 20,
+      "source_url": "https://www.dodo.com/nbn/plans/100"
+    },
+    {
+      "provider": "Dodo",
+      "network_type": "NBN",
+      "plan_name": "e.g. Unit 4, 3 Palmer Street, Townsville QLD 4810 - FAST NBN100/20",
+      "download_speed": 100,
+      "upload_speed": 20,
+      "price": 92.99,
+      "promo_price": 62.99,
+      "promo_period": "6 months",
+      "contract": "No lock-in",
+      "typical_evening_dl": 100,
+      "typical_evening_ul": 20,
+      "source_url": "https://www.dodo.com/nbn/plans/100"
+    },
+    {
+      "provider": "Dodo",
+      "network_type": "NBN",
+      "plan_name": "the price you want.",
+      "download_speed": 700,
+      "upload_speed": 0,
+      "price": 30.0,
+      "promo_price": null,
+      "promo_period": "6 months",
+      "contract": "No lock-in",
+      "typical_evening_dl": 700,
+      "typical_evening_ul": 0,
+      "source_url": "https://www.dodo.com/nbn/plans/superfast"
+    },
+    {
+      "provider": "Dodo",
+      "network_type": "NBN",
+      "plan_name": "the price you want.",
+      "download_speed": 700,
+      "upload_speed": 0,
+      "price": 69.99,
+      "promo_price": null,
+      "promo_period": "6 months",
+      "contract": "No lock-in",
+      "typical_evening_dl": 700,
+      "typical_evening_ul": 0,
+      "source_url": "https://www.dodo.com/nbn/plans/superfast"
+    },
+    {
+      "provider": "Dodo",
+      "network_type": "NBN",
+      "plan_name": "e.g. Unit 4, 3 Palmer Street, Townsville QLD 4810",
+      "download_speed": 740,
+      "upload_speed": 0,
+      "price": 30.0,
+      "promo_price": null,
+      "promo_period": "6 months",
+      "contract": "No lock-in",
+      "typical_evening_dl": 740,
+      "typical_evening_ul": 0,
+      "source_url": "https://www.dodo.com/nbn/plans/superfast"
+    },
+    {
+      "provider": "Dodo",
+      "network_type": "NBN",
+      "plan_name": "e.g. Unit 4, 3 Palmer Street, Townsville QLD 4810 - SUPERFAST NBN750/50",
+      "download_speed": 740,
+      "upload_speed": 0,
+      "price": 99.99,
+      "promo_price": 69.99,
+      "promo_period": "6 months",
+      "contract": "No lock-in",
+      "typical_evening_dl": 740,
+      "typical_evening_ul": 0,
+      "source_url": "https://www.dodo.com/nbn/plans/superfast"
+    },
+    {
+      "provider": "Dodo",
+      "network_type": "NBN",
+      "plan_name": "the price you want.",
+      "download_speed": 840,
+      "upload_speed": 0,
+      "price": 30.0,
+      "promo_price": null,
+      "promo_period": "6 months",
+      "contract": "No lock-in",
+      "typical_evening_dl": 840,
+      "typical_evening_ul": 0,
+      "source_url": "https://www.dodo.com/nbn/plans/ultrafast"
+    },
+    {
+      "provider": "Dodo",
+      "network_type": "NBN",
+      "plan_name": "the price you want.",
+      "download_speed": 840,
+      "upload_speed": 0,
+      "price": 79.99,
+      "promo_price": null,
+      "promo_period": "6 months",
+      "contract": "No lock-in",
+      "typical_evening_dl": 840,
+      "typical_evening_ul": 0,
+      "source_url": "https://www.dodo.com/nbn/plans/ultrafast"
+    },
+    {
+      "provider": "Dodo",
+      "network_type": "NBN",
+      "plan_name": "e.g. Unit 4, 3 Palmer Street, Townsville QLD 4810",
+      "download_speed": 800,
+      "upload_speed": 0,
+      "price": 30.0,
+      "promo_price": null,
+      "promo_period": "6 months",
+      "contract": "No lock-in",
+      "typical_evening_dl": 800,
+      "typical_evening_ul": 0,
+      "source_url": "https://www.dodo.com/nbn/plans/ultrafast"
+    },
+    {
+      "provider": "Dodo",
+      "network_type": "NBN",
+      "plan_name": "e.g. Unit 4, 3 Palmer Street, Townsville QLD 4810 - ULTRAFAST NBN1000/100",
+      "download_speed": 800,
+      "upload_speed": 0,
+      "price": 109.99,
+      "promo_price": 79.99,
+      "promo_period": "6 months",
+      "contract": "No lock-in",
+      "typical_evening_dl": 800,
+      "typical_evening_ul": 0,
+      "source_url": "https://www.dodo.com/nbn/plans/ultrafast"
+    },
+    {
+      "provider": "Dodo",
+      "network_type": "NBN",
+      "plan_name": "Optional Modem fee",
+      "download_speed": 15,
+      "upload_speed": 0,
+      "price": 169.9,
+      "promo_price": 7.5,
+      "promo_period": "24 months",
+      "contract": "1 month contract",
+      "typical_evening_dl": 15,
+      "typical_evening_ul": 0,
+      "source_url": "https://www.dodo.com/plan-summaries/nbn-cis"
+    }
+  ],
+  "invalid_plans": [],
+  "errors": [
+    "Provider fallback failed: dodo fallback returned no plans"
+  ]
+}

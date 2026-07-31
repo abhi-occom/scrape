@@ -665,6 +665,7 @@ let currentResultView = null;
 let currentResultFilename = '';
 let activeNetworkTab = '';
 let lastBatchResultVersion = 0;
+let scrapeAllStatusFailures = 0;
 const liveProviderResults = new Map();
 const PLAN_COLUMNS = [
   'provider',
@@ -748,6 +749,7 @@ async function checkStatus() {
 async function startScrapeAll() {
   setCrawlButtonsDisabled(true);
   currentResultFilename = '';
+  scrapeAllStatusFailures = 0;
   resetLiveBatchResults();
   setStatus('Starting scrape all providers...', 'starting');
   startScrapeAllTimer();
@@ -785,10 +787,15 @@ async function startScrapeAll() {
 async function checkScrapeAllStatus() {
   try {
     const res = await fetch('/isp/api/crawl-all/status');
+    if(!res.ok) {
+      const text = await res.text();
+      throw new Error(`HTTP ${res.status}: ${text.slice(0, 180)}`);
+    }
     const data = await res.json();
     if(!data.success) {
-      return;
+      throw new Error(data.error || 'Status endpoint returned success=false.');
     }
+    scrapeAllStatusFailures = 0;
     renderBatchProgress(data);
     mergeCompletedProviderResults(data);
 
@@ -812,11 +819,16 @@ async function checkScrapeAllStatus() {
       await loadAllPlansSnapshot();
     }
   } catch(e) {
+    scrapeAllStatusFailures += 1;
+    if(scrapeAllStatusFailures < 4) {
+      setStatus(`Waiting for scrape all status... retry ${scrapeAllStatusFailures}/3`, 'starting');
+      return;
+    }
     clearInterval(scrapeAllPoller);
     scrapeAllPoller = null;
     stopScrapeAllTimer();
     setCrawlButtonsDisabled(false);
-    setStatus('Error: Could not read scrape all status.', 'error');
+    setStatus(`Error: Could not read scrape all status. ${e.message || e}`, 'error');
   }
 }
 
