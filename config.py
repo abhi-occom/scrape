@@ -138,7 +138,8 @@ PROVIDERS = {
         'id': 22,
         'name': 'Epsinet',
         'enabled': True,
-        'note': 'Scrapes Epsinet fibre month-to-month plans from the homepage'
+        'note': 'Scrapes Epsinet fibre month-to-month plans from the homepage',
+        'supported_networks': ['Fibre']
     },
     'iqnet': {
         'id': 23,
@@ -150,13 +151,28 @@ PROVIDERS = {
         'id': 24,
         'name': 'New Aus Fiber',
         'enabled': True,
-        'note': 'Scrapes New Aus Fiber month-to-month fibre plans from the homepage'
+        'note': 'Scrapes New Aus Fiber month-to-month fibre plans from the homepage',
+        'supported_networks': ['Fibre']
     },
     'vocphone': {
         'id': 25,
         'name': 'VOCPhone',
         'enabled': True,
         'note': 'Scrapes VOCPhone NBN and SUPA fibre internet plans'
+    },
+    'wavezone': {
+        'id': 26,
+        'name': 'WaveZone',
+        'enabled': True,
+        'note': 'Scrapes WaveZone fibre month-to-month plans from the homepage',
+        'supported_networks': ['Fibre']
+    },
+    'zennet': {
+        'id': 27,
+        'name': 'Zennet',
+        'enabled': True,
+        'note': 'Scrapes Zennet fibre month-to-month plans from the homepage',
+        'supported_networks': ['Fibre']
     },
 }
 

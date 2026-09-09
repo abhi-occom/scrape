@@ -21,7 +21,15 @@ from utils.logger import log_error, log_info, log_success, log_warning
 PROVIDER_ID = config.PROVIDERS.get('newausfiber', {}).get('id', 24)
 PROVIDER_NAME = 'New Aus Fiber'
 URL = 'https://newausfiber.com.au/'
-PLAN_NAMES = ('Casual', 'Everyday', 'Family', 'Extreme')
+
+# Plan names are assigned by download speed rather than the page's own label,
+# since the site's on-page plan names have changed over time.
+SPEED_PLAN_NAMES = {
+    25: 'Casual',
+    50: 'Everyday',
+    500: 'Family',
+    1000: 'Extreme',
+}
 
 
 def _normalise_text(text: str) -> str:
@@ -40,14 +48,12 @@ def _fetch_html() -> str:
 
 def _parse_plan_header(line: str) -> Optional[Tuple[str, float]]:
     match = re.match(
-        r'^(Casual|Everyday|Family|Extreme)\s*[-–]\s*\$\s*([0-9]+(?:\.[0-9]+)?)',
+        r'^([A-Za-z][A-Za-z ]{1,20}?)\s*[-–]\s*\$\s*([0-9]+(?:\.[0-9]+)?)',
         line,
-        re.IGNORECASE,
     )
     if not match:
         return None
-    plan_name = next(name for name in PLAN_NAMES if name.lower() == match.group(1).lower())
-    return plan_name, float(match.group(2))
+    return match.group(1).strip(), float(match.group(2))
 
 
 def _parse_speed(line: str) -> Tuple[int, int]:
@@ -82,7 +88,7 @@ def _extract_plans(lines: List[str]) -> List[Dict[str, Any]]:
             index += 1
             continue
 
-        plan_name, price = header
+        raw_name, price = header
         block = lines[index:index + 12]
         download_speed = 0
         upload_speed = 0
@@ -92,9 +98,11 @@ def _extract_plans(lines: List[str]) -> List[Dict[str, Any]]:
                 break
 
         if not download_speed:
-            log_warning(f'New Aus Fiber: missing speed data for {plan_name}', provider='newausfiber')
+            log_warning(f'New Aus Fiber: missing speed data for {raw_name}', provider='newausfiber')
             index += 1
             continue
+
+        plan_name = SPEED_PLAN_NAMES.get(download_speed, raw_name)
 
         plans.append({
             'provider_id': PROVIDER_ID,

@@ -1,0 +1,1079 @@
+{
+  "base_url": "https://www.iinet.net.au/internet-product",
+  "provider": "iiNet",
+  "started_at": "2026-08-24T14:37:33.436616",
+  "finished_at": "2026-08-24T14:43:40.440692",
+  "duration_seconds": 367.0,
+  "summary": {
+    "urls_visited": 20,
+    "plan_pages_found": 24,
+    "total_plans_scraped": 17,
+    "valid_plans": 17,
+    "invalid_plans": 0,
+    "network_types": [
+      "5G",
+      "NBN"
+    ]
+  },
+  "discovered_urls": [
+    {
+      "url": "https://www.iinet.net.au/internet-product",
+      "score": 0,
+      "depth": 0,
+      "network_types": [],
+      "matched_networks": []
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre",
+      "score": 40,
+      "depth": 1,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.iinet.net.au/internet-product",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre/how-to-get-nbn",
+      "score": 40,
+      "depth": 2,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre/nbn-installation",
+      "score": 40,
+      "depth": 2,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre?offer=1",
+      "score": 40,
+      "depth": 3,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.iinet.net.au/internet-product/nbn/fibre-upgrade",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-product/broadband/5g-home-broadband",
+      "score": 38,
+      "depth": 1,
+      "network_types": [
+        "5g"
+      ],
+      "found_on": "https://www.iinet.net.au/internet-product",
+      "matched_networks": []
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-product/broadband/nbn/plans/wireless",
+      "score": 38,
+      "depth": 1,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.iinet.net.au/internet-product",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-products/broadband/fttb/plans",
+      "score": 30,
+      "depth": 1,
+      "network_types": [],
+      "found_on": "https://www.iinet.net.au/internet-product",
+      "matched_networks": []
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-product/broadband/fttb/plans",
+      "score": 30,
+      "depth": 1,
+      "network_types": [],
+      "found_on": "https://www.iinet.net.au/internet-product",
+      "matched_networks": []
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-products/broadband/nbn/nbn-wireless",
+      "score": 30,
+      "depth": 3,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.iinet.net.au/internet-products/broadband/nbn/nbn-phone/call-rates",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-products/broadband/nbn/nbn-satellite",
+      "score": 30,
+      "depth": 3,
+      "network_types": [
+        "nbn",
+        "satellite"
+      ],
+      "found_on": "https://www.iinet.net.au/internet-products/broadband/nbn/nbn-phone/call-rates",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-products/broadband/nbn/nbn-phone/call-rates",
+      "score": 25,
+      "depth": 2,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-products/broadband/nbn",
+      "score": 25,
+      "depth": 3,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.iinet.net.au/internet-products/fibre/ftth",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-products/broadband/nbn/coverage",
+      "score": 25,
+      "depth": 3,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.iinet.net.au/internet-product/broadband/nbn/plans/wireless",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-products/broadband/nbn/why-iinet",
+      "score": 25,
+      "depth": 3,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.iinet.net.au/internet-products/broadband/nbn/nbn-phone/call-rates",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-products/broadband/nbn/nbn-phone",
+      "score": 25,
+      "depth": 3,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.iinet.net.au/internet-products/broadband/nbn/nbn-phone/call-rates",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-product/nbn/fibre-upgrade",
+      "score": 24,
+      "depth": 1,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.iinet.net.au/internet-product",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-product/broadband/vdsl2/plans",
+      "score": 23,
+      "depth": 1,
+      "network_types": [],
+      "found_on": "https://www.iinet.net.au/internet-product",
+      "matched_networks": []
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-product/broadband/home-wireless",
+      "score": 20,
+      "depth": 1,
+      "network_types": [],
+      "found_on": "https://www.iinet.net.au/internet-product",
+      "matched_networks": []
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-product/broadband/cable",
+      "score": 15,
+      "depth": 1,
+      "network_types": [],
+      "found_on": "https://www.iinet.net.au/internet-product",
+      "matched_networks": []
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-products/broadband/vdsl2",
+      "score": 15,
+      "depth": 1,
+      "network_types": [],
+      "found_on": "https://www.iinet.net.au/internet-product",
+      "matched_networks": []
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-products/broadband/speed-test",
+      "score": 15,
+      "depth": 1,
+      "network_types": [],
+      "found_on": "https://www.iinet.net.au/internet-product",
+      "matched_networks": []
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-products/broadband",
+      "score": 15,
+      "depth": 3,
+      "network_types": [],
+      "found_on": "https://www.iinet.net.au/internet-products/broadband/nbn/nbn-phone/call-rates",
+      "matched_networks": []
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-products/fibre/ftth",
+      "score": 14,
+      "depth": 1,
+      "network_types": [],
+      "found_on": "https://www.iinet.net.au/internet-product",
+      "matched_networks": []
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-products/fibre",
+      "score": 14,
+      "depth": 3,
+      "network_types": [],
+      "found_on": "https://www.iinet.net.au/internet-products/fibre/ftth",
+      "matched_networks": []
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-products/fibre/cable",
+      "score": 14,
+      "depth": 3,
+      "network_types": [],
+      "found_on": "https://www.iinet.net.au/internet-products/broadband/speed-test",
+      "matched_networks": []
+    },
+    {
+      "url": "https://www.iinet.net.au/nbn-speed-increase",
+      "score": 10,
+      "depth": 2,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.iinet.net.au/nbn",
+      "score": 10,
+      "depth": 3,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.iinet.net.au/internet-product/broadband/nbn/plans/wireless",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.iinet.net.au/speeds-nbn-explained",
+      "score": 10,
+      "depth": 3,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.iinet.net.au/nbn-speed-increase",
+      "matched_networks": [
+        "nbn"
+      ]
+    }
+  ],
+  "page_analyses": [
+    {
+      "url": "https://www.iinet.net.au/internet-product",
+      "has_plans": true,
+      "confidence": 0.52,
+      "network_types": [
+        "nbn",
+        "5g",
+        "fixed_wireless",
+        "fibre"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 6,
+      "speed_signals": 2
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre",
+      "has_plans": true,
+      "confidence": 0.8160000000000001,
+      "network_types": [
+        "nbn",
+        "5g",
+        "fixed_wireless",
+        "fibre",
+        "satellite"
+      ],
+      "card_selector": "[class*=\"pricing\"]",
+      "card_count": 5,
+      "name_selector": "h2",
+      "price_selector": "span",
+      "speed_selector": null,
+      "price_signals": 27,
+      "speed_signals": 1
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre/how-to-get-nbn",
+      "has_plans": false,
+      "confidence": 0.15,
+      "network_types": [
+        "nbn",
+        "5g",
+        "fixed_wireless",
+        "fibre"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 0,
+      "speed_signals": 0
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre/nbn-installation",
+      "has_plans": false,
+      "confidence": 0.15,
+      "network_types": [
+        "nbn",
+        "5g",
+        "fixed_wireless",
+        "fibre"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 0,
+      "speed_signals": 0
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre?offer=1",
+      "has_plans": true,
+      "confidence": 0.766,
+      "network_types": [
+        "nbn",
+        "5g",
+        "fixed_wireless",
+        "fibre",
+        "satellite"
+      ],
+      "card_selector": "[class*=\"pricing\"]",
+      "card_count": 5,
+      "name_selector": "h2",
+      "price_selector": "span",
+      "speed_selector": null,
+      "price_signals": 24,
+      "speed_signals": 0
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-product/broadband/5g-home-broadband",
+      "has_plans": true,
+      "confidence": 0.799,
+      "network_types": [
+        "nbn",
+        "5g",
+        "fixed_wireless",
+        "fibre"
+      ],
+      "card_selector": "[class*=\"pricing\"]",
+      "card_count": 4,
+      "name_selector": "h2",
+      "price_selector": "span",
+      "speed_selector": "[class*=\"speed\"]",
+      "price_signals": 6,
+      "speed_signals": 0
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-product/broadband/nbn/plans/wireless",
+      "has_plans": true,
+      "confidence": 0.8490000000000001,
+      "network_types": [
+        "nbn",
+        "5g",
+        "fixed_wireless",
+        "fibre",
+        "satellite"
+      ],
+      "card_selector": "[class*=\"pricing\"]",
+      "card_count": 2,
+      "name_selector": "h2",
+      "price_selector": "[class*=\"price\"]",
+      "speed_selector": "[class*=\"speed\"]",
+      "price_signals": 87,
+      "speed_signals": 33
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-products/broadband/fttb/plans",
+      "has_plans": true,
+      "confidence": 0.999,
+      "network_types": [
+        "nbn",
+        "5g",
+        "fixed_wireless",
+        "fibre"
+      ],
+      "card_selector": ".plan-container",
+      "card_count": 3,
+      "name_selector": "h2",
+      "price_selector": ".plan-price",
+      "speed_selector": "[class*=\"speed\"]",
+      "price_signals": 39,
+      "speed_signals": 13
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-product/broadband/fttb/plans",
+      "has_plans": true,
+      "confidence": 0.999,
+      "network_types": [
+        "nbn",
+        "5g",
+        "fixed_wireless",
+        "fibre"
+      ],
+      "card_selector": ".plan-container",
+      "card_count": 3,
+      "name_selector": "h2",
+      "price_selector": ".plan-price",
+      "speed_selector": "[class*=\"speed\"]",
+      "price_signals": 39,
+      "speed_signals": 13
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-products/broadband/nbn/nbn-wireless",
+      "has_plans": true,
+      "confidence": 0.8490000000000001,
+      "network_types": [
+        "nbn",
+        "5g",
+        "fixed_wireless",
+        "fibre",
+        "satellite"
+      ],
+      "card_selector": "[class*=\"pricing\"]",
+      "card_count": 2,
+      "name_selector": "h2",
+      "price_selector": "[class*=\"price\"]",
+      "speed_selector": "[class*=\"speed\"]",
+      "price_signals": 87,
+      "speed_signals": 33
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-products/broadband/nbn/nbn-satellite",
+      "has_plans": true,
+      "confidence": 0.52,
+      "network_types": [
+        "nbn",
+        "5g",
+        "fixed_wireless",
+        "fibre"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 6,
+      "speed_signals": 2
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-products/broadband/nbn/nbn-phone/call-rates",
+      "has_plans": false,
+      "confidence": 0.15,
+      "network_types": [
+        "nbn",
+        "5g",
+        "fixed_wireless",
+        "fibre",
+        "satellite"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 0,
+      "speed_signals": 0
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-products/broadband/nbn",
+      "has_plans": true,
+      "confidence": 0.8160000000000001,
+      "network_types": [
+        "nbn",
+        "5g",
+        "fixed_wireless",
+        "fibre",
+        "satellite"
+      ],
+      "card_selector": "[class*=\"pricing\"]",
+      "card_count": 5,
+      "name_selector": "h2",
+      "price_selector": "span",
+      "speed_selector": null,
+      "price_signals": 27,
+      "speed_signals": 1
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-products/broadband/nbn/coverage",
+      "has_plans": true,
+      "confidence": 0.8160000000000001,
+      "network_types": [
+        "nbn",
+        "5g",
+        "fixed_wireless",
+        "fibre",
+        "satellite"
+      ],
+      "card_selector": "[class*=\"pricing\"]",
+      "card_count": 5,
+      "name_selector": "h2",
+      "price_selector": "span",
+      "speed_selector": null,
+      "price_signals": 27,
+      "speed_signals": 1
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-products/broadband/nbn/why-iinet",
+      "has_plans": true,
+      "confidence": 0.8160000000000001,
+      "network_types": [
+        "nbn",
+        "5g",
+        "fixed_wireless",
+        "fibre",
+        "satellite"
+      ],
+      "card_selector": "[class*=\"pricing\"]",
+      "card_count": 5,
+      "name_selector": "h2",
+      "price_selector": "span",
+      "speed_selector": null,
+      "price_signals": 27,
+      "speed_signals": 1
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-products/broadband/nbn/nbn-phone",
+      "has_plans": true,
+      "confidence": 0.8160000000000001,
+      "network_types": [
+        "nbn",
+        "5g",
+        "fixed_wireless",
+        "fibre",
+        "satellite"
+      ],
+      "card_selector": "[class*=\"pricing\"]",
+      "card_count": 5,
+      "name_selector": "h2",
+      "price_selector": "span",
+      "speed_selector": null,
+      "price_signals": 27,
+      "speed_signals": 1
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-product/nbn/fibre-upgrade",
+      "has_plans": true,
+      "confidence": 0.6829999999999999,
+      "network_types": [
+        "nbn",
+        "5g",
+        "fixed_wireless",
+        "fibre"
+      ],
+      "card_selector": ".card",
+      "card_count": 9,
+      "name_selector": "h3",
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 4,
+      "speed_signals": 1
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-product/broadband/vdsl2/plans",
+      "has_plans": true,
+      "confidence": 0.8160000000000001,
+      "network_types": [
+        "nbn",
+        "5g",
+        "fixed_wireless",
+        "fibre"
+      ],
+      "card_selector": "[class*=\"pricing\"]",
+      "card_count": 5,
+      "name_selector": "h2",
+      "price_selector": "span",
+      "speed_selector": null,
+      "price_signals": 16,
+      "speed_signals": 1
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-product/broadband/home-wireless",
+      "has_plans": true,
+      "confidence": 0.799,
+      "network_types": [
+        "nbn",
+        "5g",
+        "fixed_wireless",
+        "fibre"
+      ],
+      "card_selector": "[class*=\"pricing\"]",
+      "card_count": 3,
+      "name_selector": "h2",
+      "price_selector": "span",
+      "speed_selector": "[class*=\"speed\"]",
+      "price_signals": 8,
+      "speed_signals": 0
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-product/broadband/cable",
+      "has_plans": true,
+      "confidence": 0.699,
+      "network_types": [
+        "nbn",
+        "5g",
+        "fixed_wireless",
+        "fibre"
+      ],
+      "card_selector": "[class*=\"pricing\"]",
+      "card_count": 2,
+      "name_selector": "h2",
+      "price_selector": "[class*=\"price\"]",
+      "speed_selector": "[class*=\"speed\"]",
+      "price_signals": 17,
+      "speed_signals": 1
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-products/broadband/vdsl2",
+      "has_plans": true,
+      "confidence": 0.8160000000000001,
+      "network_types": [
+        "nbn",
+        "5g",
+        "fixed_wireless",
+        "fibre"
+      ],
+      "card_selector": "[class*=\"pricing\"]",
+      "card_count": 5,
+      "name_selector": "h2",
+      "price_selector": "span",
+      "speed_selector": null,
+      "price_signals": 16,
+      "speed_signals": 1
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-products/broadband/speed-test",
+      "has_plans": false,
+      "confidence": 0.15,
+      "network_types": [
+        "nbn",
+        "5g",
+        "fixed_wireless",
+        "fibre",
+        "satellite"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 0,
+      "speed_signals": 0
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-products/broadband",
+      "has_plans": true,
+      "confidence": 0.52,
+      "network_types": [
+        "nbn",
+        "5g",
+        "fixed_wireless",
+        "fibre"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 6,
+      "speed_signals": 2
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-products/fibre/ftth",
+      "has_plans": true,
+      "confidence": 0.7830000000000001,
+      "network_types": [
+        "nbn",
+        "5g",
+        "fixed_wireless",
+        "fibre"
+      ],
+      "card_selector": "[class*=\"pricing\"]",
+      "card_count": 2,
+      "name_selector": null,
+      "price_selector": "span",
+      "speed_selector": null,
+      "price_signals": 13,
+      "speed_signals": 6
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-products/fibre",
+      "has_plans": true,
+      "confidence": 0.52,
+      "network_types": [
+        "nbn",
+        "5g",
+        "fixed_wireless",
+        "fibre"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 6,
+      "speed_signals": 2
+    },
+    {
+      "url": "https://www.iinet.net.au/internet-products/fibre/cable",
+      "has_plans": true,
+      "confidence": 0.699,
+      "network_types": [
+        "nbn",
+        "5g",
+        "fixed_wireless",
+        "fibre"
+      ],
+      "card_selector": "[class*=\"pricing\"]",
+      "card_count": 2,
+      "name_selector": "h2",
+      "price_selector": "[class*=\"price\"]",
+      "speed_selector": "[class*=\"speed\"]",
+      "price_signals": 17,
+      "speed_signals": 1
+    },
+    {
+      "url": "https://www.iinet.net.au/nbn-speed-increase",
+      "has_plans": true,
+      "confidence": 0.583,
+      "network_types": [
+        "nbn",
+        "5g",
+        "fixed_wireless",
+        "fibre"
+      ],
+      "card_selector": ".card",
+      "card_count": 6,
+      "name_selector": "h3",
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 2,
+      "speed_signals": 1
+    },
+    {
+      "url": "https://www.iinet.net.au/nbn",
+      "has_plans": true,
+      "confidence": 0.8160000000000001,
+      "network_types": [
+        "nbn",
+        "5g",
+        "fixed_wireless",
+        "fibre",
+        "satellite"
+      ],
+      "card_selector": "[class*=\"pricing\"]",
+      "card_count": 5,
+      "name_selector": "h2",
+      "price_selector": "span",
+      "speed_selector": null,
+      "price_signals": 27,
+      "speed_signals": 1
+    }
+  ],
+  "plans": [
+    {
+      "provider": "iiNet",
+      "network_type": "NBN",
+      "plan_name": "Next-level NBN500",
+      "download_speed": 500,
+      "upload_speed": 50,
+      "price": 200.0,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": null,
+      "typical_evening_dl": 500,
+      "typical_evening_ul": 50,
+      "source_url": "https://www.iinet.net.au/internet-product"
+    },
+    {
+      "provider": "iiNet",
+      "network_type": "NBN",
+      "plan_name": "Shop nbn® plans",
+      "download_speed": 500,
+      "upload_speed": 50,
+      "price": 94.99,
+      "promo_price": 79.99,
+      "promo_period": null,
+      "contract": null,
+      "typical_evening_dl": 500,
+      "typical_evening_ul": 50,
+      "source_url": "https://www.iinet.net.au/internet-product"
+    },
+    {
+      "provider": "iiNet",
+      "network_type": "NBN",
+      "plan_name": "Check another address",
+      "download_speed": 25,
+      "upload_speed": 5,
+      "price": 19.99,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": null,
+      "typical_evening_dl": 25,
+      "typical_evening_ul": 5,
+      "source_url": "https://www.iinet.net.au/internet-product"
+    },
+    {
+      "provider": "iiNet",
+      "network_type": "5G",
+      "plan_name": "Plus our Wi-Fi 7 Modem. Exclusive to select addresses. - Shop Cable25 plan",
+      "download_speed": 25,
+      "upload_speed": 5,
+      "price": 39.99,
+      "promo_price": 29.99,
+      "promo_period": null,
+      "contract": null,
+      "typical_evening_dl": 25,
+      "typical_evening_ul": 5,
+      "source_url": "https://www.iinet.net.au/internet-product"
+    },
+    {
+      "provider": "iiNet",
+      "network_type": "NBN",
+      "plan_name": "nbn®500",
+      "download_speed": 500,
+      "upload_speed": 50,
+      "price": 69.99,
+      "promo_price": null,
+      "promo_period": "6 months",
+      "contract": "No lock-in",
+      "typical_evening_dl": 500,
+      "typical_evening_ul": 50,
+      "source_url": "https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre"
+    },
+    {
+      "provider": "iiNet",
+      "network_type": "NBN",
+      "plan_name": "nbn®500 - for 6 months, plus a fast modem included over 24 months.",
+      "download_speed": 500,
+      "upload_speed": 50,
+      "price": 94.99,
+      "promo_price": 79.99,
+      "promo_period": "6 months",
+      "contract": "No lock-in",
+      "typical_evening_dl": 500,
+      "typical_evening_ul": 50,
+      "source_url": "https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre"
+    },
+    {
+      "provider": "iiNet",
+      "network_type": "NBN",
+      "plan_name": "Why choose an iiNet NBN plan?",
+      "download_speed": 0,
+      "upload_speed": 0,
+      "price": 30.0,
+      "promo_price": null,
+      "promo_period": "24 months",
+      "contract": "no lock-in",
+      "typical_evening_dl": 0,
+      "typical_evening_ul": 0,
+      "source_url": "https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre?offer=1"
+    },
+    {
+      "provider": "iiNet",
+      "network_type": "NBN",
+      "plan_name": "Fast 5G Home Broadband for $49.99/mth - 5G Home Broadband",
+      "download_speed": 0,
+      "upload_speed": 0,
+      "price": 20.0,
+      "promo_price": null,
+      "promo_period": "6 months",
+      "contract": "no lock-in",
+      "typical_evening_dl": 0,
+      "typical_evening_ul": 0,
+      "source_url": "https://www.iinet.net.au/internet-product/broadband/5g-home-broadband"
+    },
+    {
+      "provider": "iiNet",
+      "network_type": "NBN",
+      "plan_name": "1. Enter your address to find your perfect plan",
+      "download_speed": 12,
+      "upload_speed": 1,
+      "price": 15.0,
+      "promo_price": null,
+      "promo_period": "24 months",
+      "contract": "no lock-in",
+      "typical_evening_dl": 12,
+      "typical_evening_ul": 1,
+      "source_url": "https://www.iinet.net.au/internet-product/broadband/nbn/plans/wireless"
+    },
+    {
+      "provider": "iiNet",
+      "network_type": "NBN",
+      "plan_name": "Please select the broadband service you wish to modify:",
+      "download_speed": 12,
+      "upload_speed": 1,
+      "price": 15.0,
+      "promo_price": null,
+      "promo_period": "24 months",
+      "contract": "no lock-in",
+      "typical_evening_dl": 12,
+      "typical_evening_ul": 1,
+      "source_url": "https://www.iinet.net.au/internet-product/broadband/nbn/plans/wireless"
+    },
+    {
+      "provider": "iiNet",
+      "network_type": "NBN",
+      "plan_name": "Liimitless Data",
+      "download_speed": 25,
+      "upload_speed": 5,
+      "price": 19.99,
+      "promo_price": null,
+      "promo_period": "24 months",
+      "contract": null,
+      "typical_evening_dl": 25,
+      "typical_evening_ul": 5,
+      "source_url": "https://www.iinet.net.au/internet-products/broadband/fttb/plans"
+    },
+    {
+      "provider": "iiNet",
+      "network_type": "NBN",
+      "plan_name": "Liimitless Data",
+      "download_speed": 100,
+      "upload_speed": 20,
+      "price": 54.99,
+      "promo_price": null,
+      "promo_period": "24 months",
+      "contract": null,
+      "typical_evening_dl": 100,
+      "typical_evening_ul": 20,
+      "source_url": "https://www.iinet.net.au/internet-products/broadband/fttb/plans"
+    },
+    {
+      "provider": "iiNet",
+      "network_type": "NBN",
+      "plan_name": "Liimitless Data",
+      "download_speed": 700,
+      "upload_speed": 0,
+      "price": 59.99,
+      "promo_price": null,
+      "promo_period": "24 months",
+      "contract": null,
+      "typical_evening_dl": 700,
+      "typical_evening_ul": 0,
+      "source_url": "https://www.iinet.net.au/internet-products/broadband/fttb/plans"
+    },
+    {
+      "provider": "iiNet",
+      "network_type": "NBN",
+      "plan_name": "Australia’s lowest price home internet.\n$19.99/mth for 2 years.",
+      "download_speed": 0,
+      "upload_speed": 0,
+      "price": 200.0,
+      "promo_price": null,
+      "promo_period": "24 months",
+      "contract": "no lock-in",
+      "typical_evening_dl": 0,
+      "typical_evening_ul": 0,
+      "source_url": "https://www.iinet.net.au/internet-product/broadband/vdsl2/plans"
+    },
+    {
+      "provider": "iiNet",
+      "network_type": "NBN",
+      "plan_name": "Home internet\nfrom $49.99/mth",
+      "download_speed": 0,
+      "upload_speed": 0,
+      "price": 192.0,
+      "promo_price": 10.0,
+      "promo_period": "6 months",
+      "contract": "no lock-in",
+      "typical_evening_dl": 0,
+      "typical_evening_ul": 0,
+      "source_url": "https://www.iinet.net.au/internet-product/broadband/home-wireless"
+    },
+    {
+      "provider": "iiNet",
+      "network_type": "NBN",
+      "plan_name": "Australia’s lowest price home internet.\n$19.99/mth for 2 years.",
+      "download_speed": 0,
+      "upload_speed": 0,
+      "price": 79.99,
+      "promo_price": 54.99,
+      "promo_period": "24 months",
+      "contract": "no lock-in",
+      "typical_evening_dl": 0,
+      "typical_evening_ul": 0,
+      "source_url": "https://www.iinet.net.au/internet-product/broadband/cable"
+    },
+    {
+      "provider": "iiNet",
+      "network_type": "NBN",
+      "plan_name": "Fibre100",
+      "download_speed": 96,
+      "upload_speed": 0,
+      "price": 10.0,
+      "promo_price": null,
+      "promo_period": null,
+      "contract": null,
+      "typical_evening_dl": 96,
+      "typical_evening_ul": 0,
+      "source_url": "https://www.iinet.net.au/internet-products/fibre/ftth"
+    }
+  ],
+  "invalid_plans": [],
+  "errors": [
+    "Provider fallback failed: iinet fallback returned no plans"
+  ]
+}

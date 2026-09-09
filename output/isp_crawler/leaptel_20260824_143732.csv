@@ -1,0 +1,14 @@
+provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
+Leaptel,NBN,Pronto,25,10,75.0,50.0,6 months,No Contract,25,10,https://leaptel.com.au/plans/?provider=nbn
+Leaptel,NBN,Accelerated,50,20,88.0,75.0,6 months,No Contract,50,20,https://leaptel.com.au/plans/?provider=nbn
+Leaptel,NBN,Full Throttle,250,100,97.0,80.0,12 months,No Contract,250,100,https://leaptel.com.au/plans/?provider=nbn
+Leaptel,NBN,Fast,750,50,97.0,80.0,12 months,No Contract,750,50,https://leaptel.com.au/plans/?provider=nbn
+Leaptel,NBN,Ultrafast,2000,500,119.0,99.0,12 months,No Contract,2000,500,https://leaptel.com.au/plans/?provider=nbn
+Leaptel,Opticomm,Pronto,25,10,75.0,50.0,6 months,No Contract,25,10,https://leaptel.com.au/plans/?provider=opt
+Leaptel,Opticomm,Accelerated,50,20,88.0,75.0,6 months,No Contract,50,20,https://leaptel.com.au/plans/?provider=opt
+Leaptel,Opticomm,Full Throttle,250,100,97.0,80.0,12 months,No Contract,250,100,https://leaptel.com.au/plans/?provider=opt
+Leaptel,Opticomm,Fast,750,50,97.0,80.0,12 months,No Contract,750,50,https://leaptel.com.au/plans/?provider=opt
+Leaptel,Opticomm,Ultrafast,1000,400,119.0,99.0,12 months,No Contract,1000,400,https://leaptel.com.au/plans/?provider=opt
+Leaptel,Redtrain,Pronto,25,5,59.95,,,No Contract,25,5,https://leaptel.com.au/plans/?provider=red
+Leaptel,Redtrain,Accelerated,50,20,84.95,,,No Contract,50,20,https://leaptel.com.au/plans/?provider=red
+Leaptel,Redtrain,Full Throttle,100,20,92.95,,,No Contract,100,20,https://leaptel.com.au/plans/?provider=red

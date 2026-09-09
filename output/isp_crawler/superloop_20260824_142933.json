@@ -1,0 +1,264 @@
+{
+  "base_url": "https://www.superloop.com/internet/nbn",
+  "provider": "Superloop",
+  "started_at": "2026-08-24T14:26:18.780716",
+  "finished_at": "2026-08-24T14:29:32.935608",
+  "duration_seconds": 194.15,
+  "summary": {
+    "urls_visited": 18,
+    "plan_pages_found": 0,
+    "total_plans_scraped": 0,
+    "valid_plans": 0,
+    "invalid_plans": 0,
+    "network_types": []
+  },
+  "discovered_urls": [
+    {
+      "url": "https://www.superloop.com/internet/nbn",
+      "score": 0,
+      "depth": 0,
+      "network_types": [],
+      "matched_networks": []
+    },
+    {
+      "url": "https://www.superloop.com/internet/nbn-1000-plans",
+      "score": 25,
+      "depth": 1,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.superloop.com/internet/nbn",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.superloop.com/internet/nbn-100-plans",
+      "score": 25,
+      "depth": 1,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.superloop.com/internet/nbn",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.superloop.com/internet/nbn-50-plans",
+      "score": 25,
+      "depth": 1,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.superloop.com/internet/nbn",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.superloop.com/internet/fixed-wireless",
+      "score": 20,
+      "depth": 1,
+      "network_types": [
+        "fixed_wireless"
+      ],
+      "found_on": "https://www.superloop.com/internet/nbn",
+      "matched_networks": []
+    },
+    {
+      "url": "https://www.superloop.com/business/everything-about-business-nbn-speeds",
+      "score": 18,
+      "depth": 3,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.superloop.com/business/internet",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.superloop.com/internet/everything-about-nbn-speeds",
+      "score": 17,
+      "depth": 1,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.superloop.com/internet/nbn",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.superloop.com/internet/nbn-2gbps-plan",
+      "score": 17,
+      "depth": 1,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.superloop.com/internet/nbn",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.superloop.com/internet/fibre",
+      "score": 14,
+      "depth": 1,
+      "network_types": [],
+      "found_on": "https://www.superloop.com/internet/nbn",
+      "matched_networks": []
+    },
+    {
+      "url": "https://www.superloop.com/wholesale/connectivity/nbn-backhaul",
+      "score": 10,
+      "depth": 1,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.superloop.com/internet/nbn",
+      "matched_networks": [
+        "nbn"
+      ]
+    }
+  ],
+  "page_analyses": [
+    {
+      "url": "https://www.superloop.com/internet/nbn",
+      "has_plans": false,
+      "confidence": 0.0,
+      "network_types": [],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 0,
+      "speed_signals": 0
+    },
+    {
+      "url": "https://www.superloop.com/internet/nbn-1000-plans",
+      "has_plans": false,
+      "confidence": 0.0,
+      "network_types": [],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 0,
+      "speed_signals": 0
+    },
+    {
+      "url": "https://www.superloop.com/internet/nbn-100-plans",
+      "has_plans": false,
+      "confidence": 0.0,
+      "network_types": [],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 0,
+      "speed_signals": 0
+    },
+    {
+      "url": "https://www.superloop.com/internet/nbn-50-plans",
+      "has_plans": false,
+      "confidence": 0.0,
+      "network_types": [],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 0,
+      "speed_signals": 0
+    },
+    {
+      "url": "https://www.superloop.com/internet/fixed-wireless",
+      "has_plans": false,
+      "confidence": 0.0,
+      "network_types": [],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 0,
+      "speed_signals": 0
+    },
+    {
+      "url": "https://www.superloop.com/business/everything-about-business-nbn-speeds",
+      "has_plans": false,
+      "confidence": 0.0,
+      "network_types": [],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 0,
+      "speed_signals": 0
+    },
+    {
+      "url": "https://www.superloop.com/internet/everything-about-nbn-speeds",
+      "has_plans": false,
+      "confidence": 0.0,
+      "network_types": [],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 0,
+      "speed_signals": 0
+    },
+    {
+      "url": "https://www.superloop.com/internet/nbn-2gbps-plan",
+      "has_plans": false,
+      "confidence": 0.0,
+      "network_types": [],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 0,
+      "speed_signals": 0
+    },
+    {
+      "url": "https://www.superloop.com/internet/fibre",
+      "has_plans": false,
+      "confidence": 0.0,
+      "network_types": [],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 0,
+      "speed_signals": 0
+    },
+    {
+      "url": "https://www.superloop.com/wholesale/connectivity/nbn-backhaul",
+      "has_plans": false,
+      "confidence": 0.0,
+      "network_types": [],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 0,
+      "speed_signals": 0
+    }
+  ],
+  "plans": [],
+  "invalid_plans": [],
+  "errors": [
+    "Provider fallback failed: superloop fallback returned no plans",
+    "Provider fallback failed: superloop fallback returned no plans"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "base_url": "https://www.originenergy.com.au/internet/plans",
+  "provider": "Origin Energy",
+  "started_at": "2026-08-25T15:48:45.171939",
+  "finished_at": "2026-08-25T15:50:02.810249",
+  "duration_seconds": 77.64,
+  "summary": {
+    "urls_visited": 1,
+    "plan_pages_found": 0,
+    "total_plans_scraped": 0,
+    "valid_plans": 0,
+    "invalid_plans": 0,
+    "network_types": []
+  },
+  "discovered_urls": [
+    {
+      "url": "https://www.originenergy.com.au/internet/plans",
+      "score": 0,
+      "depth": 0,
+      "network_types": [],
+      "matched_networks": []
+    }
+  ],
+  "page_analyses": [
+    {
+      "url": "https://www.originenergy.com.au/internet/plans",
+      "has_plans": false,
+      "confidence": 0.3,
+      "network_types": [
+        "nbn",
+        "opticomm"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 3,
+      "speed_signals": 0
+    }
+  ],
+  "plans": [],
+  "invalid_plans": [],
+  "errors": [
+    "Provider fallback failed: origin fallback returned no plans",
+    "Provider fallback failed: origin fallback returned no plans"
+  ]
+}

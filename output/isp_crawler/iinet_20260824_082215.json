@@ -1,0 +1,24 @@
+{
+  "base_url": "https://www.iinet.net.au/internet-product",
+  "provider": "iiNet",
+  "started_at": "2026-08-24T08:22:10.017399",
+  "finished_at": "2026-08-24T08:22:14.416452",
+  "duration_seconds": 4.4,
+  "summary": {
+    "urls_visited": 0,
+    "plan_pages_found": 0,
+    "total_plans_scraped": 0,
+    "valid_plans": 0,
+    "invalid_plans": 0,
+    "network_types": []
+  },
+  "discovered_urls": [],
+  "page_analyses": [],
+  "plans": [],
+  "invalid_plans": [],
+  "errors": [
+    "Provider fallback failed: BrowserType.launch: Executable doesn't exist at C:\\Users\\IS-ABHISHEK-IN\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     playwright install                                     ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝",
+    "Fatal: BrowserType.launch: Executable doesn't exist at C:\\Users\\IS-ABHISHEK-IN\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     playwright install                                     ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝",
+    "Provider fallback failed: BrowserType.launch: Executable doesn't exist at C:\\Users\\IS-ABHISHEK-IN\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     playwright install                                     ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+  ]
+}

@@ -1,0 +1,525 @@
+{
+  "base_url": "https://www.tpg.com.au/nbn",
+  "provider": "TPG",
+  "started_at": "2026-08-24T14:30:33.941150",
+  "finished_at": "2026-08-24T14:33:59.149465",
+  "duration_seconds": 205.21,
+  "summary": {
+    "urls_visited": 10,
+    "plan_pages_found": 6,
+    "total_plans_scraped": 17,
+    "valid_plans": 17,
+    "invalid_plans": 0,
+    "network_types": [
+      "5G",
+      "NBN"
+    ]
+  },
+  "discovered_urls": [
+    {
+      "url": "https://www.tpg.com.au/nbn",
+      "score": 0,
+      "depth": 0,
+      "network_types": [],
+      "matched_networks": []
+    },
+    {
+      "url": "https://www.tpg.com.au/5g-home-broadband",
+      "score": 31,
+      "depth": 1,
+      "network_types": [
+        "5g"
+      ],
+      "found_on": "https://www.tpg.com.au/nbn",
+      "matched_networks": []
+    },
+    {
+      "url": "https://www.tpg.com.au/5g-home-broadband/speed-guide",
+      "score": 31,
+      "depth": 3,
+      "network_types": [
+        "5g"
+      ],
+      "found_on": "https://www.tpg.com.au/5g-home-broadband",
+      "matched_networks": []
+    },
+    {
+      "url": "https://www.tpg.com.au/nbn/fibre-upgrade",
+      "score": 17,
+      "depth": 1,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.tpg.com.au/nbn",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.tpg.com.au/home-wireless-broadband",
+      "score": 13,
+      "depth": 1,
+      "network_types": [],
+      "found_on": "https://www.tpg.com.au/nbn",
+      "matched_networks": []
+    },
+    {
+      "url": "https://www.tpg.com.au/international-callrates-nbn",
+      "score": 10,
+      "depth": 1,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.tpg.com.au/nbn",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.tpg.com.au/nbn?fftb=variation-two",
+      "score": 10,
+      "depth": 2,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.tpg.com.au/fttb",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.tpg.com.au/nbn?offer=1",
+      "score": 10,
+      "depth": 3,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.tpg.com.au/nbn/fibre-upgrade",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.tpg.com.au/speed-increase-nbn",
+      "score": 10,
+      "depth": 3,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.tpg.com.au/internet",
+      "matched_networks": [
+        "nbn"
+      ]
+    }
+  ],
+  "page_analyses": [
+    {
+      "url": "https://www.tpg.com.au/nbn",
+      "has_plans": true,
+      "confidence": 0.8490000000000001,
+      "network_types": [
+        "nbn",
+        "5g",
+        "fixed_wireless",
+        "fibre",
+        "satellite"
+      ],
+      "card_selector": ".plan-container",
+      "card_count": 2,
+      "name_selector": ".plan-name",
+      "price_selector": "span",
+      "speed_selector": "[class*=\"speed\"]",
+      "price_signals": 229,
+      "speed_signals": 302
+    },
+    {
+      "url": "https://www.tpg.com.au/5g-home-broadband",
+      "has_plans": true,
+      "confidence": 0.799,
+      "network_types": [
+        "nbn",
+        "5g",
+        "fixed_wireless"
+      ],
+      "card_selector": "[class*=\"pricing\"]",
+      "card_count": 5,
+      "name_selector": "h2",
+      "price_selector": "span",
+      "speed_selector": "[class*=\"speed\"]",
+      "price_signals": 8,
+      "speed_signals": 0
+    },
+    {
+      "url": "https://www.tpg.com.au/5g-home-broadband/speed-guide",
+      "has_plans": true,
+      "confidence": 0.35,
+      "network_types": [
+        "nbn",
+        "5g",
+        "fixed_wireless",
+        "fibre"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 0,
+      "speed_signals": 12
+    },
+    {
+      "url": "https://www.tpg.com.au/nbn/fibre-upgrade",
+      "has_plans": false,
+      "confidence": 0.2,
+      "network_types": [
+        "nbn",
+        "5g",
+        "fixed_wireless",
+        "fibre"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 2,
+      "speed_signals": 0
+    },
+    {
+      "url": "https://www.tpg.com.au/home-wireless-broadband",
+      "has_plans": true,
+      "confidence": 0.799,
+      "network_types": [
+        "nbn",
+        "5g",
+        "fixed_wireless"
+      ],
+      "card_selector": "[class*=\"pricing\"]",
+      "card_count": 5,
+      "name_selector": "h2",
+      "price_selector": "span",
+      "speed_selector": "[class*=\"speed\"]",
+      "price_signals": 11,
+      "speed_signals": 0
+    },
+    {
+      "url": "https://www.tpg.com.au/international-callrates-nbn",
+      "has_plans": false,
+      "confidence": 0.15,
+      "network_types": [
+        "nbn",
+        "5g",
+        "fixed_wireless",
+        "fibre",
+        "satellite"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 0,
+      "speed_signals": 0
+    },
+    {
+      "url": "https://www.tpg.com.au/nbn?fftb=variation-two",
+      "has_plans": true,
+      "confidence": 0.8490000000000001,
+      "network_types": [
+        "nbn",
+        "5g",
+        "fixed_wireless",
+        "fibre",
+        "satellite"
+      ],
+      "card_selector": ".plan-container",
+      "card_count": 2,
+      "name_selector": ".plan-name",
+      "price_selector": "span",
+      "speed_selector": "[class*=\"speed\"]",
+      "price_signals": 229,
+      "speed_signals": 302
+    },
+    {
+      "url": "https://www.tpg.com.au/nbn?offer=1",
+      "has_plans": true,
+      "confidence": 0.8490000000000001,
+      "network_types": [
+        "nbn",
+        "5g",
+        "fixed_wireless",
+        "fibre",
+        "satellite"
+      ],
+      "card_selector": ".plan-container",
+      "card_count": 2,
+      "name_selector": ".plan-name",
+      "price_selector": "span",
+      "speed_selector": "[class*=\"speed\"]",
+      "price_signals": 230,
+      "speed_signals": 302
+    },
+    {
+      "url": "https://www.tpg.com.au/speed-increase-nbn",
+      "has_plans": false,
+      "confidence": 0.25,
+      "network_types": [
+        "nbn",
+        "5g",
+        "fixed_wireless",
+        "fibre"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 2,
+      "speed_signals": 1
+    }
+  ],
+  "plans": [
+    {
+      "provider": "TPG",
+      "network_type": "NBN",
+      "plan_name": "nbn®500 price-locked deal.",
+      "download_speed": 500,
+      "upload_speed": 50,
+      "price": 69.99,
+      "promo_price": null,
+      "promo_period": "12 months",
+      "contract": "No lock-in",
+      "typical_evening_dl": 500,
+      "typical_evening_ul": 50,
+      "source_url": "https://www.tpg.com.au/nbn"
+    },
+    {
+      "provider": "TPG",
+      "network_type": "NBN",
+      "plan_name": "nbn®500 price-locked deal. - For 12 months. With a fast modem included over 24 months.",
+      "download_speed": 500,
+      "upload_speed": 50,
+      "price": 79.99,
+      "promo_price": null,
+      "promo_period": "12 months",
+      "contract": "No lock-in",
+      "typical_evening_dl": 500,
+      "typical_evening_ul": 50,
+      "source_url": "https://www.tpg.com.au/nbn"
+    },
+    {
+      "provider": "TPG",
+      "network_type": "5G",
+      "plan_name": "Free fibre upgrade",
+      "download_speed": 50,
+      "upload_speed": 20,
+      "price": 30.0,
+      "promo_price": null,
+      "promo_period": "6 months",
+      "contract": "No lock-in",
+      "typical_evening_dl": 50,
+      "typical_evening_ul": 20,
+      "source_url": "https://www.tpg.com.au/nbn"
+    },
+    {
+      "provider": "TPG",
+      "network_type": "5G",
+      "plan_name": "5G Alternative to NBN",
+      "download_speed": 50,
+      "upload_speed": 20,
+      "price": 30.0,
+      "promo_price": null,
+      "promo_period": "6 months",
+      "contract": "No lock-in",
+      "typical_evening_dl": 50,
+      "typical_evening_ul": 20,
+      "source_url": "https://www.tpg.com.au/nbn"
+    },
+    {
+      "provider": "TPG",
+      "network_type": "5G",
+      "plan_name": "Free fibre upgrade",
+      "download_speed": 100,
+      "upload_speed": 20,
+      "price": 30.0,
+      "promo_price": null,
+      "promo_period": "6 months",
+      "contract": "No lock-in",
+      "typical_evening_dl": 100,
+      "typical_evening_ul": 20,
+      "source_url": "https://www.tpg.com.au/nbn"
+    },
+    {
+      "provider": "TPG",
+      "network_type": "5G",
+      "plan_name": "5G Alternative to NBN",
+      "download_speed": 100,
+      "upload_speed": 20,
+      "price": 30.0,
+      "promo_price": null,
+      "promo_period": "6 months",
+      "contract": "No lock-in",
+      "typical_evening_dl": 100,
+      "typical_evening_ul": 20,
+      "source_url": "https://www.tpg.com.au/nbn"
+    },
+    {
+      "provider": "TPG",
+      "network_type": "NBN",
+      "plan_name": "Free fibre upgrade",
+      "download_speed": 98,
+      "upload_speed": 0,
+      "price": 25.0,
+      "promo_price": null,
+      "promo_period": "12 months",
+      "contract": "No lock-in",
+      "typical_evening_dl": 98,
+      "typical_evening_ul": 0,
+      "source_url": "https://www.tpg.com.au/nbn"
+    },
+    {
+      "provider": "TPG",
+      "network_type": "NBN",
+      "plan_name": "Free fibre upgrade",
+      "download_speed": 500,
+      "upload_speed": 50,
+      "price": 25.0,
+      "promo_price": null,
+      "promo_period": "12 months",
+      "contract": "No lock-in",
+      "typical_evening_dl": 500,
+      "typical_evening_ul": 50,
+      "source_url": "https://www.tpg.com.au/nbn"
+    },
+    {
+      "provider": "TPG",
+      "network_type": "NBN",
+      "plan_name": "Free fibre upgrade",
+      "download_speed": 25,
+      "upload_speed": 5,
+      "price": 20.0,
+      "promo_price": null,
+      "promo_period": "6 months",
+      "contract": "No lock-in",
+      "typical_evening_dl": 25,
+      "typical_evening_ul": 5,
+      "source_url": "https://www.tpg.com.au/nbn"
+    },
+    {
+      "provider": "TPG",
+      "network_type": "NBN",
+      "plan_name": "Free fibre upgrade",
+      "download_speed": 50,
+      "upload_speed": 20,
+      "price": 20.0,
+      "promo_price": null,
+      "promo_period": "6 months",
+      "contract": "No lock-in",
+      "typical_evening_dl": 50,
+      "typical_evening_ul": 20,
+      "source_url": "https://www.tpg.com.au/nbn"
+    },
+    {
+      "provider": "TPG",
+      "network_type": "NBN",
+      "plan_name": "Free fibre upgrade",
+      "download_speed": 740,
+      "upload_speed": 0,
+      "price": 30.0,
+      "promo_price": null,
+      "promo_period": "6 months",
+      "contract": "No lock-in",
+      "typical_evening_dl": 740,
+      "typical_evening_ul": 0,
+      "source_url": "https://www.tpg.com.au/nbn"
+    },
+    {
+      "provider": "TPG",
+      "network_type": "NBN",
+      "plan_name": "Free fibre upgrade",
+      "download_speed": 850,
+      "upload_speed": 0,
+      "price": 30.0,
+      "promo_price": null,
+      "promo_period": "6 months",
+      "contract": "No lock-in",
+      "typical_evening_dl": 850,
+      "typical_evening_ul": 0,
+      "source_url": "https://www.tpg.com.au/nbn"
+    },
+    {
+      "provider": "TPG",
+      "network_type": "NBN",
+      "plan_name": "Free fibre upgrade",
+      "download_speed": 14,
+      "upload_speed": 0,
+      "price": 10.0,
+      "promo_price": null,
+      "promo_period": "6 months",
+      "contract": "No lock-in",
+      "typical_evening_dl": 14,
+      "typical_evening_ul": 0,
+      "source_url": "https://www.tpg.com.au/nbn"
+    },
+    {
+      "provider": "TPG",
+      "network_type": "NBN",
+      "plan_name": "4G Alternative to nbn®",
+      "download_speed": 14,
+      "upload_speed": 0,
+      "price": 10.0,
+      "promo_price": null,
+      "promo_period": "6 months",
+      "contract": "No lock-in",
+      "typical_evening_dl": 14,
+      "typical_evening_ul": 0,
+      "source_url": "https://www.tpg.com.au/nbn"
+    },
+    {
+      "provider": "TPG",
+      "network_type": "NBN",
+      "plan_name": "Free fibre upgrade",
+      "download_speed": 20,
+      "upload_speed": 0,
+      "price": 20.0,
+      "promo_price": null,
+      "promo_period": "6 months",
+      "contract": "No lock-in",
+      "typical_evening_dl": 20,
+      "typical_evening_ul": 0,
+      "source_url": "https://www.tpg.com.au/nbn"
+    },
+    {
+      "provider": "TPG",
+      "network_type": "NBN",
+      "plan_name": "How can we help?",
+      "download_speed": 0,
+      "upload_speed": 0,
+      "price": 30.0,
+      "promo_price": null,
+      "promo_period": "6 months",
+      "contract": "No lock-in",
+      "typical_evening_dl": 0,
+      "typical_evening_ul": 0,
+      "source_url": "https://www.tpg.com.au/5g-home-broadband"
+    },
+    {
+      "provider": "TPG",
+      "network_type": "NBN",
+      "plan_name": "How can we help?",
+      "download_speed": 0,
+      "upload_speed": 0,
+      "price": 10.0,
+      "promo_price": null,
+      "promo_period": "6 months",
+      "contract": "No lock-in",
+      "typical_evening_dl": 0,
+      "typical_evening_ul": 0,
+      "source_url": "https://www.tpg.com.au/home-wireless-broadband"
+    }
+  ],
+  "invalid_plans": [],
+  "errors": [
+    "Provider fallback failed: tpg fallback returned no plans"
+  ]
+}

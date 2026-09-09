@@ -1,10 +1,10 @@
 """
 Superloop ISP plan scraper — multi-page.
 Scrapes 4 Superloop product pages:
-  - /internet/nbn/        → JSON-LD extraction (9 plans)
-  - /internet/fibre/      → JSON-LD extraction (7 plans)
-  - /flip-to-fibre/       → card extraction via border rounded cards
-  - /internet/fixed-wireless/ → card extraction via .card elements
+  - /internet/nbn/            → JSON-LD extraction
+  - /internet/fibre/          → JSON-LD extraction
+  - /internet/flip-to-fibre/  → card extraction
+  - /internet/fixed-wireless/ → card extraction
 Returns Dict[str, List[Dict]] keyed by page name.
 """
 
@@ -29,14 +29,14 @@ SUPERLOOP_PAGES = {
         'method': 'json_ld',
     },
     'flip_to_fibre': {
-        'url': 'https://www.superloop.com/flip-to-fibre/',
+        'url': 'https://www.superloop.com/internet/flip-to-fibre/',
         'network_type': 'FTTP Upgrade',
-        'method': 'cards_rounded',
+        'method': 'cards',
     },
     'fixed_wireless': {
         'url': 'https://www.superloop.com/internet/fixed-wireless/',
         'network_type': 'Fixed Wireless',
-        'method': 'cards_fw',
+        'method': 'cards',
     },
 }
 
@@ -61,13 +61,12 @@ def scrape_superloop_plans() -> Dict[str, List[Dict[str, Any]]]:
 
                 method = page_cfg['method']
                 network = page_cfg['network_type']
+                name_prefix = 'Fixed Wireless ' if page_key == 'fixed_wireless' else ''
 
                 if method == 'json_ld':
                     plans = extract_from_json_ld(page, network, page_cfg['url'])
-                elif method == 'cards_rounded':
-                    plans = extract_from_rounded_cards(page, network, page_cfg['url'])
-                elif method == 'cards_fw':
-                    plans = extract_from_fw_cards(page, network, page_cfg['url'])
+                elif method == 'cards':
+                    plans = extract_from_cards(page, network, page_cfg['url'], name_prefix)
                 else:
                     plans = []
 
@@ -90,10 +89,8 @@ def scrape_superloop_plans() -> Dict[str, List[Dict[str, Any]]]:
 def scrape_via_playwright() -> List[Dict[str, Any]]:
     """
     Legacy single-list interface (backward-compatible).
-    Scrapes only the NBN page.
     """
     results = scrape_superloop_plans()
-    # Flatten all pages into single list
     flat = []
     for plans in results.values():
         flat.extend(plans)
@@ -104,15 +101,25 @@ def scrape_via_playwright() -> List[Dict[str, Any]]:
 #  JSON-LD EXTRACTION (nbn + fibre pages)
 # ══════════════════════════════════════════════════════════════════
 
+MONTH_WORDS = {
+    'one': 1, 'two': 2, 'three': 3, 'four': 4, 'five': 5, 'six': 6,
+    'seven': 7, 'eight': 8, 'nine': 9, 'ten': 10, 'eleven': 11, 'twelve': 12,
+}
+
+
+def parse_promo_period(description: str) -> Optional[str]:
+    """Extract promo duration from JSON-LD description text, e.g. 'first six months'."""
+    match = re.search(r'first\s+(\w+)\s+months?', description, re.I)
+    if not match:
+        return None
+    word = match.group(1).lower()
+    months = MONTH_WORDS.get(word) or (int(word) if word.isdigit() else None)
+    return f"{months} months" if months else None
+
+
 def extract_from_json_ld(page, network_type: str, source_url: str) -> List[Dict[str, Any]]:
     """Extract plan data from JSON-LD ProductGroup → hasVariant."""
     plans = []
-    try:
-        card_pricing = extract_rendered_card_pricing(page)
-    except Exception as e:
-        log_error(f"Rendered card pricing extraction failed: {e}", provider="superloop")
-        card_pricing = {}
-
     try:
         scripts = page.query_selector_all('script[type="application/ld+json"]')
         for script in scripts:
@@ -127,114 +134,29 @@ def extract_from_json_ld(page, network_type: str, source_url: str) -> List[Dict[
                 for variant in item.get('hasVariant', []):
                     plan = parse_json_ld_variant(variant, network_type, source_url)
                     if plan:
-                        apply_card_pricing(plan, card_pricing)
                         plans.append(plan)
     except Exception as e:
         log_error(f"JSON-LD extraction failed: {e}", provider="superloop")
-    if not plans and card_pricing:
-        plans = extract_from_rounded_cards(page, network_type, source_url)
+    if not plans:
+        plans = extract_from_cards(page, network_type, source_url)
     return plans
 
 
-def extract_rendered_card_pricing(page) -> Dict[str, Dict[str, Any]]:
-    """
-    Extract regular/promo pricing from rendered cards.
-    Superloop JSON-LD exposes the visible discounted price only; the card text
-    includes the regular price and promo period.
-    """
-    pricing = {}
-    cards = page.query_selector_all('#plans .border.rounded-\\[1\\.25rem\\]')
-
-    for card in cards:
-        try:
-            text = card.inner_text()
-            download_speed, upload_speed = extract_card_speeds(text)
-            if not download_speed or not upload_speed:
-                continue
-
-            prices = [float(p) for p in re.findall(r'\$(\d+(?:\.\d+)?)', text)]
-            if not prices:
-                continue
-
-            promo_price = None
-            regular_price = 0.0
-            then_match = re.search(r'then\s+\$(\d+(?:\.\d+)?)\s*/?\s*mth', text, re.I)
-            if then_match:
-                regular_price = float(then_match.group(1))
-                lower_prices = [p for p in prices if p < regular_price]
-                if lower_prices:
-                    promo_price = min(lower_prices)
-            elif len(prices) >= 2:
-                regular_price = max(prices[0], prices[1])
-                promo_price = min(prices[0], prices[1])
-            else:
-                regular_price = prices[0]
-
-            promo_period = None
-            period_m = re.search(r'first\s+(\d+)\s*months?', text, re.I)
-            if not period_m:
-                period_m = re.search(r'over\s+(\d+)\s*months?', text, re.I)
-            if period_m and promo_price:
-                promo_period = f"{period_m.group(1)} months"
-
-            key = speed_key(download_speed, upload_speed)
-            current = pricing.get(key)
-            if not current or (promo_price and not current.get('promo_price')):
-                pricing[key] = {
-                    'price': regular_price,
-                    'promo_price': promo_price,
-                    'promo_period': promo_period,
-                }
-        except Exception as e:
-            log_error(f"Rendered card pricing parse failed: {e}", provider="superloop")
-
-    log_info(f"Rendered card pricing entries: {len(pricing)}", provider="superloop")
-    return pricing
-
-
-def apply_card_pricing(plan: Dict[str, Any], card_pricing: Dict[str, Dict[str, Any]]) -> None:
-    """Overlay JSON-LD pricing with rendered card promo metadata when available."""
-    pricing = card_pricing.get(speed_key(plan.get('download_speed'), plan.get('upload_speed')))
-    if not pricing:
-        return
-
-    regular_price = pricing.get('price') or 0
-    promo_price = pricing.get('promo_price')
-    if regular_price > 0:
-        plan['price'] = regular_price
-    if promo_price and promo_price < plan['price']:
-        plan['promo_price'] = promo_price
-        plan['promo_period'] = pricing.get('promo_period')
-
-
-def extract_card_speeds(text: str) -> tuple[int, int]:
-    """Extract Download/Upload Mbps values from a rendered Superloop card."""
-    download_speed = 0
-    upload_speed = 0
-    dl_match = re.search(r'Download\s*\D*?(\d+)\s*Mbps', text, re.I)
-    if dl_match:
-        download_speed = int(dl_match.group(1))
-    ul_match = re.search(r'Upload\s*\D*?(\d+)\s*Mbps', text, re.I)
-    if ul_match:
-        upload_speed = int(ul_match.group(1))
-    return download_speed, upload_speed
-
-
-def speed_key(download_speed: Any, upload_speed: Any) -> str:
-    """Build a stable key for matching JSON-LD variants to rendered cards."""
-    return f"{int(download_speed or 0)}/{int(upload_speed or 0)}"
-
-
 def parse_json_ld_variant(variant: Dict, network_type: str, source_url: str) -> Optional[Dict[str, Any]]:
-    """Parse a JSON-LD Product variant into standardized plan format."""
+    """Parse a JSON-LD Product variant into standardized plan format.
+
+    offers.price is the current (often discounted) price; offers.priceSpecification.price
+    is the ongoing/strikethrough price once any promo period ends.
+    """
     try:
         name = variant.get('name', '')
         size = variant.get('size', '')
         description = variant.get('description', '')
         offers = variant.get('offers', {})
-        price = float(offers.get('price', 0))
+        offer_price = float(offers.get('price', 0) or 0)
+        price_spec = offers.get('priceSpecification') or {}
+        strike_price = float(price_spec.get('price', 0) or 0)
 
-        # Parse download/upload from size (e.g. "50/20")
         download_speed, upload_speed = 0, 0
         if size:
             parts = size.split('/')
@@ -242,15 +164,23 @@ def parse_json_ld_variant(variant: Dict, network_type: str, source_url: str) -> 
                 download_speed = int(parts[0])
                 upload_speed = int(parts[1])
 
-        # Parse typical evening speed from description
         typical_dl, typical_ul = 0, 0
-        m = re.search(r'Typical evening speed is (\d+)/(\d+)', description)
+        m = re.search(r'Typical evening speed is (\d+)/(\d+(?:\.\d+)?)', description)
         if m:
-            typical_dl = int(m.group(1))
-            typical_ul = int(m.group(2))
+            typical_dl = int(float(m.group(1)))
+            typical_ul = int(float(m.group(2)))
 
-        if not name or price <= 0:
+        if not name or offer_price <= 0:
             return None
+
+        if strike_price > offer_price:
+            price = strike_price
+            promo_price = offer_price
+            promo_period = parse_promo_period(description)
+        else:
+            price = offer_price
+            promo_price = None
+            promo_period = None
 
         return {
             'provider_id': config.PROVIDERS['superloop']['id'],
@@ -261,8 +191,8 @@ def parse_json_ld_variant(variant: Dict, network_type: str, source_url: str) -> 
             'typical_evening_dl': typical_dl,
             'typical_evening_ul': typical_ul,
             'price': price,
-            'promo_price': None,
-            'promo_period': None,
+            'promo_price': promo_price,
+            'promo_period': promo_period,
             'contract': 'No Contract',
             'source_url': source_url,
         }
@@ -272,21 +202,24 @@ def parse_json_ld_variant(variant: Dict, network_type: str, source_url: str) -> 
 
 
 # ══════════════════════════════════════════════════════════════════
-#  CARD EXTRACTION — Flip to Fibre (border rounded cards)
+#  CARD EXTRACTION — Flip to Fibre + Fixed Wireless
+#  Both pages share the same plan-card component:
+#    div.block.text-left.w-full.relative.group  (tier name in <h3>)
+#  Each plan renders as two elements (front face with pricing, and a
+#  flip-side detail panel with no price) — filter to the priced ones.
 # ══════════════════════════════════════════════════════════════════
 
-def extract_from_rounded_cards(page, network_type: str, source_url: str) -> List[Dict[str, Any]]:
-    """
-    Extract plans from flip-to-fibre page.
-    Cards: border rounded-[1.25rem] inside #plans, contain speed, price, tier name.
-    """
+CARD_SELECTOR = 'div.block.text-left.w-full.relative.group'
+
+
+def extract_from_cards(page, network_type: str, source_url: str, name_prefix: str = '') -> List[Dict[str, Any]]:
     plans = []
-    cards = page.query_selector_all('#plans .border.rounded-\\[1\\.25rem\\]')
-    log_info(f"Rounded cards found: {len(cards)}", provider="superloop")
+    cards = [c for c in page.query_selector_all(CARD_SELECTOR) if '$' in c.inner_text()]
+    log_info(f"Plan cards found: {len(cards)}", provider="superloop")
 
     for card in cards:
         try:
-            plan = parse_rounded_card(card, network_type, source_url)
+            plan = parse_plan_card(card, network_type, source_url, name_prefix)
             if plan:
                 plans.append(plan)
         except Exception as e:
@@ -294,154 +227,38 @@ def extract_from_rounded_cards(page, network_type: str, source_url: str) -> List
     return plans
 
 
-def parse_rounded_card(card, network_type: str, source_url: str) -> Optional[Dict[str, Any]]:
-    """Parse a rounded plan card from flip-to-fibre or nbn fallback."""
+def parse_plan_card(card, network_type: str, source_url: str, name_prefix: str = '') -> Optional[Dict[str, Any]]:
+    """Parse a Superloop plan card (flip-to-fibre or fixed-wireless layout)."""
     full_text = card.inner_text()
 
-    # Plan tier name — first h3 with font-Avenir95Black
-    name_el = card.query_selector('h3.font-Avenir95Black')
-    plan_tier = name_el.inner_text().strip() if name_el else ''
+    tier_el = card.query_selector('h3')
+    plan_tier = tier_el.inner_text().strip() if tier_el else ''
 
-    # Download speed — look for number before "Mbps" near "Download"
-    download_speed = 0
-    upload_speed = 0
-    # The layout is: Download | 25 | Mbps | Upload | 10 | Mbps
-    dl_match = re.search(r'Download\s*\D*?(\d+)\s*Mbps', full_text, re.I)
-    if dl_match:
-        download_speed = int(dl_match.group(1))
-    ul_match = re.search(r'Upload\s*\D*?(\d+)\s*Mbps', full_text, re.I)
-    if ul_match:
-        upload_speed = int(ul_match.group(1))
-
-    # Price — look for promo price (green) and regular (strikethrough)
-    promo_price = None
-    regular_price = 0
-
-    # Try green/promo price element
-    promo_el = card.query_selector('span.text-green-500, span.text-green-600')
-    strikethrough_el = card.query_selector('span.line-through')
-
-    if promo_el:
-        promo_price = extract_price(promo_el.inner_text())
-    if strikethrough_el:
-        regular_price = extract_price(strikethrough_el.inner_text())
-
-    # Fallback: extract from text  "$72 $45 /mth" or "$45/mth"
-    if not promo_price and not regular_price:
-        prices = re.findall(r'\$(\d+(?:\.\d+)?)', full_text)
-        if len(prices) >= 2:
-            regular_price = float(prices[0])
-            promo_price = float(prices[1])
-        elif len(prices) == 1:
-            regular_price = float(prices[0])
-
-    if regular_price <= 0 and promo_price:
-        regular_price = promo_price
-        promo_price = None
-
-    # Promo period
-    promo_period = ''
-    period_m = re.search(r'(\d+)\s*months?', full_text)
-    if period_m and promo_price:
-        promo_period = f"{period_m.group(1)} months"
-
-    if not plan_tier or regular_price <= 0:
-        return None
-
-    plan_name = f"{plan_tier} {download_speed}/{upload_speed}"
-
-    return {
-        'provider_id': config.PROVIDERS['superloop']['id'],
-        'plan_name': plan_name,
-        'network_type': network_type,
-        'download_speed': download_speed,
-        'upload_speed': upload_speed,
-        'typical_evening_dl': 0,
-        'typical_evening_ul': 0,
-        'price': regular_price,
-        'promo_price': promo_price,
-        'promo_period': promo_period,
-        'contract': 'No Contract',
-        'source_url': source_url,
-    }
-
-
-# ══════════════════════════════════════════════════════════════════
-#  CARD EXTRACTION — Fixed Wireless (.card elements)
-# ══════════════════════════════════════════════════════════════════
-
-def extract_from_fw_cards(page, network_type: str, source_url: str) -> List[Dict[str, Any]]:
-    """
-    Extract plans from fixed-wireless page.
-    Cards: .card elements inside #plans with speed/price info.
-    """
-    plans = []
-    # Each plan is a top-level .card with min-h inside #plans
-    # Use CSS attribute selector to match class containing "min-h"
-    cards = page.query_selector_all('#plans [class*="min-h"][class*="card"]')
-    if not cards:
-        # Broader fallback — all .card with _md:w-fit
-        cards = page.query_selector_all('#plans [class*="_md:w-fit"]')
-    if not cards:
-        cards = page.query_selector_all('#plans > div .card')
-
-    log_info(f"Fixed wireless cards found: {len(cards)}", provider="superloop")
-
-    seen = set()
-    for card in cards:
-        try:
-            plan = parse_fw_card(card, network_type, source_url)
-            if plan:
-                key = f"{plan['plan_name']}_{plan['price']}"
-                if key not in seen:
-                    seen.add(key)
-                    plans.append(plan)
-        except Exception as e:
-            log_error(f"FW card parse error: {e}", provider="superloop")
-    return plans
-
-
-def parse_fw_card(card, network_type: str, source_url: str) -> Optional[Dict[str, Any]]:
-    """Parse a fixed-wireless plan card."""
-    full_text = card.inner_text()
-
-    # Plan name — e.g. "Fixed Wireless Plus 100/20" or "Fixed Wireless Home Fast 250/20"
-    name_match = re.search(r'Fixed Wireless\s+((?:(?:Plus|Premium|Max|Basic|Home Fast|Super Fast|Home Superfast)\s+)?\d+/\d+)', full_text)
-    plan_name = name_match.group(1).strip() if name_match else ''
-
-    if not plan_name:
-        # Fallback: grab text between "Fixed Wireless" and "Typical"
-        fw_match = re.search(r'Fixed Wireless\s+(.+?)(?:Typical|$)', full_text, re.S)
-        if fw_match:
-            plan_name = fw_match.group(1).strip().split('\n')[0].strip()
-
-    # Download/Upload — "Download | 100 Mbps | Upload | 20 Mbps" or "8-20 Mbps"
     download_speed = 0
     upload_speed = 0
     dl_match = re.search(r'Download\s*\D*?(\d+)\s*Mbps', full_text, re.I)
     if dl_match:
         download_speed = int(dl_match.group(1))
-    # Upload can be range like "8-20 Mbps" — take the higher number
     ul_match = re.search(r'Upload\s*\D*?(?:(\d+)-)?(\d+)\s*Mbps', full_text, re.I)
     if ul_match:
         upload_speed = int(ul_match.group(2))
 
-    # Typical evening speed — "Typical evening speed: 50/8 Mbps"
     typical_dl, typical_ul = 0, 0
-    typical_match = re.search(r'Typical evening speed:\s*(\d+)/(\d+)', full_text)
+    typical_match = re.search(r'Typical evening speed\D*?(\d+)/(\d+(?:\.\d+)?)', full_text, re.I)
     if typical_match:
-        typical_dl = int(typical_match.group(1))
-        typical_ul = int(typical_match.group(2))
+        typical_dl = int(float(typical_match.group(1)))
+        typical_ul = int(float(typical_match.group(2)))
 
-    # Price — "$75/mth" for promo, "then $89/mth" for regular
+    # Price — promo price is immediately followed by "/mth" (possibly across a
+    # line break); the ongoing/regular price follows "then $X/mth".
     promo_price = None
-    regular_price = 0
+    regular_price = 0.0
 
-    price_match = re.search(r'\$(\d+(?:\.\d+)?)/mth', full_text)
-    if price_match:
-        promo_price = float(price_match.group(1))
+    promo_match = re.search(r'\$(\d+(?:\.\d+)?)\s*/mth', full_text, re.I)
+    if promo_match:
+        promo_price = float(promo_match.group(1))
 
-    then_match = re.search(r'then\s+\$(\d+(?:\.\d+)?)/mth', full_text)
+    then_match = re.search(r'then\s+\$(\d+(?:\.\d+)?)\s*/mth', full_text, re.I)
     if then_match:
         regular_price = float(then_match.group(1))
 
@@ -449,18 +266,19 @@ def parse_fw_card(card, network_type: str, source_url: str) -> Optional[Dict[str
         regular_price = promo_price
         promo_price = None
 
-    # Promo period
-    promo_period = ''
+    promo_period = None
     period_m = re.search(r'(\d+)\s*months?', full_text)
     if period_m and promo_price:
         promo_period = f"{period_m.group(1)} months"
 
-    if not plan_name or regular_price <= 0:
+    if not plan_tier or regular_price <= 0 or download_speed <= 0:
         return None
+
+    plan_name = f"{name_prefix}{plan_tier} {download_speed}/{upload_speed}"
 
     return {
         'provider_id': config.PROVIDERS['superloop']['id'],
-        'plan_name': f"Fixed Wireless {plan_name}",
+        'plan_name': plan_name,
         'network_type': network_type,
         'download_speed': download_speed,
         'upload_speed': upload_speed,

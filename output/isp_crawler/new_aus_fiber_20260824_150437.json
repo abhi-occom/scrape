@@ -1,9 +1,9 @@
 {
   "base_url": "https://newausfiber.com.au",
   "provider": "New Aus Fiber",
-  "started_at": "2026-07-30T16:22:54.418196",
-  "finished_at": "2026-07-30T16:24:05.084609",
-  "duration_seconds": 70.67,
+  "started_at": "2026-08-24T15:03:33.000292",
+  "finished_at": "2026-08-24T15:04:37.021205",
+  "duration_seconds": 64.02,
   "summary": {
     "urls_visited": 6,
     "plan_pages_found": 1,
@@ -58,7 +58,7 @@
     {
       "provider": "New Aus Fiber",
       "network_type": "FIBRE",
-      "plan_name": "SIGN UP",
+      "plan_name": "sign up",
       "download_speed": 50,
       "upload_speed": 20,
       "price": 77.0,
@@ -72,7 +72,7 @@
     {
       "provider": "New Aus Fiber",
       "network_type": "FIBRE",
-      "plan_name": "SIGN UP",
+      "plan_name": "sign up",
       "download_speed": 500,
       "upload_speed": 500,
       "price": 95.0,
@@ -86,7 +86,7 @@
     {
       "provider": "New Aus Fiber",
       "network_type": "FIBRE",
-      "plan_name": "SIGN UP",
+      "plan_name": "sign up",
       "download_speed": 1000,
       "upload_speed": 1000,
       "price": 130.0,

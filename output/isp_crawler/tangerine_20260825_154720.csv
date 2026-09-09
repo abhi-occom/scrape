@@ -1,0 +1,12 @@
+provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
+Tangerine,NBN,BUILD YOUR nbn® PLAN - Choose from our great range of nbn® home internet plans and speed options.,25,5,180.0,,6 months,No lock-in,25,5,https://www.tangerine.com.au/nbn/nbn-broadband
+Tangerine,NBN,1-2 person households - ~Check which nbn® plan suits your needs,50,20,72.9,,6 months,No lock-in,50,20,https://www.tangerine.com.au/nbn/nbn-broadband
+Tangerine,NBN,Speeds,500,50,180.0,,6 months,No lock-in,500,50,https://www.tangerine.com.au/nbn/nbn-broadband
+Tangerine,NBN,10+ person households - ~Check which nbn® plan suits your needs,700,0,92.9,,6 months,No lock-in,700,0,https://www.tangerine.com.au/nbn/nbn-broadband
+Tangerine,Fixed Wireless,NEW CUSTOMER DISCOUNT*,250,25,88.9,63.9,,No lock-in,250,25,https://www.tangerine.com.au/nbn/nbn-fixed-wireless
+Tangerine,Fixed Wireless,NEW CUSTOMER DISCOUNT* - HIGHSPEED FIXED WIRELESS PLAN,400,0,92.9,67.9,,No lock-in,400,0,https://www.tangerine.com.au/nbn/nbn-fixed-wireless
+Tangerine,NBN,Choose your nbn® speed,500,50,180.0,,6 months,No lock-in,500,50,https://www.tangerine.com.au/nbn/fibre-upgrade
+Tangerine,NBN,$120,0,0,540.0,120.0,,,0,0,https://www.tangerine.com.au/nbn/modem/netcomm-nf71-wi-fi-7-1-satellite
+Tangerine,NBN,$120,0,0,372.0,120.0,,,0,0,https://www.tangerine.com.au/nbn/modem/netcomm-nf71-wi-fi-7-2-satellites
+Tangerine,NBN,$240,0,0,540.0,240.0,,,0,0,https://www.tangerine.com.au/internet/modem/1x-ns-02-cloudmesh-satellite
+Tangerine,NBN,Will I be charged any fees for relocating my nbn® service?,0,0,275.0,,,,0,0,https://www.tangerine.com.au/nbn/moving-house

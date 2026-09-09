@@ -1,0 +1,218 @@
+AUSTRALIAN ISP PLAN SCRAPER & COMPETITIVE PRICING TRACKER
+Initiative Report — prepared for Occom internal review — 4 Sep 2026
+Owner: Engineering (scraper project)
+Status: Live & in maintenance
+
+An automated tool that visits Australian internet providers' websites, collects
+their plans and prices, and turns that into ready-to-use reports — so nobody on
+the team has to check 30 competitor websites by hand.
+
+SNAPSHOT
+--------
+- 30+ provider websites covered
+- 340 plans in the latest saved snapshot
+- 43 minutes: measured machine time to scrape all 33 providers
+- ~7.6 hours: estimated person-time saved per full refresh (see section 10-14)
+
+
+1. PROBLEM BEING ADDRESSED
+---------------------------
+Internet plans, prices, and promotions change often — providers add plans,
+remove them, run limited-time discounts, and adjust speeds without notice.
+Before this tool, keeping track of what every competitor was charging meant
+someone manually visiting each provider's website, reading the plan cards, and
+copying the numbers into a spreadsheet. That is slow, easy to get wrong, and
+out of date again within days. This project automates that collection so the
+team always has a current, centralised view of the market instead of a
+manual, one-off snapshot.
+
+
+2. BUSINESS / TEAM IMPACTED
+-----------------------------
+Directly using it:
+Occom's Marketing team was the first named recipient of scraped competitor
+data and an API built specifically for their use (per project history,
+20 May 2026). Pricing/product decision-makers use the competitor benchmark
+and the Google Sheet it feeds.
+
+Indirectly benefiting:
+Anyone at Occom who needs a quick answer to "who's cheapest at this speed" —
+sales conversations, pricing reviews, and plan-launch decisions — without
+waiting on a manual competitor check.
+
+
+3. CURRENT PHASE
+-----------------
+Built and in day-to-day use, currently in a maintenance-and-expansion phase
+rather than active first-time development. The core system (scrapers,
+dashboards, benchmark, alerts, Google Sheet sync) was built out between May
+and July 2026. Since then, work has been lighter-touch: refreshing data,
+adding a handful of new competitor sites, and fixing individual providers when
+their websites change. Two more competitors (WaveZone and Zennet) are being
+added right now and are not yet finalised.
+
+
+4. WORK COMPLETED
+-------------------
+- Dedicated, accurate collectors built for 25+ named providers (Telstra,
+  Optus, Aussie Broadband, Superloop, Occom, TPG, Exetel, iiNet, Swoop,
+  iPrimus, Dodo, Kogan, and others).
+- A general-purpose "auto-discovery" collector that can read plans from a
+  brand-new provider website without a custom script written for it first.
+- Two web dashboards — one to run and monitor scrapes, one for the
+  auto-discovery tool — plus a health page showing which providers succeeded
+  or failed on the last run.
+- Automatic screenshots of every page scraped, so results can be checked
+  against what the website actually showed.
+- A "stealth" browsing technique that restored access to sites (Telstra, TPG)
+  that had started blocking automated tools.
+- A competitive benchmark report comparing Occom's prices against every
+  competitor by speed tier, showing where Occom is cheapest and where it
+  isn't.
+- A price/plan change alert feature comparing each new scrape against the
+  previous one.
+- A speed-for-price value calculator that ranks plans by best value.
+- One-click sync of eligible NBN prices into a shared Google Sheet, with a
+  safe preview ("dry run") before anything is written.
+- Both JSON and CSV exports for every provider and one combined market file,
+  so the data is usable in Excel/Sheets or by other systems.
+
+
+5. WORK REMAINING
+-------------------
+- Finish and verify the two newest providers (WaveZone, Zennet) — added, not
+  yet confirmed working end-to-end.
+- Bring the provider list under one single source — right now it's listed in
+  several places and can drift out of sync.
+- Move from manual refreshes to an automatic scheduled scrape (e.g. daily or
+  weekly).
+- Connect the existing change-detection to a real alert (email/Slack)
+  instead of a report someone has to open.
+- Tighten security settings (login, rate limits) before the tool is used
+  outside a trusted internal network.
+
+
+6. TIMELINE AND TARGET DATE
+------------------------------
+Work began 4 May 2026. The bulk of the build was completed by 31 July 2026
+("final updated scraper version"). Since then the project has been in
+lighter maintenance — the most recent full data refresh was 25 August 2026,
+and two new competitor sites are being added as of this report
+(4 September 2026). No fixed target date has been set for the remaining
+hardening work (scheduling, alerts, security); we'd recommend agreeing one
+with the team once priorities are confirmed.
+
+
+7. CURRENT BLOCKERS
+---------------------
+- Aussie Broadband actively blocks automated browsers with a Cloudflare
+  human-verification check, so it cannot be scraped live.
+- Provider websites occasionally redesign their pages or add new
+  bot-blocking, which can silently break an individual scraper.
+- Because the provider list is duplicated across a few places in the
+  system, "all plans" can mean a slightly different set of data depending on
+  which report is generated.
+
+
+8. ACTIONS TAKEN TO RESOLVE BLOCKERS
+---------------------------------------
+- Built and maintain a manually-verified backup catalogue for Aussie
+  Broadband (13 plans) so it still appears in reports even though it can't
+  be live-scraped.
+- Added a stealth browsing layer that disguises the automation, which
+  successfully restored access to Telstra and TPG after they began blocking
+  scrapers.
+- Added screenshots, activity logs, and a health-report page so a broken
+  provider is spotted quickly instead of failing silently.
+
+NOTE — Provider websites can change at any time. This tool records what a
+site showed at the moment it was scraped; it is a research and monitoring
+aid, not a guaranteed live mirror of a provider's official pricing.
+Important pricing decisions should still be double-checked on the
+provider's own site.
+
+
+9. NEXT STEPS
+----------------
+- Verify and commit the two new providers currently being added (WaveZone,
+  Zennet).
+- Consolidate the provider list into one authoritative registry used
+  everywhere.
+- Stand up a scheduled recurring scrape so data refreshes without a person
+  triggering it.
+- Deliver price/plan-change alerts directly to email or Slack.
+- Review and tighten security defaults ahead of any wider use.
+
+
+10-14. IMPACT SO FAR
+-----------------------
+Users / teams benefiting:
+Marketing team (direct, named recipient of an API built for them);
+pricing/product stakeholders who consult the benchmark and Google Sheet. An
+exact headcount of regular users isn't tracked by the tool itself.
+
+Manpower / effort saved:
+Removes the need for someone to individually visit and read 30+ competitor
+websites every time current pricing is needed; one run covers all of them
+unattended.
+
+Productivity improvement:
+Turns "who is cheapest at this speed?" from a manual research task into an
+instant benchmark lookup, and keeps the shared NBN pricing sheet current
+with one click instead of manual data entry.
+
+Hours saved — manual research vs. the automated tool:
+The automated figure below is not a guess — it's read directly from the
+tool's own run logs (every scrape records exactly how long it took, in
+the "duration_seconds" field). The manual figure is an estimate, based on
+how long a person actually spends reading one plan page (name, price,
+promo, speed, contract) and typing it into a spreadsheet.
+
+  Method                          Per provider    All 33 providers   Source
+  ------------------------------  --------------  -----------------  ------------------------
+  Manual research (one person)    ~15 min         ~8.3 hours         Estimate
+  Automated scrape (unattended)   ~1.3 min (78.5s) 43 minutes        Measured, 25 Aug 2026 run
+  Person-time saved / refresh     —               ~7.6 hours         Calculated
+
+That ~7.6 hours is close to a full working day, saved every time the full
+33-provider list is refreshed — and it's hands-off machine time, not a
+person sitting and watching. A few sites take noticeably longer to scrape
+because they have several pages and plan types (More: 6.1 min for 19 plans;
+Tangerine: 5.4 min for 11 plans; Dodo: 3.8 min for 33 plans), but even those
+are far quicker than a person doing the same multi-page reading by hand.
+
+Scaled up: refreshed weekly, that's roughly 390 hours (~49 working days) a
+year; refreshed monthly, roughly 90 hours a year. Refreshes are currently
+run manually/ad hoc rather than on a fixed schedule (see Work Remaining),
+so the real annual figure depends on how often the team actually triggers
+a run.
+
+How the impact was measured:
+The automated time (43 minutes for all 33 providers) is measured, taken
+directly from the tool's own logs for the 25 August 2026 run. The manual
+baseline (~15 min/provider) is an estimate, not a timed study, because no
+one has run a stopwatch on manual competitor research for this project.
+Recommended next step: time one real manual research round against the
+same 33 providers to replace that estimate with a second measured figure.
+
+
+15. FURTHER IMPROVEMENTS PLANNED
+-----------------------------------
+- Historical price-tracking dashboard with real alerts — the project's own
+  next-step notes call this out as the single highest-value addition,
+  building directly on what already exists.
+- Scheduled, unattended crawls so data stays current without someone
+  remembering to run it.
+- A per-provider confidence score ("strong scrape" / "needs review") so
+  users know at a glance which results to trust.
+- Smarter duplicate-plan matching so the same plan found on two pages isn't
+  counted twice.
+- One canonical provider list shared by every report, dashboard, and the
+  Google Sheet, so numbers can't drift apart.
+
+
+---
+This report was compiled from the project's own documentation, commit
+history, and the current saved data snapshot as of 4 September 2026.
+Figures such as hours saved are estimates unless stated otherwise — see
+"How the impact was measured" above.

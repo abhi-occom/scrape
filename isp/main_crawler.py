@@ -412,7 +412,12 @@ class ISPCrawler:
             }
             allowed_networks = requested_networks
             if supported_networks:
-                allowed_networks = requested_networks.intersection(supported_networks)
+                overlap = requested_networks.intersection(supported_networks)
+                # If the provider's declared networks don't overlap the generic
+                # crawl request at all (e.g. a fibre-only ISP crawled with the
+                # default nbn/opticomm/redtrain/supa list), trust the provider's
+                # own supported_networks instead of discarding every plan.
+                allowed_networks = overlap or supported_networks
 
             plans = [
                 plan for plan in plans
@@ -512,6 +517,8 @@ class ISPCrawler:
             'iqnet.com.au': 'iqnet',
             'newausfiber.com.au': 'newausfiber',
             'vocphone.com': 'vocphone',
+            'wavezone.net': 'wavezone',
+            'zennet.com.au': 'zennet',
         }
         for known_domain, provider_key in known_domains.items():
             if domain == known_domain or domain.endswith(f".{known_domain}"):

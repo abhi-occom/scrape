@@ -1,0 +1,8 @@
+provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
+spintel,NBN,Home Starter,25,8,69.95,44.0,6 months,No Contract,25,8,https://www.spintel.net.au/home-internet/nbn
+spintel,NBN,Home Plus,100,18,89.95,76.0,6 months,No Contract,100,18,https://www.spintel.net.au/home-internet/nbn
+spintel,NBN,Wireless Fast,250,8,89.95,79.0,6 months,No Contract,250,8,https://www.spintel.net.au/home-internet/nbn
+spintel,NBN,Wireless Super,400,10,94.95,84.0,6 months,No Contract,400,10,https://www.spintel.net.au/home-internet/nbn
+spintel,NBN,Home Turbo,500,42,89.95,69.0,6 months,No Contract,500,42,https://www.spintel.net.au/home-internet/nbn
+spintel,NBN,Home Turbofast,750,42,94.95,84.0,6 months,No Contract,750,42,https://www.spintel.net.au/home-internet/nbn
+spintel,NBN,Home Ultrafast,850,82,104.95,94.0,6 months,No Contract,850,82,https://www.spintel.net.au/home-internet/nbn

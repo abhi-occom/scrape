@@ -1,0 +1,5 @@
+provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
+New Aus Fiber,FIBRE,Choose your month-to-month plans,25,5,69.0,,,No lock-in / month-to-month,25,5,https://newausfiber.com.au
+New Aus Fiber,FIBRE,sign up,50,20,77.0,,,No lock-in / month-to-month,50,20,https://newausfiber.com.au
+New Aus Fiber,FIBRE,sign up,500,500,95.0,,,No lock-in / month-to-month,500,500,https://newausfiber.com.au
+New Aus Fiber,FIBRE,sign up,1000,1000,130.0,,,No lock-in / month-to-month,1000,1000,https://newausfiber.com.au

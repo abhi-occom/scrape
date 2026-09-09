@@ -1,0 +1,371 @@
+{
+  "base_url": "https://www.koganinternet.com.au/plans",
+  "provider": "Kogan",
+  "started_at": "2026-08-24T14:47:16.198473",
+  "finished_at": "2026-08-24T14:49:43.691183",
+  "duration_seconds": 147.49,
+  "summary": {
+    "urls_visited": 7,
+    "plan_pages_found": 1,
+    "total_plans_scraped": 2,
+    "valid_plans": 2,
+    "invalid_plans": 0,
+    "network_types": [
+      "NBN"
+    ]
+  },
+  "discovered_urls": [
+    {
+      "url": "https://www.koganinternet.com.au/plans",
+      "score": 0,
+      "depth": 0,
+      "network_types": [],
+      "matched_networks": []
+    },
+    {
+      "url": "https://www.koganinternet.com.au/nbn-serviced-areas",
+      "score": 17,
+      "depth": 1,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.koganinternet.com.au/plans",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.koganinternet.com.au/nbn-avc-id",
+      "score": 17,
+      "depth": 1,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.koganinternet.com.au/plans",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.koganinternet.com.au/nbn-serviced-areas/victoria",
+      "score": 17,
+      "depth": 3,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.koganinternet.com.au/nbn-serviced-areas",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.koganinternet.com.au/nbn-serviced-areas/queensland",
+      "score": 17,
+      "depth": 3,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.koganinternet.com.au/nbn-serviced-areas",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.koganinternet.com.au/nbn-serviced-areas/new-south-wales",
+      "score": 17,
+      "depth": 3,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.koganinternet.com.au/nbn-serviced-areas",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.koganinternet.com.au/nbn-serviced-areas/western-australia",
+      "score": 17,
+      "depth": 3,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.koganinternet.com.au/nbn-serviced-areas",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.koganinternet.com.au/nbn-serviced-areas/tasmania",
+      "score": 17,
+      "depth": 3,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.koganinternet.com.au/nbn-serviced-areas",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.koganinternet.com.au/nbn-serviced-areas/south-australia",
+      "score": 17,
+      "depth": 3,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.koganinternet.com.au/nbn-serviced-areas",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.koganinternet.com.au/nbn-serviced-areas/northern-territory",
+      "score": 17,
+      "depth": 3,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.koganinternet.com.au/nbn-serviced-areas",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.koganinternet.com.au/nbn-serviced-areas/australian-capital-territory",
+      "score": 17,
+      "depth": 3,
+      "network_types": [
+        "nbn"
+      ],
+      "found_on": "https://www.koganinternet.com.au/nbn-serviced-areas",
+      "matched_networks": [
+        "nbn"
+      ]
+    },
+    {
+      "url": "https://www.koganinternet.com.au/price-pledge",
+      "score": 13,
+      "depth": 1,
+      "network_types": [],
+      "found_on": "https://www.koganinternet.com.au/plans",
+      "matched_networks": []
+    }
+  ],
+  "page_analyses": [
+    {
+      "url": "https://www.koganinternet.com.au/plans",
+      "has_plans": true,
+      "confidence": 0.6,
+      "network_types": [
+        "nbn",
+        "fibre"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 13,
+      "speed_signals": 6
+    },
+    {
+      "url": "https://www.koganinternet.com.au/nbn-serviced-areas",
+      "has_plans": false,
+      "confidence": 0.1,
+      "network_types": [
+        "nbn"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 0,
+      "speed_signals": 0
+    },
+    {
+      "url": "https://www.koganinternet.com.au/nbn-avc-id",
+      "has_plans": false,
+      "confidence": 0.1,
+      "network_types": [
+        "nbn"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 0,
+      "speed_signals": 0
+    },
+    {
+      "url": "https://www.koganinternet.com.au/nbn-serviced-areas/victoria",
+      "has_plans": false,
+      "confidence": 0.1,
+      "network_types": [
+        "nbn"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 0,
+      "speed_signals": 0
+    },
+    {
+      "url": "https://www.koganinternet.com.au/nbn-serviced-areas/queensland",
+      "has_plans": false,
+      "confidence": 0.1,
+      "network_types": [
+        "nbn"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 0,
+      "speed_signals": 0
+    },
+    {
+      "url": "https://www.koganinternet.com.au/nbn-serviced-areas/new-south-wales",
+      "has_plans": false,
+      "confidence": 0.1,
+      "network_types": [
+        "nbn"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 0,
+      "speed_signals": 0
+    },
+    {
+      "url": "https://www.koganinternet.com.au/nbn-serviced-areas/western-australia",
+      "has_plans": false,
+      "confidence": 0.1,
+      "network_types": [
+        "nbn"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 0,
+      "speed_signals": 0
+    },
+    {
+      "url": "https://www.koganinternet.com.au/nbn-serviced-areas/tasmania",
+      "has_plans": false,
+      "confidence": 0.1,
+      "network_types": [
+        "nbn"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 0,
+      "speed_signals": 0
+    },
+    {
+      "url": "https://www.koganinternet.com.au/nbn-serviced-areas/south-australia",
+      "has_plans": false,
+      "confidence": 0.1,
+      "network_types": [
+        "nbn"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 0,
+      "speed_signals": 0
+    },
+    {
+      "url": "https://www.koganinternet.com.au/nbn-serviced-areas/northern-territory",
+      "has_plans": false,
+      "confidence": 0.1,
+      "network_types": [
+        "nbn"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 0,
+      "speed_signals": 0
+    },
+    {
+      "url": "https://www.koganinternet.com.au/nbn-serviced-areas/australian-capital-territory",
+      "has_plans": false,
+      "confidence": 0.1,
+      "network_types": [
+        "nbn"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 0,
+      "speed_signals": 0
+    },
+    {
+      "url": "https://www.koganinternet.com.au/price-pledge",
+      "has_plans": false,
+      "confidence": 0.1,
+      "network_types": [
+        "nbn"
+      ],
+      "card_selector": null,
+      "card_count": 0,
+      "name_selector": null,
+      "price_selector": null,
+      "speed_selector": null,
+      "price_signals": 0,
+      "speed_signals": 0
+    }
+  ],
+  "plans": [
+    {
+      "provider": "Kogan",
+      "network_type": "NBN",
+      "plan_name": "Offers",
+      "download_speed": 16,
+      "upload_speed": 0,
+      "price": 108.9,
+      "promo_price": 58.9,
+      "promo_period": "12 months",
+      "contract": "No lock-in / month-to-month",
+      "typical_evening_dl": 16,
+      "typical_evening_ul": 0,
+      "source_url": "https://www.koganinternet.com.au/plans"
+    },
+    {
+      "provider": "Kogan",
+      "network_type": "NBN",
+      "plan_name": "Speeds - 4G INTERNET",
+      "download_speed": 16,
+      "upload_speed": 0,
+      "price": 130.0,
+      "promo_price": null,
+      "promo_period": "12 months",
+      "contract": "No lock-in / month-to-month",
+      "typical_evening_dl": 16,
+      "typical_evening_ul": 0,
+      "source_url": "https://www.koganinternet.com.au/plans"
+    }
+  ],
+  "invalid_plans": [],
+  "errors": [
+    "Provider fallback failed: kogan fallback returned no plans"
+  ]
+}

@@ -1,0 +1,18 @@
+provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
+TPG,NBN,nbn®500 price-locked deal.,500,50,69.99,,12 months,No lock-in,500,50,https://www.tpg.com.au/nbn
+TPG,NBN,nbn®500 price-locked deal. - For 12 months. With a fast modem included over 24 months.,500,50,79.99,,12 months,No lock-in,500,50,https://www.tpg.com.au/nbn
+TPG,5G,Free fibre upgrade,50,20,30.0,,6 months,No lock-in,50,20,https://www.tpg.com.au/nbn
+TPG,5G,5G Alternative to NBN,50,20,30.0,,6 months,No lock-in,50,20,https://www.tpg.com.au/nbn
+TPG,5G,Free fibre upgrade,100,20,30.0,,6 months,No lock-in,100,20,https://www.tpg.com.au/nbn
+TPG,5G,5G Alternative to NBN,100,20,30.0,,6 months,No lock-in,100,20,https://www.tpg.com.au/nbn
+TPG,NBN,Free fibre upgrade,98,0,25.0,,12 months,No lock-in,98,0,https://www.tpg.com.au/nbn
+TPG,NBN,Free fibre upgrade,500,50,25.0,,12 months,No lock-in,500,50,https://www.tpg.com.au/nbn
+TPG,NBN,Free fibre upgrade,25,5,20.0,,6 months,No lock-in,25,5,https://www.tpg.com.au/nbn
+TPG,NBN,Free fibre upgrade,50,20,20.0,,6 months,No lock-in,50,20,https://www.tpg.com.au/nbn
+TPG,NBN,Free fibre upgrade,740,0,30.0,,6 months,No lock-in,740,0,https://www.tpg.com.au/nbn
+TPG,NBN,Free fibre upgrade,850,0,30.0,,6 months,No lock-in,850,0,https://www.tpg.com.au/nbn
+TPG,NBN,Free fibre upgrade,14,0,10.0,,6 months,No lock-in,14,0,https://www.tpg.com.au/nbn
+TPG,NBN,4G Alternative to nbn®,14,0,10.0,,6 months,No lock-in,14,0,https://www.tpg.com.au/nbn
+TPG,NBN,Free fibre upgrade,20,0,20.0,,6 months,No lock-in,20,0,https://www.tpg.com.au/nbn
+TPG,NBN,How can we help?,0,0,30.0,,6 months,No lock-in,0,0,https://www.tpg.com.au/5g-home-broadband
+TPG,NBN,How can we help?,0,0,10.0,,6 months,No lock-in,0,0,https://www.tpg.com.au/home-wireless-broadband

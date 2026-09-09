@@ -1,0 +1,21 @@
+provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
+iiNet,NBN,Next-level NBN500,500,50,200.0,,,,500,50,https://www.iinet.net.au/internet-product
+iiNet,NBN,Shop nbn® plans,500,50,94.99,79.99,,,500,50,https://www.iinet.net.au/internet-product
+iiNet,NBN,Check another address,25,5,19.99,,,,25,5,https://www.iinet.net.au/internet-product
+iiNet,5G,Plus our Wi-Fi 7 Modem. Exclusive to select addresses. - Shop Cable25 plan,25,5,39.99,29.99,,,25,5,https://www.iinet.net.au/internet-product
+iiNet,NBN,nbn®500,500,50,69.99,,6 months,No lock-in,500,50,https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre
+iiNet,NBN,"nbn®500 - for 6 months, plus a fast modem included over 24 months.",500,50,94.99,79.99,6 months,No lock-in,500,50,https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre
+iiNet,NBN,Why choose an iiNet NBN plan?,0,0,30.0,,24 months,no lock-in,0,0,https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre?offer=1
+iiNet,NBN,Fast 5G Home Broadband for $49.99/mth - 5G Home Broadband,0,0,20.0,,6 months,no lock-in,0,0,https://www.iinet.net.au/internet-product/broadband/5g-home-broadband
+iiNet,NBN,1. Enter your address to find your perfect plan,12,1,15.0,,24 months,no lock-in,12,1,https://www.iinet.net.au/internet-product/broadband/nbn/plans/wireless
+iiNet,NBN,Please select the broadband service you wish to modify:,12,1,15.0,,24 months,no lock-in,12,1,https://www.iinet.net.au/internet-product/broadband/nbn/plans/wireless
+iiNet,NBN,Liimitless Data,25,5,19.99,,24 months,,25,5,https://www.iinet.net.au/internet-products/broadband/fttb/plans
+iiNet,NBN,Liimitless Data,100,20,54.99,,24 months,,100,20,https://www.iinet.net.au/internet-products/broadband/fttb/plans
+iiNet,NBN,Liimitless Data,700,0,59.99,,24 months,,700,0,https://www.iinet.net.au/internet-products/broadband/fttb/plans
+iiNet,NBN,"Australia’s lowest price home internet.
+$19.99/mth for 2 years.",0,0,200.0,,24 months,no lock-in,0,0,https://www.iinet.net.au/internet-product/broadband/vdsl2/plans
+iiNet,NBN,"Home internet
+from $49.99/mth",0,0,192.0,10.0,6 months,no lock-in,0,0,https://www.iinet.net.au/internet-product/broadband/home-wireless
+iiNet,NBN,"Australia’s lowest price home internet.
+$19.99/mth for 2 years.",0,0,79.99,54.99,24 months,no lock-in,0,0,https://www.iinet.net.au/internet-product/broadband/cable
+iiNet,NBN,Fibre100,96,0,10.0,,,,96,0,https://www.iinet.net.au/internet-products/fibre/ftth

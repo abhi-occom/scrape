@@ -243,6 +243,9 @@
                 <div class="actions">
                     <a id="connect-button" class="btn btn-primary" href="/api/google/auth/start">Connect Google</a>
                     <button id="refresh-button" class="btn btn-secondary" type="button">Refresh Status</button>
+                    {% if sheet_id %}
+                    <a id="view-sheet-button" class="btn btn-secondary" href="https://docs.google.com/spreadsheets/d/{{ sheet_id }}/edit" target="_blank" rel="noopener noreferrer">View Sheet</a>
+                    {% endif %}
                 </div>
             </div>
 

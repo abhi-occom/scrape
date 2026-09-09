@@ -1,0 +1,3 @@
+provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
+Kogan,NBN,Offers,16,0,108.9,58.9,12 months,No lock-in / month-to-month,16,0,https://www.koganinternet.com.au/plans
+Kogan,NBN,Speeds - 4G INTERNET,16,0,130.0,,12 months,No lock-in / month-to-month,16,0,https://www.koganinternet.com.au/plans

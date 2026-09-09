@@ -85,6 +85,8 @@ PROVIDER_CRAWL_URLS = {
     'newausfiber': 'https://newausfiber.com.au/',
     'vocphone': 'https://vocphone.com/nbn-plans',
     'activ8me': 'https://www.activ8me.net.au/internet/nbn-fibre-fttp-hfc',
+    'wavezone': 'https://wavezone.net/',
+    'zennet': 'https://zennet.com.au/',
 }
 
 

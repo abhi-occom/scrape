@@ -1,0 +1,16 @@
+provider,network_type,plan_name,download_speed,upload_speed,price,promo_price,promo_period,contract,typical_evening_dl,typical_evening_ul,source_url
+IQNet,Fibre,Fibre Broadband - Basic Speed,25,5,69.0,,,,25,5,https://iqnet.com.au/broadband
+IQNet,Fibre,Fibre Broadband - Standard Speed,50,20,75.0,,,,50,20,https://iqnet.com.au/broadband
+IQNet,Fibre,Advance Speed,500,50,85.0,,,,500,50,https://iqnet.com.au/broadband
+IQNet,Fibre,Extreme Speed,1000,50,130.0,,,,1000,50,https://iqnet.com.au/broadband
+IQNet,Supa,Thank you for choosing IQ Net as your Internet Service Provider. - Plan: Broadband Basic Speed,300,0,69.0,,,,300,0,https://iqnet.com.au/confirmation-page?pn=IQ%20Net&pl=Broadband%20Basic%20Speed&dl=25&tp=nbn&up=10&pr=69&sbun=174&act=1
+IQNet,Supa,Thank you for choosing IQ Net as your Internet Service Provider. - Plan: Broadband Standard Speed,300,0,75.0,,,,300,0,https://iqnet.com.au/confirmation-page?pn=IQ%20Net&pl=Broadband%20Standard%20Speed&dl=50&tp=nbn&up=20&pr=75&sbun=175&act=1
+IQNet,Supa,Thank you for choosing IQ Net as your Internet Service Provider. - Plan: Broadband Advance Speed,300,0,85.0,,,,300,0,https://iqnet.com.au/confirmation-page?pn=IQ%20Net&pl=Broadband%20Advance%20Speed&dl=100&tp=nbn&up=40&pr=85&sbun=176&act=1
+IQNet,NBN,Broadband - Basic Speed,25,5,69.0,,,,25,5,https://iqnet.com.au/nbn-co
+IQNet,NBN,Broadband - Standard Speed,50,20,75.0,,,,50,20,https://iqnet.com.au/nbn-co
+IQNet,NBN,Broadband,100,20,85.0,,,,100,20,https://iqnet.com.au/nbn-co
+IQNet,NBN,Fibre-HFC - Broadband 500,500,50,85.0,,,,500,50,https://iqnet.com.au/nbn-co
+IQNet,NBN,Fibre-HFC - Broadband 1000,1000,50,130.0,,,,1000,50,https://iqnet.com.au/nbn-co
+IQNet,Redtrain,Red Train - Basic Speed,25,5,69.0,,,No lock-in,25,5,https://iqnet.com.au/red-train
+IQNet,Redtrain,Red Train - Standard Speed,50,20,75.0,,,No lock-in,50,20,https://iqnet.com.au/red-train
+IQNet,Redtrain,Advance Speed,100,20,85.0,,,No lock-in,100,20,https://iqnet.com.au/red-train
