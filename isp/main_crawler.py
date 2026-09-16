@@ -419,12 +419,20 @@ class ISPCrawler:
                 # own supported_networks instead of discarding every plan.
                 allowed_networks = overlap or supported_networks
 
+            from utils.network_classifier import is_broadband_network_type
+
             plans = [
                 plan for plan in plans
                 if any(
                     network in str(plan.get('network_type', '')).lower()
                     for network in allowed_networks
                 )
+                # Providers that never declared `supported_networks` in config.py
+                # would otherwise have every plan outside the generic nbn/
+                # opticomm/redtrain/supa list silently dropped here (e.g. IQNet's
+                # "ASN Telecom", VOCphone's "Lynham Networks", Alpha's "Vision
+                # Networks") even though they're real, recognized broadband types.
+                or (not supported_networks and is_broadband_network_type(plan.get('network_type')))
             ]
             if not plans:
                 if result.valid_plans == 0:
@@ -583,19 +591,8 @@ class ISPCrawler:
     @staticmethod
     def _canonical_network_type(network_type: Any) -> str:
         """Collapse known private-network aliases into UI/filter friendly labels."""
-        raw = str(network_type or '').strip()
-        compact = re.sub(r'[\s_-]+', ' ', raw).lower()
-
-        if 'opticomm' in compact:
-            return 'Opticomm'
-        if 'redtrain' in compact or 'red train' in compact:
-            return 'Redtrain'
-        if 'supa' in compact or 'supanetwork' in compact:
-            return 'Supa'
-        if compact == 'nbn':
-            return 'NBN'
-
-        return raw
+        from utils.network_classifier import canonicalize_network_type
+        return canonicalize_network_type(network_type)
 
     def _default_network_type(self) -> str:
         """Return provider-level network defaults when pages do not expose the network label."""

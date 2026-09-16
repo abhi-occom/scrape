@@ -90,11 +90,12 @@ class NearbySpeedTierTests(unittest.TestCase):
         self.assertEqual((97.0, 19.0), plan_speed(numeric_wins))
         self.assertEqual("100/20M", classify_plan_tier(numeric_wins, SPEED_TIERS).label)
 
-    def test_only_nbn_plans_are_eligible(self):
+    def test_broadband_plans_are_eligible_mobile_excluded(self):
         self.assertTrue(plan_is_eligible(nbn_plan(100, 20)))
-        self.assertFalse(plan_is_eligible(nbn_plan(100, 20, network_type="Opticomm", plan_name="Opticomm 100/20")))
-        self.assertFalse(plan_is_eligible(nbn_plan(100, 20, network_type="5G", plan_name="5G Home Internet")))
-        self.assertFalse(plan_is_eligible(nbn_plan(100, 20, network_type="Fixed Wireless", plan_name="Fixed Wireless")))
+        self.assertTrue(plan_is_eligible(nbn_plan(100, 20, network_type="Opticomm", plan_name="Opticomm 100/20")))
+        self.assertTrue(plan_is_eligible(nbn_plan(100, 20, network_type="5G", plan_name="5G Home Internet")))
+        self.assertTrue(plan_is_eligible(nbn_plan(100, 20, network_type="Fixed Wireless", plan_name="Fixed Wireless")))
+        self.assertFalse(plan_is_eligible(nbn_plan(100, 20, network_type="4G", plan_name="Mobile SIM Plan")))
 
     def test_lowest_promo_first_price_wins_per_bucket(self):
         plans = [

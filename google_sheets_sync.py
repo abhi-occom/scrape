@@ -9,6 +9,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Tuple
 
+from utils.network_classifier import is_broadband_network_type
+
 try:
     import truststore
     # Only inject truststore if explicitly enabled (can cause issues on Windows)
@@ -58,6 +60,17 @@ PROVIDER_HEADERS = [
     "KOGAN",
     "ORIGIN",
     "OCCOM",
+    # NOTE: these columns only populate once a sheet editor adds matching
+    # headers to row 1 of the live spreadsheet. build_sync_plan() reports
+    # missing headers via warnings but never creates columns automatically.
+    "ALPHA",
+    "CITY7NET",
+    "EPSINET",
+    "IQNET",
+    "NEWAUSFIBER",
+    "VOCPHONE",
+    "WAVEZONE",
+    "ZENNET",
 ]
 
 PROVIDER_ALIASES = {
@@ -86,6 +99,15 @@ PROVIDER_ALIASES = {
     "TPG TELECOM": "TPG",
     "DODO": "DODO",
     "KOGAN": "KOGAN",
+    "ALPHA": "ALPHA",
+    "CITY7NET": "CITY7NET",
+    "EPSINET": "EPSINET",
+    "IQNET": "IQNET",
+    "NEWAUSFIBER": "NEWAUSFIBER",
+    "NEW AUS FIBER": "NEWAUSFIBER",
+    "VOCPHONE": "VOCPHONE",
+    "WAVEZONE": "WAVEZONE",
+    "ZENNET": "ZENNET",
 }
 
 EXCLUDED_TERMS = [
@@ -404,7 +426,7 @@ def plan_is_eligible(plan: Dict[str, Any]) -> bool:
 
     if any(term in source for term in EXCLUDED_TERMS):
         return False
-    return "nbn" in source
+    return is_broadband_network_type(plan.get("network_type"))
 
 
 def canonical_provider(provider: Any) -> Optional[str]:

@@ -40,17 +40,49 @@ def scrape_origin_plans() -> Dict[str, List[Dict[str, Any]]]:
             log_info(f"Navigating to {ORIGIN_URL}", provider="origin")
             resp = page.goto(ORIGIN_URL, timeout=30000, wait_until='domcontentloaded')
             log_info(f"Status: {resp.status if resp else 'none'}", provider="origin")
-            
-            # Wait for page to fully load
-            page.wait_for_timeout(10000)
-            
-            # Find all tabs
-            tabs = page.query_selector_all('[role="tab"]')
-            log_info(f"Found {len(tabs)} tabs", provider="origin")
-            
-            # Process each tab
+
+            # The plan comparison widget (network-type tabs + plan cards) mounts
+            # client-side after an unrelated "At Home/Business/Enterprise" nav
+            # tab set is already in the DOM. Wait for an actual plan card instead
+            # of a fixed sleep, so we don't query [role="tab"] before the real
+            # nbn/Opticomm tabs exist.
+            try:
+                page.wait_for_selector('div[class*="PlanCard"]', timeout=20000)
+            except Exception:
+                log_warning("Timed out waiting for plan cards to render", provider="origin")
+            page.wait_for_timeout(2000)
+
+            # Find tabs, but only the network-type switcher (nbn/Opticomm) —
+            # the page also has an unrelated "At Home/Business/Enterprise"
+            # persona nav that can carry role="tab" before the real widget mounts.
+            all_tabs = page.query_selector_all('[role="tab"]')
+            tabs = [
+                t for t in all_tabs
+                if any(kw in t.inner_text().strip().lower() for kw in ('nbn', 'opticomm'))
+            ]
+            log_info(f"Found {len(tabs)} network-type tabs (of {len(all_tabs)} total [role=tab] elements)", provider="origin")
+
             seen_plans = set()
-            
+
+            if not tabs:
+                # Fall back to whatever plan cards are already visible on the
+                # default (nbn) view rather than reporting zero plans.
+                log_warning("No nbn/Opticomm tabs found; scraping default view", provider="origin")
+                cards = page.query_selector_all('div[class*="PlanCard"]')
+                for j, card in enumerate(cards):
+                    try:
+                        plan = extract_plan_from_card(card, j, 'NBN')
+                        if plan:
+                            plan_key = f"{plan['plan_name']}_{plan['price']}"
+                            if plan_key not in seen_plans:
+                                seen_plans.add(plan_key)
+                                all_plans['nbn'].append(plan)
+                                log_success(f"Extracted plan: {plan['plan_name']}", provider="origin")
+                    except Exception as e:
+                        log_error(f"Error extracting plan {j} from default view: {e}", provider="origin")
+                        continue
+
+            # Process each tab
             for i, tab in enumerate(tabs):
                 try:
                     tab_text = tab.inner_text().strip()

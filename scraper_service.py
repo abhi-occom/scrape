@@ -12,6 +12,7 @@ from typing import Callable, Dict, List, Optional, Any
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from config import PROVIDERS
+from utils.network_classifier import normalise_plans
 from utils.progress import set_active_provider, update_progress
 from utils.stealth import configure_browser
 
@@ -116,6 +117,7 @@ def scrape_provider(
         else:
             raise AttributeError(f"No scrape function found in {provider_name}")
 
+        plans = normalise_plans(plans)
         result['plans'] = plans
         result['total_plans'] = _plan_count(plans)
         result['success'] = True
