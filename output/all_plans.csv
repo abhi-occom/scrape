@@ -204,34 +204,14 @@ iprimus,Fibre,Fibre Standard Plus,100,17,90.0,,,No Contract,100,17,https://www.i
 iprimus,Fibre,Fibre Premium,500,47,100.0,,,No Contract,500,47,https://www.iprimus.com.au/nbn-plans
 iprimus,Fibre,Fibre Home Superfast,700,49,107.0,,,No Contract,700,49,https://www.iprimus.com.au/nbn-plans
 iprimus,Fibre,Fibre Home Ultrafast,840,94,122.0,,,No Contract,840,94,https://www.iprimus.com.au/nbn-plans
-Dodo,NBN,"e.g. Unit 4, 3 Palmer Street, Townsville QLD 4810",25,5,30.0,,6 months,No lock-in,25,5,https://www.dodo.com/nbn
-Dodo,NBN,EVERYDAY NBN25/10,25,5,73.99,43.99,6 months,No lock-in,25,5,https://www.dodo.com/nbn
-Dodo,NBN,Offer ends 8 Dec 2026,50,20,30.0,,6 months,No lock-in,50,20,https://www.dodo.com/nbn
-Dodo,NBN,Offer ends 8 Dec 2026 - VALUE NBN50/20,50,20,87.99,57.99,6 months,No lock-in,50,20,https://www.dodo.com/nbn
-Dodo,NBN,Offer ends 8 Dec 2026,100,20,30.0,,6 months,No lock-in,100,20,https://www.dodo.com/nbn
-Dodo,NBN,Offer ends 8 Dec 2026 - FAST NBN100/20,100,20,92.99,62.99,6 months,No lock-in,100,20,https://www.dodo.com/nbn
-Dodo,NBN,Offer ends 8 Dec 2026,500,50,30.0,,6 months,No lock-in,500,50,https://www.dodo.com/nbn
-Dodo,NBN,Offer ends 8 Dec 2026 - FAST PLUS NBN500/50,500,50,92.99,62.99,6 months,No lock-in,500,50,https://www.dodo.com/nbn
-Dodo,NBN,Offer ends 8 Dec 2026,740,0,30.0,,6 months,No lock-in,740,0,https://www.dodo.com/nbn
-Dodo,NBN,Offer ends 8 Dec 2026 - SUPERFAST NBN750/50,740,0,99.99,69.99,6 months,No lock-in,740,0,https://www.dodo.com/nbn
-Dodo,NBN,Offer ends 8 Dec 2026,800,0,30.0,,6 months,No lock-in,800,0,https://www.dodo.com/nbn
-Dodo,NBN,Offer ends 8 Dec 2026 - ULTRAFAST NBN1000/100,800,0,109.99,79.99,6 months,No lock-in,800,0,https://www.dodo.com/nbn
-Dodo,Fixed Wireless,Critical Information Summary,25,5,30.0,,6 months,No lock-in,25,5,https://www.dodo.com/nbn
-Dodo,NBN,"e.g. Unit 4, 3 Palmer Street, Townsville QLD 4810",50,20,30.0,,6 months,No lock-in,50,20,https://www.dodo.com/nbn/plans/50
-Dodo,NBN,"e.g. Unit 4, 3 Palmer Street, Townsville QLD 4810 - VALUE NBN50/20",50,20,87.99,57.99,6 months,No lock-in,50,20,https://www.dodo.com/nbn/plans/50
-Dodo,NBN,the price you want.,500,50,30.0,,6 months,No lock-in,500,50,https://www.dodo.com/nbn/plans/100
-Dodo,NBN,the price you want.,500,50,62.99,,6 months,No lock-in,500,50,https://www.dodo.com/nbn/plans/100
-Dodo,NBN,"e.g. Unit 4, 3 Palmer Street, Townsville QLD 4810",100,20,30.0,,6 months,No lock-in,100,20,https://www.dodo.com/nbn/plans/100
-Dodo,NBN,"e.g. Unit 4, 3 Palmer Street, Townsville QLD 4810 - FAST NBN100/20",100,20,92.99,62.99,6 months,No lock-in,100,20,https://www.dodo.com/nbn/plans/100
-Dodo,NBN,the price you want.,700,0,30.0,,6 months,No lock-in,700,0,https://www.dodo.com/nbn/plans/superfast
-Dodo,NBN,the price you want.,700,0,69.99,,6 months,No lock-in,700,0,https://www.dodo.com/nbn/plans/superfast
-Dodo,NBN,"e.g. Unit 4, 3 Palmer Street, Townsville QLD 4810",740,0,30.0,,6 months,No lock-in,740,0,https://www.dodo.com/nbn/plans/superfast
-Dodo,NBN,"e.g. Unit 4, 3 Palmer Street, Townsville QLD 4810 - SUPERFAST NBN750/50",740,0,99.99,69.99,6 months,No lock-in,740,0,https://www.dodo.com/nbn/plans/superfast
-Dodo,NBN,the price you want.,840,0,30.0,,6 months,No lock-in,840,0,https://www.dodo.com/nbn/plans/ultrafast
-Dodo,NBN,the price you want.,840,0,79.99,,6 months,No lock-in,840,0,https://www.dodo.com/nbn/plans/ultrafast
-Dodo,NBN,"e.g. Unit 4, 3 Palmer Street, Townsville QLD 4810",800,0,30.0,,6 months,No lock-in,800,0,https://www.dodo.com/nbn/plans/ultrafast
-Dodo,NBN,"e.g. Unit 4, 3 Palmer Street, Townsville QLD 4810 - ULTRAFAST NBN1000/100",800,0,109.99,79.99,6 months,No lock-in,800,0,https://www.dodo.com/nbn/plans/ultrafast
-Dodo,NBN,Optional Modem fee,15,0,169.9,7.5,24 months,1 month contract,15,0,https://www.dodo.com/plan-summaries/nbn-cis
+dodo,NBN,EVERYDAY NBN25,23,4,73.99,43.99,6 months,No Contract,23,4,https://www.dodo.com/nbn
+dodo,NBN,EVERYDAY NBN25/10,25,9,73.99,43.99,6 months,No Contract,25,9,https://www.dodo.com/nbn
+dodo,NBN,VALUE NBN50/20,50,17,87.99,57.99,6 months,No Contract,50,17,https://www.dodo.com/nbn
+dodo,Fixed Wireless,VALUE FW Plus,70,10,87.99,57.99,6 months,No Contract,70,10,https://www.dodo.com/nbn
+dodo,NBN,FAST NBN100/20,100,17,92.99,62.99,6 months,No Contract,100,17,https://www.dodo.com/nbn
+dodo,NBN,FAST PLUS NBN500/50,500,48,92.99,62.99,6 months,No Contract,500,48,https://www.dodo.com/nbn
+dodo,NBN,SUPERFAST NBN750/50,740,49,99.99,69.99,6 months,No Contract,740,49,https://www.dodo.com/nbn
+dodo,NBN,ULTRAFAST NBN1000/100,800,92,109.99,79.99,6 months,No Contract,800,92,https://www.dodo.com/nbn
 kogan,4G,Kogan 4G Internet,20,2.0,54.9,49.9,12 months,No Contract,14,2.0,https://www.koganinternet.com.au/plans/
 kogan,NBN,Kogan Bronze,25,8.0,70.9,58.9,12 months,No Contract,25,8.0,https://www.koganinternet.com.au/plans/
 kogan,NBN,Kogan Silver,50,17.0,80.9,69.9,12 months,No Contract,50,17.0,https://www.koganinternet.com.au/plans/
@@ -263,15 +243,12 @@ More,Business NBN,More Business Fast Max,500,42.5,115.0,,,No Lock-in,500,42.5,ht
 More,Business NBN,More Business Ultrafast,500,170,155.0,,,No Lock-in,500,170,https://more.com.au/business/business-nbn-plans
 More,Business NBN,More Business Ultrafast Plus,700,340,185.0,,,No Lock-in,700,340,https://more.com.au/business/business-nbn-plans
 More,NBN,More Ultrafast,860,85,125.0,,,No Lock-in,860,85,https://more.com.au/personal/nbn-plans
-Tangerine,NBN,BUILD YOUR nbn® PLAN - Choose from our great range of nbn® home internet plans and speed options.,25,5,180.0,,6 months,No lock-in,25,5,https://www.tangerine.com.au/nbn/nbn-broadband
-Tangerine,NBN,Speeds,500,50,198.0,,6 months,No lock-in,500,50,https://www.tangerine.com.au/nbn/nbn-broadband
-Tangerine,NBN,Speeds,860,0,150.0,,6 months,No lock-in,860,0,https://www.tangerine.com.au/nbn/nbn-broadband
-Tangerine,Fixed Wireless,NEW CUSTOMER DISCOUNT*,250,25,88.9,63.9,,No lock-in,250,25,https://www.tangerine.com.au/nbn/nbn-fixed-wireless
-Tangerine,Fixed Wireless,NEW CUSTOMER DISCOUNT* - HIGHSPEED FIXED WIRELESS PLAN,400,0,92.9,67.9,,No lock-in,400,0,https://www.tangerine.com.au/nbn/nbn-fixed-wireless
-Tangerine,NBN,Choose your nbn® speed,500,50,198.0,,6 months,No lock-in,500,50,https://www.tangerine.com.au/nbn/fibre-upgrade
-Tangerine,NBN,$120,0,0,540.0,120.0,,,0,0,https://www.tangerine.com.au/nbn/modem/netcomm-nf71-wi-fi-7-1-satellite
-Tangerine,NBN,$120,0,0,372.0,120.0,,,0,0,https://www.tangerine.com.au/nbn/modem/netcomm-nf71-wi-fi-7-2-satellites
-Tangerine,NBN,$240,0,0,540.0,240.0,,,0,0,https://www.tangerine.com.au/internet/modem/1x-ns-02-cloudmesh-satellite
+tangerine,NBN,Tangerine Value,25,8.5,72.9,42.9,6 months,No Lock-in,25,8.5,https://www.tangerine.com.au/nbn/nbn-broadband
+tangerine,Fixed Wireless,Tangerine Fixed Wireless Value Plus,100,20,88.9,63.9,6 months,No Lock-in,100,20,https://www.tangerine.com.au/nbn/nbn-fixed-wireless
+tangerine,Fixed Wireless,Tangerine Fixed Wireless Speedy,250,20,92.9,67.9,6 months,No Lock-in,250,20,https://www.tangerine.com.au/nbn/nbn-fixed-wireless
+tangerine,Fixed Wireless,Tangerine Fixed Wireless SuperSpeedy,400,40,104.9,79.9,6 months,No Lock-in,400,40,https://www.tangerine.com.au/nbn/nbn-fixed-wireless
+tangerine,NBN,Tangerine Speedy Max,500,42.5,92.9,59.9,6 months,No Lock-in,500,42.5,https://www.tangerine.com.au/nbn/nbn-broadband
+tangerine,NBN,Tangerine UltraSpeedy,860,85,114.9,89.9,6 months,No Lock-in,860,85,https://www.tangerine.com.au/nbn/nbn-broadband
 mate,NBN,MATE Crikey nbn 25/10,25,10,80.0,55.0,6 months,No Contract,25,10,https://www.letsbemates.com.au/mate/crikey-nbn-25-10/
 mate,NBN,MATE Ripper nbn 50/20,49,19,90.0,70.0,6 months,No Contract,49,19,https://www.letsbemates.com.au/mate/ripper-nbn-50-20/
 mate,NBN,MATE No Worries nbn 100/20,97,19,100.0,75.0,6 months,No Contract,97,19,https://www.letsbemates.com.au/mate/no-worries-100-20/

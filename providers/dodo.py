@@ -5,21 +5,25 @@ Dodo ISP provider scraper.
 Scrapes https://www.dodo.com/nbn — a Drupal-rendered page (no SPA framework)
 that inlines all NBN plan cards in the initial HTML payload.
 
-DOM structure confirmed via investigate_dodo.py / probe_dodo.py:
+DOM structure re-confirmed 2026-09-17 (Dodo dropped the .plan-speed headline
+element in a redesign — see providers/dodo.py git history for the old layout):
 ─────────────────────────────────────────────────────────────────
 Card root:   div.plan-tile
   Attributes:
     data-plan-id        — unique plan UUID
-    data-plan-name      — internal Dodo SKU code
+    data-plan-name      — the real, human-readable plan name (matches
+                           .plan-name-label text, e.g. "EVERYDAY NBN25/10")
     data-fibre-eligible — "true" / "false"
 
   Sub-selectors (all stable data-component-id anchors):
+    .plan-name-label                               → "EVERYDAY NBN25/10", "VALUE FW Plus" …
     [data-component-id*="plan_tile_offer_badge"]  → "$30 MTH OFF FOR 6 MONTHS"
-    .plan-speed                                    → "25 Mbps", "50 Mbps" …
     .original-price.discounted                     → regular (crossed-out) price "$71.99"
     .price-amount                                  → promo/current price "$41.99"
     [data-component-id*="plan_tile_target_user_info"] .main-text
-                                                   → "25 Mbps download, 9 Mbps upload."
+                                                   → "Typical evening speeds (7-11pm): 25 Mbps download. 9 Mbps upload."
+                                                     (this is now the ONLY source of speed — there is
+                                                     no separate headline speed element anymore)
     [data-component-id*="plan_tile_terms"] .plan-terms
                                                    → "Offer ends 30 Jun 2026"
 
@@ -82,15 +86,6 @@ def _parse_speed_detail(text: str) -> Tuple[int, int]:
     return download, upload
 
 
-def _parse_plan_speed(text: str) -> int:
-    """
-    Parse the headline speed shown in .plan-speed e.g. "25 Mbps" → 25.
-    Used as the primary download-speed value and plan-name suffix.
-    """
-    m = re.search(r'(\d+)', text)
-    return int(m.group(1)) if m else 0
-
-
 def _parse_promo_period(badge_text: str) -> Optional[str]:
     """
     Extract promo duration from badge text like '$30 MTH OFF FOR 6 MONTHS'.
@@ -98,11 +93,6 @@ def _parse_promo_period(badge_text: str) -> Optional[str]:
     """
     m = re.search(r'(\d+)\s*MONTHS?', badge_text, re.IGNORECASE)
     return f"{m.group(1)} months" if m else None
-
-
-def _plan_name_from_speed(download_mbps: int) -> str:
-    """Build a canonical plan name like 'Dodo NBN 25' from the speed value."""
-    return f"Dodo NBN {download_mbps}"
 
 
 def _extract_card(card: ElementHandle) -> Optional[Dict[str, Any]]:
@@ -114,16 +104,31 @@ def _extract_card(card: ElementHandle) -> Optional[Dict[str, Any]]:
     try:
         # ── data attributes ─────────────────────────────────────────────────
         plan_id    = card.get_attribute('data-plan-id')    or ''
-        plan_sku   = card.get_attribute('data-plan-name')  or ''
         fibre_raw  = card.get_attribute('data-fibre-eligible') or 'false'
         fibre_eligible = fibre_raw.lower() == 'true'
 
-        # ── headline speed (.plan-speed) ─────────────────────────────────────
-        speed_el  = card.query_selector('.plan-speed')
-        speed_raw = speed_el.inner_text().strip() if speed_el else ''
-        download_speed = _parse_plan_speed(speed_raw)
+        # ── plan name (.plan-name-label, falls back to the data attribute) ───
+        name_el   = card.query_selector('.plan-name-label')
+        plan_name = name_el.inner_text().strip() if name_el else ''
+        if not plan_name:
+            plan_name = card.get_attribute('data-plan-name') or ''
+        if not plan_name:
+            log_warning('Dodo: could not find plan name, skipping card', provider='dodo')
+            return None
+        plan_sku = plan_name
+
+        # ── speed (only available from the "typical evening speeds" detail
+        #    line — Dodo removed the old .plan-speed headline element) ────────
+        detail_el   = card.query_selector(
+            '[data-component-id*="plan_tile_target_user_info"] .main-text'
+        )
+        detail_text = detail_el.inner_text().strip() if detail_el else ''
+        download_speed, upload_speed = _parse_speed_detail(detail_text)
         if download_speed == 0:
-            log_warning(f'Dodo: could not parse speed from "{speed_raw}", skipping card', provider='dodo')
+            log_warning(
+                f'Dodo: could not parse speed from detail text "{detail_text}" for "{plan_name}", skipping card',
+                provider='dodo',
+            )
             return None
 
         # ── pricing ──────────────────────────────────────────────────────────
@@ -160,33 +165,15 @@ def _extract_card(card: ElementHandle) -> Optional[Dict[str, Any]]:
         if promo_price and not promo_period:
             promo_period = '6 months'
 
-        # ── upload speed from detail line ─────────────────────────────────────
-        # "[data-component-id*='plan_tile_target_user_info'] .main-text"
-        detail_el   = card.query_selector(
-            '[data-component-id*="plan_tile_target_user_info"] .main-text'
-        )
-        detail_text = detail_el.inner_text().strip() if detail_el else ''
-        detail_dl, upload_speed = _parse_speed_detail(detail_text)
-
-        # Cross-check: if detail_dl differs from headline speed, trust headline
-        if detail_dl and detail_dl != download_speed:
-            log_warning(
-                f'Dodo: headline speed {download_speed} Mbps ≠ detail speed {detail_dl} Mbps '
-                f'— keeping headline value',
-                provider='dodo',
-            )
-
         # ── plan terms (offer end date) ───────────────────────────────────────
         terms_el   = card.query_selector('[data-component-id*="plan_tile_terms"] .plan-terms')
         terms_text = terms_el.inner_text().strip() if terms_el else ''
 
         # ── network type ──────────────────────────────────────────────────────
-        # All plans on this page are NBN; fibre_eligible distinguishes FTTP/HFC
-        # capable tiers from FTTN/FTTC/FTTB ones, but they are all "NBN".
-        network_type = 'NBN'
-
-        # ── plan name ─────────────────────────────────────────────────────────
-        plan_name = _plan_name_from_speed(download_speed)
+        # Page is nominally all-NBN, but a couple of cards are Fixed Wireless
+        # plans (name contains "FW"); fibre_eligible otherwise just distinguishes
+        # FTTP/HFC-capable tiers from FTTN/FTTC/FTTB ones — all still "NBN".
+        network_type = 'Fixed Wireless' if re.search(r'\bFW\b', plan_name) else 'NBN'
 
         return {
             'provider_id':    PROVIDER_ID,

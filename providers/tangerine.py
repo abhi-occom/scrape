@@ -1,97 +1,196 @@
 # scrape/providers/tangerine.py
-"""Tangerine ISP provider scraper.
-Scrapes NBN and Fixed Wireless plans from Tangerine plan pages.
-Pages are static HTML - no JavaScript rendering needed.
 """
-import re, sys, os
+Tangerine ISP provider scraper.
+
+Scrapes https://www.tangerine.com.au/nbn/nbn-broadband and
+https://www.tangerine.com.au/nbn/nbn-fixed-wireless.
+
+DOM structure confirmed 2026-09-17 via a live-page probe. Tangerine only
+renders 3 speed tiers per page before an address is entered — the remaining
+tiers (e.g. Value Plus, Speedy, Speedy Plus) are address-gated and only
+appear after an eligible address lookup, so they are not scraped here (there
+is no generic address that reliably unlocks them).
+
+Card root:   div.plan-bl.plan-speed
+  Sub-selectors:
+    button[data-product-type="speed"]
+      data-product-name   → plan name, e.g. "Value", "Speedy Max", "Fixed Wireless Value Plus"
+      data-product-price  → currently advertised (discounted) price, e.g. "42.90"
+      data-cart-type       → "nbn-broadband" | "nbn-fixed-wireless"
+    p.top_height          → "25Mbps Download /8.5Mbps Upload Typical Evening Speed (7-11pm)"
+    p.plan_footer         → "For 6 months, then $72.90 ongoing*"
+                             (Fixed Wireless wording differs slightly:
+                             "$63.90 for first full 6 months, then $88.90 ongoing...")
+
+Pricing logic:
+  • data-product-price is the currently advertised price.
+  • p.plan_footer's "then $X ongoing" value, when present, is the regular
+    price once the promo period ends — in that case
+    promo_price = data-product-price and price = the ongoing value.
+    Otherwise there's no active promo and price = data-product-price.
+"""
+import re
+import sys
+import os
+from typing import List, Dict, Any, Optional
+
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import config
 from utils.logger import log_info, log_error, log_success, log_warning
 from utils.stealth import create_stealth_browser, create_stealth_page
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import sync_playwright, ElementHandle
 
-PROVIDER_ID = 15
-NBN_URL = "https://www.tangerine.com.au/nbn/nbn-broadband"
-FIXED_WIRELESS_URL = "https://www.tangerine.com.au/nbn/nbn-fixed-wireless"
+PROVIDER_ID: int = config.PROVIDERS.get('tangerine', {}).get('id', 15)
+NBN_URL: str = 'https://www.tangerine.com.au/nbn/nbn-broadband'
+FIXED_WIRELESS_URL: str = 'https://www.tangerine.com.au/nbn/nbn-fixed-wireless'
 
-TANGERINE_PLANS = [
-    {"plan_name": "Value", "network": "NBN", "download": 25, "upload": 10, "typical_upload": 8.5, "promo_price": 44.90, "promo_months": 6, "regular_price": 69.90, "url": NBN_URL},
-    {"plan_name": "Value Plus", "network": "NBN", "download": 50, "upload": 20, "typical_upload": 17, "promo_price": 59.90, "promo_months": 6, "regular_price": 84.90, "url": NBN_URL},
-    # Address-gated fixed-line tiers. These are listed in Tangerine's plan
-    # table/CIS, but their order cards only appear after an eligible address
-    # lookup, so the fallback catalog must include them explicitly.
-    {"plan_name": "Speedy", "network": "NBN", "download": 100, "upload": 20, "typical_upload": 17, "promo_price": 63.90, "promo_months": 6, "regular_price": 88.90, "url": NBN_URL},
-    {"plan_name": "Speedy Plus", "network": "NBN", "download": 100, "upload": 40, "typical_upload": 34, "promo_price": 67.90, "promo_months": 6, "regular_price": 92.90, "url": NBN_URL},
-    {"plan_name": "Speedy Max", "network": "NBN", "download": 500, "upload": 42.5, "promo_price": 63.90, "promo_months": 6, "regular_price": 88.90, "url": NBN_URL},
-    {"plan_name": "UltraSpeedy", "network": "NBN", "download": 700, "upload": 85, "promo_price": 94.90, "promo_months": 6, "regular_price": 119.90, "url": NBN_URL},
-    {"plan_name": "Fixed Wireless Value Plus", "network": "Fixed Wireless", "download": 100, "upload": 20, "promo_price": 59.90, "promo_months": 6, "regular_price": 84.90, "url": FIXED_WIRELESS_URL},
-    {"plan_name": "Fixed Wireless Speedy", "network": "Fixed Wireless", "download": 250, "upload": 20, "promo_price": 63.90, "promo_months": 6, "regular_price": 88.90, "url": FIXED_WIRELESS_URL},
-    {"plan_name": "Fixed Wireless SuperSpeedy", "network": "Fixed Wireless", "download": 400, "upload": 40, "promo_price": 79.90, "promo_months": 6, "regular_price": 104.90, "url": FIXED_WIRELESS_URL},
-]
 
-def scrape_tangerine_plans():
-    log_info("Starting Tangerine scraper", provider="tangerine")
-    all_plans = []
-    
+# ── helpers ──────────────────────────────────────────────────────────────────
+
+_RE_SPEED = re.compile(
+    r'(\d+(?:\.\d+)?)\s*Mbps\s*download.*?(\d+(?:\.\d+)?)\s*Mbps\s*upload',
+    re.IGNORECASE | re.DOTALL,
+)
+_RE_ONGOING_PRICE = re.compile(r'then\s*\$(\d+(?:\.\d+)?)\s*ongoing', re.IGNORECASE)
+_RE_PERIOD_MONTHS = re.compile(r'(\d+)\s*months?', re.IGNORECASE)
+
+
+def _num(value: float):
+    """Render whole-number floats as ints, matching other providers' convention."""
+    return int(value) if float(value).is_integer() else value
+
+
+def _extract_card(card: ElementHandle, network_type: str, source_url: str) -> Optional[Dict[str, Any]]:
+    """Extract a single plan dict from a .plan-bl.plan-speed card."""
+    try:
+        button = card.query_selector('button[data-product-type="speed"]')
+        if button is None:
+            return None
+
+        plan_name = (button.get_attribute('data-product-name') or '').strip()
+        price_raw = button.get_attribute('data-product-price')
+        if not plan_name or not price_raw:
+            log_warning('Tangerine: card missing plan name or price, skipping', provider='tangerine')
+            return None
+        advertised_price = float(price_raw)
+
+        # ── speed ────────────────────────────────────────────────────────────
+        speed_el   = card.query_selector('.top_height')
+        speed_text = speed_el.inner_text().strip() if speed_el else ''
+        speed_match = _RE_SPEED.search(speed_text)
+        if not speed_match:
+            log_warning(
+                f'Tangerine: could not parse speed for "{plan_name}" from "{speed_text}", skipping card',
+                provider='tangerine',
+            )
+            return None
+        download_speed = _num(float(speed_match.group(1)))
+        upload_speed   = _num(float(speed_match.group(2)))
+
+        # ── pricing (promo vs ongoing) ──────────────────────────────────────
+        footer_el   = card.query_selector('.plan_footer')
+        footer_text = footer_el.inner_text().strip() if footer_el else ''
+        ongoing_match = _RE_ONGOING_PRICE.search(footer_text)
+        period_match  = _RE_PERIOD_MONTHS.search(footer_text)
+
+        if ongoing_match:
+            regular_price = float(ongoing_match.group(1))
+            promo_price   = advertised_price
+            promo_period  = f'{period_match.group(1)} months' if period_match else None
+        else:
+            regular_price = advertised_price
+            promo_price   = None
+            promo_period  = None
+
+        return {
+            'provider_id':        PROVIDER_ID,
+            'provider':           'tangerine',
+            'plan_name':          f'Tangerine {plan_name}',
+            'network_type':       network_type,
+            'download_speed':     download_speed,
+            'upload_speed':       upload_speed,
+            'typical_evening_dl': download_speed,
+            'typical_evening_ul': upload_speed,
+            'price':              regular_price,
+            'promo_price':        promo_price,
+            'promo_period':       promo_period,
+            'contract':           'No Lock-in',
+            'source_url':         source_url,
+        }
+
+    except Exception as exc:
+        log_error(f'Tangerine: error extracting card — {exc}', provider='tangerine')
+        return None
+
+
+def _scrape_page(page, url: str, network_type: str) -> List[Dict[str, Any]]:
+    """Scrape all plan-speed cards from a single Tangerine page."""
+    page.goto(url, timeout=40000, wait_until='domcontentloaded')
+    page.wait_for_timeout(4000)
+
+    cards = page.query_selector_all('.plan-bl.plan-speed')
+    log_info(f'Found {len(cards)} plan-speed cards on {url}', provider='tangerine')
+
+    plans = []
+    for card in cards:
+        plan = _extract_card(card, network_type, url)
+        if plan:
+            plans.append(plan)
+    return plans
+
+
+# ── main scraper ─────────────────────────────────────────────────────────────
+
+def scrape_tangerine_plans() -> List[Dict[str, Any]]:
+    """
+    Scrape all currently-advertised Tangerine NBN and Fixed Wireless plans.
+
+    Returns a flat list of standardised plan dicts sorted by download speed.
+    """
+    log_info('Starting Tangerine scraper', provider='tangerine')
+    all_plans: List[Dict[str, Any]] = []
+
     try:
         with sync_playwright() as p:
             browser = create_stealth_browser(p)
-            page = create_stealth_page(browser)
-            
-            log_info(f"Navigating to {NBN_URL}", provider="tangerine")
-            resp = page.goto(NBN_URL, timeout=30000, wait_until="domcontentloaded")
-            log_info(f"Status: {resp.status if resp else 'none'}", provider="tangerine")
-            
-            page.wait_for_timeout(2000)
-            
-            page_text = page.evaluate("document.body.innerText")
-            
-            fixed_page = create_stealth_page(browser)
-            log_info(f"Navigating to {FIXED_WIRELESS_URL}", provider="tangerine")
-            fixed_resp = fixed_page.goto(FIXED_WIRELESS_URL, timeout=30000, wait_until="domcontentloaded")
-            log_info(f"Fixed Wireless status: {fixed_resp.status if fixed_resp else 'none'}", provider="tangerine")
-            fixed_page.wait_for_timeout(2000)
-            fixed_text = fixed_page.evaluate("document.body.innerText")
-            fixed_page.close()
 
-            if "$44.90" in page_text and "Value" in page_text and "$59.90" in fixed_text:
-                log_success("Tangerine page verified", provider="tangerine")
-                
-                for plan_data in TANGERINE_PLANS:
-                    plan = {
-                        "provider_id": PROVIDER_ID,
-                        "provider": "tangerine",
-                        "plan_name": f"Tangerine {plan_data['plan_name']}",
-                        "network_type": plan_data["network"],
-                        "download_speed": plan_data["download"],
-                        "upload_speed": plan_data["upload"],
-                        "typical_evening_dl": plan_data["download"],
-                        "typical_evening_ul": plan_data.get("typical_upload", plan_data["upload"]),
-                        "price": plan_data["regular_price"],
-                        "promo_price": plan_data["promo_price"],
-                        "promo_period": f"{plan_data['promo_months']} months",
-                        "contract": "No Lock-in",
-                        "source_url": plan_data["url"],
-                    }
-                    all_plans.append(plan)
-                    log_info(f"Added: {plan['plan_name']}", provider="tangerine")
-            else:
-                log_error("Tangerine page content not as expected", provider="tangerine")
-            
+            page = create_stealth_page(browser)
+            all_plans.extend(_scrape_page(page, NBN_URL, 'NBN'))
+            page.close()
+
+            page = create_stealth_page(browser)
+            all_plans.extend(_scrape_page(page, FIXED_WIRELESS_URL, 'Fixed Wireless'))
+            page.close()
+
             browser.close()
-    
-    except Exception as e:
-        log_error(f"Tangerine scraper failed: {e}", provider="tangerine")
-    
-    all_plans.sort(key=lambda x: x["download_speed"])
-    log_success(f"Tangerine scraper complete: {len(all_plans)} plans", provider="tangerine")
+
+    except Exception as exc:
+        log_error(f'Tangerine scraper failed: {exc}', provider='tangerine')
+
+    all_plans.sort(key=lambda x: x['download_speed'])
+
+    log_success(
+        f'Tangerine scraper complete: {len(all_plans)} plans '
+        f'({sum(1 for p in all_plans if p["promo_price"])} with active promo)',
+        provider='tangerine',
+    )
     return all_plans
 
 
-if __name__ == "__main__":
+# ── standalone test ───────────────────────────────────────────────────────────
+
+if __name__ == '__main__':
     plans = scrape_tangerine_plans()
-    print(f"Total plans: {len(plans)}")
+    print(f'\nTotal plans: {len(plans)}\n')
     for plan in plans:
-        promo = f" (promo ${plan['promo_price']}/mth for {plan['promo_period']})" if plan['promo_price'] else ""
-        print(f"{plan['plan_name']} {plan['download_speed']}/{plan['upload_speed']} Mbps ${plan['price']:.2f}/mth{promo}")
+        promo = (
+            f'  (promo ${plan["promo_price"]}/mth for {plan["promo_period"]})'
+            if plan['promo_price'] else ''
+        )
+        print(
+            f"  {plan['plan_name']:35}  "
+            f"{plan['download_speed']:>4}/{plan['upload_speed']:<5} Mbps  "
+            f"${plan['price']:.2f}/mth"
+            f"{promo}"
+        )
