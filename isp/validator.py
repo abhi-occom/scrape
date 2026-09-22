@@ -7,7 +7,15 @@ Validation rules:
   - plan_name must be a non-empty string (max 200 chars).
   - price must be a positive number between $1 and $500.
   - download_speed must be a positive integer between 1 and 10 000.
+  - download_speed must not exceed the realistic ceiling for the plan's
+    access technology (e.g. an FTTN plan claiming 1000 Mbps is flagged).
   - network_type should be one of the known types (warn if unknown).
+  - price-per-Mbps must not be a wild outlier vs. other plans on the same
+    access technology (batch-level check, see flag_price_outliers()).
+
+Each plan validated via validate_batch() also gets a `confidence` field —
+'Strong' if it passed every check clean, 'Needs Review' if any check raised
+a warning. See compute_confidence().
 
 Also builds an "expected vs actual" comparison log for test scenarios.
 """
@@ -21,17 +29,11 @@ import sys, os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from utils.logger import log_info, log_warning
-
-
-# ── Known network types ──────────────────────────────────────────
-
-KNOWN_NETWORK_TYPES = {
-    'NBN', 'OPTICOMM', 'REDTRAIN', 'SUPA',
-    'SUPA NETWORKS', 'SUPANETWORKS', 'SUPA FIBRE',
-    '5G', 'FIXED WIRELESS', 'FIXED_WIRELESS',
-    'FIBRE', 'FTTP', 'FTTB', 'FTTN', 'FTTC',
-    'SATELLITE', 'BUSINESS NBN',
-}
+from utils.network_classifier import (
+    classify_access_technology,
+    is_broadband_network_type,
+    SPEED_CEILING_MBPS,
+)
 
 
 @dataclass
@@ -130,16 +132,85 @@ class ISPValidator:
             except (ValueError, TypeError):
                 result.warnings.append(f'download_speed is not a valid integer: {speed}')
 
+        # ── network-specific speed ceiling ────────────────────
+        tech = classify_access_technology(plan.get('network_type'))
+        ceiling = SPEED_CEILING_MBPS.get(tech)
+        if ceiling and plan.get('download_speed', 0) > ceiling:
+            result.warnings.append(
+                f'{tech} plan advertises {plan["download_speed"]} Mbps, above the '
+                f'expected ceiling of {ceiling} Mbps for this technology — verify'
+            )
+
         # ── network_type ─────────────────────────────────────
         net = plan.get('network_type', '')
         if net:
-            upper = net.upper().strip()
-            if upper not in KNOWN_NETWORK_TYPES:
+            if not is_broadband_network_type(net):
                 result.warnings.append(f'Unknown network type: "{net}"')
         else:
             result.warnings.append('network_type is empty')
 
         return result
+
+    @staticmethod
+    def flag_price_outliers(
+        plans: List[Dict[str, Any]], factor: float = 3.0, min_group_size: int = 3,
+    ) -> Dict[int, str]:
+        """
+        Batch-level check: group plans by access technology, compute each
+        group's median price-per-Mbps, and flag any plan whose price/Mbps is
+        more than `factor`x away from its group's median in either direction.
+
+        Catches scraping errors that produce a physically-plausible-looking
+        but wrong price/speed pair (e.g. a misparsed digit) that the flat
+        $1-$500 / 1-10,000 Mbps bounds in validate_plan() wouldn't catch on
+        their own, because it compares plans against their peers rather than
+        fixed limits. Skipped for groups smaller than `min_group_size` since
+        a median of 1-2 plans isn't a meaningful baseline.
+
+        Returns {id(plan): warning_message} — callers key off object identity
+        since plans don't carry a stable unique id at this layer.
+        """
+        groups: Dict[str, List[Dict[str, Any]]] = {}
+        for plan in plans:
+            speed = plan.get('download_speed') or 0
+            price = plan.get('price') or 0
+            if speed <= 0 or price <= 0:
+                continue
+            tech = classify_access_technology(plan.get('network_type'))
+            groups.setdefault(tech, []).append(plan)
+
+        warnings: Dict[int, str] = {}
+        for tech, group in groups.items():
+            if len(group) < min_group_size:
+                continue
+            ratios = sorted(p['price'] / p['download_speed'] for p in group)
+            mid = len(ratios) // 2
+            median = ratios[mid] if len(ratios) % 2 else (ratios[mid - 1] + ratios[mid]) / 2
+            if median <= 0:
+                continue
+            for plan in group:
+                ratio = plan['price'] / plan['download_speed']
+                if ratio > median * factor or ratio < median / factor:
+                    warnings[id(plan)] = (
+                        f'Price/Mbps (${ratio:.2f}) for this {tech} plan is more than '
+                        f'{factor:.0f}x off the {tech} group median (${median:.2f}) — verify'
+                    )
+        return warnings
+
+    @staticmethod
+    def compute_confidence(warnings: List[str]) -> str:
+        """
+        'Strong' if a plan passed every check clean; 'Needs Review' if any
+        check raised a warning (unknown network type, speed/price bounds,
+        network-specific speed ceiling, price-per-Mbps outlier, ...).
+
+        Deliberately takes the final warnings list rather than being called
+        from inside validate_plan(): the price-outlier warning is only known
+        at the batch level (flag_price_outliers() needs every plan in the
+        run to compute a group median), so confidence must be computed after
+        that warning has already been merged in — see validate_batch().
+        """
+        return 'Strong' if not warnings else 'Needs Review'
 
     def validate_batch(
         self, plans: List[Dict[str, Any]],
@@ -153,9 +224,14 @@ class ISPValidator:
         valid = []
         invalid = []
         results = []
+        outlier_warnings = self.flag_price_outliers(plans)
 
         for plan in plans:
             vr = self.validate_plan(plan)
+            outlier_msg = outlier_warnings.get(id(plan))
+            if outlier_msg:
+                vr.warnings.append(outlier_msg)
+            plan['confidence'] = self.compute_confidence(vr.warnings)
             results.append(vr)
             if vr.is_valid:
                 valid.append(plan)

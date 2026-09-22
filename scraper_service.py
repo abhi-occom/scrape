@@ -20,7 +20,8 @@ BASE_OUTPUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'outp
 ALL_PLANS_JSON_PATH = os.path.join(BASE_OUTPUT_DIR, 'all_plans.json')
 
 CSV_COLUMNS = [
-    'provider', 'network_type', 'plan_name', 'download_speed', 'upload_speed',
+    'provider', 'network_type', 'access_technology', 'upstream_network',
+    'plan_name', 'download_speed', 'upload_speed',
     'price', 'promo_price', 'promo_period', 'contract',
     'typical_evening_dl', 'typical_evening_ul', 'source_url'
 ]

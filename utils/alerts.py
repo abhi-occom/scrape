@@ -1,13 +1,16 @@
 """
 Automated alert system for competitive price monitoring.
-Detects price changes, new/removed plans, and Occom pricing gaps.
+Detects price changes, new/removed plans (with fuzzy rename reconciliation
+so a plan renamed by a provider isn't reported as an unrelated add+remove —
+see reconcile_renames()), and Occom pricing gaps.
 Stores alert history and generates actionable notifications.
 """
 
 import json
 import os
 from datetime import datetime
-from typing import List, Dict, Any, Optional
+from difflib import SequenceMatcher
+from typing import List, Dict, Any, Optional, Tuple
 from config import OUTPUT_DIR
 from utils.logger import log_info, log_warning, log_success
 
@@ -148,6 +151,72 @@ def detect_removed_plans(
     return alerts
 
 
+def reconcile_renames(
+    new_plan_alerts: List[Dict[str, Any]],
+    removed_plan_alerts: List[Dict[str, Any]],
+    threshold: float = 0.6,
+) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]], List[Dict[str, Any]]]:
+    """
+    Reconcile new_plan/removed_plan alerts that are actually the same plan
+    renamed, not a genuine addition + removal.
+
+    detect_new_plans()/detect_removed_plans() key on an EXACT
+    provider|plan_name|speed match (see _plan_key()), so a provider renaming
+    "Value" to "Value Plus" shows up as one new_plan alert plus one unrelated
+    removed_plan alert instead of a single rename. This matches each removed
+    plan against same-provider, same-speed new-plan candidates by plan_name
+    similarity (difflib.SequenceMatcher) and, when the best match clears
+    `threshold`, replaces both alerts with a single plan_renamed alert.
+
+    A different speed is treated as a genuinely different plan (not a
+    rename) even if the name is identical or very similar, so candidates are
+    only ever compared within the same provider + speed tier — that gate is
+    what makes a relatively low default threshold (0.6) safe: real-world
+    renames like "Value" -> "Value Plus" or "Ultrafast Fibre" -> "Ultra Fast
+    Fibre" only score 0.67-0.9, well below a naive 0.75+ cutoff, while
+    genuinely unrelated same-speed plan names (e.g. "Basic" vs "Ultrafast
+    Fibre") score under 0.4.
+
+    Returns (renamed_alerts, unmatched_new_alerts, unmatched_removed_alerts).
+    """
+    renamed: List[Dict[str, Any]] = []
+    unmatched_new = list(new_plan_alerts)
+    unmatched_removed: List[Dict[str, Any]] = []
+
+    for removed in removed_plan_alerts:
+        best_match = None
+        best_score = 0.0
+        for candidate in unmatched_new:
+            if candidate['provider'] != removed['provider']:
+                continue
+            if candidate['speed'] != removed['speed']:
+                continue
+            score = SequenceMatcher(None, candidate['plan_name'], removed['plan_name']).ratio()
+            if score > best_score:
+                best_match, best_score = candidate, score
+
+        if best_match is not None and best_score >= threshold:
+            unmatched_new.remove(best_match)
+            renamed.append({
+                'type': 'plan_renamed',
+                'severity': 'low',
+                'provider': removed['provider'],
+                'speed': removed['speed'],
+                'old_name': removed['plan_name'],
+                'new_name': best_match['plan_name'],
+                'old_price': removed.get('price', 0),
+                'new_price': best_match.get('price', 0),
+                'similarity': round(best_score, 2),
+                'message': f"{removed['provider'].title()} renamed "
+                           f"'{removed['plan_name']}' to '{best_match['plan_name']}' "
+                           f"(${removed.get('price', 0):.0f}/mo -> ${best_match.get('price', 0):.0f}/mo)"
+            })
+        else:
+            unmatched_removed.append(removed)
+
+    return renamed, unmatched_new, unmatched_removed
+
+
 def detect_occom_undercut(benchmark_report: Dict[str, Any]) -> List[Dict[str, Any]]:
     """
     Generate alerts when a competitor is cheaper than Occom in a tier.
@@ -187,8 +256,13 @@ def run_alerts(
     # Diff-based alerts (only if we have a previous snapshot)
     if previous_plans:
         all_alerts.extend(detect_price_changes(current_plans, previous_plans))
-        all_alerts.extend(detect_new_plans(current_plans, previous_plans))
-        all_alerts.extend(detect_removed_plans(current_plans, previous_plans))
+
+        new_alerts = detect_new_plans(current_plans, previous_plans)
+        removed_alerts = detect_removed_plans(current_plans, previous_plans)
+        renamed_alerts, new_alerts, removed_alerts = reconcile_renames(new_alerts, removed_alerts)
+        all_alerts.extend(renamed_alerts)
+        all_alerts.extend(new_alerts)
+        all_alerts.extend(removed_alerts)
     else:
         log_info("No previous snapshot found — skipping diff alerts (first run)")
 

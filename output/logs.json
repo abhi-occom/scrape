@@ -112964,5 +112964,943 @@
     "message": "All plans snapshot rebuilt with 379 plans from 33 providers",
     "provider": "isp-crawler",
     "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:46:27.802037",
+    "status": "info",
+    "message": "Scraping nbn: https://www.exetel.com.au/broadband/nbn",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:46:33.822568",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:46:40.302287",
+    "status": "info",
+    "message": "Found 1 CMSPlanCardBroadband cards",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:46:41.421832",
+    "status": "success",
+    "message": "nbn: 1 plans",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:46:42.044926",
+    "status": "info",
+    "message": "Scraping nbn_fibre_upgrade: https://www.exetel.com.au/broadband/nbn-fibre-upgrade",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:46:44.933359",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:46:51.304236",
+    "status": "info",
+    "message": "Found 1 CMSPlanCardBroadband cards",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:46:51.816581",
+    "status": "success",
+    "message": "nbn_fibre_upgrade: 1 plans",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:46:52.697703",
+    "status": "info",
+    "message": "Scraping mobile: https://www.exetel.com.au/mobilephone",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:46:55.672436",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:47:01.985471",
+    "status": "info",
+    "message": "Found 1 CMSPlanMobile cards",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:47:02.678847",
+    "status": "success",
+    "message": "mobile: 1 plans",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:47:04.793224",
+    "status": "success",
+    "message": "Total Exetel plans: 3",
+    "provider": "exetel",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:47:08.139180",
+    "status": "info",
+    "message": "Scraping fibre: https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:47:16.126014",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:47:23.487235",
+    "status": "info",
+    "message": "Found 8 .card elements on fibre page",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:47:25.592920",
+    "status": "success",
+    "message": "fibre: 8 plans",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:47:26.074252",
+    "status": "info",
+    "message": "Scraping wireless: https://www.iinet.net.au/internet-product/broadband/nbn/plans/wireless",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:47:30.261474",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:47:37.568075",
+    "status": "info",
+    "message": "Wireless plan section: 'Select a plan\\nNBN25\\n$ 79 .99 /mth\\n\\nMin Cost $89.99\\n\\nif you return the modem\\n\\nUses NBN25\\n\\n20Mbps\\nDownload\\n3.8Mbps\\nUpload\\nTypical Evening Speed*\\nLiimitless Data\\n\\nTypical Evening Speeds are subject to change and are measured 7pm-11pm. Speeds are not guaranteed and may vary. Addresses with speeds affect'",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:47:38.009588",
+    "status": "success",
+    "message": "wireless: 1 plans",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:47:38.542770",
+    "status": "info",
+    "message": "Scraping ftth: https://www.iinet.net.au/internet-products/fibre/ftth/",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:47:46.352964",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:47:53.636447",
+    "status": "info",
+    "message": "Found 0 .card elements on fibre page",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:47:54.139526",
+    "status": "success",
+    "message": "ftth: 0 plans",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:47:54.559740",
+    "status": "info",
+    "message": "Skipping fibre_upgrade (informational only)",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:47:55.663112",
+    "status": "success",
+    "message": "Total iiNet plans: 9",
+    "provider": "iinet",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:47:55.877334",
+    "status": "info",
+    "message": "Starting More scraper",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:48:13.029251",
+    "status": "info",
+    "message": "Found 15 owl-item elements on https://more.com.au/personal/nbn-plans",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:48:23.548883",
+    "status": "info",
+    "message": "Found 14 owl-item elements on https://more.com.au/personal/nbn-fixed-wireless",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:48:33.884365",
+    "status": "info",
+    "message": "Found 5 owl-item elements on https://more.com.au/personal/mobile-plans",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:48:44.577004",
+    "status": "info",
+    "message": "Found 18 owl-item elements on https://more.com.au/business/business-nbn-plans",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:48:55.926936",
+    "status": "info",
+    "message": "Found 17 owl-item elements on https://more.com.au/business/business-nbn-fixed-wireless",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:49:06.922666",
+    "status": "info",
+    "message": "Found 5 owl-item elements on https://more.com.au/business/business-mobile-plans",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:49:08.810209",
+    "status": "success",
+    "message": "More scraper complete: 24 plans",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:49:09.027219",
+    "status": "info",
+    "message": "Starting More scraper",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:49:26.805485",
+    "status": "info",
+    "message": "Found 15 owl-item elements on https://more.com.au/personal/nbn-plans",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:49:37.652539",
+    "status": "info",
+    "message": "Found 14 owl-item elements on https://more.com.au/personal/nbn-fixed-wireless",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:49:47.980105",
+    "status": "info",
+    "message": "Found 5 owl-item elements on https://more.com.au/personal/mobile-plans",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:49:58.643536",
+    "status": "info",
+    "message": "Found 18 owl-item elements on https://more.com.au/business/business-nbn-plans",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:50:09.329986",
+    "status": "info",
+    "message": "Found 17 owl-item elements on https://more.com.au/business/business-nbn-fixed-wireless",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:50:19.555242",
+    "status": "info",
+    "message": "Found 5 owl-item elements on https://more.com.au/business/business-mobile-plans",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:50:22.161914",
+    "status": "success",
+    "message": "More scraper complete: 24 plans",
+    "provider": "more",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:50:30.508574",
+    "status": "info",
+    "message": "Navigating to https://www.optus.com.au/internet/nbn",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:50:33.058516",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:50:39.126477",
+    "status": "info",
+    "message": "Found 8 plan cards",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:50:45.363477",
+    "status": "success",
+    "message": "Extracted 8 plans from Optus",
+    "provider": "optus",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:50:59.734889",
+    "status": "info",
+    "message": "Scraping nbn: https://www.superloop.com/internet/nbn/",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:51:02.476606",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:51:08.009818",
+    "status": "success",
+    "message": "nbn: 10 plans",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:51:08.665241",
+    "status": "info",
+    "message": "Scraping fibre: https://www.superloop.com/internet/fibre/",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:51:11.397257",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:51:16.811321",
+    "status": "success",
+    "message": "fibre: 5 plans",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:51:17.214700",
+    "status": "info",
+    "message": "Scraping flip_to_fibre: https://www.superloop.com/internet/flip-to-fibre/",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:51:19.964547",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:51:25.640229",
+    "status": "info",
+    "message": "Plan cards found: 9",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:51:26.576227",
+    "status": "success",
+    "message": "flip_to_fibre: 7 plans",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:51:27.049043",
+    "status": "info",
+    "message": "Scraping fixed_wireless: https://www.superloop.com/internet/fixed-wireless/",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:51:29.911575",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:51:35.454693",
+    "status": "info",
+    "message": "Plan cards found: 5",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:51:36.206271",
+    "status": "success",
+    "message": "fixed_wireless: 3 plans",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:51:38.359495",
+    "status": "success",
+    "message": "Total Superloop plans: 25",
+    "provider": "superloop",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:51:39.722678",
+    "status": "info",
+    "message": "Scraping plans: https://www.telstra.com.au/internet/plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:51:44.887126",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:52:09.903434",
+    "status": "success",
+    "message": "plans: 23 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:52:11.510307",
+    "status": "info",
+    "message": "Scraping 5g_home: https://www.telstra.com.au/internet/5g-home-internet",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:52:20.245304",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:52:41.109371",
+    "status": "success",
+    "message": "5g_home: 3 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:52:42.978931",
+    "status": "info",
+    "message": "Scraping starlink: https://www.telstra.com.au/internet/starlink",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:52:49.975566",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:53:03.040929",
+    "status": "success",
+    "message": "starlink: 1 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:53:05.632056",
+    "status": "info",
+    "message": "Scraping opticomm: https://www.telstra.com.au/internet/opticomm-plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:53:14.983208",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:53:38.843620",
+    "status": "success",
+    "message": "opticomm: 10 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:53:41.176466",
+    "status": "info",
+    "message": "Scraping small_business: https://www.telstra.com.au/small-business/internet",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:53:54.765312",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:54:25.219661",
+    "status": "success",
+    "message": "small_business: 13 plans",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:54:28.484669",
+    "status": "success",
+    "message": "Total Telstra plans: 50",
+    "provider": "telstra",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:54:31.232832",
+    "status": "info",
+    "message": "Scraping nbn: https://www.tpg.com.au/nbn",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:54:39.265801",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:54:47.362070",
+    "status": "info",
+    "message": "Found 48 nbnLabels cards",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:55:06.459604",
+    "status": "success",
+    "message": "nbn: 6 plans",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:55:07.367437",
+    "status": "info",
+    "message": "Skipping fibre_upgrade (informational)",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:55:08.752834",
+    "status": "info",
+    "message": "Scraping home_wireless: https://www.tpg.com.au/home-wireless-broadband",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:55:18.223105",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:55:25.825847",
+    "status": "success",
+    "message": "home_wireless: 1 plans",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:55:26.719497",
+    "status": "info",
+    "message": "Scraping 5g_home: https://www.tpg.com.au/5g-home-broadband",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:55:42.139047",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:55:49.528543",
+    "status": "success",
+    "message": "5g_home: 2 plans",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:55:50.438243",
+    "status": "info",
+    "message": "Scraping fttb: https://www.tpg.com.au/fttb",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:55:57.764760",
+    "status": "info",
+    "message": "Status: 200",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:56:05.356538",
+    "status": "info",
+    "message": "Found 3 FTTB plan-cards",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:56:07.085861",
+    "status": "success",
+    "message": "fttb: 3 plans",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:56:09.938741",
+    "status": "success",
+    "message": "Total TPG plans: 12",
+    "provider": "tpg",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:56:10.799920",
+    "status": "warning",
+    "message": "Checking aussie provider scraper fallback",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:56:11.601502",
+    "status": "success",
+    "message": "Provider fallback extracted 1 plans for aussie",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:56:12.313133",
+    "status": "warning",
+    "message": "Checking occom provider scraper fallback",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:56:13.112589",
+    "status": "success",
+    "message": "Provider fallback extracted 1 plans for occom",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:56:13.915333",
+    "status": "info",
+    "message": "Starting Aussie Broadband scraper",
+    "provider": "aussie",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T10:56:14.773170",
+    "status": "success",
+    "message": "Aussie Broadband scraper complete: 13 plans",
+    "provider": "aussie",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T11:07:50.295908",
+    "status": "warning",
+    "message": "Validation warning for 'D': Price/Mbps ($4.00) for this FTTP plan is more than 3x off the FTTP group median ($0.88) — verify",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T11:07:50.788031",
+    "status": "info",
+    "message": "Validation complete: 4 valid, 0 invalid out of 4",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T11:07:54.779764",
+    "status": "warning",
+    "message": "Validation warning for 'D': Price/Mbps ($4.00) for this FTTP plan is more than 3x off the FTTP group median ($0.88) — verify",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T11:07:55.170173",
+    "status": "info",
+    "message": "Validation complete: 4 valid, 0 invalid out of 4",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T11:20:04.794977",
+    "status": "info",
+    "message": "Validation complete: 3 valid, 0 invalid out of 3",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T11:20:05.294774",
+    "status": "warning",
+    "message": "Validation warning for 'D': Price/Mbps ($4.00) for this FTTP plan is more than 3x off the FTTP group median ($0.88) — verify",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T11:20:05.913442",
+    "status": "info",
+    "message": "Validation complete: 4 valid, 0 invalid out of 4",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T11:20:06.434226",
+    "status": "warning",
+    "message": "Validation warning for 'D': Price/Mbps ($4.00) for this FTTP plan is more than 3x off the FTTP group median ($0.88) — verify",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T11:20:07.115971",
+    "status": "info",
+    "message": "Validation complete: 4 valid, 0 invalid out of 4",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T11:20:07.684809",
+    "status": "warning",
+    "message": "Validation warning for 'A': Unknown network type: \"garbage\"",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T11:20:08.939991",
+    "status": "info",
+    "message": "Validation complete: 1 valid, 0 invalid out of 1",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T11:20:17.412589",
+    "status": "warning",
+    "message": "Validation warning for 'Bad FTTN': FTTN plan advertises 1000 Mbps, above the expected ceiling of 100 Mbps for this technology — verify",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T11:20:18.253606",
+    "status": "info",
+    "message": "Validation complete: 2 valid, 0 invalid out of 2",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T14:30:27.245279",
+    "status": "info",
+    "message": "Validation complete: 3 valid, 0 invalid out of 3",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T14:30:27.480452",
+    "status": "warning",
+    "message": "Validation warning for 'D': Price/Mbps ($4.00) for this FTTP plan is more than 3x off the FTTP group median ($0.88) — verify",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T14:30:27.684948",
+    "status": "info",
+    "message": "Validation complete: 4 valid, 0 invalid out of 4",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T14:30:28.107398",
+    "status": "warning",
+    "message": "Validation warning for 'D': Price/Mbps ($4.00) for this FTTP plan is more than 3x off the FTTP group median ($0.88) — verify",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T14:30:28.459659",
+    "status": "info",
+    "message": "Validation complete: 4 valid, 0 invalid out of 4",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T14:30:28.658180",
+    "status": "warning",
+    "message": "Validation warning for 'A': Unknown network type: \"garbage\"",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T14:30:29.041235",
+    "status": "info",
+    "message": "Validation complete: 1 valid, 0 invalid out of 1",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T14:36:07.566852",
+    "status": "info",
+    "message": "Validation complete: 3 valid, 0 invalid out of 3",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T14:36:08.065938",
+    "status": "warning",
+    "message": "Validation warning for 'D': Price/Mbps ($4.00) for this FTTP plan is more than 3x off the FTTP group median ($0.88) — verify",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T14:36:08.354784",
+    "status": "info",
+    "message": "Validation complete: 4 valid, 0 invalid out of 4",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T14:36:08.555198",
+    "status": "warning",
+    "message": "Validation warning for 'D': Price/Mbps ($4.00) for this FTTP plan is more than 3x off the FTTP group median ($0.88) — verify",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T14:36:08.896407",
+    "status": "info",
+    "message": "Validation complete: 4 valid, 0 invalid out of 4",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T14:36:09.137144",
+    "status": "warning",
+    "message": "Validation warning for 'A': Unknown network type: \"garbage\"",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T14:36:09.658627",
+    "status": "info",
+    "message": "Validation complete: 1 valid, 0 invalid out of 1",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T14:39:29.522286",
+    "status": "info",
+    "message": "Validation complete: 3 valid, 0 invalid out of 3",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T14:39:29.902001",
+    "status": "warning",
+    "message": "Validation warning for 'D': Price/Mbps ($4.00) for this FTTP plan is more than 3x off the FTTP group median ($0.88) — verify",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T14:39:30.277031",
+    "status": "info",
+    "message": "Validation complete: 4 valid, 0 invalid out of 4",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T14:39:30.653654",
+    "status": "warning",
+    "message": "Validation warning for 'D': Price/Mbps ($4.00) for this FTTP plan is more than 3x off the FTTP group median ($0.88) — verify",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T14:39:30.924450",
+    "status": "info",
+    "message": "Validation complete: 4 valid, 0 invalid out of 4",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T14:39:31.124480",
+    "status": "warning",
+    "message": "Validation warning for 'A': Unknown network type: \"garbage\"",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-22T14:39:31.410644",
+    "status": "info",
+    "message": "Validation complete: 1 valid, 0 invalid out of 1",
+    "provider": "isp-crawler",
+    "data": {}
   }
 ]

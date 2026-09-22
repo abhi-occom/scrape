@@ -50,6 +50,8 @@ ALL_PLANS_JSON_PATH = os.path.join(os.path.dirname(OUTPUT_DIR), 'all_plans.json'
 PLAN_FIELDS = [
     'provider',
     'network_type',
+    'access_technology',
+    'upstream_network',
     'plan_name',
     'download_speed',
     'upload_speed',
@@ -60,6 +62,7 @@ PLAN_FIELDS = [
     'typical_evening_dl',
     'typical_evening_ul',
     'source_url',
+    'confidence',
 ]
 
 
@@ -565,9 +568,10 @@ class ISPCrawler:
         """Return a plan row with exactly the saved output fields."""
         normalised = {field: plan.get(field) for field in PLAN_FIELDS}
         normalised['provider'] = normalised.get('provider') or self.provider_name
-        normalised['network_type'] = self._canonical_network_type(
-            normalised.get('network_type') or self._default_network_type()
-        )
+        raw_network_type = normalised.get('network_type') or self._default_network_type()
+        normalised['network_type'] = self._canonical_network_type(raw_network_type)
+        normalised['access_technology'] = self._classify_access_technology(raw_network_type)
+        normalised['upstream_network'] = self._classify_upstream_network(raw_network_type)
         normalised['plan_name'] = normalised.get('plan_name') or ''
         normalised['download_speed'] = normalised.get('download_speed') or 0
         normalised['upload_speed'] = normalised.get('upload_speed') or 0
@@ -593,6 +597,18 @@ class ISPCrawler:
         """Collapse known private-network aliases into UI/filter friendly labels."""
         from utils.network_classifier import canonicalize_network_type
         return canonicalize_network_type(network_type)
+
+    @staticmethod
+    def _classify_access_technology(network_type: Any) -> str:
+        """FTTP/FTTN/FTTC/FTTB/Fixed Wireless/5G/4G/Satellite — see utils/network_classifier.py."""
+        from utils.network_classifier import classify_access_technology
+        return classify_access_technology(network_type)
+
+    @staticmethod
+    def _classify_upstream_network(network_type: Any) -> str:
+        """NBN/Opticomm/Redtrain/Supa/... — see utils/network_classifier.py."""
+        from utils.network_classifier import classify_upstream_network
+        return classify_upstream_network(network_type)
 
     def _default_network_type(self) -> str:
         """Return provider-level network defaults when pages do not expose the network label."""
