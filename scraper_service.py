@@ -13,6 +13,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from config import PROVIDERS
 from utils.network_classifier import normalise_plans
+from utils.ocr_verify import apply_ocr_verification
 from utils.progress import set_active_provider, update_progress
 from utils.stealth import configure_browser
 
@@ -23,7 +24,8 @@ CSV_COLUMNS = [
     'provider', 'network_type', 'access_technology', 'upstream_network',
     'plan_name', 'download_speed', 'upload_speed',
     'price', 'promo_price', 'promo_period', 'contract',
-    'typical_evening_dl', 'typical_evening_ul', 'source_url'
+    'typical_evening_dl', 'typical_evening_ul', 'source_url',
+    'ocr_checked', 'ocr_verified', 'ocr_warning'
 ]
 
 
@@ -104,6 +106,8 @@ def scrape_provider(
             'message': f'Starting {provider_name}',
         })
 
+    scrape_started_at = datetime.now()
+
     try:
         # Import provider module dynamically
         provider_module = __import__(f'providers.{provider_name}', fromlist=[''])
@@ -119,6 +123,7 @@ def scrape_provider(
             raise AttributeError(f"No scrape function found in {provider_name}")
 
         plans = normalise_plans(plans)
+        plans = apply_ocr_verification(plans, provider_name, since=scrape_started_at)
         result['plans'] = plans
         result['total_plans'] = _plan_count(plans)
         result['success'] = True

@@ -36,3 +36,9 @@ truststore>=0.10.4
 
 # Virtual display for headless browser debugging (cross-platform)
 pyvirtualdisplay>=3.0.0
+
+# OCR-based price verification (reads screenshots to cross-check scraped prices)
+# NOTE: the Tesseract OCR binary itself is a separate host install, not pip-installable.
+# Windows: https://github.com/UB-Mannheim/tesseract/wiki | Debian/Ubuntu: apt-get install tesseract-ocr
+pytesseract>=0.3.10
+Pillow>=10.0.0

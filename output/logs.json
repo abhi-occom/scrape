@@ -113902,5 +113902,250 @@
     "message": "Validation complete: 1 valid, 0 invalid out of 1",
     "provider": "isp-crawler",
     "data": {}
+  },
+  {
+    "timestamp": "2026-09-23T12:37:05.823387",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-23T12:37:06.163478",
+    "status": "info",
+    "message": "ISP Crawler starting for: https://occom.com.au",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-23T12:37:06.460187",
+    "status": "info",
+    "message": "Provider: Occom",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-23T12:37:06.685149",
+    "status": "info",
+    "message": "Network types: ['nbn', 'opticomm', 'redtrain', 'supa']",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-23T12:37:06.895927",
+    "status": "info",
+    "message": "Max depth: 2",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-23T12:37:07.211377",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-23T12:37:07.659011",
+    "status": "warning",
+    "message": "Checking occom provider scraper fallback",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-23T12:37:08.108460",
+    "status": "info",
+    "message": "Starting Occom multi-page scraper",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-23T12:37:17.651193",
+    "status": "info",
+    "message": "Scraping NBN plans from https://occom.com.au/nbn-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-23T12:37:48.976365",
+    "status": "info",
+    "message": "Found 11 cards on https://occom.com.au/nbn-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-23T12:37:52.811644",
+    "status": "success",
+    "message": "Scraped 11 NBN plans",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-23T12:37:53.258167",
+    "status": "info",
+    "message": "Scraping Opticomm plans from https://occom.com.au/opticomm-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-23T12:38:20.175493",
+    "status": "info",
+    "message": "Found 7 cards on https://occom.com.au/opticomm-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-23T12:38:22.608415",
+    "status": "success",
+    "message": "Scraped 7 Opticomm plans",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-23T12:38:23.272698",
+    "status": "info",
+    "message": "Scraping NBN FTTP plans from https://occom.com.au/nbn-fttp-upgrade/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-23T12:38:50.767231",
+    "status": "info",
+    "message": "Found 8 cards on https://occom.com.au/nbn-fttp-upgrade/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-23T12:38:53.771218",
+    "status": "success",
+    "message": "Scraped 8 NBN FTTP plans",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-23T12:38:54.701041",
+    "status": "info",
+    "message": "Scraping Supa plans from https://occom.com.au/supa-network-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-23T12:39:21.326974",
+    "status": "info",
+    "message": "Found 6 cards on https://occom.com.au/supa-network-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-23T12:39:23.520194",
+    "status": "success",
+    "message": "Scraped 6 Supa plans",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-23T12:39:24.245039",
+    "status": "info",
+    "message": "Scraping Redtrain plans from https://occom.com.au/redtrain-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-23T12:39:35.023037",
+    "status": "info",
+    "message": "Found 7 cards on https://occom.com.au/redtrain-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-23T12:39:36.351977",
+    "status": "success",
+    "message": "Scraped 7 Redtrain plans",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-23T12:39:36.573714",
+    "status": "info",
+    "message": "Scraping Community Fibre plans from https://occom.com.au/community-fibre-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-23T12:39:46.841683",
+    "status": "info",
+    "message": "Found 6 cards on https://occom.com.au/community-fibre-plans/",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-23T12:39:47.980863",
+    "status": "success",
+    "message": "Scraped 6 Community Fibre plans",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-23T12:39:49.865504",
+    "status": "success",
+    "message": "Total Occom plans scraped: 45 across 6 pages",
+    "provider": "occom",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-23T12:39:50.065975",
+    "status": "success",
+    "message": "Provider fallback extracted 45 plans for occom",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-23T12:39:50.308629",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-23T12:39:50.523358",
+    "status": "success",
+    "message": "Crawl complete for Occom: 45 valid plans, 0 invalid, 6 pages scraped in 164.49s",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-23T12:39:50.804778",
+    "status": "info",
+    "message": "Network types: ['Community Fibre', 'NBN', 'NBN FTTP', 'Opticomm', 'Redtrain', 'Supa']",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-23T12:39:51.061134",
+    "status": "info",
+    "message": "============================================================",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-23T12:39:51.368767",
+    "status": "info",
+    "message": "Results saved to C:\\xampp\\htdocs\\scrape\\output\\isp_crawler\\occom_20260923_123951.json",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-23T12:39:51.634800",
+    "status": "info",
+    "message": "CSV saved to C:\\xampp\\htdocs\\scrape\\output\\isp_crawler\\occom_20260923_123951.csv",
+    "provider": "isp-crawler",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-09-23T12:39:52.456764",
+    "status": "info",
+    "message": "All plans snapshot rebuilt with 346 plans from 33 providers",
+    "provider": "isp-crawler",
+    "data": {}
   }
 ]
