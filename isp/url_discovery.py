@@ -22,6 +22,7 @@ import sys, os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from utils.logger import log_info, log_warning, log_error
+from utils.stealth import create_stealth_page
 
 
 # ── Keyword scoring ──────────────────────────────────────────────
@@ -62,6 +63,12 @@ PLAN_KEYWORDS: Dict[str, int] = {
     'compare':           6,
     'compare-plans':     8,
 
+    # Mobile / data SIM plans
+    'mobile':            7,
+    'sim-plans':         8,
+    'sim-only':          8,
+    'data-plans':        8,
+
     # Business
     'small-business':    5,
     'business-internet': 6,
@@ -98,6 +105,13 @@ EXCLUDE_PATTERNS = [
 ]
 
 _exclude_re = re.compile('|'.join(EXCLUDE_PATTERNS), re.IGNORECASE)
+
+# A URL with no requested network type in it is still kept as a candidate when
+# it scores at least this much. Set to the weight of a bare "internet"/"mobile"
+# path so plan hubs like /go/internet or /go/data-plans are not discarded just
+# because they don't spell out "nbn". The page detector still decides whether
+# a candidate really holds plans.
+MIN_GENERIC_SCORE = 7
 
 
 class URLDiscovery:
@@ -140,11 +154,11 @@ class URLDiscovery:
         ranked = sorted(self.discovered.values(), key=lambda x: x['score'], reverse=True)
 
         # Filter: keep only URLs that match at least one requested network type
-        # OR have a high generic plan score (>= 12)
+        # OR have a generic plan score (>= MIN_GENERIC_SCORE)
         filtered = []
         for entry in ranked:
             matched_nets = [n for n in self.network_types if n in entry.get('network_types', [])]
-            if matched_nets or entry['score'] >= 12:
+            if matched_nets or entry['score'] >= MIN_GENERIC_SCORE:
                 entry['matched_networks'] = matched_nets
                 filtered.append(entry)
 
@@ -171,8 +185,9 @@ class URLDiscovery:
 
         page = None
         try:
-            context = browser.contexts[0] if browser.contexts else browser.new_context()
-            page = context.new_page()
+            # Stealth page, like PlanDetector's: some sites (e.g. Belong) serve a
+            # stripped-down homepage without plan links to un-patched browsers.
+            page = create_stealth_page(browser)
             page.set_default_timeout(20000)
 
             log_info(f"[depth={depth}] Crawling: {normalised}", provider="isp-crawler")

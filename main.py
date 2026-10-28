@@ -18,7 +18,7 @@ from utils.benchmark import run_benchmark, save_benchmark_report, save_benchmark
 from utils.alerts import run_alerts
 from benchmark_report import generate_html_report
 from roi_calculator import run_and_save_roi
-from providers import telstra, optus, aussie, superloop, occom, tpg, exetel, leaptel, iinet, swoop, iprimus, dodo, kogan, mate
+from providers import telstra, optus, aussie, superloop, occom, tpg, exetel, leaptel, iinet, swoop, iprimus, dodo, kogan, mate, belong, zennet
 from scrapers.renderer import create_renderer_scraper, SiteConfig
 import config
 
@@ -106,7 +106,7 @@ def run_all_scrapers() -> List[Dict[str, Any]]:
     # {page_key: [plans]} and are flattened before extending all_plans.
     list_scrapers = [
         ('telstra',   telstra.scrape_telstra_plans),
-        ('optus',     optus.scrape_optus_plans),
+        ('optus',     optus.scrape_via_playwright),
         ('aussie',    aussie.scrape_aussie_plans),
         ('superloop', superloop.scrape_superloop_plans),
         ('leaptel',   leaptel.scrape_leaptel_plans),
@@ -116,6 +116,8 @@ def run_all_scrapers() -> List[Dict[str, Any]]:
         ('dodo',      dodo.scrape_dodo_plans),
         ('kogan',     kogan.scrape_kogan_plans),
         ('mate',      mate.scrape_mate_plans),
+        ('belong',    belong.scrape_belong_plans),
+        ('zennet',    zennet.scrape_zennet_plans),
     ]
 
     # Dict-returning scrapers: result is {page_key: [plans]}

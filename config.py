@@ -174,6 +174,16 @@ PROVIDERS = {
         'note': 'Scrapes Zennet fibre month-to-month plans from the homepage',
         'supported_networks': ['Fibre']
     },
+    'belong': {
+        'id': 28,
+        'name': 'Belong',
+        'enabled': True,
+        'note': 'Scrapes Belong nbn internet, mobile SIM and data SIM plans',
+        'supported_networks': ['NBN', 'Mobile', 'Mobile Broadband'],
+        # Keep every supported network when called from the ISP crawler, instead
+        # of narrowing to the crawler's default nbn/opticomm/redtrain/supa list.
+        'include_all_networks': True
+    },
 }
 
 # Output paths

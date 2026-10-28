@@ -35,6 +35,15 @@ _EXACT_TOKEN_LABELS = {
     'community fibre': 'Community Fibre',
 }
 
+# Cellular SIM plans some ISPs sell alongside broadband (e.g. Belong). Exact
+# matches only: they are deliberately not in _EXACT_TOKEN_LABELS, so labels
+# like "Business Mobile" still resolve to 'Unknown' and are not mistaken for
+# broadband.
+_MOBILE_LABELS = {
+    'mobile': 'Mobile',
+    'mobile broadband': 'Mobile Broadband',
+}
+
 _KNOWN_TOKENS = tuple(_EXACT_TOKEN_LABELS.keys())
 
 # Private fibre-only overbuild networks — these are FTTP by definition, so a
@@ -82,6 +91,8 @@ def canonicalize_network_type(raw: Any) -> str:
     if 'supa' in compact:
         return 'Supa'
 
+    if compact in _MOBILE_LABELS:
+        return _MOBILE_LABELS[compact]
     if compact in _EXACT_TOKEN_LABELS:
         return _EXACT_TOKEN_LABELS[compact]
     if any(token in compact for token in _KNOWN_TOKENS):
@@ -170,6 +181,8 @@ def classify_access_technology(raw: Any) -> str:
         return '4G'
     if 'satellite' in compact or 'starlink' in compact:
         return 'Satellite'
+    if compact in _MOBILE_LABELS:
+        return 'Mobile'
     if 'fibre' in compact:
         return 'FTTP'
 

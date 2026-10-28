@@ -421,6 +421,10 @@ class ISPCrawler:
                 # default nbn/opticomm/redtrain/supa list), trust the provider's
                 # own supported_networks instead of discarding every plan.
                 allowed_networks = overlap or supported_networks
+                # Providers that sell more than broadband (e.g. Belong's mobile
+                # and data SIMs) opt out of narrowing to the requested networks.
+                if PROVIDERS.get(provider_key, {}).get('include_all_networks'):
+                    allowed_networks = supported_networks
 
             from utils.network_classifier import is_broadband_network_type
 
@@ -530,6 +534,7 @@ class ISPCrawler:
             'vocphone.com': 'vocphone',
             'wavezone.net': 'wavezone',
             'zennet.com.au': 'zennet',
+            'belong.com.au': 'belong',
         }
         for known_domain, provider_key in known_domains.items():
             if domain == known_domain or domain.endswith(f".{known_domain}"):
