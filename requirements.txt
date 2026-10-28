@@ -42,3 +42,9 @@ pyvirtualdisplay>=3.0.0
 # Windows: https://github.com/UB-Mannheim/tesseract/wiki | Debian/Ubuntu: apt-get install tesseract-ocr
 pytesseract>=0.3.10
 Pillow>=10.0.0
+
+# ISP Scraper Agent (see AI_AGENT_BROWSER_PLAN.md) - Phase 2 AI translator backends.
+# Both optional: the agent/ translator falls back to rule-based matching if a
+# key/SDK is missing, so only install whichever provider(s) you plan to use.
+anthropic>=0.40.0
+google-genai>=0.5.0

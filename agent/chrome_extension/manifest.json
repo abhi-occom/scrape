@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "ISP Scraper Agent",
+  "version": "1.0.0",
+  "description": "Chat with the ISP scraper agent from any tab. Talks to your local Flask app at localhost:5000 - it must be running (python app.py).",
+  "action": {
+    "default_title": "ISP Scraper Agent",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "side_panel": {
+    "default_path": "side_panel.html"
+  },
+  "permissions": ["sidePanel"],
+  "host_permissions": ["http://localhost:5000/*"]
+}

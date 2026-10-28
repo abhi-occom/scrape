@@ -57,12 +57,20 @@ from google_sheets_sync import (
 # Import ISP Mini Crawler routes
 from isp.routes import isp_bp
 
+# Import natural-language scraping agent routes (see AI_AGENT_BROWSER_PLAN.md)
+from agent.routes import agent_bp, limiter as agent_limiter
+
 app = Flask(__name__, template_folder='templates')
 app.secret_key = os.environ.get('FLASK_SECRET_KEY', 'dev-only-change-me')
 CORS(app)
 
 # Register ISP crawler blueprint
 app.register_blueprint(isp_bp)
+
+# Register natural-language scraping agent blueprint (and its rate limiter -
+# see agent/routes.py for why /agent/api/chat specifically is limited)
+app.register_blueprint(agent_bp)
+agent_limiter.init_app(app)
 
 # API Routes
 

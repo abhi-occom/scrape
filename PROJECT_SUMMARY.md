@@ -6,12 +6,13 @@ data (price, speed, network type, contract terms) from ~27 Australian ISPs,
 and exposes it through dashboards, JSON/CSV exports, a read-only API, a
 Google Sheets price-comparison sync, and benchmark/alert/ROI reports.
 
-## Three execution paths (share provider code, produce different outputs)
+## Four execution paths (share provider code, produce different outputs)
 | Path | Entry point | Output |
 | --- | --- | --- |
 | Main dashboard | `python app.py` (port 5000) | `output/scrape_isp_<provider>/{json,csv}/` |
 | ISP Mini Crawler | `/isp` UI or `python -m isp.main_crawler <url>` | `output/isp_crawler/*_latest.json` → rebuilds `output/all_plans.json`/`.csv` |
 | Legacy pipeline | `python main.py` | MySQL (`isp_plans` db) + `output/plans.json` + benchmark/alert/ROI files |
+| **NL scraping agent** | `/agent/` chat UI, or the Chrome extension in `agent/chrome_extension/` | Same as main dashboard (`output/scrape_isp_<provider>/`) — it drives `scraper_service.py`, not a separate pipeline |
 
 `output/all_plans.json` is the canonical combined snapshot used by
 dashboards and the read API — note that `/api/scrape/all` does **not**
@@ -37,6 +38,19 @@ refresh it; only the `/isp` "Scrape All" workflow does.
   to a Google Sheet from `output/all_plans.json`.
 - **`main.py`** — legacy pipeline: explicit provider subset → validate →
   MySQL (`plans_current`, transactional) → JSON → benchmark/alerts/ROI.
+- **`agent/`** — natural-language front end (chat box) over the existing
+  scraper/benchmark code, no scraping logic duplicated. `translator.py`
+  (English → structured job) is pluggable: rule-based by default
+  (`agent/translators/rule_based.py`), or Claude/Gemini via `AI_PROVIDER` in
+  `.env` (`agent/translators/`), always falling back to rule-based if a key
+  is missing or the call fails. `executor.py` runs the job through
+  `scraper_service.py` + `utils/benchmark.py`; `responder.py` renders a
+  plain-English + HTML-table reply; `routes.py` is the `/agent` Flask
+  blueprint (rate-limited via `flask-limiter`). `local_llm_extractor.py` is
+  an optional, off-by-default local-LLM (Ollama) fallback for pages the
+  deterministic engine can't parse — validated as **unreliable on small
+  local models** in live testing (see `AI_AGENT_BROWSER_PLAN.md`).
+  `chrome_extension/` is a Manifest V3 side-panel client for the same API.
 
 ## Data model (normalized fields)
 `provider`, `network_type` (NBN/Opticomm/Supa/Redtrain/fixed wireless/
@@ -73,3 +87,7 @@ against saved screenshots/logs, not just test pass/fail.
 - Existing longer-form docs for deeper context: `README.md` (full
   reference), `Summary.md`, `SYSTEM_ANALYSIS.md`,
   `Non-Technical-Summary.md`, `how-the-project-runs.md`.
+- `AI_AGENT_BROWSER_PLAN.md` covers the `agent/` natural-language feature in
+  depth — design rationale, phase-by-phase build status, and real
+  live-testing findings (including a confirmed local-LLM extraction
+  reliability issue on this machine's hardware).
